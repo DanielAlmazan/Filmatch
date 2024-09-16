@@ -12,8 +12,8 @@ struct ContentView: View {
     let screamFilmId = 646385
 
     var body: some View {
-        MovieDetailView(repository: TMDBRepository(), filmId: screamFilmId)
-//        DiscoverMoviesView(repository: TMDBRepository())
+//        MovieDetailView(repository: TMDBRepository(), filmId: screamFilmId)
+        DiscoverMoviesView(repository: TMDBRepository())
     }
 }
 

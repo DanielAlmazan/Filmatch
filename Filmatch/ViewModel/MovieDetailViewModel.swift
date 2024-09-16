@@ -18,7 +18,6 @@ final class MovieDetailViewModel {
   init(repository: Repository) {
     self.repository = repository
     self.isMovieLoading = true
-    print("\(repository)")
   }
 
   @MainActor
