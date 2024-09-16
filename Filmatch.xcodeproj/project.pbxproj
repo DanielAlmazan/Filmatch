@@ -40,6 +40,7 @@
 		85434BCF2C737F2000A68003 /* MovieVideosRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85434BCE2C737F2000A68003 /* MovieVideosRowViewModel.swift */; };
 		854D0D2D2C93168300C34322 /* discover_movies-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D0D2C2C93168300C34322 /* discover_movies-page1.json */; };
 		854D0D2F2C9316B000C34322 /* discover_movies-page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 854D0D2E2C9316B000C34322 /* discover_movies-page2.json */; };
+		859375D32C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json in Resources */ = {isa = PBXBuildFile; fileRef = 859375D22C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json */; };
 		85A6B5242C51303F0097BA0E /* MovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6B5232C51303F0097BA0E /* MovieProvider.swift */; };
 		85AA0A0F2C6FEC4D0025C7CB /* TMDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AA0A0E2C6FEC4D0025C7CB /* TMDBRepository.swift */; };
 		85AED9DA2C73FE1400DA2AF0 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AED9D92C73FE1400DA2AF0 /* VideoView.swift */; };
@@ -105,6 +106,7 @@
 		85434BCE2C737F2000A68003 /* MovieVideosRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideosRowViewModel.swift; sourceTree = "<group>"; };
 		854D0D2C2C93168300C34322 /* discover_movies-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "discover_movies-page1.json"; sourceTree = "<group>"; };
 		854D0D2E2C9316B000C34322 /* discover_movies-page2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "discover_movies-page2.json"; sourceTree = "<group>"; };
+		859375D22C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "movie-646385-append_to_response-videos_credits.json"; sourceTree = "<group>"; };
 		85A6B5232C51303F0097BA0E /* MovieProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProvider.swift; sourceTree = "<group>"; usesTabs = 0; };
 		85AA0A0E2C6FEC4D0025C7CB /* TMDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRepository.swift; sourceTree = "<group>"; };
 		85AED9D92C73FE1400DA2AF0 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				854D0D2C2C93168300C34322 /* discover_movies-page1.json */,
 				854D0D2E2C9316B000C34322 /* discover_movies-page2.json */,
 				853DA9BB2C93376A0045C8E5 /* discover_movies-page3.json */,
+				859375D22C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				85EE181D2C6F566B00791D40 /* Config.plist in Resources */,
 				851C42B72C7A39FD00127163 /* Localizable.xcstrings in Resources */,
 				85E320F02C8DE624009DCA5F /* movie-945961-append_to_response-videos_credits.json in Resources */,
+				859375D32C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json in Resources */,
 				854D0D2D2C93168300C34322 /* discover_movies-page1.json in Resources */,
 				853DA9BC2C93376A0045C8E5 /* discover_movies-page3.json in Resources */,
 				85E320E82C8DE4B3009DCA5F /* person-974169.json in Resources */,
