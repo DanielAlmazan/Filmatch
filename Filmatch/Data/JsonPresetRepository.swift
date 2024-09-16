@@ -16,7 +16,7 @@ enum JsonPresetRepositoryError: String, Error {
 class JsonPresetRepository: Repository {
     func loadJson<T: Decodable>(filename: String, type: T.Type) throws -> T {
         guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
-            print("Error loading file")
+            print("Error loading file \"\(filename)\"")
             throw JsonPresetRepositoryError.fileNotFound
         }
         
