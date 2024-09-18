@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct User {
+struct User: Sendable {
     let name: String
     let surname: String
     let email: String

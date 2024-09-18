@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Video: Identifiable, Codable {
+final class Video: Identifiable, Codable, Sendable {
     let id: String
     let iso_639_1: String
     let iso_3166_1: String

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Base
-final class MovieDetailSingleResponse: Identifiable, Codable {
+final class MovieDetailSingleResponse: Identifiable, Codable, Sendable {
     let id: Int
     let adult: Bool
     let backdropPath: String

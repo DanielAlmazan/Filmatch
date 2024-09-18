@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Genre: Identifiable, Codable {
+final class Genre: Identifiable, Codable, Sendable {
     let id: Int
     let name: String
     

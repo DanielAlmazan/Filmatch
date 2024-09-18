@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MovieVideosAppendResponse: Codable {
+final class MovieVideosAppendResponse: Codable, Sendable {
     let results: [Video]?
     
     init(results: [Video]?) {

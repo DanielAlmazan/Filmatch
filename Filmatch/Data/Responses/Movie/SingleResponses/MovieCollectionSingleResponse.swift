@@ -7,12 +7,12 @@
 
 import Foundation
 
-final class MovieCollectionSingleResponse: Identifiable, Codable {
+final class MovieCollectionSingleResponse: Identifiable, Codable, Sendable {
     let id: Int
     let name: String
     let posterPath: String
     let backdropPath: String
-    var movies: [MovieDetailSingleResponse] = []
+    let movies: [MovieDetailSingleResponse] = []
     
     init(id: Int, name: String, poster_path: String, backdrop_path: String) {
         self.id = id

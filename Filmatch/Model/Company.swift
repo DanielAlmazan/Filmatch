@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ProductionCompany: Codable {
+final class ProductionCompany: Codable, Sendable {
     let id: Int
     let logoPath: String
     let name: String

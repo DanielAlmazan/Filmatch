@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CastMember: Identifiable, Codable {
+final class CastMember: Identifiable, Codable, Sendable {
     let id: Int
     let adult: Bool
     let gender: Gender

@@ -95,8 +95,8 @@ struct MovieDetailView: View {
 }
 
 #Preview{
-  @State var alienFilmId = 945961
-  @State var screamFilmId = 646385
+  @Previewable @State var alienFilmId = 945961
+  @Previewable @State var screamFilmId = 646385
   
   return MovieDetailView(repository: JsonPresetRepository(), filmId: screamFilmId)
 }

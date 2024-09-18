@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Country: Codable {
+final class Country: Codable, Sendable {
     let iso_3166_1: String
     let name: String
     
