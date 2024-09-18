@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DiscoverMoviesItem: Identifiable, Codable {
+final class DiscoverMoviesItem: Identifiable, Codable, Sendable {
   let adult: Bool
   let backdropPath: String?
   let genreIDS: [Int]

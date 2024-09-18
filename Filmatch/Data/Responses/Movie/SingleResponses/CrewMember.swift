@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CrewMember: Identifiable, Codable {
+final class CrewMember: Identifiable, Codable, Sendable {
     let id: Int
     let adult: Bool
     let gender: Gender

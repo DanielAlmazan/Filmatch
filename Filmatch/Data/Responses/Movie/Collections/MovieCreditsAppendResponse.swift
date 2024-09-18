@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MovieCreditsAppendResponse: Codable {
+final class MovieCreditsAppendResponse: Codable, Sendable {
     let cast: [CastMember]?
     let crew: [CrewMember]?
     

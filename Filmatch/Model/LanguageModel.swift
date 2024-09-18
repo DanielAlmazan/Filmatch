@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class LanguageModel: Codable {
+final class LanguageModel: Codable, Sendable {
     let englishName: String
     let iso_3166_1: String?
     let iso_639_1: String?

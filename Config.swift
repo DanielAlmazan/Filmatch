@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Config {
+final class Config: Sendable {
     static let shared = Config()
     
     var accessTokenAuth: String {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MovieProvider: Codable {
+final class MovieProvider: Codable, Sendable {
     let providerId: Int
     let providerName: String
     let logoPath: String
