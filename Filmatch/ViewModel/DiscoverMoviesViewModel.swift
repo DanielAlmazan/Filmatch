@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 @Observable
 final class DiscoverMoviesViewModel {
@@ -14,8 +13,7 @@ final class DiscoverMoviesViewModel {
   private let secondCardBlur = 1.5
 
   var currentPage: Int = 1
-  var movies: [DiscoverMoviesItem]?
-  var moviesStack: [MovieCardView?] = []
+  var movies: [DiscoverMoviesItem]? = []
   var isLoading: Bool
   var errorMessage: String?
   // TODO: Add filters
@@ -24,20 +22,15 @@ final class DiscoverMoviesViewModel {
 
   init(repository: Repository) {
     self.repository = repository
-    self.movies = []
     self.isLoading = false
-    self.currentPage = currentPage
+  }
+  
+  @MainActor func fetchNextPage() {
+    self.currentPage += 1
+    discoverMovies()
   }
 
-  @MainActor func removeMovie() {
-    movies?.removeFirst()
-
-    if movies != nil && movies!.count > 3 {
-
-    }
-  }
-
-  @MainActor func discoverMovies(withQueryParams queryParams: [URLQueryItem]) {
+  @MainActor func discoverMovies() {
     self.errorMessage = nil
     self.isLoading = true
 
@@ -46,9 +39,8 @@ final class DiscoverMoviesViewModel {
     Task {
       do {
         movies = try await repository.discoverMovies(
-          withQueryParams: queryParams)
+          withQueryParams: buildQueryParams())
         self.movies?.append(contentsOf: movies)
-        self.moviesStack = buildMoviesStack()
       } catch {
         self.errorMessage = "Error discovering movies: \(error)"
         print(self.errorMessage!)
@@ -58,29 +50,17 @@ final class DiscoverMoviesViewModel {
     self.isLoading = false
   }
   
-  @MainActor func buildMoviesStack() -> [MovieCardView] {
-    [.init(movie: movies?[0]), .init(movie: movies?[1]), .init(movie: movies?[2])]
-//      .init(
-//        movie: movies?[0] , cardOffset: .zero, cardRotation: .zero,
-//        cardBlurRadius: 0),
-//      .init(
-//        movie: movies?[1] , cardOffset: .zero,
-//        cardRotation: .degrees(randomRotation(forIndex: 1)),
-//        cardBlurRadius: secondCardBlur),
-//      .init(
-//        movie: movies?[2] , cardOffset: .zero,
-//        cardRotation: .degrees(randomRotation(forIndex: 2)),
-//        cardBlurRadius: thirdCardBlur),
-//    ]
-  }
-  
-  func randomRotation(forIndex index: Int) -> Double {
-    if index == 0 {
-      return 0
-    }
-
-    let randomValue = Double.random(in: 1.5...3.5)
-
-    return index % 2 == 0 ? randomValue : randomValue * -1
+  // TODO: Implement filters
+  /// Gets the filters info and the user's providers for building the query params
+  /// - Returns: An array of URLQueryItem for the URLSession
+  func buildQueryParams() -> [URLQueryItem] {
+    [
+      URLQueryItem(name: "page", value: "\(self.currentPage)"),
+      URLQueryItem(
+        name: "with_watch_providers",
+        value:
+          "\(User.default.providers.map{ "\($0.providerId)" }.joined(separator: "|"))"
+      ),
+    ]
   }
 }
