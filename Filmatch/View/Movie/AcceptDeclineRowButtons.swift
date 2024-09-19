@@ -9,13 +9,14 @@ import SwiftUI
 
 struct AcceptDeclineRowButtons: View {
   let movie: DiscoverMoviesItem
-  let onAccept: (DiscoverMoviesItem) -> Void
-  let onDecline: (DiscoverMoviesItem) -> Void
+  let screenWidth: CGFloat
+  let onAccept: (DiscoverMoviesItem, CGFloat) -> Void
+  let onDecline: (DiscoverMoviesItem, CGFloat) -> Void
   
   var body: some View {
     HStack {
       Button {
-        onDecline(movie)
+        onDecline(movie, screenWidth)
       } label: {
         Image(systemName: "xmark.circle.fill")
           .resizable()
@@ -27,7 +28,7 @@ struct AcceptDeclineRowButtons: View {
       Spacer()
 
       Button {
-        onAccept(movie)
+        onAccept(movie, screenWidth)
       } label: {
         Image(systemName: "checkmark.circle.fill")
           .resizable()
@@ -41,5 +42,5 @@ struct AcceptDeclineRowButtons: View {
 }
 
 #Preview {
-  AcceptDeclineRowButtons(movie: .default, onAccept: {movie in print ("Accepted \(movie.title)") }, onDecline: { movie in print ("Declined \(movie.title)")})
+  AcceptDeclineRowButtons(movie: .default, screenWidth: 480, onAccept: {movie, width  in print ("Accepted \(movie.title)") }, onDecline: { movie, width in print ("Declined \(movie.title)")})
 }
