@@ -26,7 +26,6 @@ struct MovieDetailView: View {
         ProgressView("Loading...")
       } else if let movie = vm.movie {
         PosterView(imageUrl: movie.posterPath, size: "w500")
-          .frame(maxWidth: .infinity)
         VStack(alignment: .leading, spacing: 16) {
           HStack {
             VotesAverageCircleView(averageVotes: movie.voteAverage / 10, lineWidth: 5)
@@ -80,7 +79,7 @@ struct MovieDetailView: View {
         .padding()
         
       } else {
-        Text("Error: Film not loaded.")
+        Text("Film not loaded: \(vm.errorMessage ?? "Unknown error")")
       }
     }
     .onAppear {
