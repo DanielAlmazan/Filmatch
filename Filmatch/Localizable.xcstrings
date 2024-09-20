@@ -2,10 +2,45 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     "%@" : {
-
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%@ and %@" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ i %2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ and %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ y %2$@"
+          }
+        }
+      }
     },
     "%@%%" : {
       "localizations" : {
@@ -14,11 +49,16 @@
             "state" : "translated",
             "value" : "%@%%"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@%%"
+          }
         }
       }
     },
     "%lldh %lldm" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -29,6 +69,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$lldh %2$lldm"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$lldh %2$lldm"
           }
         }
@@ -100,50 +146,37 @@
         }
       }
     },
-    "Error: Film not loaded." : {
+    "Error: Film not loaded: %@" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error: Pel·licula no trovada"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error: Film not loaded"
+            "value" : "Error: Pel·lícula no carregada: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error: Película no cargada"
+            "value" : "Error: Película no cargada: %@"
           }
         }
       }
     },
     "Hello, World!" : {
-
+      "shouldTranslate" : false
     },
-    "Loading videos..." : {
-      "extractionState" : "stale",
+    "Loading poster..." : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carregant videos"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading videos..."
+            "value" : "Carregant poster…"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cargando vídeos..."
+            "value" : "Cargando póster…"
           }
         }
       }
@@ -171,7 +204,20 @@
       }
     },
     "No videos available" : {
-
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hi ha vídeos disponibles"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay vídeos disponibles"
+          }
+        }
+      }
     },
     "Select an option" : {
       "localizations" : {
@@ -191,6 +237,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecciona una opción"
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconegut"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desconocide"
           }
         }
       }
