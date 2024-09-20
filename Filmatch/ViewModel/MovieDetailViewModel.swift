@@ -26,9 +26,10 @@ final class MovieDetailViewModel {
 
     Task {
       do {
-        self._movie = try await repository.getMovie(byId: id)
+        self.movie = try await repository.getMovie(byId: id)
       } catch {
-        self.errorMessage = "Failed to load movie with ID \"\(id)\"\n\(error.localizedDescription)"
+        self.errorMessage =
+          "Failed to load movie with ID \"\(id)\"\n\(error.localizedDescription)"
       }
     }
 
