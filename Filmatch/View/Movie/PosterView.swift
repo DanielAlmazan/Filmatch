@@ -5,6 +5,7 @@
 //  Created by Daniel Enrique Almazán Sellés on 12/8/24.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct PosterView: View {
@@ -12,25 +13,9 @@ struct PosterView: View {
   let size: String
 
   var body: some View {
-    AsyncImage(url: URL(string: "https://media.themoviedb.org/t/p/\(size)/\(imageUrl)")) { phase in
-      switch phase {
-        case .failure:
-          Image(systemName: "photo")
-            .resizable()
-            .scaledToFit()
-            .padding(40)
-        case .success(let image):
-          image
-            .resizable()
-        default:
-          ZStack {
-            Color.gray
-            ProgressView("Loading poster...")
-          }
-      }
-    }
-    .frame(maxWidth: .infinity)
-    .aspectRatio(2 / 3, contentMode: .fit)
+    KFImage(URL(string: "https://media.themoviedb.org/t/p/\(size)/\(imageUrl)"))
+      .resizable()
+      .aspectRatio(2 / 3, contentMode: .fit)
   }
 }
 
