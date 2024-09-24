@@ -165,22 +165,6 @@
     "Hello, World!" : {
       "shouldTranslate" : false
     },
-    "Loading poster..." : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carregant poster…"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cargando póster…"
-          }
-        }
-      }
-    },
     "Loading..." : {
       "localizations" : {
         "ca" : {
