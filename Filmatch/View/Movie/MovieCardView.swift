@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieCardView: View {
-  @Binding var movie: DiscoverMoviesItem?
+  let movie: DiscoverMoviesItem?
 
   var body: some View {
     if let movie = movie {
@@ -19,8 +19,10 @@ struct MovieCardView: View {
         Text(movie.title)
           .font(.title3)
           .padding()
-          .background(.white.opacity(0.5))
-          .clipShape(.rect(cornerRadii: .init(topLeading: 10, topTrailing: 10)))
+          .background(
+            .ultraThinMaterial,
+            in: .rect(cornerRadii: .init(topLeading: 10, topTrailing: 10))
+          )
           .frame(maxWidth: 200)
           .lineLimit(1)
       }
@@ -30,5 +32,5 @@ struct MovieCardView: View {
 }
 
 #Preview{
-  MovieCardView(movie: .constant(.default))
+  MovieCardView(movie: .default)
 }
