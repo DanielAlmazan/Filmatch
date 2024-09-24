@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		85077A7C2C7CF0E80087AC21 /* MovieCastMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85077A7B2C7CF0E80087AC21 /* MovieCastMemberView.swift */; };
+		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
+		850E51612CA2B1FB00905534 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E51602CA2B1FB00905534 /* Login.swift */; };
+		850E51642CA2CA1900905534 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 850E51632CA2CA1900905534 /* FirebaseAnalytics */; };
+		850E51662CA2CA5F00905534 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 850E51652CA2CA5F00905534 /* GoogleService-Info.plist */; };
 		850E812B2C6AABD500F8CE7C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E812A2C6AABD500F8CE7C /* PosterView.swift */; };
 		850E812E2C6AB18200F8CE7C /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 850E812D2C6AB18200F8CE7C /* SocketIO */; };
 		850E81302C6AB34A00F8CE7C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E812F2C6AB34A00F8CE7C /* HomeView.swift */; };
@@ -74,6 +78,8 @@
 
 /* Begin PBXFileReference section */
 		85077A7B2C7CF0E80087AC21 /* MovieCastMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastMemberView.swift; sourceTree = "<group>"; };
+		850E51602CA2B1FB00905534 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		850E51652CA2CA5F00905534 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		850E812A2C6AABD500F8CE7C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
 		850E812F2C6AB34A00F8CE7C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		850E81312C6AB64200F8CE7C /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
@@ -143,7 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */,
 				850E812E2C6AB18200F8CE7C /* SocketIO in Frameworks */,
+				850E51642CA2CA1900905534 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,13 +221,6 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		85DDA4FF2C79AB1F00176D54 /* Movie */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Movie;
-			sourceTree = "<group>";
-		};
 		85E320E62C8DE453009DCA5F /* TestData */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,9 +260,10 @@
 				85F3085F2C4F12D800DF37C2 /* ViewModel */,
 				85F3085E2C4F12C900DF37C2 /* View */,
 				85F3085D2C4F12BF00DF37C2 /* Model */,
-				85F3084D2C4F127700DF37C2 /* FilmatchApp.swift */,
-				85F308532C4F127800DF37C2 /* Assets.xcassets */,
 				85F308552C4F127800DF37C2 /* Preview Content */,
+				85F3084D2C4F127700DF37C2 /* FilmatchApp.swift */,
+				850E51652CA2CA5F00905534 /* GoogleService-Info.plist */,
+				85F308532C4F127800DF37C2 /* Assets.xcassets */,
 				851C42B62C7A39FD00127163 /* Localizable.xcstrings */,
 			);
 			path = Filmatch;
@@ -278,7 +280,6 @@
 		85F3085D2C4F12BF00DF37C2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				85DDA4FF2C79AB1F00176D54 /* Movie */,
 				85F308712C4F243700DF37C2 /* LanguageModel.swift */,
 				85E320DE2C8B1BBC009DCA5F /* RegionModel.swift */,
 				85F3086F2C4F23E400DF37C2 /* Country.swift */,
@@ -302,6 +303,7 @@
 				850E81332C6B88DB00F8CE7C /* ProfileSummary.swift */,
 				85E320E22C8BB241009DCA5F /* VotesAverageCircleView.swift */,
 				85E320E42C8C83A2009DCA5F /* PersonDetailView.swift */,
+				850E51602CA2B1FB00905534 /* Login.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +351,8 @@
 			name = Filmatch;
 			packageProductDependencies = (
 				850E812D2C6AB18200F8CE7C /* SocketIO */,
+				850E515E2CA1BE0500905534 /* Kingfisher */,
+				850E51632CA2CA1900905534 /* FirebaseAnalytics */,
 			);
 			productName = Filmatch;
 			productReference = 85F3084A2C4F127700DF37C2 /* Filmatch.app */;
@@ -382,6 +386,8 @@
 			mainGroup = 85F308412C4F127700DF37C2;
 			packageReferences = (
 				850E812C2C6AB18200F8CE7C /* XCRemoteSwiftPackageReference "socket" */,
+				850E515D2CA1BE0500905534 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				850E51622CA2CA1900905534 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 85F3084B2C4F127700DF37C2 /* Products */;
 			projectDirPath = "";
@@ -402,6 +408,7 @@
 				85EE181D2C6F566B00791D40 /* Config.plist in Resources */,
 				851C42B72C7A39FD00127163 /* Localizable.xcstrings in Resources */,
 				85E320F02C8DE624009DCA5F /* movie-945961-append_to_response-videos_credits.json in Resources */,
+				850E51662CA2CA5F00905534 /* GoogleService-Info.plist in Resources */,
 				859375D32C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json in Resources */,
 				854D0D2D2C93168300C34322 /* discover_movies-page1.json in Resources */,
 				853DA9BC2C93376A0045C8E5 /* discover_movies-page3.json in Resources */,
@@ -433,6 +440,7 @@
 				851C42BB2C7A494800127163 /* DiscoverMoviesListViewModel.swift in Sources */,
 				851C42CD2C7A91A200127163 /* CastView.swift in Sources */,
 				851C42B92C7A48FA00127163 /* DiscoverMoviesView.swift in Sources */,
+				850E51612CA2B1FB00905534 /* Login.swift in Sources */,
 				850E81322C6AB64200F8CE7C /* ProfileTab.swift in Sources */,
 				85AED9DA2C73FE1400DA2AF0 /* VideoView.swift in Sources */,
 				85F3086E2C4F237E00DF37C2 /* Company.swift in Sources */,
@@ -609,6 +617,7 @@
 				DEVELOPMENT_TEAM = F3FF5WR8UD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -639,6 +648,7 @@
 				DEVELOPMENT_TEAM = F3FF5WR8UD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -682,6 +692,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		850E515D2CA1BE0500905534 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.3;
+			};
+		};
+		850E51622CA2CA1900905534 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
+			};
+		};
 		850E812C2C6AB18200F8CE7C /* XCRemoteSwiftPackageReference "socket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
@@ -693,6 +719,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		850E515E2CA1BE0500905534 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 850E515D2CA1BE0500905534 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		850E51632CA2CA1900905534 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 850E51622CA2CA1900905534 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		850E812D2C6AB18200F8CE7C /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 850E812C2C6AB18200F8CE7C /* XCRemoteSwiftPackageReference "socket" */;
