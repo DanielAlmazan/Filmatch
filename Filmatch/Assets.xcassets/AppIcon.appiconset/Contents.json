@@ -1,7 +1,31 @@
 {
   "images" : [
     {
-      "filename" : "film-match-logo.png",
+      "filename" : "film-match-popcorn-logo-light.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "film-match-popcorn-logo-dark.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "tinted"
+        }
+      ],
+      "filename" : "film-match-popcorn-logo-tinted.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
