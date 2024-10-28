@@ -4,6 +4,85 @@
     "" : {
       "shouldTranslate" : false
     },
+    " %lld more characters" : {
+      "comment" : "Full sentence could be \"Password must contain at least 8 characters.\"",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld caracteres más"
+          }
+        }
+      }
+    },
+    " one lowercase letter" : {
+      "comment" : "Full sentence could be \"Password must contain at least one lowercase letter.\"",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " una letra minúscula"
+          }
+        }
+      }
+    },
+    " one non-alphanumeric character" : {
+      "comment" : "Full sentence could be \"Password must contain at least one non-alphanumeric character.",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " un caracter no alfa-numérico"
+          }
+        }
+      }
+    },
+    " one number" : {
+      "comment" : "Full sentence could be \"Password must contain at least one number.",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " un número"
+          }
+        }
+      }
+    },
+    " one uppercase letter" : {
+      "comment" : "Full sentence could be \"Password must contain at least one uppercase letter.\"",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " una letra mayúscula"
+          }
+        }
+      }
+    },
+    "(Full app!)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(¡App completa!)"
+          }
+        }
+      }
+    },
+    "(Without login!)" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(¡Sin login!)"
+          }
+        }
+      }
+    },
+    "%" : {
+      "comment" : "Percentage for the Average Votes gauge",
+      "shouldTranslate" : false
+    },
     "%@" : {
       "localizations" : {
         "ca" : {
@@ -18,7 +97,8 @@
             "value" : "%@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%@ and %@" : {
       "localizations" : {
@@ -42,21 +122,8 @@
         }
       }
     },
-    "%@%%" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%%"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%%"
-          }
-        }
-      }
+    "%lld" : {
+      "shouldTranslate" : false
     },
     "%lldh %lldm" : {
       "localizations" : {
@@ -76,6 +143,142 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$lldh %2$lldm"
+          }
+        }
+      }
+    },
+    "Account deleted successfully" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta eliminada con éxito"
+          }
+        }
+      }
+    },
+    "Already have an account?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Ya tienes una cuenta?"
+          }
+        }
+      }
+    },
+    "also_known_as_female: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also known as: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "También conocida como: %@"
+          }
+        }
+      }
+    },
+    "also_known_as_male: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also known as: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "También conocido como: %@"
+          }
+        }
+      }
+    },
+    "also_known_as_non_binary: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also known as: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "También conocide como: %@"
+          }
+        }
+      }
+    },
+    "Authenticate again" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autentícate de nuevo"
+          }
+        }
+      }
+    },
+    "Biography" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biografía"
+          }
+        }
+      }
+    },
+    "born_female: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nacida: %@"
+          }
+        }
+      }
+    },
+    "born_male: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nacido: %@"
+          }
+        }
+      }
+    },
+    "born_non_binary: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nacide: %@"
           }
         }
       }
@@ -124,6 +327,46 @@
         }
       }
     },
+    "Choose films with your friends without logging in!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Elige películas con tus amistades sin iniciar sesión!"
+          }
+        }
+      }
+    },
+    "Confirm Password" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmar contraseña"
+          }
+        }
+      }
+    },
+    "Create Room" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear Sala"
+          }
+        }
+      }
+    },
+    "Delete Account" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar Cuenta"
+          }
+        }
+      }
+    },
     "Directed by %@" : {
       "localizations" : {
         "ca" : {
@@ -146,6 +389,86 @@
         }
       }
     },
+    "Discover" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubrir"
+          }
+        }
+      }
+    },
+    "Discover Movies" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubrir películas"
+          }
+        }
+      }
+    },
+    "Dismiss" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
+    "Don't have an account?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Todavía no tienes cuenta?"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Email is required" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se requiere un email"
+          }
+        }
+      }
+    },
+    "Error" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
+    "Error deleting account: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error eliminando la cuenta: %@"
+          }
+        }
+      }
+    },
     "Error: Film not loaded: %@" : {
       "localizations" : {
         "ca" : {
@@ -162,8 +485,126 @@
         }
       }
     },
+    "Error: Person not loaded: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Persona no cargada: %@"
+          }
+        }
+      }
+    },
+    "Get started" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empecemos"
+          }
+        }
+      }
+    },
+    "Go to Rooms" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ir a Salas"
+          }
+        }
+      }
+    },
     "Hello, World!" : {
       "shouldTranslate" : false
+    },
+    "How do you want to start your adventure?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cómo quieres empezar tu aventura?"
+          }
+        }
+      }
+    },
+    "It might be related to the app's language, try selecting another one." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podría estar relacionado con el lenguaje de la aplicación, intenta seleccionar otro."
+          }
+        }
+      }
+    },
+    "Join room" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unirse a una Sala"
+          }
+        }
+      }
+    },
+    "known_for_department_female: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conocida por el departamento: %@"
+          }
+        }
+      }
+    },
+    "known_for_department_male: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conocido por el departamento: %@"
+          }
+        }
+      }
+    },
+    "known_for_department_non_binary: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conocide por el departamento: %@"
+          }
+        }
+      }
+    },
+    "less" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "menos"
+          }
+        }
+      }
     },
     "Loading..." : {
       "localizations" : {
@@ -187,14 +628,68 @@
         }
       }
     },
-    "No videos available" : {
+    "Log in" : {
       "localizations" : {
-        "ca" : {
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No hi ha vídeos disponibles"
+            "value" : "Iniciar sesión"
           }
-        },
+        }
+      }
+    },
+    "Log in to access to all the app’s functionalities!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Inicia sesión para acceder a todas las funcionalidades de la aplicación!"
+          }
+        }
+      }
+    },
+    "Log out" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar sesión"
+          }
+        }
+      }
+    },
+    "Logged in as %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesión iniciada como %@"
+          }
+        }
+      }
+    },
+    "Login" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar sesión"
+          }
+        }
+      }
+    },
+    "more" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "más"
+          }
+        }
+      }
+    },
+    "No videos available." : {
+      "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -203,24 +698,187 @@
         }
       }
     },
-    "Select an option" : {
+    "Not implemented" : {
       "localizations" : {
-        "ca" : {
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sel·lecciona una opció"
+            "value" : "No implementado"
           }
-        },
+        }
+      }
+    },
+    "Ok" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceptar"
+          }
+        }
+      }
+    },
+    "Onboarding page %lld" : {
+      "shouldTranslate" : false
+    },
+    "Or sign in with" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O inicia sesión con"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contraseña"
+          }
+        }
+      }
+    },
+    "Password is required" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se requiere una contraseña"
+          }
+        }
+      }
+    },
+    "Password must contain at least:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La contraseña debe contener al menos:"
+          }
+        }
+      }
+    },
+    "Passwords do not match" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las contraseñas no coinciden"
+          }
+        }
+      }
+    },
+    "Place of Birth: %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lugar de nacimiento: %@"
+          }
+        }
+      }
+    },
+    "Please, enter a valid email" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por favor, introduzca un email válido"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfil"
+          }
+        }
+      }
+    },
+    "Read %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leer %@"
+          }
+        }
+      }
+    },
+    "Register" : {
+      "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select an option"
+            "value" : "Register"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecciona una opción"
+            "value" : "Registrarse"
+          }
+        }
+      }
+    },
+    "Rooms" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rooms"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salas"
+          }
+        }
+      }
+    },
+    "Select room" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una Sala"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezar"
+          }
+        }
+      }
+    },
+    "Success" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éxito"
+          }
+        }
+      }
+    },
+    "This operation is sensitive and requires recent authentication. Log in again before retrying this request." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta operación es delicada y requiere autenticación reciente. Inicia sesión de nuevo antes de intentar esta petición."
           }
         }
       }
@@ -237,28 +895,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desconocide"
-          }
-        }
-      }
-    },
-    "User profile" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Perfil d'usuari/a"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "User profile"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Perfil de usuarie"
           }
         }
       }
@@ -281,6 +917,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vídeos"
+          }
+        }
+      }
+    },
+    "Welcome Back" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenido/a de nuevo"
+          }
+        }
+      }
+    },
+    "Welcome to Filmatch!" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Bienvenido/a a Filmatch!"
           }
         }
       }
