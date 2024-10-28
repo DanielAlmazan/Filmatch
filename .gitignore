@@ -64,3 +64,4 @@ fastlane/test_output
 Config.plist
 .DS_Store
 GoogleService-Info.plist
+Info.plist
