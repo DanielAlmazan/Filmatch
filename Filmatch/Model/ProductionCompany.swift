@@ -1,5 +1,5 @@
 //
-//  Company.swift
+//  ProductionCompany.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/7/24.
@@ -9,11 +9,11 @@ import Foundation
 
 final class ProductionCompany: Codable, Sendable {
     let id: Int
-    let logoPath: String
+    let logoPath: String?
     let name: String
     let originCountry: String
     
-    init(id: Int, logoPath: String, name: String, originCountry: String) {
+    init(id: Int, logoPath: String?, name: String, originCountry: String) {
         self.id = id
         self.logoPath = logoPath
         self.name = name
@@ -33,7 +33,7 @@ extension ProductionCompany {
         let container = try decoder.container(keyedBy: CodingKeys.self)
      
         let id = try container.decode(Int.self, forKey: .id)
-        let logoPath = try container.decode(String.self, forKey: .logoPath)
+        let logoPath = try container.decode(String?.self, forKey: .logoPath)
         let name = try container.decode(String.self, forKey: .name)
         let originCountry = try container.decode(String.self, forKey: .originCountry)
         
