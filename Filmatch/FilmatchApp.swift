@@ -6,27 +6,30 @@
 //
 
 import Firebase
+import GoogleSignIn
 import SwiftUI
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication
-      .LaunchOptionsKey: Any]? = nil
-  ) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
-}
 
 @main
 struct FilmatchApp: App {
-  // register app delegate for Firebase setup
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+  @AppStorage("isOnboarding") var isOnboarding: Bool = true
+  var authVm: AuthenticationViewModel
+
+  init() {
+    FirebaseApp.configure()
+    authVm = .init()
+  }
+
 
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      if isOnboarding {
+        OnBoardingView()
+      } else {
+        ContentView(authVm: authVm)
+          .onOpenURL { url in
+            GIDSignIn.sharedInstance.handle(url)
+          }
+      }
     }
   }
 }
