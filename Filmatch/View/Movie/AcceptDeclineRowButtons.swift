@@ -18,9 +18,8 @@ struct AcceptDeclineRowButtons: View {
       Button {
         onDecline(movie, screenWidth)
       } label: {
-        Image(systemName: "xmark.circle.fill")
+        Image(.thumbDownButton)
           .resizable()
-          .foregroundStyle(.red)
           .scaledToFit()
           .frame(width: 100)
       }
@@ -30,9 +29,8 @@ struct AcceptDeclineRowButtons: View {
       Button {
         onAccept(movie, screenWidth)
       } label: {
-        Image(systemName: "checkmark.circle.fill")
+        Image(.thumbUpButton)
           .resizable()
-          .foregroundStyle(.green)
           .scaledToFit()
           .frame(width: 100)
       }
