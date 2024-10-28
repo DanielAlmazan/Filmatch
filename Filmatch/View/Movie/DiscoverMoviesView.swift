@@ -1,5 +1,5 @@
 //
-//  DiscoverFilmsView.swift
+//  DiscoverMoviesView.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/8/24.
@@ -41,19 +41,21 @@ struct DiscoverMoviesView: View {
 
   private var tint: Color {
     switch firstCardStatus {
-    case .ACCEPTED: return .green
-    case .DECLINED: return .red
-    case .WATCHED: return .gray
-    default: return .white
+    case .ACCEPTED: .green
+    case .DECLINED: .red
+    case .WATCHED: .gray
+    default: .white
     }
   }
+
+  @State private var isPresented: Bool = false
 
   @State private var screenWidth: CGFloat
 
   @State private var firstMovie: DiscoverMoviesItem?
   @State private var firstCardOffset: CGSize = .zero
   private var firstCardRotation: Angle {
-    return .degrees(firstCardOffset.width / 30)
+    .degrees(firstCardOffset.width / 30)
   }
 
   @State private var secondMovie: DiscoverMoviesItem?
@@ -64,7 +66,7 @@ struct DiscoverMoviesView: View {
   @State private var thirdCardBlurRadius: Double = 3
   @State private var thirdCardRotation: Angle = .degrees(2)
 
-  init(repository: Repository) {
+  init(repository: MoviesRepository) {
     self.vm = DiscoverMoviesViewModel(repository: repository)
     self.screenWidth = .zero
   }
@@ -80,106 +82,119 @@ struct DiscoverMoviesView: View {
           }
       }
       .frame(height: 0)
+      NavigationStack {
+        // MARK: Cards Stack
+        ZStack {
 
-      // MARK: Cards Stack
-      ZStack {
-        if let thirdMovie = thirdMovie {
-          MovieCardView(movie: thirdMovie)
-            .rotationEffect(thirdCardRotation)
-            .id(thirdMovie.id)
-            .blur(radius: thirdCardBlurRadius)
-            .onAppear {
-              withAnimation {
-                thirdCardRotation = randomRotation(
-                  isEven: self.vm.movies!.count % 2 != 0)
-              }
-            }
-        }
-
-        if secondMovie != nil {
-          MovieCardView(movie: secondMovie)
-            .rotationEffect(secondCardRotation)
-            .id(secondMovie!.id)
-            .blur(radius: secondCardBlurRadius)
-            .onAppear {
-              withAnimation {
-                secondCardRotation = randomRotation(
-                  isEven: self.vm.movies!.count % 2 == 0)
-              }
-            }
-        }
-
-        if firstMovie != nil {
-          MovieCardView(movie: firstMovie)
-            .offset(firstCardOffset)
-            .id(firstMovie!.id)
-            .rotationEffect(firstCardRotation)
-            .colorMultiply(tint)
-            .gesture(
-              DragGesture()
-                .onChanged { gesture in
-                  let multiplier = 1.35
-                  let offset = gesture.translation
-
-                  withAnimation {
-                    firstCardOffset = .init(
-                      width: offset.width * multiplier,
-                      height: offset.height * multiplier)
-                  }
+          // MARK: Third Movie
+          if let thirdMovie {
+            MovieCardView(movie: thirdMovie)
+              .rotationEffect(thirdCardRotation)
+              .id(thirdMovie.id)
+              .blur(radius: thirdCardBlurRadius)
+              .onAppear {
+                withAnimation {
+                  thirdCardRotation = randomRotation(
+                    isEven: self.vm.movies!.count % 2 != 0)
                 }
-                .onEnded { _ in
-                  let extraWidth: Double = 70
+              }
+          }
 
-                  switch firstCardStatus {
-                  case .ACCEPTED:
-                    acceptMovie(
-                      movie: firstMovie!,
-                      screenWidth: screenWidth + extraWidth)
-                  case .DECLINED:
-                    declineMovie(
-                      movie: firstMovie!,
-                      screenWidth: screenWidth + extraWidth)
-                  case .WATCHED:
-                    return
-                  case .PENDING:
-                    withAnimation(.bouncy) {
-                      firstCardOffset = .zero
+          // MARK: Second Movie
+          if let secondMovie {
+            MovieCardView(movie: secondMovie)
+              .rotationEffect(secondCardRotation)
+              .id(secondMovie.id)
+              .blur(radius: secondCardBlurRadius)
+              .onAppear {
+                withAnimation {
+                  secondCardRotation = randomRotation(
+                    isEven: self.vm.movies!.count % 2 == 0)
+                }
+              }
+          }
+
+          // MARK: First Movie
+          if let firstMovie {
+            MovieCardView(movie: firstMovie)
+              .offset(firstCardOffset)
+              .id(firstMovie.id)
+              .rotationEffect(firstCardRotation)
+              .colorMultiply(tint)
+              .onTapGesture {
+                isPresented = true
+              }
+              .sheet(isPresented: $isPresented) {
+                MovieDetailView(
+                  repository: self.vm.repository, filmId: firstMovie.id)
+              }
+              .gesture(
+                DragGesture()
+                  .onChanged { gesture in
+                    let multiplier = 1.35
+                    let offset = gesture.translation
+
+                    withAnimation {
+                      firstCardOffset = .init(
+                        width: offset.width * multiplier,
+                        height: offset.height * multiplier)
                     }
                   }
-                }
-            )
+                  .onEnded { _ in
+                    let extraWidth: Double = 70
+
+                    switch firstCardStatus {
+                    case .ACCEPTED:
+                      acceptMovie(
+                        movie: firstMovie,
+                        screenWidth: screenWidth + extraWidth)
+                    case .DECLINED:
+                      declineMovie(
+                        movie: firstMovie,
+                        screenWidth: screenWidth + extraWidth)
+                    case .WATCHED:
+                      return
+                    case .PENDING:
+                      withAnimation(.bouncy) {
+                        firstCardOffset = .zero
+                      }
+                    }
+                  }
+              )
+          }
         }
-      }
-      .padding()
-      .onAppear {
-        self.vm.discoverMovies()
-      }
-      .onChange(of: moviesList) { _, newList in
-        if newList.isEmpty { return }
+        .padding()
+        .navigationTitle("Discover Movies")
+        .onAppear {
+          self.vm.discoverMovies()
+        }
+        .onChange(of: moviesList) { _, newList in
+          if newList.isEmpty { return }
 
-        self.firstMovie = newList.count >= 1 ? newList.first : nil
-        self.secondMovie = newList.count >= 2 ? newList[1] : nil
-        self.thirdMovie = newList.count >= 3 ? newList[2] : nil
+          self.firstMovie = newList.count >= 1 ? newList.first : nil
+          self.secondMovie = newList.count >= 2 ? newList[1] : nil
+          self.thirdMovie = newList.count >= 3 ? newList[2] : nil
 
-        // Reset properties for the next card
-        firstCardOffset = .zero
-        
-        withAnimation {
-          self.thirdCardRotation = self.randomRotation(
-            isEven: newList.count % 2 == 0)
+          // Reset properties for the next card
+          firstCardOffset = .zero
+
+          withAnimation {
+            self.thirdCardRotation = self.randomRotation(
+              isEven: newList.count % 2 == 0)
+          }
+
+          // Fetch more movies if necessary
+          if newList.count == self.maxCardsStack {
+            self.vm.fetchNextPage()
+          }
         }
 
-        // Fetch more movies if necessary
-        if newList.count == self.maxCardsStack {
-          self.vm.fetchNextPage()
+        // MARK: Buttons
+        if let movie = moviesList.first {
+          AcceptDeclineRowButtons(
+            movie: movie, screenWidth: screenWidth, onAccept: acceptMovie,
+            onDecline: declineMovie)
         }
-      }
-
-      // MARK: Buttons
-      if let movie = moviesList.first {
-        AcceptDeclineRowButtons(
-          movie: movie, screenWidth: screenWidth, onAccept: acceptMovie,
-          onDecline: declineMovie)
       }
     } else {
       Text("\(self.vm.errorMessage ?? "Unexpected error")")
@@ -207,12 +222,6 @@ struct DiscoverMoviesView: View {
 
   /// Handles the process of the first card removal.
   ///
-  /// If the movies list is greater than 3, it will create a newThirdCard before deleting the first one.
-  /// That newThirdMovie will be appended to the stack. Then, either the first movie and the first card
-  /// will be deleted from each list.
-  ///
-  /// If the movies list equals 3, it will fetch the next page from the repository.
-  ///
   /// - Parameters:
   ///  - offset: The offset to be moved. It is used for modifying the offset but also for rotating the card.
   func removeCard(moveTo offset: Double) {
@@ -233,16 +242,11 @@ struct DiscoverMoviesView: View {
 
       // Remove the first movie and card from the lists
       self.vm.movies?.removeFirst()
-//
-//      // Reset properties for the next card
-//      firstCardOffset = .zero
-//
-//      self.thirdCardRotation = self.randomRotation(
-//        isEven: movies.count % 2 == 0)
     }
   }
 }
 
 #Preview {
   DiscoverMoviesView(repository: JsonPresetRepository())
+  //  DiscoverMoviesView(repository: TMDBRepository())
 }

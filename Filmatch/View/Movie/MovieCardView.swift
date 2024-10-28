@@ -12,25 +12,25 @@ struct MovieCardView: View {
 
   var body: some View {
     if let movie = movie {
-      ZStack(alignment: .bottom) {
-        PosterView(imageUrl: movie.posterPath, size: "w500")
-          .clipShape(.rect(cornerRadius: 20))
-
-        Text(movie.title)
+      PosterView(imageUrl: movie.posterPath, size: "w500")
+        .clipShape(.rect(cornerRadius: 20))
+        .overlay(alignment: .bottom) {
+          Text(movie.title)
           .font(.title3)
           .padding()
           .background(
             .ultraThinMaterial,
             in: .rect(cornerRadii: .init(topLeading: 10, topTrailing: 10))
           )
-          .frame(maxWidth: 200)
+          .frame(maxWidth: .infinity)
           .lineLimit(1)
-      }
-      .shadow(radius: 5)
+          .padding(.horizontal, 20)
+        }
+        .shadow(radius: 5)
     }
   }
 }
 
-#Preview{
+#Preview {
   MovieCardView(movie: .default)
 }

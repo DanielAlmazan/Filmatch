@@ -16,29 +16,35 @@ struct MovieVideosRowView: View {
   
   let baseVideoUrl = "https://www.youtube.com/watch?v="
 
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 16) {
-                if let movieVideos = videos {
-                    ForEach(movieVideos) { video in
-                        VStack(alignment: .leading) {
-                            Link(destination: URL(string: "\(baseVideoUrl)\(video.key)")!) {
-                                VideoView(video: video)
-                            }
-                            Text(video.name)
-                                .font(.headline)
-                                .lineLimit(1)
-                        }
-                        .frame(width: 250)
-                    }
-                } else {
-                    Text("No videos available")
-                }
+  var body: some View {
+    if let movieVideos = videos, !movieVideos.isEmpty {
+    ScrollView(.horizontal, showsIndicators: false) {
+      HStack(spacing: 16) {
+          ForEach(movieVideos) { video in
+            VStack(alignment: .leading) {
+              Link(destination: URL(string: "\(baseVideoUrl)\(video.key)")!) {
+                VideoView(video: video)
+              }
+              Text(video.name)
+                .font(.headline)
+                .lineLimit(1)
             }
+            .frame(width: 250)
+          }
         }
+      }
+    } else {
+      VStack {
+        Text("No videos available.")
+          .font(.title2)
+        Text("It might be related to the app's language, try selecting another one.")
+          .font(.callout)
+      }
+      .multilineTextAlignment(.center)
     }
+  }
 }
 
 #Preview {
-    MovieVideosRowView(videos: nil)
+  MovieVideosRowView(videos: nil)
 }

@@ -25,7 +25,7 @@ struct MovieDetailView: View {
   ///   - repository: The `MoviesRepository` used to fetch movie data.
   ///   - filmId: The unique identifier of the movie.
   // TODO: Implement preloadedMovie: DiscoverMoviesItem to show some data earlier
-  init(repository: MoviesRepository = MoviesRepository(), filmId: Int) {
+  init(repository: MoviesRepository = TMDBRepository(), filmId: Int) {
     self.repository = repository
     vm = MovieDetailViewModel(repository: repository)
 
@@ -33,80 +33,103 @@ struct MovieDetailView: View {
   }
 
   var body: some View {
-    ScrollView {
-      if vm.isMovieLoading {
-        ProgressView("Loading...")
-      } else if let movie = vm.movie {
-        PosterView(imageUrl: movie.posterPath, size: "w500")
-        VStack(alignment: .leading, spacing: 16) {
-          HStack {
-            VotesAverageCircleView(
-              averageVotes: movie.voteAverage / 10, lineWidth: 5
-            )
-            .frame(width: 36)
-
-            if let genres = movie.genres, !(movie.genres?.isEmpty ?? false) {
-              Text(parseNamesList(genres.map { $0.name }))
-                .font(.subheadline)
-            }
-
-            Spacer()
-
-            Image(systemName: "clock")
-            Text(minutesToHoursAndMinutes(minutes: movie.runtime))
-              .font(.footnote)
-          }
-
-          VStack(alignment: .leading) {
-            Text(movie.title)
-              .font(.title)
-
-            if !movie.tagline.isEmpty {
-              Text(movie.tagline)
-                .font(.subheadline)
-                .italic()
-
+    NavigationStack {
+      VStack {
+        if vm.isMovieLoading {
+          // Show a progress view while the movie data is loading.
+          ProgressView("Loading...")
+        } else if let movie = vm.movie {
+          // Display the movie details when data is available.
+          ScrollView {
+            // MARK: - Poster Image
+            PosterView(imageUrl: movie.posterPath, size: "w500")
+            
+            VStack(alignment: .leading, spacing: 16) {
+              HStack {
+                // MARK: - Average vote
+                VotesAverageCircleView(averageVotes: movie.voteAverage / 10)
+                
+                // MARK: - Genres
+                if let genres = movie.genres, !(movie.genres?.isEmpty ?? false) {
+                  Text(parseNamesList(genres.map { $0.name }))
+                    .font(.subheadline)
+                }
+                
+                Spacer()
+                
+                // MARK: - Runtime
+                Image(systemName: "clock")
+                Text(minutesToHoursAndMinutes(minutes: movie.runtime))
+                  .font(.footnote)
+              }
+              
+              VStack(alignment: .leading) {
+                // MARK: - Movie title
+                Text(movie.title)
+                  .font(.title)
+                
+                // MARK: - Tagline
+                if !movie.tagline.isEmpty {
+                  Text(movie.tagline)
+                    .font(.subheadline)
+                    .italic()
+                  
+                  Spacer(minLength: 16)
+                }
+                
+                // MARK: - Overview
+                Text(movie.overview)
+                
+                Spacer(minLength: 16)
+                
+                // MARK: - Directed by
+                Text(
+                  "Directed by \(parseNamesList(movie.credits.crew?.filter { $0.job == "Director" }.map { $0.name }))"
+                )
+                .lineLimit(0)
+                .bold()
+              }
+              
+              // MARK: - Videos
+              Text("Videos")
+                .font(.title2)
+              MovieVideosRowView(videos: movie.videos.results)
+              
               Spacer(minLength: 16)
+              
+              // MARK: - Cast
+              Text("Cast")
+                .font(.title2)
+              MovieCastRowView(cast: movie.credits.cast)
             }
-
-            Text(movie.overview)
-
-            Spacer(minLength: 16)
-
-            Text(
-              "Directed by \(parseNamesList(movie.credits.crew?.filter { $0.job == "Director" }.map { $0.name }))"
-            )
-
-            .lineLimit(0)
-            .bold()
+            .padding()
           }
-
-          Text("Videos")
-            .font(.title2)
-          MovieVideosRowView(videos: movie.videos.results)
-
-          Spacer(minLength: 16)
-
-          Text("Cast")
-            .font(.title2)
-          MovieCastRowView(cast: movie.credits.cast)
+          
+        } else {
+          // Display an error message if the movie failed to load.
+          Text("Error: Film not loaded: \(vm.errorMessage ?? "Unknown error")")
         }
-        .padding()
-
-      } else {
-        Text("Error: Film not loaded: \(vm.errorMessage ?? "Unknown error")")
       }
-    }
-    .onAppear {
-      vm.loadMovie(byId: movieId)
-    }
-    .ignoresSafeArea(edges: .top)
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .background(.bgBase)
+      .ignoresSafeArea(edges: .top)
+      .task {
+        // Load the movie data when the view appears.
+        vm.loadMovie(byId: movieId)
+      }
+    }  // VStack Base
   }
 
+  /// Converts minutes into a formatted string of hours and minutes.
+  /// - Parameter minutes: The total minutes to convert.
+  /// - Returns: A formatted string representing hours and minutes (e.g., "2h 15m").
   func minutesToHoursAndMinutes(minutes: Int) -> LocalizedStringResource {
     "\(minutes / 60)h \(minutes % 60)m"
   }
 
+  /// Parses a list of names into a human-readable string.
+  /// - Parameter names: An array of names.
+  /// - Returns: A formatted string of names separated by commas and "and" before the last name.
   func parseNamesList(_ names: [String]?) -> LocalizedStringResource {
     guard let names = names, !names.isEmpty else { return "Unknown" }
 
@@ -120,10 +143,16 @@ struct MovieDetailView: View {
   }
 }
 
+// Use the movie id's to preview these films. They can be loaded
+// either from the json presets or the TMDB repository
 #Preview {
   @Previewable @State var alienFilmId = 945961
   @Previewable @State var screamFilmId = 646385
+  @Previewable @State var jokerFilmId = 475557
 
-  return MovieDetailView(
-    repository: JsonPresetRepository(), filmId: screamFilmId)
+  MovieDetailView(
+//    repository: TMDBRepository(),
+    repository: JsonPresetRepository(),
+    filmId: alienFilmId
+  )
 }

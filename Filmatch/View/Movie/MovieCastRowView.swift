@@ -18,8 +18,7 @@ struct MovieCastRowView: View {
             if let cast = cast {
                 HStack(spacing: 16) {
                     ForEach(cast) { castMember in
-                        MovieCastMemberView(castMember: castMember)
-                            .padding(.vertical)
+                        MovieCastMemberThumbnailView(castMember: castMember)
                     }
                 }
             }
@@ -28,7 +27,7 @@ struct MovieCastRowView: View {
 }
 
 #Preview {
-//    let castMemberWithNilProfilePhoto: CastMember = CastMember(id: CastMember.default.id, adult: CastMember.default.adult, gender: CastMember.default.gender, knownForDepartment: CastMember.default.knownForDepartment, name: CastMember.default.name, originalName: CastMember.default.originalName, popularity: CastMember.default.popularity, profilePath: nil, castId: CastMember.default.castId, character: CastMember.default.character, creditId: CastMember.default.creditId, order: CastMember.default.order)
-    
-    return MovieCastRowView(cast: [.default, .default, .default, .default])
+    NavigationStack {
+      MovieCastRowView(cast: [.default, .default, .default, .default])
+    }
 }
