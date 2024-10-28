@@ -1,5 +1,5 @@
 //
-//  MovieVideosRow.swift
+//  MovieVideosRowView.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 19/8/24.
@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+/// `MovieVideosRowView` displays a horizontal scrollable row of videos for a movie.
+/// It includes a `Link` to the youtube video.
 struct MovieVideosRowView: View {
-    let videos: [Video]?
-    let baseVideoUrl = "https://www.youtube.com/watch?v="
+  /// An optional array of `Video` object representing the movie's videos.
+  /// Depending on the selected app's language, there might not be any result.
+  let videos: [Video]?
+  
+  let baseVideoUrl = "https://www.youtube.com/watch?v="
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {

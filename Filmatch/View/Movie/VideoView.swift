@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+/// `VideoView` displays a video thumbnail with a play icon overlay.
 struct VideoView: View {
+  /// Takes a `Video` object and constructs a URL for the thumbnail image.
   let video: Video
+  
+  /// Used with `AsyncImage` to load the thumbnail.
   let baseBackgroundImage = "https://i.ytimg.com/vi"
   
   var body: some View {

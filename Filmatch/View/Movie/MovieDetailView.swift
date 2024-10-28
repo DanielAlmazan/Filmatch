@@ -1,5 +1,5 @@
 //
-//  FilmDetailView.swift
+//  MovieDetailView.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/7/24.
@@ -7,13 +7,25 @@
 
 import SwiftUI
 
+/// `MovieDetailView` is a SwiftUI view that displays detailed information about a movie.
+/// It includes the movie's poster, title, genres, runtime, overview, director, cast, and videos.
+/// The view fetches movie data from a provided repository using a view model.
 struct MovieDetailView: View {
-  private let repository: Repository
+  /// The repository used to fetch movie data.
+  private let repository: MoviesRepository
+  
+  /// The view model that handles data fetching and state management.
   private let vm: MovieDetailViewModel
 
+  /// The unique identifier of the movie to display.
   let movieId: Int
 
-  init(repository: Repository, filmId: Int) {
+  /// Initializes a new `MovieDetailView` with a repository and a movie ID.
+  /// - Parameters:
+  ///   - repository: The `MoviesRepository` used to fetch movie data.
+  ///   - filmId: The unique identifier of the movie.
+  // TODO: Implement preloadedMovie: DiscoverMoviesItem to show some data earlier
+  init(repository: MoviesRepository = MoviesRepository(), filmId: Int) {
     self.repository = repository
     vm = MovieDetailViewModel(repository: repository)
 

@@ -7,7 +7,11 @@
 
 import Foundation
 
+/// `MoviesResponse` represents a general response containing a list of movies.
+/// It includes pagination information and an array of detailed movie responses.
 struct MoviesResponse: Codable {
-    let page: Int
-    let results: [MovieDetailSingleResponse]
+  /// The current page number.
+  let page: Int
+  /// An array of detailed movie responses.
+  let results: [MovieDetailSingleResponse]
 }

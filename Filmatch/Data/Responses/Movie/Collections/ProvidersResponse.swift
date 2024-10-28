@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// `ProvidersResponse` represents the response from an API call fetching movie providers.
+/// It contains a list of `MovieProvider` objects.
 final class ProvidersResponse: Codable {
-    let results: [MovieProvider]
+  /// An array of movie providers.
+  let results: [MovieProvider]
 }

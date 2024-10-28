@@ -7,16 +7,22 @@
 
 import Foundation
 
+/// `DiscoverMoviesResponse` represents the response from the movie discovery API call.
+/// It contains pagination information and an array of discovered movies.
 final class DiscoverMoviesResponse: Codable {
-    let page: Int
-    let results: [DiscoverMoviesItem]
-    let totalPages: Int
-    let totalResults: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case page = "page"
-        case results
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
+  /// The current page number.
+  let page: Int
+  /// An array of discovered movies.
+  let results: [DiscoverMoviesItem]
+  /// The total number of pages available.
+  let totalPages: Int
+  /// The total number of results found.
+  let totalResults: Int
+  
+  enum CodingKeys: String, CodingKey {
+    case page
+    case results
+    case totalPages = "total_pages"
+    case totalResults = "total_results"
+  }
 }
