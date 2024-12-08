@@ -28,8 +28,20 @@ struct HomeView: View {
         DiscoverMoviesView(repository: repository)
       }
 
+      Tab("Search", systemImage: "magnifyingglass", value: 1) {
+        DiscoverMoviesView(repository: repository)
+      }
+
       // MARK: - Rooms Tab
       /// Tab for managing and joining rooms.
+      Tab(value: 2) {
+        RoomsMainView()
+      } label: {
+        // Custom label with an image and text for the Rooms tab.
+        Image(.filmatchLogoTabItem)
+        Text("Rooms")
+      }
+
       Tab(value: 1) {
         RoomsMainView()
       } label: {
@@ -48,5 +60,5 @@ struct HomeView: View {
 }
 
 #Preview {
-  HomeView(authVm: AuthenticationViewModel(), repository: JsonPresetRepository())
+  HomeView(authVm: AuthenticationViewModel(), repository: TMDBRepository(remoteDatasource: JsonMoviesRemoteDatasource()))
 }

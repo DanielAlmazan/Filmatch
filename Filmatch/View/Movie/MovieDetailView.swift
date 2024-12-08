@@ -93,7 +93,9 @@ struct MovieDetailView: View {
               // MARK: - Videos
               Text("Videos")
                 .font(.title2)
-              MovieVideosRowView(videos: movie.videos.results)
+              if let videos = movie.videos {
+                MovieVideosRowView(videos: videos.results)
+              }
               
               Spacer(minLength: 16)
               
@@ -152,7 +154,7 @@ struct MovieDetailView: View {
 
   MovieDetailView(
 //    repository: TMDBRepository(),
-    repository: JsonPresetRepository(),
+    repository: TMDBRepository(remoteDatasource: JsonMoviesRemoteDatasource()),
     filmId: alienFilmId
   )
 }

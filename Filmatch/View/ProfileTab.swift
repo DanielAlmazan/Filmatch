@@ -1,5 +1,5 @@
 //
-//  ProfileDetails.swift
+//  ProfileTab.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 12/8/24.
@@ -19,61 +19,64 @@ struct ProfileTab: View {
   @State private var isReAuthenticating = false
 
   var body: some View {
-    VStack(alignment: .leading, spacing: 20) {
-      HStack {
-        if editMode?.wrappedValue == .active {
-          Button("Cancel", role: .cancel) {
-            editMode?.animation().wrappedValue = .inactive
+    if let user = authVm.currentUser {
+      VStack(alignment: .leading, spacing: 20) {
+        HStack {
+          if editMode?.wrappedValue == .active {
+            Button("Cancel", role: .cancel) {
+              editMode?.animation().wrappedValue = .inactive
+            }
           }
-        }
-        EditButton()
-          .frame(maxWidth: .infinity, alignment: .bottomTrailing)
-      }
-      
-      if let user = authVm.user {
-        Text("Logged in as \(user.email)")
-          .font(.headline)
-          .foregroundStyle(.secondary)
-      }
-
-      if editMode?.wrappedValue == .inactive {
-
-      }
-      
-      Group {
-        Button("Log out") {
-          authVm.logOut()
+          
+          EditButton()
+            .frame(maxWidth: .infinity, alignment: .bottomTrailing)
         }
         
-        Button("Delete Account") {
-          deleteAccount()
+        ProfileSummary(user: .init(uuid: user.uid, email: user.email ?? "", isAnonymous: user.isAnonymous, providers: []))
+          .frame(maxWidth: .infinity)
+        
+        if editMode?.wrappedValue == .inactive {
+          
         }
-        .foregroundStyle(.red)
-      }
-      .buttonStyle(.bordered)
-      .frame(maxWidth: .infinity, alignment: .center)
-    }
-    .padding()
-    .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
-      Button("Cancel", role: .cancel) { }
-      Button("Ok") {
-        if operationError.code == 17014 {
-          isReAuthenticating = true
+        
+        Group {
+          Button("Log out") {
+            authVm.logOut()
+          }
+          
+          Button("Delete Account") {
+            deleteAccount()
+          }
+          .foregroundStyle(.red)
         }
+        .buttonStyle(.bordered)
+        .frame(maxWidth: .infinity, alignment: .center)
       }
-    } message: { operationError in
-      Text(alertMessage)
-    }
-    .sheet(isPresented: $isReAuthenticating) {
-      LoginView(title: "Authenticate again", isReAuthentication: true, authVm: authVm, authSheetView: .constant(.LOGIN))
+      .padding()
+      .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
+        Button("Cancel", role: .cancel) { }
+        Button("Ok") {
+          if operationError.code == 17014 {
+            isReAuthenticating = true
+          }
+        }
+      } message: { operationError in
+        Text(alertMessage)
+      }
+      .sheet(isPresented: $isReAuthenticating) {
+        LoginView(title: "Authenticate again", isReAuthentication: true, authVm: authVm, authSheetView: .constant(.LOGIN))
+      }
+    } else {
+      VStack {
+        Text("No user logged in.")
+      }
     }
   }
   
   private func deleteAccount() {
     authVm.deleteAccount { result in
       switch result {
-        case .success(let message):
-          alertMessage = message
+        case .success(_):
           isError = false
         case .failure(let error):
           if let error = error as NSError? {

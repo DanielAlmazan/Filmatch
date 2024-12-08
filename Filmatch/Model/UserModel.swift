@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  UserModel.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/7/24.
@@ -7,14 +7,19 @@
 
 import SwiftUI
 
-struct User: Sendable {
+struct UserModel: Sendable {
+  let uuid: String
   let email: String
-  let birthdate = Date()
-  let image: Image = Image(systemName: "person.circle")
+//  let birthdate: Date?
+  let isAnonymous: Bool
+  var image: URL?
   let providers: [MovieProvider]
 
-  static let `default` = User(
+  static let `default` = UserModel(
+    uuid: "1",
     email: "anaclet@secret.com",
+//    birthdate: .now,
+    isAnonymous: false,
     providers: [
       MovieProvider(
         providerId: 8, providerName: "Netflix",

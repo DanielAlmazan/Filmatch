@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 /// `ExternalAuthProvidersView` displays buttons for external authentication providers like Google and Apple.
 /// It allows users to sign in using third-party services.
@@ -36,6 +37,22 @@ struct ExternalAuthProvidersView: View {
       
       // MARK: - Buttons
       HStack(alignment: .center, spacing: 10) {
+        // MARK: - Apple OAuth
+        Button {
+          onAppleSignIn?()
+        } label: {
+            Image(systemName: "apple.logo")
+              .resizable()
+              .scaledToFit()
+              .frame(width: 48, height: 48)
+              .tint(.bgBase)
+        }.alert("Not implemented", isPresented: $isAlertPresented) {
+        }
+        .aspectRatio(1, contentMode: .fit)
+        .padding()
+        .background(.onBgBase)
+        .clipShape(.circle)
+
         // MARK: - Google OAuth
         Button {
           onGoogleSignIn?()
@@ -45,18 +62,11 @@ struct ExternalAuthProvidersView: View {
             .scaledToFit()
             .frame(height: 48)
         }
-        
-        // MARK: - Apple OAuth
-        Button {
-          isAlertPresented = true
-        } label: {
-          Image(systemName: "apple.logo")
-            .resizable()
-            .scaledToFit()
-            .frame(height: 48)
-            .tint(.onBgBase)
-        }.alert("Not implemented", isPresented: $isAlertPresented) {
-        }
+        .aspectRatio(1, contentMode: .fit)
+        .padding()
+        .background(.onBgBase)
+        .clipShape(.circle)
+
       }
     }
 

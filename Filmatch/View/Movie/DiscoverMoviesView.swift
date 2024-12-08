@@ -5,6 +5,7 @@
 //  Created by Daniel Enrique Almazán Sellés on 24/8/24.
 //
 
+import CoreHaptics
 import SwiftUI
 
 struct DiscoverMoviesView: View {
@@ -65,6 +66,8 @@ struct DiscoverMoviesView: View {
   @State private var thirdMovie: DiscoverMoviesItem?
   @State private var thirdCardBlurRadius: Double = 3
   @State private var thirdCardRotation: Angle = .degrees(2)
+
+  @State private var engine: CHHapticEngine?
 
   init(repository: MoviesRepository) {
     self.vm = DiscoverMoviesViewModel(repository: repository)
@@ -161,6 +164,19 @@ struct DiscoverMoviesView: View {
                     }
                   }
               )
+              .onAppear(perform: prepareHaptics)
+              .onChange(of: firstCardStatus) { _, newStatus in
+                triggerHapticFeedback(for: newStatus)
+                // We need to fix the haptic feedback for the first card, as
+                // if we go to another app or if we block the screen, the haptic
+                // feedback stops working.
+              }
+              .onReceive(
+                NotificationCenter.default.publisher(
+                  for: UIApplication.didBecomeActiveNotification)
+              ) { _ in
+                self.restartHapticEngine()
+              }
           }
         }
         .padding()
@@ -201,20 +217,88 @@ struct DiscoverMoviesView: View {
     }
   }
 
-  func randomRotation(isEven: Bool) -> Angle {
+  private func prepareHaptics() {
+    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
+      return
+    }
+
+    do {
+      engine = try CHHapticEngine()
+      try engine?.start()
+    } catch {
+      print("Error initializing haptic engine: \(error.localizedDescription)")
+    }
+  }
+
+  private func restartHapticEngine() {
+    do {
+      try engine?.start()
+    } catch {
+      print("Error restarting haptic engine: \(error.localizedDescription)")
+    }
+  }
+
+  private func triggerHapticFeedback(for status: CardStatus) {
+    guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
+      return
+    }
+
+    let intensity: CHHapticEventParameter
+    let sharpness: CHHapticEventParameter
+    var times: Int = 1
+
+    print("Status: \(status)")
+
+    switch status {
+    case .ACCEPTED:
+      intensity = CHHapticEventParameter(
+        parameterID: .hapticIntensity, value: 0.6)
+      sharpness = CHHapticEventParameter(
+        parameterID: .hapticSharpness, value: 0.6)
+      times = 2
+    case .DECLINED:
+      intensity = CHHapticEventParameter(
+        parameterID: .hapticIntensity, value: 0.4)
+      sharpness = CHHapticEventParameter(
+        parameterID: .hapticSharpness, value: 0.4)
+    case .WATCHED:
+      intensity = CHHapticEventParameter(
+        parameterID: .hapticIntensity, value: 0.3)
+      sharpness = CHHapticEventParameter(
+        parameterID: .hapticSharpness, value: 0.3)
+    case .PENDING:
+      return
+    }
+
+    let hapticEvent = CHHapticEvent(
+      eventType: .hapticTransient, parameters: [intensity, sharpness],
+      relativeTime: 0)
+
+    do {
+      let pattern = try CHHapticPattern(events: [hapticEvent], parameters: [])
+      let player = try engine?.makePlayer(with: pattern)
+      for _ in 0...times {
+        try player?.start(atTime: 0)
+      }
+    } catch {
+      print("Error playing haptic feedback: \(error.localizedDescription)")
+    }
+  }
+
+  private func randomRotation(isEven: Bool) -> Angle {
     let randomValue = Double.random(in: 1.5...3.5)
 
     return .degrees(isEven ? randomValue : randomValue * -1)
   }
 
-  func acceptMovie(movie: DiscoverMoviesItem, screenWidth: CGFloat) {
+  private func acceptMovie(movie: DiscoverMoviesItem, screenWidth: CGFloat) {
     print("Movie \(movie.title) accepted")
 
     // TODO: Call to server for notifying this user wants to watch this movie
     removeCard(moveTo: screenWidth)
   }
 
-  func declineMovie(movie: DiscoverMoviesItem, screenWidth: CGFloat) {
+  private func declineMovie(movie: DiscoverMoviesItem, screenWidth: CGFloat) {
     print("Movie \(movie.title) declined")
 
     removeCard(moveTo: -screenWidth)
@@ -224,7 +308,7 @@ struct DiscoverMoviesView: View {
   ///
   /// - Parameters:
   ///  - offset: The offset to be moved. It is used for modifying the offset but also for rotating the card.
-  func removeCard(moveTo offset: Double) {
+  private func removeCard(moveTo offset: Double) {
     guard let movies = vm.movies, !movies.isEmpty else { return }
 
     let animationDuration = 0.3
@@ -247,6 +331,6 @@ struct DiscoverMoviesView: View {
 }
 
 #Preview {
-  DiscoverMoviesView(repository: JsonPresetRepository())
+  DiscoverMoviesView(repository: TMDBRepository(remoteDatasource: JsonMoviesRemoteDatasource()))
   //  DiscoverMoviesView(repository: TMDBRepository())
 }

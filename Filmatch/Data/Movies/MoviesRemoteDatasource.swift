@@ -1,13 +1,13 @@
 //
-//  MoviesRepository.swift
+//  MoviesRemoteDatasource.swift
 //  Filmatch
 //
-//  Created by Daniel Enrique Almazán Sellés on 23/7/24.
+//  Created by Daniel Enrique Almazán Sellés on 8/12/24.
 //
 
 import Foundation
 
-protocol MoviesRepository {
+protocol MoviesRemoteDatasource {
   /// Returns movie by ID if it exists.
   func getMovie(byId id: Int) async -> Result<MovieDetailSingleResponse, Error>
   

@@ -178,9 +178,13 @@ struct RegisterView: View {
       VStack {
         // External authentication providers (e.g., Google, Apple).
         ExternalAuthProvidersView {
-          authVm.googleOAuth()
+          Task {
+            try await authVm.googleOAuth()
+          }
         } onAppleSignIn: {
-          // TODO: Implement Apple OAuth
+          Task {
+            try await authVm.appleOAuth()
+          }
         }
         
         // Navigation to the login view.

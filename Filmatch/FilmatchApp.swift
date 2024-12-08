@@ -19,7 +19,6 @@ struct FilmatchApp: App {
     authVm = .init()
   }
 
-
   var body: some Scene {
     WindowGroup {
       if isOnboarding {

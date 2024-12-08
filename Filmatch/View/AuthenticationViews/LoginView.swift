@@ -144,9 +144,13 @@ struct LoginView: View {
       VStack {
         // MARK: - External authentication providers.
         ExternalAuthProvidersView {
-          authVm.googleOAuth()
+          Task {
+            try await authVm.googleOAuth()
+          }
         } onAppleSignIn: {
-          // TODO: Implement Apple OAuth
+          Task {
+            try await authVm.appleOAuth()
+          }
         }
 
         if !isReAuthentication {

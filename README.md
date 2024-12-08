@@ -18,3 +18,5 @@
 </dict>
 </plist>
 ```
+
+> Authentication logic based on [SwiftfulThinking](https://github.com/SwiftfulThinking)'s [Firebase SwiftUI Bootcamp](https://github.com/SwiftfulThinking/Firebase-SwiftUI-Bootcamp)

@@ -24,7 +24,7 @@ struct OnBoardingView: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         StartButtonView()
       }
-      .background(Gradient(colors: [.purple, .purple.mix(with: .black, by: 0.25)]))
+      .background(Gradient(colors: [.accent, .accentDarker]))
     }
 }
 

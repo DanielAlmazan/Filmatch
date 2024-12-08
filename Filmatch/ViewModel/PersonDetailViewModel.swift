@@ -36,12 +36,16 @@ final class PersonDetailViewModel {
     self.errorMessage = nil
     
     Task {
-      do {
-        self.person = try await repository.getPerson(byId: id)
-      } catch {
-        self.errorMessage = "Failed to load person with ID \"\(id)\"\n\(error.localizedDescription)"
-        print("Error: \(error)")
+      let result = await repository.getPerson(byId: id)
+      
+      switch result {
+        case .success(let person):
+          self.person = person
+        case .failure(let error):
+          self.errorMessage = "Failed to load person with ID \"\(id)\"\n\(error.localizedDescription)"
+          print("Error: \(error)")
       }
+
       self.isLoading = false
     }
   }

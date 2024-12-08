@@ -46,16 +46,15 @@ final class DiscoverMoviesViewModel {
     self.errorMessage = nil
     self.isLoading = true
 
-    var movies: [DiscoverMoviesItem] = []
-
     Task {
-      do {
-        movies = try await repository.discoverMovies(
-          withQueryParams: buildQueryParams())
-        self.movies?.append(contentsOf: movies)
-      } catch {
-        self.errorMessage = "Error discovering movies: \(error)"
-        print(self.errorMessage!)
+      let result = await repository.discoverMovies(
+        withQueryParams: buildQueryParams())
+      switch result {
+        case .success(let movies):
+          self.movies?.append(contentsOf: movies)
+        case .failure(let error):
+          self.errorMessage = error.localizedDescription
+          print(error)
       }
     }
     self.isLoading = false
@@ -70,7 +69,7 @@ final class DiscoverMoviesViewModel {
       URLQueryItem(
         name: "with_watch_providers",
         value:
-          "\(User.default.providers.map{ "\($0.providerId)" }.joined(separator: "|"))"
+          "\(UserModel.default.providers.map{ "\($0.providerId)" }.joined(separator: "|"))"
       ),
     ]
   }

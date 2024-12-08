@@ -157,7 +157,7 @@ struct PersonDetailView: View {
 
 #Preview {
   PersonDetailView(
-    repository: JsonPresetRepository(),
+    repository: TMDBRepository(remoteDatasource: JsonMoviesRemoteDatasource()),
     personId: CastMember.default.id
   )
 }

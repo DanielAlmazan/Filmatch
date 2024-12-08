@@ -148,6 +148,7 @@
       }
     },
     "Account deleted successfully" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -659,6 +660,7 @@
       }
     },
     "Logged in as %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -687,6 +689,9 @@
           }
         }
       }
+    },
+    "No user logged in." : {
+
     },
     "No videos available." : {
       "localizations" : {
@@ -842,6 +847,9 @@
           }
         }
       }
+    },
+    "Search" : {
+
     },
     "Select room" : {
       "localizations" : {
