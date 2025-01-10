@@ -20,11 +20,11 @@ final class PersonDetailViewModel {
   var errorMessage: String?
   
   /// The repository used to fetch person data.
-  private let repository: MoviesRepository
+  private let repository: PersonRepository
   
   /// Initializes a new instance of `PersonDetailViewModel`.
   /// - Parameter repository: The `MoviesRepository` used to fetch person data.
-  init(repository: MoviesRepository) {
+  init(repository: PersonRepository) {
     self.repository = repository
     self.isLoading = true
   }

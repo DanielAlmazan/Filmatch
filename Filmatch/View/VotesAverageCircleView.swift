@@ -34,7 +34,7 @@ struct VotesAverageCircleView: View {
     lowAverageBound: Double = 0.4,
     highAverageBound: Double = 0.7
   ) {
-    self.averageVotes = averageVotes
+    self.averageVotes = averageVotes / 10
     self.lowAverageRange = 0..<lowAverageBound
     self.highAverageRange = highAverageBound..<1
     self.mediumAverageRange = lowAverageBound..<highAverageBound
@@ -54,6 +54,7 @@ struct VotesAverageCircleView: View {
     .gaugeStyle(.accessoryCircularCapacity)
     .tint(color)
     .background(.bgBase)
+    .clipShape(.circle)
   }
 }
 

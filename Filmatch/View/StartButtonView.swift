@@ -27,5 +27,9 @@ struct StartButtonView: View {
 }
 
 #Preview {
-  StartButtonView()
+  VStack {
+    StartButtonView()
+  }
+  .frame(maxWidth: .infinity, maxHeight: .infinity)
+  .background(Gradient(colors: [.accent, .accentDarker]))
 }

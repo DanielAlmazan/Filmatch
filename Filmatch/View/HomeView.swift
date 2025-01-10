@@ -15,34 +15,40 @@ struct HomeView: View {
   @State var selectedTab = 0
   
   /// The authentication view model used for user authentication and profile management.
-  var authVm: AuthenticationViewModel
-  
+  @Environment(AuthenticationViewModel.self) var authVm
+
   /// The movies repository used to fetch and provide movie data.
-  var repository: MoviesRepository
+  @Environment(MoviesRepositoryImpl.self) private var moviesRepository
+  
+  @Environment(TvSeriesRepositoryImpl.self) private var tvSeriesRepository
+  
+  @Environment(FiltersRepositoryImpl.self) private var filtersRepository
 
   var body: some View {
     TabView(selection: $selectedTab) {
       // MARK: - Discover Tab
       /// Tab for discovering movies.
       Tab("Discover", systemImage: "star", value: 0) {
-        DiscoverMoviesView(repository: repository)
+        DiscoverView(moviesRepository: moviesRepository,
+                           tvSeriesRepository: tvSeriesRepository,
+                           filtersRepository: filtersRepository)
       }
 
       Tab("Search", systemImage: "magnifyingglass", value: 1) {
-        DiscoverMoviesView(repository: repository)
+        Text("Search view")
       }
 
       // MARK: - Rooms Tab
       /// Tab for managing and joining rooms.
       Tab(value: 2) {
-        RoomsMainView()
+        Text("Matches view")
       } label: {
         // Custom label with an image and text for the Rooms tab.
         Image(.filmatchLogoTabItem)
-        Text("Rooms")
+        Text("Matches")
       }
 
-      Tab(value: 1) {
+      Tab(value: 3) {
         RoomsMainView()
       } label: {
         // Custom label with an image and text for the Rooms tab.
@@ -52,7 +58,7 @@ struct HomeView: View {
 
       // MARK: - Profile Tab
       /// Tab for viewing and editing the user's profile.
-      Tab("Profile", systemImage: "person.crop.circle", value: 2) {
+      Tab("Profile", systemImage: "person.crop.circle", value: 4) {
         ProfileTab(authVm: authVm)
       }
     }
@@ -60,5 +66,13 @@ struct HomeView: View {
 }
 
 #Preview {
-  HomeView(authVm: AuthenticationViewModel(), repository: TMDBRepository(remoteDatasource: JsonMoviesRemoteDatasource()))
+  @Previewable @State var authVm = AuthenticationViewModel()
+  @Previewable @State var moviesRepository = MoviesRepositoryImpl(remoteDatasource: JsonMoviesRemoteDatasource())
+                                                           
+  @Previewable @State var filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
+                                                                   
+  HomeView()
+    .environment(authVm)
+    .environment(moviesRepository)
+    .environment(filtersRepository)
 }

@@ -125,6 +125,9 @@
     "%lld" : {
       "shouldTranslate" : false
     },
+    "%lld seasons" : {
+
+    },
     "%lldh %lldm" : {
       "localizations" : {
         "ca" : {
@@ -339,6 +342,7 @@
       }
     },
     "Confirm Password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -400,7 +404,11 @@
         }
       }
     },
+    "Discover %@" : {
+
+    },
     "Discover Movies" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -429,6 +437,9 @@
           }
         }
       }
+    },
+    "Done" : {
+
     },
     "Email" : {
       "localizations" : {
@@ -495,6 +506,18 @@
           }
         }
       }
+    },
+    "Filters" : {
+
+    },
+    "Filters not updated" : {
+
+    },
+    "Filters updated" : {
+
+    },
+    "Genres" : {
+
     },
     "Get started" : {
       "localizations" : {
@@ -680,6 +703,12 @@
         }
       }
     },
+    "Matches" : {
+
+    },
+    "Matches view" : {
+
+    },
     "more" : {
       "localizations" : {
         "es" : {
@@ -689,6 +718,9 @@
           }
         }
       }
+    },
+    "Movie" : {
+
     },
     "No user logged in." : {
 
@@ -786,6 +818,9 @@
         }
       }
     },
+    "Platforms" : {
+
+    },
     "Please, enter a valid email" : {
       "localizations" : {
         "es" : {
@@ -851,6 +886,12 @@
     "Search" : {
 
     },
+    "Search view" : {
+
+    },
+    "Select Filters" : {
+
+    },
     "Select room" : {
       "localizations" : {
         "es" : {
@@ -890,6 +931,9 @@
           }
         }
       }
+    },
+    "TV Show" : {
+
     },
     "Unknown" : {
       "localizations" : {
@@ -948,6 +992,9 @@
           }
         }
       }
+    },
+    "What do you want to watch?" : {
+
     }
   },
   "version" : "1.0"

@@ -11,16 +11,18 @@ import SwiftUI
 /// When tapped, it navigates to the cast member's profile page.
 struct MovieCastMemberThumbnailView: View {
   /// The `CastMember` object containing the cast member's information.
-  let castMember: CastMember
+  let castMember: MovieCastMember
 
   /// The width of the image displayed.
   let imageWidth: Double = 200
 
   /// The height of the image displayed.
   let imageHeight: Double = 300
+  
+  @Environment(PersonRepositoryImpl.self) var personRepository
 
   var body: some View {
-    NavigationLink(destination: PersonDetailView(personId: castMember.id)) {
+    NavigationLink(destination: PersonDetailView(repository: personRepository, personId: castMember.id)) {
       VStack(alignment: .leading) {
         if let profilePath = castMember.profilePath {
           PosterView(imageUrl: profilePath, size: "w200")
@@ -52,7 +54,10 @@ struct MovieCastMemberThumbnailView: View {
 }
 
 #Preview {
+  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: PersonDatasourceImpl(client: HttpClient(urlBase: AppConstants.urlBase)))
+
   NavigationStack {
     MovieCastMemberThumbnailView(castMember: .default)
+      .environment(personRepository)
   }
 }

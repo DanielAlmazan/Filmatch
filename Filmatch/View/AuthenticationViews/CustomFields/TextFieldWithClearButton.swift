@@ -24,6 +24,8 @@ struct TextFieldWithClearButton: View {
   /// The binding to manage focus state of the field.
   var focusedField: FocusState<Field?>.Binding
   
+  @State var isDirty: Bool = false
+  
   /// The specific field value used for focus management.
   let fieldValue: Field?
   
@@ -47,12 +49,18 @@ struct TextFieldWithClearButton: View {
           .focused(focusedField, equals: fieldValue)
           .onChange(of: field) {
             // Execute validation when the field value changes
-            validate()
+            if isDirty && !field.isEmpty {
+              validate()
+            }
           }
-          .onChange(of: focusedField.wrappedValue) { oldValue, _ in
+          .onChange(of: focusedField.wrappedValue) { oldValue, newValue in
             // Executes validation when the field looses focus
             if let oldValue, oldValue == .email {
               validate()
+            }
+            
+            if let newValue, newValue != .email {
+              isDirty = true
             }
           } // TextField
         

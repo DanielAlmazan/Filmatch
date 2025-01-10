@@ -32,7 +32,7 @@ struct ProfileTab: View {
             .frame(maxWidth: .infinity, alignment: .bottomTrailing)
         }
         
-        ProfileSummary(user: .init(uuid: user.uid, email: user.email ?? "", isAnonymous: user.isAnonymous, providers: []))
+        ProfileSummary(user: .init(uuid: user.uid, email: user.email ?? "", isAnonymous: user.isAnonymous, image: URL(string: user.photoUrl ?? ""), providers: []))
           .frame(maxWidth: .infinity)
         
         if editMode?.wrappedValue == .inactive {

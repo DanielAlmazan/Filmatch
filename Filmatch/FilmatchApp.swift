@@ -12,7 +12,7 @@ import SwiftUI
 @main
 struct FilmatchApp: App {
   @AppStorage("isOnboarding") var isOnboarding: Bool = true
-  var authVm: AuthenticationViewModel
+  @State var authVm: AuthenticationViewModel
 
   init() {
     FirebaseApp.configure()
@@ -24,7 +24,8 @@ struct FilmatchApp: App {
       if isOnboarding {
         OnBoardingView()
       } else {
-        ContentView(authVm: authVm)
+        ContentView()
+          .environment(authVm)
           .onOpenURL { url in
             GIDSignIn.sharedInstance.handle(url)
           }

@@ -11,23 +11,23 @@ import SwiftUI
 /// It uses `MovieCastMemberView` to display each cast member's information.
 struct MovieCastRowView: View {
   /// An optional array of `CastMember` objects representing the movie's cast.
-    let cast: [CastMember]?
+  let cast: [MovieCastMember]?
 
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            if let cast = cast {
-                HStack(spacing: 16) {
-                    ForEach(cast) { castMember in
-                        MovieCastMemberThumbnailView(castMember: castMember)
-                    }
-                }
-            }
+  var body: some View {
+    ScrollView(.horizontal, showsIndicators: false) {
+      if let cast = cast {
+        HStack(spacing: 16) {
+          ForEach(cast.indices, id: \.self) { index in
+            MovieCastMemberThumbnailView(castMember: cast[index])
+          }
         }
+      }
     }
+  }
 }
 
 #Preview {
-    NavigationStack {
-      MovieCastRowView(cast: [.default, .default, .default, .default])
-    }
+  NavigationStack {
+    MovieCastRowView(cast: [.default, .default, .default, .default])
+  }
 }

@@ -21,8 +21,8 @@ enum AuthenticationSheetView: String, Identifiable {
 /// `WelcomeView` is the initial screen shown to users, offering options to go to Rooms or log in.
 struct WelcomeView: View {
   /// Manages the authentication view model and sheet presentation state.
-  var authVm: AuthenticationViewModel
-  
+  @Environment(AuthenticationViewModel.self) var authVm
+
   /// Represents which view is active on the sheet.
   @State var authenticationSheetView: AuthenticationSheetView?
 
@@ -79,5 +79,5 @@ struct WelcomeView: View {
 }
 
 #Preview {
-  WelcomeView(authVm: .init())
+  WelcomeView()
 }

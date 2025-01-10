@@ -32,4 +32,26 @@ final class Utilities: Sendable {
     
     return controller
   }
+  
+  static let dateFormatter: DateFormatter = {
+    let df = DateFormatter()
+    df.dateFormat = "yyyy-MM-dd"
+    df.locale = Locale(identifier: "en_US_POSIX")
+    return df
+  }()
+
+  /// Parses a list of names into a human-readable string.
+  /// - Parameter names: An array of names.
+  /// - Returns: A formatted string of names separated by commas and "and" before the last name.
+  static func parseNamesList(_ names: [String]?) -> LocalizedStringResource {
+    guard let names = names, !names.isEmpty else { return "Unknown" }
+    
+    if names.count == 1 {
+      return "\(names.first!)"
+    } else {
+      let allButLast = names.prefix(upTo: names.count - 1)
+      
+      return "\(allButLast.joined(separator: ", ")) and \(names.last!)"
+    }
+  }
 }

@@ -18,6 +18,8 @@ struct SecureFieldWithRevealButton: View {
   /// Validation errors for the password.
   @Binding var passwordErrors: [LocalizedStringResource]?
   
+  @State var isDirty: Bool = false
+  
   /// The currently focused field.
   var focusedField: FocusState<Field?>.Binding
   
@@ -61,12 +63,18 @@ struct SecureFieldWithRevealButton: View {
         .textContentType(.password)
         .onChange(of: password) {
           // Executes validation when the password changes
-          validate()
-        }
-        .onChange(of: focusedField.wrappedValue) { oldValue, _ in
-          // Executes validation when the field looses focus
-          if oldValue == secureField || oldValue == insecureField {
+          if isDirty && !password.isEmpty{
             validate()
+          }
+        }
+        .onChange(of: focusedField.wrappedValue) { oldValue, newValue in
+          // Executes validation when the field looses focus
+          if oldValue == .secureField || oldValue == .insecureField {
+            validate()
+          }
+          
+          if let newValue, newValue != .secureField && newValue != .insecureField {
+            isDirty = true
           }
         } // Group Fields
 
@@ -74,16 +82,9 @@ struct SecureFieldWithRevealButton: View {
         // Button to toggle visibility of the password
         Button {
           isSecured.toggle()
-          
-          /*
-           When we toggle `isSecured`, the field changes from `SecuredField` to
-           `TextField` and that causes to loose the focus and hiding the
-           keyboard, which is not a good UX, so as soon as we toggle isSecured,
-           we reassign the focus to the proper field.
-           */
           focusedField.wrappedValue = isSecured ? secureField : insecureField
         } label: {
-          Image(systemName: isSecured ? "eye" : "eye.slash")
+          Image(systemName: isSecured ? "eye.slash" : "eye")
             .resizable()
             .scaledToFit()
             .frame(maxWidth: maxHeight) // Needed to keep the proportions between the two images
@@ -119,8 +120,8 @@ struct SecureFieldWithRevealButton: View {
       password: $password,
       passwordErrors: $passwordErrors,
       focusedField: $focus,
-      secureField: .secureField1,
-      insecureField: .insecureField1,
+      secureField: .secureField,
+      insecureField: .insecureField,
       maxHeight: 30,
       startingErrorMessage: nil,
       getPasswordErrors: {_,_ in

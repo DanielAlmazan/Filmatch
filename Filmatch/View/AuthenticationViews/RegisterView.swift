@@ -13,48 +13,45 @@ import SwiftUI
 struct RegisterView: View {
   /// The minimum length required for the password.
   let passwordMinLength: Int = 8
-  
+
   /// The title displayed at the top of the registration form.
   var title: LocalizedStringResource = "Get started"
-  
+
   /// The authentication view model responsible for handling authentication-related actions.
   var authVm: AuthenticationViewModel
-  
+
   /// An instance of `ValidationHelper` used for validating input fields.
   var helper = ValidationHelper()
-  
+
   /// Binding to control the current authentication sheet view (e.g., login or register).
   @Binding var authSheetView: AuthenticationSheetView?
-  
+
   /// The email entered by the user.
   @State private var email = ""
-  
+
   /// Validation errors for the email field.
   @State private var emailErrors: [LocalizedStringResource]?
-  
+
   /// The password entered by the user.
   @State private var password = ""
-  
+
   /// Validation errors for the password field.
   @State private var passwordErrors: [LocalizedStringResource]?
-  
+
   /// The password confirmation entered by the user.
   @State private var passwordConfirmation = ""
-  
+
   /// Validation errors for the password confirmation field.
   @State private var passwordConfirmationErrors: [LocalizedStringResource]?
-  
+
   /// The field currently focused in the form.
   @FocusState var focusedField: Field?
-  
+
   /// A computed property to determine if the form is valid.
   private var isFormValid: Bool {
-    email.isEmpty ||
-    emailErrors != nil ||
-    password.isEmpty ||
-    passwordErrors != nil ||
-    passwordConfirmation.isEmpty ||
-    password != passwordConfirmation
+    email.isEmpty || emailErrors != nil || password.isEmpty
+      || passwordErrors != nil || passwordConfirmation.isEmpty
+      || password != passwordConfirmation
   }
 
   var body: some View {
@@ -104,47 +101,17 @@ struct RegisterView: View {
               password: $password,
               passwordErrors: $passwordErrors,
               focusedField: $focusedField,
-              secureField: .secureField1,
-              insecureField: .insecureField1,
+              secureField: .secureField,
+              insecureField: .insecureField,
               maxHeight: 30,
               startingErrorMessage: "Password must contain at least:"
             ) { startingMessage, errors in
               helper.combineErrors(
-                startingWith: password.isEmpty ? nil : startingMessage, errors: errors)
+                startingWith: password.isEmpty ? nil : startingMessage,
+                errors: errors)
             } validate: {
               helper.updateErrorMessage($passwordErrors) {
                 helper.isPasswordValid(password)
-              }
-            }  // SecureField Password
-
-            Divider()
-
-            // MARK: - Confirm Password Field
-            // Password confirmation input field with reveal button and validation.
-            SecureFieldWithRevealButton(
-              hint: "Confirm Password",
-              password: $passwordConfirmation,
-              passwordErrors: $passwordConfirmationErrors,
-              focusedField: $focusedField,
-              secureField: .secureField2,
-              insecureField: .insecureField2,
-              maxHeight: 30,
-              startingErrorMessage: "Password must contain at least:"
-            ) { _, errors in
-              helper.combineErrors(startingWith: nil, errors: errors)
-            } validate: {
-              helper.updateErrorMessage($passwordConfirmationErrors) {
-                helper.isPasswordConfirmationValid(for: password,
-                                                   and: passwordConfirmation)
-              }
-            }
-            .onChange(of: password) {
-              // Re-validate password confirmation when the password changes.
-              if !passwordConfirmation.isEmpty {
-                helper.updateErrorMessage($passwordConfirmationErrors) {
-                  helper.isPasswordConfirmationValid(
-                    for: password, and: passwordConfirmation)
-                }
               }
             }  // SecureField Password
           }  // VStack Form
@@ -163,12 +130,15 @@ struct RegisterView: View {
           Text(errorMessage)
             .foregroundColor(.red)
         }
-        
+
         // Register button to submit the form.
         Button("Register") {
           authVm.createNewUser(
-            email: email.lowercased().trimmingCharacters(
-              in: .whitespacesAndNewlines), password: password)
+            email:
+              email
+              .lowercased()
+              .trimmingCharacters(in: .whitespacesAndNewlines),
+            password: password)
         }
         .buttonStyle(WideButtonStyle())
         .disabled(isFormValid)
@@ -186,7 +156,7 @@ struct RegisterView: View {
             try await authVm.appleOAuth()
           }
         }
-        
+
         // Navigation to the login view.
         HStack {
           Text("Already have an account?")
@@ -196,7 +166,7 @@ struct RegisterView: View {
           } label: {
             Text("Login")
           }
-        } // HStack Go to login
+        }  // HStack Go to login
       }  // VStack Footer
     }  // VStack Base
     .padding()

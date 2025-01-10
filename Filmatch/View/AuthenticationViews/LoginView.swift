@@ -96,8 +96,8 @@ struct LoginView: View {
               password: $password,
               passwordErrors: $passwordErrors,
               focusedField: $focusedField,
-              secureField: .secureField1,
-              insecureField: .insecureField1,
+              secureField: .secureField,
+              insecureField: .insecureField,
               maxHeight: 30,
               startingErrorMessage: "Password must contain at least:"
             ) { startingMessage, errors in
