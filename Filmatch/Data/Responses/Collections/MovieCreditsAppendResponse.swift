@@ -12,7 +12,7 @@ import Foundation
 /// It contains optional arrays of cast and crew members.
 final class MovieCreditsAppendResponse: Codable, Sendable {
   /// An optional array of cast members.
-  let cast: [MovieCastMember]?
+  let cast: [CastMember]?
   /// An optional array of crew members.
   let crew: [MovieCrewMember]?
   
@@ -20,7 +20,7 @@ final class MovieCreditsAppendResponse: Codable, Sendable {
   /// - Parameters:
   ///   - cast: An optional array of `CastMember`.
   ///   - crew: An optional array of `CrewMember`.
-  init(cast: [MovieCastMember]?, crew: [MovieCrewMember]?) {
+  init(cast: [CastMember]?, crew: [MovieCrewMember]?) {
     self.cast = cast
     self.crew = crew
   }
@@ -35,7 +35,7 @@ final class MovieCreditsAppendResponse: Codable, Sendable {
   /// - Parameter decoder: The decoder to read data from.
   convenience init(from decoder: any Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    let cast = try container.decodeIfPresent([MovieCastMember].self, forKey: .cast)
+    let cast = try container.decodeIfPresent([CastMember].self, forKey: .cast)
     let crew = try container.decodeIfPresent([MovieCrewMember].self, forKey: .crew)
     self.init(cast: cast, crew: crew)
   }

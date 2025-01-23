@@ -12,7 +12,7 @@ struct CardView: View {
 
   var body: some View {
     if let item {
-      PosterView(imageUrl: item.posterPath, size: "w500")
+      PosterView(imageUrl: item.posterPath, size: "w500", posterType: .movie)
         .clipShape(.rect(cornerRadius: 20))
         .overlay(alignment: .bottom) {
           Text(

@@ -13,6 +13,7 @@ import Foundation
 final class MovieDetailViewModel {
   /// The movie details fetched from the repository.
   var movie: DetailMovie?
+  var providers: WatchProvidersResponse?
 
   /// Indicates whether the movie is currently being loaded.
   var isMovieLoading: Bool
@@ -46,6 +47,22 @@ final class MovieDetailViewModel {
           print(error)
       }
       self.isMovieLoading = false
+    }
+  }
+  
+  @MainActor
+  func loadProviders(forMovieId id: Int) {
+    self.errorMessage = nil
+    
+    Task {
+      let result = await repository.getProviders(forMovieId: id)
+      switch result {
+      case .success(let providers):
+        self.providers = providers
+      case .failure(let error):
+        self.errorMessage = error.localizedDescription
+        print(error)
+      }
     }
   }
 }

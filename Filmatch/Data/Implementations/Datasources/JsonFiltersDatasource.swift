@@ -20,11 +20,11 @@ final class JsonFiltersDatasource: FiltersDatasource {
     .map { $0.genres }
   }
   
-  func getProviders(for mediaType: MediaType) async -> Result<[StreamingProviderSingleResponse], any Error> {
+  func getProviders(for mediaType: MediaType) async -> Result<[FiltersStreamingProviderSingleResponse], any Error> {
     return await client.get(
       "watch-providers-\(mediaType.rawValue)",
       extraQueryItems: [],
-      responseType: ProvidersResponse.self,
+      responseType: FiltersProvidersResponse.self,
       acceptanceRange: nil
     )
     .map { $0.results }

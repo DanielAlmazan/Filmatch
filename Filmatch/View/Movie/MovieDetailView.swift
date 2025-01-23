@@ -13,10 +13,12 @@ import SwiftUI
 struct MovieDetailView: View {
   /// The view model that handles data fetching and state management.
   @State private var vm: MovieDetailViewModel
-
+  
+  @State private var showProviders: Bool = false
+  
   /// The unique identifier of the movie to display.
   let movieId: Int
-
+  
   /// Initializes a new `MovieDetailView` with a repository and a movie ID.
   /// - Parameters:
   ///   - repository: The `MoviesRepository` used to fetch movie data.
@@ -24,10 +26,10 @@ struct MovieDetailView: View {
   // TODO: Implement preloadedMovie: DiscoverMoviesItem to show some data earlier
   init(repository: MoviesRepository, movieId: Int) {
     vm = .init(repository: repository)
-
+    
     self.movieId = movieId
   }
-
+  
   var body: some View {
     NavigationStack {
       VStack {
@@ -38,26 +40,10 @@ struct MovieDetailView: View {
           // Display the movie details when data is available.
           ScrollView {
             // MARK: - Poster Image
-            PosterView(imageUrl: movie.posterPath, size: "w500")
+            PosterView(imageUrl: movie.posterPath, size: "w500", posterType: .movie)
             
             VStack(alignment: .leading, spacing: 16) {
-              HStack {
-                // MARK: - Average vote
-                VotesAverageCircleView(averageVotes: movie.voteAverage)
-                
-                // MARK: - Genres
-                if !movie.genres.isEmpty {
-                  Text(Utilities.parseNamesList(movie.genres.map { $0.name ?? "nil" }))
-                    .font(.subheadline)
-                }
-                
-                Spacer()
-                
-                // MARK: - Runtime
-                Image(systemName: "clock")
-                Text(minutesToHoursAndMinutes(minutes: movie.runtime))
-                  .font(.footnote)
-              }
+              MovieFirstDetailsRow(voteAverage: movie.voteAverage, genres: movie.genres, runtime: movie.runtime, providers: vm.providers)
               
               VStack(alignment: .leading) {
                 // MARK: - Movie title
@@ -85,13 +71,10 @@ struct MovieDetailView: View {
                 .lineLimit(0)
                 .bold()
               }
-              
               // MARK: - Videos
               Text("Videos")
                 .font(.title2)
               MovieVideosRowView(videos: movie.videos.results)
-              
-              Spacer(minLength: 16)
               
               // MARK: - Cast
               Text("Cast")
@@ -99,8 +82,10 @@ struct MovieDetailView: View {
               MovieCastRowView(cast: movie.credits.cast)
             }
             .padding()
+            
+            VStack(spacing: 16) {
+            }
           }
-          
         } else {
           // Display an error message if the movie failed to load.
           Text("Error: Film not loaded: \(vm.errorMessage ?? "Unknown error")")
@@ -112,16 +97,9 @@ struct MovieDetailView: View {
       .task {
         // Load the movie data when the view appears.
         vm.loadMovie(byId: movieId)
+        vm.loadProviders(forMovieId: movieId)
       }
     }  // VStack Base
-  }
-
-  /// Converts minutes into a formatted string of hours and minutes.
-  /// - Parameter minutes: The total minutes to convert.
-  /// - Returns: A formatted string representing hours and minutes (e.g., "2h 15m").
-  private func minutesToHoursAndMinutes(minutes: Int?) -> LocalizedStringResource {
-    guard let minutes else { return "Unknown" }
-    return minutes == 0 ? "Unknown" : "\(minutes / 60)h \(minutes % 60)m"
   }
 }
 
@@ -132,12 +110,12 @@ struct MovieDetailView: View {
   @Previewable @State var screamFilmId = 646385
   @Previewable @State var jokerFilmId = 475557
   @Previewable @State var personRepository = PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource())
-
+  @Previewable @State var moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  
   MovieDetailView(
-    repository: MoviesRepositoryImpl(
-      remoteDatasource: JsonMoviesRemoteDatasource()
-    ),
+    repository: moviesRepository,
     movieId: alienFilmId
   )
   .environment(personRepository)
+  .environment(moviesRepository)
 }

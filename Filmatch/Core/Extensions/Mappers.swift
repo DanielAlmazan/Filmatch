@@ -114,3 +114,18 @@ extension MovieDetailSingleResponse {
           credits: self.credits)
   }
 }
+
+extension FiltersStreamingProviderSingleResponse {
+  func toProvider() -> ProviderModel {
+    .init(providerId: self.providerId,
+          providerName: self.providerName,
+          logoPath: self.logoPath,
+          displayPriority: self.displayPriority)
+  }
+}
+
+extension PersonMovieCreditsResponse {
+  func toPersonMovieCredits() -> PersonMovieCredits {
+    .init(cast: self.cast, crew: self.crew)
+  }
+}

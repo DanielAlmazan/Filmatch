@@ -9,7 +9,7 @@ import Foundation
 
 struct MediaFilters {
   var genres: [Genre] = []
-  var providers: [StreamingProviderSingleResponse] = []
+  var providers: [FiltersStreamingProviderSingleResponse] = []
   var minRating: Double?
 
   var minYear: Int?

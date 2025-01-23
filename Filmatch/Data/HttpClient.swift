@@ -95,7 +95,7 @@ final class HttpClient: Client {
       return .failure(URLError(.badServerResponse))
     }
 
-    print("Response: \(String(decoding: data, as: UTF8.self))")
+//    print("Response: \(String(decoding: data, as: UTF8.self))")
 
     let decoder = JSONDecoder()
 

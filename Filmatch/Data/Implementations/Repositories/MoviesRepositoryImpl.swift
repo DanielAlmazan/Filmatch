@@ -10,11 +10,12 @@ import Foundation
 /// `MoviesRepositoryImpl` is a concrete implementation of the `MoviesRepository` protocol.
 /// It communicates with The Movie Database (TMDb) API to fetch movie-related data such as movie details, credits, and videos.
 /// This class handles constructing requests, adding necessary query parameters, and decoding the JSON responses into model objects.
-@Observable final class MoviesRepositoryImpl: MoviesRepository {
+@Observable
+final class MoviesRepositoryImpl: MoviesRepository {
   private let remoteDatasource: MoviesRemoteDatasource
 
-  init(remoteDatasource: MoviesRemoteDatasource) {
-    self.remoteDatasource = remoteDatasource
+  init(datasource: MoviesRemoteDatasource) {
+    self.remoteDatasource = datasource
   }
 
   func getMovie(byId id: Int) async -> Result<
@@ -23,8 +24,12 @@ import Foundation
     await remoteDatasource.getMovie(byId: id)
   }
 
-  func getMovieCredits(id: Int) async -> Result<MovieCredits, any Error> {
+  func getMovieCredits(id: Int) async -> Result<PersonMovieCreditsResponse, any Error> {
     await remoteDatasource.getMovieCredits(id: id)
+  }
+  
+  func getProviders(forMovieId id: Int) async -> Result<WatchProvidersResponse, any Error> {
+    await remoteDatasource.getProviders(forMovieId: id)
   }
 
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
@@ -33,14 +38,8 @@ import Foundation
     await remoteDatasource.discoverMovies(withQueryParams: queryParams)
   }
 
-  func searchMovies(
-    _ query: String, includeAdult: Bool?, primaryReleaseDate: String?,
-    page: Int?, region: String?, year: Int?
-  ) async -> Result<[MoviesSearchResponse], any Error> {
-    await remoteDatasource.searchMovies(
-      query, includeAdult: includeAdult, primaryReleaseDate: primaryReleaseDate,
-      page: page, region: region, year: year
-    )
+  func searchMovies(_ query: String, page: Int?) async -> Result<MoviesSearchResponse, any Error> {
+    await remoteDatasource.searchMovies(query, page: page)
   }
 
   func getVideos(byMovieId id: Int) async -> Result<

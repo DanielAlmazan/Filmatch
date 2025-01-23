@@ -15,10 +15,8 @@ struct FiltersView: View {
     GridItem(),
   ]
   
-  let edgeInsets: EdgeInsets = .init(top: 20, leading: 0, bottom: 20, trailing: 0)
-
   var isMovieSelected: Bool { vm.selectedMedia == .movie }
-  var providers: [StreamingProviderSingleResponse] {
+  var providers: [FiltersStreamingProviderSingleResponse] {
     isMovieSelected ? vm.movieProviders : vm.tvProviders
   }
   var genres: [Genre] {
@@ -43,7 +41,7 @@ struct FiltersView: View {
             }
 
             FilterToggleView(
-              text: "TV Show", isActive: vm.selectedMedia == .tvSeries
+              text: "TV Series", isActive: vm.selectedMedia == .tvSeries
             ) {
               vm.selectedMedia = .tvSeries
             }
@@ -54,9 +52,11 @@ struct FiltersView: View {
       }
 
       Section("Genres") {
-        ScrollView(.horizontal) {
-          if self.vm.selectedMedia == .movie && self.vm.areMovieGenresLoading ||
-              self.vm.areTvGenresLoading {
+        if self.vm.selectedMedia == .movie && self.vm.areMovieGenresLoading ||
+            self.vm.areTvGenresLoading {
+          ProgressView()
+        } else {
+          ScrollView(.horizontal) {
             LazyHGrid(rows: rows, spacing: 16) {
               ForEach(genres) { genre in
                 FilterToggleView(
@@ -67,39 +67,40 @@ struct FiltersView: View {
                 }
               }
             }
-            .padding(.horizontal, 24)
-          } else {
-            ProgressView()
           }
+          .scrollClipDisabled()
         }
-        .listRowInsets(edgeInsets)
       }
 
       Section("Platforms") {
-        ScrollView(.horizontal) {
-          LazyHGrid(rows: rows, spacing: 16) {
-            FilterToggleView(
-              text: "All",
-              isSquared: true,
-              isActive: vm.areAllProvidersSelected()
-            ) {
-              vm.toggleAllProviders()
-            }
-
-            ForEach(providers) { provider in
-              VStack {
-                FilterToggleView(
-                  image: provider.logoPath,
-                  isActive: vm.isProviderSelected(provider)
-                ) {
-                  vm.onProvidersSelectionChanged(provider)
+        if self.vm.selectedMedia == .movie && self.vm.areMovieProvidersLoading ||
+            self.vm.areTvProvidersLoading {
+          ProgressView()
+        } else {
+          ScrollView(.horizontal) {
+            LazyHGrid(rows: rows, spacing: 16) {
+              FilterToggleView(
+                text: "All",
+                isSquared: true,
+                isActive: vm.areAllProvidersSelected()
+              ) {
+                vm.toggleAllProviders()
+              }
+              
+              ForEach(providers) { provider in
+                VStack {
+                  FilterToggleView(
+                    image: provider.logoPath,
+                    isActive: vm.isProviderSelected(provider)
+                  ) {
+                    vm.onProvidersSelectionChanged(provider)
+                  }
                 }
               }
             }
           }
-          .padding(.horizontal, 24)
+          .scrollClipDisabled()
         }
-        .listRowInsets(edgeInsets)
       }
     }
     .task {

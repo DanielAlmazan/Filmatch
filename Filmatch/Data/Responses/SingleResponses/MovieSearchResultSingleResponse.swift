@@ -9,7 +9,7 @@ import Foundation
 
 /// `MovieSearchResultSingleResponse` represents a single movie result from a search query.
 /// It contains basic information about the movie.
-final class MovieSearchResultSingleResponse: Codable {
+final class MovieSearchResultSingleResponse: Codable, Sendable {
   /// Indicates whether the movie is for adults only.
   let adult: Bool
   /// The path to the backdrop image of the movie.

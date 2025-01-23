@@ -11,7 +11,7 @@ import SwiftUI
 /// It includes the person's profile image, name, biography, and other relevant information.
 struct PersonDetailView: View {
   /// The repository used to fetch person data.
-//  private let repository: PersonRepository
+  //  private let repository: PersonRepository
 
   /// The view model that handles data fetching and state management.
   private let personVm: PersonDetailViewModel
@@ -19,8 +19,7 @@ struct PersonDetailView: View {
   /// The unique identifier of the person to display.
   let personId: Int
 
-  /// State variable to control whether the biography is expanded.
-  @State private var isBiographyExpanded: Bool = false
+  @Environment(MoviesRepositoryImpl.self) var moviesRepository
 
   /// Initializes a new `PersonDetailView` with a repository and a person ID.
   /// - Parameters:
@@ -64,15 +63,24 @@ struct PersonDetailView: View {
   ///   - person: The person whose details are being displayed.
   ///   - birthday: The birthday that is being displayed
   /// - Returns: LocalizedStringResource
-  private func bornStringResourceKey(gender: Gender, birthday: String)
+  private func bornStringResourceKey(gender: Gender, birthday: Date)
     -> LocalizedStringResource
   {
-    switch gender {
-    case .female: "born_female: \(birthday)"
-    case .male: "born_male: \(birthday)"
-    case .notSet, .nonBinary: "born_non_binary: \(birthday)"
+    let dateFormatter = DateFormatter()
+    let locale = Locale(identifier: "en_US_POSIX")
+    dateFormatter.locale = locale
+    dateFormatter.dateFormat = "MMMM dd, yyyy"
+    let birthdayString = dateFormatter.string(from: birthday)
+    return switch gender {
+    case .female: "born_female: \(birthdayString)"
+    case .male: "born_male: \(birthdayString)"
+    case .notSet, .nonBinary: "born_non_binary: \(birthdayString)"
     }
   }
+
+  let gridRows: [GridItem] = [
+    GridItem()
+  ]
 
   var body: some View {
     VStack {
@@ -84,16 +92,8 @@ struct PersonDetailView: View {
         ScrollView {
           VStack(alignment: .center, spacing: 16) {
             // MARK: - Profile Image
-            if let profilePath = person.profilePath {
-              PosterView(imageUrl: profilePath, size: "w500")
-            } else {
-              Image(systemName: "person.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 300)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .shadow(radius: 5)
-            }
+            PosterView(
+              imageUrl: person.profilePath, size: "w500", posterType: .person)
 
             // MARK: - Name
             Text(person.name)
@@ -112,31 +112,37 @@ struct PersonDetailView: View {
                 Text("Biography")
                   .font(.headline)
 
-                Text(person.biography)
-                  .font(.body)
-                  .lineLimit(isBiographyExpanded ? nil : 3)
-                  .animation(
-                    .easeInOut(duration: 0.3), value: isBiographyExpanded)
-
-                // "Read more"/"Read less" button
-                Button {
-                  isBiographyExpanded.toggle()
-                } label: {
-                  Text(
-                    "Read \(isBiographyExpanded ? LocalizedStringResource(stringLiteral: "less") : LocalizedStringResource(stringLiteral: "more"))"
-                  )
-                  .font(.caption)
-                  .foregroundColor(.blue)
-                }
-                .tint(.accent)
+                ExpandableText(person.biography, lineLimit: 2)
               }
-              .frame(maxWidth: .infinity, alignment: .leading)
               .padding()
             }  // Biography
 
+            // MARK: - Credits
+            VStack {
+              Text("Movies")
+                .font(.title2)
+              if let movies = person.movieCredits.cast {
+                PersonMovieCreditsAsCastRow(movies: movies.sortedByOrderOrReleaseDate())
+              }
+              
+              if let movies = person.movieCredits.crew {
+                PersonMovieCreditsAsCrewRow(movies: movies.sortedByPopularityAndJob())
+              }
+              
+              Text("Tv Series")
+                .font(.title2)
+              if let tvSeries = person.tvCredits.cast {
+                PersonTvSeriesCreditsAsCastRow(tvSeries: tvSeries.sortedByPopularity())
+              }
+              
+              if let tvSeries = person.tvCredits.crew {
+                PersonTvSeriesCreditsAsCrewRow(tvSeries: tvSeries)
+              }
+            }
+
             // MARK: - Additional Information
-            VStack(alignment: .leading, spacing: 4) {
-              if let birthday = person.birthday, !birthday.isEmpty {
+            VStack(alignment: .leading, spacing: 8) {
+              if let birthday = person.birthday {
                 Text(
                   bornStringResourceKey(
                     gender: person.gender, birthday: birthday))
@@ -153,22 +159,38 @@ struct PersonDetailView: View {
             .padding()
           }
         }
-      } else {
+      } else if let errorMessage = personVm.errorMessage {
         // Display an error message if the data failed to load.
-        Text("Error: Person not loaded: \(personVm.errorMessage ?? "Unknown error")")
+        Text(
+          "Error: Person not loaded: \(errorMessage)"
+        )
       }
     }
     .ignoresSafeArea(edges: .top)
     .task {
       // Load the person data when the view appears.
-      personVm.loadPerson(byId: personId)
+      self.personVm.loadPerson(byId: personId)
     }
   }
 }
 
 #Preview {
-  PersonDetailView(
-    repository: PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource()),
-    personId: MovieCastMember.default.id
-  )
+  NavigationStack {
+    PersonDetailView(
+      repository: PersonRepositoryImpl(
+        datasource: JsonPersonRemoteDatasource()
+      ),
+      personId: CastMember.default.id
+    )
+    .environment(
+      MoviesRepositoryImpl(
+        datasource: JsonMoviesRemoteDatasource()
+      )
+    )
+    .environment(
+      TvSeriesRepositoryImpl(
+        datasource: JsonTvSeriesDatasource()
+      )
+    )
+  }
 }

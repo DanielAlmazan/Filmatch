@@ -21,7 +21,7 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   /// - Returns: A `MovieDetailSingleResponse` object containing detailed movie information.
   func getMovie(byId id: Int) async -> Result<MovieDetailSingleResponse, Error>
   {
-    let endpoint = "/movie/\(id)"
+    let endpoint = "movie/\(id)"
     let extraItems = [
       URLQueryItem(
         name: QueryParam.appendToResponse.rawValue, value: "credits,videos")
@@ -38,13 +38,21 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   /// - Parameter id: The unique identifier of the movie.
   /// - Throws: An error if the network request fails or decoding fails.
   /// - Returns: A `MovieCredits` object containing cast and crew information.
-  func getMovieCredits(id: Int) async -> Result<MovieCredits, Error> {
-    let endpoint = "/movie/\(id)/credits"
+  func getMovieCredits(id: Int) async -> Result<PersonMovieCreditsResponse, Error> {
+    let endpoint = "movie/\(id)/credits"
     return await client.get(
       endpoint,
       extraQueryItems: [],
-      responseType: MovieCredits.self
+      responseType: PersonMovieCreditsResponse.self
     )
+  }
+  
+  func getProviders(forMovieId id: Int) async -> Result<WatchProvidersResponse, any Error> {
+    let endpoint = "movie/\(id)/watch/providers"
+    return await client.get(
+      endpoint,
+      extraQueryItems: [],
+      responseType: WatchProvidersResponse.self)
   }
 
   /// Discovers movies based on the provided query parameters.
@@ -54,7 +62,7 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
     -> Result<[DiscoverMoviesItemSingleResponse], Error>
   {
-    let endpoint = "/discover/movie"
+    let endpoint = "discover/movie"
     return await client.get(
       endpoint,
       extraQueryItems: queryParams,
@@ -72,11 +80,15 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   ///   - year: The year to filter results.
   /// - Throws: An error if the operation fails.
   /// - Returns: An array of `MoviesSearchResponse`.
-  func searchMovies(
-    _ query: String, includeAdult: Bool?, primaryReleaseDate: String?,
-    page: Int?, region: String?, year: Int?
-  ) async -> Result<[MoviesSearchResponse], Error> {
-    return .success([])
+  func searchMovies(_ query: String, page: Int?) async -> Result<MoviesSearchResponse, Error> {
+    let endpoint = "search/movie"
+    return await client.get(
+      endpoint,
+      extraQueryItems: [
+        URLQueryItem(name: QueryParam.page.rawValue, value: "\(page ?? 1)"),
+        URLQueryItem(name: QueryParam.query.rawValue, value: query)
+      ],
+      responseType: MoviesSearchResponse.self)
   }
 
   /// Retrieves videos (like trailers and teasers) associated with a specific movie.
@@ -85,7 +97,7 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   /// - Returns: A `MovieVideosResponse` object containing video information.
   func getVideos(byMovieId id: Int) async -> Result<MovieVideosResponse, Error>
   {
-    let endpoint = "/movie/\(id)/videos"
+    let endpoint = "movie/\(id)/videos"
     return await client.get(
       endpoint,
       extraQueryItems: [],

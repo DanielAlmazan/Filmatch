@@ -9,7 +9,7 @@ import Foundation
 
 /// `DiscoverMoviesItem` represents a movie item in the list of discovered movies.
 /// It includes basic information about the movie.
-final class DiscoverMoviesItemSingleResponse: Identifiable, Codable, Sendable {
+final class DiscoverMoviesItemSingleResponse: Identifiable, Sendable {
   /// Indicates whether the movie is for adults only.
   let adult: Bool
   /// The path to the backdrop image of the movie.
@@ -27,9 +27,9 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Codable, Sendable {
   /// The popularity score of the movie.
   let popularity: Double
   /// The path to the poster image of the movie.
-  let posterPath: String
+  let posterPath: String?
   /// The release date of the movie.
-  let releaseDate: String?
+  let releaseDate: Date?
   /// The title of the movie.
   let title: String
   /// Indicates whether the movie has a video associated.
@@ -38,18 +38,6 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Codable, Sendable {
   let voteAverage: Double
   /// The total number of votes the movie has received.
   let voteCount: Int
-  
-  enum CodingKeys: String, CodingKey {
-    case adult, id, title, video, overview, popularity
-    case backdropPath = "backdrop_path"
-    case genreIds = "genre_ids"
-    case originalLanguage = "original_language"
-    case originalTitle = "original_title"
-    case posterPath = "poster_path"
-    case releaseDate = "release_date"
-    case voteAverage = "vote_average"
-    case voteCount = "vote_count"
-  }
   
   /// Initializes a new `DiscoverMoviesItem` instance.
   /// - Parameters:
@@ -69,15 +57,15 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Codable, Sendable {
   ///   - voteCount: The total number of votes the movie has received.
   init(
     adult: Bool,
-    backdropPath: String,
-    genreIds: [Int],
+    backdropPath: String?,
+    genreIds: [Genre.ID],
     id: Int,
     originalLanguage: String,
     originalTitle: String,
     overview: String,
     popularity: Double,
-    posterPath: String,
-    releaseDate: String?,
+    posterPath: String?,
+    releaseDate: Date?,
     title: String,
     video: Bool,
     voteAverage: Double,
@@ -97,6 +85,80 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Codable, Sendable {
     self.video = video
     self.voteAverage = voteAverage
     self.voteCount = voteCount
+  }
+}
+
+extension DiscoverMoviesItemSingleResponse: Codable {
+  enum CodingKeys: String, CodingKey {
+    case adult, id, title, video, overview, popularity
+    case backdropPath = "backdrop_path"
+    case genreIds = "genre_ids"
+    case originalLanguage = "original_language"
+    case originalTitle = "original_title"
+    case posterPath = "poster_path"
+    case releaseDate = "release_date"
+    case voteAverage = "vote_average"
+    case voteCount = "vote_count"
+  }
+  
+  convenience init(from decoder: any Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+
+    let adult = try container.decode(Bool.self, forKey: .adult)
+    let id = try container.decode(Int.self, forKey: .id)
+    let title = try container.decode(String.self, forKey: .title)
+    let video = try container.decode(Bool.self, forKey: .video)
+    let overview = try container.decode(String.self, forKey: .overview)
+    let popularity = try container.decode(Double.self, forKey: .popularity)
+    let backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+    let genreIds = try container.decode([Int].self, forKey: .genreIds)
+    let originalLanguage = try container.decode(String.self, forKey: .originalLanguage)
+    let originalTitle = try container.decode(String.self, forKey: .originalTitle)
+    let posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
+    
+    let releaseDateString = try container.decodeIfPresent(String.self, forKey: .releaseDate)
+    let releaseDate: Date? = {
+      guard let dateStr = releaseDateString, !dateStr.isEmpty else { return nil }
+      
+      return Utilities.dateFormatter.date(from: dateStr)
+    }()
+    
+    let voteAverage = try container.decode(Double.self, forKey: .voteAverage)
+    let voteCount = try container.decode(Int.self, forKey: .voteCount)
+    
+    self.init(adult: adult,
+              backdropPath: backdropPath,
+              genreIds: genreIds,
+              id: id,
+              originalLanguage: originalLanguage,
+              originalTitle: originalTitle,
+              overview: overview,
+              popularity: popularity,
+              posterPath: posterPath,
+              releaseDate: releaseDate,
+              title: title,
+              video: video,
+              voteAverage: voteAverage,
+              voteCount: voteCount)
+  }
+  
+  func encode(to encoder: any Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    
+    try container.encode(adult, forKey: .adult)
+    try container.encode(backdropPath, forKey: .backdropPath)
+    try container.encode(genreIds, forKey: .genreIds)
+    try container.encode(id, forKey: .id)
+    try container.encode(originalLanguage, forKey: .originalLanguage)
+    try container.encode(originalTitle, forKey: .originalTitle)
+    try container.encode(overview, forKey: .overview)
+    try container.encode(popularity, forKey: .popularity)
+    try container.encode(posterPath, forKey: .posterPath)
+    try container.encode(releaseDate, forKey: .releaseDate)
+    try container.encode(title, forKey: .title)
+    try container.encode(video, forKey: .video)
+    try container.encode(voteAverage, forKey: .voteAverage)
+    try container.encode(voteCount, forKey: .voteCount)
   }
 }
 

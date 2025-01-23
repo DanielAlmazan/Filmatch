@@ -23,29 +23,27 @@ struct TvSeriesDetailView: View {
         if vm.isTvSeriesLoading {
           ProgressView("Loading...")
         } else if let tvSeries = vm.tvSeries {
-          PosterView(imageUrl: tvSeries.posterPath, size: "w500")
+          PosterView(imageUrl: tvSeries.posterPath, size: "w500", posterType: .movie)
           
           VStack(alignment: .leading, spacing: 16) {
-            HStack {
-              VotesAverageCircleView(averageVotes: tvSeries.voteAverage)
-              
-              if !tvSeries.genres.isEmpty {
-                Text(Utilities.parseNamesList(tvSeries.genres.map { $0.name ?? "nil" }))
-                  .font(.subheadline)
-              }
-              
-              Spacer()
-              
-              Text("\(tvSeries.numberOfSeasons) seasons")
-            }
+            TvSeriesFirstDetailsRow(
+              voteAverage: tvSeries.voteAverage,
+              genres: tvSeries.genres,
+              numberOfSeasons: tvSeries.numberOfSeasons,
+              providers: vm.providers)
+            .padding()
+            .lineLimit(1)
           }
+        } else if let error = vm.errorMessage {
+          Text(error)
         }
       }
-      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
       .background(.bgBase)
       .ignoresSafeArea(edges: .top)
       .task {
         vm.loadTvSeries(byId: seriesId)
+        vm.loadProviders(forTvSeriesId: seriesId)
       }
     }
   }
@@ -54,7 +52,7 @@ struct TvSeriesDetailView: View {
 #Preview {
   TvSeriesDetailView(
     repository: TvSeriesRepositoryImpl(
-      remoteDatasource: JsonTvSeriesDatasource()
+      datasource: JsonTvSeriesDatasource()
     ),
     seriesId: 93405
   )

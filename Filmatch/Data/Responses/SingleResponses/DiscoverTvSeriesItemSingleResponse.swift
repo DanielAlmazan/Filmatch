@@ -9,7 +9,7 @@ import Foundation
 
 final class DiscoverTvSeriesItemSingleResponse: Identifiable, Sendable {
   let backdropPath: String?
-  let firstAirDate: String?
+  let firstAirDate: Date?
   let genreIds: [Int]
   let id: Int
   let name: String
@@ -23,7 +23,7 @@ final class DiscoverTvSeriesItemSingleResponse: Identifiable, Sendable {
   let voteCount: Int
   
   init(backdropPath: String?,
-       firstAirDate: String?,
+       firstAirDate: Date?,
        genreIds: [Int],
        id: Int,
        name: String,
@@ -70,7 +70,14 @@ extension DiscoverTvSeriesItemSingleResponse: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     
     let backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
-    let firstAirDate = try container.decodeIfPresent(String.self, forKey: .firstAirDate)
+    
+    let firstAirDateString = try container.decodeIfPresent(String.self, forKey: .firstAirDate)
+    let firstAirDate: Date? = {
+      guard let dateStr = firstAirDateString, !dateStr.isEmpty else { return nil }
+      
+      return Utilities.dateFormatter.date(from: dateStr)
+    }()
+
     let genreIds = try container.decode([Int].self, forKey: .genreIds)
     let id = try container.decode(Int.self, forKey: .id)
     let name = try container.decode(String.self, forKey: .name)
@@ -137,6 +144,6 @@ extension DiscoverTvSeriesItemSingleResponse: Equatable {
 
 extension DiscoverTvSeriesItemSingleResponse: CustomStringConvertible {
   public var description: String {
-    "{ Tv Show: id: \(self.id), title: \(self.name) }"
+    "{ Tv Series: id: \(self.id), title: \(self.name) }"
   }
 }

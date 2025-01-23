@@ -21,10 +21,10 @@ struct ContentView: View {
     let client = HttpClient()
 
     self.moviesRepository = .init(
-      remoteDatasource: MoviesRemoteDatasourceImpl(client: client))
+      datasource: MoviesRemoteDatasourceImpl(client: client))
     
     self.tvSeriesRepository = .init(
-      remoteDatasource: TvSeriesDatasourceImpl(client: client))
+      datasource: TvSeriesDatasourceImpl(client: client))
 
     self.filtersRepository = .init(
       filtersDatasource: FiltersRemoteDatasource(client: client))

@@ -19,7 +19,7 @@ import Observation
     await filtersDatasource.getGenres(for: mediaType)
   }
   
-  func getProviders(for mediaType: MediaType) async -> Result<[StreamingProviderSingleResponse], Error> {
+  func getProviders(for mediaType: MediaType) async -> Result<[FiltersStreamingProviderSingleResponse], Error> {
     await filtersDatasource.getProviders(for: mediaType)
   }
 }

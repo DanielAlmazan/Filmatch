@@ -152,4 +152,6 @@ enum QueryParam: String {
   
   /// Appends more queries to the response. Separate them with commas (eg. `https://api.themoviedb.org/3/movie/11?append_to_response=credits,videos`)
   case appendToResponse = "append_to_response"
+  
+  case query = "query"
 }

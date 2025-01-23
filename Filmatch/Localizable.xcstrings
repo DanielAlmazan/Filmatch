@@ -59,6 +59,9 @@
         }
       }
     },
+    "(%@)" : {
+
+    },
     "(Full app!)" : {
       "localizations" : {
         "es" : {
@@ -219,6 +222,15 @@
         }
       }
     },
+    "As %@" : {
+
+    },
+    "As cast member..." : {
+
+    },
+    "As crew member..." : {
+
+    },
     "Authenticate again" : {
       "localizations" : {
         "es" : {
@@ -286,6 +298,9 @@
           }
         }
       }
+    },
+    "Buy" : {
+
     },
     "Cancel" : {
       "localizations" : {
@@ -510,10 +525,7 @@
     "Filters" : {
 
     },
-    "Filters not updated" : {
-
-    },
-    "Filters updated" : {
+    "Flatrate" : {
 
     },
     "Genres" : {
@@ -551,6 +563,9 @@
           }
         }
       }
+    },
+    "In \"%@\"" : {
+
     },
     "It might be related to the app's language, try selecting another one." : {
       "localizations" : {
@@ -621,6 +636,7 @@
       }
     },
     "less" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -710,6 +726,7 @@
 
     },
     "more" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -720,6 +737,18 @@
       }
     },
     "Movie" : {
+
+    },
+    "Movies" : {
+
+    },
+    "No cast members found for this movie." : {
+
+    },
+    "No movies found" : {
+
+    },
+    "No tv series found" : {
 
     },
     "No user logged in." : {
@@ -831,6 +860,9 @@
         }
       }
     },
+    "Powered by JustWatch" : {
+
+    },
     "Profile" : {
       "localizations" : {
         "es" : {
@@ -842,6 +874,7 @@
       }
     },
     "Read %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -867,6 +900,9 @@
         }
       }
     },
+    "Rent" : {
+
+    },
     "Rooms" : {
       "localizations" : {
         "en" : {
@@ -886,7 +922,7 @@
     "Search" : {
 
     },
-    "Search view" : {
+    "Searching results for: \"%@\"..." : {
 
     },
     "Select Filters" : {
@@ -932,7 +968,7 @@
         }
       }
     },
-    "TV Show" : {
+    "Tv Series" : {
 
     },
     "Unknown" : {
@@ -950,6 +986,9 @@
           }
         }
       }
+    },
+    "Unsupported item" : {
+
     },
     "Videos" : {
       "localizations" : {
@@ -972,6 +1011,9 @@
           }
         }
       }
+    },
+    "Watch on..." : {
+
     },
     "Welcome Back" : {
       "localizations" : {

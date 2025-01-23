@@ -15,18 +15,18 @@ final class FiltersViewModel {
   var areMovieGenresLoading: Bool = false
   var tvGenres: [Genre] = []
   var areTvGenresLoading: Bool = false
-  var movieProviders: [StreamingProviderSingleResponse] = []
+  var movieProviders: [FiltersStreamingProviderSingleResponse] = []
   var areMovieProvidersLoading: Bool = false
-  var tvProviders: [StreamingProviderSingleResponse] = []
+  var tvProviders: [FiltersStreamingProviderSingleResponse] = []
   var areTvProvidersLoading: Bool = false
-  
+
   var currentSelectedMedia: MediaType = .movie
   var selectedMedia: MediaType = .movie
-  
+
   var filtersDidChange: Bool {
     self.currentSelectedMedia != self.selectedMedia
-    || self.currentTvFilters != self.tvFilters
-    || self.currentMovieFilters != self.movieFilters
+      || self.currentTvFilters != self.tvFilters
+      || self.currentMovieFilters != self.movieFilters
   }
 
   var movieFilters: MediaFilters = MediaFilters()
@@ -34,13 +34,13 @@ final class FiltersViewModel {
   var tvFilters: MediaFilters = MediaFilters()
   var currentTvFilters: MediaFilters = MediaFilters()
   var errorMessage: String?
-  
+
   var isMediaMovie: Bool { selectedMedia == .movie }
 
   init(filtersRepository: FiltersRepository) {
     self.filtersRepository = filtersRepository
   }
-  
+
   @MainActor
   func fetchFilters() {
     fetchMovieGenres()
@@ -51,44 +51,44 @@ final class FiltersViewModel {
 
   @MainActor
   func fetchMovieGenres() {
+    areMovieGenresLoading = true
     Task {
-      areMovieGenresLoading = true
       let movieGenresResult = await filtersRepository.getGenres(for: .movie)
       switch movieGenresResult {
-        case .success(let result): movieGenres = result
-        case .failure(let error): print("Error getting movie genres: \(error)")
+      case .success(let result): movieGenres = result
+      case .failure(let error): print("Error getting movie genres: \(error)")
       }
     }
     areMovieGenresLoading = false
   }
-  
+
   @MainActor
   func fetchTvGenres() {
+    areTvGenresLoading = true
     Task {
-      areTvGenresLoading = true
       let tvGenresResult = await filtersRepository.getGenres(for: .tvSeries)
       switch tvGenresResult {
-        case .success(let result): tvGenres = result
-        case .failure(let error): print("Error getting movie genres: \(error)")
+      case .success(let result): tvGenres = result
+      case .failure(let error): print("Error getting movie genres: \(error)")
       }
     }
     areTvGenresLoading = false
   }
-  
+
   @MainActor
   func fetchMovieProviders() {
     areMovieProvidersLoading = true
     Task {
       let providersResult = await filtersRepository.getProviders(for: .movie)
       switch providersResult {
-        case .success(let result):
-          self.movieProviders = result.sorted { $0.displayPriority ?? 0 < $1.displayPriority ?? 0 }
-          
-        case .failure(let error):
-          print("Error getting movie providers: \(error)")
+      case .success(let result):
+        self.movieProviders = result.sortByDisplayPriority()
+
+      case .failure(let error):
+        print("Error getting movie providers: \(error)")
       }
-      areMovieProvidersLoading = false
     }
+    areMovieProvidersLoading = false
   }
 
   @MainActor
@@ -97,42 +97,46 @@ final class FiltersViewModel {
     Task {
       let providersResult = await filtersRepository.getProviders(for: .tvSeries)
       switch providersResult {
-        case .success(let result):
-          self.tvProviders = result.sorted { $0.displayPriority ?? 0 < $1.displayPriority ?? 0 }
-          
-        case .failure(let error):
-          print("Error getting movie providers: \(error)")
+      case .success(let result):
+        self.tvProviders = result.sortByDisplayPriority()
+
+      case .failure(let error):
+        print("Error getting movie providers: \(error)")
       }
     }
     areTvProvidersLoading = false
   }
 
   func buildQueryParams(page: Int?) -> [URLQueryItem] {
-    selectedMedia == .movie ? movieFilters.getQueryParams(page: page) : tvFilters.getQueryParams(page: page)
+    selectedMedia == .movie
+      ? movieFilters.getQueryParams(page: page)
+      : tvFilters.getQueryParams(page: page)
   }
-  
+
   func isGenreSelected(_ genre: Genre) -> Bool {
     selectedGenres().contains(genre)
   }
-  
-  func isProviderSelected(_ provider: StreamingProviderSingleResponse?) -> Bool {
+
+  func isProviderSelected(_ provider: FiltersStreamingProviderSingleResponse?)
+    -> Bool
+  {
     guard let provider else { return false }
-    
+
     return selectedProviders().contains(provider)
   }
-  
+
   func areAllProvidersSelected() -> Bool {
     let selected = selectedProviders()
     let all = self.selectedMedia == .movie ? movieProviders : tvProviders
-    
+
     return !all.isEmpty && selected.count == all.count
   }
-  
+
   /// Returns the array of selected genres for the given media type.
   private func selectedGenres() -> [Genre] {
     self.selectedMedia == .movie ? movieFilters.genres : tvFilters.genres
   }
-  
+
   /// Replaces the array of selected genres for the given media type.
   private func setSelectedGenres(_ list: [Genre]) {
     if self.selectedMedia == .movie {
@@ -141,24 +145,26 @@ final class FiltersViewModel {
       tvFilters.genres = list
     }
   }
-  
+
   /// Returns the array of selected genres for the given media type.
-  func selectedProviders() -> [StreamingProviderSingleResponse] {
+  func selectedProviders() -> [FiltersStreamingProviderSingleResponse] {
     self.selectedMedia == .movie ? movieFilters.providers : tvFilters.providers
   }
-  
+
   /// Replaces the array of selected genres for the given media type.
-  private func setSelectedProviders(_ list: [StreamingProviderSingleResponse]) {
+  private func setSelectedProviders(
+    _ list: [FiltersStreamingProviderSingleResponse]
+  ) {
     if self.selectedMedia == .movie {
       movieFilters.providers = list
     } else {
       tvFilters.providers = list
     }
   }
-  
+
   func onGenreSelectionChanged(_ genre: Genre) {
     var list = selectedGenres()
-    
+
     if let index = list.firstIndex(of: genre) {
       list.remove(at: index)
       print("Removed genre '\(genre.name ?? "nil")'")
@@ -166,15 +172,15 @@ final class FiltersViewModel {
       list.append(genre)
       print("Added genre '\(genre.name ?? "nil")'")
     }
-    
+
     setSelectedGenres(list)
-    
+
     print("Current genres: \(list.map{ $0.name ?? "nil"})")
   }
-  
+
   func toggleAllProviders() {
     let all = self.selectedMedia == .movie ? movieProviders : tvProviders
-    
+
     if areAllProvidersSelected() {
       setSelectedProviders([])
       print("All providers deselected")
@@ -183,10 +189,12 @@ final class FiltersViewModel {
       print("All providers selected")
     }
   }
-  
-  func onProvidersSelectionChanged(_ provider: StreamingProviderSingleResponse) {
+
+  func onProvidersSelectionChanged(
+    _ provider: FiltersStreamingProviderSingleResponse
+  ) {
     var list = selectedProviders()
-    
+
     if let index = list.firstIndex(of: provider) {
       list.remove(at: index)
       print("Removed provider \(provider.providerName ?? "nil")")
@@ -194,16 +202,16 @@ final class FiltersViewModel {
       list.append(provider)
       print("Added provider \(provider.providerName ?? "nil")")
     }
-    
+
     setSelectedProviders(list)
-    
-    print(selectedProviders().map{ $0.providerName ?? "nil" })
+
+    print(selectedProviders().map { $0.providerName ?? "nil" })
   }
-  
+
   func toggleMySet() {
     // TODO: Implement user persistance and get its providers.
   }
-  
+
   func rearrangeFilters() {
     if isMediaMovie {
       currentSelectedMedia = .movie
@@ -215,7 +223,7 @@ final class FiltersViewModel {
       movieFilters = currentMovieFilters
     }
   }
-  
+
   func onCancelButtonTapped() {
     movieFilters = currentMovieFilters
     tvFilters = currentTvFilters

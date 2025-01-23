@@ -20,6 +20,10 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
       acceptanceRange: nil
     )
   }
+  
+  func getProviders(forTvSeriesId id: Int) async -> Result<WatchProvidersResponse, any Error> {
+    .failure(JsonDatasourceError.notImplemented)
+  }
 
   func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async
     -> Result<[DiscoverTvSeriesItemSingleResponse], any Error>
@@ -38,5 +42,9 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
       acceptanceRange: nil
     )
     .map { $0.results }
+  }
+  
+  func searchTvSeries(_ query: String, page: Int?) async -> Result<DiscoverTvSeriesResponse, Error> {
+    .failure(JsonDatasourceError.notImplemented)
   }
 }

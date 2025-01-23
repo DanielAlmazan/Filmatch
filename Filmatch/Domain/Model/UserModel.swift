@@ -13,7 +13,7 @@ struct UserModel: Sendable {
 //  let birthdate: Date?
   let isAnonymous: Bool
   var image: URL?
-  let providers: [StreamingProviderSingleResponse]
+  let providers: [FiltersStreamingProviderSingleResponse]
 
   static let `default` = UserModel(
     uuid: "1",
@@ -21,7 +21,7 @@ struct UserModel: Sendable {
 //    birthdate: .now,
     isAnonymous: false,
     providers: [
-      StreamingProviderSingleResponse(
+      FiltersStreamingProviderSingleResponse(
         providerId: 8, providerName: "Netflix",
         logoPath: "/pbpMk2JmcoNnQwx5JGpXngfoWtp.jpg", displayPriority: 5,
         displayPriorities: [
@@ -157,7 +157,7 @@ struct UserModel: Sendable {
           "ZM": 0,
           "ZW": 5,
         ]),
-      StreamingProviderSingleResponse(
+      FiltersStreamingProviderSingleResponse(
         providerId: 337, providerName: "Disney Plus",
         logoPath: "/97yvRBw1GzX7fXprcF80er19ot.jpg", displayPriority: 28,
         displayPriorities: [

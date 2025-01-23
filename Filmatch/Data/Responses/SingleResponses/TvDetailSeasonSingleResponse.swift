@@ -8,7 +8,7 @@
 import Foundation
 
 final class TvDetailSeasonSingleResponse: Identifiable, Sendable {
-  let airDate: String
+  let airDate: Date?
   let episodeCount: Int
   let id: Int
   let name: String
@@ -17,7 +17,7 @@ final class TvDetailSeasonSingleResponse: Identifiable, Sendable {
   let seasonNumber: Int
   let voteAverage: Double
   
-  init(airDate: String,
+  init(airDate: Date?,
        episodeCount: Int,
        id: Int,
        name: String,
@@ -50,7 +50,13 @@ extension TvDetailSeasonSingleResponse: Codable {
   convenience init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     
-    let airDate = try container.decode(String.self, forKey: .airDate)
+    let airDateString = try container.decode(String?.self, forKey: .airDate)
+
+    let airDate: Date? = {
+      guard let airDateString, !airDateString.isEmpty else { return nil }
+      return Utilities.dateFormatter.date(from: airDateString)
+    }()
+
     let episodeCount = try container.decode(Int.self, forKey: .episodeCount)
     let id = try container.decode(Int.self, forKey: .id)
     let name = try container.decode(String.self, forKey: .name)
