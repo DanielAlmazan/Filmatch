@@ -141,14 +141,14 @@ struct SearchView: View {
 #Preview {
   @Previewable @State var moviesRepository = MoviesRepositoryImpl(
 //      remoteDatasource: JsonMoviesRemoteDatasource()
-    datasource: MoviesRemoteDatasourceImpl(client: HttpClient())
+    datasource: MoviesRemoteDatasourceImpl(client: TMDBHttpClient())
   )
   @Previewable @State var tvSeriesRepository = TvSeriesRepositoryImpl(
 //      remoteDatasource: JsonTvSeriesDatasource()
-    datasource: TvSeriesDatasourceImpl(client: HttpClient())
+    datasource: TvSeriesDatasourceImpl(client: TMDBHttpClient())
   )
   @Previewable @State var personRepository = PersonRepositoryImpl(
-    datasource: PersonDatasourceImpl(client: HttpClient())
+    datasource: PersonDatasourceImpl(client: TMDBHttpClient())
   )
   
   NavigationStack {

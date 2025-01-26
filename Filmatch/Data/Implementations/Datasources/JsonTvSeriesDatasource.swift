@@ -8,7 +8,7 @@
 import Foundation
 
 final class JsonTvSeriesDatasource: TvSeriesDatasource {
-  let client = JsonClient()
+  let client = TMDBJsonClient()
 
   func getTvSeries(byId id: Int) async -> Result<
     TvSeriesDetailSingleResponse, any Error

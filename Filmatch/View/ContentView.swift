@@ -18,7 +18,7 @@ struct ContentView: View {
   @State var personRepository: PersonRepositoryImpl
 
   init() {
-    let client = HttpClient()
+    let client = TMDBHttpClient()
 
     self.moviesRepository = .init(
       datasource: MoviesRemoteDatasourceImpl(client: client))

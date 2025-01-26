@@ -19,10 +19,10 @@
 		85077A7C2C7CF0E80087AC21 /* CastMemberThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85077A7B2C7CF0E80087AC21 /* CastMemberThumbnailView.swift */; };
 		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
 		850E812B2C6AABD500F8CE7C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E812A2C6AABD500F8CE7C /* PosterView.swift */; };
-		850E812E2C6AB18200F8CE7C /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 850E812D2C6AB18200F8CE7C /* SocketIO */; };
 		850E81302C6AB34A00F8CE7C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E812F2C6AB34A00F8CE7C /* HomeView.swift */; };
 		850E81322C6AB64200F8CE7C /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E81312C6AB64200F8CE7C /* ProfileTab.swift */; };
 		850E81342C6B88DB00F8CE7C /* ProfileSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E81332C6B88DB00F8CE7C /* ProfileSummary.swift */; };
+		85112BB52D4664C400A4F78A /* FilmatchHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85112BB42D4664C400A4F78A /* FilmatchHttpClient.swift */; };
 		851C42B72C7A39FD00127163 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 851C42B62C7A39FD00127163 /* Localizable.xcstrings */; };
 		851C42B92C7A48FA00127163 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C42B82C7A48FA00127163 /* DiscoverView.swift */; };
 		851C42BD2C7A559600127163 /* FiltersProvidersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C42BC2C7A559600127163 /* FiltersProvidersResponse.swift */; };
@@ -33,7 +33,7 @@
 		851C42CD2C7A91A200127163 /* CastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851C42CC2C7A91A200127163 /* CastView.swift */; };
 		851CBBC82C7D25160093AFEC /* DiscoverMoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBC72C7D25160093AFEC /* DiscoverMoviesResponse.swift */; };
 		851CBBCA2C7D25BC0093AFEC /* DiscoverMoviesItemSingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBC92C7D25BC0093AFEC /* DiscoverMoviesItemSingleResponse.swift */; };
-		851CBBCC2C7D3C610093AFEC /* HTTPResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBCB2C7D3C610093AFEC /* HTTPResponseCodes.swift */; };
+		851CBBCC2C7D3C610093AFEC /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBCB2C7D3C610093AFEC /* TMDBError.swift */; };
 		851CBBCE2C7DEE270093AFEC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBCD2C7DEE270093AFEC /* CardView.swift */; };
 		852A1F992D29C65F00C4D39D /* TvSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A1F982D29C65F00C4D39D /* TvSeriesRepository.swift */; };
 		852A1F9B2D29C66A00C4D39D /* TvSeriesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A1F9A2D29C66A00C4D39D /* TvSeriesDatasource.swift */; };
@@ -76,8 +76,8 @@
 		853096D92D00FE3900C6F2A6 /* GoogleSignInResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853096D82D00FE3900C6F2A6 /* GoogleSignInResultModel.swift */; };
 		853096DB2D00FEFE00C6F2A6 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853096DA2D00FEFE00C6F2A6 /* Utilities.swift */; };
 		853096DD2D0108A200C6F2A6 /* SignInWithAppleResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853096DC2D0108A200C6F2A6 /* SignInWithAppleResult.swift */; };
-		8537FC782D1F3F400092CF72 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8537FC772D1F3F400092CF72 /* JsonClient.swift */; };
-		8537FC7A2D1F3FC60092CF72 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8537FC792D1F3FC60092CF72 /* Client.swift */; };
+		8537FC782D1F3F400092CF72 /* TMDBJsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8537FC772D1F3F400092CF72 /* TMDBJsonClient.swift */; };
+		8537FC7A2D1F3FC60092CF72 /* TMDBApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8537FC792D1F3FC60092CF72 /* TMDBApiClient.swift */; };
 		8537FC7C2D1F44C80092CF72 /* JsonFiltersDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8537FC7B2D1F44C80092CF72 /* JsonFiltersDatasource.swift */; };
 		8537FC802D1F459A0092CF72 /* genres-movie-list.json in Resources */ = {isa = PBXBuildFile; fileRef = 8537FC7F2D1F459A0092CF72 /* genres-movie-list.json */; };
 		8537FC822D1F47110092CF72 /* genres-tv-list.json in Resources */ = {isa = PBXBuildFile; fileRef = 8537FC812D1F47110092CF72 /* genres-tv-list.json */; };
@@ -124,7 +124,7 @@
 		857D7BDC2D188C600080271B /* FiltersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BDB2D188C600080271B /* FiltersRepository.swift */; };
 		857D7BE02D188F1C0080271B /* FiltersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BDF2D188F1C0080271B /* FiltersRepositoryImpl.swift */; };
 		857D7BE22D188F9D0080271B /* FiltersDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BE12D188F9D0080271B /* FiltersDatasource.swift */; };
-		857D7BE42D188FAD0080271B /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BE32D188FAD0080271B /* HttpClient.swift */; };
+		857D7BE42D188FAD0080271B /* TMDBHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BE32D188FAD0080271B /* TMDBHttpClient.swift */; };
 		857D7BE62D1891D30080271B /* FiltersRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BE52D1891D30080271B /* FiltersRemoteDatasource.swift */; };
 		857D7BE82D189D4D0080271B /* FilterToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BE72D189D4D0080271B /* FilterToggleView.swift */; };
 		857D7BEB2D19F1E60080271B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D7BEA2D19F1E60080271B /* AppConstants.swift */; };
@@ -211,6 +211,7 @@
 		850E812F2C6AB34A00F8CE7C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		850E81312C6AB64200F8CE7C /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
 		850E81332C6B88DB00F8CE7C /* ProfileSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSummary.swift; sourceTree = "<group>"; };
+		85112BB42D4664C400A4F78A /* FilmatchHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchHttpClient.swift; sourceTree = "<group>"; };
 		851C42B62C7A39FD00127163 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		851C42B82C7A48FA00127163 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		851C42BC2C7A559600127163 /* FiltersProvidersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersProvidersResponse.swift; sourceTree = "<group>"; };
@@ -221,7 +222,7 @@
 		851C42CC2C7A91A200127163 /* CastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastView.swift; sourceTree = "<group>"; };
 		851CBBC72C7D25160093AFEC /* DiscoverMoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesResponse.swift; sourceTree = "<group>"; };
 		851CBBC92C7D25BC0093AFEC /* DiscoverMoviesItemSingleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesItemSingleResponse.swift; sourceTree = "<group>"; };
-		851CBBCB2C7D3C610093AFEC /* HTTPResponseCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseCodes.swift; sourceTree = "<group>"; };
+		851CBBCB2C7D3C610093AFEC /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
 		851CBBCD2C7DEE270093AFEC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		852A1F982D29C65F00C4D39D /* TvSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesRepository.swift; sourceTree = "<group>"; };
 		852A1F9A2D29C66A00C4D39D /* TvSeriesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesDatasource.swift; sourceTree = "<group>"; };
@@ -264,8 +265,8 @@
 		853096D82D00FE3900C6F2A6 /* GoogleSignInResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResultModel.swift; sourceTree = "<group>"; };
 		853096DA2D00FEFE00C6F2A6 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		853096DC2D0108A200C6F2A6 /* SignInWithAppleResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleResult.swift; sourceTree = "<group>"; };
-		8537FC772D1F3F400092CF72 /* JsonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonClient.swift; sourceTree = "<group>"; };
-		8537FC792D1F3FC60092CF72 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		8537FC772D1F3F400092CF72 /* TMDBJsonClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBJsonClient.swift; sourceTree = "<group>"; };
+		8537FC792D1F3FC60092CF72 /* TMDBApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApiClient.swift; sourceTree = "<group>"; };
 		8537FC7B2D1F44C80092CF72 /* JsonFiltersDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFiltersDatasource.swift; sourceTree = "<group>"; };
 		8537FC7F2D1F459A0092CF72 /* genres-movie-list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "genres-movie-list.json"; sourceTree = "<group>"; };
 		8537FC812D1F47110092CF72 /* genres-tv-list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "genres-tv-list.json"; sourceTree = "<group>"; };
@@ -313,7 +314,7 @@
 		857D7BDB2D188C600080271B /* FiltersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRepository.swift; sourceTree = "<group>"; };
 		857D7BDF2D188F1C0080271B /* FiltersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRepositoryImpl.swift; sourceTree = "<group>"; };
 		857D7BE12D188F9D0080271B /* FiltersDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersDatasource.swift; sourceTree = "<group>"; };
-		857D7BE32D188FAD0080271B /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		857D7BE32D188FAD0080271B /* TMDBHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBHttpClient.swift; sourceTree = "<group>"; };
 		857D7BE52D1891D30080271B /* FiltersRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRemoteDatasource.swift; sourceTree = "<group>"; };
 		857D7BE72D189D4D0080271B /* FilterToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToggleView.swift; sourceTree = "<group>"; };
 		857D7BEA2D19F1E60080271B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -399,7 +400,6 @@
 				850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */,
 				85D898242CBC4F4400B242C6 /* GoogleSignIn in Frameworks */,
 				850494B62CA33C4E00C44BC9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				850E812E2C6AB18200F8CE7C /* SocketIO in Frameworks */,
 				850494B22CA33C4E00C44BC9 /* FirebaseAnalytics in Frameworks */,
 				850494BC2CA33C4E00C44BC9 /* FirebaseCrashlytics in Frameworks */,
 				850494BA2CA33C4E00C44BC9 /* FirebaseAuth in Frameworks */,
@@ -415,6 +415,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85112BB32D4664A300A4F78A /* TMDBClients */ = {
+			isa = PBXGroup;
+			children = (
+				857D7BE32D188FAD0080271B /* TMDBHttpClient.swift */,
+				8537FC772D1F3F400092CF72 /* TMDBJsonClient.swift */,
+			);
+			path = TMDBClients;
 			sourceTree = "<group>";
 		};
 		851C42C72C7A737500127163 /* Collections */ = {
@@ -579,7 +588,7 @@
 			isa = PBXGroup;
 			children = (
 				854E6F232CEBC2AA00DABC60 /* AuthenticationRepository.swift */,
-				8537FC792D1F3FC60092CF72 /* Client.swift */,
+				8537FC792D1F3FC60092CF72 /* TMDBApiClient.swift */,
 				854E6F282CEBC2AA00DABC60 /* MoviesRepository.swift */,
 				857A27E92D05AE020080993C /* MoviesRemoteDatasource.swift */,
 				852A1F982D29C65F00C4D39D /* TvSeriesRepository.swift */,
@@ -687,6 +696,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		85F175EA2D4547A800348D9D /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				85D3A4DD2D08D6A4001C0A35 /* FiltersView.swift */,
+				857D7BE72D189D4D0080271B /* FilterToggleView.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
 		85F308412C4F127700DF37C2 = {
 			isa = PBXGroup;
 			children = (
@@ -775,33 +793,32 @@
 			isa = PBXGroup;
 			children = (
 				854E6F502CEBC41400DABC60 /* AuthenticationViews */,
+				85F175EA2D4547A800348D9D /* Filters */,
 				851C42C92C7A911F00127163 /* Movie */,
 				858606E72D36DCBF001C1172 /* Person */,
 				854E6F4C2CEBC2C500DABC60 /* Rooms */,
-				85D26E7C2D271E17008ED9E7 /* TvSeries */,
 				857E3C4F2D3B0F58006BA51D /* Search */,
+				85D26E7C2D271E17008ED9E7 /* TvSeries */,
 				85E5DE3F2C99E1B0002AF33D /* AcceptDeclineRowButtons.swift */,
 				851CBBCD2C7DEE270093AFEC /* CardView.swift */,
 				851C42CC2C7A91A200127163 /* CastView.swift */,
 				85F3084F2C4F127700DF37C2 /* ContentView.swift */,
 				851C42B82C7A48FA00127163 /* DiscoverView.swift */,
 				85BD885F2D10BFA7006EA06D /* DismissSheetButton.swift */,
-				85D3A4DD2D08D6A4001C0A35 /* FiltersView.swift */,
-				857D7BE72D189D4D0080271B /* FilterToggleView.swift */,
+				85CDD4BD2D38622A003F9FED /* ExpandableText.swift */,
 				850E812F2C6AB34A00F8CE7C /* HomeView.swift */,
 				850494C72CAE9ACE00C44BC9 /* OnBoardingView.swift */,
 				850E812A2C6AABD500F8CE7C /* PosterView.swift */,
 				850E81332C6B88DB00F8CE7C /* ProfileSummary.swift */,
 				850E81312C6AB64200F8CE7C /* ProfileTab.swift */,
+				85CDD4CF2D3A3DB0003F9FED /* ProvidersRow.swift */,
 				852AF2E12D32E5F2005ABF3B /* ProvidersView.swift */,
+				85AE73712D42E0F80077CF3A /* SimpleMediaItemListRow.swift */,
+				85AE73752D42EB080077CF3A /* SimpleMediaItemListView.swift */,
+				85AE73732D42E80C0077CF3A /* SimpleMediaItemsGridView.swift */,
 				850494C92CAEE69800C44BC9 /* StartButtonView.swift */,
 				85AED9D92C73FE1400DA2AF0 /* VideoView.swift */,
 				85E320E22C8BB241009DCA5F /* VotesAverageCircleView.swift */,
-				85CDD4BD2D38622A003F9FED /* ExpandableText.swift */,
-				85CDD4CF2D3A3DB0003F9FED /* ProvidersRow.swift */,
-				85AE73712D42E0F80077CF3A /* SimpleMediaItemListRow.swift */,
-				85AE73732D42E80C0077CF3A /* SimpleMediaItemsGridView.swift */,
-				85AE73752D42EB080077CF3A /* SimpleMediaItemListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -823,13 +840,13 @@
 		85F308602C4F12E100DF37C2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				857D7BE32D188FAD0080271B /* HttpClient.swift */,
-				851C42C02C7A6A5100127163 /* HTTPMethods.swift */,
-				851CBBCB2C7D3C610093AFEC /* HTTPResponseCodes.swift */,
+				85112BB32D4664A300A4F78A /* TMDBClients */,
 				857D7BF62D1DCC130080271B /* Implementations */,
-				8537FC772D1F3F400092CF72 /* JsonClient.swift */,
+				851C42C02C7A6A5100127163 /* HTTPMethods.swift */,
+				851CBBCB2C7D3C610093AFEC /* TMDBError.swift */,
 				85434BBD2C72120500A68003 /* Responses */,
 				85E320E62C8DE453009DCA5F /* TestData */,
+				85112BB42D4664C400A4F78A /* FilmatchHttpClient.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -852,7 +869,6 @@
 			);
 			name = Filmatch;
 			packageProductDependencies = (
-				850E812D2C6AB18200F8CE7C /* SocketIO */,
 				850E515E2CA1BE0500905534 /* Kingfisher */,
 				850494B12CA33C4E00C44BC9 /* FirebaseAnalytics */,
 				850494B32CA33C4E00C44BC9 /* FirebaseAnalyticsOnDeviceConversion */,
@@ -893,7 +909,6 @@
 			);
 			mainGroup = 85F308412C4F127700DF37C2;
 			packageReferences = (
-				850E812C2C6AB18200F8CE7C /* XCRemoteSwiftPackageReference "socket" */,
 				850E515D2CA1BE0500905534 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				850494B02CA33C4E00C44BC9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				85D898222CBC4F4400B242C6 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
@@ -1000,7 +1015,7 @@
 				850494AE2CA31A3300C44BC9 /* AuthenticationViewModel.swift in Sources */,
 				85D26E862D299E8B008ED9E7 /* JsonPersonRemoteDatasource.swift in Sources */,
 				854E6F562CEBC41F00DABC60 /* TextFieldWithClearButton.swift in Sources */,
-				8537FC782D1F3F400092CF72 /* JsonClient.swift in Sources */,
+				8537FC782D1F3F400092CF72 /* TMDBJsonClient.swift in Sources */,
 				852A1FD12D2EF7E300C4D39D /* TvSeriesDetailView.swift in Sources */,
 				854E6F552CEBC41F00DABC60 /* SecureFieldWithRevealButton.swift in Sources */,
 				85CDD4CE2D3A3B7F003F9FED /* MovieFirstDetailsRow.swift in Sources */,
@@ -1015,12 +1030,13 @@
 				857D7BE02D188F1C0080271B /* FiltersRepositoryImpl.swift in Sources */,
 				857A27EE2D05B0B10080993C /* MoviesRemoteDatasourceImpl.swift in Sources */,
 				857D7BF92D1DD0E90080271B /* MonetizationType.swift in Sources */,
-				8537FC7A2D1F3FC60092CF72 /* Client.swift in Sources */,
+				8537FC7A2D1F3FC60092CF72 /* TMDBApiClient.swift in Sources */,
 				85D3A4E22D0EF859001C0A35 /* CardStatus.swift in Sources */,
 				857E3C512D3B0F6E006BA51D /* SearchView.swift in Sources */,
 				85077A7C2C7CF0E80087AC21 /* CastMemberThumbnailView.swift in Sources */,
 				853096D92D00FE3900C6F2A6 /* GoogleSignInResultModel.swift in Sources */,
 				854E6F452CEBC2AA00DABC60 /* DismissButton.swift in Sources */,
+				85112BB52D4664C400A4F78A /* FilmatchHttpClient.swift in Sources */,
 				854E6F462CEBC2AA00DABC60 /* ExternalAuthProvidersView.swift in Sources */,
 				854E6F472CEBC2AA00DABC60 /* GoToLoginButton.swift in Sources */,
 				857D7BF12D1A8DDE0080271B /* QueryParam.swift in Sources */,
@@ -1051,7 +1067,7 @@
 				854E6F262CEBC2AA00DABC60 /* AuthenticationRepository.swift in Sources */,
 				851C42B92C7A48FA00127163 /* DiscoverView.swift in Sources */,
 				852A1FAB2D2C37E600C4D39D /* TvSeriesAggregateCreditsAppendResponse.swift in Sources */,
-				857D7BE42D188FAD0080271B /* HttpClient.swift in Sources */,
+				857D7BE42D188FAD0080271B /* TMDBHttpClient.swift in Sources */,
 				850E81322C6AB64200F8CE7C /* ProfileTab.swift in Sources */,
 				85AED9DA2C73FE1400DA2AF0 /* VideoView.swift in Sources */,
 				85F3086E2C4F237E00DF37C2 /* ProductionCompany.swift in Sources */,
@@ -1125,7 +1141,7 @@
 				85D26E802D271EEA008ED9E7 /* PersonDatasourceImpl.swift in Sources */,
 				851C42C32C7A6C6600127163 /* MoviesSearchResponse.swift in Sources */,
 				85E320F82C8F8C9C009DCA5F /* PersonDetailViewModel.swift in Sources */,
-				851CBBCC2C7D3C610093AFEC /* HTTPResponseCodes.swift in Sources */,
+				851CBBCC2C7D3C610093AFEC /* TMDBError.swift in Sources */,
 				852A1FA52D2BF4E800C4D39D /* QueryParamSeparator.swift in Sources */,
 				853096DD2D0108A200C6F2A6 /* SignInWithAppleResult.swift in Sources */,
 				85434BBF2C72125500A68003 /* MoviesResponse.swift in Sources */,
@@ -1379,14 +1395,6 @@
 				minimumVersion = 8.0.3;
 			};
 		};
-		850E812C2C6AB18200F8CE7C /* XCRemoteSwiftPackageReference "socket" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		85D898222CBC4F4400B242C6 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -1427,11 +1435,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 850E515D2CA1BE0500905534 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		850E812D2C6AB18200F8CE7C /* SocketIO */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 850E812C2C6AB18200F8CE7C /* XCRemoteSwiftPackageReference "socket" */;
-			productName = SocketIO;
 		};
 		85D898232CBC4F4400B242C6 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

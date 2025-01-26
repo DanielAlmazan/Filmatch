@@ -8,9 +8,9 @@
 import Foundation
 
 final class TvSeriesDatasourceImpl: TvSeriesDatasource {
-  private let client: HttpClient
+  private let client: TMDBHttpClient
 
-  init(client: HttpClient) {
+  init(client: TMDBHttpClient) {
     self.client = client
   }
 

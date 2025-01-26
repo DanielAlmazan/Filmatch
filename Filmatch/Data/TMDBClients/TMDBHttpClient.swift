@@ -1,5 +1,5 @@
 //
-//  HttpClient.swift
+//  DataHttpClient.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/12/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HttpClient: Client {
+final class TMDBHttpClient: TMDBApiClient {
   let urlBase: String
 
   /// The API key required for TMDb API authentication.
@@ -19,7 +19,7 @@ final class HttpClient: Client {
   /// An array of common query items added to every request.
   private var queryItems: [URLQueryItem]
 
-  init(urlBase: String = AppConstants.urlBase) {
+  init(urlBase: String = AppConstants.tmdbUrlBase) {
     self.urlBase = urlBase
     let language = "\(Locale.preferredLanguages.first ?? "en-US")"
     let watchRegion = "\(Locale.current.region ?? "US")"

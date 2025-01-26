@@ -43,7 +43,7 @@ struct SimpleMediaItemsGridView: View {
               imageUrl: results[index].posterPath,
               size: "w200",
               title: results[index].getTitle,
-              releaseDate: ""
+              releaseDate: results[index].getReleaseDate
             )
             .onAppear {
               if index == results.count - 1 {

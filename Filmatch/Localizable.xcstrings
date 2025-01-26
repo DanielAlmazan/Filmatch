@@ -222,6 +222,9 @@
         }
       }
     },
+    "and more..." : {
+
+    },
     "As %@" : {
 
     },
@@ -528,6 +531,9 @@
     "Flatrate" : {
 
     },
+    "From" : {
+
+    },
     "Genres" : {
 
     },
@@ -553,6 +559,9 @@
     },
     "Hello, World!" : {
       "shouldTranslate" : false
+    },
+    "Hide Keyboard" : {
+
     },
     "How do you want to start your adventure?" : {
       "localizations" : {
@@ -958,6 +967,9 @@
         }
       }
     },
+    "There are no items to show..." : {
+
+    },
     "This operation is sensitive and requires recent authentication. Log in again before retrying this request." : {
       "localizations" : {
         "es" : {
@@ -967,6 +979,12 @@
           }
         }
       }
+    },
+    "To" : {
+
+    },
+    "Try refreshing or changing your filters." : {
+
     },
     "Tv Series" : {
 
@@ -1036,6 +1054,9 @@
       }
     },
     "What do you want to watch?" : {
+
+    },
+    "Year" : {
 
     }
   },

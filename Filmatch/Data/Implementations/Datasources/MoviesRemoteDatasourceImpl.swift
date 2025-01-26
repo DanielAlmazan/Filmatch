@@ -8,10 +8,10 @@
 import Foundation
 
 final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
-  private let client: HttpClient
+  private let client: TMDBHttpClient
 
   /// Initializes a new `HttpClient` instance, setting up default query parameters like language and region.
-  init(client: HttpClient) {
+  init(client: TMDBHttpClient) {
     self.client = client
   }
 

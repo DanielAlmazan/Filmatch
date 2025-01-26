@@ -8,7 +8,7 @@
 import Foundation
 
 final class JsonFiltersDatasource: FiltersDatasource {
-  let client = JsonClient()
+  let client = TMDBJsonClient()
   
   func getGenres(for mediaType: MediaType) async -> Result<[Genre], any Error> {
     return await client.get(

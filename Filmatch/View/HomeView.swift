@@ -12,7 +12,7 @@ import SwiftUI
 /// This view manages the selection state of the tabs and passes necessary dependencies to child views.
 struct HomeView: View {
   /// The index of the currently selected tab.
-  @State var selectedTab = 1
+  @State var selectedTab = 0
 
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm

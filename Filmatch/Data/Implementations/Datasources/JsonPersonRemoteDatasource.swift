@@ -8,7 +8,7 @@
 import Foundation
 
 final class JsonPersonRemoteDatasource: PersonDatasource {
-  let client: JsonClient = JsonClient()
+  let client: TMDBJsonClient = TMDBJsonClient()
 
   func getPerson(byId id: Int) async -> Result<PersonDetailSingleResponse, any Error> {
     await client.get("person-\(id)-append_to_response-movie_credits-tv_credits",

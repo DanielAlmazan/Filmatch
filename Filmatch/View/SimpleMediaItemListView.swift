@@ -52,7 +52,7 @@ struct SimpleMediaItemListView: View {
 //    datasource: TvSeriesDatasourceImpl(client: HttpClient())
   )
   @Previewable @State var personRepository = PersonRepositoryImpl(
-    datasource: PersonDatasourceImpl(client: HttpClient())
+    datasource: PersonDatasourceImpl(client: TMDBHttpClient())
   )
 
   NavigationStack {

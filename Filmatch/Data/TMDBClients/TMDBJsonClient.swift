@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class JsonClient: Client {
+final class TMDBJsonClient: TMDBApiClient {
   func get<T>(
     _ endpoint: String,
     extraQueryItems: [URLQueryItem],

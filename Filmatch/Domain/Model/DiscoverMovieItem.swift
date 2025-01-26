@@ -45,7 +45,7 @@ struct DiscoverMovieItem: DiscoverItem {
     popularity: 684.302,
     posterPath: "/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg",
 //    releaseDate: "2024-08-13",
-    releaseDate: Date(timeIntervalSince1970: 1697228800),
+    releaseDate: Date(timeIntervalSince1970: 1723569460),
     title: "Alien: Romulus",
     video: false,
     voteAverage: 7.106,

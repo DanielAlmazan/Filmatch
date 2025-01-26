@@ -13,7 +13,7 @@ enum JsonDatasourceError: String, Error {
 }
 
 final class JsonMoviesRemoteDatasource: MoviesRemoteDatasource {
-  let client = JsonClient()
+  let client = TMDBJsonClient()
 
   func getMovie(byId id: Int) async -> Result<MovieDetailSingleResponse, Error>
   {
