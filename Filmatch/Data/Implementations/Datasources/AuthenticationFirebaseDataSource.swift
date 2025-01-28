@@ -6,7 +6,6 @@
 //
 
 import AuthenticationServices
-import CryptoKit
 import FirebaseAuth
 import FirebaseCore
 import Foundation
@@ -16,103 +15,91 @@ import GoogleSignIn
 /// `AuthenticationFirebaseDataSource` is a class responsible for handling authentication operations using Firebase and Google Sign-In.
 /// It provides methods to create new users, log in existing users, perform Google OAuth authentication, log out users, and delete user accounts.
 final class AuthenticationFirebaseDataSource: Sendable {
-  static let shared = AuthenticationFirebaseDataSource()
-  private init() {}
   
-  func getCurrentUser() -> AuthenticationResultModel? {
-    guard let user = Auth.auth().currentUser else {
-      return nil
-    }
-    return .init(user: user)
+  func getCurrentUser() async -> User? {
+    Auth.auth().currentUser
   }
   
-  func signOut(completion: @escaping (Result<Void, Error>) -> Void) {
+  func signOut() async -> Result<Void, Error> {
     do {
       try Auth.auth().signOut()
-      completion(.success(()))
+      return .success(())
     } catch {
-      completion(.failure(error))
+      return .failure(error)
     }
   }
   
-  func deleteUser(completion: @escaping (Result<Void, Error>) -> Void) {
+  func deleteUser() async -> Result<Void, Error> {
     guard let user = Auth.auth().currentUser else {
-      completion(.failure(URLError(.badServerResponse)))
-      return
+      return .failure(URLError(.badServerResponse))
     }
-    user.delete { error in
-      if let error = error {
-        completion(.failure(error))
-      } else {
-        completion(.success(()))
-      }
+    do {
+      try await user.delete()
+      return .success(())
+    } catch {
+      return .failure(error)
     }
   }
 }
 
 // MARK: - SIGN IN EMAIL
 extension AuthenticationFirebaseDataSource {
-  func createNewUser(email: String, password: String, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-      if let error = error {
-        completion(.failure(error))
-      } else if let user = authResult?.user {
-        completion(.success(AuthenticationResultModel(user: user)))
-      } else {
-        completion(.failure(URLError(.badServerResponse)))
-      }
-    }
-  }
-  
-  func logIn(email: String, password: String, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-      if let error = error {
-        completion(.failure(error))
-      } else if let user = authResult?.user {
-        completion(.success(AuthenticationResultModel(user: user)))
-      } else {
-        completion(.failure(URLError(.badServerResponse)))
-      }
-    }
-  }
-  
-  func resetPassword(email: String, completion: @escaping (Result<Void, Error>) -> Void) {
-    Auth.auth().sendPasswordReset(withEmail: email) { error in
-      if let error = error {
-        completion(.failure(error))
-      } else {
-        completion(.success(()))
-      }
+  func createNewUser(
+    email: String,
+    password: String
+  ) async -> Result<User, Error> {
+    do {
+      let registerResult = try await Auth.auth().createUser(withEmail: email, password: password)
+      return .success(registerResult.user)
+    } catch {
+      return .failure(error)
     }
   }
 
-  func updatePassword(password: String, completion: @escaping (Result<Void, Error>) -> Void) {
-    guard let user = Auth.auth().currentUser else {
-      completion(.failure(URLError(.badServerResponse)))
-      return
+  func logIn(email: String, password: String) async -> Result<User, Error> {
+    do {
+      let loginResult = try await Auth.auth().signIn(withEmail: email, password: password)
+      return .success(loginResult.user)
+    } catch {
+      return .failure(error)
     }
-    
-    user.updatePassword(to: password) { error in
-      if let error = error {
-        completion(.failure(error))
-      } else {
-        completion(.success(()))
-      }
+  }
+  func resetPassword(email: String) async -> Result<Void, Error> {
+    guard let _ = Auth.auth().currentUser else {
+      return .failure(URLError(.badServerResponse))
+    }
+
+    do {
+      try await Auth.auth().sendPasswordReset(withEmail: email)
+      return .success(())
+    } catch {
+      return .failure(error)
     }
   }
 
-  func updateEmail(email: String, completion: @escaping (Result<Void, Error>) -> Void) {
+  func updatePassword(password: String) async -> Result<Void, Error> {
     guard let user = Auth.auth().currentUser else {
-      completion(.failure(URLError(.badServerResponse)))
-      return
+      return .failure(URLError(.badServerResponse))
     }
     
-    user.sendEmailVerification(beforeUpdatingEmail: email) { error in
-      if let error = error {
-        completion(.failure(error))
-      } else {
-        completion(.success(()))
-      }
+    do {
+      try await user.updatePassword(to: password)
+      return .success(())
+    } catch {
+      return .failure(error)
+    }
+  }
+
+  func updateEmail(email: String) async -> Result<Void, Error> {
+    guard let user = Auth.auth().currentUser else {
+      return .failure(URLError(.badServerResponse))
+    }
+
+    do {
+      try await user.sendEmailVerification(beforeUpdatingEmail: email)
+      return .success(())
+    } catch {
+      return .failure(error)
     }
   }
 }
@@ -120,73 +107,64 @@ extension AuthenticationFirebaseDataSource {
 // MARK: - SIGN IN OAUTH
 
 extension AuthenticationFirebaseDataSource {
-  func googleOAuth(tokens: GoogleSignInResultModel, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
+  func googleOAuth(tokens: GoogleSignInResultModel) async -> Result<User, Error> {
     let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
-    signIn(credential: credential, completion: completion)
+    return await signIn(credential: credential)
   }
   
-  func appleOAuth(tokens: SignInWithAppleResult, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
+  func appleOAuth(tokens: SignInWithAppleResult) async -> Result<User, Error> {
     let credential = OAuthProvider.credential(providerID: .apple, idToken: tokens.token, rawNonce: tokens.nonce)
-    signIn(credential: credential, completion: completion)
+    return await signIn(credential: credential)
   }
   
-  func signIn(credential: AuthCredential, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    Auth.auth().signIn(with: credential) { authResult, error in
-      if let error = error {
-        completion(.failure(error))
-      } else if let user = authResult?.user {
-        completion(.success(AuthenticationResultModel(user: user)))
-      } else {
-        completion(.failure(URLError(.badServerResponse)))
-      }
+  // TODO: Implement Filmatch API auth
+  func signIn(credential: AuthCredential) async -> Result<User, Error> {
+    do {
+      let signInResult = try await Auth.auth().signIn(with: credential)
+      return .success(signInResult.user)
+    } catch {
+      return .failure(error)
     }
   }
 }
-
 // MARK: - SIGN IN ANONYMOUS
 
 extension AuthenticationFirebaseDataSource {
-  func signInAnonymously(completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    Auth.auth().signInAnonymously { authResult, error in
-      if let error = error {
-        completion(.failure(error))
-      } else if let user = authResult?.user {
-        completion(.success(AuthenticationResultModel(user: user)))
-      } else {
-        completion(.failure(URLError(.badServerResponse)))
-      }
+  func signInAnonymously() async -> Result<User, Error> {
+    do {
+      let anonymousResult = try await Auth.auth().signInAnonymously()
+      return .success(anonymousResult.user)
+    } catch {
+      return .failure(error)
     }
   }
   
-  func linkEmail(email: String, password: String, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
+  func linkEmail(email: String, password: String) async -> Result<Void, Error> {
     let credential = EmailAuthProvider.credential(withEmail: email, password: password)
-    linkCredential(credential: credential, completion: completion)
+    return await linkCredential(credential: credential)
   }
   
-  func linkGoogle(tokens: GoogleSignInResultModel, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
+  func linkGoogle(tokens: GoogleSignInResultModel) async -> Result<Void, Error> {
     let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
-    linkCredential(credential: credential, completion: completion)
+    return await linkCredential(credential: credential)
   }
   
-  func linkApple(tokens: SignInWithAppleResult, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
+  func linkApple(tokens: SignInWithAppleResult) async -> Result<Void, Error> {
     let credential = OAuthProvider.credential(providerID: .apple, idToken: tokens.token, rawNonce: tokens.nonce)
-    linkCredential(credential: credential, completion: completion)
+    return await linkCredential(credential: credential)
   }
   
-  private func linkCredential(credential: AuthCredential, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    guard let user = Auth.auth().currentUser else {
-      completion(.failure(URLError(.badURL)))
-      return
-    }
-    
-    user.link(with: credential) { authResult, error in
-      if let error = error {
-        completion(.failure(error))
-      } else if let linkedUser = authResult?.user {
-        completion(.success(AuthenticationResultModel(user: linkedUser)))
-      } else {
-        completion(.failure(URLError(.badServerResponse)))
+  private func linkCredential(
+    credential: AuthCredential) async -> Result<Void, Error> {
+      guard let user = Auth.auth().currentUser else {
+        return .failure(URLError(.badURL))
+      }
+      
+      do {
+        try await user.link(with: credential)
+        return .success(())
+      } catch {
+        return .failure(error)
       }
     }
-  }
 }

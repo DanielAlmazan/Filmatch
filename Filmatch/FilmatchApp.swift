@@ -16,7 +16,17 @@ struct FilmatchApp: App {
 
   init() {
     FirebaseApp.configure()
-    authVm = .init()
+    authVm = AuthenticationViewModel(
+      authenticationRepository: AuthenticationFirebaseRepository(
+        dataSource: AuthenticationFirebaseDataSource()
+      ),
+      filmatchClient: FilmatchGoRepositoryImpl(
+        datasource: FilmatchGoDatasourceImpl(
+          client: FilmatchHttpClient(
+            urlBase: AppConstants.filmatchBaseUrl)
+        )
+      )
+    )
   }
 
   var body: some Scene {

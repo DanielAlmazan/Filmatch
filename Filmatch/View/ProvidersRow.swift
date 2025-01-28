@@ -13,7 +13,7 @@ struct ProvidersRow: View {
   let cornerRadius: CGFloat = 20
 
   func url(_ path: String) -> URL {
-    URL(string: "\(AppConstants.mediaBase)/original/\(path)")!
+    URL(string: "\(AppConstants.tmdbMediaBase)/original/\(path)")!
   }
 
   var body: some View {

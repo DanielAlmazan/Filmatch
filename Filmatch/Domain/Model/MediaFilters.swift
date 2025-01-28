@@ -101,11 +101,23 @@ struct MediaFilters {
 
   func filtersHash() -> String {
     let mediaType = self.mediaType.rawValue
-    let genres = self.genres.sorted(by: { $0.id < $1.id }).map { "\($0.id)" }
-      .joined(separator: QueryParamSeparator.or.rawValue)
-    let providers = self.providers.sorted(by: { $0.providerId < $1.providerId })
-      .map { "\($0.providerId)" }.joined(
-        separator: QueryParamSeparator.or.rawValue)
+
+    let genres =
+      self.genres.isEmpty
+      ? "null"
+      : self.genres
+        .sorted(by: { $0.id < $1.id }).map { "\($0.id)" }
+        .joined(separator: QueryParamSeparator.or.rawValue)
+
+    let providers =
+      self.providers.isEmpty
+      ? "null"
+      : self.providers
+        .sorted(by: { $0.providerId < $1.providerId })
+        .map { "\($0.providerId)" }.joined(
+          separator: QueryParamSeparator.or.rawValue)
+
+    let maxRuntime = "\(self.maxRuntime?.rawValue.description ?? "null")"
     let score = "\(self.minRating?.rawValue.description ?? "null")"
     let from = "\(self.from)"
     let to = "\(self.to)"
@@ -115,6 +127,7 @@ struct MediaFilters {
       mediaType,
       genres,
       providers,
+      maxRuntime,
       score,
       from,
       to,
@@ -122,8 +135,11 @@ struct MediaFilters {
     ].joined(separator: "-")
 
     print("Joined: \(joined)")
+    guard let data = joined.data(using: .utf8) else {
+      return ""
+    }
 
-    return Insecure.MD5.hash(data: joined.data(using: .utf8)!).map {
+    return Insecure.MD5.hash(data: data).map {
       String(format: "%02hhx", $0)
     }.joined()
   }

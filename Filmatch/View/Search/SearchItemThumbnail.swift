@@ -26,7 +26,7 @@ struct SearchItemThumbnail: View {
   }
 
   var url: URL? {
-    URL(string: "\(AppConstants.mediaBase)/\(size)/\(imageUrl ?? "")")
+    URL(string: "\(AppConstants.tmdbMediaBase)/\(size)/\(imageUrl ?? "")")
   }
 
   var body: some View {

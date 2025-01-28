@@ -107,7 +107,7 @@ struct FilterToggleView: View {
           }
         } else if let image {
           KFImage(
-            URL(string: "\(AppConstants.mediaBase)/original/\(image)")
+            URL(string: "\(AppConstants.tmdbMediaBase)/original/\(image)")
           )
           .resizable()
           .scaledToFit()
