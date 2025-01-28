@@ -17,7 +17,7 @@ final class FiltersViewModel {
   var areTvGenresLoading: Bool = false
 
   var genres: [Genre] {
-    switch self.currentSelectedMedia {
+    switch self.selectedMedia {
     case .movie: movieGenres
     case .tvSeries: tvGenres
     }
@@ -29,7 +29,7 @@ final class FiltersViewModel {
   var areTvProvidersLoading: Bool = false
 
   var providers: [FiltersStreamingProviderSingleResponse] {
-    switch self.currentSelectedMedia {
+    switch self.selectedMedia {
     case .movie: movieProviders
     case .tvSeries: tvProviders
     }
