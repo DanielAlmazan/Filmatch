@@ -16,7 +16,7 @@ struct FilterToggleView: View {
   let action: () -> Void
   let defaultSize: CGFloat? = 80
   let size: CGFloat?
-  let cornerRadius: CGFloat = 18
+  let cornerRadius: CGFloat = 20
   let isActive: Bool
 
   var blendMode: BlendMode {
@@ -107,11 +107,12 @@ struct FilterToggleView: View {
           }
         } else if let image {
           KFImage(
-            URL(string: "https://media.themoviedb.org/t/p/original/\(image)")
+            URL(string: "\(AppConstants.tmdbMediaBase)/original/\(image)")
           )
           .resizable()
           .scaledToFit()
           .frame(width: size, height: size)
+          .padding(1)
         }
       }
       .overlay {
@@ -132,7 +133,8 @@ struct FilterToggleView: View {
   @Previewable let amazonUrlImage = "pvske1MyAoymrs5bguRfVqYiM9a.jpg"
   @Previewable @State var isFilterActive: Bool = false
   @Previewable @State var isAllActive: Bool = false
-  @Previewable @State var isProviderActive: Bool = false
+  @Previewable @State var isNetflixProviderActive: Bool = false
+  @Previewable @State var isAmazonProviderActive: Bool = false
 
   Group {
     FilterToggleView(
@@ -152,9 +154,16 @@ struct FilterToggleView: View {
     }
     FilterToggleView(
       image: netflixUrlImage,
-      isActive: isProviderActive
+      isActive: isNetflixProviderActive
     ) {
-      isProviderActive.toggle()
+      isNetflixProviderActive.toggle()
+      print("Button pressed")
+    }
+    FilterToggleView(
+      image: amazonUrlImage,
+      isActive: isAmazonProviderActive
+    ) {
+      isAmazonProviderActive.toggle()
       print("Button pressed")
     }
   }

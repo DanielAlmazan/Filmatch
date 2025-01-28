@@ -16,15 +16,16 @@ struct ContentView: View {
   @State var tvSeriesRepository: TvSeriesRepositoryImpl
   @State var filtersRepository: FiltersRepositoryImpl
   @State var personRepository: PersonRepositoryImpl
+  @State var filmatchGoRepository: FilmatchGoRepositoryImpl
 
   init() {
-    let client = HttpClient()
+    let client = TMDBHttpClient()
 
     self.moviesRepository = .init(
-      remoteDatasource: MoviesRemoteDatasourceImpl(client: client))
+      datasource: MoviesRemoteDatasourceImpl(client: client))
     
     self.tvSeriesRepository = .init(
-      remoteDatasource: TvSeriesDatasourceImpl(client: client))
+      datasource: TvSeriesDatasourceImpl(client: client))
 
     self.filtersRepository = .init(
       filtersDatasource: FiltersRemoteDatasource(client: client))
@@ -32,11 +33,19 @@ struct ContentView: View {
     self.personRepository = .init(
       datasource: PersonDatasourceImpl(client: client)
     )
+    
+    self.filmatchGoRepository = .init(
+      datasource: FilmatchGoDatasourceImpl(
+        client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl)
+      )
+    )
   }
 
   var body: some View {
     VStack {
-      if authVm.currentUser == nil {
+      if authVm.isLoading {
+        ProgressView()
+      } else if authVm.currentUser == nil {
         // Show the welcome view if the user is not authenticated.
         WelcomeView()
       } else {
@@ -46,6 +55,7 @@ struct ContentView: View {
           .environment(tvSeriesRepository)
           .environment(filtersRepository)
           .environment(personRepository)
+          .environment(filmatchGoRepository)
       }
     }
   }
@@ -54,7 +64,17 @@ struct ContentView: View {
 #Preview {
   @Previewable @State var authVm = AuthenticationViewModel(
     authenticationRepository: AuthenticationFirebaseRepository(
-      dataSource: AuthenticationFirebaseDataSource.shared))
+      dataSource: AuthenticationFirebaseDataSource()
+    ),
+    filmatchClient: FilmatchGoRepositoryImpl(
+      datasource: FilmatchGoDatasourceImpl(
+        client: FilmatchHttpClient(
+          urlBase: AppConstants.filmatchBaseUrl
+        )
+      )
+    )
+  )
+  
   ContentView()
     .environment(authVm)
 }

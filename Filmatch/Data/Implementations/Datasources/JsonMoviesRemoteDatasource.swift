@@ -13,7 +13,7 @@ enum JsonDatasourceError: String, Error {
 }
 
 final class JsonMoviesRemoteDatasource: MoviesRemoteDatasource {
-  let client = JsonClient()
+  let client = TMDBJsonClient()
 
   func getMovie(byId id: Int) async -> Result<MovieDetailSingleResponse, Error>
   {
@@ -25,7 +25,15 @@ final class JsonMoviesRemoteDatasource: MoviesRemoteDatasource {
     )
   }
 
-  func getMovieCredits(id: Int) async -> Result<MovieCredits, Error> {
+  func getMovieCredits(id: Int) async -> Result<
+    PersonMovieCreditsResponse, Error
+  > {
+    .failure(JsonDatasourceError.notImplemented)
+  }
+
+  func getProviders(forMovieId id: Int) async -> Result<
+    WatchProvidersResponse, any Error
+  > {
     .failure(JsonDatasourceError.notImplemented)
   }
 
@@ -48,10 +56,9 @@ final class JsonMoviesRemoteDatasource: MoviesRemoteDatasource {
     .map { $0.results }
   }
 
-  func searchMovies(
-    _ query: String, includeAdult: Bool?, primaryReleaseDate: String?,
-    page: Int?, region: String?, year: Int?
-  ) async -> Result<[MoviesSearchResponse], Error> {
+  func searchMovies(_ query: String, page: Int?) async -> Result<
+    MoviesSearchResponse, Error
+  > {
     .failure(JsonDatasourceError.notImplemented)
   }
 

@@ -10,8 +10,9 @@ import Foundation
 @Observable
 final class TvSeriesDetailViewModel {
   var tvSeries: DetailTvSeries?
+  var providers: WatchProvidersResponse?
   
-  var isTvSeriesLoading: Bool
+  var isTvSeriesLoading: Bool = false
   
   var errorMessage: String?
   
@@ -19,12 +20,12 @@ final class TvSeriesDetailViewModel {
   
   init(repository: TvSeriesRepository) {
     self.repository = repository
-    self.isTvSeriesLoading = true
   }
   
   @MainActor
   func loadTvSeries(byId id: Int) {
     self.errorMessage = nil
+    self.isTvSeriesLoading = true
     
     Task {
       let result = await self.repository.getTvSeries(byId: id)
@@ -36,7 +37,24 @@ final class TvSeriesDetailViewModel {
         self.errorMessage = error.localizedDescription
         print(error)
       }
-      self.isTvSeriesLoading = false
+    }
+    self.isTvSeriesLoading = false
+  }
+  
+  @MainActor
+  func loadProviders(forTvSeriesId id: Int) {
+    self.errorMessage = nil
+    
+    Task {
+      let result = await self.repository.getProviders(forTvSeriesId: id)
+      
+      switch result {
+      case .success(let providers):
+        self.providers = providers
+      case .failure(let error):
+        self.errorMessage = error.localizedDescription
+        print(error)
+      }
     }
   }
 }

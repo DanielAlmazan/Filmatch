@@ -1,5 +1,5 @@
 //
-//  StreamingProviderSingleResponse.swift
+//  FiltersStreamingProviderSingleResponse.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/7/24.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-/// `StreamingProviderSingleResponse` represents a provider of movies, such as streaming services or rental platforms.
+/// `FiltersStreamingProviderSingleResponse` represents a provider of movies, such as streaming services or rental platforms.
 /// It contains information about the provider, including its ID, name, logo, and display priority.
-final class StreamingProviderSingleResponse: Identifiable, Sendable {
+final class FiltersStreamingProviderSingleResponse: Identifiable, Sendable {
   /// The unique identifier of the provider.
   let providerId: Int
   /// The name of the provider.
@@ -19,16 +19,19 @@ final class StreamingProviderSingleResponse: Identifiable, Sendable {
   /// The display priority of the provider.
   let displayPriority: Int?
   /// A dictionary containing display priorities for different contexts.
-  let displayPriorities: [String: Int?]?
-  
-  /// Initializes a new `MovieProvider` instance.
+  let displayPriorities: [String: Int]
+
+  /// Initializes a new `FiltersStreamingProviderSingleResponse` instance.
   /// - Parameters:
   ///   - providerId: The unique identifier of the provider.
   ///   - providerName: The name of the provider.
   ///   - logoPath: The path to the provider's logo image.
   ///   - displayPriority: The display priority of the provider.
   ///   - displayPriorities: A dictionary containing display priorities for different contexts.
-  init(providerId: Int, providerName: String?, logoPath: String?, displayPriority: Int?, displayPriorities: [String: Int?]?) {
+  init(
+    providerId: Int, providerName: String?, logoPath: String?,
+    displayPriority: Int?, displayPriorities: [String: Int]
+  ) {
     self.providerId = providerId
     self.providerName = providerName
     self.logoPath = logoPath
@@ -37,7 +40,7 @@ final class StreamingProviderSingleResponse: Identifiable, Sendable {
   }
 }
 
-extension StreamingProviderSingleResponse: Codable {
+extension FiltersStreamingProviderSingleResponse: Codable {
   enum CodingKeys: String, CodingKey {
     case providerId = "provider_id"
     case providerName = "provider_name"
@@ -47,16 +50,35 @@ extension StreamingProviderSingleResponse: Codable {
   }
 }
 
-extension StreamingProviderSingleResponse: Equatable {
-  static func == (lhs: StreamingProviderSingleResponse, rhs: StreamingProviderSingleResponse) -> Bool {
+extension FiltersStreamingProviderSingleResponse: Equatable {
+  static func == (
+    lhs: FiltersStreamingProviderSingleResponse,
+    rhs: FiltersStreamingProviderSingleResponse
+  ) -> Bool {
     lhs.providerId == rhs.providerId
   }
 }
 
-extension [StreamingProviderSingleResponse] {
+extension [FiltersStreamingProviderSingleResponse] {
   func toUrlQueryItem(separator: QueryParamSeparator) -> URLQueryItem {
-    let providers = self.map { "\($0.providerId)" }.joined(separator: separator.rawValue)
-    
-    return .init(name: QueryParam.withWatchProviders.rawValue, value: "\(providers)")
+    let providers = self.map { "\($0.providerId)" }.joined(
+      separator: separator.rawValue)
+
+    return .init(
+      name: QueryParam.withWatchProviders.rawValue, value: "\(providers)")
+  }
+
+  func sortByDisplayPriority() -> [FiltersStreamingProviderSingleResponse] {
+    self.sorted { lhs, rhs in
+      let region = "\(Locale.current.region ?? "US")"
+
+      guard let lhsRegion = lhs.displayPriorities[region],
+            let rhsRegion = rhs.displayPriorities[region]
+      else {
+        return false
+      }
+
+      return lhsRegion < rhsRegion
+    }
   }
 }

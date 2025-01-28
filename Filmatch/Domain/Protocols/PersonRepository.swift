@@ -9,4 +9,5 @@ import Foundation
 
 protocol PersonRepository {
   func getPerson(byId id: Int) async -> Result<PersonDetailSingleResponse, any Error>
+  func getPersonMovieCredits(byId id: Int) async -> Result<PersonMovieCreditsResponse, any Error>
 }

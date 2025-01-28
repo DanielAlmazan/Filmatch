@@ -32,8 +32,10 @@ struct ProfileTab: View {
             .frame(maxWidth: .infinity, alignment: .bottomTrailing)
         }
         
-        ProfileSummary(user: .init(uuid: user.uid, email: user.email ?? "", isAnonymous: user.isAnonymous, image: URL(string: user.photoUrl ?? ""), providers: []))
-          .frame(maxWidth: .infinity)
+        if let user = self.authVm.currentUser {
+          ProfileSummary(user: user)
+            .frame(maxWidth: .infinity)
+        }
         
         if editMode?.wrappedValue == .inactive {
           
@@ -74,19 +76,22 @@ struct ProfileTab: View {
   }
   
   private func deleteAccount() {
-    authVm.deleteAccount { result in
+//    authVm.deleteAccount { result in
+//      
+//      showAlert = true
+//    }
+    Task {
+      let result = await authVm.deleteAccount()
       switch result {
-        case .success(_):
-          isError = false
-        case .failure(let error):
-          if let error = error as NSError? {
-            operationError = error
-            alertMessage = "Error deleting account: \(processError(for: error))"
-            isError = true
-          }
+      case .success(_):
+        isError = false
+      case .failure(let error):
+        if let error = error as NSError? {
+          operationError = error
+          alertMessage = "Error deleting account: \(processError(for: error))"
+          isError = true
+        }
       }
-      
-      showAlert = true
     }
   }
   
@@ -99,5 +104,17 @@ struct ProfileTab: View {
 }
 
 #Preview {
-  ProfileTab(authVm: AuthenticationViewModel())
+  @Previewable @State var vm = AuthenticationViewModel(
+    authenticationRepository: AuthenticationFirebaseRepository(
+      dataSource: AuthenticationFirebaseDataSource()
+    ),
+    filmatchClient: FilmatchGoRepositoryImpl(
+      datasource: FilmatchGoDatasourceImpl(
+        client: FilmatchHttpClient(
+          urlBase: AppConstants.filmatchBaseUrl)
+      )
+    )
+  )
+
+  ProfileTab(authVm: vm)
 }

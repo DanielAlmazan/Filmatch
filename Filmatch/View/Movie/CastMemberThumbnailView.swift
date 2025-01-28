@@ -1,5 +1,5 @@
 //
-//  MovieCastMemberThumbnailView.swift
+//  CastMemberThumbnailView.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/8/24.
@@ -9,9 +9,9 @@ import SwiftUI
 
 /// `MovieCastMemberView` displays information about a single cast member, including their profile image, name, and character.
 /// When tapped, it navigates to the cast member's profile page.
-struct MovieCastMemberThumbnailView: View {
+struct CastMemberThumbnailView: View {
   /// The `CastMember` object containing the cast member's information.
-  let castMember: MovieCastMember
+  let castMember: CastMember
 
   /// The width of the image displayed.
   let imageWidth: Double = 200
@@ -25,7 +25,7 @@ struct MovieCastMemberThumbnailView: View {
     NavigationLink(destination: PersonDetailView(repository: personRepository, personId: castMember.id)) {
       VStack(alignment: .leading) {
         if let profilePath = castMember.profilePath {
-          PosterView(imageUrl: profilePath, size: "w200")
+          PosterView(imageUrl: profilePath, size: "w200", posterType: .person)
             .clipShape(.rect(cornerRadius: 10))
             .shadow(radius: 5)
         } else {
@@ -54,10 +54,10 @@ struct MovieCastMemberThumbnailView: View {
 }
 
 #Preview {
-  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: PersonDatasourceImpl(client: HttpClient(urlBase: AppConstants.urlBase)))
+  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: PersonDatasourceImpl(client: TMDBHttpClient(urlBase: AppConstants.tmdbUrlBase)))
 
   NavigationStack {
-    MovieCastMemberThumbnailView(castMember: .default)
+    CastMemberThumbnailView(castMember: .default)
       .environment(personRepository)
   }
 }

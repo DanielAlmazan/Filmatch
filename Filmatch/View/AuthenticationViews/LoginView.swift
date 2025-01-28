@@ -145,11 +145,11 @@ struct LoginView: View {
         // MARK: - External authentication providers.
         ExternalAuthProvidersView {
           Task {
-            try await authVm.googleOAuth()
+            try authVm.googleOAuth()
           }
         } onAppleSignIn: {
           Task {
-            try await authVm.appleOAuth()
+            try authVm.appleOAuth()
           }
         }
 
@@ -173,7 +173,18 @@ struct LoginView: View {
 // Disclaimer: This preview modifies the original component in order to
 // provide a more comfortable view while building it
 #Preview {
-  let vm = AuthenticationViewModel()
+  @Previewable @State var vm = AuthenticationViewModel(
+    authenticationRepository: AuthenticationFirebaseRepository(
+      dataSource: AuthenticationFirebaseDataSource()
+    ),
+    filmatchClient: FilmatchGoRepositoryImpl(
+      datasource: FilmatchGoDatasourceImpl(
+        client: FilmatchHttpClient(
+          urlBase: AppConstants.filmatchBaseUrl)
+      )
+    )
+  )
+
   vm.errorMessage = "Error message sample"
 
   return VStack {

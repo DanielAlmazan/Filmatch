@@ -64,7 +64,7 @@ extension TvSeriesEpisode: Codable {
     
     let airDateString = try container.decode(String?.self, forKey: .airDate)
     let airDate: Date? = {
-      guard let dateStr = airDateString else { return nil }
+      guard let dateStr = airDateString, !dateStr.isEmpty else { return nil }
       return Utilities.dateFormatter.date(from: dateStr)
     }()
     

@@ -57,7 +57,6 @@ final class DiscoverViewModel {
   }
   
   func discoverMovies(with queryParams: [URLQueryItem]) async {
-    print("fetching movies on discoverItems on view model")
     let result = await moviesRepository.discoverMovies(withQueryParams: queryParams)
     switch result {
     case .success(let items):
@@ -71,7 +70,6 @@ final class DiscoverViewModel {
   }
   
   func discoverTvSeries(with queryParams: [URLQueryItem]) async {
-    print("fetching tv series on discoverItems on view model")
     let result = await tvSeriesRepository.discoverTvSeries(withQueryParams: queryParams)
     switch result {
     case .success(let items):

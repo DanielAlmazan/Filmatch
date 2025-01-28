@@ -13,29 +13,43 @@ import SwiftUI
 struct HomeView: View {
   /// The index of the currently selected tab.
   @State var selectedTab = 0
-  
+
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm
 
   /// The movies repository used to fetch and provide movie data.
   @Environment(MoviesRepositoryImpl.self) private var moviesRepository
-  
+
   @Environment(TvSeriesRepositoryImpl.self) private var tvSeriesRepository
-  
+
   @Environment(FiltersRepositoryImpl.self) private var filtersRepository
+  
+  @Environment(FilmatchGoRepositoryImpl.self) private var filmatchGoRepository
 
   var body: some View {
     TabView(selection: $selectedTab) {
       // MARK: - Discover Tab
       /// Tab for discovering movies.
       Tab("Discover", systemImage: "star", value: 0) {
-        DiscoverView(moviesRepository: moviesRepository,
-                           tvSeriesRepository: tvSeriesRepository,
-                           filtersRepository: filtersRepository)
+        DiscoverView(
+          moviesRepository: moviesRepository,
+          tvSeriesRepository: tvSeriesRepository,
+          filtersRepository: filtersRepository
+        ) { item in
+          // TODO: Add to user's watchlist
+        } onDeclineItem: { item in
+          // TODO: Add to user's blacklist
+        } onWatchItem: { item in
+          // TODO: Add to user's watched list
+        } onFavoriteItem: { item in
+          // TODO: Add to user's favorite list
+        }
       }
 
       Tab("Search", systemImage: "magnifyingglass", value: 1) {
-        Text("Search view")
+        NavigationView {
+          SearchView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
+        }
       }
 
       // MARK: - Rooms Tab
@@ -66,13 +80,21 @@ struct HomeView: View {
 }
 
 #Preview {
-  @Previewable @State var authVm = AuthenticationViewModel()
-  @Previewable @State var moviesRepository = MoviesRepositoryImpl(remoteDatasource: JsonMoviesRemoteDatasource())
-                                                           
-  @Previewable @State var filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
-                                                                   
+  @Previewable @State var moviesRepository = MoviesRepositoryImpl(
+    datasource: JsonMoviesRemoteDatasource()
+//    remoteDatasource: MoviesRemoteDatasourceImpl(client: HttpClient())
+  )
+  @Previewable @State var tvSeriesRepository = TvSeriesRepositoryImpl(
+    datasource: JsonTvSeriesDatasource()
+//    remoteDatasource: TvSeriesDatasourceImpl(client: HttpClient())
+  )
+  @Previewable @State var filtersRepository = FiltersRepositoryImpl(
+    filtersDatasource: JsonFiltersDatasource())
+  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchClient: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
+
   HomeView()
     .environment(authVm)
     .environment(moviesRepository)
     .environment(filtersRepository)
+    .environment(tvSeriesRepository)
 }

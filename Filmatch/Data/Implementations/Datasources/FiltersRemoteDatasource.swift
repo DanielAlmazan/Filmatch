@@ -8,15 +8,15 @@
 import Foundation
 
 final class FiltersRemoteDatasource: FiltersDatasource {
-  private let client: HttpClient
+  private let client: TMDBHttpClient
 
-  init(client: HttpClient) {
+  init(client: TMDBHttpClient) {
     self.client = client
   }
 
   func getGenres(for mediaType: MediaType) async -> Result<[Genre], Error> {
     let response = await client.get(
-      "/genre/\(mediaType.rawValue)/list",
+      "genre/\(mediaType.rawValue)/list",
       extraQueryItems: [],
       responseType: GenresResult.self
     )
@@ -29,12 +29,12 @@ final class FiltersRemoteDatasource: FiltersDatasource {
   }
 
   func getProviders(for mediaType: MediaType) async -> Result<
-    [StreamingProviderSingleResponse], Error
+    [FiltersStreamingProviderSingleResponse], Error
   > {
     let response = await client.get(
-      "/watch/providers/\(mediaType.rawValue)",
+      "watch/providers/\(mediaType.rawValue)",
       extraQueryItems: [],
-      responseType: ProvidersResponse.self
+      responseType: FiltersProvidersResponse.self
     )
     return switch response {
     case .success(let providers):

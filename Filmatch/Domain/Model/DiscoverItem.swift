@@ -20,4 +20,5 @@ protocol DiscoverItem: Identifiable {
   var voteCount: Int { get }
   
   var getTitle: String { get }
+  var getReleaseDate: String { get }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DiscoverView: View {
   enum CardStatus {
-    case accepted, declined, watched, favorited, pending
+    case interested, superInterested, notInterested, watched, pending
   }
 
   enum ActiveSheet: Identifiable {
@@ -19,13 +19,16 @@ struct DiscoverView: View {
 
     var id: String {
       switch self {
-      case .detail(let movie):
-        return "detail-\(movie.id)"
-      case .filters:
-        return "filters"
+      case .detail(let item): "detail-\(item.id)"
+      case .filters: "filters"
       }
     }
   }
+  
+  let onAcceptItem: ((any DiscoverItem) -> Void)?
+  let onDeclineItem: ((any DiscoverItem) -> Void)?
+  let onWatchItem: ((any DiscoverItem) -> Void)?
+  let onFavoriteItem: ((any DiscoverItem) -> Void)?
 
   private let screenWidth: CGFloat = UIScreen.main.bounds.size.width
   private let maxCardsStack: Int = 4
@@ -37,26 +40,26 @@ struct DiscoverView: View {
   @State private var filtersVm: FiltersViewModel
 
   private var firstCardStatus: CardStatus {
-    let accepted = (acceptBound...).contains(firstCardOffset.width)
+    let interested = (acceptBound...).contains(firstCardOffset.width)
     let watched = (acceptBound...).contains(firstCardOffset.height)
-    let favorited = (...(-acceptBound)).contains(firstCardOffset.height)
+    let superInterested = (...(-acceptBound)).contains(firstCardOffset.height)
     let declined = (...(-acceptBound)).contains(firstCardOffset.width)
 
-    if accepted && !watched { return .accepted }
-    if declined && !watched { return .declined }
-    if watched && !accepted && !declined { return .watched }
-    if favorited && !accepted && !declined { return .favorited }
+    if interested && !watched && !superInterested { return .interested }
+    if declined && !watched && !superInterested { return .notInterested }
+    if watched && !interested && !declined { return .watched }
+    if superInterested && !interested && !declined { return .superInterested }
 
     return .pending
   }
 
   private var tint: Color {
     switch firstCardStatus {
-    case .accepted: .green
-    case .declined: .red
-    case .watched: .gray
-    case .favorited: .pink
-    case .pending: .white
+    case .interested: .green
+    case .notInterested: .red
+    case .watched: .white.opacity(0.5)
+    case .superInterested: .purple
+    case .pending: .clear
     }
   }
 
@@ -64,8 +67,8 @@ struct DiscoverView: View {
     .degrees(firstCardOffset.width / 30)
   }
 
-  @State private var selectedMovieFilters: MediaFilters = .init()
-  @State private var selectedTvFilters: MediaFilters = .init()
+  @State private var selectedMovieFilters: MediaFilters = .init(for: .movie)
+  @State private var selectedTvFilters: MediaFilters = .init(for: .tvSeries)
 
   @State private var firstItem: (any DiscoverItem)?
   @State private var firstCardOffset: CGSize = .zero
@@ -85,12 +88,20 @@ struct DiscoverView: View {
   init(
     moviesRepository: MoviesRepository,
     tvSeriesRepository: TvSeriesRepository,
-    filtersRepository: FiltersRepository
+    filtersRepository: FiltersRepository,
+    onAcceptItem: ((any DiscoverItem) -> Void)?,
+    onDeclineItem: ((any DiscoverItem) -> Void)?,
+    onWatchItem: ((any DiscoverItem) -> Void)?,
+    onFavoriteItem: ((any DiscoverItem) -> Void)?
   ) {
     self.discoverVm = DiscoverViewModel(
       moviesRepository: moviesRepository,
       tvSeriesRepository: tvSeriesRepository)
     self.filtersVm = FiltersViewModel(filtersRepository: filtersRepository)
+    self.onAcceptItem = onAcceptItem
+    self.onDeclineItem = onDeclineItem
+    self.onWatchItem = onWatchItem
+    self.onFavoriteItem = onFavoriteItem
   }
 
   var body: some View {
@@ -100,7 +111,7 @@ struct DiscoverView: View {
       NavigationStack {
         // MARK: - Cards Stack
         ZStack {
-          // MARK: - Third Movie
+          // MARK: - Third Item
           if itemsList.count >= 3, let thirdItem = itemsList[2] {
             CardView(item: thirdItem)
               .rotationEffect(thirdCardRotation)
@@ -114,7 +125,7 @@ struct DiscoverView: View {
               }
           }
 
-          // MARK: - Second Movie
+          // MARK: - Second Item
           if itemsList.count >= 2, let secondItem = itemsList[1] {
             CardView(item: secondItem)
               .rotationEffect(secondCardRotation)
@@ -128,13 +139,17 @@ struct DiscoverView: View {
               }
           }
 
-          // MARK: - First Movie
+          // MARK: - First Item
           if itemsList.count >= 1, let firstItem = itemsList[0] {
             CardView(item: firstItem)
-              .offset(firstCardOffset)
               .id(firstItem.id)
+              .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                  .fill(tint)
+                  .blendMode(.hardLight)
+              }
+              .offset(firstCardOffset)
               .rotationEffect(firstCardRotation)
-              .colorMultiply(tint)
               .onTapGesture {
                 activeSheet = .detail(item: firstItem)
               }
@@ -160,6 +175,19 @@ struct DiscoverView: View {
               ) { _ in
                 self.restartHapticEngine()
               }
+          } else if !self.discoverVm.isLoading {
+            VStack {
+              Text("There are no items to show...")
+                .font(.headline)
+              Text("Try refreshing or changing your filters.")
+                .font(.caption)
+              Button {
+                self.discoverItems()
+              } label: {
+                Image(systemName: "arrow.clockwise.circle.fill")
+                  .font(.title)
+              }
+            }
           }
         }
         .padding()
@@ -183,8 +211,8 @@ struct DiscoverView: View {
         // MARK: - Buttons
         if itemsList.count >= 1, let firstItem = itemsList[0] {
           AcceptDeclineRowButtons(
-            item: firstItem, screenWidth: screenWidth, onAccept: acceptMovie,
-            onDecline: declineMovie
+            item: firstItem, screenWidth: screenWidth, onAccept: acceptItem,
+            onDecline: declineItem
           )
           .animation(.bouncy, value: firstCardStatus)
           .disabled(firstCardStatus != .pending)
@@ -192,6 +220,7 @@ struct DiscoverView: View {
       }
       .onAppear {
         discoverItems()
+        self.filtersVm.fetchFilters()
       }
       .sheet(item: $activeSheet) { sheet in
         switch sheet {
@@ -275,11 +304,11 @@ struct DiscoverView: View {
     let extraWidth: Double = 70
 
     switch firstCardStatus {
-    case .accepted:
-      acceptMovie(item: item, screenWidth: screenWidth + extraWidth)
-    case .declined:
-      declineMovie(item: item, screenWidth: screenWidth + extraWidth)
-    case .watched, .favorited, .pending:
+    case .interested:
+      acceptItem(item: item, screenWidth: screenWidth + extraWidth)
+    case .notInterested:
+      declineItem(item: item, screenWidth: screenWidth + extraWidth)
+    case .watched, .superInterested, .pending:
       withAnimation(.bouncy) { firstCardOffset = .zero }
     }
   }
@@ -318,14 +347,14 @@ struct DiscoverView: View {
     var numberOfPulses: Int = 1
 
     switch newStatus {
-    case .accepted:
+    case .interested:
       intensity = 0.6
       sharpness = 0.6
       numberOfPulses = 2
-    case .favorited:
+    case .superInterested:
       intensity = 0.5
       sharpness = 0.5
-    case .declined:
+    case .notInterested:
       intensity = 0.4
       sharpness = 0.4
     case .watched:
@@ -365,15 +394,21 @@ struct DiscoverView: View {
     return .degrees(isEven ? randomValue : randomValue * -1)
   }
 
-  private func acceptMovie(item: (any DiscoverItem), screenWidth: CGFloat) {
-    print("Movie \(item.getTitle) accepted")
+  private func acceptItem(item: (any DiscoverItem), screenWidth: CGFloat) {
+    guard let onAcceptItem else { return }
 
-    // TODO: Call to server for notifying this user wants to watch this movie
+    print("Movie \(item.getTitle) accepted")
+    onAcceptItem(item)
+
+    // TODO: Call to server for notifying this user wants to watch this item
     removeCard(moveTo: screenWidth)
   }
 
-  private func declineMovie(item: (any DiscoverItem), screenWidth: CGFloat) {
+  private func declineItem(item: (any DiscoverItem), screenWidth: CGFloat) {
+    guard let onDeclineItem else { return }
+    
     print("Movie \(item.getTitle) declined")
+    onDeclineItem(item)
 
     removeCard(moveTo: -screenWidth)
   }
@@ -398,11 +433,11 @@ struct DiscoverView: View {
 
       // Remove the first movie and card from the lists
       self.discoverVm.items?.removeFirst()
-      onMovieListChange()
+      onItemListChange()
     }
   }
 
-  private func onMovieListChange() {
+  private func onItemListChange() {
     guard let items = discoverVm.items, !items.isEmpty else { return }
 
     // Reset properties for the next card
@@ -413,7 +448,7 @@ struct DiscoverView: View {
         isEven: items.count % 2 != 0)
     }
 
-    // Fetch more movies if necessary
+    // Fetch more items if necessary
     if items.count <= self.maxCardsStack && !discoverVm.isLoading {
       // TODO: Get filters as query params
       discoverItems()
@@ -424,14 +459,18 @@ struct DiscoverView: View {
 #Preview {
   DiscoverView(
     moviesRepository: MoviesRepositoryImpl(
-      remoteDatasource: JsonMoviesRemoteDatasource()
+      datasource: JsonMoviesRemoteDatasource()
     ),
     tvSeriesRepository: TvSeriesRepositoryImpl(
-      remoteDatasource: JsonTvSeriesDatasource()
+      datasource: JsonTvSeriesDatasource()
     ),
     filtersRepository: FiltersRepositoryImpl(
       filtersDatasource: JsonFiltersDatasource()
-    )
+    ),
+    onAcceptItem: {item in print("\(item.getTitle) onAccept")},
+    onDeclineItem: { item in print("\(item.getTitle) onDecline")},
+    onWatchItem: { item in print("\(item.getTitle) onWatched")},
+    onFavoriteItem: { item in print("\(item.getTitle) onFavorite")}
   )
   .environment(
     PersonRepositoryImpl(

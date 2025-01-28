@@ -20,4 +20,8 @@ import Observation
   > {
     await datasource.getPerson(byId: id)
   }
+  
+  func getPersonMovieCredits(byId id: Int) async -> Result<PersonMovieCreditsResponse, any Error> {
+    await datasource.getPersonMovieCredits(byId: id)
+  }
 }

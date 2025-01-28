@@ -8,7 +8,7 @@
 import Foundation
 
 final class JsonTvSeriesDatasource: TvSeriesDatasource {
-  let client = JsonClient()
+  let client = TMDBJsonClient()
 
   func getTvSeries(byId id: Int) async -> Result<
     TvSeriesDetailSingleResponse, any Error
@@ -19,6 +19,10 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
       responseType: TvSeriesDetailSingleResponse.self,
       acceptanceRange: nil
     )
+  }
+  
+  func getProviders(forTvSeriesId id: Int) async -> Result<WatchProvidersResponse, any Error> {
+    .failure(JsonDatasourceError.notImplemented)
   }
 
   func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async
@@ -38,5 +42,9 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
       acceptanceRange: nil
     )
     .map { $0.results }
+  }
+  
+  func searchTvSeries(_ query: String, page: Int?) async -> Result<DiscoverTvSeriesResponse, Error> {
+    .failure(JsonDatasourceError.notImplemented)
   }
 }

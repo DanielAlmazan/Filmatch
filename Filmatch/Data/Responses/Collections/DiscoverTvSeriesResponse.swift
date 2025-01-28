@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class DiscoverTvSeriesResponse: Decodable {
+final class DiscoverTvSeriesResponse: Decodable, Sendable {
   /// The current page number.
   let page: Int
-  /// An array of discovered tv shows.
+  /// An array of discovered tv series.
   let results: [DiscoverTvSeriesItemSingleResponse]
   /// The total number of pages available.
   let totalPages: Int

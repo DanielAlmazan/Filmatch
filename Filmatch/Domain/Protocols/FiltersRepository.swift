@@ -9,5 +9,5 @@ import Foundation
 
 protocol FiltersRepository {
   func getGenres(for mediaType: MediaType) async -> Result<[Genre], Error>
-  func getProviders(for mediaType: MediaType) async -> Result<[StreamingProviderSingleResponse], Error>
+  func getProviders(for mediaType: MediaType) async -> Result<[FiltersStreamingProviderSingleResponse], Error>
 }

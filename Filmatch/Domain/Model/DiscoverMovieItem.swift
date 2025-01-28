@@ -18,7 +18,7 @@ struct DiscoverMovieItem: DiscoverItem {
   let overview: String?
   let popularity: Double
   let posterPath: String?
-  let releaseDate: String?
+  let releaseDate: Date?
   let title: String
   let video: Bool
   let voteAverage: Double
@@ -26,6 +26,11 @@ struct DiscoverMovieItem: DiscoverItem {
   
   var getTitle: String {
     self.title
+  }
+  
+  var getReleaseDate: String {
+    guard let date = self.releaseDate else { return "unknown" }
+    return "\(Calendar.current.component(.year, from: date))"
   }
   
   /// A default instance of `DiscoverMoviesItem` for testing purposes.
@@ -39,7 +44,8 @@ struct DiscoverMovieItem: DiscoverItem {
     overview: "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.",
     popularity: 684.302,
     posterPath: "/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg",
-    releaseDate: "2024-08-13",
+//    releaseDate: "2024-08-13",
+    releaseDate: Date(timeIntervalSince1970: 1723569460),
     title: "Alien: Romulus",
     video: false,
     voteAverage: 7.106,

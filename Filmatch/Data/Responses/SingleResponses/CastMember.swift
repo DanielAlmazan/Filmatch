@@ -8,13 +8,13 @@
 import Foundation
 
 /// `CastMember` represents an actor or actress who is part of a movie's cast.
-final class MovieCastMember: Identifiable, Codable, Sendable {
-  /// The unique identifier of the cast member.
-  let id: Int
+final class CastMember: Identifiable, Codable, Sendable {
   /// Indicates whether the cast member is an adult.
   let adult: Bool
   /// The gender of the cast member.
   let gender: Gender
+  /// The unique identifier of the cast member.
+  let id: Int
   /// The department the cast member is known for.
   let knownForDepartment: String
   /// The name of the cast member.
@@ -86,7 +86,7 @@ final class MovieCastMember: Identifiable, Codable, Sendable {
   }
   
   /// A default instance of `CastMember` for testing purposes.
-  static let `default` = MovieCastMember(
+  static let `default` = CastMember(
     id: 26723,
     adult: false,
     gender: .female,
@@ -102,7 +102,7 @@ final class MovieCastMember: Identifiable, Codable, Sendable {
   )
 }
 
-extension MovieCastMember: CustomStringConvertible {
+extension CastMember: CustomStringConvertible {
   /// A textual description of the cast member.
   var description: String {
     return """

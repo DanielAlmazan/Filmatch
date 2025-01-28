@@ -38,9 +38,6 @@ struct RegisterView: View {
   /// Validation errors for the password field.
   @State private var passwordErrors: [LocalizedStringResource]?
 
-  /// The password confirmation entered by the user.
-  @State private var passwordConfirmation = ""
-
   /// Validation errors for the password confirmation field.
   @State private var passwordConfirmationErrors: [LocalizedStringResource]?
 
@@ -49,9 +46,10 @@ struct RegisterView: View {
 
   /// A computed property to determine if the form is valid.
   private var isFormValid: Bool {
-    email.isEmpty || emailErrors != nil || password.isEmpty
-      || passwordErrors != nil || passwordConfirmation.isEmpty
-      || password != passwordConfirmation
+    email.isEmpty
+      || emailErrors != nil
+      || password.isEmpty
+      || passwordErrors != nil
   }
 
   var body: some View {
@@ -149,11 +147,11 @@ struct RegisterView: View {
         // External authentication providers (e.g., Google, Apple).
         ExternalAuthProvidersView {
           Task {
-            try await authVm.googleOAuth()
+            try authVm.googleOAuth()
           }
         } onAppleSignIn: {
           Task {
-            try await authVm.appleOAuth()
+            try authVm.appleOAuth()
           }
         }
 
@@ -176,7 +174,18 @@ struct RegisterView: View {
 // Disclaimer: This preview modifies the original component in order to
 // provide a more comfortable view while building it
 #Preview {
-  @Previewable @State var vm = AuthenticationViewModel()
+  @Previewable @State var vm = AuthenticationViewModel(
+    authenticationRepository: AuthenticationFirebaseRepository(
+      dataSource: AuthenticationFirebaseDataSource()
+    ),
+    filmatchClient: FilmatchGoRepositoryImpl(
+      datasource: FilmatchGoDatasourceImpl(
+        client: FilmatchHttpClient(
+          urlBase: AppConstants.filmatchBaseUrl)
+      )
+    )
+  )
+  
   vm.errorMessage = "Sample error message"
 
   return VStack {

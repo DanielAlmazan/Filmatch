@@ -39,6 +39,10 @@ final class Utilities: Sendable {
     df.locale = Locale(identifier: "en_US_POSIX")
     return df
   }()
+  
+//  static let getDateYear: (Date) -> Int = {
+//    Calendar.current.component(.year, from: $0)
+//  }()
 
   /// Parses a list of names into a human-readable string.
   /// - Parameter names: An array of names.

@@ -202,7 +202,7 @@ extension MovieDetailSingleResponse: Codable {
     
     let releaseDateString = try container.decode(String?.self, forKey: .releaseDate)
     let releaseDate: Date? = {
-      guard let dateStr = releaseDateString else { return nil }
+      guard let dateStr = releaseDateString, !dateStr.isEmpty else { return nil }
       return Utilities.dateFormatter.date(from: dateStr)
     }()
     
