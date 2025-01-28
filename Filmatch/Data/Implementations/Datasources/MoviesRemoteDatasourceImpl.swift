@@ -73,11 +73,7 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   /// Searches for movies based on a query string and other optional parameters. (Currently returns an empty array as it's not implemented.)
   /// - Parameters:
   ///   - query: The search query string.
-  ///   - includeAdult: Whether to include adult content.
-  ///   - primaryReleaseDate: The primary release date to filter results.
   ///   - page: The page number for pagination.
-  ///   - region: The region code to filter results.
-  ///   - year: The year to filter results.
   /// - Throws: An error if the operation fails.
   /// - Returns: An array of `MoviesSearchResponse`.
   func searchMovies(_ query: String, page: Int?) async -> Result<MoviesSearchResponse, Error> {

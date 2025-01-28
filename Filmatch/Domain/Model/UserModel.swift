@@ -18,7 +18,6 @@ struct UserModel: Sendable {
   static let `default` = UserModel(
     uuid: "1",
     email: "anaclet@secret.com",
-//    birthdate: .now,
     isAnonymous: false,
     providers: [
       FiltersStreamingProviderSingleResponse(

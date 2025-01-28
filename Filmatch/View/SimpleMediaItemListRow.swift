@@ -17,7 +17,7 @@ struct SimpleMediaItemListRow: View {
       KFImage.url(
         URL(
           string:
-            "\(AppConstants.mediaBase)/w500/\(item.posterPath ?? "")"
+            "\(AppConstants.tmdbMediaBase)/w500/\(item.posterPath ?? "")"
         )
       )
       .resizable()

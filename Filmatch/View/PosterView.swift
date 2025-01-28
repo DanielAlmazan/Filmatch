@@ -28,7 +28,7 @@ struct PosterView: View {
 
   /// The complete URL constructed from the `imageUrl` and `size`.
   var url: URL? {
-    URL(string: "\(AppConstants.mediaBase)/\(size)/\(imageUrl ?? "")")
+    URL(string: "\(AppConstants.tmdbMediaBase)/\(size)/\(imageUrl ?? "")")
   }
 
   var body: some View {

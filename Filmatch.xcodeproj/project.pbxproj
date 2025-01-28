@@ -35,6 +35,10 @@
 		851CBBCA2C7D25BC0093AFEC /* DiscoverMoviesItemSingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBC92C7D25BC0093AFEC /* DiscoverMoviesItemSingleResponse.swift */; };
 		851CBBCC2C7D3C610093AFEC /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBCB2C7D3C610093AFEC /* TMDBError.swift */; };
 		851CBBCE2C7DEE270093AFEC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851CBBCD2C7DEE270093AFEC /* CardView.swift */; };
+		8524F7F72D4677F2008FD631 /* FilmatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524F7F62D4677F2008FD631 /* FilmatchClient.swift */; };
+		8524F7F92D47E9AF008FD631 /* FilmatchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524F7F82D47E9AF008FD631 /* FilmatchUser.swift */; };
+		8524F7FB2D47F6CA008FD631 /* FilmatchGoPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524F7FA2D47F6CA008FD631 /* FilmatchGoPaths.swift */; };
+		8524F7FD2D47FBBD008FD631 /* FilmatchGoUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524F7FC2D47FBBD008FD631 /* FilmatchGoUserResponse.swift */; };
 		852A1F992D29C65F00C4D39D /* TvSeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A1F982D29C65F00C4D39D /* TvSeriesRepository.swift */; };
 		852A1F9B2D29C66A00C4D39D /* TvSeriesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A1F9A2D29C66A00C4D39D /* TvSeriesDatasource.swift */; };
 		852A1F9D2D29C78E00C4D39D /* TvSeriesDetailSingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A1F9C2D29C78E00C4D39D /* TvSeriesDetailSingleResponse.swift */; };
@@ -139,6 +143,10 @@
 		857E3C592D3EDF54006BA51D /* SearchItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857E3C582D3EDF54006BA51D /* SearchItemThumbnail.swift */; };
 		858606E92D36DD27001C1172 /* PersonMovieCreditsAsCastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858606E82D36DD27001C1172 /* PersonMovieCreditsAsCastRow.swift */; };
 		859375D32C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json in Resources */ = {isa = PBXBuildFile; fileRef = 859375D22C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json */; };
+		859A0C912D494721008AC949 /* FilmatchGoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0C902D494721008AC949 /* FilmatchGoRepository.swift */; };
+		859A0C932D4947E0008AC949 /* FilmatchGoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0C922D4947E0008AC949 /* FilmatchGoRepositoryImpl.swift */; };
+		859A0C952D494815008AC949 /* FilmatchGoDatasourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0C942D494815008AC949 /* FilmatchGoDatasourceImpl.swift */; };
+		859A0C972D494822008AC949 /* FilmatchGoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0C962D494822008AC949 /* FilmatchGoDatasource.swift */; };
 		85A6B5242C51303F0097BA0E /* FiltersStreamingProviderSingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6B5232C51303F0097BA0E /* FiltersStreamingProviderSingleResponse.swift */; };
 		85AE73722D42E0F80077CF3A /* SimpleMediaItemListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE73712D42E0F80077CF3A /* SimpleMediaItemListRow.swift */; };
 		85AE73742D42E80C0077CF3A /* SimpleMediaItemsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE73732D42E80C0077CF3A /* SimpleMediaItemsGridView.swift */; };
@@ -224,6 +232,10 @@
 		851CBBC92C7D25BC0093AFEC /* DiscoverMoviesItemSingleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverMoviesItemSingleResponse.swift; sourceTree = "<group>"; };
 		851CBBCB2C7D3C610093AFEC /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
 		851CBBCD2C7DEE270093AFEC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		8524F7F62D4677F2008FD631 /* FilmatchClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchClient.swift; sourceTree = "<group>"; };
+		8524F7F82D47E9AF008FD631 /* FilmatchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchUser.swift; sourceTree = "<group>"; };
+		8524F7FA2D47F6CA008FD631 /* FilmatchGoPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoPaths.swift; sourceTree = "<group>"; };
+		8524F7FC2D47FBBD008FD631 /* FilmatchGoUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoUserResponse.swift; sourceTree = "<group>"; };
 		852A1F982D29C65F00C4D39D /* TvSeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesRepository.swift; sourceTree = "<group>"; };
 		852A1F9A2D29C66A00C4D39D /* TvSeriesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesDatasource.swift; sourceTree = "<group>"; };
 		852A1F9C2D29C78E00C4D39D /* TvSeriesDetailSingleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesDetailSingleResponse.swift; sourceTree = "<group>"; };
@@ -329,6 +341,10 @@
 		857E3C582D3EDF54006BA51D /* SearchItemThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemThumbnail.swift; sourceTree = "<group>"; };
 		858606E82D36DD27001C1172 /* PersonMovieCreditsAsCastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMovieCreditsAsCastRow.swift; sourceTree = "<group>"; };
 		859375D22C9589E100E50BC2 /* movie-646385-append_to_response-videos_credits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "movie-646385-append_to_response-videos_credits.json"; sourceTree = "<group>"; };
+		859A0C902D494721008AC949 /* FilmatchGoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoRepository.swift; sourceTree = "<group>"; };
+		859A0C922D4947E0008AC949 /* FilmatchGoRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoRepositoryImpl.swift; sourceTree = "<group>"; };
+		859A0C942D494815008AC949 /* FilmatchGoDatasourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoDatasourceImpl.swift; sourceTree = "<group>"; };
+		859A0C962D494822008AC949 /* FilmatchGoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoDatasource.swift; sourceTree = "<group>"; };
 		85A6B5232C51303F0097BA0E /* FiltersStreamingProviderSingleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersStreamingProviderSingleResponse.swift; sourceTree = "<group>"; usesTabs = 0; };
 		85AE73712D42E0F80077CF3A /* SimpleMediaItemListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMediaItemListRow.swift; sourceTree = "<group>"; };
 		85AE73732D42E80C0077CF3A /* SimpleMediaItemsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMediaItemsGridView.swift; sourceTree = "<group>"; };
@@ -468,6 +484,7 @@
 				852A1FB42D2C81FA00C4D39D /* TvSeriesCrewMember.swift */,
 				852A1F9C2D29C78E00C4D39D /* TvSeriesDetailSingleResponse.swift */,
 				85CDD4C92D39B997003F9FED /* WatchProvidersItem.swift */,
+				8524F7FC2D47FBBD008FD631 /* FilmatchGoUserResponse.swift */,
 			);
 			path = SingleResponses;
 			sourceTree = "<group>";
@@ -568,6 +585,7 @@
 				857A27ED2D05B0B10080993C /* MoviesRemoteDatasourceImpl.swift */,
 				85D26E7F2D271EEA008ED9E7 /* PersonDatasourceImpl.swift */,
 				852A1FA62D2BFA8000C4D39D /* TvSeriesDatasourceImpl.swift */,
+				859A0C942D494815008AC949 /* FilmatchGoDatasourceImpl.swift */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -580,6 +598,7 @@
 				852A1FC22D2DB96100C4D39D /* TvSeriesRepositoryImpl.swift */,
 				857D7BDF2D188F1C0080271B /* FiltersRepositoryImpl.swift */,
 				85D26E812D2723CD008ED9E7 /* PersonRepositoryImpl.swift */,
+				859A0C922D4947E0008AC949 /* FilmatchGoRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -597,6 +616,9 @@
 				857D7BE12D188F9D0080271B /* FiltersDatasource.swift */,
 				85CCA29A2D24E0B5005EDC5B /* PersonRepository.swift */,
 				85CCA29C2D24E0BC005EDC5B /* PersonDatasource.swift */,
+				8524F7F62D4677F2008FD631 /* FilmatchClient.swift */,
+				859A0C902D494721008AC949 /* FilmatchGoRepository.swift */,
+				859A0C962D494822008AC949 /* FilmatchGoDatasource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -647,6 +669,7 @@
 				85FD0B1D2CFE2E7B00B03C9B /* SocialLoginModel.swift */,
 				853096D82D00FE3900C6F2A6 /* GoogleSignInResultModel.swift */,
 				853096DC2D0108A200C6F2A6 /* SignInWithAppleResult.swift */,
+				8524F7F82D47E9AF008FD631 /* FilmatchUser.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -842,11 +865,12 @@
 			children = (
 				85112BB32D4664A300A4F78A /* TMDBClients */,
 				857D7BF62D1DCC130080271B /* Implementations */,
-				851C42C02C7A6A5100127163 /* HTTPMethods.swift */,
-				851CBBCB2C7D3C610093AFEC /* TMDBError.swift */,
 				85434BBD2C72120500A68003 /* Responses */,
 				85E320E62C8DE453009DCA5F /* TestData */,
+				851C42C02C7A6A5100127163 /* HTTPMethods.swift */,
+				851CBBCB2C7D3C610093AFEC /* TMDBError.swift */,
 				85112BB42D4664C400A4F78A /* FilmatchHttpClient.swift */,
+				8524F7FA2D47F6CA008FD631 /* FilmatchGoPaths.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1001,11 +1025,14 @@
 				852A1FB12D2C772500C4D39D /* Creator.swift in Sources */,
 				852A1FB72D2C825600C4D39D /* TvSeriesCrewJob.swift in Sources */,
 				852A1FC32D2DB96100C4D39D /* TvSeriesRepositoryImpl.swift in Sources */,
+				8524F7F72D4677F2008FD631 /* FilmatchClient.swift in Sources */,
 				85F308502C4F127700DF37C2 /* ContentView.swift in Sources */,
 				852AF2E42D32EA41005ABF3B /* ProviderModel.swift in Sources */,
 				852A1FA72D2BFA8000C4D39D /* TvSeriesDatasourceImpl.swift in Sources */,
 				85E320F42C8DEB4D009DCA5F /* MovieVideosAppendResponse.swift in Sources */,
 				85E320E32C8BB241009DCA5F /* VotesAverageCircleView.swift in Sources */,
+				859A0C932D4947E0008AC949 /* FilmatchGoRepositoryImpl.swift in Sources */,
+				8524F7FD2D47FBBD008FD631 /* FilmatchGoUserResponse.swift in Sources */,
 				850E812B2C6AABD500F8CE7C /* PosterView.swift in Sources */,
 				852A1F992D29C65F00C4D39D /* TvSeriesRepository.swift in Sources */,
 				85FD0B1C2CFE2D9C00B03C9B /* AppleSignInHelper.swift in Sources */,
@@ -1058,6 +1085,7 @@
 				85FD0B1E2CFE2E7B00B03C9B /* SocialLoginModel.swift in Sources */,
 				85AE73762D42EB080077CF3A /* SimpleMediaItemListView.swift in Sources */,
 				854E6F242CEBC2AA00DABC60 /* AuthenticationFirebaseDataSource.swift in Sources */,
+				8524F7FB2D47F6CA008FD631 /* FilmatchGoPaths.swift in Sources */,
 				854E6F252CEBC2AA00DABC60 /* AuthenticationFirebaseRepository.swift in Sources */,
 				85D3A4DE2D08D6A4001C0A35 /* FiltersView.swift in Sources */,
 				853096DB2D00FEFE00C6F2A6 /* Utilities.swift in Sources */,
@@ -1084,6 +1112,7 @@
 				85A6B5242C51303F0097BA0E /* FiltersStreamingProviderSingleResponse.swift in Sources */,
 				851C42BD2C7A559600127163 /* FiltersProvidersResponse.swift in Sources */,
 				85E5DE402C99E1B0002AF33D /* AcceptDeclineRowButtons.swift in Sources */,
+				859A0C912D494721008AC949 /* FilmatchGoRepository.swift in Sources */,
 				85CDD4BE2D38622A003F9FED /* ExpandableText.swift in Sources */,
 				85434BCD2C737EFD00A68003 /* MovieVideosRowView.swift in Sources */,
 				85434BC72C735AF200A68003 /* PersonMovieCreditsResponse.swift in Sources */,
@@ -1091,6 +1120,7 @@
 				85D3A4E02D08D6C1001C0A35 /* FiltersViewModel.swift in Sources */,
 				852A1FD32D2EFC4F00C4D39D /* DetailItem.swift in Sources */,
 				850494C82CAE9ACE00C44BC9 /* OnBoardingView.swift in Sources */,
+				859A0C972D494822008AC949 /* FilmatchGoDatasource.swift in Sources */,
 				852A1FB52D2C81FA00C4D39D /* TvSeriesCrewMember.swift in Sources */,
 				85F308642C4F1CF200DF37C2 /* MovieDetailSingleResponse.swift in Sources */,
 				854010182D34861F00CE447A /* PersonMovieCreditsAsCrewMember.swift in Sources */,
@@ -1105,6 +1135,7 @@
 				850494CA2CAEE69800C44BC9 /* StartButtonView.swift in Sources */,
 				852A1FC12D2DB75B00C4D39D /* DiscoverTvSeriesItem.swift in Sources */,
 				852A1FA12D2BE8C900C4D39D /* DiscoverTvSeriesItemSingleResponse.swift in Sources */,
+				8524F7F92D47E9AF008FD631 /* FilmatchUser.swift in Sources */,
 				857E3C532D3BD1C6006BA51D /* SearchViewModel.swift in Sources */,
 				854E6F202CEBC2AA00DABC60 /* ValidationHelper.swift in Sources */,
 				85F308622C4F1CCD00DF37C2 /* MovieDetailView.swift in Sources */,
@@ -1120,6 +1151,7 @@
 				85F3084E2C4F127700DF37C2 /* FilmatchApp.swift in Sources */,
 				852AF2E22D32E5F2005ABF3B /* ProvidersView.swift in Sources */,
 				85F308702C4F23E400DF37C2 /* Country.swift in Sources */,
+				859A0C952D494815008AC949 /* FilmatchGoDatasourceImpl.swift in Sources */,
 				85F3086C2C4F22CC00DF37C2 /* Genre.swift in Sources */,
 				85CDD4C82D39B906003F9FED /* WatchProvidersResponse.swift in Sources */,
 				85EE181F2C6F56B400791D40 /* Config.swift in Sources */,

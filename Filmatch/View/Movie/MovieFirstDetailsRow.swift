@@ -35,6 +35,7 @@ struct MovieFirstDetailsRow: View {
           .font(.caption)
       }
       .buttonStyle(.bordered)
+      .disabled(providers?.isEmpty ?? true)
       .sheet(isPresented: $showProviders) {
         if let providers = providers {
           ProvidersView(providers: providers)

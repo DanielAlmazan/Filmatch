@@ -10,3 +10,8 @@ import Foundation
 enum RuntimeErrors: Error {
   case notImplemented
 }
+
+enum LoginError: Error {
+  case notLoggedIn
+  case invalidCredentials
+}

@@ -9,19 +9,19 @@ import Kingfisher
 import SwiftUI
 
 struct ProfileSummary: View {
-  var user: UserModel
+  var user: FilmatchUser
 
   var body: some View {
     ScrollView {
       VStack(spacing: 10) {
         Group {
-          if let image = user.image {
-            KFImage.url(image)
-              .resizable()
-          } else {
-            Image(systemName: "person.fill")
-              .resizable()
-          }
+//          if let image = user.image {
+//            KFImage.url(image)
+//              .resizable()
+//          } else {
+//            Image(systemName: "person.fill")
+//              .resizable()
+//          }
         }
         .frame(width: 100, height: 100)
         .clipShape(Circle())

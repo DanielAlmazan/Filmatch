@@ -23,6 +23,8 @@ struct HomeView: View {
   @Environment(TvSeriesRepositoryImpl.self) private var tvSeriesRepository
 
   @Environment(FiltersRepositoryImpl.self) private var filtersRepository
+  
+  @Environment(FilmatchGoRepositoryImpl.self) private var filmatchGoRepository
 
   var body: some View {
     TabView(selection: $selectedTab) {
@@ -78,7 +80,6 @@ struct HomeView: View {
 }
 
 #Preview {
-  @Previewable @State var authVm = AuthenticationViewModel()
   @Previewable @State var moviesRepository = MoviesRepositoryImpl(
     datasource: JsonMoviesRemoteDatasource()
 //    remoteDatasource: MoviesRemoteDatasourceImpl(client: HttpClient())
@@ -89,6 +90,7 @@ struct HomeView: View {
   )
   @Previewable @State var filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource())
+  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchClient: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
 
   HomeView()
     .environment(authVm)

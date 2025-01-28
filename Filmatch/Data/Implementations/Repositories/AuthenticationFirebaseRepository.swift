@@ -5,6 +5,7 @@
 //  Created by Daniel Enrique Almazán Sellés on 24/9/24.
 //
 
+@preconcurrency import FirebaseAuth
 import Foundation
 import SwiftUI
 
@@ -21,40 +22,38 @@ final class AuthenticationFirebaseRepository: AuthenticationRepository {
   
   // MARK: - AuthenticationRepository Methods
   
-  func getCurrentUser() -> AuthenticationResultModel? {
-    return self.dataSource.getCurrentUser()
+  func getCurrentUser() async -> User? {
+    return await self.dataSource.getCurrentUser()
   }
   
   func createNewUser(
     email: String,
-    password: String,
-    completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void
-  ) {
-    self.dataSource.createNewUser(email: email, password: password, completion: completion)
+    password: String
+  ) async -> Result<User, Error> {
+    await self.dataSource.createNewUser(email: email, password: password)
   }
   
   func logIn(
     email: String,
-    password: String,
-    completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void
-  ) {
-    self.dataSource.logIn(email: email, password: password, completion: completion)
+    password: String
+  ) async -> Result<User, Error> {
+    await self.dataSource.logIn(email: email, password: password)
   }
   
-  func googleOAuth(tokens: GoogleSignInResultModel, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    self.dataSource.googleOAuth(tokens: tokens, completion: completion)
+  func googleOAuth(tokens: GoogleSignInResultModel) async -> Result<User, Error> {
+    await self.dataSource.googleOAuth(tokens: tokens)
   }
   
-  func appleOAuth(tokens: SignInWithAppleResult, completion: @escaping (Result<AuthenticationResultModel, Error>) -> Void) {
-    self.dataSource.appleOAuth(tokens: tokens, completion: completion)
+  func appleOAuth(tokens: SignInWithAppleResult) async -> Result<User, Error> {
+    await self.dataSource.appleOAuth(tokens: tokens)
   }
   
-  func logOut(completion: @escaping (Result<Void, Error>) -> Void) {
-    self.dataSource.signOut(completion: completion)
+  func logOut() async -> Result<Void, Error> {
+    await self.dataSource.signOut()
   }
   
-  func deleteAccount(completion: @escaping (Result<Void, Error>) -> Void) {
-    self.dataSource.deleteUser(completion: completion)
+  func deleteAccount() async -> Result<Void, Error> {
+    await self.dataSource.deleteUser()
   }
 }
 
