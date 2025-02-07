@@ -52,3 +52,36 @@ struct DiscoverMovieItem: DiscoverItem {
     voteCount: 95
   )
 }
+
+extension DiscoverMovieItem: Encodable {
+  enum CodingKeys: String, CodingKey {
+    case adult, id, title, video, overview, popularity
+    case backdropPath = "backdrop_path"
+    case genreIds = "genre_ids"
+    case originalLanguage = "original_language"
+    case originalTitle = "original_title"
+    case posterPath = "poster_path"
+    case releaseDate = "release_date"
+    case voteAverage = "vote_average"
+    case voteCount = "vote_count"
+  }
+  
+  func encode(to encoder: any Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    
+    try container.encode(adult, forKey: .adult)
+    try container.encode(backdropPath, forKey: .backdropPath)
+    try container.encode(genreIds, forKey: .genreIds)
+    try container.encode(id, forKey: .id)
+    try container.encode(originalLanguage, forKey: .originalLanguage)
+    try container.encode(originalTitle, forKey: .originalTitle)
+    try container.encode(overview, forKey: .overview)
+    try container.encode(popularity, forKey: .popularity)
+    try container.encode(posterPath, forKey: .posterPath)
+    try container.encode(releaseDate, forKey: .releaseDate)
+    try container.encode(title, forKey: .title)
+    try container.encode(video, forKey: .video)
+    try container.encode(voteAverage, forKey: .voteAverage)
+    try container.encode(voteCount, forKey: .voteCount)
+  }
+}

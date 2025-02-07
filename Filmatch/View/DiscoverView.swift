@@ -9,11 +9,7 @@ import CoreHaptics
 import SwiftUI
 
 struct DiscoverView: View {
-  enum CardStatus {
-    case interested, superInterested, notInterested, watched, pending
-  }
-
-  enum ActiveSheet: Identifiable {
+    enum ActiveSheet: Identifiable {
     case detail(item: any DiscoverItem)
     case filters
 
@@ -39,7 +35,7 @@ struct DiscoverView: View {
   @State private var discoverVm: DiscoverViewModel
   @State private var filtersVm: FiltersViewModel
 
-  private var firstCardStatus: CardStatus {
+  private var firstCardStatus: InterestStatus {
     let interested = (acceptBound...).contains(firstCardOffset.width)
     let watched = (acceptBound...).contains(firstCardOffset.height)
     let superInterested = (...(-acceptBound)).contains(firstCardOffset.height)
@@ -335,8 +331,8 @@ struct DiscoverView: View {
   }
 
   private func triggerHapticFeedback(
-    oldStatus: CardStatus,
-    newStatus: CardStatus
+    oldStatus: InterestStatus,
+    newStatus: InterestStatus
   ) {
     guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
       return
@@ -397,10 +393,8 @@ struct DiscoverView: View {
   private func acceptItem(item: (any DiscoverItem), screenWidth: CGFloat) {
     guard let onAcceptItem else { return }
 
-    print("Movie \(item.getTitle) accepted")
     onAcceptItem(item)
-
-    // TODO: Call to server for notifying this user wants to watch this item
+    print("Movie \(item.getTitle) accepted")
     removeCard(moveTo: screenWidth)
   }
 

@@ -36,9 +36,13 @@ struct HomeView: View {
           tvSeriesRepository: tvSeriesRepository,
           filtersRepository: filtersRepository
         ) { item in
-          // TODO: Add to user's watchlist
+          Task {
+            await filmatchGoRepository.markMediaAsVisited(for: item, as: .interested)
+          }
         } onDeclineItem: { item in
-          // TODO: Add to user's blacklist
+          Task {
+            await filmatchGoRepository.markMediaAsVisited(for: item, as: .notInterested)
+          }
         } onWatchItem: { item in
           // TODO: Add to user's watched list
         } onFavoriteItem: { item in
