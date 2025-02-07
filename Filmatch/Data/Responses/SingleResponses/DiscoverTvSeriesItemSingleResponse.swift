@@ -53,7 +53,7 @@ final class DiscoverTvSeriesItemSingleResponse: Identifiable, Sendable {
 }
 
 extension DiscoverTvSeriesItemSingleResponse: Codable {
-  enum CodingKeys: String, CodingKey {
+  private enum CodingKeys: String, CodingKey {
     case id, name, overview, popularity
     case backdropPath = "backdrop_path"
     case firstAirDate = "first_air_date"

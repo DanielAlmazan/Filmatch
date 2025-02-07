@@ -18,8 +18,8 @@ import Foundation
     await self.datasource.auth()
   }
   
-  func markMediaAsVisited() async {
-    await self.datasource.markMediaAsVisited()
+  func markMediaAsVisited(for media: any DiscoverItem, as status: InterestStatus) async {
+    await self.datasource.markMediaAsVisited(for: media, as: status)
   }
   
   func getMovieVisitStatus() async {

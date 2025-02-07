@@ -15,9 +15,19 @@ protocol FilmatchClient: Sendable {
     body: Data?,
     acceptedStatusCodes: ClosedRange<Int>
   ) async -> Result<Data, Error>
-  
+}
+
+extension FilmatchClient {
   func request(
-  path: FilmatchGoPaths,
-  method: HTTPMethods
-  ) async -> Result<Data, Error>
+    path: FilmatchGoPaths,
+    method: HTTPMethods
+  ) async -> Result<Data, Error> {
+    await self.request(
+      path: path,
+      method: method,
+      queryParams: nil,
+      body: nil,
+      acceptedStatusCodes: 200...299
+    )
+  }
 }

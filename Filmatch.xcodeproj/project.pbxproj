@@ -17,6 +17,7 @@
 		850494C82CAE9ACE00C44BC9 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850494C72CAE9ACE00C44BC9 /* OnBoardingView.swift */; };
 		850494CA2CAEE69800C44BC9 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850494C92CAEE69800C44BC9 /* StartButtonView.swift */; };
 		85077A7C2C7CF0E80087AC21 /* CastMemberThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85077A7B2C7CF0E80087AC21 /* CastMemberThumbnailView.swift */; };
+		850BAC652D554F49004DE944 /* VisitedMediaRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850BAC642D554F49004DE944 /* VisitedMediaRequestBody.swift */; };
 		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
 		850E812B2C6AABD500F8CE7C /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E812A2C6AABD500F8CE7C /* PosterView.swift */; };
 		850E81302C6AB34A00F8CE7C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850E812F2C6AB34A00F8CE7C /* HomeView.swift */; };
@@ -169,7 +170,7 @@
 		85D26E862D299E8B008ED9E7 /* JsonPersonRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D26E852D299E8B008ED9E7 /* JsonPersonRemoteDatasource.swift */; };
 		85D3A4DE2D08D6A4001C0A35 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D3A4DD2D08D6A4001C0A35 /* FiltersView.swift */; };
 		85D3A4E02D08D6C1001C0A35 /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D3A4DF2D08D6C1001C0A35 /* FiltersViewModel.swift */; };
-		85D3A4E22D0EF859001C0A35 /* CardStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D3A4E12D0EF859001C0A35 /* CardStatus.swift */; };
+		85D3A4E22D0EF859001C0A35 /* InterestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D3A4E12D0EF859001C0A35 /* InterestStatus.swift */; };
 		85D898242CBC4F4400B242C6 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 85D898232CBC4F4400B242C6 /* GoogleSignIn */; };
 		85D898262CBC4F4400B242C6 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 85D898252CBC4F4400B242C6 /* GoogleSignInSwift */; };
 		85DF6ABA2D36E75B006078A4 /* PersonTvSeriesCreditsAsCastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF6AB92D36E75B006078A4 /* PersonTvSeriesCreditsAsCastRow.swift */; };
@@ -215,6 +216,7 @@
 		850494C72CAE9ACE00C44BC9 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		850494C92CAEE69800C44BC9 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		85077A7B2C7CF0E80087AC21 /* CastMemberThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastMemberThumbnailView.swift; sourceTree = "<group>"; };
+		850BAC642D554F49004DE944 /* VisitedMediaRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedMediaRequestBody.swift; sourceTree = "<group>"; };
 		850E812A2C6AABD500F8CE7C /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
 		850E812F2C6AB34A00F8CE7C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		850E81312C6AB64200F8CE7C /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
@@ -367,7 +369,7 @@
 		85D26E852D299E8B008ED9E7 /* JsonPersonRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPersonRemoteDatasource.swift; sourceTree = "<group>"; };
 		85D3A4DD2D08D6A4001C0A35 /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
 		85D3A4DF2D08D6C1001C0A35 /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
-		85D3A4E12D0EF859001C0A35 /* CardStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStatus.swift; sourceTree = "<group>"; };
+		85D3A4E12D0EF859001C0A35 /* InterestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestStatus.swift; sourceTree = "<group>"; };
 		85D8981F2CBC4E5300B242C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85DF6AB92D36E75B006078A4 /* PersonTvSeriesCreditsAsCastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTvSeriesCreditsAsCastRow.swift; sourceTree = "<group>"; };
 		85DF6ABB2D36E864006078A4 /* person-26723-tv-credits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "person-26723-tv-credits.json"; sourceTree = "<group>"; };
@@ -431,6 +433,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		850BAC632D554C84004DE944 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				850BAC642D554F49004DE944 /* VisitedMediaRequestBody.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		85112BB32D4664A300A4F78A /* TMDBClients */ = {
@@ -780,7 +790,7 @@
 			isa = PBXGroup;
 			children = (
 				85AAC84C2D04C0FF00F9AE3E /* Auth */,
-				85D3A4E12D0EF859001C0A35 /* CardStatus.swift */,
+				85D3A4E12D0EF859001C0A35 /* InterestStatus.swift */,
 				85F3086F2C4F23E400DF37C2 /* Country.swift */,
 				852A1FB02D2C772500C4D39D /* Creator.swift */,
 				852A1FD22D2EFC4F00C4D39D /* DetailItem.swift */,
@@ -863,6 +873,7 @@
 		85F308602C4F12E100DF37C2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				850BAC632D554C84004DE944 /* Requests */,
 				85112BB32D4664A300A4F78A /* TMDBClients */,
 				857D7BF62D1DCC130080271B /* Implementations */,
 				85434BBD2C72120500A68003 /* Responses */,
@@ -1058,7 +1069,7 @@
 				857A27EE2D05B0B10080993C /* MoviesRemoteDatasourceImpl.swift in Sources */,
 				857D7BF92D1DD0E90080271B /* MonetizationType.swift in Sources */,
 				8537FC7A2D1F3FC60092CF72 /* TMDBApiClient.swift in Sources */,
-				85D3A4E22D0EF859001C0A35 /* CardStatus.swift in Sources */,
+				85D3A4E22D0EF859001C0A35 /* InterestStatus.swift in Sources */,
 				857E3C512D3B0F6E006BA51D /* SearchView.swift in Sources */,
 				85077A7C2C7CF0E80087AC21 /* CastMemberThumbnailView.swift in Sources */,
 				853096D92D00FE3900C6F2A6 /* GoogleSignInResultModel.swift in Sources */,
@@ -1107,6 +1118,7 @@
 				852A1FA92D2C363C00C4D39D /* TvSeriesCastRole.swift in Sources */,
 				857E3C592D3EDF54006BA51D /* SearchItemThumbnail.swift in Sources */,
 				85CDD4C22D399096003F9FED /* PersonMovieCreditsAsCrewRow.swift in Sources */,
+				850BAC652D554F49004DE944 /* VisitedMediaRequestBody.swift in Sources */,
 				852A1F9B2D29C66A00C4D39D /* TvSeriesDatasource.swift in Sources */,
 				857A27F02D0620480080993C /* JsonMoviesRemoteDatasource.swift in Sources */,
 				85A6B5242C51303F0097BA0E /* FiltersStreamingProviderSingleResponse.swift in Sources */,

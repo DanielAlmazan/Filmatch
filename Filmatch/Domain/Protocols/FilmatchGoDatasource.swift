@@ -10,7 +10,7 @@ import Foundation
 @MainActor
 protocol FilmatchGoDatasource {
   func auth() async -> Result<FilmatchUser, Error>
-  func markMediaAsVisited() async
+  func markMediaAsVisited(for media: any DiscoverItem, as status: InterestStatus) async
   func getMovieVisitStatus() async
   func getTvVisitStatus() async
   func getTvVisitsByIds() async
