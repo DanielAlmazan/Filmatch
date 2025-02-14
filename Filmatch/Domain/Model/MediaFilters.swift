@@ -8,7 +8,7 @@
 import CryptoKit
 import Foundation
 
-struct MediaFilters {
+struct MediaFilters: Sendable {
   enum MinRating: Double {
     case gte50 = 5
     case gte75 = 7.5
@@ -134,7 +134,6 @@ struct MediaFilters {
       sortBy,
     ].joined(separator: "-")
 
-    print("Joined: \(joined)")
     guard let data = joined.data(using: .utf8) else {
       return ""
     }

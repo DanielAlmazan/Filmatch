@@ -38,7 +38,7 @@ final class JsonMoviesRemoteDatasource: MoviesRemoteDatasource {
   }
 
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverMoviesItemSingleResponse], Error>
+    -> Result<DiscoverMoviesResponse, Error>
   {
     var page = 1
     if let pageParam = queryParams.first(where: { $0.name == "page" })?.value,
@@ -53,7 +53,6 @@ final class JsonMoviesRemoteDatasource: MoviesRemoteDatasource {
       responseType: DiscoverMoviesResponse.self,
       acceptanceRange: nil
     )
-    .map { $0.results }
   }
 
   func searchMovies(_ query: String, page: Int?) async -> Result<

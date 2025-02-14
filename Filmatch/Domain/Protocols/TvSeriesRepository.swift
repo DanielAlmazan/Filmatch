@@ -7,13 +7,14 @@
 
 import Foundation
 
+@MainActor
 protocol TvSeriesRepository {
   /// Returns tv series by ID if it exists.
   func getTvSeries(byId id: Int) async -> Result<TvSeriesDetailSingleResponse, Error>
 
   /// Returns a [DiscoverTvSeriesItemSingleResponse] based on the providers passed.
   func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverTvSeriesItemSingleResponse], Error>
+    -> Result<DiscoverTvSeriesResponse, Error>
 
   /// Returns a `Result<[WatchProvidersResponse], Error>` with the providers of a specific Tv Series
   func getProviders(forTvSeriesId id: Int) async -> Result<WatchProvidersResponse, Error>

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol MoviesRepository {
   /// Returns movie by ID if it exists.
   func getMovie(byId id: Int) async -> Result<MovieDetailSingleResponse, Error>
@@ -16,7 +17,7 @@ protocol MoviesRepository {
   
   /// Returns a [MovieDetailResponse] based on the providers passed.
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
-  -> Result<[DiscoverMoviesItemSingleResponse], Error>
+  -> Result<DiscoverMoviesResponse, Error>
   
   /// Returns a `Result<[WatchProvidersResponse], Error>` with the providers of a specific movie
   func getProviders(forMovieId id: Int) async -> Result<WatchProvidersResponse, Error>

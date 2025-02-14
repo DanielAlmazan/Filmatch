@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DiscoverItem: Identifiable {
+protocol DiscoverItem: Identifiable, Sendable {
   var mediaType: MediaType { get }
   var backdropPath: String? { get }
   var genreIds: [Int] { get }

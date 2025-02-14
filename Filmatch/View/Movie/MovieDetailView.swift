@@ -49,7 +49,8 @@ struct MovieDetailView: View {
                 // MARK: - Movie title
                 Text(movie.title ?? "Unknown")
                   .font(.title)
-                
+                  .textSelection(.enabled)
+
                 // MARK: - Tagline
                 if let tagline = movie.tagline, !tagline.isEmpty {
                   Text(tagline)

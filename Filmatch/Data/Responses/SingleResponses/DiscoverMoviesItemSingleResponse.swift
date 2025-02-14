@@ -89,7 +89,7 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Sendable {
 }
 
 extension DiscoverMoviesItemSingleResponse: Codable {
-  enum CodingKeys: String, CodingKey {
+  private enum CodingKeys: String, CodingKey {
     case adult, id, title, video, overview, popularity
     case backdropPath = "backdrop_path"
     case genreIds = "genre_ids"

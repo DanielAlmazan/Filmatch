@@ -81,7 +81,6 @@ struct LoginView: View {
             ) { _, errors in
               helper.combineErrors(startingWith: nil, errors: errors)
             } validate: {
-              print("Validating email")
               helper.updateErrorMessage($emailErrors) {
                 helper.isEmailValid(email)
               }
@@ -177,7 +176,7 @@ struct LoginView: View {
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
-    filmatchClient: FilmatchGoRepositoryImpl(
+    filmatchRepository: FilmatchGoRepositoryImpl(
       datasource: FilmatchGoDatasourceImpl(
         client: FilmatchHttpClient(
           urlBase: AppConstants.filmatchBaseUrl)

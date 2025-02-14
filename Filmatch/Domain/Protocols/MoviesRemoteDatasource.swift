@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol MoviesRemoteDatasource {
   /// Returns movie by ID if it exists.
   func getMovie(byId id: Int) async -> Result<MovieDetailSingleResponse, Error>
@@ -23,7 +24,7 @@ protocol MoviesRemoteDatasource {
 
   /// Returns a [MovieDetailResponse] based on the providers passed.
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverMoviesItemSingleResponse], Error>
+    -> Result<DiscoverMoviesResponse, Error>
 
   /// Returns a [MovieDetailResponse] based on the providers passed.
   func searchMovies(_ query: String, page: Int?) async -> Result<

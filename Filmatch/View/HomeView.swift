@@ -34,11 +34,18 @@ struct HomeView: View {
         DiscoverView(
           moviesRepository: moviesRepository,
           tvSeriesRepository: tvSeriesRepository,
+          filmatchRepository: filmatchGoRepository,
           filtersRepository: filtersRepository
         ) { item in
-          // TODO: Add to user's watchlist
+          Task {
+            // TODO: Show error if exists
+            let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: .interested)
+          }
         } onDeclineItem: { item in
-          // TODO: Add to user's blacklist
+          Task {
+            // TODO: Show error if exists
+            let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: .notInterested)
+          }
         } onWatchItem: { item in
           // TODO: Add to user's watched list
         } onFavoriteItem: { item in
@@ -90,7 +97,7 @@ struct HomeView: View {
   )
   @Previewable @State var filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource())
-  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchClient: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
+  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchRepository: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
 
   HomeView()
     .environment(authVm)

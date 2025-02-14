@@ -36,7 +36,7 @@ final class TvSeriesDatasourceImpl: TvSeriesDatasource {
   }
 
   func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverTvSeriesItemSingleResponse], any Error>
+    -> Result<DiscoverTvSeriesResponse, any Error>
   {
     await client
       .get(
@@ -44,7 +44,6 @@ final class TvSeriesDatasourceImpl: TvSeriesDatasource {
         extraQueryItems: queryParams,
         responseType: DiscoverTvSeriesResponse.self
       )
-      .map { $0.results }
   }
 
   func searchTvSeries(_ query: String, page: Int?) async -> Result<DiscoverTvSeriesResponse, any Error> {

@@ -60,14 +60,14 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
   /// - Throws: An error if the network request fails or decoding fails.
   /// - Returns: An array of `DiscoverMoviesItem` containing discovered movies.
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverMoviesItemSingleResponse], Error>
+    -> Result<DiscoverMoviesResponse, Error>
   {
     let endpoint = "discover/movie"
     return await client.get(
       endpoint,
       extraQueryItems: queryParams,
       responseType: DiscoverMoviesResponse.self
-    ).map { $0.results }
+    )
   }
 
   /// Searches for movies based on a query string and other optional parameters. (Currently returns an empty array as it's not implemented.)

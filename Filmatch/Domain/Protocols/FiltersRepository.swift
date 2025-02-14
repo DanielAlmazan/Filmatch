@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol FiltersRepository {
   func getGenres(for mediaType: MediaType) async -> Result<[Genre], Error>
   func getProviders(for mediaType: MediaType) async -> Result<[FiltersStreamingProviderSingleResponse], Error>

@@ -11,13 +11,26 @@ protocol FilmatchClient: Sendable {
   func request(
     path: FilmatchGoPaths,
     method: HTTPMethods,
-    queryParams: [String: String]?,
+    queryParams: [URLQueryItem]?,
     body: Data?,
     acceptedStatusCodes: ClosedRange<Int>
   ) async -> Result<Data, Error>
-  
+}
+
+extension FilmatchClient {
   func request(
-  path: FilmatchGoPaths,
-  method: HTTPMethods
-  ) async -> Result<Data, Error>
+    path: FilmatchGoPaths,
+    method: HTTPMethods,
+    queryParams: [URLQueryItem]? = nil,
+    body: Data? = nil,
+    acceptedStatusCodes: ClosedRange<Int> = 200...299
+  ) async -> Result<Data, Error> {
+    await self.request(
+      path: path,
+      method: method,
+      queryParams: queryParams,
+      body: body,
+      acceptedStatusCodes: acceptedStatusCodes
+    )
+  }
 }

@@ -9,11 +9,7 @@ import CoreHaptics
 import SwiftUI
 
 struct DiscoverView: View {
-  enum CardStatus {
-    case interested, superInterested, notInterested, watched, pending
-  }
-
-  enum ActiveSheet: Identifiable {
+  private enum ActiveSheet: Identifiable {
     case detail(item: any DiscoverItem)
     case filters
 
@@ -24,14 +20,13 @@ struct DiscoverView: View {
       }
     }
   }
-  
+
   let onAcceptItem: ((any DiscoverItem) -> Void)?
   let onDeclineItem: ((any DiscoverItem) -> Void)?
   let onWatchItem: ((any DiscoverItem) -> Void)?
   let onFavoriteItem: ((any DiscoverItem) -> Void)?
 
   private let screenWidth: CGFloat = UIScreen.main.bounds.size.width
-  private let maxCardsStack: Int = 4
   private let initialSecondCardBlur: Double = 1.5
   private let initialThirdCardBlur: Double = 3
   private let acceptBound: Double = 150
@@ -39,7 +34,7 @@ struct DiscoverView: View {
   @State private var discoverVm: DiscoverViewModel
   @State private var filtersVm: FiltersViewModel
 
-  private var firstCardStatus: CardStatus {
+  private var firstCardStatus: InterestStatus {
     let interested = (acceptBound...).contains(firstCardOffset.width)
     let watched = (acceptBound...).contains(firstCardOffset.height)
     let superInterested = (...(-acceptBound)).contains(firstCardOffset.height)
@@ -67,27 +62,24 @@ struct DiscoverView: View {
     .degrees(firstCardOffset.width / 30)
   }
 
-  @State private var selectedMovieFilters: MediaFilters = .init(for: .movie)
-  @State private var selectedTvFilters: MediaFilters = .init(for: .tvSeries)
+  @State private var isLoading: Bool = true
 
-  @State private var firstItem: (any DiscoverItem)?
   @State private var firstCardOffset: CGSize = .zero
 
-  @State private var secondItem: (any DiscoverItem)?
   @State private var secondCardBlurRadius: Double = 1.5
   @State private var secondCardRotation: Angle = .degrees(-2)
 
-  @State private var thirdItem: (any DiscoverItem)?
   @State private var thirdCardBlurRadius: Double = 3
   @State private var thirdCardRotation: Angle = .degrees(2)
 
   @State private var activeSheet: ActiveSheet?
 
   @State private var engine: CHHapticEngine?
-  
+
   init(
     moviesRepository: MoviesRepository,
     tvSeriesRepository: TvSeriesRepository,
+    filmatchRepository: FilmatchGoRepository,
     filtersRepository: FiltersRepository,
     onAcceptItem: ((any DiscoverItem) -> Void)?,
     onDeclineItem: ((any DiscoverItem) -> Void)?,
@@ -96,7 +88,8 @@ struct DiscoverView: View {
   ) {
     self.discoverVm = DiscoverViewModel(
       moviesRepository: moviesRepository,
-      tvSeriesRepository: tvSeriesRepository)
+      tvSeriesRepository: tvSeriesRepository,
+      filmatchRepository: filmatchRepository)
     self.filtersVm = FiltersViewModel(filtersRepository: filtersRepository)
     self.onAcceptItem = onAcceptItem
     self.onDeclineItem = onDeclineItem
@@ -105,17 +98,17 @@ struct DiscoverView: View {
   }
 
   var body: some View {
-    if self.discoverVm.isLoading {
-      ProgressView("Loading...")
-    } else if let itemsList = self.discoverVm.items {
-      NavigationStack {
+    NavigationStack {
+      if self.isLoading {
+        ProgressView("Loading...")
+      } else if let itemsList = self.discoverVm.items {
         // MARK: - Cards Stack
         ZStack {
           // MARK: - Third Item
-          if itemsList.count >= 3, let thirdItem = itemsList[2] {
-            CardView(item: thirdItem)
+          if itemsList.count >= 3 {
+            CardView(item: itemsList[2])
               .rotationEffect(thirdCardRotation)
-              .id(thirdItem.id)
+              .id(itemsList[2].id)
               .blur(radius: thirdCardBlurRadius)
               .onAppear {
                 withAnimation {
@@ -126,11 +119,11 @@ struct DiscoverView: View {
           }
 
           // MARK: - Second Item
-          if itemsList.count >= 2, let secondItem = itemsList[1] {
-            CardView(item: secondItem)
+          if itemsList.count >= 2 {
+            CardView(item: itemsList[1])
+              .id(itemsList[1].id)
               .rotationEffect(secondCardRotation)
-              .id(secondItem.id)
-              .blur(radius: secondCardBlurRadius)
+              .blur(radius: 1.5)
               .onAppear {
                 withAnimation {
                   secondCardRotation = randomRotation(
@@ -140,9 +133,9 @@ struct DiscoverView: View {
           }
 
           // MARK: - First Item
-          if itemsList.count >= 1, let firstItem = itemsList[0] {
-            CardView(item: firstItem)
-              .id(firstItem.id)
+          if itemsList.count >= 1 {
+            CardView(item: itemsList[0])
+              .id(itemsList[0].id)
               .overlay {
                 RoundedRectangle(cornerRadius: 20)
                   .fill(tint)
@@ -151,7 +144,7 @@ struct DiscoverView: View {
               .offset(firstCardOffset)
               .rotationEffect(firstCardRotation)
               .onTapGesture {
-                activeSheet = .detail(item: firstItem)
+                activeSheet = .detail(item: itemsList[0])
               }
               .gesture(
                 DragGesture()
@@ -159,7 +152,7 @@ struct DiscoverView: View {
                     onGestureChanged(gesture: gesture)
                   }
                   .onEnded { _ in
-                    onGestureEnded(item: firstItem)
+                    onGestureEnded(item: itemsList[0])
                   }
               )
               .onAppear(perform: prepareHaptics)
@@ -175,13 +168,15 @@ struct DiscoverView: View {
               ) { _ in
                 self.restartHapticEngine()
               }
-          } else if !self.discoverVm.isLoading {
+          } else if !self.isLoading {
+            // Show retry message
             VStack {
               Text("There are no items to show...")
                 .font(.headline)
               Text("Try refreshing or changing your filters.")
                 .font(.caption)
               Button {
+                self.isLoading = true
                 self.discoverItems()
               } label: {
                 Image(systemName: "arrow.clockwise.circle.fill")
@@ -207,85 +202,90 @@ struct DiscoverView: View {
             }
           }
         }
-        
+
         // MARK: - Buttons
-        if itemsList.count >= 1, let firstItem = itemsList[0] {
+        if !itemsList.isEmpty {
           AcceptDeclineRowButtons(
-            item: firstItem, screenWidth: screenWidth, onAccept: acceptItem,
+            item: itemsList[0], screenWidth: screenWidth, onAccept: acceptItem,
             onDecline: declineItem
           )
           .animation(.bouncy, value: firstCardStatus)
           .disabled(firstCardStatus != .pending)
         }
+      } else {
+        Text("\(self.discoverVm.errorMessage ?? "Unexpected error")")
       }
-      .onAppear {
-        discoverItems()
-        self.filtersVm.fetchFilters()
-      }
-      .sheet(item: $activeSheet) { sheet in
-        switch sheet {
-        // MARK: - Detail Sheet
-        case .detail(let item):
-          ZStack(alignment: .topTrailing) {
-            if item.mediaType == .movie {
-              MovieDetailView(
-                repository: self.discoverVm.moviesRepository, movieId: item.id)
-            } else if item.mediaType == .tvSeries {
-              TvSeriesDetailView(
-                repository: self.discoverVm.tvSeriesRepository,
-                seriesId: item.id)
-            }
-            DismissSheetButton(onDismissSheet: nil)
+    }
+    .onAppear {
+      self.isLoading = true
+      self.discoverItems()
+      self.filtersVm.fetchFilters()
+    }
+    .sheet(item: $activeSheet) { sheet in
+      switch sheet {
+      // MARK: - Detail Sheet
+      case .detail(let item):
+        ZStack(alignment: .topTrailing) {
+          switch item.mediaType {
+          case .movie:
+            MovieDetailView(
+              repository: self.discoverVm.moviesRepository, movieId: item.id)
+          case .tvSeries:
+            TvSeriesDetailView(
+              repository: self.discoverVm.tvSeriesRepository,
+              seriesId: item.id)
           }
-        // MARK: - Filters Sheet
-        case .filters:
-          NavigationStack {
-            FiltersView(filtersViewModel: filtersVm)
-              .background(.thinMaterial)
-              .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                  Button {
-                    self.filtersVm.onCancelButtonTapped()
-                    activeSheet = nil
-                  } label: {
-                    Text("Cancel")
-                      .foregroundStyle(.secondary)
-                  }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                  Button {
-                    if self.filtersVm.filtersDidChange {
-                      self.filtersVm.rearrangeFilters()
-                      self.onFiltersChanged()
-                      print("Filters changed")
-                    }
-
-                    activeSheet = nil
-                  } label: {
-                    Text("Done")
-                      .foregroundStyle(.primary)
-                  }
+          DismissSheetButton(onDismissSheet: nil)
+        }
+      // MARK: - Filters Sheet
+      case .filters:
+        NavigationStack {
+          FiltersView(filtersViewModel: filtersVm)
+            .background(.thinMaterial)
+            .toolbar {
+              ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                  self.filtersVm.onCancelButtonTapped()
+                  activeSheet = nil
+                } label: {
+                  Text("Cancel")
+                    .foregroundStyle(.secondary)
                 }
               }
-          }
+              ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                  if self.filtersVm.filtersDidChange {
+                    self.filtersVm.rearrangeFilters()
+                    self.onFiltersChanged()
+                  }
+
+                  activeSheet = nil
+                } label: {
+                  Text("Done")
+                    .foregroundStyle(.primary)
+                }
+              }
+            }
         }
       }
-    } else {
-      Text("\(self.discoverVm.errorMessage ?? "Unexpected error")")
     }
   }
 
   // MARK: - Aux Functions
 
   private func discoverItems() {
-    self.discoverVm.discoverItems(
-      for: self.filtersVm.selectedMedia,
-      with: self.filtersVm.buildQueryParams(page: self.discoverVm.currentPage)
-    )
+    Task {
+      await self.discoverVm.discoverItems(
+        for: self.filtersVm.selectedMedia,
+        with: self.filtersVm.currentFilters
+      )
+      self.isLoading = false
+    }
   }
 
   private func onFiltersChanged() {
     self.discoverVm.resetItems()
+    self.isLoading = true
     self.discoverItems()
   }
 
@@ -335,8 +335,8 @@ struct DiscoverView: View {
   }
 
   private func triggerHapticFeedback(
-    oldStatus: CardStatus,
-    newStatus: CardStatus
+    oldStatus: InterestStatus,
+    newStatus: InterestStatus
   ) {
     guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
       return
@@ -397,19 +397,16 @@ struct DiscoverView: View {
   private func acceptItem(item: (any DiscoverItem), screenWidth: CGFloat) {
     guard let onAcceptItem else { return }
 
-    print("Movie \(item.getTitle) accepted")
     onAcceptItem(item)
-
-    // TODO: Call to server for notifying this user wants to watch this item
+    print("Movie \(item.getTitle) accepted")
     removeCard(moveTo: screenWidth)
   }
 
   private func declineItem(item: (any DiscoverItem), screenWidth: CGFloat) {
     guard let onDeclineItem else { return }
-    
-    print("Movie \(item.getTitle) declined")
-    onDeclineItem(item)
 
+    onDeclineItem(item)
+    print("Movie \(item.getTitle) declined")
     removeCard(moveTo: -screenWidth)
   }
 
@@ -433,6 +430,7 @@ struct DiscoverView: View {
 
       // Remove the first movie and card from the lists
       self.discoverVm.items?.removeFirst()
+      print("Items left: \(String(describing: self.discoverVm.items?.count))")
       onItemListChange()
     }
   }
@@ -449,8 +447,7 @@ struct DiscoverView: View {
     }
 
     // Fetch more items if necessary
-    if items.count <= self.maxCardsStack && !discoverVm.isLoading {
-      // TODO: Get filters as query params
+    if items.count <= self.discoverVm.kLoadingThreshold && !isLoading {
       discoverItems()
     }
   }
@@ -464,13 +461,15 @@ struct DiscoverView: View {
     tvSeriesRepository: TvSeriesRepositoryImpl(
       datasource: JsonTvSeriesDatasource()
     ),
+    filmatchRepository: FilmatchGoRepositoryImpl(
+      datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient())),
     filtersRepository: FiltersRepositoryImpl(
       filtersDatasource: JsonFiltersDatasource()
     ),
-    onAcceptItem: {item in print("\(item.getTitle) onAccept")},
-    onDeclineItem: { item in print("\(item.getTitle) onDecline")},
-    onWatchItem: { item in print("\(item.getTitle) onWatched")},
-    onFavoriteItem: { item in print("\(item.getTitle) onFavorite")}
+    onAcceptItem: { item in print("\(item.getTitle) onAccept") },
+    onDeclineItem: { item in print("\(item.getTitle) onDecline") },
+    onWatchItem: { item in print("\(item.getTitle) onWatched") },
+    onFavoriteItem: { item in print("\(item.getTitle) onFavorite") }
   )
   .environment(
     PersonRepositoryImpl(

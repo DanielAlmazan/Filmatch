@@ -178,7 +178,7 @@ struct RegisterView: View {
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
-    filmatchClient: FilmatchGoRepositoryImpl(
+    filmatchRepository: FilmatchGoRepositoryImpl(
       datasource: FilmatchGoDatasourceImpl(
         client: FilmatchHttpClient(
           urlBase: AppConstants.filmatchBaseUrl)
