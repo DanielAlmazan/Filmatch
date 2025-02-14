@@ -12,14 +12,14 @@ final class FilmatchHttpClient: FilmatchClient {
   private let urlBase: String
   private let session = URLSession(configuration: .default)
 
-  init(urlBase: String) {
+  init(urlBase: String = AppConstants.filmatchBaseUrl) {
     self.urlBase = urlBase
   }
 
   func request(
     path: FilmatchGoPaths,
     method: HTTPMethods = .GET,
-    queryParams: [String: String]? = nil,
+    queryParams: [URLQueryItem]? = nil,
     body: Data? = nil,
     acceptedStatusCodes: ClosedRange<Int> = 200...299
   ) async -> Result<Data, Error> {
@@ -30,9 +30,9 @@ final class FilmatchHttpClient: FilmatchClient {
     let token: String
     do {
       token = try await user.getIDTokenResult().token
-      #if DEBUG
-        print("Token:\n\(token)")
-      #endif
+//      #if DEBUG
+//        print("Token:\n\(token)")
+//      #endif
     } catch {
       return .failure(error)
     }
@@ -46,9 +46,7 @@ final class FilmatchHttpClient: FilmatchClient {
     }
     if let queryParams = queryParams, !queryParams.isEmpty {
       var items = [URLQueryItem]()
-      for (key, value) in queryParams {
-        items.append(URLQueryItem(name: key, value: value))
-      }
+      items.append(contentsOf: queryParams)
       components.queryItems = (components.queryItems ?? []) + items
     }
 
@@ -60,6 +58,9 @@ final class FilmatchHttpClient: FilmatchClient {
     var request = URLRequest(url: finalURL)
     request.httpMethod = method.rawValue
     request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+//    #if DEBUG
+//      print("Request URL: \(request)")
+//    #endif
 
     if let body = body {
       request.httpBody = body
@@ -69,8 +70,8 @@ final class FilmatchHttpClient: FilmatchClient {
     // 4) Call URLSession
     do {
       let (data, response) = try await session.data(for: request)
-      
-      print("Response: \(String(decoding: data, as: UTF8.self))")
+
+//      print("Response: \(String(decoding: data, as: UTF8.self))")
 
       // 5) Verify status code
       if let httpResponse = response as? HTTPURLResponse {

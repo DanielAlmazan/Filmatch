@@ -39,11 +39,7 @@ final class FiltersViewModel {
   var selectedMedia: MediaType = .movie
 
   var filtersDidChange: Bool {
-    print(self.currentSelectedMedia != self.selectedMedia
-          || self.currentTvFilters != self.tvFilters
-          || self.currentMovieFilters != self.movieFilters)
-    
-    return self.currentSelectedMedia != self.selectedMedia
+    self.currentSelectedMedia != self.selectedMedia
       || self.currentTvFilters != self.tvFilters
       || self.currentMovieFilters != self.movieFilters
   }
@@ -157,10 +153,9 @@ final class FiltersViewModel {
     areTvProvidersLoading = false
   }
 
-  func buildQueryParams(page: Int?) -> [URLQueryItem] {
-    print("El hash: \(currentFilters.filtersHash())")
-    return currentFilters.getQueryParams(page: page)
-  }
+//  func buildQueryParams(page: Int?) -> [URLQueryItem] {
+//    currentFilters.getQueryParams(page: page)
+//  }
 
   func isGenreSelected(_ genre: Genre) -> Bool {
     self.selectedFilters.genres.contains(genre)
@@ -169,7 +164,7 @@ final class FiltersViewModel {
   func isProviderSelected(_ provider: FiltersStreamingProviderSingleResponse)
     -> Bool
   {
-    return self.selectedFilters.providers.contains(provider)
+    self.selectedFilters.providers.contains(provider)
   }
 
   func areAllProvidersSelected() -> Bool {

@@ -37,7 +37,7 @@ final class TMDBHttpClient: TMDBApiClient {
     responseType: T.Type,
     acceptanceRange: Range<Int>? = 200..<300
   ) async -> Result<T, Error> {
-    print("Requesting \(endpoint)")
+//    print("Requesting \(endpoint)")
 
     guard let url = URL(string: "\(urlBase)\(endpoint)") else {
       return .failure(URLError(.badURL))
@@ -67,7 +67,6 @@ final class TMDBHttpClient: TMDBApiClient {
     ]
 
     do {
-      print(request)
       // Proceed to make the request
       let (data, response) = try await URLSession.shared.data(for: request)
 

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol TMDBApiClient {
   func get<T: Decodable>(
     _ endpoint: String,

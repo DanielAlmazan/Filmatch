@@ -26,7 +26,7 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
   }
 
   func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverTvSeriesItemSingleResponse], any Error>
+    -> Result<DiscoverTvSeriesResponse, any Error>
   {
     var page = 1
     if let pageParam = queryParams.first(where: { $0.name == "page" })?.value,
@@ -41,7 +41,6 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
       responseType: DiscoverTvSeriesResponse.self,
       acceptanceRange: nil
     )
-    .map { $0.results }
   }
   
   func searchTvSeries(_ query: String, page: Int?) async -> Result<DiscoverTvSeriesResponse, Error> {

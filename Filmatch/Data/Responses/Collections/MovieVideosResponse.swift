@@ -9,7 +9,7 @@ import Foundation
 
 /// `MovieVideosResponse` represents the response from an API call fetching videos related to a movie.
 /// It contains the movie ID and an array of `Video` objects.
-final class MovieVideosResponse: Identifiable, Codable {
+final class MovieVideosResponse: Identifiable, Sendable, Codable {
   /// The unique identifier of the movie.
   let id: Int
   /// An array of video results associated with the movie.

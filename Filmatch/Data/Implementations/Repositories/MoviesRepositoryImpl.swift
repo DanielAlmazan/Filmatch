@@ -33,7 +33,7 @@ final class MoviesRepositoryImpl: MoviesRepository {
   }
 
   func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
-    -> Result<[DiscoverMoviesItemSingleResponse], any Error>
+    -> Result<DiscoverMoviesResponse, any Error>
   {
     await remoteDatasource.discoverMovies(withQueryParams: queryParams)
   }

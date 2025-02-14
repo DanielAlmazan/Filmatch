@@ -9,7 +9,7 @@ import Foundation
 
 /// `DiscoverMoviesResponse` represents the response from the movie discovery API call.
 /// It contains pagination information and an array of discovered movies.
-final class DiscoverMoviesResponse: Codable {
+final class DiscoverMoviesResponse: Sendable, Codable {
   /// The current page number.
   let page: Int
   /// An array of discovered movies.

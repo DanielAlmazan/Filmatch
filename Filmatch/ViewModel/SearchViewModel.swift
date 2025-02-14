@@ -99,7 +99,8 @@ final class SearchViewModel {
 
   var shouldPerformSearch: Bool {
     !isLoading
-      && !query.isEmpty && currentResults.isEmpty
+      && !query.isEmpty
+      && currentResults.isEmpty
       || lastSearchQuery != query
       || currentMaxPages != nil
         && currentMaxPages! >= currentPage
@@ -138,21 +139,16 @@ final class SearchViewModel {
 
   @MainActor
   private func searchMovies(for query: String) async {
-    print("Performed search for movies with query: \"\(query)\"")
     Task {
       let result = await moviesRepository.searchMovies(
-        query, page: currentMoviesPage)
+        query, page: currentPage)
 
       switch result {
       case .success(let movies):
         moviesResults.append(
           contentsOf: movies.results.map { $0.toDiscoverMovieItem() })
-        currentMovieMaxPages = movies.totalPages
-        print(
-          currentMoviesPage == movies.totalPages
-            ? "No more pages to load"
-            : "\(movies.totalPages - currentMoviesPage) more pages to load")
-        currentMoviesPage += 1
+        currentMaxPages = movies.totalPages
+        currentPage += 1
         lastSearchMovieQuery = query
       case .failure(let error):
         errorMessage = error.localizedDescription
@@ -163,17 +159,16 @@ final class SearchViewModel {
 
   @MainActor
   private func searchTvShows(for query: String) async {
-    print("Performed search for tv series with query: \"\(query)\"")
     Task {
       let result = await tvSeriesRepository.searchTvSeries(
-        query, page: currentTvPage)
+        query, page: currentPage)
 
       switch result {
       case .success(let tvSeries):
         tvSeriesResults.append(
           contentsOf: tvSeries.results.map { $0.toDiscoverTvSeriesItem() })
-        currentTvMaxPages = tvSeries.totalPages
-        currentTvPage += 1
+        currentMaxPages = tvSeries.totalPages
+        currentPage += 1
         lastSearchTvQuery = query
       case .failure(let error):
         errorMessage = error.localizedDescription
@@ -183,7 +178,6 @@ final class SearchViewModel {
   }
 
   private func resetSearchResults() {
-    print("reseting search results for \(selectedMedia.rawValue)")
     switch selectedMedia {
     case .movie:
       moviesResults.removeAll()

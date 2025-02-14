@@ -23,7 +23,7 @@ final class TvSeriesRepositoryImpl: TvSeriesRepository {
     await remoteDatasource.getProviders(forTvSeriesId: id)
   }
   
-  func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async -> Result<[DiscoverTvSeriesItemSingleResponse], any Error> {
+  func discoverTvSeries(withQueryParams queryParams: [URLQueryItem]) async -> Result<DiscoverTvSeriesResponse, any Error> {
     await remoteDatasource.discoverTvSeries(withQueryParams: queryParams)
   }
   

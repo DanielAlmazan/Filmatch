@@ -24,7 +24,7 @@ class AuthenticationViewModel {
   
   /// The repository responsible for handling authentication operations.
   private let authenticationRepository: AuthenticationRepository
-  private let filmatchClient: FilmatchGoRepository
+  private let filmatchRepository: FilmatchGoRepository
   
   /// Initializes a new `AuthenticationViewModel`.
   /// - Parameter authenticationRepository: The repository used for authentication operations. Defaults to `AuthenticationFirebaseRepository`.
@@ -32,10 +32,10 @@ class AuthenticationViewModel {
     authenticationRepository: AuthenticationRepository =
       AuthenticationFirebaseRepository(
         dataSource: AuthenticationFirebaseDataSource()),
-    filmatchClient: FilmatchGoRepository
+    filmatchRepository: FilmatchGoRepository
   ) {
     self.authenticationRepository = authenticationRepository
-    self.filmatchClient = filmatchClient
+    self.filmatchRepository = filmatchRepository
 
     // Listen for authentication state changes.
     let _ = Auth.auth().addStateDidChangeListener { auth, user in
@@ -43,7 +43,7 @@ class AuthenticationViewModel {
         self.isLoading = true
         let userResult = await self.authenticationRepository.getCurrentUser()
         if let _ = userResult {
-          let filmatchAuthResult = await self.filmatchClient.auth()
+          let filmatchAuthResult = await self.filmatchRepository.auth()
           switch filmatchAuthResult {
           case .success(let filmatchUser):
             self.currentUser = filmatchUser
@@ -67,7 +67,7 @@ class AuthenticationViewModel {
       
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchClient.auth()
+        let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
           self.currentUser = filmatchUser
@@ -89,7 +89,7 @@ class AuthenticationViewModel {
       let result = await authenticationRepository.appleOAuth(tokens: tokens)
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchClient.auth()
+        let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
           self.currentUser = filmatchUser
@@ -113,7 +113,7 @@ class AuthenticationViewModel {
       let result = await authenticationRepository.logIn(email: email, password: password)
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchClient.auth()
+        let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
           self.currentUser = filmatchUser
@@ -136,7 +136,7 @@ class AuthenticationViewModel {
       let result = await authenticationRepository.googleOAuth(tokens: tokens)
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchClient.auth()
+        let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
           self.currentUser = filmatchUser

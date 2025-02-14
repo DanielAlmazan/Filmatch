@@ -13,19 +13,25 @@ import SwiftUI
 struct FilmatchApp: App {
   @AppStorage("isOnboarding") var isOnboarding: Bool = true
   @State var authVm: AuthenticationViewModel
+  @State var filmatchGoRepository: FilmatchGoRepositoryImpl
 
   init() {
+    let filmatchGoRepository = FilmatchGoRepositoryImpl(
+      datasource: FilmatchGoDatasourceImpl(
+        client: FilmatchHttpClient(
+          urlBase: AppConstants.filmatchBaseUrl
+        )
+      )
+    )
+    
+    self.filmatchGoRepository = filmatchGoRepository
+    
     FirebaseApp.configure()
-    authVm = AuthenticationViewModel(
+    self.authVm = AuthenticationViewModel(
       authenticationRepository: AuthenticationFirebaseRepository(
         dataSource: AuthenticationFirebaseDataSource()
       ),
-      filmatchClient: FilmatchGoRepositoryImpl(
-        datasource: FilmatchGoDatasourceImpl(
-          client: FilmatchHttpClient(
-            urlBase: AppConstants.filmatchBaseUrl)
-        )
-      )
+      filmatchRepository: filmatchGoRepository
     )
   }
 
@@ -36,6 +42,7 @@ struct FilmatchApp: App {
       } else {
         ContentView()
           .environment(authVm)
+          .environment(filmatchGoRepository)
           .onOpenURL { url in
             GIDSignIn.sharedInstance.handle(url)
           }

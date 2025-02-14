@@ -15,6 +15,10 @@ final class DiscoverViewModel {
   let moviesRepository: MoviesRepository
   /// The repository used to fetch tv series data.
   let tvSeriesRepository: TvSeriesRepository
+  /// The repository used to interact with our own API
+  let filmatchRepository: FilmatchGoRepository
+  
+  let kLoadingThreshold: Int = 4
 
   /// The current page number for pagination.
   var currentPage: Int = 1
@@ -23,62 +27,160 @@ final class DiscoverViewModel {
     .init(name: QueryParam.page.rawValue, value: String(currentPage))
   }
 
+  var currentMaxPages: Int = 1
+
+  var shouldDiscoverItems: Bool {
+    currentMaxPages >= currentPage
+  }
+
   /// An array of discovered movies.
-//  var movies: [DiscoverMoviesItemSingleResponse]? = []
-  var items: [(any DiscoverItem)?]? = []
+  var items: [(any DiscoverItem)]?
 
   /// Indicates whether a loading operation is in progress.
-  var isLoading: Bool = false
+  //  var isLoading: Bool = false
 
   /// An optional error message if an error occurs during data fetching.
   var errorMessage: String?
 
-  // TODO: Add filters
-
   /// Initializes a new instance of `DiscoverMoviesViewModel`.
   /// - Parameter repository: The `MoviesRepository` used to fetch movie data.
-  init(moviesRepository: MoviesRepository, tvSeriesRepository: TvSeriesRepository) {
+  init(
+    moviesRepository: MoviesRepository,
+    tvSeriesRepository: TvSeriesRepository,
+    filmatchRepository: FilmatchGoRepository
+  ) {
     self.moviesRepository = moviesRepository
     self.tvSeriesRepository = tvSeriesRepository
+    self.filmatchRepository = filmatchRepository
   }
 
-  /// Fetches movies from the repository based on the current page and updates the `movies` array.
-  @MainActor func discoverItems(for media: MediaType, with queryParams: [URLQueryItem]) {
+  @MainActor private func getCleanVisitedItems(
+    for media: MediaType, from items: [any DiscoverItem]
+  ) async -> [any DiscoverItem] {
+    let ids = items.map { "\($0.id)" }.joined(separator: ",")
+
+    let result: Result<[Int], Error>
+
+    switch media {
+    case .movie: result = await filmatchRepository.getMovieVisitsByIds(for: ids)
+    case .tvSeries: result = await filmatchRepository.getTvVisitsByIds(for: ids)
+    }
+
+    return switch result {
+    case .success(let visitedIds): items.filter { !visitedIds.contains($0.id) }
+    case .failure(_): items
+    }
+  }
+
+  /// Fetches Discover Items from the repository based on the current page and updates the `movies` array.
+  @MainActor func discoverItems(
+    for media: MediaType,
+    with filters: MediaFilters
+  ) async {
+    guard shouldDiscoverItems else { return }
+
     self.errorMessage = nil
-    self.isLoading = true
-    Task {
-      if media == .movie {
-        await discoverMovies(with: queryParams)
-      } else if media == .tvSeries {
-        await discoverTvSeries(with: queryParams)
+    // Always fetch the first page
+    switch media {
+    case .movie: await discoverMovies(with: filters)
+    case .tvSeries: await discoverTvSeries(with: filters)
+    }
+
+    // Removing visited items
+    if let items = self.items {
+      self.items = await getCleanVisitedItems(for: media, from: items)
+    }
+
+    // If user has already visited every item
+    if let items = self.items, items.isEmpty {
+      // Fetch the first
+      if self.currentPage <= 3 {
+        await discoverItems(for: media, with: filters)
+      } else {
+        // The has visited more than 3 pages
+        // Getting the latest visited page...
+        let latestPageResult = await self.filmatchRepository
+          .getLatestVisitedPageByFiltersHash(for: filters.filtersHash())
+
+        switch latestPageResult {
+        case .success(let latestPage):
+          // Replace current page if the latest is higher
+          if latestPage > currentPage {
+            currentPage = latestPage
+          } else {
+            // Otherwise, update the DB with the current page
+            await self.createVisitedFilterHash(for: filters, at: currentPage)
+          }
+          // Fetch the proper page
+          await discoverItems(for: media, with: filters)
+        case .failure(let error):
+          await self.createVisitedFilterHash(for: filters, at: currentPage)
+          print(error)
+        }
       }
-    }
-    self.isLoading = false
-  }
-  
-  func discoverMovies(with queryParams: [URLQueryItem]) async {
-    let result = await moviesRepository.discoverMovies(withQueryParams: queryParams)
-    switch result {
-    case .success(let items):
-      self.items?.append(contentsOf: items.map { $0.toDiscoverMovieItem() })
-      self.currentPage += 1
-      print(items)
-    case .failure(let error):
-      self.errorMessage = error.localizedDescription
-      print(error)
+    } else if let items = self.items, items.count < kLoadingThreshold {
+      // If the size of the list is below the loading threshold, let's
+      // fetch the next page.
+      await discoverItems(for: media, with: filters)
     }
   }
-  
-  func discoverTvSeries(with queryParams: [URLQueryItem]) async {
-    let result = await tvSeriesRepository.discoverTvSeries(withQueryParams: queryParams)
+
+  @MainActor
+  func discoverMovies(with filters: MediaFilters) async {
+    let result = await moviesRepository.discoverMovies(
+      withQueryParams: filters.getQueryParams(
+        page: currentPage
+      )
+    )
     switch result {
-    case .success(let items):
-      self.items?.append(contentsOf: items.map { $0.toDiscoverTvSeriesItem() })
+    case .success(let response):
+      if self.items != nil {
+        self.items!.append(
+          contentsOf: response.results.map { $0.toDiscoverMovieItem() })
+      } else {
+        self.items = response.results.map { $0.toDiscoverMovieItem() }
+      }
+      self.currentMaxPages = response.totalPages
       self.currentPage += 1
-      print(items)
     case .failure(let error):
       self.errorMessage = error.localizedDescription
-      print(error)
+      print("❌ Error fetching Movies: \(error)")
+    }
+  }
+
+  @MainActor
+  func discoverTvSeries(with filters: MediaFilters) async {
+    let result = await tvSeriesRepository.discoverTvSeries(
+      withQueryParams: filters.getQueryParams(page: currentPage))
+    switch result {
+    case .success(let response):
+      if self.items != nil {
+        self.items!.append(
+          contentsOf: response.results.map { $0.toDiscoverTvSeriesItem() })
+      } else {
+        self.items = response.results.map { $0.toDiscoverTvSeriesItem() }
+      }
+      self.currentMaxPages = response.totalPages
+      self.currentPage += 1
+    case .failure(let error):
+      self.errorMessage = error.localizedDescription
+      print("❌ Error fetching Tv Series: \(error)")
+    }
+  }
+
+  @MainActor
+  func createVisitedFilterHash(for filter: MediaFilters, at page: Int = 1)
+    async
+  {
+    let result = await filmatchRepository.createVisitedFiltersHash(
+      for: filter, at: page)
+
+    switch result {
+    case .success(_):
+      print("✅ Filter hash posted successfully at page \(page)!")
+    case .failure(let error):
+      print(
+        "❌ Error creating visited filters hash: \(error.localizedDescription)")
     }
   }
 
