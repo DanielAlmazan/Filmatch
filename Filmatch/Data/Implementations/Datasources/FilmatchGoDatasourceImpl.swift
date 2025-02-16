@@ -64,7 +64,7 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
       path: .userVisit,
       method: .POST,
       body: encodedBody,
-      acceptedStatusCodes: 200...201
+      acceptedStatusCodes: [200,201]
     )
 
     switch result {

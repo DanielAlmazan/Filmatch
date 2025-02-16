@@ -21,7 +21,7 @@ final class FilmatchHttpClient: FilmatchClient {
     method: HTTPMethods = .GET,
     queryParams: [URLQueryItem]? = nil,
     body: Data? = nil,
-    acceptedStatusCodes: ClosedRange<Int> = 200...299
+    acceptedStatusCodes: [Int] = Array(200...299)
   ) async -> Result<Data, Error> {
     // 1) Verify user and Firebase token
     guard let user = Auth.auth().currentUser else {
@@ -38,20 +38,13 @@ final class FilmatchHttpClient: FilmatchClient {
     }
 
     // 2) Build URL with query params
-    guard
-      var components = URLComponents(
-        string: "\(self.urlBase)\(path.stringValue)")
-    else {
-      return .failure(URLError(.badURL))
-    }
-    if let queryParams = queryParams, !queryParams.isEmpty {
-      var items = [URLQueryItem]()
-      items.append(contentsOf: queryParams)
-      components.queryItems = (components.queryItems ?? []) + items
-    }
-
-    guard let finalURL = components.url else {
-      return .failure(URLError(.badURL))
+    let finalUrlResult = buildURL(for: path, with: queryParams)
+    let finalURL: URL
+    switch finalUrlResult {
+    case .failure(let error):
+      return .failure(error)
+    case .success(let result):
+      finalURL = result
     }
 
     // 3) Configure URLRequest
@@ -83,5 +76,25 @@ final class FilmatchHttpClient: FilmatchClient {
     } catch {
       return .failure(error)
     }
+  }
+
+  private func buildURL(
+    for path: FilmatchGoPaths, with queryParams: [URLQueryItem]?
+  ) -> Result<URL, Error> {
+    guard
+      var components = URLComponents(
+        string: "\(self.urlBase)\(path.stringValue)")
+    else {
+      return .failure(URLError(.badURL))
+    }
+    
+    if let queryParams = queryParams, !queryParams.isEmpty {
+      components.queryItems = (components.queryItems ?? []) + queryParams
+    }
+
+    guard let finalURL = components.url else {
+      return .failure(URLError(.badURL))
+    }
+    return .success(finalURL)
   }
 }

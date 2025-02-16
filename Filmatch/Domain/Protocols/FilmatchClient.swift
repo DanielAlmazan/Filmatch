@@ -13,7 +13,7 @@ protocol FilmatchClient: Sendable {
     method: HTTPMethods,
     queryParams: [URLQueryItem]?,
     body: Data?,
-    acceptedStatusCodes: ClosedRange<Int>
+    acceptedStatusCodes: [Int]
   ) async -> Result<Data, Error>
 }
 
@@ -23,7 +23,7 @@ extension FilmatchClient {
     method: HTTPMethods,
     queryParams: [URLQueryItem]? = nil,
     body: Data? = nil,
-    acceptedStatusCodes: ClosedRange<Int> = 200...299
+    acceptedStatusCodes: [Int] = Array(200...299)
   ) async -> Result<Data, Error> {
     await self.request(
       path: path,
