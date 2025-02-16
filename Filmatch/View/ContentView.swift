@@ -44,7 +44,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       if authVm.isLoading {
-        ProgressView()
+        ProgressView("Checking user...")
       } else if authVm.currentUser == nil {
         // Show the welcome view if the user is not authenticated.
         WelcomeView()
