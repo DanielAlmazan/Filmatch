@@ -165,4 +165,50 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
     case .failure(let error): return .failure(error)
     }
   }
+  
+  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverMovieItem], Error> {
+    let result = await client.request(
+      path: .userVisitedMoviesList(uid),
+      method: .GET,
+      queryParams: [
+        .init(name: "status", value: "\(status.rawValue)"),
+        .init(name: "page", value: "\(page)")
+      ]
+    )
+    
+    switch result {
+    case .success(let data):
+      do {
+        let response = try JSONDecoder().decode(DiscoverMoviesResponse.self, from: data)
+        return .success(response.results.map { $0.toDiscoverMovieItem() })
+      } catch {
+        return .failure(error)
+      }
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
+  
+  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error> {
+    let result = await client.request(
+      path: .userVisitedTvList(uid),
+      method: .GET,
+      queryParams: [
+        .init(name: "status", value: "\(status.rawValue)"),
+        .init(name: "page", value: "\(page)")
+      ]
+    )
+    
+    switch result {
+    case .success(let data):
+      do {
+        let response = try JSONDecoder().decode(DiscoverTvSeriesResponse.self, from: data)
+        return .success(response.results.map { $0.toDiscoverTvSeriesItem() })
+      } catch {
+        return .failure(error)
+      }
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
 }

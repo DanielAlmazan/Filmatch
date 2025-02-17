@@ -43,7 +43,6 @@ final class DiscoverViewModel {
   var errorMessage: String?
 
   /// Initializes a new instance of `DiscoverMoviesViewModel`.
-  /// - Parameter repository: The `MoviesRepository` used to fetch movie data.
   init(
     moviesRepository: MoviesRepository,
     tvSeriesRepository: TvSeriesRepository,

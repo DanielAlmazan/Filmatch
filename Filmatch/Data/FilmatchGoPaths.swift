@@ -15,8 +15,8 @@ enum FilmatchGoPaths {
   case userVisitMovieIdStatus(DiscoverMovieItem.ID)
   case userVisitedMovies
   case userVisitedTv
-  case userVisitedIdMovie(String)
-  case userVisitedIdTv(String)
+  case userVisitedMoviesList(String)
+  case userVisitedTvList(String)
   case health
   
   var stringValue: String {
@@ -28,8 +28,8 @@ enum FilmatchGoPaths {
     case .userVisitMovieIdStatus(let id): "/user/visit/movie/\(id)/status"
     case .userVisitedMovies: "/user/visited/movies"
     case .userVisitedTv: "/user/visited/tv"
-    case .userVisitedIdMovie(let id): "/user/visited/\(id)/movies/list"
-    case .userVisitedIdTv(let id): "/user/visited/\(id)/tv/list"
+    case .userVisitedMoviesList(let id): "/user/\(id)/visited/movies/list"
+    case .userVisitedTvList(let id): "/user/\(id)/visited/tv/list"
     case .health: "/health"
     }
   }

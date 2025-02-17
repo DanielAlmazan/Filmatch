@@ -28,6 +28,7 @@ class AuthenticationViewModel {
   
   /// Initializes a new `AuthenticationViewModel`.
   /// - Parameter authenticationRepository: The repository used for authentication operations. Defaults to `AuthenticationFirebaseRepository`.
+  /// - Parameter filmatchRepository: Te repository used to ensure the validation of the user.
   init(
     authenticationRepository: AuthenticationRepository =
       AuthenticationFirebaseRepository(

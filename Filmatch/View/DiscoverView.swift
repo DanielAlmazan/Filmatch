@@ -21,10 +21,7 @@ struct DiscoverView: View {
     }
   }
 
-  let onAcceptItem: ((any DiscoverItem) -> Void)?
-  let onDeclineItem: ((any DiscoverItem) -> Void)?
-  let onWatchItem: ((any DiscoverItem) -> Void)?
-  let onFavoriteItem: ((any DiscoverItem) -> Void)?
+  let onItemRemoved: ((any DiscoverItem, InterestStatus) -> Void)?
 
   private let screenWidth: CGFloat = UIScreen.main.bounds.size.width
   private let initialSecondCardBlur: Double = 1.5
@@ -81,24 +78,18 @@ struct DiscoverView: View {
     tvSeriesRepository: TvSeriesRepository,
     filmatchRepository: FilmatchGoRepository,
     filtersRepository: FiltersRepository,
-    onAcceptItem: ((any DiscoverItem) -> Void)?,
-    onDeclineItem: ((any DiscoverItem) -> Void)?,
-    onWatchItem: ((any DiscoverItem) -> Void)?,
-    onFavoriteItem: ((any DiscoverItem) -> Void)?
+    onItemRemoved: ((any DiscoverItem, InterestStatus) -> Void)?
   ) {
     self.discoverVm = DiscoverViewModel(
       moviesRepository: moviesRepository,
       tvSeriesRepository: tvSeriesRepository,
       filmatchRepository: filmatchRepository)
     self.filtersVm = FiltersViewModel(filtersRepository: filtersRepository)
-    self.onAcceptItem = onAcceptItem
-    self.onDeclineItem = onDeclineItem
-    self.onWatchItem = onWatchItem
-    self.onFavoriteItem = onFavoriteItem
+    self.onItemRemoved = onItemRemoved
   }
 
   var body: some View {
-    NavigationStack {
+    VStack {
       if self.isLoading {
         ProgressView("Loading...")
       } else if let itemsList = self.discoverVm.items {
@@ -216,6 +207,7 @@ struct DiscoverView: View {
         Text("\(self.discoverVm.errorMessage ?? "Unexpected error")")
       }
     }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
     .onAppear {
       self.isLoading = true
       self.discoverItems()
@@ -395,17 +387,17 @@ struct DiscoverView: View {
   }
 
   private func acceptItem(item: (any DiscoverItem), screenWidth: CGFloat) {
-    guard let onAcceptItem else { return }
+    guard let onItemRemoved else { return }
 
-    onAcceptItem(item)
+    onItemRemoved(item, .interested)
     print("Movie \(item.getTitle) accepted")
     removeCard(moveTo: screenWidth)
   }
 
   private func declineItem(item: (any DiscoverItem), screenWidth: CGFloat) {
-    guard let onDeclineItem else { return }
+    guard let onItemRemoved else { return }
 
-    onDeclineItem(item)
+    onItemRemoved(item, .notInterested)
     print("Movie \(item.getTitle) declined")
     removeCard(moveTo: -screenWidth)
   }
@@ -466,10 +458,7 @@ struct DiscoverView: View {
     filtersRepository: FiltersRepositoryImpl(
       filtersDatasource: JsonFiltersDatasource()
     ),
-    onAcceptItem: { item in print("\(item.getTitle) onAccept") },
-    onDeclineItem: { item in print("\(item.getTitle) onDecline") },
-    onWatchItem: { item in print("\(item.getTitle) onWatched") },
-    onFavoriteItem: { item in print("\(item.getTitle) onFavorite") }
+    onItemRemoved: { item, status in print("\(item.getTitle) \(status.rawValue)") }
   )
   .environment(
     PersonRepositoryImpl(

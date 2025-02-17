@@ -17,7 +17,6 @@ struct PersonMovieCreditsAsCastRow: View {
       Text("No movies found")
         .frame(maxWidth: .infinity, alignment: .center)
     } else {
-      
       VStack(alignment: .leading, spacing: 8) {
         Text("As cast member...")
           .font(.headline)
