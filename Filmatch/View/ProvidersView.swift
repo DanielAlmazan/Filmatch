@@ -10,7 +10,8 @@ import SwiftUI
 
 struct ProvidersView: View {
   let providers: WatchProvidersResponse
-  private let cornerRadius: CGFloat = 20
+  private let cornerRadius: CGFloat = 18
+  private let maxWidth: CGFloat = 70
 
   private let providersGridRows: [GridItem] = [
     GridItem(),
@@ -29,21 +30,21 @@ struct ProvidersView: View {
           VStack {
             if let flatrate = providers.results?.flatrate {
               Text("Flatrate")
-              ProvidersRow(providers: flatrate)
+              ProvidersRow(providers: flatrate, maxWidth: maxWidth)
             }
           }
           
           VStack {
             if let buy = providers.results?.buy {
               Text("Buy")
-              ProvidersRow(providers: buy)
+              ProvidersRow(providers: buy, maxWidth: maxWidth)
             }
           }
           
           VStack {
             if let rent = providers.results?.rent {
               Text("Rent")
-              ProvidersRow(providers: rent)
+              ProvidersRow(providers: rent, maxWidth: maxWidth)
             }
           }
         }

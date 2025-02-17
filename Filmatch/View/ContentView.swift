@@ -58,6 +58,9 @@ struct ContentView: View {
           .environment(filmatchGoRepository)
       }
     }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.bgBase)
+
   }
 }
 

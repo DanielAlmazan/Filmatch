@@ -7,7 +7,8 @@
 
 import Foundation
 
-@Observable final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
+@Observable
+final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
   let datasource: FilmatchGoDatasource
   
   init(datasource: FilmatchGoDatasource) {
@@ -44,5 +45,13 @@ import Foundation
   
   func getLatestVisitedPageByFiltersHash(for hash: String) async -> Result<Int, Error> {
     await self.datasource.getLatestVisitedPageByFiltersHash(for: hash)
+  }
+  
+  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverMovieItem], Error> {
+    await self.datasource.getUserVisitedMoviesByStatus(for: uid, as: status, at: page)
+  }
+  
+  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error> {
+    await self.datasource.getUserVisitedTvSeriesByStatus(for: uid, as: status, at: page)
   }
 }

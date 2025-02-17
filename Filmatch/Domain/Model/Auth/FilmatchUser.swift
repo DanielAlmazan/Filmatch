@@ -21,7 +21,7 @@ final class FilmatchUser: Identifiable, Sendable {
     self.uid = uid
   }
   
-  static let `default` = FilmatchUser(id: 0, email: "", username: "gas_esnake", uid: Auth.auth().currentUser!.uid)
+  static let `default` = FilmatchUser(id: 0, email: "user@example.com", username: "gas_esnake", uid: "Firebase UID")
 }
 
 extension FilmatchUser: Codable {

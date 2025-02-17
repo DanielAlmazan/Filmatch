@@ -32,7 +32,7 @@ struct PosterView: View {
   }
 
   var body: some View {
-    if didFail {
+    if didFail || imageUrl == nil || imageUrl!.isEmpty {
       Image(systemName: posterType.rawValue)
         .resizable()
         .aspectRatio(1, contentMode: .fit)

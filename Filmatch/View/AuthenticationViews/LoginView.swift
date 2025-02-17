@@ -143,12 +143,16 @@ struct LoginView: View {
       VStack {
         // MARK: - External authentication providers.
         ExternalAuthProvidersView {
-          Task {
+          do {
             try authVm.googleOAuth()
+          } catch {
+            // TODO: Handle error
           }
         } onAppleSignIn: {
-          Task {
+          do {
             try authVm.appleOAuth()
+          } catch {
+            // TODO: Handle error
           }
         }
 

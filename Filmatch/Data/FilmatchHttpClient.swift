@@ -30,9 +30,9 @@ final class FilmatchHttpClient: FilmatchClient {
     let token: String
     do {
       token = try await user.getIDTokenResult().token
-//      #if DEBUG
-//        print("Token:\n\(token)")
-//      #endif
+      #if DEBUG
+        print("Token:\n\(token)")
+      #endif
     } catch {
       return .failure(error)
     }

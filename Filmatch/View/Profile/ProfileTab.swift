@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ProfileTab: View {
   @Environment(\.editMode) var editMode
-  var authVm: AuthenticationViewModel
+  @Environment(AuthenticationViewModel.self) var authVm
+  @Environment(FilmatchGoRepositoryImpl.self) var filmatchRepository
+  @Environment(FiltersRepositoryImpl.self) var filtersRepository
   
   @State private var showAlert = false
   @State private var alertMessage: LocalizedStringResource = ""
@@ -20,39 +22,28 @@ struct ProfileTab: View {
 
   var body: some View {
     if let user = authVm.currentUser {
-      VStack(alignment: .leading, spacing: 20) {
-        HStack {
-          if editMode?.wrappedValue == .active {
-            Button("Cancel", role: .cancel) {
-              editMode?.animation().wrappedValue = .inactive
-            }
-          }
-          
-          EditButton()
-            .frame(maxWidth: .infinity, alignment: .bottomTrailing)
-        }
-        
-        if let user = self.authVm.currentUser {
-          ProfileSummary(user: user)
+      ScrollView {
+        VStack(alignment: .leading, spacing: 20) {
+          ProfileSummary(
+            user: user,
+            filmatchRepository: filmatchRepository,
+            filtersRepository: filtersRepository
+          )
             .frame(maxWidth: .infinity)
-        }
-        
-        if editMode?.wrappedValue == .inactive {
           
-        }
-        
-        Group {
-          Button("Log out") {
-            authVm.logOut()
+          Group {
+            Button("Log out") {
+              authVm.logOut()
+            }
+            
+            Button("Delete Account") {
+              deleteAccount()
+            }
+            .foregroundStyle(.red)
           }
-          
-          Button("Delete Account") {
-            deleteAccount()
-          }
-          .foregroundStyle(.red)
+          .buttonStyle(.bordered)
+          .frame(maxWidth: .infinity, alignment: .center)
         }
-        .buttonStyle(.bordered)
-        .frame(maxWidth: .infinity, alignment: .center)
       }
       .padding()
       .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
@@ -104,6 +95,13 @@ struct ProfileTab: View {
 }
 
 #Preview {
+  @Previewable @State var filmatchRepository = FilmatchGoRepositoryImpl(
+    datasource: FilmatchGoDatasourceImpl(
+      client: FilmatchHttpClient(
+        urlBase: AppConstants.filmatchBaseUrl)
+    )
+  )
+  @Previewable let filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
   @Previewable @State var vm = AuthenticationViewModel(
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
@@ -115,6 +113,9 @@ struct ProfileTab: View {
       )
     )
   )
-
-  ProfileTab(authVm: vm)
+  
+  ProfileTab()
+    .environment(vm)
+    .environment(filmatchRepository)
+    .environment(filtersRepository)
 }

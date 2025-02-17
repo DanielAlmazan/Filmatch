@@ -31,38 +31,37 @@ struct HomeView: View {
       // MARK: - Discover Tab
       /// Tab for discovering movies.
       Tab("Discover", systemImage: "star", value: 0) {
-        DiscoverView(
-          moviesRepository: moviesRepository,
-          tvSeriesRepository: tvSeriesRepository,
-          filmatchRepository: filmatchGoRepository,
-          filtersRepository: filtersRepository
-        ) { item in
-          Task {
-            // TODO: Show error if exists
-            let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: .interested)
+        NavigationStack {
+          DiscoverView(
+            moviesRepository: moviesRepository,
+            tvSeriesRepository: tvSeriesRepository,
+            filmatchRepository: filmatchGoRepository,
+            filtersRepository: filtersRepository
+          ) { item, status in
+            Task {
+              // TODO: Show error if exists
+              let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: status)
+            }
           }
-        } onDeclineItem: { item in
-          Task {
-            // TODO: Show error if exists
-            let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: .notInterested)
-          }
-        } onWatchItem: { item in
-          // TODO: Add to user's watched list
-        } onFavoriteItem: { item in
-          // TODO: Add to user's favorite list
+          .background(.bgBase)
         }
       }
 
       Tab("Search", systemImage: "magnifyingglass", value: 1) {
-        NavigationView {
+        NavigationStack {
           SearchView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
+            .background(.bgBase)
         }
       }
 
       // MARK: - Rooms Tab
       /// Tab for managing and joining rooms.
       Tab(value: 2) {
-        Text("Matches view")
+        VStack {
+          Text("Matches view")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.bgBase)
       } label: {
         // Custom label with an image and text for the Rooms tab.
         Image(.filmatchLogoTabItem)
@@ -80,7 +79,10 @@ struct HomeView: View {
       // MARK: - Profile Tab
       /// Tab for viewing and editing the user's profile.
       Tab("Profile", systemImage: "person.crop.circle", value: 4) {
-        ProfileTab(authVm: authVm)
+        ProfileTab()
+          .background(.bgBase)
+          .environment(authVm)
+          .environment(filmatchGoRepository)
       }
     }
   }
@@ -99,9 +101,18 @@ struct HomeView: View {
     filtersDatasource: JsonFiltersDatasource())
   @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchRepository: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
 
+  @Previewable @State var filmatchGoRepository = FilmatchGoRepositoryImpl(
+    datasource: FilmatchGoDatasourceImpl(
+      client: FilmatchHttpClient(
+        urlBase: AppConstants.filmatchBaseUrl
+      )
+    )
+  )
+
   HomeView()
     .environment(authVm)
     .environment(moviesRepository)
     .environment(filtersRepository)
     .environment(tvSeriesRepository)
+    .environment(filmatchGoRepository)
 }

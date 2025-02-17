@@ -64,6 +64,7 @@ extension AuthenticationFirebaseDataSource {
       return .failure(error)
     }
   }
+
   func resetPassword(email: String) async -> Result<Void, Error> {
     guard let _ = Auth.auth().currentUser else {
       return .failure(URLError(.badServerResponse))

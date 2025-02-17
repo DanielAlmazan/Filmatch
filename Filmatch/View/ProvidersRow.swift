@@ -10,7 +10,14 @@ import SwiftUI
 
 struct ProvidersRow: View {
   let providers: [ProviderModel]
-  let cornerRadius: CGFloat = 20
+  let maxWidth: CGFloat
+  let cornerRadius: CGFloat
+  
+  init(providers: [ProviderModel], maxWidth: CGFloat) {
+    self.providers = providers
+    self.maxWidth = maxWidth
+    self.cornerRadius = maxWidth / 5
+  }
 
   func url(_ path: String) -> URL {
     URL(string: "\(AppConstants.tmdbMediaBase)/original/\(path)")!
@@ -25,9 +32,10 @@ struct ProvidersRow: View {
               if let logo = provider.logoPath {
                 KFImage.url(url(logo))
                   .resizable()
+                  .aspectRatio(contentMode: .fit)
               }
             }
-            .frame(width: 80, height: 80)
+            .frame(maxWidth: maxWidth, maxHeight: maxWidth)
             .background(.accent)
             .clipShape(.rect(cornerRadius: cornerRadius))
             .overlay {
@@ -70,6 +78,7 @@ struct ProvidersRow: View {
         providerName: "Microsoft Store",
         logoPath: "/5vfrJQgNe9UnHVgVNAwZTy0Jo9o.jpg",
         displayPriority: 18),
-    ]
+    ],
+    maxWidth: 80
   )
 }
