@@ -41,45 +41,6 @@ struct SearchView: View {
 
   var body: some View {
     VStack {
-      HStack(spacing: 10) {
-        Image(systemName: "magnifyingglass").opacity(0.50)
-
-        // MARK: - TextField
-        TextField("Search", text: $searchVm.query)
-          .submitLabel(.search)
-          .scrollDismissesKeyboard(.immediately)
-          .focused($isInputActive)
-
-          .onSubmit {
-            self.searchVm.search()
-          }
-          .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-              Spacer()
-
-              Button("Hide Keyboard", role: .destructive) {
-                isInputActive = false
-              }
-            }
-          }
-
-        // MARK: - Clear Button
-        if !searchVm.query.isEmpty {
-          // Button to clear the text field.
-          Button {
-            searchVm.query.removeAll()
-          } label: {
-            Image(systemName: "multiply.circle.fill")
-              .symbolEffect(.bounce, options: .nonRepeating)
-          }
-        }
-      }  // HStack Field
-      .frame(height: 25)
-      .padding(5)
-      .background(.bgContainer)
-      .clipShape(.rect(cornerRadius: 8))
-      .padding()
-
       // MARK: - Movies / TV Selector and View Mode toggle
       HStack(spacing: 20) {
         FilterToggleView(
@@ -93,7 +54,49 @@ struct SearchView: View {
         ) {
           searchVm.selectedMedia = .tvSeries
         }
+      }
+      .buttonStyle(.borderless)
+      .containerRelativeFrame(.horizontal)  // Movies / TV Selector
 
+      HStack {
+        HStack(spacing: 10) {
+          Image(systemName: "magnifyingglass").opacity(0.50)
+          
+          // MARK: - TextField
+          TextField("Search", text: $searchVm.query)
+            .submitLabel(.search)
+            .scrollDismissesKeyboard(.immediately)
+            .focused($isInputActive)
+          
+            .onSubmit {
+              self.searchVm.search()
+            }
+            .toolbar {
+              ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                
+                Button("Hide Keyboard", role: .destructive) {
+                  isInputActive = false
+                }
+              }
+            }
+          
+          // MARK: - Clear Button
+          if !searchVm.query.isEmpty {
+            // Button to clear the text field.
+            Button {
+              searchVm.query.removeAll()
+            } label: {
+              Image(systemName: "multiply.circle.fill")
+                .symbolEffect(.bounce, options: .nonRepeating)
+            }
+          }
+        }  // HStack Field
+        .frame(height: 25)
+        .padding(5)
+        .background(.bgContainer)
+        .clipShape(.rect(cornerRadius: 8))
+        
         Button {
           isGridSelected.toggle()
         } label: {
@@ -102,9 +105,8 @@ struct SearchView: View {
         .frame(width: 24, height: 24)
         .symbolEffect(.bounce, options: .nonRepeating, value: isGridSelected)
       }
-      .buttonStyle(.borderless)
-      .containerRelativeFrame(.horizontal)  // Movies / TV Selector
-
+      .padding()
+      
       if let error = self.searchVm.errorMessage {
         Text(error)
           .foregroundColor(.red)
@@ -125,6 +127,7 @@ struct SearchView: View {
             }
           }
         }
+        .lineLimit(1)
         .padding()
       }
     }  // VStack

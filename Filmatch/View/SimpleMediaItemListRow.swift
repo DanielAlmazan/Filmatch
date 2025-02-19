@@ -22,7 +22,8 @@ struct SimpleMediaItemListRow: View {
       )
       .resizable()
       .scaledToFit()
-      .frame(maxHeight: 80)
+      .frame(height: 80)
+      .aspectRatio(3/2, contentMode: .fit)
       .clipShape(.rect(cornerRadius: 4))
       
       Text(item.getTitle)

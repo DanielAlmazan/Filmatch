@@ -25,12 +25,12 @@ struct HomeView: View {
   @Environment(FiltersRepositoryImpl.self) private var filtersRepository
   
   @Environment(FilmatchGoRepositoryImpl.self) private var filmatchGoRepository
-
+  
   var body: some View {
     TabView(selection: $selectedTab) {
       // MARK: - Discover Tab
       /// Tab for discovering movies.
-      Tab("Discover", systemImage: "star", value: 0) {
+      Tab(value: 0) {
         NavigationStack {
           DiscoverView(
             moviesRepository: moviesRepository,
@@ -45,8 +45,12 @@ struct HomeView: View {
           }
           .background(.bgBase)
         }
+      } label: {
+        Image(.discoverTabIcon)
+        Text("Discover")
       }
 
+      // MARK: - Search Tab
       Tab("Search", systemImage: "magnifyingglass", value: 1) {
         NavigationStack {
           SearchView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
@@ -54,8 +58,7 @@ struct HomeView: View {
         }
       }
 
-      // MARK: - Rooms Tab
-      /// Tab for managing and joining rooms.
+      // MARK: - Matches Tab
       Tab(value: 2) {
         VStack {
           Text("Matches view")
@@ -63,11 +66,13 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.bgBase)
       } label: {
-        // Custom label with an image and text for the Rooms tab.
-        Image(.filmatchLogoTabItem)
+        Image(.matchesTabIcon)
+          .resizable(resizingMode: .stretch)
         Text("Matches")
       }
 
+      // MARK: - Rooms Tab
+      /// Tab for managing and joining rooms.
       Tab(value: 3) {
         RoomsMainView()
       } label: {

@@ -16,28 +16,55 @@ struct SimpleMediaItemListView: View {
   let action: () -> Void
 
   var body: some View {
-    List(results.indices, id: \.self) { index in
-      NavigationLink {
-        if let movie = results[index] as? DiscoverMovieItem {
-          MovieDetailView(
-            repository: moviesRepository,
-            movieId: movie.id
-          )
-        } else if let tv = results[index] as? DiscoverTvSeriesItem {
-          TvSeriesDetailView(
-            repository: tvSeriesRepository,
-            seriesId: tv.id
-          )
-        } else {
-          Text("Unsupported item")
-        }
-      } label: {
-        SimpleMediaItemListRow(item: results[index]) {
-          if index == results.count - 1 {
-            action()
+    ScrollView {
+      LazyVStack(alignment: .leading) {
+        ForEach(results.indices, id: \.self) { index in
+          NavigationLink {
+            if let movie = results[index] as? DiscoverMovieItem {
+              MovieDetailView(
+                repository: moviesRepository,
+                movieId: movie.id
+              )
+            } else if let tv = results[index] as? DiscoverTvSeriesItem {
+              TvSeriesDetailView(
+                repository: tvSeriesRepository,
+                seriesId: tv.id
+              )
+            } else {
+              Text("Unsupported item")
+            }
+          } label: {
+            SimpleMediaItemListRow(item: results[index]) {
+              if index == results.count - 1 {
+                action()
+              }
+            }
           }
         }
       }
+//      List(results.indices, id: \.self) { index in
+//        NavigationLink {
+//          if let movie = results[index] as? DiscoverMovieItem {
+//            MovieDetailView(
+//              repository: moviesRepository,
+//              movieId: movie.id
+//            )
+//          } else if let tv = results[index] as? DiscoverTvSeriesItem {
+//            TvSeriesDetailView(
+//              repository: tvSeriesRepository,
+//              seriesId: tv.id
+//            )
+//          } else {
+//            Text("Unsupported item")
+//          }
+//        } label: {
+//          SimpleMediaItemListRow(item: results[index]) {
+//            if index == results.count - 1 {
+//              action()
+//            }
+//          }
+//        }
+//      }
     }
   }
 }
