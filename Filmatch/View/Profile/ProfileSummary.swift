@@ -5,7 +5,6 @@
 //  Created by Daniel Enrique Almazán Sellés on 13/8/24.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct ProfileSummary: View {
@@ -13,7 +12,7 @@ struct ProfileSummary: View {
   var user: FilmatchUser
 
   @State private var profileVm: ProfileViewModel
-  
+
   init(
     user: FilmatchUser,
     filmatchRepository: FilmatchGoRepositoryImpl,
@@ -26,28 +25,15 @@ struct ProfileSummary: View {
       filtersRepository: filtersRepository
     )
   }
-  
+
   var body: some View {
     VStack(spacing: 10) {
-      Group {
-        // if let image = user.image {
-        //   KFImage.url(image)
-        //     .resizable()
-        // } else {
-        //   Image(systemName: "person.fill")
-        //     .resizable()
-        // }
-      }
-      .frame(width: 100, height: 100)
-      .clipShape(Circle())
-      .shadow(radius: 10)
-      
-      Text(user.email)
-        .bold()
-        .font(.headline)
-      
-      Spacer()
-      
+      SimpleUserInfoView(user: self.user, size: 150)
+  
+      // MARK: - Friends
+      ProfileFriendsContainer(title: "My Friends", height: kRowsHeight, isLoading: self.$profileVm.areFriendsLoading, friends: self.$profileVm.friends)
+
+      // MARK: - Own lists
       Group {
         VStack(alignment: .leading) {
           Text("Platforms")
@@ -60,7 +46,7 @@ struct ProfileSummary: View {
           }
           .frame(height: kRowsHeight)
         }
-        
+
         // Neither superLike or watched are available right now
         // ProfileMediaCardRowContainer(
         //   title: "Super Liked",
@@ -68,21 +54,21 @@ struct ProfileSummary: View {
         //   isLoading: self.$profileVm.areSuperLikedLoading,
         //   items: self.$profileVm.superLikedItems
         // )
-        
+
         ProfileMediaCardRowContainer(
           title: "Liked",
           height: kRowsHeight,
           isLoading: self.$profileVm.areLikedLoading,
           items: self.$profileVm.likedItems
         )
-        
+
         // ProfileMediaCardRowContainer(
         //   title: "Watched",
         //   height: kRowsHeight,
         //   isLoading: self.$profileVm.areWatchedLoading,
         //   items: self.$profileVm.watchedItems
         // )
-        
+
         ProfileMediaCardRowContainer(
           title: "Disliked",
           height: kRowsHeight,
@@ -98,6 +84,7 @@ struct ProfileSummary: View {
     .scrollClipDisabled()
     .padding()
     .task {
+      await self.profileVm.loadFriends(at: 1)
       await self.profileVm.loadProviders()
       // await self.profileVm.loadSuperLikedItems()
       await self.profileVm.loadLikedItems()
@@ -116,10 +103,14 @@ struct ProfileSummary: View {
   @Previewable let filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource()
   )
-  
-  ProfileSummary(
-    user: .default,
-    filmatchRepository: filmatchRepository,
-    filtersRepository: filtersRepository
-  )
+
+  VStack {
+    ProfileSummary(
+      user: .default,
+      filmatchRepository: filmatchRepository,
+      filtersRepository: filtersRepository
+    )
+  }
+  .frame(maxWidth: .infinity, maxHeight: .infinity)
+  .background(.bgBase)
 }

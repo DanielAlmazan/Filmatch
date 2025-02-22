@@ -17,6 +17,8 @@ enum FilmatchGoPaths {
   case userVisitedTv
   case userVisitedMoviesList(String)
   case userVisitedTvList(String)
+  case friends
+  case friendship
   case health
   
   var stringValue: String {
@@ -30,7 +32,15 @@ enum FilmatchGoPaths {
     case .userVisitedTv: "/user/visited/tv"
     case .userVisitedMoviesList(let id): "/user/\(id)/visited/movies/list"
     case .userVisitedTvList(let id): "/user/\(id)/visited/tv/list"
+    case .friends: "/user/friends"
+    case .friendship: "/user/friendship"
     case .health: "/health"
     }
+  }
+}
+
+extension FilmatchGoPaths: Equatable {
+  static func == (lhs: FilmatchGoPaths, rhs: FilmatchGoPaths) -> Bool {
+    lhs.stringValue == rhs.stringValue
   }
 }

@@ -15,6 +15,10 @@ final class ProfileViewModel {
 
   var selectedMedia: MediaType = .movie
 
+  var areFriendsLoading: Bool = false
+  var totalFriendsPages: Int = 1
+  var friends: [FilmatchUser]?
+
   var areProvidersLoading: Bool = false
   private var movieProviders: [ProviderModel]?
   private var tvProviders: [ProviderModel]?
@@ -114,7 +118,34 @@ final class ProfileViewModel {
     self.filmatchRepository = filmatchRepository
     self.filtersRepository = filtersRepository
   }
-
+  
+  @MainActor
+  func loadFriends(at page: Int) async {
+    guard self.totalFriendsPages >= page else { return }
+    
+    areFriendsLoading = true
+    
+    let friendsResult = await filmatchRepository.getUserFriends(at: page)
+    
+    switch friendsResult {
+    case .success(let response):
+      setFriends(response.results.toFilmatchUsers())
+      self.totalFriendsPages = response.totalPages
+    case .failure(let error):
+      print(error)
+    }
+    
+    areFriendsLoading = false
+  }
+  
+  private func setFriends(_ friends: [FilmatchUser]) {
+    if self.friends == nil {
+      self.friends = friends
+    } else {
+      self.friends!.append(contentsOf: friends)
+    }
+  }
+  
   @MainActor
   func loadProviders() async {
     areProvidersLoading = true
@@ -200,7 +231,7 @@ final class ProfileViewModel {
     case .success(let response):
       return response
     case .failure(let error):
-      print("Error fetching Super Liked Movies: \(error)")
+      print("Error fetching \(status) Movies: \(error)")
       return []
     }
   }
@@ -215,7 +246,7 @@ final class ProfileViewModel {
     case .success(let response):
       return response
     case .failure(let error):
-      print("Error fetching Super Liked TVSeries: \(error)")
+      print("Error fetching \(status) TVSeries: \(error)")
       return []
     }
   }

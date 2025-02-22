@@ -129,3 +129,19 @@ extension PersonMovieCreditsResponse {
     .init(cast: self.cast, crew: self.crew)
   }
 }
+
+extension FriendshipSingleResponse {
+  func toFilmatchUser() -> FilmatchUser {
+    .init(
+      email: nil,
+      username: self.user.username,
+      uid: self.user.uid
+    )
+  }
+}
+
+extension [FriendshipSingleResponse] {
+  func toFilmatchUsers() -> [FilmatchUser] {
+    self.map { $0.toFilmatchUser() }
+  }
+}

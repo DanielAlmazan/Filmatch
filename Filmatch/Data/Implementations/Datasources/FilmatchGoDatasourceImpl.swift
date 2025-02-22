@@ -189,7 +189,11 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
     }
   }
   
-  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error> {
+  func getUserVisitedTvSeriesByStatus(
+    for uid: String,
+    as status: InterestStatus,
+    at page: Int
+  ) async -> Result<[DiscoverTvSeriesItem], Error> {
     let result = await client.request(
       path: .userVisitedTvList(uid),
       method: .GET,
@@ -208,6 +212,29 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
         return .failure(error)
       }
     case .failure(let error):
+      return .failure(error)
+    }
+  }
+
+  func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error> {
+    let result = await client.request(
+      path: .friends,
+      method: .GET,
+      queryParams: [
+        .init(name: "page", value: "\(page)")
+      ]
+    )
+
+    switch result {
+    case .success(let data):
+      do {
+        let response = try JSONDecoder().decode(FriendshipsResponse.self, from: data)
+        return .success(response)
+      } catch {
+        return .failure(error)
+      }
+    case .failure(let error):
+      print("Error getting friends: \(error)")
       return .failure(error)
     }
   }

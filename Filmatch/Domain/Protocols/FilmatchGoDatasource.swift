@@ -19,4 +19,5 @@ protocol FilmatchGoDatasource {
   func getLatestVisitedPageByFiltersHash(for hash: String) async -> Result<Int, Error>
   func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverMovieItem], Error>
   func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error>
+  func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error>
 }

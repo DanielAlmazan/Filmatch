@@ -54,4 +54,8 @@ final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
   func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error> {
     await self.datasource.getUserVisitedTvSeriesByStatus(for: uid, as: status, at: page)
   }
+  
+  func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error> {
+    await self.datasource.getUserFriends(at: page)
+  }
 }
