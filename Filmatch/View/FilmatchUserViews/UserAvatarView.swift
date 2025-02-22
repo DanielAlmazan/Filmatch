@@ -19,7 +19,7 @@ struct UserAvatarView: View {
   var body: some View {
     Text(username.prefix(1).uppercased())
       .font(.title)
-      .frame(maxWidth: size, maxHeight: size)
+      .frame(width: size, height: size)
       .background(
         RadialGradient(
           gradient: Gradient(colors: [.accent, .accentDarker]),

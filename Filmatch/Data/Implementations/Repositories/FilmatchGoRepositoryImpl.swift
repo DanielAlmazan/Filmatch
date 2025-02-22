@@ -58,4 +58,8 @@ final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
   func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error> {
     await self.datasource.getUserFriends(at: page)
   }
+  
+  func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error> {
+    await self.datasource.searchUsers(containing: query, at: page)
+  }
 }

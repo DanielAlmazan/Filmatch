@@ -14,7 +14,7 @@ struct SimpleUserInfoView: View {
   var body: some View {
     if let username = user.username, !username.isEmpty {
       VStack {
-        UserAvatarView(username: username, size: size/* * 1.5*/)
+        UserAvatarView(username: username, size: size)
           .shadow(radius: 5, y: 5)
         Text(username)
           .bold()

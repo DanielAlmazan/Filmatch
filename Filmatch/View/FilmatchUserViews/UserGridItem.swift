@@ -10,13 +10,10 @@ import SwiftUI
 struct UserGridItem: View {
   let user: FilmatchUser
   let size: CGFloat
+  let areFriends: Bool
 
   var body: some View {
     VStack {
-//      UserAvatarView(username: user.username ?? "No username", size: width)
-//
-//      Text(user.username ?? "No username")
-//        .lineLimit(1)
       SimpleUserInfoView(user: user, size: size)
     }
     .frame(width: size, alignment: .leading)
@@ -29,7 +26,7 @@ struct UserGridItem: View {
 
 #Preview {
   VStack {
-    UserGridItem(user: .default, size: 100)
+    UserGridItem(user: .default, size: 100, areFriends: true)
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .padding()

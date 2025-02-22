@@ -135,7 +135,8 @@ extension FriendshipSingleResponse {
     .init(
       email: nil,
       username: self.user.username,
-      uid: self.user.uid
+      uid: self.user.uid,
+      photoUrl: nil
     )
   }
 }
