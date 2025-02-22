@@ -103,17 +103,11 @@ struct MediaFilters: Sendable {
     let mediaType = self.mediaType.rawValue
 
     let genres =
-      self.genres.isEmpty
-      ? "null"
-      : self.genres
-        .sorted(by: { $0.id < $1.id }).map { "\($0.id)" }
+      self.genres.sorted(by: { $0.id < $1.id }).map { "\($0.id)" }
         .joined(separator: QueryParamSeparator.or.rawValue)
 
     let providers =
-      self.providers.isEmpty
-      ? "null"
-      : self.providers
-        .sorted(by: { $0.providerId < $1.providerId })
+      self.providers.sorted(by: { $0.providerId < $1.providerId })
         .map { "\($0.providerId)" }.joined(
           separator: QueryParamSeparator.or.rawValue)
 
@@ -133,14 +127,20 @@ struct MediaFilters: Sendable {
       to,
       sortBy,
     ].joined(separator: "-")
+    
+//    print("String before MD5: \(joined)")
 
     guard let data = joined.data(using: .utf8) else {
       return ""
     }
 
-    return Insecure.MD5.hash(data: data).map {
+    let value = Insecure.MD5.hash(data: data).map {
       String(format: "%02hhx", $0)
     }.joined()
+    
+//    print(value)
+    
+    return value
   }
 }
 
