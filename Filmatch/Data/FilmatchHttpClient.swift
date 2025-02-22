@@ -64,9 +64,7 @@ final class FilmatchHttpClient: FilmatchClient {
     do {
       let (data, response) = try await session.data(for: request)
 
-      if path == .friends {
-        print("Response: \(String(decoding: data, as: UTF8.self))")
-      }
+//      print("Response: \(String(decoding: data, as: UTF8.self))")
 
       // 5) Verify status code
       if let httpResponse = response as? HTTPURLResponse {

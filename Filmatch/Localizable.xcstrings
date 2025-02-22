@@ -164,6 +164,9 @@
         }
       }
     },
+    "Add friends" : {
+
+    },
     "Already have an account?" : {
       "localizations" : {
         "es" : {
@@ -537,6 +540,9 @@
     "Flatrate" : {
 
     },
+    "Friends" : {
+
+    },
     "From" : {
 
     },
@@ -566,7 +572,7 @@
     "Hello, World!" : {
       "shouldTranslate" : false
     },
-    "Hide Keyboard" : {
+    "Hide" : {
 
     },
     "How do you want to start your adventure?" : {

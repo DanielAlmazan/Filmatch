@@ -12,7 +12,7 @@ import SwiftUI
 /// This view manages the selection state of the tabs and passes necessary dependencies to child views.
 struct HomeView: View {
   /// The index of the currently selected tab.
-  @State var selectedTab = 0
+  @State var selectedTab = 4
 
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm
@@ -53,7 +53,7 @@ struct HomeView: View {
       // MARK: - Search Tab
       Tab("Search", systemImage: "magnifyingglass", value: 1) {
         NavigationStack {
-          SearchView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
+          SearchMediaView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
             .background(.bgBase)
         }
       }

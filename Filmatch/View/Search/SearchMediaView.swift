@@ -1,5 +1,5 @@
 //
-//  SearchView.swift
+//  SearchMediaView.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 17/1/25.
@@ -8,7 +8,7 @@
 import Kingfisher
 import SwiftUI
 
-struct SearchView: View {
+struct SearchMediaView: View {
   private enum ListType {
     case grid
     case list
@@ -59,51 +59,8 @@ struct SearchView: View {
       .containerRelativeFrame(.horizontal)  // Movies / TV Selector
 
       HStack {
-        HStack(spacing: 10) {
-          Image(systemName: "magnifyingglass").opacity(0.50)
-          
-          // MARK: - TextField
-          TextField("Search", text: $searchVm.query)
-            .submitLabel(.search)
-            .scrollDismissesKeyboard(.immediately)
-            .focused($isInputActive)
-          
-            .onSubmit {
-              self.searchVm.search()
-            }
-            .toolbar {
-              ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                
-                Button("Hide Keyboard", role: .destructive) {
-                  isInputActive = false
-                }
-              }
-            }
-          
-          // MARK: - Clear Button
-          if !searchVm.query.isEmpty {
-            // Button to clear the text field.
-            Button {
-              searchVm.query.removeAll()
-            } label: {
-              Image(systemName: "multiply.circle.fill")
-                .symbolEffect(.bounce, options: .nonRepeating)
-            }
-          }
-        }  // HStack Field
-        .frame(height: 25)
-        .padding(5)
-        .background(.bgContainer)
-        .clipShape(.rect(cornerRadius: 8))
-        
-        Button {
-          isGridSelected.toggle()
-        } label: {
-          Image(systemName: isGridSelected ? "square.grid.2x2.fill" : "list.bullet")
-        }
-        .frame(width: 24, height: 24)
-        .symbolEffect(.bounce, options: .nonRepeating, value: isGridSelected)
+        SearchField(query: $searchVm.query, onSubmit: { searchVm.search() })
+        GridSelectorButton(isGridSelected: $isGridSelected)
       }
       .padding()
       
@@ -155,7 +112,7 @@ struct SearchView: View {
   )
   
   NavigationStack {
-    SearchView(
+    SearchMediaView(
       moviesRepository: moviesRepository,
       tvSeriesRepository: tvSeriesRepository
     )

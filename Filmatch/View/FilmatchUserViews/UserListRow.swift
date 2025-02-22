@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserListRow: View {
   let user: FilmatchUser
+  let areFriends: Bool
   
   var body: some View {
     HStack {
@@ -26,7 +27,7 @@ struct UserListRow: View {
 
 #Preview {
   VStack {
-    UserListRow(user: .default)
+    UserListRow(user: .default, areFriends: true)
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .padding()

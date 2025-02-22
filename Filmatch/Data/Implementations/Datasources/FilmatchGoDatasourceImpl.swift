@@ -238,4 +238,26 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
       return .failure(error)
     }
   }
+  
+  func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error> {
+    let result = await client.request(
+      path: .search,
+      method: .GET,
+      queryParams: [
+        .init(name: "query", value: query)
+      ]
+    )
+    
+    switch result {
+    case .success(let data):
+      do {
+        let response = try JSONDecoder().decode(SearchUsersResponse.self, from: data)
+        return .success(response)
+      } catch {
+        return .failure(error)
+      }
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
 }

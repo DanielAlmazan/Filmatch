@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileSummary: View {
   let kRowsHeight: CGFloat = 90
-  var user: FilmatchUser
+  private var user: FilmatchUser
 
   @State private var profileVm: ProfileViewModel
 
@@ -28,26 +28,31 @@ struct ProfileSummary: View {
 
   var body: some View {
     VStack(spacing: 10) {
-      SimpleUserInfoView(user: self.user, size: 150)
+      SimpleUserInfoView(user: self.user, size: 100)
   
       // MARK: - Friends
-      ProfileFriendsContainer(title: "My Friends", height: kRowsHeight, isLoading: self.$profileVm.areFriendsLoading, friends: self.$profileVm.friends)
+      ProfileFriendsContainer(
+        title: "My Friends",
+        height: kRowsHeight,
+        isLoading: self.$profileVm.areFriendsLoading,
+        friends: self.$profileVm.friends)
 
       // MARK: - Own lists
       Group {
-        VStack(alignment: .leading) {
-          Text("Platforms")
-          Group {
-            if self.profileVm.areProvidersLoading {
-              ProgressView("Loading...")
-            } else if let providers = profileVm.providers {
-              ProvidersRow(providers: providers, maxWidth: 80)
-            }
-          }
-          .frame(height: kRowsHeight)
-        }
+        // 'My providers', 'superLike' and 'watched' are not available right now
 
-        // Neither superLike or watched are available right now
+        // VStack(alignment: .leading) {
+        //   Text("Platforms")
+        //   Group {
+        //     if self.profileVm.areProvidersLoading {
+        //       ProgressView("Loading...")
+        //     } else if let providers = profileVm.providers {
+        //       ProvidersRow(providers: providers, maxWidth: 80)
+        //     }
+        //   }
+        //   .frame(height: kRowsHeight)
+        // }
+
         // ProfileMediaCardRowContainer(
         //   title: "Super Liked",
         //   height: kRowsHeight,
