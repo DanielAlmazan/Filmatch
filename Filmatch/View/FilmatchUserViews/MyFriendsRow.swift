@@ -46,9 +46,9 @@ struct MyFriendsRow: View {
     MyFriendsRow(
       friends: [
         .default,
-        .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil),
-        .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil),
-        .init(email: nil, username: "miiraculous_one", uid: "FirebaseUID", photoUrl: nil)
+        .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
+        .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil, friendshipStatus: .friend),
+        .init(email: nil, username: "miiraculous_one", uid: "FirebaseUID", photoUrl: nil, friendshipStatus: .received)
       ],
       height: 100,
       filmatchRepository: FilmatchGoRepositoryImpl(

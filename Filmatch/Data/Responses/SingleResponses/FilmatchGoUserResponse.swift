@@ -10,9 +10,9 @@ import Foundation
 final class FilmatchGoUserResponse: Sendable {
   let success: Bool
   let message: String?
-  let user: FilmatchUser
+  let user: FilmatchUserResponse
   
-  init(success: Bool, message: String?, user: FilmatchUser) {
+  init(success: Bool, message: String?, user: FilmatchUserResponse) {
     self.success = success
     self.message = message
     self.user = user
@@ -30,7 +30,7 @@ extension FilmatchGoUserResponse: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     let success = try container.decode(Bool.self, forKey: .success)
     let message = try container.decodeIfPresent(String.self, forKey: .message)
-    let user = try container.decode(FilmatchUser.self, forKey: .user)
+    let user = try container.decode(FilmatchUserResponse.self, forKey: .user)
     
     self.init(success: success,
               message: message,

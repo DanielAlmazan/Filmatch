@@ -40,10 +40,6 @@ final class Utilities: Sendable {
     return df
   }()
   
-//  static let getDateYear: (Date) -> Int = {
-//    Calendar.current.component(.year, from: $0)
-//  }()
-
   /// Parses a list of names into a human-readable string.
   /// - Parameter names: An array of names.
   /// - Returns: A formatted string of names separated by commas and "and" before the last name.

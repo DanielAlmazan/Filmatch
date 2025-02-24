@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 protocol FilmatchGoRepository {
-  func auth() async -> Result<FilmatchUser, Error>
+  func auth() async -> Result<FilmatchUserResponse, Error>
   func markMediaAsVisited(for media: any DiscoverItem, as status: InterestStatus) async -> Result<Void, Error>
   func getMovieVisitStatus() async
   func getTvVisitStatus() async
@@ -21,4 +21,9 @@ protocol FilmatchGoRepository {
   func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error>
   func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error>
   func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error>
+  func sendFriendshipRequest(to uid: String) async -> Result<Void, Error>
+  func acceptFriendshipRequest(from uid: String) async -> Result<Void, Error>
+  func removeFriendship(with uid: String) async -> Result<Void, Error>
+  func blockUser(with uid: String) async -> Result<Void, Error>
+  func unblockUser(with uid: String) async -> Result<Void, Error>
 }

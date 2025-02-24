@@ -42,7 +42,7 @@ final class SearchUserViewModel {
 
     switch result {
     case .success(let usersResult):
-      setUsers(usersResult.results)
+      setUsers(usersResult.results.toFilmatchUsers())
       self.totalPages = usersResult.totalPages
       self.currentPage += 1
     case .failure(let error):
@@ -67,5 +67,52 @@ final class SearchUserViewModel {
     self.currentPage = 1
     self.totalPages = 1
     self.errorMessage = nil
+  }
+  
+  @MainActor
+  func handleFriendshipAction(for user: FilmatchUser, action: FriendshipAction) async {
+    guard let _ = user.friendshipStatus else { return }
+    let result: Result<Void, Error>
+
+    switch action {
+    case .sendRequest:
+      result = await repository.sendFriendshipRequest(to: user.uid)
+    case .cancelRequest:
+      result = await repository.removeFriendship(with: user.uid)
+    case .acceptRequest:
+      result = await repository.acceptFriendshipRequest(from: user.uid)
+    case .rejectRequest:
+      result = await repository.removeFriendship(with: user.uid)
+    case .deleteFriend:
+      result = await repository.removeFriendship(with: user.uid)
+    case .block:
+      result = await repository.blockUser(with: user.uid)
+    case .unblock:
+      result = await repository.unblockUser(with: user.uid)
+    }
+
+    switch result {
+    case .success:
+      updateFriendshipStatus(for: user, with: action)
+    case .failure(let error):
+      print("Error: \(error.localizedDescription)")
+    }
+  }
+
+  private func updateFriendshipStatus(for user: FilmatchUser, with action: FriendshipAction) {
+    guard let index = users?.firstIndex(where: { $0.uid == user.uid }) else { return }
+    
+    switch action {
+    case .sendRequest:
+      users?[index].friendshipStatus = .sent
+    case .rejectRequest, .cancelRequest, .deleteFriend:
+      users?[index].friendshipStatus = .notRelated
+    case .acceptRequest:
+      users?[index].friendshipStatus = .friend
+    case .block:
+      users?[index].friendshipStatus = .blocked
+    case .unblock:
+      users?[index].friendshipStatus = .notRelated
+    }
   }
 }
