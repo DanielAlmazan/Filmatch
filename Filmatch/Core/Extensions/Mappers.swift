@@ -147,3 +147,21 @@ extension [FriendshipSingleResponse] {
     self.map { $0.toFilmatchUser() }
   }
 }
+
+extension [FilmatchUserResponse] {
+  func toFilmatchUsers() -> [FilmatchUser] {
+    self.map { $0.toFilmatchUser() }
+  }
+}
+
+extension FilmatchUserResponse {
+  func toFilmatchUser() -> FilmatchUser {
+    .init(
+      email: self.email ?? "",
+      username: self.username,
+      uid: self.uid,
+      photoUrl: self.photoUrl ?? "",
+      friendshipStatus: self.friendshipStatus
+    )
+  }
+}

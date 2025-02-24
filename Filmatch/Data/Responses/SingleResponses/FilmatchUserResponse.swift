@@ -1,14 +1,14 @@
 //
-//  FilmatchUser.swift
+//  FilmatchUserResponse.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 27/1/25.
 //
 
-import FirebaseAuth
+//import FirebaseAuth
 import Foundation
 
-final class FilmatchUser: Identifiable, Sendable {
+final class FilmatchUserResponse: Identifiable, Sendable {
   let email: String?
   let username: String?
   let uid: String
@@ -23,7 +23,7 @@ final class FilmatchUser: Identifiable, Sendable {
     self.friendshipStatus = friendshipStatus
   }
 
-  static let `default` = FilmatchUser(
+  static let `default` = FilmatchUserResponse(
     email: "user@example.com",
     username: "gas_esnake",
     uid: "Firebase UID",
@@ -32,7 +32,7 @@ final class FilmatchUser: Identifiable, Sendable {
   )
 }
 
-extension FilmatchUser: Codable {
+extension FilmatchUserResponse: Codable {
   private enum CodingKeys: String, CodingKey {
     case email
     case username
@@ -70,8 +70,8 @@ extension FilmatchUser: Codable {
   }
 }
 
-extension FilmatchUser: Equatable {
-  static func == (lhs: FilmatchUser, rhs: FilmatchUser) -> Bool {
+extension FilmatchUserResponse: Equatable {
+  static func == (lhs: FilmatchUserResponse, rhs: FilmatchUserResponse) -> Bool {
     return lhs.id == rhs.id
       && lhs.email == rhs.email
       && lhs.username == rhs.username
