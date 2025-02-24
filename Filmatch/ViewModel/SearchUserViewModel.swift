@@ -68,4 +68,49 @@ final class SearchUserViewModel {
     self.totalPages = 1
     self.errorMessage = nil
   }
+  
+  @MainActor
+  func handleFriendshipAction(for user: FilmatchUser, action: FriendshipAction) async {
+    guard let _ = user.friendshipStatus else { return }
+    
+    switch action {
+    case .sendRequest:
+      let result = await repository.sendFriendshipRequest(to: user.uid)
+      handleResult(result, message: "Friend request sent")
+      
+    case .cancelRequest:
+      let result = await repository.removeFriendship(with: user.uid)
+      handleResult(result, message: "Friend request canceled")
+      
+    case .acceptRequest:
+      let result = await repository.acceptFriendshipRequest(from: user.uid)
+      handleResult(result, message: "Friend request accepted")
+      
+    case .rejectRequest:
+      let result = await repository.removeFriendship(with: user.uid)
+      handleResult(result, message: "Friend request rejected")
+      
+    case .deleteFriend:
+      let result = await repository.removeFriendship(with: user.uid)
+      handleResult(result, message: "Friend deleted")
+      
+    case .block:
+      let result = await repository.blockUser(with: user.uid)
+      handleResult(result, message: "User blocked")
+      
+    case .unblock:
+      let result = await repository.unblockUser(with: user.uid)
+      handleResult(result, message: "User unblocked")
+    }
+  }
+  
+  @MainActor
+  private func handleResult(_ result: Result<Void, Error>, message: String) {
+    switch result {
+    case .success:
+      print(message)
+    case .failure(let error):
+      print("Error: \(error.localizedDescription)")
+    }
+  }
 }

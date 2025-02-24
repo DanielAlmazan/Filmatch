@@ -62,4 +62,24 @@ final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
   func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error> {
     await self.datasource.searchUsers(containing: query, at: page)
   }
+  
+  func sendFriendshipRequest(to uid: String) async -> Result<Void, Error> {
+    await self.datasource.sendFriendshipRequest(to: uid)
+  }
+  
+  func acceptFriendshipRequest(from uid: String) async -> Result<Void, Error> {
+    await self.datasource.acceptFriendshipRequest(from: uid)
+  }
+  
+  func removeFriendship(with uid: String) async -> Result<Void, Error> {
+    await self.datasource.removeFriendship(with: uid)
+  }
+  
+  func blockUser(with uid: String) async -> Result<Void, Error> {
+    await self.datasource.blockUser(with: uid)
+  }
+  
+  func unblockUser(with uid: String) async -> Result<Void, Error> {
+    await self.datasource.unblockUser(with: uid)
+  }
 }

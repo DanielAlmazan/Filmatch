@@ -10,7 +10,7 @@ import SwiftUI
 struct UserGridItem: View {
   let user: FilmatchUser
   let size: CGFloat
-  let areFriends: Bool
+  let onTap: () -> Void
 
   var body: some View {
     VStack {
@@ -21,12 +21,14 @@ struct UserGridItem: View {
     .background(.bgContainer)
     .clipShape(.rect(cornerRadius: 10))
     .shadow(radius: 5, y: 5)
+    .onTapGesture { onTap() }
   }
 }
 
+
 #Preview {
   VStack {
-    UserGridItem(user: .default, size: 100, areFriends: true)
+    UserGridItem(user: .default, size: 100) { print("Item tapped")}
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .padding()

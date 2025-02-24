@@ -153,6 +153,9 @@
         }
       }
     },
+    "Accept" : {
+
+    },
     "Account deleted successfully" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -163,6 +166,9 @@
           }
         }
       }
+    },
+    "Add" : {
+
     },
     "Add friends" : {
 
@@ -257,6 +263,12 @@
         }
       }
     },
+    "Block" : {
+
+    },
+    "Blocked" : {
+
+    },
     "born_female: %@" : {
       "localizations" : {
         "en" : {
@@ -330,6 +342,12 @@
         }
       }
     },
+    "Cancel friend request" : {
+
+    },
+    "Cancel Request" : {
+
+    },
     "Cast" : {
       "localizations" : {
         "ca" : {
@@ -395,6 +413,9 @@
           }
         }
       }
+    },
+    "Delete friend" : {
+
     },
     "Directed by %@" : {
       "localizations" : {
@@ -781,6 +802,9 @@
     "No user logged in." : {
 
     },
+    "No user selected" : {
+
+    },
     "No videos available." : {
       "localizations" : {
         "es" : {
@@ -927,6 +951,12 @@
         }
       }
     },
+    "Reject" : {
+
+    },
+    "Remove Friend" : {
+
+    },
     "Rent" : {
 
     },
@@ -964,6 +994,9 @@
           }
         }
       }
+    },
+    "Send friend request" : {
+
     },
     "Start" : {
       "localizations" : {
@@ -1005,6 +1038,9 @@
 
     },
     "Tv Series" : {
+
+    },
+    "Unblock" : {
 
     },
     "Unknown" : {

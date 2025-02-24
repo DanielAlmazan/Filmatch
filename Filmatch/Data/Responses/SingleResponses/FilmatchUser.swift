@@ -13,19 +13,22 @@ final class FilmatchUser: Identifiable, Sendable {
   let username: String?
   let uid: String
   let photoUrl: String?
+  let friendshipStatus: FriendshipStatus?
 
-  init(email: String?, username: String?, uid: String, photoUrl: String?) {
+  init(email: String?, username: String?, uid: String, photoUrl: String?, friendshipStatus: FriendshipStatus?) {
     self.email = email
     self.username = username
     self.uid = uid
     self.photoUrl = photoUrl
+    self.friendshipStatus = friendshipStatus
   }
 
   static let `default` = FilmatchUser(
     email: "user@example.com",
     username: "gas_esnake",
     uid: "Firebase UID",
-    photoUrl: nil
+    photoUrl: nil,
+    friendshipStatus: nil
   )
 }
 
@@ -35,6 +38,7 @@ extension FilmatchUser: Codable {
     case username
     case uid
     case photoUrl = "photo_url"
+    case friendshipStatus = "friendship_status"
   }
 
   convenience init(from decoder: any Decoder) throws {
@@ -44,12 +48,14 @@ extension FilmatchUser: Codable {
     let username = try container.decodeIfPresent(String.self, forKey: .username)
     let uid = try container.decode(String.self, forKey: .uid)
     let photoUrl = try container.decodeIfPresent(String.self, forKey: .photoUrl)
+    let friendshipStatus = try container.decodeIfPresent(FriendshipStatus.self, forKey: .friendshipStatus)
 
     self.init(
       email: email,
       username: username,
       uid: uid,
-      photoUrl: photoUrl
+      photoUrl: photoUrl,
+      friendshipStatus: friendshipStatus
     )
   }
 
@@ -60,6 +66,7 @@ extension FilmatchUser: Codable {
     try container.encodeIfPresent(username, forKey: .username)
     try container.encode(uid, forKey: .uid)
     try container.encode(photoUrl, forKey: .photoUrl)
+    try container.encode(friendshipStatus, forKey: .friendshipStatus)
   }
 }
 
@@ -70,5 +77,6 @@ extension FilmatchUser: Equatable {
       && lhs.username == rhs.username
       && lhs.uid == rhs.uid
       && lhs.photoUrl == rhs.photoUrl
+      && lhs.friendshipStatus == rhs.friendshipStatus
   }
 }

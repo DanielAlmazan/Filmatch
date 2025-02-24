@@ -19,6 +19,7 @@ enum FilmatchGoPaths {
   case userVisitedTvList(String)
   case friends
   case friendship
+  case block(String)
   case search
   case health
   
@@ -35,6 +36,7 @@ enum FilmatchGoPaths {
     case .userVisitedTvList(let id): "/user/\(id)/visited/tv/list"
     case .friends: "/user/friends"
     case .friendship: "/user/friendship"
+    case .block(let uid): "/user/block/\(uid)"
     case .search: "/user/search"
     case .health: "/health"
     }
