@@ -47,7 +47,7 @@ class AuthenticationViewModel {
           let filmatchAuthResult = await self.filmatchRepository.auth()
           switch filmatchAuthResult {
           case .success(let filmatchUser):
-            self.currentUser = filmatchUser
+            self.currentUser = filmatchUser.toFilmatchUser()
           case .failure(let failure):
             self.errorMessage = failure.localizedDescription
           }
@@ -71,7 +71,7 @@ class AuthenticationViewModel {
         let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
-          self.currentUser = filmatchUser
+          self.currentUser = filmatchUser.toFilmatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
@@ -93,7 +93,7 @@ class AuthenticationViewModel {
         let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
-          self.currentUser = filmatchUser
+          self.currentUser = filmatchUser.toFilmatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
@@ -117,7 +117,7 @@ class AuthenticationViewModel {
         let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
-          self.currentUser = filmatchUser
+          self.currentUser = filmatchUser.toFilmatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
@@ -140,7 +140,7 @@ class AuthenticationViewModel {
         let filmatchResult = await self.filmatchRepository.auth()
         switch filmatchResult {
         case .success(let filmatchUser):
-          self.currentUser = filmatchUser
+          self.currentUser = filmatchUser.toFilmatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }

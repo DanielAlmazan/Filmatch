@@ -14,7 +14,7 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
     self.client = client
   }
   
-  func auth() async -> Result<FilmatchUser, Error> {
+  func auth() async -> Result<FilmatchUserResponse, Error> {
     let data = await self.client.request(path: .userAuth, method: .POST)
     
     switch data {
@@ -348,6 +348,13 @@ final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
   }
   
   func unblockUser(with uid: String) async -> Result<Void, Error> {
-    return .failure(RuntimeErrors.notImplemented)
+    let result = await client.request(path: .block(uid), method: .DELETE)
+    
+    switch result {
+    case .success(_):
+      return .success(())
+    case .failure(let error):
+      return .failure(error)
+    }
   }
 }

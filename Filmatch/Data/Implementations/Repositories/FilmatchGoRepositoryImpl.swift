@@ -15,7 +15,7 @@ final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
     self.datasource = datasource
   }
   
-  func auth() async -> Result<FilmatchUser, any Error> {
+  func auth() async -> Result<FilmatchUserResponse, any Error> {
     await self.datasource.auth()
   }
   
