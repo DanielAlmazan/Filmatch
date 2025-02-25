@@ -2,11 +2,7 @@ import SwiftUI
 
 struct UserListRow: View {
   let user: FilmatchUser
-  let onSendRequest: (FilmatchUser) -> Void
-  let onAcceptRequest: (FilmatchUser) -> Void
-  let onDeleteFriendship: (FilmatchUser) -> Void
-  let onBlock: (FilmatchUser) -> Void
-  let onUnblock: (FilmatchUser) -> Void
+  let onAction: (FilmatchUser, FriendshipAction) -> Void
   
   var body: some View {
     HStack {
@@ -15,16 +11,18 @@ struct UserListRow: View {
         .font(.headline)
         .frame(maxWidth: .infinity, alignment: .leading)
       
-      getActionsView(for: user)
+      FriendshipActionSheetProvider.getActionsView(for: user) { user, action in
+        onAction(user, action)
+      }
       
       Menu {
         if user.friendshipStatus == .blocked {
           Button("Unblock", role: .destructive) {
-            onUnblock(user)
+            onAction(user, .unblock)
           }
         } else {
           Button("Block", role: .destructive) {
-            onBlock(user)
+            onAction(user, .block)
           }
         }
       } label: {
@@ -38,50 +36,13 @@ struct UserListRow: View {
     .clipShape(.rect(cornerRadius: 10))
     .shadow(radius: 5, y: 5)
   }
-  
-  @ViewBuilder
-  private func getActionsView(for user: FilmatchUser) -> some View {
-    switch user.friendshipStatus {
-    case .notRelated:
-      Button("Add") { onSendRequest(user) }
-        .buttonStyle(.borderedProminent)
-      
-    case .sent:
-      Button("Cancel Request") { onDeleteFriendship(user) }
-        .buttonStyle(.bordered)
-      
-    case .received:
-      HStack {
-        Button("Accept") { onAcceptRequest(user) }
-          .buttonStyle(.borderedProminent)
-        Button("Reject") { onDeleteFriendship(user) }
-          .buttonStyle(.bordered)
-      }
-      
-    case .friend:
-      Button("Remove Friend") { onDeleteFriendship(user) }
-        .buttonStyle(.bordered)
-      
-    case .blocked:
-      Button("Blocked") {} // Disabled, managed via the kebab menu
-        .disabled(true)
-        .buttonStyle(.bordered)
-      
-    case nil:
-      EmptyView()
-    }
-  }
 }
 
 #Preview {
   VStack {
     UserListRow(
       user: .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
-      onSendRequest: { user in print("Sent friend request") },
-      onAcceptRequest: { user in print("Accepted request") },
-      onDeleteFriendship: { user in print("Deleted friendship") },
-      onBlock: { user in print("Blocked user") },
-      onUnblock: { user in print("Unblocked user") }
+      onAction: { user, action in print("Sent friend request") }
     )
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
