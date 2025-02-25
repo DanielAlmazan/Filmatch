@@ -1,25 +1,25 @@
 //
-//  FilmatchGoUserResponse.swift
-//  Filmatch
+//  OtterMatchGoUserResponse.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 27/1/25.
 //
 
 import Foundation
 
-final class FilmatchGoUserResponse: Sendable {
+final class OtterMatchGoUserResponse: Sendable {
   let success: Bool
   let message: String?
-  let user: FilmatchUserResponse
+  let user: OtterMatchUserResponse
   
-  init(success: Bool, message: String?, user: FilmatchUserResponse) {
+  init(success: Bool, message: String?, user: OtterMatchUserResponse) {
     self.success = success
     self.message = message
     self.user = user
   }
 }
 
-extension FilmatchGoUserResponse: Codable {
+extension OtterMatchGoUserResponse: Codable {
   enum CodingKeys: String, CodingKey {
     case success
     case message
@@ -30,7 +30,7 @@ extension FilmatchGoUserResponse: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     let success = try container.decode(Bool.self, forKey: .success)
     let message = try container.decodeIfPresent(String.self, forKey: .message)
-    let user = try container.decode(FilmatchUserResponse.self, forKey: .user)
+    let user = try container.decode(OtterMatchUserResponse.self, forKey: .user)
     
     self.init(success: success,
               message: message,

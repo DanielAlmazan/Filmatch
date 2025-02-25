@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1600"
+   LastUpgradeVersion = "1620"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "85F308492C4F127700DF37C2"
-               BuildableName = "Filmatch.app"
-               BlueprintName = "Filmatch"
-               ReferencedContainer = "container:Filmatch.xcodeproj">
+               BuildableName = "OtterMatch.app"
+               BlueprintName = "OtterMatch"
+               ReferencedContainer = "container:OtterMatch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,17 +45,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "85F308492C4F127700DF37C2"
-            BuildableName = "Filmatch.app"
-            BlueprintName = "Filmatch"
-            ReferencedContainer = "container:Filmatch.xcodeproj">
+            BuildableName = "OtterMatch.app"
+            BlueprintName = "OtterMatch"
+            ReferencedContainer = "container:OtterMatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.SQLDebug 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -68,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "85F308492C4F127700DF37C2"
-            BuildableName = "Filmatch.app"
-            BlueprintName = "Filmatch"
-            ReferencedContainer = "container:Filmatch.xcodeproj">
+            BuildableName = "OtterMatch.app"
+            BlueprintName = "OtterMatch"
+            ReferencedContainer = "container:OtterMatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

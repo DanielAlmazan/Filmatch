@@ -1,6 +1,6 @@
 //
 //  MovieVideosAppendResponse.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 8/9/24.
 //

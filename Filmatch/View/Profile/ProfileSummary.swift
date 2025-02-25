@@ -1,6 +1,6 @@
 //
 //  ProfileSummary.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 13/8/24.
 //
@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ProfileSummary: View {
   let kRowsHeight: CGFloat = 90
-  private var user: FilmatchUser
+  private var user: OtterMatchUser
 
   @State private var profileVm: ProfileViewModel
 
   init(
-    user: FilmatchUser,
-    filmatchRepository: FilmatchGoRepositoryImpl,
+    user: OtterMatchUser,
+    otterMatchRepository: OtterMatchGoRepositoryImpl,
     filtersRepository: FiltersRepository
   ) {
     self.user = user
     self.profileVm = .init(
       user: user,
-      filmatchRepository: filmatchRepository,
+      otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
   }
@@ -100,9 +100,9 @@ struct ProfileSummary: View {
 }
 
 #Preview {
-  @Previewable let filmatchRepository = FilmatchGoRepositoryImpl(
-    datasource: FilmatchGoDatasourceImpl(
-      client: FilmatchHttpClient()
+  @Previewable let otterMatchRepository = OtterMatchGoRepositoryImpl(
+    datasource: OtterMatchGoDatasourceImpl(
+      client: OtterMatchHttpClient()
     )
   )
   @Previewable let filtersRepository = FiltersRepositoryImpl(
@@ -112,7 +112,7 @@ struct ProfileSummary: View {
   VStack {
     ProfileSummary(
       user: .default,
-      filmatchRepository: filmatchRepository,
+      otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
   }

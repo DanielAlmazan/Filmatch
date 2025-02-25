@@ -1,27 +1,27 @@
 //
-//  FilmatchGoDatasourceImpl.swift
-//  Filmatch
+//  OtterMatchGoDatasourceImpl.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 28/1/25.
 //
 
 import Foundation
 
-final class FilmatchGoDatasourceImpl: FilmatchGoDatasource {
-  let client: FilmatchClient
+final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
+  let client: OtterMatchClient
   
-  init(client: FilmatchClient) {
+  init(client: OtterMatchClient) {
     self.client = client
   }
   
-  func auth() async -> Result<FilmatchUserResponse, Error> {
+  func auth() async -> Result<OtterMatchUserResponse, Error> {
     let data = await self.client.request(path: .userAuth, method: .POST)
     
     switch data {
     case .success(let success):
       do {
         let loginResponse = try JSONDecoder().decode(
-          FilmatchGoUserResponse.self, from: success)
+          OtterMatchGoUserResponse.self, from: success)
         return .success(loginResponse.user)
       } catch {
         return .failure(error)

@@ -1,13 +1,13 @@
 //
 //  HomeView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 12/8/24.
 //
 
 import SwiftUI
 
-/// `HomeView` is the main container view for the Filmatch app, providing a tab-based navigation interface.
+/// `HomeView` is the main container view for the OtterMatch app, providing a tab-based navigation interface.
 /// It includes tabs for discovering movies, managing rooms, and viewing the user's profile.
 /// This view manages the selection state of the tabs and passes necessary dependencies to child views.
 struct HomeView: View {
@@ -24,7 +24,7 @@ struct HomeView: View {
 
   @Environment(FiltersRepositoryImpl.self) private var filtersRepository
   
-  @Environment(FilmatchGoRepositoryImpl.self) private var filmatchGoRepository
+  @Environment(OtterMatchGoRepositoryImpl.self) private var otterMatchGoRepository
   
   var body: some View {
     TabView(selection: $selectedTab) {
@@ -35,12 +35,12 @@ struct HomeView: View {
           DiscoverView(
             moviesRepository: moviesRepository,
             tvSeriesRepository: tvSeriesRepository,
-            filmatchRepository: filmatchGoRepository,
+            otterMatchRepository: otterMatchGoRepository,
             filtersRepository: filtersRepository
           ) { item, status in
             Task {
               // TODO: Show error if exists
-              let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: status)
+              let _ = await otterMatchGoRepository.markMediaAsVisited(for: item, as: status)
             }
           }
           .background(.bgBase)
@@ -87,7 +87,7 @@ struct HomeView: View {
         ProfileTab()
           .background(.bgBase)
           .environment(authVm)
-          .environment(filmatchGoRepository)
+          .environment(otterMatchGoRepository)
       }
     }
   }
@@ -104,12 +104,12 @@ struct HomeView: View {
   )
   @Previewable @State var filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource())
-  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchRepository: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
+  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), otterMatchRepository: OtterMatchGoRepositoryImpl(datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient(urlBase: AppConstants.otterMatchBaseUrl))))
 
-  @Previewable @State var filmatchGoRepository = FilmatchGoRepositoryImpl(
-    datasource: FilmatchGoDatasourceImpl(
-      client: FilmatchHttpClient(
-        urlBase: AppConstants.filmatchBaseUrl
+  @Previewable @State var otterMatchGoRepository = OtterMatchGoRepositoryImpl(
+    datasource: OtterMatchGoDatasourceImpl(
+      client: OtterMatchHttpClient(
+        urlBase: AppConstants.otterMatchBaseUrl
       )
     )
   )
@@ -119,5 +119,5 @@ struct HomeView: View {
     .environment(moviesRepository)
     .environment(filtersRepository)
     .environment(tvSeriesRepository)
-    .environment(filmatchGoRepository)
+    .environment(otterMatchGoRepository)
 }

@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/7/24.
 //
@@ -16,7 +16,7 @@ struct ContentView: View {
   @State var tvSeriesRepository: TvSeriesRepositoryImpl
   @State var filtersRepository: FiltersRepositoryImpl
   @State var personRepository: PersonRepositoryImpl
-  @State var filmatchGoRepository: FilmatchGoRepositoryImpl
+  @State var otterMatchGoRepository: OtterMatchGoRepositoryImpl
 
   init() {
     let client = TMDBHttpClient()
@@ -34,9 +34,9 @@ struct ContentView: View {
       datasource: PersonDatasourceImpl(client: client)
     )
     
-    self.filmatchGoRepository = .init(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl)
+    self.otterMatchGoRepository = .init(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(urlBase: AppConstants.otterMatchBaseUrl)
       )
     )
   }
@@ -55,7 +55,7 @@ struct ContentView: View {
           .environment(tvSeriesRepository)
           .environment(filtersRepository)
           .environment(personRepository)
-          .environment(filmatchGoRepository)
+          .environment(otterMatchGoRepository)
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -69,10 +69,10 @@ struct ContentView: View {
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
-    filmatchRepository: FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient(
-          urlBase: AppConstants.filmatchBaseUrl
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(
+          urlBase: AppConstants.otterMatchBaseUrl
         )
       )
     )

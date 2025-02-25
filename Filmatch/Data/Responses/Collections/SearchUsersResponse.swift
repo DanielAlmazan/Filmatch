@@ -1,6 +1,6 @@
 //
 //  SearchUsersResponse.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
 //
@@ -9,12 +9,12 @@ import Foundation
 
 final class SearchUsersResponse: Sendable {
   let page: Int
-  let results: [FilmatchUserResponse]
+  let results: [OtterMatchUserResponse]
   let resultsPerPage: Int
   let totalPages: Int
   let totalResults: Int
   
-  init(page: Int, results: [FilmatchUserResponse], resultsPerPage: Int, totalPages: Int, totalResults: Int) {
+  init(page: Int, results: [OtterMatchUserResponse], resultsPerPage: Int, totalPages: Int, totalResults: Int) {
     self.page = page
     self.results = results
     self.resultsPerPage = resultsPerPage
@@ -36,7 +36,7 @@ extension SearchUsersResponse: Decodable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
 
     let page = try container.decode(Int.self, forKey: .page)
-    let results = try container.decode([FilmatchUserResponse].self, forKey: .results)
+    let results = try container.decode([OtterMatchUserResponse].self, forKey: .results)
     let resultsPerPage = try container.decode(Int.self, forKey: .resultsPerPage)
     let totalPages = try container.decode(Int.self, forKey: .totalPages)
     let totalResults = try container.decode(Int.self, forKey: .totalResults)

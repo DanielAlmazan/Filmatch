@@ -1,6 +1,6 @@
 //
 //  MonetizationType.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/12/24.
 //

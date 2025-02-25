@@ -1,15 +1,15 @@
 //
-//  FilmatchClient.swift
-//  Filmatch
+//  OtterMatchClient.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/1/25.
 //
 
 import Foundation
 
-protocol FilmatchClient: Sendable {
+protocol OtterMatchClient: Sendable {
   func request(
-    path: FilmatchGoPaths,
+    path: OtterMatchGoPaths,
     method: HTTPMethods,
     queryParams: [URLQueryItem]?,
     body: Data?,
@@ -17,9 +17,9 @@ protocol FilmatchClient: Sendable {
   ) async -> Result<Data, Error>
 }
 
-extension FilmatchClient {
+extension OtterMatchClient {
   func request(
-    path: FilmatchGoPaths,
+    path: OtterMatchGoPaths,
     method: HTTPMethods,
     queryParams: [URLQueryItem]? = nil,
     body: Data? = nil,

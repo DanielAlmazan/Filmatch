@@ -1,6 +1,6 @@
 //
 //  SimpleUserInfoView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SimpleUserInfoView: View {
-  let user: FilmatchUser
+  let user: OtterMatchUser
   let size: CGFloat
 
   var body: some View {

@@ -1,6 +1,6 @@
 //
 //  ExternalAuthProvidersView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 20/10/24.
 //

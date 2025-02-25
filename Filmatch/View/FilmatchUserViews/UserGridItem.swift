@@ -1,6 +1,6 @@
 //
 //  UserGridItem.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 21/2/25.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserGridItem: View {
-  let user: FilmatchUser
+  let user: OtterMatchUser
   let size: CGFloat
   let onTap: () -> Void
 

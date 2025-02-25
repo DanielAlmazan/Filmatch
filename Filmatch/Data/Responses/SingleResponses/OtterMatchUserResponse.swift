@@ -1,6 +1,6 @@
 //
-//  FilmatchUserResponse.swift
-//  Filmatch
+//  OtterMatchUserResponse.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 27/1/25.
 //
@@ -8,7 +8,7 @@
 //import FirebaseAuth
 import Foundation
 
-final class FilmatchUserResponse: Identifiable, Sendable {
+final class OtterMatchUserResponse: Identifiable, Sendable {
   let email: String?
   let username: String?
   let uid: String
@@ -23,7 +23,7 @@ final class FilmatchUserResponse: Identifiable, Sendable {
     self.friendshipStatus = friendshipStatus
   }
 
-  static let `default` = FilmatchUserResponse(
+  static let `default` = OtterMatchUserResponse(
     email: "user@example.com",
     username: "gas_esnake",
     uid: "Firebase UID",
@@ -32,7 +32,7 @@ final class FilmatchUserResponse: Identifiable, Sendable {
   )
 }
 
-extension FilmatchUserResponse: Codable {
+extension OtterMatchUserResponse: Codable {
   private enum CodingKeys: String, CodingKey {
     case email
     case username
@@ -70,8 +70,8 @@ extension FilmatchUserResponse: Codable {
   }
 }
 
-extension FilmatchUserResponse: Equatable {
-  static func == (lhs: FilmatchUserResponse, rhs: FilmatchUserResponse) -> Bool {
+extension OtterMatchUserResponse: Equatable {
+  static func == (lhs: OtterMatchUserResponse, rhs: OtterMatchUserResponse) -> Bool {
     return lhs.id == rhs.id
       && lhs.email == rhs.email
       && lhs.username == rhs.username

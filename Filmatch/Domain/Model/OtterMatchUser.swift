@@ -1,13 +1,13 @@
 //
-//  FilmatchUser.swift
-//  Filmatch
+//  OtterMatchUser.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/2/25.
 //
 
 import Foundation
 
-struct FilmatchUser: Identifiable {
+struct OtterMatchUser: Identifiable {
   let email: String?
   let username: String?
   let uid: String
@@ -24,7 +24,7 @@ struct FilmatchUser: Identifiable {
     self.friendshipStatus = friendshipStatus
   }
   
-  static let `default` = FilmatchUser(
+  static let `default` = OtterMatchUser(
     email: "user@example.com",
     username: "gas_esnake",
     uid: "Firebase UID",
@@ -33,8 +33,8 @@ struct FilmatchUser: Identifiable {
   )
 }
 
-extension FilmatchUser: Equatable {
-  static func == (lhs: FilmatchUser, rhs: FilmatchUser) -> Bool {
+extension OtterMatchUser: Equatable {
+  static func == (lhs: OtterMatchUser, rhs: OtterMatchUser) -> Bool {
     return lhs.id == rhs.id
     && lhs.email == rhs.email
     && lhs.username == rhs.username

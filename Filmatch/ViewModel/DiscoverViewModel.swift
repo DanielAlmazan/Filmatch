@@ -1,6 +1,6 @@
 //
 //  DiscoverViewModel.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/8/24.
 //
@@ -16,7 +16,7 @@ final class DiscoverViewModel {
   /// The repository used to fetch tv series data.
   let tvSeriesRepository: TvSeriesRepository
   /// The repository used to interact with our own API
-  let filmatchRepository: FilmatchGoRepository
+  let otterMatchRepository: OtterMatchGoRepository
   
   let kLoadingThreshold: Int = 4
 
@@ -46,11 +46,11 @@ final class DiscoverViewModel {
   init(
     moviesRepository: MoviesRepository,
     tvSeriesRepository: TvSeriesRepository,
-    filmatchRepository: FilmatchGoRepository
+    otterMatchRepository: OtterMatchGoRepository
   ) {
     self.moviesRepository = moviesRepository
     self.tvSeriesRepository = tvSeriesRepository
-    self.filmatchRepository = filmatchRepository
+    self.otterMatchRepository = otterMatchRepository
   }
 
   @MainActor private func getCleanVisitedItems(
@@ -61,8 +61,8 @@ final class DiscoverViewModel {
     let result: Result<[Int], Error>
 
     switch media {
-    case .movie: result = await filmatchRepository.getMovieVisitsByIds(for: ids)
-    case .tvSeries: result = await filmatchRepository.getTvVisitsByIds(for: ids)
+    case .movie: result = await otterMatchRepository.getMovieVisitsByIds(for: ids)
+    case .tvSeries: result = await otterMatchRepository.getTvVisitsByIds(for: ids)
     }
 
     return switch result {
@@ -98,7 +98,7 @@ final class DiscoverViewModel {
       } else {
         // The has visited more than 3 pages
         // Getting the latest visited page...
-        let latestPageResult = await self.filmatchRepository
+        let latestPageResult = await self.otterMatchRepository
           .getLatestVisitedPageByFiltersHash(for: filters.filtersHash())
 
         switch latestPageResult {
@@ -171,7 +171,7 @@ final class DiscoverViewModel {
   func createVisitedFilterHash(for filter: MediaFilters, at page: Int = 1)
     async
   {
-    let result = await filmatchRepository.createVisitedFiltersHash(
+    let result = await otterMatchRepository.createVisitedFiltersHash(
       for: filter, at: page)
 
     switch result {

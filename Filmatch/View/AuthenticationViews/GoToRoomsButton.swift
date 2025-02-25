@@ -1,6 +1,6 @@
 //
 //  GoToRoomsButton.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 15/10/24.
 //

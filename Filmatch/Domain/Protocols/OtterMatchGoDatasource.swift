@@ -1,6 +1,6 @@
 //
-//  FilmatchGoDatasource.swift
-//  Filmatch
+//  OtterMatchGoDatasource.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 28/1/25.
 //
@@ -8,8 +8,8 @@
 import Foundation
 
 @MainActor
-protocol FilmatchGoDatasource {
-  func auth() async -> Result<FilmatchUserResponse, Error>
+protocol OtterMatchGoDatasource {
+  func auth() async -> Result<OtterMatchUserResponse, Error>
   func markMediaAsVisited(for media: any DiscoverItem, as status: InterestStatus) async -> Result<Void, Error>
   func getMovieVisitStatus() async
   func getTvVisitStatus() async

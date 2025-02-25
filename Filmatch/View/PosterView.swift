@@ -1,6 +1,6 @@
 //
 //  PosterView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 12/8/24.
 //

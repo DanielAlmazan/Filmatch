@@ -1,6 +1,6 @@
 //
 //  ColorExtensions.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 30/12/24.
 //

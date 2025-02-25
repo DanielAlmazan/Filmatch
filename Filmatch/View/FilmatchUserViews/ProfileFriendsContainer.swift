@@ -1,6 +1,6 @@
 //
 //  ProfileFriendsContainer.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 21/2/25.
 //
@@ -12,9 +12,9 @@ struct ProfileFriendsContainer: View {
   let height: CGFloat
   
   @Binding var isLoading: Bool
-  @Binding var friends: [FilmatchUser]?
+  @Binding var friends: [OtterMatchUser]?
   
-  @Environment(FilmatchGoRepositoryImpl.self) private var filmatchGoRepository
+  @Environment(OtterMatchGoRepositoryImpl.self) private var otterMatchGoRepository
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -33,7 +33,7 @@ struct ProfileFriendsContainer: View {
           MyFriendsRow(
             friends: friends,
             height: height,
-            filmatchRepository: filmatchGoRepository
+            otterMatchRepository: otterMatchGoRepository
           )
         } else {
           Text("No results")
@@ -52,7 +52,7 @@ struct ProfileFriendsContainer: View {
 // MARK: - Preview Not Simulating loading
 #Preview {
   @Previewable @State var isLoading: Bool = true
-  @Previewable @State var friends: [FilmatchUser]? = [
+  @Previewable @State var friends: [OtterMatchUser]? = [
     .default,
     .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
     .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil, friendshipStatus: .friend),
@@ -69,9 +69,9 @@ struct ProfileFriendsContainer: View {
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(.bgBase)
   .environment(
-    FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient()
+    OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
       )
     )
   )
@@ -80,7 +80,7 @@ struct ProfileFriendsContainer: View {
 // MARK: - Preview Simulating loading
 #Preview("Simulating loading") {
   @Previewable @State var isLoading: Bool = true
-  @Previewable @State var friends: [FilmatchUser]?
+  @Previewable @State var friends: [OtterMatchUser]?
 
   VStack {
     ProfileFriendsContainer(
@@ -103,9 +103,9 @@ struct ProfileFriendsContainer: View {
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(.bgBase)
   .environment(
-    FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient()
+    OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
       )
     )
   )

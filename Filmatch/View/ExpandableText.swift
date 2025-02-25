@@ -1,6 +1,6 @@
 //
 //  ExpandableText.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 15/1/25.
 //

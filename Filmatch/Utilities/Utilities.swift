@@ -1,6 +1,6 @@
 //
 //  Utilities.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 4/12/24.
 //

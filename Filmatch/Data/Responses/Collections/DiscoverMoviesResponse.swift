@@ -1,6 +1,6 @@
 //
 //  DiscoverMoviesResponse.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/8/24.
 //

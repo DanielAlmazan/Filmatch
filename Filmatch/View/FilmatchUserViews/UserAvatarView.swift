@@ -1,6 +1,6 @@
 //
 //  UserAvatarView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 21/2/25.
 //
@@ -9,10 +9,10 @@ import Kingfisher
 import SwiftUI
 
 struct UserAvatarView: View {
-  let user: FilmatchUser?
+  let user: OtterMatchUser?
   let size: CGFloat
   
-  init(user: FilmatchUser, size: CGFloat) {
+  init(user: OtterMatchUser, size: CGFloat) {
     self.user = user
     self.size = size
   }

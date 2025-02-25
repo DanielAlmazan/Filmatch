@@ -1,6 +1,6 @@
 //
 //  SearchUsersView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
 //
@@ -60,9 +60,9 @@ struct SearchUsersView: View {
     NavigationStack {
       SearchUsersView(
         searchUserVm: SearchUserViewModel(
-          repository: FilmatchGoRepositoryImpl(
-            datasource: FilmatchGoDatasourceImpl(
-              client: FilmatchHttpClient()
+          repository: OtterMatchGoRepositoryImpl(
+            datasource: OtterMatchGoDatasourceImpl(
+              client: OtterMatchHttpClient()
             )
           )
         )

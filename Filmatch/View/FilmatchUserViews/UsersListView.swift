@@ -1,6 +1,6 @@
 //
 //  UsersListView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
 //
@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UsersListView: View {
-  let users: [FilmatchUser]
-  let onAction: (FilmatchUser, FriendshipAction) -> Void
+  let users: [OtterMatchUser]
+  let onAction: (OtterMatchUser, FriendshipAction) -> Void
 
   let onLastAppeared: () -> Void
   

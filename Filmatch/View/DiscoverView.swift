@@ -1,6 +1,6 @@
 //
 //  DiscoverView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/8/24.
 //
@@ -76,14 +76,14 @@ struct DiscoverView: View {
   init(
     moviesRepository: MoviesRepository,
     tvSeriesRepository: TvSeriesRepository,
-    filmatchRepository: FilmatchGoRepository,
+    otterMatchRepository: OtterMatchGoRepository,
     filtersRepository: FiltersRepository,
     onItemRemoved: ((any DiscoverItem, InterestStatus) -> Void)?
   ) {
     self.discoverVm = DiscoverViewModel(
       moviesRepository: moviesRepository,
       tvSeriesRepository: tvSeriesRepository,
-      filmatchRepository: filmatchRepository)
+      otterMatchRepository: otterMatchRepository)
     self.filtersVm = FiltersViewModel(filtersRepository: filtersRepository)
     self.onItemRemoved = onItemRemoved
   }
@@ -453,8 +453,8 @@ struct DiscoverView: View {
     tvSeriesRepository: TvSeriesRepositoryImpl(
       datasource: JsonTvSeriesDatasource()
     ),
-    filmatchRepository: FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient())),
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient())),
     filtersRepository: FiltersRepositoryImpl(
       filtersDatasource: JsonFiltersDatasource()
     ),

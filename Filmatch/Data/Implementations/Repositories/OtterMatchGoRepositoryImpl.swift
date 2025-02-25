@@ -1,6 +1,6 @@
 //
-//  FilmatchGoRepositoryImpl.swift
-//  Filmatch
+//  OtterMatchGoRepositoryImpl.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 28/1/25.
 //
@@ -8,14 +8,14 @@
 import Foundation
 
 @Observable
-final class FilmatchGoRepositoryImpl: FilmatchGoRepository {
-  let datasource: FilmatchGoDatasource
+final class OtterMatchGoRepositoryImpl: OtterMatchGoRepository {
+  let datasource: OtterMatchGoDatasource
   
-  init(datasource: FilmatchGoDatasource) {
+  init(datasource: OtterMatchGoDatasource) {
     self.datasource = datasource
   }
   
-  func auth() async -> Result<FilmatchUserResponse, any Error> {
+  func auth() async -> Result<OtterMatchUserResponse, any Error> {
     await self.datasource.auth()
   }
   

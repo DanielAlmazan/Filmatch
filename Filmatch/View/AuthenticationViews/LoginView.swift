@@ -1,6 +1,6 @@
 //
 //  LoginView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/9/24.
 //
@@ -180,10 +180,10 @@ struct LoginView: View {
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
-    filmatchRepository: FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient(
-          urlBase: AppConstants.filmatchBaseUrl)
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(
+          urlBase: AppConstants.otterMatchBaseUrl)
       )
     )
   )

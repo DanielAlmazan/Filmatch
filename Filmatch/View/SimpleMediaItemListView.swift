@@ -1,6 +1,6 @@
 //
 //  SimpleMediaItemListView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/1/25.
 //

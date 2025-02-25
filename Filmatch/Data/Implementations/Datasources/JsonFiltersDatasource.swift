@@ -1,6 +1,6 @@
 //
 //  JsonFiltersDatasource.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 27/12/24.
 //

@@ -1,6 +1,6 @@
 //
 //  SearchUsersGridView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
 //
@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SearchUsersGridView: View {
   let columns: [GridItem]
-  let users: [FilmatchUser]
-  let onItemTap: (FilmatchUser) -> Void
+  let users: [OtterMatchUser]
+  let onItemTap: (OtterMatchUser) -> Void
   
   let onLastAppeared: () -> Void
 
@@ -33,7 +33,7 @@ struct SearchUsersGridView: View {
 }
 
 #Preview {
-  @Previewable @State var users: [FilmatchUser] = [
+  @Previewable @State var users: [OtterMatchUser] = [
       .default,
       .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
       .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil, friendshipStatus: .friend),
