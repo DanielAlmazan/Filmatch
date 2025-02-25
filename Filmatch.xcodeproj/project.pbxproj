@@ -14,7 +14,7 @@
 		85044C542D6A06F00076E8D8 /* SearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85044C532D6A06F00076E8D8 /* SearchUserViewModel.swift */; };
 		85044C562D6A0B2E0076E8D8 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85044C552D6A0B2E0076E8D8 /* SearchUsersResponse.swift */; };
 		85044C582D6A39A30076E8D8 /* SearchUsersGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85044C572D6A39A30076E8D8 /* SearchUsersGridView.swift */; };
-		85044C5A2D6A3D140076E8D8 /* SearchUsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85044C592D6A3D140076E8D8 /* SearchUsersListView.swift */; };
+		85044C5A2D6A3D140076E8D8 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85044C592D6A3D140076E8D8 /* UsersListView.swift */; };
 		850494AE2CA31A3300C44BC9 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850494AD2CA31A3300C44BC9 /* AuthenticationViewModel.swift */; };
 		850494B22CA33C4E00C44BC9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 850494B12CA33C4E00C44BC9 /* FirebaseAnalytics */; };
 		850494B42CA33C4E00C44BC9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 850494B32CA33C4E00C44BC9 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -213,10 +213,11 @@
 		85E5DE402C99E1B0002AF33D /* AcceptDeclineRowButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E5DE3F2C99E1B0002AF33D /* AcceptDeclineRowButtons.swift */; };
 		85EBA2F42D6BAF1300C3EF43 /* FriendshipStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2F32D6BAF1300C3EF43 /* FriendshipStatus.swift */; };
 		85EBA2F62D6BBB8E00C3EF43 /* SendFriendshipBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2F52D6BBB8E00C3EF43 /* SendFriendshipBody.swift */; };
-		85EBA2F82D6CBC6D00C3EF43 /* FriendshipActionSheetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2F72D6CBC6D00C3EF43 /* FriendshipActionSheetProvider.swift */; };
+		85EBA2F82D6CBC6D00C3EF43 /* FriendshipActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2F72D6CBC6D00C3EF43 /* FriendshipActionProvider.swift */; };
 		85EBA2FA2D6CC35400C3EF43 /* AcceptFriendshipRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2F92D6CC35400C3EF43 /* AcceptFriendshipRequestBody.swift */; };
 		85EBA2FC2D6CC49B00C3EF43 /* DeleteFriendshipBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2FB2D6CC49B00C3EF43 /* DeleteFriendshipBody.swift */; };
 		85EBA2FE2D6CFB5B00C3EF43 /* FilmatchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2FD2D6CFB5B00C3EF43 /* FilmatchUser.swift */; };
+		85EBA3002D6E553200C3EF43 /* MyFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBA2FF2D6E553200C3EF43 /* MyFriendsView.swift */; };
 		85EE181D2C6F566B00791D40 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85EE181C2C6F566B00791D40 /* Config.plist */; };
 		85EE181F2C6F56B400791D40 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EE181E2C6F56B400791D40 /* Config.swift */; };
 		85EF7B6D2D227A3A007EB896 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF7B6C2D227A3A007EB896 /* ColorExtensions.swift */; };
@@ -247,7 +248,7 @@
 		85044C532D6A06F00076E8D8 /* SearchUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewModel.swift; sourceTree = "<group>"; };
 		85044C552D6A0B2E0076E8D8 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
 		85044C572D6A39A30076E8D8 /* SearchUsersGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersGridView.swift; sourceTree = "<group>"; };
-		85044C592D6A3D140076E8D8 /* SearchUsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersListView.swift; sourceTree = "<group>"; };
+		85044C592D6A3D140076E8D8 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		850494AD2CA31A3300C44BC9 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		850494C12CA4577700C44BC9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		850494C72CAE9ACE00C44BC9 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
@@ -440,10 +441,11 @@
 		85E5DE3F2C99E1B0002AF33D /* AcceptDeclineRowButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDeclineRowButtons.swift; sourceTree = "<group>"; };
 		85EBA2F32D6BAF1300C3EF43 /* FriendshipStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipStatus.swift; sourceTree = "<group>"; };
 		85EBA2F52D6BBB8E00C3EF43 /* SendFriendshipBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFriendshipBody.swift; sourceTree = "<group>"; };
-		85EBA2F72D6CBC6D00C3EF43 /* FriendshipActionSheetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipActionSheetProvider.swift; sourceTree = "<group>"; };
+		85EBA2F72D6CBC6D00C3EF43 /* FriendshipActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipActionProvider.swift; sourceTree = "<group>"; };
 		85EBA2F92D6CC35400C3EF43 /* AcceptFriendshipRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptFriendshipRequestBody.swift; sourceTree = "<group>"; };
 		85EBA2FB2D6CC49B00C3EF43 /* DeleteFriendshipBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFriendshipBody.swift; sourceTree = "<group>"; };
 		85EBA2FD2D6CFB5B00C3EF43 /* FilmatchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchUser.swift; sourceTree = "<group>"; };
+		85EBA2FF2D6E553200C3EF43 /* MyFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsView.swift; sourceTree = "<group>"; };
 		85EE181C2C6F566B00791D40 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		85EE181E2C6F56B400791D40 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		85EF7B6C2D227A3A007EB896 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -613,7 +615,7 @@
 			children = (
 				853096D52D00FE0D00C6F2A6 /* AuthenticationHelpers */,
 				853096DA2D00FEFE00C6F2A6 /* Utilities.swift */,
-				85EBA2F72D6CBC6D00C3EF43 /* FriendshipActionSheetProvider.swift */,
+				85EBA2F72D6CBC6D00C3EF43 /* FriendshipActionProvider.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -769,6 +771,7 @@
 			children = (
 				85CDA1D42D692FCB0019D566 /* MyFriendsRow.swift */,
 				85CDA1CE2D6927560019D566 /* UserAvatarView.swift */,
+				85EBA2FF2D6E553200C3EF43 /* MyFriendsView.swift */,
 				85CDA1D22D692DE50019D566 /* UserGridItem.swift */,
 				85CDA1D02D6928170019D566 /* UserListRow.swift */,
 				85CDA1D62D6939270019D566 /* ProfileFriendsContainer.swift */,
@@ -776,7 +779,7 @@
 				85CDA1D82D693E6F0019D566 /* SimpleUserInfoView.swift */,
 				85044C4B2D69EC540076E8D8 /* SearchUsersView.swift */,
 				85044C572D6A39A30076E8D8 /* SearchUsersGridView.swift */,
-				85044C592D6A3D140076E8D8 /* SearchUsersListView.swift */,
+				85044C592D6A3D140076E8D8 /* UsersListView.swift */,
 			);
 			path = FilmatchUserViews;
 			sourceTree = "<group>";
@@ -1198,6 +1201,7 @@
 				857E3C552D3BF398006BA51D /* TvSeriesSearchResponse.swift in Sources */,
 				854E6F4A2CEBC2AA00DABC60 /* RegisterView.swift in Sources */,
 				854E6F4B2CEBC2AA00DABC60 /* WelcomeView.swift in Sources */,
+				85EBA3002D6E553200C3EF43 /* MyFriendsView.swift in Sources */,
 				857D7BEF2D1A06900080271B /* MediaType.swift in Sources */,
 				85CCA29B2D24E0B5005EDC5B /* PersonRepository.swift in Sources */,
 				85DF6ABA2D36E75B006078A4 /* PersonTvSeriesCreditsAsCastRow.swift in Sources */,
@@ -1223,7 +1227,7 @@
 				851C42B92C7A48FA00127163 /* DiscoverView.swift in Sources */,
 				852A1FAB2D2C37E600C4D39D /* TvSeriesAggregateCreditsAppendResponse.swift in Sources */,
 				857D7BE42D188FAD0080271B /* TMDBHttpClient.swift in Sources */,
-				85044C5A2D6A3D140076E8D8 /* SearchUsersListView.swift in Sources */,
+				85044C5A2D6A3D140076E8D8 /* UsersListView.swift in Sources */,
 				850E81322C6AB64200F8CE7C /* ProfileTab.swift in Sources */,
 				85AED9DA2C73FE1400DA2AF0 /* VideoView.swift in Sources */,
 				85F3086E2C4F237E00DF37C2 /* ProductionCompany.swift in Sources */,
@@ -1278,7 +1282,7 @@
 				85EBA2F42D6BAF1300C3EF43 /* FriendshipStatus.swift in Sources */,
 				851C42C12C7A6A5100127163 /* HTTPMethods.swift in Sources */,
 				854E6F2B2CEBC2AA00DABC60 /* MoviesRepository.swift in Sources */,
-				85EBA2F82D6CBC6D00C3EF43 /* FriendshipActionSheetProvider.swift in Sources */,
+				85EBA2F82D6CBC6D00C3EF43 /* FriendshipActionProvider.swift in Sources */,
 				854E6F2C2CEBC2AA00DABC60 /* MoviesRepositoryImpl.swift in Sources */,
 				85CDA1D52D692FCB0019D566 /* MyFriendsRow.swift in Sources */,
 				85F308662C4F1E4400DF37C2 /* UserModel.swift in Sources */,

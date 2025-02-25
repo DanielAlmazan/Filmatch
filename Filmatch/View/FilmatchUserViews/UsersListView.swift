@@ -1,5 +1,5 @@
 //
-//  SearchUsersListView.swift
+//  UsersListView.swift
 //  Filmatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchUsersListView: View {
+struct UsersListView: View {
   let users: [FilmatchUser]
   let onAction: (FilmatchUser, FriendshipAction) -> Void
 
@@ -32,7 +32,7 @@ struct SearchUsersListView: View {
 
 #Preview {
   VStack {
-    SearchUsersListView(
+    UsersListView(
       users: [
         .default,
         .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),

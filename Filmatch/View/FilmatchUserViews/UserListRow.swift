@@ -11,9 +11,10 @@ struct UserListRow: View {
         .font(.headline)
         .frame(maxWidth: .infinity, alignment: .leading)
       
-      FriendshipActionSheetProvider.getActionsView(for: user) { user, action in
+      FriendshipActionProvider.getActionsView(for: user) { user, action in
         onAction(user, action)
       }
+      .lineLimit(1)
       
       Menu {
         if user.friendshipStatus == .blocked {

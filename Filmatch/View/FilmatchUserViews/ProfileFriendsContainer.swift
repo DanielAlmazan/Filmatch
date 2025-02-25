@@ -18,8 +18,14 @@ struct ProfileFriendsContainer: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      Text(title)
-        .font(.headline)
+      HStack {
+        Text(title)
+          .font(.headline)
+        
+        Spacer()
+        
+        // TODO: Add navigation to MyFriendsView
+      }
       Group {
         if self.isLoading {
           ProgressView("Loading...")

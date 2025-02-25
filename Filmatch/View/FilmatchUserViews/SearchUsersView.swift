@@ -24,7 +24,7 @@ struct SearchUsersView: View {
     VStack {
       SearchField(query: self.$searchUserVm.query, onSubmit: searchUsers)
       if let users = self.searchUserVm.users, !users.isEmpty {
-        SearchUsersListView(
+        UsersListView(
           users: users,
           onAction: { user, action in Task { await searchUserVm.handleFriendshipAction(for: user, action: action) } },
           onLastAppeared: { self.searchUsers() }
