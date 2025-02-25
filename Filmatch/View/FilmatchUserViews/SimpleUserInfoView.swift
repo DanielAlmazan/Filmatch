@@ -12,17 +12,15 @@ struct SimpleUserInfoView: View {
   let size: CGFloat
 
   var body: some View {
-    if let username = user.username, !username.isEmpty {
-      VStack {
-        UserAvatarView(username: username, size: size)
-          .shadow(radius: 5, y: 5)
-        Text(username)
-          .bold()
-          .font(.headline)
-      }
-      .frame(width: size)
-      .lineLimit(1)
+    VStack {
+      UserAvatarView(user: user, size: size)
+        .shadow(radius: 5, y: 5)
+      Text(user.username ?? "No username")
+        .bold()
+        .font(.headline)
     }
+    .frame(width: size)
+    .lineLimit(1)
   }
 }
 

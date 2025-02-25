@@ -173,6 +173,9 @@
     "Add friends" : {
 
     },
+    "Add Friends" : {
+
+    },
     "Already have an account?" : {
       "localizations" : {
         "es" : {
@@ -561,9 +564,6 @@
     "Flatrate" : {
 
     },
-    "Friends" : {
-
-    },
     "From" : {
 
     },
@@ -876,6 +876,7 @@
       }
     },
     "Passwords do not match" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {

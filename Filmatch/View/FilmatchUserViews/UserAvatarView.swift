@@ -5,36 +5,64 @@
 //  Created by Daniel Enrique Almazán Sellés on 21/2/25.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct UserAvatarView: View {
-  let username: String
+  let user: FilmatchUser?
   let size: CGFloat
   
-  init(username: String?, size: CGFloat) {
-    self.username = username ?? "?"
+  init(user: FilmatchUser, size: CGFloat) {
+    self.user = user
     self.size = size
   }
   
+  @State private var didFail: Bool = false
+  var url: URL? {
+    if let user, let photoUrl = user.photoUrl {
+      return URL(string: photoUrl)
+    }
+    return nil
+  }
+  
   var body: some View {
-    Text(username.prefix(1).uppercased())
-      .font(.title)
-      .frame(width: size, height: size)
-      .background(
-        RadialGradient(
-          gradient: Gradient(colors: [.accent, .accentDarker]),
-          center: .center,
-          startRadius: 10,
-          endRadius: 50
-        )
-      )
-      .clipShape(Circle())
+    if let user {
+      if didFail || user.photoUrl == nil || user.photoUrl!.isEmpty, let username = user.username {
+        Text(username.prefix(1).uppercased())
+          .font(.title)
+          .frame(width: size, height: size)
+          .background(
+            RadialGradient(
+              gradient: Gradient(colors: [.accent, .accentDarker]),
+              center: .center,
+              startRadius: 10,
+              endRadius: 50
+            )
+          )
+          .clipShape(Circle())
+        
+      } else if let photoUrl = user.photoUrl {
+        KFImage.url(URL(string: photoUrl))
+          .placeholder {
+            ProgressView("Loading...")
+          }
+          .onFailure{ error in
+            print(error)
+            didFail = true
+          }
+          .retry(maxCount: 3, interval: .seconds(5))
+          .resizable()
+          .scaledToFit()
+          .clipShape(.circle)
+          .frame(width: size, height: size)
+      }
+    }
   }
 }
 
 #Preview {
   VStack {
-    UserAvatarView(username: "gas_esnake", size: 100)
+    UserAvatarView(user: .default, size: 200)
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(.bgBase)

@@ -28,7 +28,7 @@ struct FilmatchUser: Identifiable {
     email: "user@example.com",
     username: "gas_esnake",
     uid: "Firebase UID",
-    photoUrl: nil,
+    photoUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Robin_Wright_Cannes_2017_%28cropped%29.jpg",
     friendshipStatus: nil
   )
 }

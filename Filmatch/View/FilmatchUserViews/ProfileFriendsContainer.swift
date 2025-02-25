@@ -36,10 +36,10 @@ struct ProfileFriendsContainer: View {
       .frame(height: height * 1.5)
       .frame(maxWidth: .infinity)
       .scrollClipDisabled()
-      .padding()
-      .background(.bgContainer)
-      .clipShape(.rect(cornerRadius: 10))
     }
+    .padding()
+    .background(.bgContainer)
+    .clipShape(.rect(cornerRadius: 10))
   }
 }
 

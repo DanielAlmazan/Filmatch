@@ -6,7 +6,7 @@ struct UserListRow: View {
   
   var body: some View {
     HStack {
-      UserAvatarView(username: user.username ?? "No username", size: 60)
+      UserAvatarView(user: user, size: 60)
       Text(user.username ?? "No username")
         .font(.headline)
         .frame(maxWidth: .infinity, alignment: .leading)
