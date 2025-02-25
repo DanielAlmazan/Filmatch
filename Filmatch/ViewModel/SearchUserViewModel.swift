@@ -1,6 +1,6 @@
 //
 //  SearchUserViewModel.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 22/2/25.
 //
@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 final class SearchUserViewModel {
-  let repository: FilmatchGoRepository
+  let repository: OtterMatchGoRepository
   
   var query: String = ""
   private var currentQuery: String = ""
@@ -18,9 +18,9 @@ final class SearchUserViewModel {
   var isLoading: Bool = false
   var errorMessage: String?
   
-  var users: [FilmatchUser]?
+  var users: [OtterMatchUser]?
   
-  init(repository: FilmatchGoRepository) {
+  init(repository: OtterMatchGoRepository) {
     self.repository = repository
   }
   
@@ -42,7 +42,7 @@ final class SearchUserViewModel {
 
     switch result {
     case .success(let usersResult):
-      setUsers(usersResult.results.toFilmatchUsers())
+      setUsers(usersResult.results.toOtterMatchUsers())
       self.totalPages = usersResult.totalPages
       self.currentPage += 1
     case .failure(let error):
@@ -53,7 +53,7 @@ final class SearchUserViewModel {
     isLoading = false
   }
   
-  private func setUsers(_ users: [FilmatchUser]) {
+  private func setUsers(_ users: [OtterMatchUser]) {
     if self.users == nil {
       self.users = users
     } else {
@@ -70,7 +70,7 @@ final class SearchUserViewModel {
   }
   
   @MainActor
-  func handleFriendshipAction(for user: FilmatchUser, action: FriendshipAction) async {
+  func handleFriendshipAction(for user: OtterMatchUser, action: FriendshipAction) async {
     guard let _ = user.friendshipStatus else { return }
     let result: Result<Void, Error>
 
@@ -99,7 +99,7 @@ final class SearchUserViewModel {
     }
   }
 
-  private func updateFriendshipStatus(for user: FilmatchUser, with action: FriendshipAction) {
+  private func updateFriendshipStatus(for user: OtterMatchUser, with action: FriendshipAction) {
     guard let index = users?.firstIndex(where: { $0.uid == user.uid }) else { return }
     
     switch action {

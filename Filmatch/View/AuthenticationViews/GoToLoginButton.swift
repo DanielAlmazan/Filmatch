@@ -1,6 +1,6 @@
 //
 //  GoToLoginButton.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 13/10/24.
 //

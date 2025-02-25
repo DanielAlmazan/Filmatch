@@ -1,6 +1,6 @@
 //
 //  InterestStatus.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 15/12/24.
 //

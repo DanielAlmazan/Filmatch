@@ -1,6 +1,6 @@
 //
 //  RoomsMainView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 1/10/24.
 //

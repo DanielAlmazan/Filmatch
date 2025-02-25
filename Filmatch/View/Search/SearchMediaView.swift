@@ -1,6 +1,6 @@
 //
 //  SearchMediaView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 17/1/25.
 //

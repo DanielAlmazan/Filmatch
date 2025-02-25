@@ -1,6 +1,6 @@
 //
 //  FriendshipsResponse.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 21/2/25.
 //

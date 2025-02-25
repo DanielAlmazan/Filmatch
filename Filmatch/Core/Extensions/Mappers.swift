@@ -1,6 +1,6 @@
 //
 //  Mappers.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 7/1/25.
 //
@@ -131,7 +131,7 @@ extension PersonMovieCreditsResponse {
 }
 
 extension FriendshipSingleResponse {
-  func toFilmatchUser() -> FilmatchUser {
+  func toOtterMatchUser() -> OtterMatchUser {
     .init(
       email: nil,
       username: self.user.username,
@@ -143,19 +143,19 @@ extension FriendshipSingleResponse {
 }
 
 extension [FriendshipSingleResponse] {
-  func toFilmatchUsers() -> [FilmatchUser] {
-    self.map { $0.toFilmatchUser() }
+  func toOtterMatchUsers() -> [OtterMatchUser] {
+    self.map { $0.toOtterMatchUser() }
   }
 }
 
-extension [FilmatchUserResponse] {
-  func toFilmatchUsers() -> [FilmatchUser] {
-    self.map { $0.toFilmatchUser() }
+extension [OtterMatchUserResponse] {
+  func toOtterMatchUsers() -> [OtterMatchUser] {
+    self.map { $0.toOtterMatchUser() }
   }
 }
 
-extension FilmatchUserResponse {
-  func toFilmatchUser() -> FilmatchUser {
+extension OtterMatchUserResponse {
+  func toOtterMatchUser() -> OtterMatchUser {
     .init(
       email: self.email ?? "",
       username: self.username,

@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct UserListRow: View {
-  let user: FilmatchUser
-  let onAction: (FilmatchUser, FriendshipAction) -> Void
+  let user: OtterMatchUser
+  let onAction: (OtterMatchUser, FriendshipAction) -> Void
   
   var body: some View {
     HStack {

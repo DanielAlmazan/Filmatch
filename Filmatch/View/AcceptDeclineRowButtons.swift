@@ -1,6 +1,6 @@
 //
 //  AcceptDeclineRowButtons.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 17/9/24.
 //

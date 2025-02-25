@@ -1,6 +1,6 @@
 //
-//  FilmatchHttpClient.swift
-//  Filmatch
+//  OtterMatchHttpClient.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/1/25.
 //
@@ -8,16 +8,16 @@
 import FirebaseAuth
 import Foundation
 
-final class FilmatchHttpClient: FilmatchClient {
+final class OtterMatchHttpClient: OtterMatchClient {
   private let urlBase: String
   private let session = URLSession(configuration: .default)
 
-  init(urlBase: String = AppConstants.filmatchBaseUrl) {
+  init(urlBase: String = AppConstants.otterMatchBaseUrl) {
     self.urlBase = urlBase
   }
 
   func request(
-    path: FilmatchGoPaths,
+    path: OtterMatchGoPaths,
     method: HTTPMethods = .GET,
     queryParams: [URLQueryItem]? = nil,
     body: Data? = nil,
@@ -79,7 +79,7 @@ final class FilmatchHttpClient: FilmatchClient {
   }
 
   private func buildURL(
-    for path: FilmatchGoPaths, with queryParams: [URLQueryItem]?
+    for path: OtterMatchGoPaths, with queryParams: [URLQueryItem]?
   ) -> Result<URL, Error> {
     guard
       var components = URLComponents(

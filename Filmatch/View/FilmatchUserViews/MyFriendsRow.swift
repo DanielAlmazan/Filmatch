@@ -1,6 +1,6 @@
 //
 //  MyFriendsRow.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 21/2/25.
 //
@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MyFriendsRow: View {
-  let friends: [FilmatchUser]
+  let friends: [OtterMatchUser]
   let height: CGFloat
 
   @State private var isShowingSearchUsersView: Bool = false
   @State private var searchUsersVm: SearchUserViewModel
 
-  init(friends: [FilmatchUser], height: CGFloat, filmatchRepository: FilmatchGoRepository) {
+  init(friends: [OtterMatchUser], height: CGFloat, otterMatchRepository: OtterMatchGoRepository) {
     self.friends = friends
     self.height = height
-    self.searchUsersVm = .init(repository: filmatchRepository)
+    self.searchUsersVm = .init(repository: otterMatchRepository)
   }
 
   var body: some View {
@@ -51,9 +51,9 @@ struct MyFriendsRow: View {
         .init(email: nil, username: "miiraculous_one", uid: "FirebaseUID", photoUrl: nil, friendshipStatus: .received)
       ],
       height: 100,
-      filmatchRepository: FilmatchGoRepositoryImpl(
-        datasource: FilmatchGoDatasourceImpl(
-          client: FilmatchHttpClient()
+      otterMatchRepository: OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(
+          client: OtterMatchHttpClient()
         )
       )
     )
@@ -62,9 +62,9 @@ struct MyFriendsRow: View {
   .padding()
   .background(.bgBase)
   .environment(
-    FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient()
+    OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
       )
     )
   )

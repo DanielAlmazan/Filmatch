@@ -1,6 +1,6 @@
 //
 //  AuthenticationFirebaseDataSource.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/9/24.
 //
@@ -118,7 +118,6 @@ extension AuthenticationFirebaseDataSource {
     return await signIn(credential: credential)
   }
   
-  // TODO: Implement Filmatch API auth
   func signIn(credential: AuthCredential) async -> Result<User, Error> {
     do {
       let signInResult = try await Auth.auth().signIn(with: credential)

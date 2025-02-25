@@ -1,6 +1,6 @@
 //
 //  WideButtonStyle.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 26/10/24.
 //

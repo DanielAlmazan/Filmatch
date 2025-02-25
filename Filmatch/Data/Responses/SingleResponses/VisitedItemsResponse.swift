@@ -1,6 +1,6 @@
 //
 //  VisitedItemsResponse.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 11/2/25.
 //

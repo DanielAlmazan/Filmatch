@@ -1,6 +1,6 @@
 //
 //  TMDBError.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 27/8/24.
 //

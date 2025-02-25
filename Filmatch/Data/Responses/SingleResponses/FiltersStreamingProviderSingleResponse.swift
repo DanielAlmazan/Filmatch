@@ -1,6 +1,6 @@
 //
 //  FiltersStreamingProviderSingleResponse.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/7/24.
 //

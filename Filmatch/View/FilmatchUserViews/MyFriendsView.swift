@@ -1,6 +1,6 @@
 //
 //  MyFriendsView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 25/2/25.
 //

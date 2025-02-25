@@ -1,6 +1,6 @@
 //
 //  StartButtonView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 3/10/24.
 //

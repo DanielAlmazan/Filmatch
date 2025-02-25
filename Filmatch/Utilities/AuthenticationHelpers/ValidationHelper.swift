@@ -1,6 +1,6 @@
 //
 //  ValidationHelper.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 21/10/24.
 //

@@ -1096,6 +1096,7 @@
       }
     },
     "Welcome to Filmatch!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -1104,6 +1105,9 @@
           }
         }
       }
+    },
+    "Welcome to OtterMatch!" : {
+
     },
     "What do you want to watch?" : {
 

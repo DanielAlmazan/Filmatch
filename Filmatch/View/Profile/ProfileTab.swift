@@ -1,6 +1,6 @@
 //
 //  ProfileTab.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 12/8/24.
 //
@@ -10,7 +10,7 @@ import SwiftUI
 struct ProfileTab: View {
   @Environment(\.editMode) var editMode
   @Environment(AuthenticationViewModel.self) var authVm
-  @Environment(FilmatchGoRepositoryImpl.self) var filmatchRepository
+  @Environment(OtterMatchGoRepositoryImpl.self) var otterMatchRepository
   @Environment(FiltersRepositoryImpl.self) var filtersRepository
   
   @State private var showAlert = false
@@ -26,7 +26,7 @@ struct ProfileTab: View {
         VStack(alignment: .leading, spacing: 20) {
           ProfileSummary(
             user: user,
-            filmatchRepository: filmatchRepository,
+            otterMatchRepository: otterMatchRepository,
             filtersRepository: filtersRepository
           )
             .frame(maxWidth: .infinity)
@@ -95,10 +95,10 @@ struct ProfileTab: View {
 }
 
 #Preview {
-  @Previewable @State var filmatchRepository = FilmatchGoRepositoryImpl(
-    datasource: FilmatchGoDatasourceImpl(
-      client: FilmatchHttpClient(
-        urlBase: AppConstants.filmatchBaseUrl)
+  @Previewable @State var otterMatchRepository = OtterMatchGoRepositoryImpl(
+    datasource: OtterMatchGoDatasourceImpl(
+      client: OtterMatchHttpClient(
+        urlBase: AppConstants.otterMatchBaseUrl)
     )
   )
   @Previewable let filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
@@ -106,16 +106,16 @@ struct ProfileTab: View {
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
-    filmatchRepository: FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient(
-          urlBase: AppConstants.filmatchBaseUrl)
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(
+          urlBase: AppConstants.otterMatchBaseUrl)
       )
     )
   )
   
   ProfileTab()
     .environment(vm)
-    .environment(filmatchRepository)
+    .environment(otterMatchRepository)
     .environment(filtersRepository)
 }

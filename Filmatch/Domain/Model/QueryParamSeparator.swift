@@ -1,6 +1,6 @@
 //
 //  QueryParamSeparator.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 6/1/25.
 //

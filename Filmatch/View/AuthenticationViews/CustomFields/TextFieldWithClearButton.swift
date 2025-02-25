@@ -1,6 +1,6 @@
 //
 //  TextFieldWithClearButton.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/10/24.
 //

@@ -1,6 +1,6 @@
 //
-//  FilmatchApp.swift
-//  Filmatch
+//  OtterMatchApp.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 23/7/24.
 //
@@ -10,28 +10,28 @@ import GoogleSignIn
 import SwiftUI
 
 @main
-struct FilmatchApp: App {
+struct OtterMatchApp: App {
   @AppStorage("isOnboarding") var isOnboarding: Bool = true
   @State var authVm: AuthenticationViewModel
-  @State var filmatchGoRepository: FilmatchGoRepositoryImpl
+  @State var otterMatchGoRepository: OtterMatchGoRepositoryImpl
 
   init() {
-    let filmatchGoRepository = FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient(
-          urlBase: AppConstants.filmatchBaseUrl
+    let otterMatchGoRepository = OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(
+          urlBase: AppConstants.otterMatchBaseUrl
         )
       )
     )
     
-    self.filmatchGoRepository = filmatchGoRepository
+    self.otterMatchGoRepository = otterMatchGoRepository
     
     FirebaseApp.configure()
     self.authVm = AuthenticationViewModel(
       authenticationRepository: AuthenticationFirebaseRepository(
         dataSource: AuthenticationFirebaseDataSource()
       ),
-      filmatchRepository: filmatchGoRepository
+      otterMatchRepository: otterMatchGoRepository
     )
   }
 
@@ -42,7 +42,7 @@ struct FilmatchApp: App {
       } else {
         ContentView()
           .environment(authVm)
-          .environment(filmatchGoRepository)
+          .environment(otterMatchGoRepository)
           .onOpenURL { url in
             GIDSignIn.sharedInstance.handle(url)
           }

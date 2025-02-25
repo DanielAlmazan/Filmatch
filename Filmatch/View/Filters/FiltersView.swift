@@ -1,6 +1,6 @@
 //
 //  FiltersView.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 10/12/24.
 //

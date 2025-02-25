@@ -1,13 +1,13 @@
 //
-//  FilmatchPaths.swift
-//  Filmatch
+//  OtterMatchPaths.swift
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 27/1/25.
 //
 
 import Foundation
 
-enum FilmatchGoPaths {
+enum OtterMatchGoPaths {
   case userAuth
   case userVisit
   case userVisitedFilter
@@ -43,8 +43,8 @@ enum FilmatchGoPaths {
   }
 }
 
-extension FilmatchGoPaths: Equatable {
-  static func == (lhs: FilmatchGoPaths, rhs: FilmatchGoPaths) -> Bool {
+extension OtterMatchGoPaths: Equatable {
+  static func == (lhs: OtterMatchGoPaths, rhs: OtterMatchGoPaths) -> Bool {
     lhs.stringValue == rhs.stringValue
   }
 }

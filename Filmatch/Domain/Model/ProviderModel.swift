@@ -1,6 +1,6 @@
 //
 //  ProviderModel.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 11/1/25.
 //

@@ -1,6 +1,6 @@
 //
 //  FriendshipActionProvider.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 24/2/25.
 //
@@ -19,8 +19,8 @@ import SwiftUI
 
 struct FriendshipActionProvider {
   static func getActionSheet(
-    for user: FilmatchUser,
-    onAction: @escaping (FilmatchUser, FriendshipAction) -> Void
+    for user: OtterMatchUser,
+    onAction: @escaping (OtterMatchUser, FriendshipAction) -> Void
   ) -> ActionSheet {
     
     let actions: [ActionSheet.Button] = {
@@ -85,7 +85,7 @@ struct FriendshipActionProvider {
   
   @MainActor
   @ViewBuilder
-  static func getActionsView(for user: FilmatchUser, onAction: @escaping (FilmatchUser, FriendshipAction) -> Void) -> some View {
+  static func getActionsView(for user: OtterMatchUser, onAction: @escaping (OtterMatchUser, FriendshipAction) -> Void) -> some View {
     switch user.friendshipStatus {
     case .notRelated:
       Button("Add") { onAction(user, .sendRequest) }
