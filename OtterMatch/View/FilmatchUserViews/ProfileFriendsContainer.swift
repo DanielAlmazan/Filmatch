@@ -24,7 +24,11 @@ struct ProfileFriendsContainer: View {
         
         Spacer()
         
-        // TODO: Add navigation to MyFriendsView
+        NavigationLink {
+          MyFriendsView()
+        } label: {
+          Text("See all")
+        }
       }
       Group {
         if self.isLoading {

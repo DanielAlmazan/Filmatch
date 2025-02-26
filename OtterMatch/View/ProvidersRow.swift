@@ -19,8 +19,11 @@ struct ProvidersRow: View {
     self.cornerRadius = maxWidth / 5
   }
 
-  func url(_ path: String) -> URL {
-    URL(string: "\(AppConstants.tmdbMediaBase)/original/\(path)")!
+  func url(_ path: String) -> URL? {
+    guard let base = API.tmdbMediaBaseURL, !path.isEmpty else {
+      return nil
+    }
+    return URL(string: "\(base)/original/\(path)")
   }
 
   var body: some View {

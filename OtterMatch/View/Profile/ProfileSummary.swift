@@ -12,6 +12,7 @@ struct ProfileSummary: View {
   private var user: OtterMatchUser
 
   @State private var profileVm: ProfileViewModel
+  @State private var friendsVm: FriendsViewModel
 
   init(
     user: OtterMatchUser,
@@ -24,6 +25,7 @@ struct ProfileSummary: View {
       otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
+    self.friendsVm = .init(otterMatchRepository: otterMatchRepository)
   }
 
   var body: some View {
@@ -34,45 +36,17 @@ struct ProfileSummary: View {
       ProfileFriendsContainer(
         title: "My Friends",
         height: kRowsHeight,
-        isLoading: self.$profileVm.areFriendsLoading,
-        friends: self.$profileVm.friends)
+        isLoading: self.$friendsVm.areFriendsLoading,
+        friends: self.$friendsVm.friends)
 
       // MARK: - Own lists
       Group {
-        // 'My providers', 'superLike' and 'watched' are not available right now
-
-        // VStack(alignment: .leading) {
-        //   Text("Platforms")
-        //   Group {
-        //     if self.profileVm.areProvidersLoading {
-        //       ProgressView("Loading...")
-        //     } else if let providers = profileVm.providers {
-        //       ProvidersRow(providers: providers, maxWidth: 80)
-        //     }
-        //   }
-        //   .frame(height: kRowsHeight)
-        // }
-
-        // ProfileMediaCardRowContainer(
-        //   title: "Super Liked",
-        //   height: kRowsHeight,
-        //   isLoading: self.$profileVm.areSuperLikedLoading,
-        //   items: self.$profileVm.superLikedItems
-        // )
-
         ProfileMediaCardRowContainer(
           title: "Liked",
           height: kRowsHeight,
           isLoading: self.$profileVm.areLikedLoading,
           items: self.$profileVm.likedItems
         )
-
-        // ProfileMediaCardRowContainer(
-        //   title: "Watched",
-        //   height: kRowsHeight,
-        //   isLoading: self.$profileVm.areWatchedLoading,
-        //   items: self.$profileVm.watchedItems
-        // )
 
         ProfileMediaCardRowContainer(
           title: "Disliked",
@@ -89,7 +63,7 @@ struct ProfileSummary: View {
     .scrollClipDisabled()
     .padding()
     .task {
-      await self.profileVm.loadFriends(at: 1)
+      await self.friendsVm.loadFriends(at: 1)
       await self.profileVm.loadProviders()
       // await self.profileVm.loadSuperLikedItems()
       await self.profileVm.loadLikedItems()

@@ -98,7 +98,7 @@ struct ProfileTab: View {
   @Previewable @State var otterMatchRepository = OtterMatchGoRepositoryImpl(
     datasource: OtterMatchGoDatasourceImpl(
       client: OtterMatchHttpClient(
-        urlBase: AppConstants.otterMatchBaseUrl)
+        urlBase: API.otterMatchBaseURL)
     )
   )
   @Previewable let filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
@@ -109,7 +109,7 @@ struct ProfileTab: View {
     otterMatchRepository: OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(
         client: OtterMatchHttpClient(
-          urlBase: AppConstants.otterMatchBaseUrl)
+          urlBase: API.otterMatchBaseURL)
       )
     )
   )

@@ -183,7 +183,7 @@ struct LoginView: View {
     otterMatchRepository: OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(
         client: OtterMatchHttpClient(
-          urlBase: AppConstants.otterMatchBaseUrl)
+          urlBase: API.otterMatchBaseURL)
       )
     )
   )

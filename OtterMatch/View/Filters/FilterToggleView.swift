@@ -105,9 +105,9 @@ struct FilterToggleView: View {
               .padding(.vertical, 8)
               .fontWeight(.semibold)
           }
-        } else if let image {
+        } else if let base = API.tmdbMediaBaseURL, let image {
           KFImage(
-            URL(string: "\(AppConstants.tmdbMediaBase)/original/\(image)")
+            URL(string: "\(base)/original/\(image)")
           )
           .resizable()
           .scaledToFit()

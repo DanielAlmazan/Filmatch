@@ -19,7 +19,7 @@ struct OtterMatchApp: App {
     let otterMatchGoRepository = OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(
         client: OtterMatchHttpClient(
-          urlBase: AppConstants.otterMatchBaseUrl
+          urlBase: API.otterMatchBaseURL
         )
       )
     )

@@ -36,7 +36,7 @@ struct ContentView: View {
     
     self.otterMatchGoRepository = .init(
       datasource: OtterMatchGoDatasourceImpl(
-        client: OtterMatchHttpClient(urlBase: AppConstants.otterMatchBaseUrl)
+        client: OtterMatchHttpClient(urlBase: API.otterMatchBaseURL)
       )
     )
   }
@@ -72,7 +72,7 @@ struct ContentView: View {
     otterMatchRepository: OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(
         client: OtterMatchHttpClient(
-          urlBase: AppConstants.otterMatchBaseUrl
+          urlBase: API.otterMatchBaseURL
         )
       )
     )

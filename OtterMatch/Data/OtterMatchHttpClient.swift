@@ -9,10 +9,10 @@ import FirebaseAuth
 import Foundation
 
 final class OtterMatchHttpClient: OtterMatchClient {
-  private let urlBase: String
+  private let urlBase: String?
   private let session = URLSession(configuration: .default)
 
-  init(urlBase: String = AppConstants.otterMatchBaseUrl) {
+  init(urlBase: String? = API.otterMatchBaseURL) {
     self.urlBase = urlBase
   }
 
@@ -81,9 +81,9 @@ final class OtterMatchHttpClient: OtterMatchClient {
   private func buildURL(
     for path: OtterMatchGoPaths, with queryParams: [URLQueryItem]?
   ) -> Result<URL, Error> {
-    guard
+    guard let urlBase,
       var components = URLComponents(
-        string: "\(self.urlBase)\(path.stringValue)")
+        string: "\(urlBase)\(path.stringValue)")
     else {
       return .failure(URLError(.badURL))
     }

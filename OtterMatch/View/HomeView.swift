@@ -104,12 +104,12 @@ struct HomeView: View {
   )
   @Previewable @State var filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource())
-  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), otterMatchRepository: OtterMatchGoRepositoryImpl(datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient(urlBase: AppConstants.otterMatchBaseUrl))))
+  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), otterMatchRepository: OtterMatchGoRepositoryImpl(datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient(urlBase: API.otterMatchBaseURL))))
 
   @Previewable @State var otterMatchGoRepository = OtterMatchGoRepositoryImpl(
     datasource: OtterMatchGoDatasourceImpl(
       client: OtterMatchHttpClient(
-        urlBase: AppConstants.otterMatchBaseUrl
+        urlBase: API.otterMatchBaseURL
       )
     )
   )
