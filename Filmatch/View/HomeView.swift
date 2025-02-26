@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-/// `HomeView` is the main container view for the Filmatch app, providing a tab-based navigation interface.
+/// `HomeView` is the main container view for the OtterMatch app, providing a tab-based navigation interface.
 /// It includes tabs for discovering movies, managing rooms, and viewing the user's profile.
 /// This view manages the selection state of the tabs and passes necessary dependencies to child views.
 struct HomeView: View {
   /// The index of the currently selected tab.
-  @State var selectedTab = 0
+  @State var selectedTab = 4
 
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm
@@ -24,7 +24,7 @@ struct HomeView: View {
 
   @Environment(FiltersRepositoryImpl.self) private var filtersRepository
   
-  @Environment(FilmatchGoRepositoryImpl.self) private var filmatchGoRepository
+  @Environment(OtterMatchGoRepositoryImpl.self) private var otterMatchGoRepository
   
   var body: some View {
     TabView(selection: $selectedTab) {
@@ -35,12 +35,12 @@ struct HomeView: View {
           DiscoverView(
             moviesRepository: moviesRepository,
             tvSeriesRepository: tvSeriesRepository,
-            filmatchRepository: filmatchGoRepository,
+            otterMatchRepository: otterMatchGoRepository,
             filtersRepository: filtersRepository
           ) { item, status in
             Task {
               // TODO: Show error if exists
-              let _ = await filmatchGoRepository.markMediaAsVisited(for: item, as: status)
+              let _ = await otterMatchGoRepository.markMediaAsVisited(for: item, as: status)
             }
           }
           .background(.bgBase)
@@ -53,7 +53,7 @@ struct HomeView: View {
       // MARK: - Search Tab
       Tab("Search", systemImage: "magnifyingglass", value: 1) {
         NavigationStack {
-          SearchView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
+          SearchMediaView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
             .background(.bgBase)
         }
       }
@@ -84,10 +84,12 @@ struct HomeView: View {
       // MARK: - Profile Tab
       /// Tab for viewing and editing the user's profile.
       Tab("Profile", systemImage: "person.crop.circle", value: 4) {
-        ProfileTab()
-          .background(.bgBase)
-          .environment(authVm)
-          .environment(filmatchGoRepository)
+        NavigationStack {
+          ProfileTab()
+            .background(.bgBase)
+            .environment(authVm)
+            .environment(otterMatchGoRepository)
+        }
       }
     }
   }
@@ -104,12 +106,12 @@ struct HomeView: View {
   )
   @Previewable @State var filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource())
-  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), filmatchRepository: FilmatchGoRepositoryImpl(datasource: FilmatchGoDatasourceImpl(client: FilmatchHttpClient(urlBase: AppConstants.filmatchBaseUrl))))
+  @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), otterMatchRepository: OtterMatchGoRepositoryImpl(datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient(urlBase: API.otterMatchBaseURL))))
 
-  @Previewable @State var filmatchGoRepository = FilmatchGoRepositoryImpl(
-    datasource: FilmatchGoDatasourceImpl(
-      client: FilmatchHttpClient(
-        urlBase: AppConstants.filmatchBaseUrl
+  @Previewable @State var otterMatchGoRepository = OtterMatchGoRepositoryImpl(
+    datasource: OtterMatchGoDatasourceImpl(
+      client: OtterMatchHttpClient(
+        urlBase: API.otterMatchBaseURL
       )
     )
   )
@@ -119,5 +121,5 @@ struct HomeView: View {
     .environment(moviesRepository)
     .environment(filtersRepository)
     .environment(tvSeriesRepository)
-    .environment(filmatchGoRepository)
+    .environment(otterMatchGoRepository)
 }

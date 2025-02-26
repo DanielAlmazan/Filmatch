@@ -1,4 +1,4 @@
-# Filmatch iOS App
+# OtterMatch iOS App
 
 
 > [!CAUTION]

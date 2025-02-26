@@ -1,0 +1,403 @@
+{
+  "page": 3,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/veIyxxi5Gs8gvztLEW1Ysb8rrzs.jpg",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "id": 823464,
+      "original_language": "en",
+      "original_title": "Godzilla x Kong: The New Empire",
+      "overview": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.",
+      "popularity": 322.168,
+      "poster_path": "/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg",
+      "release_date": "2024-03-27",
+      "title": "Godzilla x Kong: The New Empire",
+      "video": false,
+      "vote_average": 7.166,
+      "vote_count": 3553
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dn3gbDpXPSwC6saMJOHkCiFA9jn.jpg",
+      "genre_ids": [
+        14,
+        12,
+        10751,
+        35
+      ],
+      "id": 974262,
+      "original_language": "en",
+      "original_title": "Descendants: The Rise of Red",
+      "overview": "After the Queen of Hearts incites a coup on Auradon, her rebellious daughter Red and Cinderella's perfectionist daughter Chloe join forces and travel back in time to try to undo the traumatic event that set Red's mother down her villainous path.",
+      "popularity": 305.845,
+      "poster_path": "/t9u9FWpKlZcp0Wz1qPeV5AIzDsk.jpg",
+      "release_date": "2024-07-11",
+      "title": "Descendants: The Rise of Red",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 300
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/z121dSTR7PY9KxKuvwiIFSYW8cf.jpg",
+      "genre_ids": [
+        10752,
+        28,
+        18
+      ],
+      "id": 929590,
+      "original_language": "en",
+      "original_title": "Civil War",
+      "overview": "In the near future, a group of war journalists attempt to survive while reporting the truth as the United States stands on the brink of civil war.",
+      "popularity": 316.256,
+      "poster_path": "/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg",
+      "release_date": "2024-04-10",
+      "title": "Civil War",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 2342
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2wrdcWrAN53Pl7ahBWMIKMzXBFF.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        14,
+        878
+      ],
+      "id": 1134424,
+      "original_language": "th",
+      "original_title": "นักรบมนตรา: ตำนานแปดดวงจันทร์",
+      "overview": "A story inspired by the original RAMAYANA, retold in a futuristic universe, involving brave warriors who possess ancient powers from another dimension.",
+      "popularity": 303.151,
+      "poster_path": "/dprm1NEAO3N2Yip6j2Kk2ZfeBXO.jpg",
+      "release_date": "2023-10-11",
+      "title": "Mantra Warrior: The Legend of The Eight Moons",
+      "video": false,
+      "vote_average": 6,
+      "vote_count": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/f7Qwg7kKNIvBnr3Ipv2bpXb23BN.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        878,
+        53
+      ],
+      "id": 1024721,
+      "original_language": "en",
+      "original_title": "Monolith",
+      "overview": "A desperate young journalist turns to podcasting to salvage her career, but her rush to make headlines leads her to an alien conspiracy.",
+      "popularity": 283.963,
+      "poster_path": "/zKpLzzX1va6gkMJiI9p3DudqChe.jpg",
+      "release_date": "2023-10-26",
+      "title": "Monolith",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 82
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/c3rwwFFVbkyEI6wPtpPd9lvovPW.jpg",
+      "genre_ids": [
+        28,
+        36
+      ],
+      "id": 1311550,
+      "original_language": "en",
+      "original_title": "House of Ga'a",
+      "overview": "At the height of the Oyo Empire, the ferocious Bashorun Ga'a became more powerful than the kings he enthroned, only to be undone by his own blood.",
+      "popularity": 292.13,
+      "poster_path": "/6yK9hmS641NMwRkR1wWAALWI34t.jpg",
+      "release_date": "2024-07-26",
+      "title": "House of Ga'a",
+      "video": false,
+      "vote_average": 5.9,
+      "vote_count": 68
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4z88bpDf7aqZcYkLDDEIdj8TfZU.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        14,
+        28
+      ],
+      "id": 1011985,
+      "original_language": "en",
+      "original_title": "Kung Fu Panda 4",
+      "overview": "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
+      "popularity": 277.801,
+      "poster_path": "/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg",
+      "release_date": "2024-03-02",
+      "title": "Kung Fu Panda 4",
+      "video": false,
+      "vote_average": 7.106,
+      "vote_count": 2497
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5EjtvaIUcfBJhGQpf0O8TCw8nxv.jpg",
+      "genre_ids": [
+        10749
+      ],
+      "id": 700979,
+      "original_language": "ko",
+      "original_title": "친구 엄마들",
+      "overview": "A lonely young man is in dire straits, but his friend's mothers don't see him as a boy, but as a man, and take extra interest in him.",
+      "popularity": 224.42,
+      "poster_path": "/cG1hXEWGepEqKSRe2HLL33vvPn8.jpg",
+      "release_date": "2018-07-05",
+      "title": "Friend's Mothers",
+      "video": false,
+      "vote_average": 5.5,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lyEuje8cKjbWliYUGrOaoHVmc1R.jpg",
+      "genre_ids": [
+        28,
+        35,
+        12
+      ],
+      "id": 1002088,
+      "original_language": "ko",
+      "original_title": "크로스",
+      "overview": "In the ultimate test of marriage, an agent-turned-househusband gets tangled in a perilous mission with his detective wife, who's clueless about his past.",
+      "popularity": 245.823,
+      "poster_path": "/aE9WqOApdRYsowsGE0118dyA4c9.jpg",
+      "release_date": "2024-08-05",
+      "title": "Mission: Cross",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 96
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lntyt4OVDbcxA1l7LtwITbrD3FI.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 1010581,
+      "original_language": "es",
+      "original_title": "Culpa mía",
+      "overview": "Noah must leave her city, boyfriend, and friends to move into William Leister's mansion, the flashy and wealthy husband of her mother Rafaela. As a proud and independent 17 year old, Noah resists living in a mansion surrounded by luxury. However, it is there where she meets Nick, her new stepbrother, and the clash of their strong personalities becomes evident from the very beginning.",
+      "popularity": 298.61,
+      "poster_path": "/w46Vw536HwNnEzOa7J24YH9DPRS.jpg",
+      "release_date": "2023-06-08",
+      "title": "My Fault",
+      "video": false,
+      "vote_average": 7.936,
+      "vote_count": 2870
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xYyPLClpJiA5pq687pGjRel5qgf.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 1064375,
+      "original_language": "en",
+      "original_title": "Paradox Effect",
+      "overview": "An innocent woman is forced to confront a dangerous kingpin who has kidnapped her young daughter and is holding her for ransom. She teams up with a corrupt Interpol agent, whose son is also being held hostage, to rip off various criminals to raise the ransom to save their offspring. Together they have one hour to save their families from the wrath of bigwig.",
+      "popularity": 212.623,
+      "poster_path": "/koJFEW997sLjpu4e7wmFioA2mhL.jpg",
+      "release_date": "2024-06-27",
+      "title": "Paradox Effect",
+      "video": false,
+      "vote_average": 6,
+      "vote_count": 32
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/iafs5DG5fGq7ef0acl3xlX4BFrs.jpg",
+      "genre_ids": [
+        18,
+        10770
+      ],
+      "id": 1219685,
+      "original_language": "fr",
+      "original_title": "Un père idéal",
+      "overview": "Michel, the jovial owner of the only café in a small Normandy town, sees his life turned upside down when his teenage daughter is murdered. The community has his back but soon rumor spreads and Michel is singled out. From the ideal father, he becomes the ideal culprit.",
+      "popularity": 281.425,
+      "poster_path": "/4xJd3uwtL1vCuZgEfEc8JXI9Uyx.jpg",
+      "release_date": "2024-04-21",
+      "title": "An Ideal Father",
+      "video": false,
+      "vote_average": 6.4,
+      "vote_count": 95
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/HLNprTMU4dZeroXmSBbgdzt6f6.jpg",
+      "genre_ids": [
+        27,
+        18
+      ],
+      "id": 1080512,
+      "original_language": "fr",
+      "original_title": "Pandemonium",
+      "overview": "Nathan and Daniel are caught in a road accident that kills them both. As they come to grips with their deaths, Nathan confronts his past and the consequences of his actions. Now trapped in the hellish void of Pandemonium, he encounters tortured souls like Jeanne, a disturbed child; Julia, a grief-stricken mother; and Norghul, the guide of the great void. Will he find a way to escape the torment that awaits him for eternity?",
+      "popularity": 228.444,
+      "poster_path": "/TQ4WcuSgwdSdM7DtBKQdjBDGOZ.jpg",
+      "release_date": "2023-02-16",
+      "title": "Pandemonium",
+      "video": false,
+      "vote_average": 5.2,
+      "vote_count": 25
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg",
+      "genre_ids": [
+        12,
+        28,
+        878
+      ],
+      "id": 299536,
+      "original_language": "en",
+      "original_title": "Avengers: Infinity War",
+      "overview": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
+      "popularity": 254.281,
+      "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "release_date": "2018-04-25",
+      "title": "Avengers: Infinity War",
+      "video": false,
+      "vote_average": 8.2,
+      "vote_count": 29421
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wkPPRIducGfsbaUPsWfw0MCQdX7.jpg",
+      "genre_ids": [
+        28,
+        35,
+        12
+      ],
+      "id": 1051891,
+      "original_language": "en",
+      "original_title": "Thelma",
+      "overview": "When 93-year-old Thelma Post gets duped by a phone scammer pretending to be her grandson, she sets out on a treacherous quest across the city to reclaim what was taken from her.",
+      "popularity": 229.72,
+      "poster_path": "/rUcuageYgv9SsJoWuc0seRWG6JC.jpg",
+      "release_date": "2024-06-21",
+      "title": "Thelma",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 100
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dsGwCEO8tda4FlgHKvL95f0oQbH.jpg",
+      "genre_ids": [
+        16,
+        878,
+        28
+      ],
+      "id": 1209290,
+      "original_language": "en",
+      "original_title": "Justice League: Crisis on Infinite Earths Part Three",
+      "overview": "Now fully revealed as the ultimate threat to existence, the Anti-Monitor wages an unrelenting attack on the surviving Earths that struggle for survival in a pocket universe. One by one, these worlds and all their inhabitants are vaporized! On the planets that remain, even time itself is shattered, and heroes from the past join the Justice League and their rag-tag allies against the epitome of evil. But as they make their last stand, will the sacrifice of the superheroes be enough to save us all?",
+      "popularity": 260.74,
+      "poster_path": "/a3q8NkM8uTh9E23VsbUOdDSbBeN.jpg",
+      "release_date": "2024-07-15",
+      "title": "Justice League: Crisis on Infinite Earths Part Three",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 182
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2XCmJWRZIQtHzikNsW29l9oy5Fb.jpg",
+      "genre_ids": [
+        53,
+        27
+      ],
+      "id": 804616,
+      "original_language": "en",
+      "original_title": "Something in the Water",
+      "overview": "After lesbian couple Meg and Kayla split following a traumatic homophobic incident, their three friends are intent on mending the rift during the wedding of Lizzie at a paradise resort. But a pre-wedding boat excursion turns to disaster and the wedding breakfast is likely to be the five girls!",
+      "popularity": 238.903,
+      "poster_path": "/1iWGGxHEwswZGvPSoMZlLFf0PNq.jpg",
+      "release_date": "2024-03-22",
+      "title": "Something in the Water",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 141
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/s5znBQmprDJJ553IMQfwEVlfroH.jpg",
+      "genre_ids": [
+        28,
+        35,
+        10752
+      ],
+      "id": 799583,
+      "original_language": "en",
+      "original_title": "The Ministry of Ungentlemanly Warfare",
+      "overview": "During World War II, the British Army assigns a group of competent soldiers to carry out a mission against the Nazi forces behind enemy lines... A true story about a secret British WWII organization – the Special Operations Executive. Founded by Winston Churchill, their irregular warfare against the Germans helped to change the course of the war, and gave birth to modern black operations.",
+      "popularity": 247.551,
+      "poster_path": "/8aF0iAKH9MJMYAZdi0Slg77RYa2.jpg",
+      "release_date": "2024-04-18",
+      "title": "The Ministry of Ungentlemanly Warfare",
+      "video": false,
+      "vote_average": 7.131,
+      "vote_count": 965
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6GhU4BJnqLSaAuz0yQBq3RfdzsF.jpg",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "id": 1216191,
+      "original_language": "en",
+      "original_title": "Oddity",
+      "overview": "After the brutal murder of her twin sister, Darcy goes after those responsible by using haunted items as her tools for revenge.",
+      "popularity": 233.654,
+      "poster_path": "/uln9Efc2vzDOl0Fue2BPs8l1WO7.jpg",
+      "release_date": "2024-07-19",
+      "title": "Oddity",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 139
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/61yrVrkOH75fUtExDZ4Hi0KqOmc.jpg",
+      "genre_ids": [
+        27,
+        53,
+        35
+      ],
+      "id": 1225377,
+      "original_language": "en",
+      "original_title": "The Mouse Trap",
+      "overview": "It's Alex's 21st Birthday, but she's stuck at the amusement arcade on a late shift so her friends decide to surprise her, but a masked killer dressed as Mickey Mouse decides to play a game of his own with them which she must survive.",
+      "popularity": 210.55,
+      "poster_path": "/3ovFaFeojLFIl5ClqhtgYMDS8sE.jpg",
+      "release_date": "2024-08-23",
+      "title": "The Mouse Trap",
+      "video": false,
+      "vote_average": 5.2,
+      "vote_count": 26
+    }
+  ],
+  "total_pages": 3,
+  "total_results": 919723
+}

@@ -11,7 +11,7 @@ import Observation
 @Observable final class FiltersRepositoryImpl: FiltersRepository {
   let filtersDatasource: FiltersDatasource
   
-  init(filtersDatasource: FiltersDatasource = FiltersRemoteDatasource(client: TMDBHttpClient(urlBase: AppConstants.tmdbUrlBase))) {
+  init(filtersDatasource: FiltersDatasource) {
     self.filtersDatasource = filtersDatasource
   }
 

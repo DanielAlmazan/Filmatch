@@ -1,0 +1,408 @@
+{
+  "page": 2,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/rSRA1p4e3laAAJflzdgtqNlx27Y.jpg",
+      "genre_ids": [
+        28
+      ],
+      "id": 1049574,
+      "original_language": "en",
+      "original_title": "Darkness of Man",
+      "overview": "Russell Hatch, an Interpol operative who takes on the role of father figure to Jayden, the son of an informant killed in a routine raid gone wrong. Years later, Hatch finds himself protecting Jayden and his grandfather from a group of merciless gangs in an all-out turf war, stopping at nothing to protect Jayden and fight anyone getting in his way.",
+      "popularity": 491.352,
+      "poster_path": "/fzmQ7mMYlBE8q459F6x9BAGgmj9.jpg",
+      "release_date": "2024-05-07",
+      "title": "Darkness of Man",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 118
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6ToGkmqn0KG0UGGGUAC1Ww0e5CM.jpg",
+      "genre_ids": [
+        80,
+        27,
+        53
+      ],
+      "id": 1226578,
+      "original_language": "en",
+      "original_title": "Longlegs",
+      "overview": "FBI Agent Lee Harker is assigned to an unsolved serial killer case that takes an unexpected turn, revealing evidence of the occult. Harker discovers a personal connection to the killer and must stop him before he strikes again.",
+      "popularity": 550.516,
+      "poster_path": "/5aj8vVGFwGVbQQs26ywhg4Zxk2L.jpg",
+      "release_date": "2024-05-31",
+      "title": "Longlegs",
+      "video": false,
+      "vote_average": 6.719,
+      "vote_count": 774
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2RVcJbWFmICRDsVxRI8F5xRmRsK.jpg",
+      "genre_ids": [
+        27,
+        878,
+        53
+      ],
+      "id": 762441,
+      "original_language": "en",
+      "original_title": "A Quiet Place: Day One",
+      "overview": "As New York City is invaded by alien creatures who hunt by sound, a woman named Sam fights to survive with her cat.",
+      "popularity": 539.967,
+      "poster_path": "/hU42CRk14JuPEdqZG3AWmagiPAP.jpg",
+      "release_date": "2024-06-26",
+      "title": "A Quiet Place: Day One",
+      "video": false,
+      "vote_average": 6.806,
+      "vote_count": 1695
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/x2thJwMJ6oGlhn7UC4vSwHltEw0.jpg",
+      "genre_ids": [
+        28,
+        53,
+        10770
+      ],
+      "id": 1115396,
+      "original_language": "en",
+      "original_title": "Hunting Games",
+      "overview": "When a group of ex-military members is hired to retrieve a lost bag of stolen money, their mission becomes more difficult after a lone hunter finds the bag first.",
+      "popularity": 664.843,
+      "poster_path": "/xVbEJzdMxIQqpuLgla0hU8qr9mt.jpg",
+      "release_date": "2023-05-12",
+      "title": "Hunting Games",
+      "video": false,
+      "vote_average": 4.2,
+      "vote_count": 4
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/orTQxcx2aoNpx1DIKTjBzpzvzd0.jpg",
+      "genre_ids": [
+        27,
+        14
+      ],
+      "id": 1130053,
+      "original_language": "en",
+      "original_title": "Cinderella's Curse",
+      "overview": "Desperate Cinderella summons her fairy godmother from an ancient flesh-bound book, seeking revenge on her evil stepmother and stepsisters who abuse and torment her daily.",
+      "popularity": 482.671,
+      "poster_path": "/xegGyjYdCcF9X1FWpfw1O1LcFnZ.jpg",
+      "release_date": "2024-05-31",
+      "title": "Cinderella's Curse",
+      "video": false,
+      "vote_average": 4.6,
+      "vote_count": 19
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hdFIdXwS8FSN2wIsuotjW1mshI0.jpg",
+      "genre_ids": [
+        16,
+        35,
+        12,
+        10751
+      ],
+      "id": 831815,
+      "original_language": "en",
+      "original_title": "Saving Bikini Bottom: The Sandy Cheeks Movie",
+      "overview": "When Bikini Bottom is scooped from the ocean, scientific squirrel Sandy Cheeks and her pal SpongeBob SquarePants saddle up for Texas to save their town.",
+      "popularity": 514.106,
+      "poster_path": "/30YnfZdMNIV7noWLdvmcJS0cbnQ.jpg",
+      "release_date": "2024-08-01",
+      "title": "Saving Bikini Bottom: The Sandy Cheeks Movie",
+      "video": false,
+      "vote_average": 6.413,
+      "vote_count": 206
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1wP1phHo2CROOqzv7Azs0MT5esU.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751,
+        12,
+        28
+      ],
+      "id": 748783,
+      "original_language": "en",
+      "original_title": "The Garfield Movie",
+      "overview": "Garfield, the world-famous, Monday-hating, lasagna-loving indoor cat, is about to have a wild outdoor adventure! After an unexpected reunion with his long-lost father – scruffy street cat Vic – Garfield and his canine friend Odie are forced from their perfectly pampered life into joining Vic in a hilarious, high-stakes heist.",
+      "popularity": 543.43,
+      "poster_path": "/p6AbOJvMQhBmffd0PIv0u8ghWeY.jpg",
+      "release_date": "2024-04-30",
+      "title": "The Garfield Movie",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 902
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vJk9DOLgP23jO5mBnPHE93MFgYu.jpg",
+      "genre_ids": [
+        12,
+        10751,
+        14,
+        35
+      ],
+      "id": 826510,
+      "original_language": "en",
+      "original_title": "Harold and the Purple Crayon",
+      "overview": "Inside of his book, adventurous Harold can make anything come to life simply by drawing it. After he grows up and draws himself off the book's pages and into the physical world, Harold finds he has a lot to learn about real life.",
+      "popularity": 503.996,
+      "poster_path": "/dEsuQOZwdaFAVL26RjgjwGl9j7m.jpg",
+      "release_date": "2024-07-31",
+      "title": "Harold and the Purple Crayon",
+      "video": false,
+      "vote_average": 6.956,
+      "vote_count": 102
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/n3JeGELHa9V6k9mL81ItMxWLSS6.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 1129598,
+      "original_language": "en",
+      "original_title": "Prey",
+      "overview": "A young couple is compelled to leave their Christian missionary station in the Kalahari Desert after being threatened with death by an extremist militant gang. After crashing their aircraft they must battle man and beast for their lives.",
+      "popularity": 436.919,
+      "poster_path": "/2FWwzahSfdouZn5u8d5vHkBHoAU.jpg",
+      "release_date": "2024-03-15",
+      "title": "Prey",
+      "video": false,
+      "vote_average": 6.4,
+      "vote_count": 213
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sqfam7wEpmyG9Fx0AdVQYrLcIfy.jpg",
+      "genre_ids": [
+        53,
+        80,
+        18
+      ],
+      "id": 1298238,
+      "original_language": "es",
+      "original_title": "Príncipes salvajes",
+      "overview": "A group of wealthy teenagers commit crimes that escalate from petty mischief to dangerous plots, causing chaotic consequences — but not for themselves.",
+      "popularity": 437.847,
+      "poster_path": "/iEe9RODlNgobupiksZ2vE4TZwUg.jpg",
+      "release_date": "2024-08-27",
+      "title": "Untamed Royals",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 30
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fypydCipcWDKDTTCoPucBsdGYXW.jpg",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "id": 653346,
+      "original_language": "en",
+      "original_title": "Kingdom of the Planet of the Apes",
+      "overview": "Several generations following Caesar's reign, apes – now the dominant species – live harmoniously while humans have been reduced to living in the shadows. As a new tyrannical ape leader builds his empire, one young ape undertakes a harrowing journey that will cause him to question all he's known about the past and to make choices that will define a future for apes and humans alike.",
+      "popularity": 455.196,
+      "poster_path": "/gKkl37BQuKTanygYQG1pyYgLVgf.jpg",
+      "release_date": "2024-05-08",
+      "title": "Kingdom of the Planet of the Apes",
+      "video": false,
+      "vote_average": 7.139,
+      "vote_count": 2821
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3EIYw4aJImgsvJsb0ybhOzLk6J3.jpg",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "id": 1066262,
+      "original_language": "en",
+      "original_title": "The Convert",
+      "overview": "Munro, a soldier turned lay preacher, comes to New Zealand to minister to the first British colonists, but he is converted by the powerful chief Maianui to serve a different purpose.",
+      "popularity": 405.069,
+      "poster_path": "/e5ZqqPlhKstzB4geibpZh38w7Pq.jpg",
+      "release_date": "2024-03-14",
+      "title": "The Convert",
+      "video": false,
+      "vote_average": 6.2,
+      "vote_count": 70
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/QflfyU07MiQXSqTUCmG9Xfq0Ws.jpg",
+      "genre_ids": [
+        28,
+        18,
+        10749
+      ],
+      "id": 1281826,
+      "original_language": "en",
+      "original_title": "One Fast Move",
+      "overview": "A dishonorably discharged soldier seeks out his estranged father to help him pursue his dream of becoming a professional motorcycle racer. While training, he meets a small-town, aspiring singer and a motorcycle shop owner who begin to break down the walls his father's absence had built up.",
+      "popularity": 340.365,
+      "poster_path": "/hdBUjfbdr1ymS0kycAT7qguOmWA.jpg",
+      "release_date": "2024-08-07",
+      "title": "One Fast Move",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 134
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wNAhuOZ3Zf84jCIlrcI6JhgmY5q.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 786892,
+      "original_language": "en",
+      "original_title": "Furiosa: A Mad Max Saga",
+      "overview": "As the world fell, young Furiosa is snatched from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus. Sweeping through the Wasteland they come across the Citadel presided over by The Immortan Joe. While the two Tyrants war for dominance, Furiosa must survive many trials as she puts together the means to find her way home.",
+      "popularity": 438.585,
+      "poster_path": "/iADOJ8Zymht2JPMoy3R7xceZprc.jpg",
+      "release_date": "2024-05-22",
+      "title": "Furiosa: A Mad Max Saga",
+      "video": false,
+      "vote_average": 7.58,
+      "vote_count": 3022
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/aswBReNN2adqTiOBnvh96RCDeJP.jpg",
+      "genre_ids": [
+        28,
+        80,
+        18
+      ],
+      "id": 959092,
+      "original_language": "fr",
+      "original_title": "Farang",
+      "overview": "Sam is a professional boxer about to get released from prison. While on parole, his past catches up with him and he has no choice but to flee. Five years later, he has rebuilt a simple life on an exotic island in Thailand with his wife and her daughter, but when he gets blackmailed by a dangerous local godfather, he must embark on a dangerous drug smuggling mission which results in a tragedy. Now he has only one purpose: to seek merciless vengeance.",
+      "popularity": 326.32,
+      "poster_path": "/u9035lysUz3ccloQt0SeIp1Mu8a.jpg",
+      "release_date": "2023-06-28",
+      "title": "Mayhem!",
+      "video": false,
+      "vote_average": 6.652,
+      "vote_count": 148
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9LsZh2O1sidMvxKuMCI9RDzdZj4.jpg",
+      "genre_ids": [
+        53,
+        27,
+        80,
+        9648
+      ],
+      "id": 1245708,
+      "original_language": "en",
+      "original_title": "Crescent City",
+      "overview": "When a ruthless serial killer terrorizes a small Southern town, everyone becomes a suspect -- including local authorities. As the body count rises and the dark mystery deepens, the chief detective becomes haunted by the horrors of his past.",
+      "popularity": 354.045,
+      "poster_path": "/kWwIkWextuqVUvAEM9DwJfEfkKe.jpg",
+      "release_date": "2024-08-16",
+      "title": "Crescent City",
+      "video": false,
+      "vote_average": 6,
+      "vote_count": 36
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5Kp4Zx5uXCI3wiXIfqe25lCeSRc.jpg",
+      "genre_ids": [
+        80,
+        35,
+        28
+      ],
+      "id": 1059064,
+      "original_language": "en",
+      "original_title": "The Instigators",
+      "overview": "Rory and Cobby are unlikely partners thrown together for a heist. But when it goes awry, they team up to outrun police, backward bureaucrats, and a vengeful crime boss.",
+      "popularity": 347.516,
+      "poster_path": "/pIz9csYn1yjrzQi0BuBZNJrTMi0.jpg",
+      "release_date": "2024-08-02",
+      "title": "The Instigators",
+      "video": false,
+      "vote_average": 6.212,
+      "vote_count": 292
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8AGwtYlvrZWEPo9zQthVd68zxNO.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 1140168,
+      "original_language": "en",
+      "original_title": "Freddy's Fridays",
+      "overview": "A detective begins to investigate a series of mysterious murders that are connected to a demonic book that brings dolls to life. As the body count begins to rise, the detective soon learns the curse of the demonic Friday and must find a way to stop it before any others disappear.",
+      "popularity": 363.923,
+      "poster_path": "/v9DxbWV7G3Np3rGzqiK3gsmIyfg.jpg",
+      "release_date": "2023-10-13",
+      "title": "Freddy's Fridays",
+      "video": false,
+      "vote_average": 2.3,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/h9YlRHAZWOWtGonllmj6JJg1FrE.jpg",
+      "genre_ids": [
+        28,
+        12,
+        16,
+        10751,
+        14
+      ],
+      "id": 588648,
+      "original_language": "zh",
+      "original_title": "Dragonkeeper",
+      "overview": "Set in Han Imperial China, the plot follows the adventures of enslaved girl Ping with ancient dragon Long Danzi. Dragons had been banished from the kingdom. Ping, an orphan, finds one of the last remaining dragon eggs. Palace guards force Ping to run away in order to return the dragon egg to the ocean and save all dragons from extinction. Ping discovers that she is a true Dragonkeeper.",
+      "popularity": 374.459,
+      "poster_path": "/ggZGnJLzO3BTu7ysuuIzou3Oex5.jpg",
+      "release_date": "2024-04-11",
+      "title": "Dragonkeeper",
+      "video": false,
+      "vote_average": 7.19,
+      "vote_count": 87
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qwK9soQmmJ7kRdjLZVXblw3g7AQ.jpg",
+      "genre_ids": [
+        28,
+        12,
+        53,
+        80
+      ],
+      "id": 7451,
+      "original_language": "en",
+      "original_title": "xXx",
+      "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \"recruits\" him to go on a mission, he's not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+      "popularity": 479.468,
+      "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+      "release_date": "2002-08-09",
+      "title": "xXx",
+      "video": false,
+      "vote_average": 5.9,
+      "vote_count": 4178
+    }
+  ],
+  "total_pages": 3,
+  "total_results": 919722
+}

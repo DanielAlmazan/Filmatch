@@ -31,7 +31,8 @@ struct ValidationHelper {
   init(passwordMinLength minLength: Int = 8) {
     self.minLength = minLength
     self.emailRegex = "^[a-zA-Z][a-z0-9!#$%&'*+/=?^_`{|}~-]*(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$"
-    self.passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\W)(?=.*\\d).{\(minLength),}$"
+    let allowedSpecialChars = "@#$%^&*!?_+=~¡¿<>|{}[]()-"
+    self.passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\(NSRegularExpression.escapedPattern(for: allowedSpecialChars))])[A-Za-z\\d\(NSRegularExpression.escapedPattern(for: allowedSpecialChars))]{8,}$"
   }
 
   /// Validates an email address and returns an array of error messages if invalid.
@@ -117,22 +118,6 @@ struct ValidationHelper {
       .font(.caption)
       .foregroundColor(.red)
     )
-  }
-  
-//    return errors
-//      .map { Text($0) }
-//      .reduce(Text("\(header)"), { result, next in
-//        result + Text("\n\t") + next
-//      })
-  
-  
-  /// Validates that the password confirmation matches the original password.
-  /// - Parameters:
-  ///   - password: The original password.
-  ///   - confirmPassword: The password confirmation to validate.
-  /// - Returns: An array containing an error message if the passwords do not match, or `nil` if they match.
-  func isPasswordConfirmationValid(for password: String, and confirmPassword: String) -> [LocalizedStringResource]? {
-    password == confirmPassword ? nil : ["Passwords do not match"]
   }
   
   /// Updates the error message binding with the result of a validation function, with an animation.

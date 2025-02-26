@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileMediaCardsRow: View {
   let items: [any DiscoverItem]
+  let cornerRadius: CGFloat
 
   var body: some View {
     ScrollView(.horizontal) {
@@ -18,7 +19,7 @@ struct ProfileMediaCardsRow: View {
             PosterView(
               imageUrl: item.posterPath, size: "w500", posterType: .movie
             )
-            .clipShape(.rect(cornerRadius: 10))
+            .clipShape(.rect(cornerRadius: cornerRadius))
           }
           .lineLimit(1)
         }
@@ -29,5 +30,9 @@ struct ProfileMediaCardsRow: View {
 }
 
 #Preview {
-  ProfileMediaCardsRow(items: [DiscoverMovieItem.default])
+  HStack {
+    ProfileMediaCardsRow(items: [DiscoverMovieItem.default], cornerRadius: 10)
+      .frame(height: 200)
+  }
+  .frame(maxWidth: .infinity, maxHeight: .infinity)
 }

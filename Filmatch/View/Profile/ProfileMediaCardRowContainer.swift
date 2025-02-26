@@ -22,7 +22,7 @@ struct ProfileMediaCardRowContainer: View {
         if self.isLoading {
           ProgressView("Loading...")
         } else if let items, !items.isEmpty {
-          ProfileMediaCardsRow(items: items)
+          ProfileMediaCardsRow(items: items, cornerRadius: 5)
         } else {
           Text("No results")
         }
@@ -34,5 +34,12 @@ struct ProfileMediaCardRowContainer: View {
 }
 
 #Preview {
-  ProfileMediaCardRowContainer(title: "Liked", height: 90, isLoading: .constant(false), items: .constant([DiscoverMovieItem.default]))
+  ProfileMediaCardRowContainer(title: "Liked", height: 100, isLoading: .constant(false), items: .constant([DiscoverMovieItem.default]))
+    .environment(
+      OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(
+          client: OtterMatchHttpClient()
+        )
+      )
+    )
 }

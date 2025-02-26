@@ -54,7 +54,7 @@ struct CastMemberThumbnailView: View {
 }
 
 #Preview {
-  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: PersonDatasourceImpl(client: TMDBHttpClient(urlBase: AppConstants.tmdbUrlBase)))
+  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: PersonDatasourceImpl(client: TMDBHttpClient(urlBase: API.tmdbBaseURL)))
 
   NavigationStack {
     CastMemberThumbnailView(castMember: .default)

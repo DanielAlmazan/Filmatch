@@ -12,14 +12,16 @@ struct SimpleMediaItemListRow: View {
   let item: any DiscoverItem
   let action: () -> Void
   
+  private var url: URL? {
+    guard let base = API.tmdbMediaBaseURL, let path = item.posterPath, !path.isEmpty else {
+      return nil
+    }
+    return URL(string: "\(base)/w500/\(path)")
+  }
+  
   var body: some View {
     HStack {
-      KFImage.url(
-        URL(
-          string:
-            "\(AppConstants.tmdbMediaBase)/w500/\(item.posterPath ?? "")"
-        )
-      )
+      KFImage.url(url)
       .resizable()
       .scaledToFit()
       .frame(height: 80)

@@ -9,8 +9,8 @@ import Foundation
 
 @Observable
 final class ProfileViewModel {
-  let user: FilmatchUser
-  let filmatchRepository: FilmatchGoRepositoryImpl
+  let user: OtterMatchUser
+  let otterMatchRepository: OtterMatchGoRepositoryImpl
   let filtersRepository: FiltersRepository
 
   var selectedMedia: MediaType = .movie
@@ -106,15 +106,15 @@ final class ProfileViewModel {
   }
 
   init(
-    user: FilmatchUser,
-    filmatchRepository: FilmatchGoRepositoryImpl,
+    user: OtterMatchUser,
+    otterMatchRepository: OtterMatchGoRepositoryImpl,
     filtersRepository: FiltersRepository
   ) {
     self.user = user
-    self.filmatchRepository = filmatchRepository
+    self.otterMatchRepository = otterMatchRepository
     self.filtersRepository = filtersRepository
   }
-
+  
   @MainActor
   func loadProviders() async {
     areProvidersLoading = true
@@ -192,7 +192,7 @@ final class ProfileViewModel {
   
   @MainActor
   func loadMoviesByStatus(as status: InterestStatus) async -> [any DiscoverItem] {
-    let superLikedMovies = await filmatchRepository.getUserVisitedMoviesByStatus(
+    let superLikedMovies = await otterMatchRepository.getUserVisitedMoviesByStatus(
       for: user.uid,
       as: status,
       at: 1)
@@ -200,14 +200,14 @@ final class ProfileViewModel {
     case .success(let response):
       return response
     case .failure(let error):
-      print("Error fetching Super Liked Movies: \(error)")
+      print("Error fetching \(status) Movies: \(error)")
       return []
     }
   }
   
   @MainActor
   func loadTvSeriesByStatus(as status: InterestStatus) async -> [any DiscoverItem] {
-    let superLikedMovies = await filmatchRepository.getUserVisitedTvSeriesByStatus(
+    let superLikedMovies = await otterMatchRepository.getUserVisitedTvSeriesByStatus(
       for: user.uid,
       as: status,
       at: 1)
@@ -215,7 +215,7 @@ final class ProfileViewModel {
     case .success(let response):
       return response
     case .failure(let error):
-      print("Error fetching Super Liked TVSeries: \(error)")
+      print("Error fetching \(status) TVSeries: \(error)")
       return []
     }
   }

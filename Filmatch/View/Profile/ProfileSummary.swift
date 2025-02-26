@@ -5,83 +5,49 @@
 //  Created by Daniel Enrique Almazán Sellés on 13/8/24.
 //
 
-import Kingfisher
 import SwiftUI
 
 struct ProfileSummary: View {
   let kRowsHeight: CGFloat = 90
-  var user: FilmatchUser
+  private var user: OtterMatchUser
 
   @State private var profileVm: ProfileViewModel
-  
+  @State private var friendsVm: FriendsViewModel
+
   init(
-    user: FilmatchUser,
-    filmatchRepository: FilmatchGoRepositoryImpl,
+    user: OtterMatchUser,
+    otterMatchRepository: OtterMatchGoRepositoryImpl,
     filtersRepository: FiltersRepository
   ) {
     self.user = user
     self.profileVm = .init(
       user: user,
-      filmatchRepository: filmatchRepository,
+      otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
+    self.friendsVm = .init(otterMatchRepository: otterMatchRepository)
   }
-  
+
   var body: some View {
     VStack(spacing: 10) {
+      UserAvatarView(user: user, size: 100)
+        .shadow(radius: 5, y: 5)
+      
+      // MARK: - Friends
+      ProfileFriendsContainer(
+        title: "My Friends",
+        height: kRowsHeight,
+        isLoading: self.$friendsVm.areFriendsLoading,
+        friends: self.$friendsVm.friends)
+      
+      // MARK: - Own lists
       Group {
-        // if let image = user.image {
-        //   KFImage.url(image)
-        //     .resizable()
-        // } else {
-        //   Image(systemName: "person.fill")
-        //     .resizable()
-        // }
-      }
-      .frame(width: 100, height: 100)
-      .clipShape(Circle())
-      .shadow(radius: 10)
-      
-      Text(user.email)
-        .bold()
-        .font(.headline)
-      
-      Spacer()
-      
-      Group {
-        VStack(alignment: .leading) {
-          Text("Platforms")
-          Group {
-            if self.profileVm.areProvidersLoading {
-              ProgressView("Loading...")
-            } else if let providers = profileVm.providers {
-              ProvidersRow(providers: providers, maxWidth: 80)
-            }
-          }
-          .frame(height: kRowsHeight)
-        }
-        
-        // Neither superLike or watched are available right now
-        // ProfileMediaCardRowContainer(
-        //   title: "Super Liked",
-        //   height: kRowsHeight,
-        //   isLoading: self.$profileVm.areSuperLikedLoading,
-        //   items: self.$profileVm.superLikedItems
-        // )
-        
         ProfileMediaCardRowContainer(
           title: "Liked",
           height: kRowsHeight,
           isLoading: self.$profileVm.areLikedLoading,
           items: self.$profileVm.likedItems
         )
-        
-        // ProfileMediaCardRowContainer(
-        //   title: "Watched",
-        //   height: kRowsHeight,
-        //   isLoading: self.$profileVm.areWatchedLoading,
-        //   items: self.$profileVm.watchedItems
-        // )
         
         ProfileMediaCardRowContainer(
           title: "Disliked",
@@ -97,7 +63,9 @@ struct ProfileSummary: View {
     }
     .scrollClipDisabled()
     .padding()
+    .navigationTitle(Text(user.username ?? "Profile"))
     .task {
+      await self.friendsVm.loadFriends(at: 1)
       await self.profileVm.loadProviders()
       // await self.profileVm.loadSuperLikedItems()
       await self.profileVm.loadLikedItems()
@@ -108,18 +76,24 @@ struct ProfileSummary: View {
 }
 
 #Preview {
-  @Previewable let filmatchRepository = FilmatchGoRepositoryImpl(
-    datasource: FilmatchGoDatasourceImpl(
-      client: FilmatchHttpClient()
+  @Previewable let otterMatchRepository = OtterMatchGoRepositoryImpl(
+    datasource: OtterMatchGoDatasourceImpl(
+      client: OtterMatchHttpClient()
     )
   )
   @Previewable let filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource()
   )
-  
-  ProfileSummary(
-    user: .default,
-    filmatchRepository: filmatchRepository,
-    filtersRepository: filtersRepository
-  )
+
+  VStack {
+    ProfileSummary(
+      user: .default,
+      otterMatchRepository: otterMatchRepository,
+      filtersRepository: filtersRepository
+    )
+  }
+  .frame(maxWidth: .infinity, maxHeight: .infinity)
+  .background(.bgBase)
+  .environment(otterMatchRepository)
+  .environment(filtersRepository)
 }
