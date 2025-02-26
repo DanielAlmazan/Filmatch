@@ -28,7 +28,10 @@ struct PosterView: View {
 
   /// The complete URL constructed from the `imageUrl` and `size`.
   var url: URL? {
-    URL(string: "\(AppConstants.tmdbMediaBase)/\(size)/\(imageUrl ?? "")")
+    guard let base = API.tmdbMediaBaseURL, let imageUrl, !imageUrl.isEmpty else {
+      return nil
+    }
+    return URL(string: "\(base)/\(size)/\(imageUrl)")
   }
 
   var body: some View {

@@ -1,0 +1,441 @@
+{
+  "page": 3,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/e0Tm0xDUQBrTvmK7VAT172F8pz3.jpg",
+      "genre_ids": [
+        10759,
+        9648,
+        18,
+        80
+      ],
+      "id": 76713,
+      "origin_country": [
+        "RU"
+      ],
+      "original_language": "ru",
+      "original_name": "Тайны следствия",
+      "overview": "In the center of the plot is a senior investigator named Masha Shvetsova and her male colleagues. The plot is the most vital, but, like in “Streets of Broken Lanterns,” it is seasoned with a fair amount of humor - otherwise, how can the audience (and the heroes) endure countless morgues, identifications and other “cute” charms of the investigative routine?",
+      "popularity": 1252.067,
+      "poster_path": "/bEOqLQZ5F8cmcZ5aBfZWb2JL8x1.jpg",
+      "first_air_date": "2000-09-01",
+      "name": "Secrecy of the investigation",
+      "vote_average": 7.4,
+      "vote_count": 14
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zSPvARNCFpZxmWjgJCsBu5PUlR9.jpg",
+      "genre_ids": [
+        35,
+        18,
+        10751,
+        10762,
+        10759
+      ],
+      "id": 247885,
+      "origin_country": [
+        "US",
+        "MX"
+      ],
+      "original_language": "es",
+      "original_name": "Papás por Conveniencia",
+      "overview": "Tino, a single father who faces great challenges in raising his two children, finds out one day that he is also the father of two rebellious teenagers, children of Aidé, a former high school classmate who has become an important businesswoman. For Tino, this news becomes an opportunity to take on the role of father of the children he never knew he had. Thus, he begins to work at Aidé's company, but everything gets complicated when Tino and his family move into Aidé's house to integrate into her new life. The house becomes a battlefield, both of their children have problems adapting, and love resurfaces between Tino and Aidé and a torrid romance begins. But building this new life for Aidé, Tino and their children will not be easy; they will have to face serious obstacles, always supported by the strength of their love and that of their children.",
+      "popularity": 1242.198,
+      "poster_path": "/y7yIu9PKx2WTphhYgbBq9C1RNzV.jpg",
+      "first_air_date": "2024-10-21",
+      "name": "Papás por Conveniencia",
+      "vote_average": 7.7,
+      "vote_count": 37
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lntobwOaMkACftGIULcp6n4kqOF.jpg",
+      "genre_ids": [],
+      "id": 276465,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "TMZ Live",
+      "overview": "This hourlong show is an edited version of the previous day's live video chat on TMZ, which features site founder Harvey Levin and others discussing the day's celebrity and entertainment news. Besides news, it provides a candid look at how the gossip site operates, bringing viewers into the site's newsroom, where the daily chats take place. \"TMZ Live\" allows viewers to present their opinions on the featured topics through social media, phone calls and video chat.",
+      "popularity": 1239.209,
+      "poster_path": "/12sC6lRA7ds448jaoDUtj5qGSwh.jpg",
+      "first_air_date": "2012-06-11",
+      "name": "TMZ Live",
+      "vote_average": 2,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qmcoEOrTm6BcgR4iO7KBQKE9AKT.jpg",
+      "genre_ids": [
+        80,
+        18,
+        10759
+      ],
+      "id": 4614,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "NCIS",
+      "overview": "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has a shred of evidence connected to Navy and Marine Corps personnel, regardless of rank or position.",
+      "popularity": 1223.259,
+      "poster_path": "/mBcu8d6x6zB1el3MPNl7cZQEQ31.jpg",
+      "first_air_date": "2003-09-23",
+      "name": "NCIS",
+      "vote_average": 7.627,
+      "vote_count": 2291
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lE501tGuJt5rgPsbdYxmbh3vGWx.jpg",
+      "genre_ids": [
+        16,
+        10759,
+        10762
+      ],
+      "id": 91426,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "ジュエルペット",
+      "overview": "A junior high school student named Rinko becomes partners with a rabbit Jewelpet named Ruby. Together they try to find the Jewel Charms that dropped from Jewel Land into the world of the humans. Along with their friends, Rinko and Ruby help others solve their problems while using the magic of Jewelpets.",
+      "popularity": 1222.766,
+      "poster_path": "/750II7VWRTSedLfpv7n6L1iVNLC.jpg",
+      "first_air_date": "2009-04-05",
+      "name": "Jewelpet",
+      "vote_average": 8.8,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5CGM0vQpq0QBcslUXqoo0unlGPZ.jpg",
+      "genre_ids": [
+        10759,
+        16,
+        18
+      ],
+      "id": 46437,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "キングダム",
+      "overview": "In the Warring States Period of ancient China (475–221 BCE), Shin and Hyou are war-orphans in the kingdom of Qin. They dream of one day proving themselves on the battlefield. One day, however, Hyou is taken to the palace by a minister. Winding up on the losing side of a power-struggle, Hyou manages to return to the village, barely alive. Shin then meets a boy who closely resembles Hyou, Ei Sei. For now he is the king of Qin; later he will become the emperor Shi Huangdi.",
+      "popularity": 1214.022,
+      "poster_path": "/dehuJJkKo50nYvCYppigrWejqLe.jpg",
+      "first_air_date": "2012-06-04",
+      "name": "Kingdom",
+      "vote_average": 7.8,
+      "vote_count": 38
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/s2vI3dpKps8gdUfzoFsmogH8PsS.jpg",
+      "genre_ids": [
+        80,
+        10759,
+        18
+      ],
+      "id": 40561,
+      "origin_country": [
+        "DE"
+      ],
+      "original_language": "de",
+      "original_name": "Küstenwache",
+      "overview": "Küstenwache is a German television series that tells the fictionalized adventures of a unit of Federal Coast Guard officers off the German coast of the Baltic Sea.",
+      "popularity": 1179.534,
+      "poster_path": "/d5jeCqOaaMjGJSqH03fXsPsxq6c.jpg",
+      "first_air_date": "1997-04-19",
+      "name": "Coast Guard",
+      "vote_average": 5.4,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2Erj4Oav9EHAtqLI354VM7ULDqu.jpg",
+      "genre_ids": [
+        37,
+        18
+      ],
+      "id": 73586,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Yellowstone",
+      "overview": "Follow the violent world of the Dutton family, who controls the largest contiguous ranch in the United States. Led by their patriarch John Dutton, the family defends their property against constant attack by land developers, an Indian reservation, and America’s first National Park.",
+      "popularity": 1168.268,
+      "poster_path": "/s4QRRYc1V2e68Qy9Wel9MI8fhRP.jpg",
+      "first_air_date": "2018-06-20",
+      "name": "Yellowstone",
+      "vote_average": 8.248,
+      "vote_count": 2531
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tJF9M5niAnb4fm881PGc2GwS0e1.jpg",
+      "genre_ids": [
+        16,
+        10759,
+        35,
+        10751,
+        10762
+      ],
+      "id": 80885,
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "忍者ハットリくん",
+      "overview": "11-year-old Kenichi Mitsuba is an average kid who goes to secondary school and struggles with his studies, he is very stubborn and is very lazy and therefore always ends up frustrating his parents and teacher. He loves to find an easy way of things. He befriends Hattori Kanzo, a ninja from the Iga Clan, and he becomes part of the Mitsuba family along with his brother, Shinzo and his ninja dog, Shishimaru. Hattori helps Kenichi with his problems, and constantly keeps an eye on him, as a good friend. The main antagonist Kemumaki, a Koga ninja and his ninja cat, Kagechiyo always troubles Kenichi, mainly because of their feud over one girl, Yumeko. Kenichi asks Hattori to take revenge as a recurring storyline in many episodes. Although Hattori is a good friend, Kenichi sometimes fights with Hattori due to misunderstandings created by Kemumaki. Sometimes Jippou, Togejirou and Tsubame help him.",
+      "popularity": 1158.732,
+      "poster_path": "/9PUkpvq0wJnJ2M00dtgxKn6LptB.jpg",
+      "first_air_date": "1981-09-28",
+      "name": "Ninja Hattori-kun",
+      "vote_average": 6.7,
+      "vote_count": 28
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fZPWqLYlbEu8fRdEj4AI2moDPIO.jpg",
+      "genre_ids": [
+        18,
+        80,
+        9648
+      ],
+      "id": 34522,
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "अदालत",
+      "overview": "K.D Pathak is a suave, sophisticated, witty and yet unconventional defence lawyer with an impeccable track record. He stands not for his client, but for Justice.",
+      "popularity": 1142.423,
+      "poster_path": "/m2G5WVHX4n2ETdBpAUHGK71C0J7.jpg",
+      "first_air_date": "2010-11-20",
+      "name": "Adaalat",
+      "vote_average": 7.5,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yPvqUEteRhTjrQIEIu38KbKctDj.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 65448,
+      "origin_country": [
+        "BG"
+      ],
+      "original_language": "bg",
+      "original_name": "Откраднат живот",
+      "overview": "Love, treachery, sin, redemption, difficult decisions and surprising twists are the basis of dramatic story in the series \"Stolen Life\", which being played out against the backdrop of extreme life of the medical profession.",
+      "popularity": 1141.743,
+      "poster_path": "/5iPXsfEkKYldXUyUWmBsYIQ1Mhh.jpg",
+      "first_air_date": "2016-03-08",
+      "name": "Stolen Life",
+      "vote_average": 3.1,
+      "vote_count": 23
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wYg6cEY7MsAeUxkNRebuP4LHkk6.jpg",
+      "genre_ids": [],
+      "id": 64488,
+      "origin_country": [
+        "CA"
+      ],
+      "original_language": "fr",
+      "original_name": "Atomes crochus",
+      "overview": "A hilarious game show in which two contestants and a panel of six stars attempt to fill in the \"hole\" left in a wacky sentence. The contestant who goes to the final game has a chance to walk away with the grand prize if they play in perfect symbiosis with a randomly selected star.",
+      "popularity": 1120.968,
+      "poster_path": "/53SD7k0jGQXwdfDwejGYWFneDfe.jpg",
+      "first_air_date": "2010-03-01",
+      "name": "Atomes crochus",
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cchlQWYrnMPyl1EbjZWCzeAz8l5.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 36361,
+      "origin_country": [
+        "CZ"
+      ],
+      "original_language": "cs",
+      "original_name": "Ulice",
+      "overview": "Ulice is a Czech soap opera produced and broadcast by Nova. In the Czech language Ulice means street.\n\nThe show describes the lives of the Farský, Jordán, Boháč, Nikl, and Liška families and many other people that live in Prague. Their daily battle against real problems of living in a modern world like divorce, love, betrayal and illness or disease. Ulice often shows crime.",
+      "popularity": 1105.488,
+      "poster_path": "/gFEHva8Csx18hMGJJZ6gi4sFSKR.jpg",
+      "first_air_date": "2005-09-05",
+      "name": "Ulice",
+      "vote_average": 4.6,
+      "vote_count": 30
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        10767
+      ],
+      "id": 91185,
+      "origin_country": [
+        "DE"
+      ],
+      "original_language": "de",
+      "original_name": "Riverboat",
+      "overview": "",
+      "popularity": 1098.403,
+      "poster_path": "/uU7FdI2s6VcUFJF6eByzbrTLszm.jpg",
+      "first_air_date": "1992-01-03",
+      "name": "Riverboat",
+      "vote_average": 5.5,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xlyT6E0jceTQ9s4BpHY6PkeOilr.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 50524,
+      "origin_country": [
+        "TH"
+      ],
+      "original_language": "th",
+      "original_name": "เป็นต่อ",
+      "overview": "A successful man at a publishing company tries to rekindle his romance with an ex-girlfriend as those around him also search for love amidst conflict.",
+      "popularity": 1079.51,
+      "poster_path": "/3pCGtGxRjxY9ZBfoCVh3gLhc5Fy.jpg",
+      "first_air_date": "2004-10-07",
+      "name": "Pen Tor",
+      "vote_average": 8.8,
+      "vote_count": 10
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/o82rmThq339zBdO8Bd3gUyBic0o.jpg",
+      "genre_ids": [
+        10764
+      ],
+      "id": 80736,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "original_name": "전지적 참견 시점",
+      "overview": "We will get involved in every little detail of the stars’ lives. The managers who work closely with the stars reveal their mundane lives. Once the information is all revealed, the professional meddlers from various different fields are invited to make comments regarding even the smallest details. Lee Yeong Ja, Jun Hyun Moo, Song Eun I, Kim Saeng Min, Yang Se Hyeong and Yoo Byung Jae participate as the life meddlers along with the professionals.",
+      "popularity": 1076.666,
+      "poster_path": "/jASfIetUKhrbqEEKBnjRjjgfuGK.jpg",
+      "first_air_date": "2018-03-10",
+      "name": "The Manager",
+      "vote_average": 5,
+      "vote_count": 4
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lUrtMjiunomHPDC2sQNIxswbmdU.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 3034,
+      "origin_country": [
+        "AT",
+        "DE",
+        "CH"
+      ],
+      "original_language": "de",
+      "original_name": "Tatort",
+      "overview": "Tatort is a long-running German/Austrian/Swiss, crime television series set in various parts of these countries. The show is broadcast on the channels of ARD in Germany, ORF in Austria and SF1 in Switzerland.",
+      "popularity": 1071.763,
+      "poster_path": "/b6kIWHHifuc8qH0IpzVzUeXBnvq.jpg",
+      "first_air_date": "1970-11-29",
+      "name": "Scene of the Crime",
+      "vote_average": 6.2,
+      "vote_count": 110
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9feA6Kd1G456nq2XrDqpDQpFlcG.jpg",
+      "genre_ids": [
+        10762,
+        10759,
+        16,
+        10765,
+        9648,
+        35,
+        10751
+      ],
+      "id": 54728,
+      "origin_country": [
+        "CA",
+        "US",
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "爆転シュートベイブレード",
+      "overview": "Thirteen-year-old Takao Kinomiya (Tyson Granger), along with his fellow teammates, Kai Hiwatari, Max Mizuhura (Max Tate), and Rei Kon (Ray Kon), strive to become the greatest Beybladers in the world. With the technical help of the team's resident genius, Kyoujyu (Kenny), and with the powerful strength of their BitBeasts, the Bladebreakers armed with their Beys attempt to reach their goal.",
+      "popularity": 1070.344,
+      "poster_path": "/l6ZQhEHjtOd9t6lOvVGzs5YEHcG.jpg",
+      "first_air_date": "2001-01-08",
+      "name": "Beyblade",
+      "vote_average": 7.723,
+      "vote_count": 215
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/n5FPNMJ0eRoiQrKGfUQQRAZeaxg.jpg",
+      "genre_ids": [
+        10765,
+        18
+      ],
+      "id": 125988,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Silo",
+      "overview": "In a ruined and toxic future, thousands live in a giant silo deep underground. After its sheriff breaks a cardinal rule and residents die mysteriously, engineer Juliette starts to uncover shocking secrets and the truth about the silo.",
+      "popularity": 1068.62,
+      "poster_path": "/tlliQuCupf8fpTH7RAor3aKMGy.jpg",
+      "first_air_date": "2023-05-04",
+      "name": "Silo",
+      "vote_average": 8.16,
+      "vote_count": 1222
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pxeqQX4qFQ0cVxPt5SWZENV5BH3.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        35
+      ],
+      "id": 456,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Simpsons",
+      "overview": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+      "popularity": 1064.449,
+      "poster_path": "/vHqeLzYl3dEAutojCO26g0LIkom.jpg",
+      "first_air_date": "1989-12-17",
+      "name": "The Simpsons",
+      "vote_average": 8.018,
+      "vote_count": 9978
+    }
+  ],
+  "total_pages": 9455,
+  "total_results": 189089
+}

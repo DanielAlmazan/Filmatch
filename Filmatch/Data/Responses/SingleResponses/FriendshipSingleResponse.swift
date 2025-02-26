@@ -9,9 +9,9 @@ import Foundation
 
 final class FriendshipSingleResponse: Identifiable, Sendable {
   let id: Int
-  let user: FilmatchUserResponse
+  let user: OtterMatchUserResponse
 
-  init(id: Int, user: FilmatchUserResponse) {
+  init(id: Int, user: OtterMatchUserResponse) {
     self.id = id
     self.user = user
   }
@@ -27,7 +27,7 @@ extension FriendshipSingleResponse: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
 
     let id = try container.decode(Int.self, forKey: .id)
-    let user = try container.decode(FilmatchUserResponse.self, forKey: .user)
+    let user = try container.decode(OtterMatchUserResponse.self, forKey: .user)
 
     self.init(id: id, user: user)
   }

@@ -1,6 +1,6 @@
 //
 //  JsonPersonRemoteDatasource.swift
-//  Filmatch
+//  OtterMatch
 //
 //  Created by Daniel Enrique Almazán Sellés on 4/1/25.
 //
@@ -8,6 +8,7 @@
 import Foundation
 
 final class JsonPersonRemoteDatasource: PersonDatasource {
+  @MainActor
   let client: TMDBJsonClient = TMDBJsonClient()
 
   func getPerson(byId id: Int) async -> Result<PersonDetailSingleResponse, any Error> {

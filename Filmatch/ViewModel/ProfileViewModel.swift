@@ -9,15 +9,11 @@ import Foundation
 
 @Observable
 final class ProfileViewModel {
-  let user: FilmatchUser
-  let filmatchRepository: FilmatchGoRepositoryImpl
+  let user: OtterMatchUser
+  let otterMatchRepository: OtterMatchGoRepositoryImpl
   let filtersRepository: FiltersRepository
 
   var selectedMedia: MediaType = .movie
-
-  var areFriendsLoading: Bool = false
-  var totalFriendsPages: Int = 1
-  var friends: [FilmatchUser]?
 
   var areProvidersLoading: Bool = false
   private var movieProviders: [ProviderModel]?
@@ -110,40 +106,13 @@ final class ProfileViewModel {
   }
 
   init(
-    user: FilmatchUser,
-    filmatchRepository: FilmatchGoRepositoryImpl,
+    user: OtterMatchUser,
+    otterMatchRepository: OtterMatchGoRepositoryImpl,
     filtersRepository: FiltersRepository
   ) {
     self.user = user
-    self.filmatchRepository = filmatchRepository
+    self.otterMatchRepository = otterMatchRepository
     self.filtersRepository = filtersRepository
-  }
-  
-  @MainActor
-  func loadFriends(at page: Int) async {
-    guard self.totalFriendsPages >= page else { return }
-    
-    areFriendsLoading = true
-    
-    let friendsResult = await filmatchRepository.getUserFriends(at: page)
-    
-    switch friendsResult {
-    case .success(let response):
-      setFriends(response.results.toFilmatchUsers())
-      self.totalFriendsPages = response.totalPages
-    case .failure(let error):
-      print(error)
-    }
-    
-    areFriendsLoading = false
-  }
-  
-  private func setFriends(_ friends: [FilmatchUser]) {
-    if self.friends == nil {
-      self.friends = friends
-    } else {
-      self.friends!.append(contentsOf: friends)
-    }
   }
   
   @MainActor
@@ -223,7 +192,7 @@ final class ProfileViewModel {
   
   @MainActor
   func loadMoviesByStatus(as status: InterestStatus) async -> [any DiscoverItem] {
-    let superLikedMovies = await filmatchRepository.getUserVisitedMoviesByStatus(
+    let superLikedMovies = await otterMatchRepository.getUserVisitedMoviesByStatus(
       for: user.uid,
       as: status,
       at: 1)
@@ -238,7 +207,7 @@ final class ProfileViewModel {
   
   @MainActor
   func loadTvSeriesByStatus(as status: InterestStatus) async -> [any DiscoverItem] {
-    let superLikedMovies = await filmatchRepository.getUserVisitedTvSeriesByStatus(
+    let superLikedMovies = await otterMatchRepository.getUserVisitedTvSeriesByStatus(
       for: user.uid,
       as: status,
       at: 1)

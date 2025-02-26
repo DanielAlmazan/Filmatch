@@ -61,7 +61,8 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-Config.plist
+Config/Release.xcconfig
+Config/Debug.xcconfig
 .DS_Store
 GoogleService-Info.plist
 Info.plist

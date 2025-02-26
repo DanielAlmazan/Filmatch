@@ -37,7 +37,7 @@ struct WelcomeView: View {
             .frame(height: 150)
             .shadow(radius: 5, y: 4)
 
-          Text("Welcome to Filmatch!")
+          Text("Welcome to OtterMatch!")
             .font(.title)
             .bold()
 

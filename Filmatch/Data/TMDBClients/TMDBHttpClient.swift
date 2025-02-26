@@ -8,18 +8,18 @@
 import Foundation
 
 final class TMDBHttpClient: TMDBApiClient {
-  let urlBase: String
+  let urlBase: String?
 
   /// The API key required for TMDb API authentication.
-  private let apiKey: String = Config.shared.apiKey
+  private let apiKey: String? = API.apiKey
 
   /// The access token for authentication (if needed).
-  private let accessTokenAuth: String = Config.shared.accessTokenAuth
+  private let accessTokenAuth: String? = API.accessTokenAuth
 
   /// An array of common query items added to every request.
   private var queryItems: [URLQueryItem]
 
-  init(urlBase: String = AppConstants.tmdbUrlBase) {
+  init(urlBase: String? = API.tmdbBaseURL) {
     self.urlBase = urlBase
     let language = "\(Locale.preferredLanguages.first ?? "en-US")"
     let watchRegion = "\(Locale.current.region ?? "US")"
@@ -39,7 +39,7 @@ final class TMDBHttpClient: TMDBApiClient {
   ) async -> Result<T, Error> {
 //    print("Requesting \(endpoint)")
 
-    guard let url = URL(string: "\(urlBase)\(endpoint)") else {
+    guard let urlBase, let url = URL(string: "\(urlBase)\(endpoint)") else {
       return .failure(URLError(.badURL))
     }
 

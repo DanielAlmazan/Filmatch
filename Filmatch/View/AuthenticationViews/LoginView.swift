@@ -180,10 +180,10 @@ struct LoginView: View {
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
-    filmatchRepository: FilmatchGoRepositoryImpl(
-      datasource: FilmatchGoDatasourceImpl(
-        client: FilmatchHttpClient(
-          urlBase: AppConstants.filmatchBaseUrl)
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(
+          urlBase: API.otterMatchBaseURL)
       )
     )
   )

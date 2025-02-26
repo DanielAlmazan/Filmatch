@@ -15,7 +15,7 @@ import SwiftUI
 @MainActor
 class AuthenticationViewModel {
   /// The currently authenticated user, if any.
-  var currentUser: FilmatchUser?
+  var currentUser: OtterMatchUser?
   
   /// An optional error message if an authentication error occurs.
   var errorMessage: String?
@@ -24,19 +24,17 @@ class AuthenticationViewModel {
   
   /// The repository responsible for handling authentication operations.
   private let authenticationRepository: AuthenticationRepository
-  private let filmatchRepository: FilmatchGoRepository
+  private let otterMatchRepository: OtterMatchGoRepository
   
   /// Initializes a new `AuthenticationViewModel`.
   /// - Parameter authenticationRepository: The repository used for authentication operations. Defaults to `AuthenticationFirebaseRepository`.
-  /// - Parameter filmatchRepository: Te repository used to ensure the validation of the user.
+  /// - Parameter otterMatchRepository: Te repository used to ensure the validation of the user.
   init(
-    authenticationRepository: AuthenticationRepository =
-      AuthenticationFirebaseRepository(
-        dataSource: AuthenticationFirebaseDataSource()),
-    filmatchRepository: FilmatchGoRepository
+    authenticationRepository: AuthenticationRepository,
+    otterMatchRepository: OtterMatchGoRepository
   ) {
     self.authenticationRepository = authenticationRepository
-    self.filmatchRepository = filmatchRepository
+    self.otterMatchRepository = otterMatchRepository
 
     // Listen for authentication state changes.
     let _ = Auth.auth().addStateDidChangeListener { auth, user in
@@ -44,10 +42,10 @@ class AuthenticationViewModel {
         self.isLoading = true
         let userResult = await self.authenticationRepository.getCurrentUser()
         if let _ = userResult {
-          let filmatchAuthResult = await self.filmatchRepository.auth()
-          switch filmatchAuthResult {
-          case .success(let filmatchUser):
-            self.currentUser = filmatchUser.toFilmatchUser()
+          let otterMatchAuthResult = await self.otterMatchRepository.auth()
+          switch otterMatchAuthResult {
+          case .success(let otterMatchUser):
+            self.currentUser = otterMatchUser.toOtterMatchUser()
           case .failure(let failure):
             self.errorMessage = failure.localizedDescription
           }
@@ -68,10 +66,10 @@ class AuthenticationViewModel {
       
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchRepository.auth()
-        switch filmatchResult {
-        case .success(let filmatchUser):
-          self.currentUser = filmatchUser.toFilmatchUser()
+        let otterMatchResult = await self.otterMatchRepository.auth()
+        switch otterMatchResult {
+        case .success(let otterMatchUser):
+          self.currentUser = otterMatchUser.toOtterMatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
@@ -90,10 +88,10 @@ class AuthenticationViewModel {
       let result = await authenticationRepository.appleOAuth(tokens: tokens)
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchRepository.auth()
-        switch filmatchResult {
-        case .success(let filmatchUser):
-          self.currentUser = filmatchUser.toFilmatchUser()
+        let otterMatchResult = await self.otterMatchRepository.auth()
+        switch otterMatchResult {
+        case .success(let otterMatchUser):
+          self.currentUser = otterMatchUser.toOtterMatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
@@ -114,10 +112,10 @@ class AuthenticationViewModel {
       let result = await authenticationRepository.logIn(email: email, password: password)
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchRepository.auth()
-        switch filmatchResult {
-        case .success(let filmatchUser):
-          self.currentUser = filmatchUser.toFilmatchUser()
+        let otterMatchResult = await self.otterMatchRepository.auth()
+        switch otterMatchResult {
+        case .success(let otterMatchUser):
+          self.currentUser = otterMatchUser.toOtterMatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
@@ -137,10 +135,10 @@ class AuthenticationViewModel {
       let result = await authenticationRepository.googleOAuth(tokens: tokens)
       switch result {
       case .success(_):
-        let filmatchResult = await self.filmatchRepository.auth()
-        switch filmatchResult {
-        case .success(let filmatchUser):
-          self.currentUser = filmatchUser.toFilmatchUser()
+        let otterMatchResult = await self.otterMatchRepository.auth()
+        switch otterMatchResult {
+        case .success(let otterMatchUser):
+          self.currentUser = otterMatchUser.toOtterMatchUser()
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }

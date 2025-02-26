@@ -36,9 +36,9 @@ struct ProfileMediaCardRowContainer: View {
 #Preview {
   ProfileMediaCardRowContainer(title: "Liked", height: 100, isLoading: .constant(false), items: .constant([DiscoverMovieItem.default]))
     .environment(
-      FilmatchGoRepositoryImpl(
-        datasource: FilmatchGoDatasourceImpl(
-          client: FilmatchHttpClient()
+      OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(
+          client: OtterMatchHttpClient()
         )
       )
     )

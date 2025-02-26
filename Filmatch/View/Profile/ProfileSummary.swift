@@ -9,71 +9,46 @@ import SwiftUI
 
 struct ProfileSummary: View {
   let kRowsHeight: CGFloat = 90
-  private var user: FilmatchUser
+  private var user: OtterMatchUser
 
   @State private var profileVm: ProfileViewModel
+  @State private var friendsVm: FriendsViewModel
 
   init(
-    user: FilmatchUser,
-    filmatchRepository: FilmatchGoRepositoryImpl,
+    user: OtterMatchUser,
+    otterMatchRepository: OtterMatchGoRepositoryImpl,
     filtersRepository: FiltersRepository
   ) {
     self.user = user
     self.profileVm = .init(
       user: user,
-      filmatchRepository: filmatchRepository,
+      otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
+    self.friendsVm = .init(otterMatchRepository: otterMatchRepository)
   }
 
   var body: some View {
     VStack(spacing: 10) {
-      SimpleUserInfoView(user: self.user, size: 100)
-  
+      UserAvatarView(user: user, size: 100)
+        .shadow(radius: 5, y: 5)
+      
       // MARK: - Friends
       ProfileFriendsContainer(
         title: "My Friends",
         height: kRowsHeight,
-        isLoading: self.$profileVm.areFriendsLoading,
-        friends: self.$profileVm.friends)
-
+        isLoading: self.$friendsVm.areFriendsLoading,
+        friends: self.$friendsVm.friends)
+      
       // MARK: - Own lists
       Group {
-        // 'My providers', 'superLike' and 'watched' are not available right now
-
-        // VStack(alignment: .leading) {
-        //   Text("Platforms")
-        //   Group {
-        //     if self.profileVm.areProvidersLoading {
-        //       ProgressView("Loading...")
-        //     } else if let providers = profileVm.providers {
-        //       ProvidersRow(providers: providers, maxWidth: 80)
-        //     }
-        //   }
-        //   .frame(height: kRowsHeight)
-        // }
-
-        // ProfileMediaCardRowContainer(
-        //   title: "Super Liked",
-        //   height: kRowsHeight,
-        //   isLoading: self.$profileVm.areSuperLikedLoading,
-        //   items: self.$profileVm.superLikedItems
-        // )
-
         ProfileMediaCardRowContainer(
           title: "Liked",
           height: kRowsHeight,
           isLoading: self.$profileVm.areLikedLoading,
           items: self.$profileVm.likedItems
         )
-
-        // ProfileMediaCardRowContainer(
-        //   title: "Watched",
-        //   height: kRowsHeight,
-        //   isLoading: self.$profileVm.areWatchedLoading,
-        //   items: self.$profileVm.watchedItems
-        // )
-
+        
         ProfileMediaCardRowContainer(
           title: "Disliked",
           height: kRowsHeight,
@@ -88,8 +63,9 @@ struct ProfileSummary: View {
     }
     .scrollClipDisabled()
     .padding()
+    .navigationTitle(Text(user.username ?? "Profile"))
     .task {
-      await self.profileVm.loadFriends(at: 1)
+      await self.friendsVm.loadFriends(at: 1)
       await self.profileVm.loadProviders()
       // await self.profileVm.loadSuperLikedItems()
       await self.profileVm.loadLikedItems()
@@ -100,9 +76,9 @@ struct ProfileSummary: View {
 }
 
 #Preview {
-  @Previewable let filmatchRepository = FilmatchGoRepositoryImpl(
-    datasource: FilmatchGoDatasourceImpl(
-      client: FilmatchHttpClient()
+  @Previewable let otterMatchRepository = OtterMatchGoRepositoryImpl(
+    datasource: OtterMatchGoDatasourceImpl(
+      client: OtterMatchHttpClient()
     )
   )
   @Previewable let filtersRepository = FiltersRepositoryImpl(
@@ -112,10 +88,12 @@ struct ProfileSummary: View {
   VStack {
     ProfileSummary(
       user: .default,
-      filmatchRepository: filmatchRepository,
+      otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(.bgBase)
+  .environment(otterMatchRepository)
+  .environment(filtersRepository)
 }

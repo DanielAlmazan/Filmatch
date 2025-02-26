@@ -1,0 +1,1370 @@
+{
+  "adult": false,
+  "also_known_as": [
+    "Jenna Marie Ortega",
+    "ジェンナ・オルテガ",
+    "Jenna Ortegová"
+  ],
+  "biography": "Jenna Marie Ortega (born September 27, 2002) is an American actress. She began her career as a child actress, receiving recognition for her role as young Jane on The CW comedy-drama series Jane the Virgin (2014–2019). She had her breakthrough for starring as Harley Diaz on the Disney Channel series Stuck in the Middle (2016–2018), for which she won an Imagen Award. She played Ellie Alves in the second season of the Netflix thriller series You in 2019 and starred in the Netflix family film Yes Day (2021).\n\nOrtega received critical praise for her performance in the teen drama The Fallout (2021), and went on to star in the slasher films X (2022), Scream (2022) and its sequel Scream VI (2023), establishing herself as a scream queen. She starred as Wednesday Addams in the Netflix horror comedy series Wednesday (2022), for which she received nominations for a Primetime Emmy Award, a Golden Globe Award and a SAG Award.\n\nDescription above from the Wikipedia article Jenna Ortega, licensed under CC-BY-SA, full list of contributors on Wikipedia.",
+  "birthday": "2002-09-27",
+  "deathday": null,
+  "gender": 1,
+  "homepage": null,
+  "id": 974169,
+  "imdb_id": "nm4911194",
+  "known_for_department": "Acting",
+  "name": "Jenna Ortega",
+  "place_of_birth": "Coachella Valley, Palm Desert, California, USA",
+  "popularity": 121.016,
+  "profile_path": "/q1NRzyZQlYkxLY07GO9NVPkQnu8.jpg",
+  "movie_credits": {
+    "cast": [
+      {
+        "adult": false,
+        "backdrop_path": "/h04s7VIbMWxTa4BBhwdg4CR6vNc.jpg",
+        "genre_ids": [
+          27,
+          80,
+          53
+        ],
+        "id": 934433,
+        "original_language": "en",
+        "original_title": "Scream VI",
+        "overview": "Following the latest Ghostface killings, the four survivors leave Woodsboro behind and start a fresh chapter.",
+        "popularity": 204.648,
+        "poster_path": "/wDWwtvkRRlgTiUr6TyLSMX8FCuZ.jpg",
+        "release_date": "2023-03-08",
+        "title": "Scream VI",
+        "video": false,
+        "vote_average": 7.015,
+        "vote_count": 2670,
+        "character": "Tara Carpenter",
+        "credit_id": "63c98ece0398ab00af05e386",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/ppNyhrKHCeEgASliV4QN03bp6QR.jpg",
+        "genre_ids": [
+          27,
+          35,
+          10402
+        ],
+        "id": 895744,
+        "original_language": "en",
+        "original_title": "Studio 666",
+        "overview": "Legendary rock band Foo Fighters move into an Encino mansion steeped in grisly rock and roll history to record their much anticipated 10th album. Once in the house, Dave Grohl finds himself grappling with supernatural forces that threaten both the completion of the album and the lives of the band.",
+        "popularity": 44.094,
+        "poster_path": "/zD2XyaV6eGEEgEzVnjg0hQVR5yz.jpg",
+        "release_date": "2022-02-24",
+        "title": "Studio 666",
+        "video": false,
+        "vote_average": 5.945,
+        "vote_count": 299,
+        "character": "Skye Willow",
+        "credit_id": "6189575dfe63180044bedb19",
+        "order": 9
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          53
+        ],
+        "id": 1093237,
+        "original_language": "en",
+        "original_title": "Hurry Up Tomorrow",
+        "overview": "A psychological thriller and an extension of The Weeknd's upcoming album of the same title.",
+        "popularity": 16.493,
+        "poster_path": "/3eGT8H8QaJgp4Kim8jxyWcVxX0T.jpg",
+        "release_date": "2025-05-16",
+        "title": "Hurry Up Tomorrow",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "",
+        "credit_id": "63fe42cecf62cd00811bbf34",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/3VPeJgFASkb2pWcvUXMnhSY2wl5.jpg",
+        "genre_ids": [
+          35,
+          14,
+          27
+        ],
+        "id": 917496,
+        "original_language": "en",
+        "original_title": "Beetlejuice Beetlejuice",
+        "overview": "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Betelgeuse, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.",
+        "popularity": 191.995,
+        "poster_path": "/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg",
+        "release_date": "2024-09-04",
+        "title": "Beetlejuice Beetlejuice",
+        "video": false,
+        "vote_average": 7.097,
+        "vote_count": 2184,
+        "character": "Astrid",
+        "credit_id": "640b25623a4a1200ee541a63",
+        "order": 3
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/iVped1djsF0tvGkvnHbzsE3ZPTF.jpg",
+        "genre_ids": [
+          28,
+          12,
+          878
+        ],
+        "id": 68721,
+        "original_language": "en",
+        "original_title": "Iron Man 3",
+        "overview": "When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.",
+        "popularity": 96.188,
+        "poster_path": "/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+        "release_date": "2013-04-18",
+        "title": "Iron Man 3",
+        "video": false,
+        "vote_average": 6.929,
+        "vote_count": 22260,
+        "character": "Vice President's Daughter",
+        "credit_id": "52fe47a0c3a368484e0d15f7",
+        "order": 72
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/urWUFTNw4fh5kKlvplcjfYwJGUA.jpg",
+        "genre_ids": [
+          35,
+          14,
+          27
+        ],
+        "id": 1153714,
+        "original_language": "en",
+        "original_title": "Death of a Unicorn",
+        "overview": "Elliot and his daughter Riley accidentally hit and kill a unicorn while en route to a weekend work retreat, where Elliot's billionaire boss seeks to exploit the creature's miraculous curative properties.",
+        "popularity": 21.388,
+        "poster_path": "/66sec2j6gubu2rD9hsXshomq7ix.jpg",
+        "release_date": "2025-03-28",
+        "title": "Death of a Unicorn",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Ridley",
+        "credit_id": "64b732ac5aadc40139d0fc0c",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/5LgLy0BEzGvVqii1ERftWrzQgFs.jpg",
+        "genre_ids": [
+          80,
+          18,
+          53
+        ],
+        "id": 507532,
+        "original_language": "en",
+        "original_title": "Finestkind",
+        "overview": "Two brothers from opposite sides of the tracks are reunited as adults. Desperate circumstances force them into a deal with an organized crime syndicate in Boston, and a young woman gets caught in the middle.",
+        "popularity": 46.301,
+        "poster_path": "/4Nj22XjqaOwc37IJ9WrOJ5UZi7q.jpg",
+        "release_date": "2023-09-08",
+        "title": "Finestkind",
+        "video": false,
+        "vote_average": 6.9,
+        "vote_count": 261,
+        "character": "Mabel",
+        "credit_id": "624c5687d34eb30053b2ed5f",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/vYDWXhE5ppOmr6xcMwUEtWd1dm4.jpg",
+        "genre_ids": [
+          9648,
+          53,
+          35,
+          27
+        ],
+        "id": 982752,
+        "original_language": "en",
+        "original_title": "American Carnage",
+        "overview": "After a governor issues an executive order to arrest the children of undocumented immigrants, the detained youth are offered an opportunity to have their charges dropped by volunteering to provide care to the elderly. Once inside the elder care facility, however, they discover more twisted secrets than they could have possibly imagined.",
+        "popularity": 21.86,
+        "poster_path": "/zQmwQqtT2KEfg5IO5u8lexZoCAR.jpg",
+        "release_date": "2022-07-15",
+        "title": "American Carnage",
+        "video": false,
+        "vote_average": 5.9,
+        "vote_count": 162,
+        "character": "Camila",
+        "credit_id": "6297d353cddbbc130cc575b9",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/j64H7GlYSarltRHJOl75jxLTRV6.jpg",
+        "genre_ids": [
+          53,
+          35,
+          18
+        ],
+        "id": 1026436,
+        "original_language": "en",
+        "original_title": "Miller's Girl",
+        "overview": "A talented young writer embarks on a creative odyssey when her teacher assigns a project that entangles them both.",
+        "popularity": 59.35,
+        "poster_path": "/ieU0zUj7WhE0GrgpgofRH0sNjbI.jpg",
+        "release_date": "2024-01-18",
+        "title": "Miller's Girl",
+        "video": false,
+        "vote_average": 6.464,
+        "vote_count": 711,
+        "character": "Cairo Sweet",
+        "credit_id": "63297d4e2dffd8007f21a1d3",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          878
+        ],
+        "id": 858035,
+        "original_language": "en",
+        "original_title": "Klara and the Sun",
+        "overview": "Klara, an Artificial Friend designed to prevent loneliness, is purchased by a mother and her bright teen daughter, Josie. Josie, who suffers from a mysterious illness, adores her new robot companion. On a quest to save Josie and those who love her from heartbreak, Klara learns the power of human love.",
+        "popularity": 7.487,
+        "poster_path": "/7fYFHdQPZJe2tgZExbNEk3l4Eqz.jpg",
+        "release_date": "",
+        "title": "Klara and the Sun",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Klara",
+        "credit_id": "6595fa7c869e756e3a0664ee",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/g3v4J60R5LjKmMwyv85RrjY8kFD.jpg",
+        "genre_ids": [
+          28,
+          12,
+          16
+        ],
+        "id": 1036956,
+        "original_language": "en",
+        "original_title": "Jurassic World Camp Cretaceous: Hidden Adventure",
+        "overview": "After a big storm, food is scarce — and hungry dinos are everywhere. It's up to you to help the Camp Fam survive in this thrilling interactive special.",
+        "popularity": 22.942,
+        "poster_path": "/7ZeqXAT3EXu9uhFXwhyKlH4NAlM.jpg",
+        "release_date": "2022-11-15",
+        "title": "Jurassic World Camp Cretaceous: Hidden Adventure",
+        "video": false,
+        "vote_average": 5.9,
+        "vote_count": 22,
+        "character": "Brooklynn (voice)",
+        "credit_id": "634edd5a9e458600811bbf1a",
+        "order": 3
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/w9oGwDTfTmJO1ltQKDDpzttPaTN.jpg",
+        "genre_ids": [
+          35,
+          10749,
+          18
+        ],
+        "id": 1059073,
+        "original_language": "en",
+        "original_title": "Winter Spring Summer or Fall",
+        "overview": "Remi and Barnes, two very different teenagers, meet by chance in the winter of their senior year, then spend four  days together over the course of a year that will change their lives forever.",
+        "popularity": 19.651,
+        "poster_path": "/eqtMRn27ztlRbFRvfHI9SXHSOns.jpg",
+        "release_date": "2024-12-27",
+        "title": "Winter Spring Summer or Fall",
+        "video": false,
+        "vote_average": 9.833,
+        "vote_count": 6,
+        "character": "Remi",
+        "credit_id": "63924be99e458600ce460d73",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/1vlNrrNG9eUhsU54WrN2o1Jjiks.jpg",
+        "genre_ids": [
+          18,
+          12
+        ],
+        "id": 352327,
+        "original_language": "en",
+        "original_title": "After Words",
+        "overview": "Jane Taylor, a librarian, has lost her job. Depressed and suicidal, she decides to take a final wonderful trip to Costa Rica before swallowing a bottle of pills. Once there, she meets a younger man, Juan, a vibrant tour guide who takes her on an unexpected journey filled with adventure and romance.",
+        "popularity": 8.004,
+        "poster_path": "/5dsg01mGPBnEh1X5cmdYAoDrC7A.jpg",
+        "release_date": "2015-08-21",
+        "title": "After Words",
+        "video": false,
+        "vote_average": 5.4,
+        "vote_count": 16,
+        "character": "Anna Chapa",
+        "credit_id": "55ba472792514123e700460f",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/a8fN0lCqOdeovidfeXsUz5wRJHt.jpg",
+        "genre_ids": [
+          10751,
+          10770,
+          80
+        ],
+        "id": 354832,
+        "original_language": "en",
+        "original_title": "The Cookie Mobster",
+        "overview": "A young mob member goes into the Witness Protection Program and settles into a quiet suburban village, where he falls for a local woman and gets involved with cookie-making fund-raising for her daughter's scout troop while dodging his former associates who have tracked him down.",
+        "popularity": 5.569,
+        "poster_path": "/tk8ykLikJupqgxOev5hAU5fgAOU.jpg",
+        "release_date": "2014-12-27",
+        "title": "The Cookie Mobster",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 8,
+        "character": "Nita",
+        "credit_id": "55d0dd4d9251413193007d8e",
+        "order": 11
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/IUAvR2UO7x03ir2k7PSURnqYB8.jpg",
+        "genre_ids": [
+          35,
+          9648,
+          10770
+        ],
+        "id": 352805,
+        "original_language": "en",
+        "original_title": "The Massively Mixed-Up Middle School Mystery",
+        "overview": "When the ultimate prank sends their principal under water, it's up to Everett, Alyssa and Riley to put their super detective skills to the test, catch the perp, and save their school's first dance in 40 years.",
+        "popularity": 2.843,
+        "poster_path": "/x9rlUQVHjsYji0saP5wKHfSSbhh.jpg",
+        "release_date": "2015-08-01",
+        "title": "The Massively Mixed-Up Middle School Mystery",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Elena Mendoza",
+        "credit_id": "55fdc8bcc3a36813340018ab",
+        "order": 4
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          27,
+          53
+        ],
+        "id": 1288211,
+        "original_language": "en",
+        "original_title": "Acorns",
+        "overview": "Having just tied the knot, two young newlyweds see their new life together haunted by a paranormal adversary in their new abode that endangers their still-fresh bond.",
+        "popularity": 3.069,
+        "poster_path": null,
+        "release_date": "",
+        "title": "Acorns",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "",
+        "credit_id": "66b0f9e71c1ff36fde84e5d8",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/yNSwYIAFeM39Rz1uJkFqTpjsZd3.jpg",
+        "genre_ids": [
+          14,
+          16,
+          10751,
+          10770
+        ],
+        "id": 427143,
+        "original_language": "en",
+        "original_title": "Elena and the Secret of Avalor",
+        "overview": "In the Kingdom of Avalor, Elena takes Naomi up a mountain to show her favorite view of the kingdom. Elena laments to Naomi how she was trapped in the Amulet of Avalor for forty-one years, and then presents to her a broken wand. She tells her that it was Shuriki's wand and how she would still be trapped in the Amulet if it was not for a brave young Princess: Sofia. Elena then proceeds to tell Naomi the whole story ...",
+        "popularity": 17.193,
+        "poster_path": "/6dknXo3Ny4J97eBRs9XKVwQc8fH.jpg",
+        "release_date": "2016-11-20",
+        "title": "Elena and the Secret of Avalor",
+        "video": false,
+        "vote_average": 7.2,
+        "vote_count": 82,
+        "character": "Princess Isabella (voice)",
+        "credit_id": "583f889cc3a36862e4002472",
+        "order": 15
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/rVtu9KtOL82a0B2Za284M52nBQy.jpg",
+        "genre_ids": [
+          27,
+          53
+        ],
+        "id": 91586,
+        "original_language": "en",
+        "original_title": "Insidious: Chapter 2",
+        "overview": "The haunted Lambert family seeks to uncover the mysterious childhood secret that has left them dangerously connected to the spirit world.",
+        "popularity": 51.451,
+        "poster_path": "/w5JjiB3O1CLDXbTJe1QpU5RHmlU.jpg",
+        "release_date": "2013-09-12",
+        "title": "Insidious: Chapter 2",
+        "video": false,
+        "vote_average": 6.67,
+        "vote_count": 4244,
+        "character": "Annie",
+        "credit_id": "593dcd2dc3a3680f6702572f",
+        "order": 23
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/vF4wYicYu7ws0IZXCpAdNVjCLKq.jpg",
+        "genre_ids": [
+          35
+        ],
+        "id": 260535,
+        "original_language": "en",
+        "original_title": "The Little Rascals Save the Day",
+        "overview": "When the Little Rascals are unable to raise enough money to save their grandma's bakery from shutting down, their only hope is to win a local talent show and use the prize money to save the shop.",
+        "popularity": 16.89,
+        "poster_path": "/6nuZUJge3egVZI1rPLVpjRHPMf7.jpg",
+        "release_date": "2014-03-25",
+        "title": "The Little Rascals Save the Day",
+        "video": false,
+        "vote_average": 6.2,
+        "vote_count": 106,
+        "character": "Mary Ann",
+        "credit_id": "5ae7b293c3a368134c018557",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/jIjhv1DilmZf1swzCzF3TTcfvuk.jpg",
+        "genre_ids": [
+          10402,
+          10751
+        ],
+        "id": 509423,
+        "original_language": "en",
+        "original_title": "Disney Parks Presents: A Descendants Magical Holiday Celebration",
+        "overview": "Aside from taking a look inside Disney Parks during the holiday season, the show features musical performances from both Disney Channel stars and famous faces from “Descendants 2!”  Disney Channel stars Dove Cameron, Cameron Boyce, Sofia Carson and Booboo Stewart will perform “Jolly to the Core,” while star China Anne McClain will sing “This Christmas.”  Additional musical performances include:  “Silent Night,” performed by Hollywood Records and Republic Records recording artist Sofia Carson.  Kelly Clarkson performing a song from her 2013 holiday album “Wrapped in Red.”  Forever In Your Mind performing “Celebrate.”  Trisha Yearwood and Garth Brooks perform a holiday duet from their new album, “Christmas Together\"",
+        "popularity": 3.871,
+        "poster_path": "/WFZJlEE0xyJmScvzCSu3Ow0aRd.jpg",
+        "release_date": "2016-11-25",
+        "title": "Disney Parks Presents: A Descendants Magical Holiday Celebration",
+        "video": true,
+        "vote_average": 7.567,
+        "vote_count": 15,
+        "character": "",
+        "credit_id": "5be63414c3a36817300057c3",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/fvkEWfD5ZIHCcBnV9dPctsYNwVO.jpg",
+        "genre_ids": [
+          12,
+          18,
+          10751
+        ],
+        "id": 570488,
+        "original_language": "en",
+        "original_title": "Saving Flora",
+        "overview": "Flora is a circus elephant who can no longer perform her tricks. The night before she's scheduled to be euthanized, the circus owner's 14-year old daughter, Dawn, sneaks Flora from the circus. All that stands between them and the safety of the elephant preserve is two hundred kilometers of woods, one raging river, two elephant hunters and the fear of not making it.",
+        "popularity": 16.737,
+        "poster_path": "/txFQFgjVQmQYFYvEFCbUlTJMYcs.jpg",
+        "release_date": "2019-12-06",
+        "title": "Saving Flora",
+        "video": false,
+        "vote_average": 7.1,
+        "vote_count": 54,
+        "character": "Dawn",
+        "credit_id": "5d050887c3a3680a571f3132",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/uNsmdvlrjTnbJmSRE4PBWasZXYd.jpg",
+        "genre_ids": [
+          35,
+          10749,
+          878
+        ],
+        "id": 630476,
+        "original_language": "en",
+        "original_title": "Wyrm",
+        "overview": "In an alternative 1990s a lonely, dinosaur-obsessed boy named Wyrm struggles to complete a unique school requirement in which students wear electronic collars that detach only upon engaging in their first kiss.",
+        "popularity": 14.689,
+        "poster_path": "/mspwdzcIF6sSQAGkuocsSkSCHGJ.jpg",
+        "release_date": "2019-09-21",
+        "title": "Wyrm",
+        "video": false,
+        "vote_average": 7.3,
+        "vote_count": 24,
+        "character": "Susie",
+        "credit_id": "5d7919b95b9508001013ac4a",
+        "order": 9
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/naUJGskMlDg2HZ0FhsaMG5xPF2K.jpg",
+        "genre_ids": [
+          35,
+          27
+        ],
+        "id": 623491,
+        "original_language": "en",
+        "original_title": "The Babysitter: Killer Queen",
+        "overview": "Two years after defeating a satanic cult led by his babysitter Bee, Cole's trying to forget his past and focus on surviving high school. But when old enemies unexpectedly return, Cole will once again have to outsmart the forces of evil.",
+        "popularity": 36.011,
+        "poster_path": "/imy1OoT1xddt2kqw6hhc4v01e8i.jpg",
+        "release_date": "2020-09-10",
+        "title": "The Babysitter: Killer Queen",
+        "video": false,
+        "vote_average": 6.353,
+        "vote_count": 1650,
+        "character": "Phoebe Atwell",
+        "credit_id": "5daa7a12223a8b001355bff2",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/cJwkku3SPprS0Splfgh8VFRd0xn.jpg",
+        "genre_ids": [
+          10751,
+          35
+        ],
+        "id": 638597,
+        "original_language": "en",
+        "original_title": "YES DAY",
+        "overview": "A mom and dad who usually say no decide to say yes to their kids' wildest requests — with a few ground rules — on a whirlwind day of fun and adventure.",
+        "popularity": 40.848,
+        "poster_path": "/rejrD9ovTHJbfmpLM0mbEliEPV6.jpg",
+        "release_date": "2021-03-11",
+        "title": "YES DAY",
+        "video": false,
+        "vote_average": 6.715,
+        "vote_count": 1200,
+        "character": "Katie Torres",
+        "credit_id": "5da057a6e54d5d0029829971",
+        "order": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/px60zmy3Dcdm8oeBgyDBDyBH2wc.jpg",
+        "genre_ids": [
+          10751
+        ],
+        "id": 724079,
+        "original_language": "en",
+        "original_title": "Stuck In The Waterpark - The Movie",
+        "overview": "Follow the fun as the Diaz family (of Disney Channel's \"Stuck in the Middle\") embarks on a family vacation at a water park!",
+        "popularity": 2.073,
+        "poster_path": "/nepNaKj8uOBv2UcP0soSbjFwJlY.jpg",
+        "release_date": "2017-02-03",
+        "title": "Stuck In The Waterpark - The Movie",
+        "video": false,
+        "vote_average": 8.7,
+        "vote_count": 3,
+        "character": "Harley Diaz",
+        "credit_id": "5f0c0a5e1f98d1003724907c",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/ifUfE79O1raUwbaQRIB7XnFz5ZC.jpg",
+        "genre_ids": [
+          27,
+          9648
+        ],
+        "id": 646385,
+        "original_language": "en",
+        "original_title": "Scream",
+        "overview": "Twenty-five years after a streak of brutal murders shocked the quiet town of Woodsboro, a new killer has donned the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town’s deadly past.",
+        "popularity": 147.998,
+        "poster_path": "/1m3W6cpgwuIyjtg5nSnPx7yFkXW.jpg",
+        "release_date": "2022-01-12",
+        "title": "Scream",
+        "video": false,
+        "vote_average": 6.7,
+        "vote_count": 3343,
+        "character": "Tara Carpenter",
+        "credit_id": "5f3d8a1f9590e300347350cb",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/70Rm9ItxKuEKN8iu6rNjfwAYUCJ.jpg",
+        "genre_ids": [
+          27,
+          9648,
+          53
+        ],
+        "id": 760104,
+        "original_language": "en",
+        "original_title": "X",
+        "overview": "In 1979, a group of young filmmakers set out to make an adult film in rural Texas, but when their reclusive, elderly hosts catch them in the act, the cast find themselves fighting for their lives.",
+        "popularity": 110.722,
+        "poster_path": "/lopZSVtXzhFY603E9OqF7O1YKsh.jpg",
+        "release_date": "2022-03-17",
+        "title": "X",
+        "video": false,
+        "vote_average": 6.754,
+        "vote_count": 3339,
+        "character": "Lorraine",
+        "credit_id": "5fa05fa5957ce500345a3512",
+        "order": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/lMWOcXVA62xnk1jSaz8iwrxVJR7.jpg",
+        "genre_ids": [
+          18
+        ],
+        "id": 795514,
+        "original_language": "en",
+        "original_title": "The Fallout",
+        "overview": "In the wake of a school tragedy, Vada, Mia and Quinton form a unique and dynamic bond as they navigate the never linear, often confusing journey to heal in a world that feels forever changed.",
+        "popularity": 59.694,
+        "poster_path": "/4ByHl9XRKR2iXbvF0ZilMRD1RcL.jpg",
+        "release_date": "2021-03-17",
+        "title": "The Fallout",
+        "video": false,
+        "vote_average": 7.588,
+        "vote_count": 1140,
+        "character": "Vada Cavell",
+        "credit_id": "60242443c2b9df0040a3916e",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          16,
+          14,
+          10751
+        ],
+        "id": 829155,
+        "original_language": "en",
+        "original_title": "Elena of Avalor: Realm of the Jaquins",
+        "overview": "",
+        "popularity": 0.001,
+        "poster_path": "/mC6v1l75pl55d3nyblEFV5WjaFz.jpg",
+        "release_date": "2017-08-12",
+        "title": "Elena of Avalor: Realm of the Jaquins",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Princess Isabel (voice)",
+        "credit_id": "66ef168792d39685383b27a6",
+        "order": 10
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [],
+        "id": 1379537,
+        "original_language": "en",
+        "original_title": "The Gallerist",
+        "overview": "A desperate gallerist conspires to sell a dead body at Art Basel Miami.",
+        "popularity": 4.13,
+        "poster_path": null,
+        "release_date": "",
+        "title": "The Gallerist",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "",
+        "credit_id": "6721310728bd966c9e66d758",
+        "order": 1
+      }
+    ],
+    "crew": [
+      {
+        "adult": false,
+        "backdrop_path": "/urWUFTNw4fh5kKlvplcjfYwJGUA.jpg",
+        "genre_ids": [
+          35,
+          14,
+          27
+        ],
+        "id": 1153714,
+        "original_language": "en",
+        "original_title": "Death of a Unicorn",
+        "overview": "Elliot and his daughter Riley accidentally hit and kill a unicorn while en route to a weekend work retreat, where Elliot's billionaire boss seeks to exploit the creature's miraculous curative properties.",
+        "popularity": 21.388,
+        "poster_path": "/66sec2j6gubu2rD9hsXshomq7ix.jpg",
+        "release_date": "2025-03-28",
+        "title": "Death of a Unicorn",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "credit_id": "654250769cc67b00df914280",
+        "department": "Production",
+        "job": "Executive Producer"
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/w9oGwDTfTmJO1ltQKDDpzttPaTN.jpg",
+        "genre_ids": [
+          35,
+          10749,
+          18
+        ],
+        "id": 1059073,
+        "original_language": "en",
+        "original_title": "Winter Spring Summer or Fall",
+        "overview": "Remi and Barnes, two very different teenagers, meet by chance in the winter of their senior year, then spend four  days together over the course of a year that will change their lives forever.",
+        "popularity": 19.651,
+        "poster_path": "/eqtMRn27ztlRbFRvfHI9SXHSOns.jpg",
+        "release_date": "2024-12-27",
+        "title": "Winter Spring Summer or Fall",
+        "video": false,
+        "vote_average": 9.833,
+        "vote_count": 6,
+        "credit_id": "639baa1d81a7fc00a263c3fc",
+        "department": "Production",
+        "job": "Executive Producer"
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          53
+        ],
+        "id": 1093237,
+        "original_language": "en",
+        "original_title": "Hurry Up Tomorrow",
+        "overview": "A psychological thriller and an extension of The Weeknd's upcoming album of the same title.",
+        "popularity": 16.493,
+        "poster_path": "/3eGT8H8QaJgp4Kim8jxyWcVxX0T.jpg",
+        "release_date": "2025-05-16",
+        "title": "Hurry Up Tomorrow",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0,
+        "credit_id": "63fe45227a4ee700b916d403",
+        "department": "Production",
+        "job": "Executive Producer"
+      }
+    ]
+  },
+  "tv_credits": {
+    "cast": [
+      {
+        "adult": false,
+        "backdrop_path": "/wMVqVtaQdtPJk09eFVEZyN05efT.jpg",
+        "genre_ids": [
+          10767
+        ],
+        "id": 93449,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Tamron Hall",
+        "overview": "Former news host and journalist Tamron Hall discusses all things topical and engages those she interviews in thorough meaningful and entertaining conversations.",
+        "popularity": 605.078,
+        "poster_path": "/pOqHc6Q47uGqnCps1DGVMaWyd9v.jpg",
+        "first_air_date": "2019-09-09",
+        "name": "Tamron Hall",
+        "vote_average": 4.9,
+        "vote_count": 15,
+        "character": "Self - Guest",
+        "credit_id": "603399b7d38b580041f2011d",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
+        "genre_ids": [
+          10765,
+          9648,
+          35
+        ],
+        "id": 119051,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Wednesday",
+        "overview": "Wednesday Addams is sent to Nevermore Academy, a bizarre boarding school where she attempts to master her psychic powers, stop a monstrous killing spree of the town citizens, and solve the supernatural mystery that affected her family 25 years ago — all while navigating her new relationships.",
+        "popularity": 264.104,
+        "poster_path": "/9PFonBhy4cQy7Jz20NpMygczOkv.jpg",
+        "first_air_date": "2022-11-23",
+        "name": "Wednesday",
+        "vote_average": 8.444,
+        "vote_count": 8783,
+        "character": "Wednesday Addams / Goody Addams",
+        "credit_id": "60a5553b9a9e20006f6079e9",
+        "episode_count": 8
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/2kyN0sNGQ9e0oRKshctByavEuPT.jpg",
+        "genre_ids": [
+          35
+        ],
+        "id": 42014,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "¡Rob!",
+        "overview": "Rob is an American comedy television series that premiered on CBS on January 12, 2012, at 8:30 pm as a midseason replacement for Rules of Engagement, and ended on March 1, 2012. The series stars Rob Schneider alongside Cheech Marin, Claudia Bassols, Diana Maria Riva, Eugenio Derbez, Ricky Rico, and Lupe Ontiveros. The show was produced by Two and a Half Men's The Tannenbaum Company and CBS Television Studios. On May 13, 2012, CBS canceled the series.",
+        "popularity": 16.257,
+        "poster_path": "/a8jlKhRSfmbfPYjehxY6KZIond3.jpg",
+        "first_air_date": "2012-01-12",
+        "name": "¡Rob!",
+        "vote_average": 5.3,
+        "vote_count": 13,
+        "character": "Girl",
+        "credit_id": "6455388a549dda00fed3e09c",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/p9NDsavucZYDubfpVellpFRvL9G.jpg",
+        "genre_ids": [
+          35,
+          18
+        ],
+        "id": 61418,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Jane the Virgin",
+        "overview": "A comedy-drama following a chaste young woman who is accidentally impregnated via artificial insemination as she struggles to inform her devoutly religious family and make the right choices concerning the child. Based on the telenovela \"Juana la virgen.\"",
+        "popularity": 258.097,
+        "poster_path": "/DRRHgvsNEfBloMgIP8bBw4zi4E.jpg",
+        "first_air_date": "2014-10-13",
+        "name": "Jane the Virgin",
+        "vote_average": 7.9,
+        "vote_count": 850,
+        "character": "Young Jane",
+        "credit_id": "5522103792514171cb002368",
+        "episode_count": 29
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/tVFAFovndLZKZejEx07lcFZg7G5.jpg",
+        "genre_ids": [
+          10751,
+          35,
+          10762,
+          18
+        ],
+        "id": 62626,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Richie Rich",
+        "overview": "Richie Rich is a boy who turned vegetables into a clean energy source. As a result, Rich now has over a trillion dollars. Rich lives with his family in a mansion filled with toys, contraptions, and his best friends Darcy and Murray are always by his side, along with Irona, Richie's robot maid, his dad Cliff, who loves naps and is a bit dense, and his jealous sister Harper. Also, Darcy loves spending money and Murray doesn't want anything out of budget.",
+        "popularity": 40.601,
+        "poster_path": "/hlFxrggqMC5NA6rtFdm81zUEnw4.jpg",
+        "first_air_date": "2015-02-20",
+        "name": "Richie Rich",
+        "vote_average": 5.844,
+        "vote_count": 32,
+        "character": "Darcy",
+        "credit_id": "554a7ecdc3a3683d41001be9",
+        "episode_count": 21
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/bCdap3i0gxGOVBKru5Gen5kCCVR.jpg",
+        "genre_ids": [
+          10764,
+          10759,
+          10762,
+          10751
+        ],
+        "id": 80900,
+        "origin_country": [],
+        "original_language": "en",
+        "original_name": "Disney QUIZney",
+        "overview": "A seven-minute interactive live game show in which players age 6+ test their knowledge of Disney stories and characters. Players watch the game on Disney Channel and play along via DisneyNOW on their computer, mobile device or tablet.",
+        "popularity": 15.191,
+        "poster_path": "/amV8gO5GZJUCkRAo0WKjTZtCp3m.jpg",
+        "first_air_date": "2018-07-16",
+        "name": "Disney QUIZney",
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Self",
+        "credit_id": "6148f375048638008c51f600",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/bfg3COqQzmaZqqaqmCruKoyjk72.jpg",
+        "genre_ids": [
+          35,
+          10763
+        ],
+        "id": 1667,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Saturday Night Live",
+        "overview": "A late-night live television sketch comedy and variety show created by Lorne Michaels. The show's comedy sketches, which parody contemporary culture and politics, are performed by a large and varying cast of repertory and newer cast members. Each episode is hosted by a celebrity guest, who usually delivers an opening monologue and performs in sketches with the cast, and features performances by a musical guest.",
+        "popularity": 274.161,
+        "poster_path": "/sHGuKFjIBisPk8cvtCZTDVktYfs.jpg",
+        "first_air_date": "1975-10-11",
+        "name": "Saturday Night Live",
+        "vote_average": 6.946,
+        "vote_count": 426,
+        "character": "Self - Host",
+        "credit_id": "64a0b74ac390c5010c6274f0",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/3kkTGvxNgO34q2aw3VKXAY3xtxP.jpg",
+        "genre_ids": [
+          16,
+          10762
+        ],
+        "id": 67175,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Elena of Avalor",
+        "overview": "The story of a brave teenager who has saved her kingdom from an evil sorceress and must now learn to rule as a crown princess until she’s old enough to be queen.",
+        "popularity": 124.716,
+        "poster_path": "/se8bejjwLz56qm1gOCLpVjK8iVk.jpg",
+        "first_air_date": "2016-07-22",
+        "name": "Elena of Avalor",
+        "vote_average": 6.7,
+        "vote_count": 70,
+        "character": "Princess Isabel (voice)",
+        "credit_id": "579169bec3a3683014002d1d",
+        "episode_count": 81
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/4yFC6KpX7bq45qNulUgP57wWP3r.jpg",
+        "genre_ids": [
+          35,
+          10751
+        ],
+        "id": 65291,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Stuck in the Middle",
+        "overview": "Harley is an engineering whiz who uses her inventions to navigate life as the middle child in a large family of seven kids.",
+        "popularity": 58.902,
+        "poster_path": "/oq377A9h9JPzp0Hhgv1FZcIYgP9.jpg",
+        "first_air_date": "2016-02-14",
+        "name": "Stuck in the Middle",
+        "vote_average": 7.7,
+        "vote_count": 116,
+        "character": "Harley Diaz",
+        "credit_id": "58b5cc3d925141788e000284",
+        "episode_count": 57
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/zv0KJTB36V59qBfVPd4c5FADQOk.jpg",
+        "genre_ids": [
+          10767
+        ],
+        "id": 108178,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Drew Barrymore Show",
+        "overview": "Drew Barrymore presents human-interest stories, celebrity guests, lifestyle segments and field pieces, all driven by her infectious brand of humor and optimism.",
+        "popularity": 120.509,
+        "poster_path": "/7X3BkHmyPUp2pbYeN1qITgKfrOz.jpg",
+        "first_air_date": "2020-09-14",
+        "name": "The Drew Barrymore Show",
+        "vote_average": 5.1,
+        "vote_count": 9,
+        "character": "Self",
+        "credit_id": "62486708a3b5e6004fabe023",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/31Ds7cJgrdxICNdLXS8r1eAwSSB.jpg",
+        "genre_ids": [
+          35,
+          10765
+        ],
+        "id": 105479,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Home Movie: The Princess Bride",
+        "overview": "Serialized remake of 'The Princess Bride' told in short chapters featuring celebrities at home during quarantine.",
+        "popularity": 29.693,
+        "poster_path": "/v2cyF2PZB2GQBP4fzGG57Xg0r3w.jpg",
+        "first_air_date": "2020-06-29",
+        "name": "Home Movie: The Princess Bride",
+        "vote_average": 7.5,
+        "vote_count": 14,
+        "character": "Princess Buttercup",
+        "credit_id": "625c1fcdf10a1a15eca9ad1a",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/riAGbIUpWdLJckBdI8McejwqLG5.jpg",
+        "genre_ids": [
+          10767
+        ],
+        "id": 105197,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Variety Studio: Actors on Actors",
+        "overview": "PBS SoCal and Variety take you inside the biggest movies and TV shows of the past year through candid conversations with today's hottest actors. Hosted by Variety Film Awards Editor Clayton Davis and Variety Chief Correspondent Elizabeth Wagmeister, each episode brings together pairs of actors engaging in intimate one-on-one discussions about their craft and work.",
+        "popularity": 223.817,
+        "poster_path": "/pgWZXYG0gTKkwRH9pTxoscFmq4H.jpg",
+        "first_air_date": "2014-12-21",
+        "name": "Variety Studio: Actors on Actors",
+        "vote_average": 4.4,
+        "vote_count": 7,
+        "character": "Self",
+        "credit_id": "6568e2d9d05a0300acb11d89",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/n8FhfKd8dqFsIaTHFI637j3lnOt.jpg",
+        "genre_ids": [],
+        "id": 122843,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Honest Trailers",
+        "overview": "Trailers that tell you the TRUTH about your favorite movies and TV shows: Honest Trailers. These are the hilarious trailers the producers don't want you to see...",
+        "popularity": 105.08,
+        "poster_path": "/5wZDu7JVXqmzJLthh1ngIfLmKIS.jpg",
+        "first_air_date": "2012-02-13",
+        "name": "Honest Trailers",
+        "vote_average": 6.34,
+        "vote_count": 25,
+        "character": "Wednesday Addams (archive footage)",
+        "credit_id": "65d2c7c0f495ee017c3fc058",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/hvYSliOoNPqwshl6Y5MrCGIfN1.jpg",
+        "genre_ids": [
+          18,
+          35
+        ],
+        "id": 50846,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Rake",
+        "overview": "Keegan Deane's staggering lack of discretion and inability to self-censor land him the law cases that nobody else will touch. He always tries to do the right thing, but at the same time struggles to save himself from the many self-destructive elements that plague his own life, including women and gambling.",
+        "popularity": 33.081,
+        "poster_path": "/5AdpBaq4nyKZclDrn9o4h7F15hP.jpg",
+        "first_air_date": "2014-01-23",
+        "name": "Rake",
+        "vote_average": 5.192,
+        "vote_count": 26,
+        "character": "Zoe Leon",
+        "credit_id": "63b5feae41aac400b84acdc0",
+        "episode_count": 7
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/p4GKINJxZoFbPEvX5NKIb4lzaL.jpg",
+        "genre_ids": [
+          80,
+          18,
+          9648
+        ],
+        "id": 2458,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "CSI: NY",
+        "overview": "Follow the investigations of a team of NYPD forensic scientists and police officers identified as \"Crime Scene Investigators\".",
+        "popularity": 432.734,
+        "poster_path": "/4TGV4Bb3OPay4cHkQRlfwghv3vC.jpg",
+        "first_air_date": "2004-09-22",
+        "name": "CSI: NY",
+        "vote_average": 7.355,
+        "vote_count": 691,
+        "character": "Aimee Moore",
+        "credit_id": "63b5fe01af9590007cdafded",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/gYlaIY0BuFsHf4LwQ90lcCeVMFv.jpg",
+        "genre_ids": [
+          10751,
+          10765
+        ],
+        "id": 65002,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Deadtime Stories",
+        "overview": "A baby-sitter tells a different 'Deadtime Story' to the kids she is babysitting. The stories are scary and chilling.",
+        "popularity": 66.022,
+        "poster_path": "/DiSWSRKf4x6aWVfYbewdj4dkpk.jpg",
+        "first_air_date": "2012-11-02",
+        "name": "Deadtime Stories",
+        "vote_average": 7.5,
+        "vote_count": 12,
+        "character": "Little Girl",
+        "credit_id": "63b5fe4c1d1bf400d37b8465",
+        "episode_count": 2
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/vVGmv5mle6lCrgnx8lNv5Q1vZPw.jpg",
+        "genre_ids": [
+          10751,
+          16,
+          35
+        ],
+        "id": 80587,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Big City Greens",
+        "overview": "The offbeat adventures of 10-year-old Cricket Green, a mischievous and optimistic country boy who moves to the big city with his wildly out of place family – older sister Tilly, father Bill and Gramma Alice.",
+        "popularity": 116.755,
+        "poster_path": "/buRk2Vrz8UhF5nZUOADSRZLEU1f.jpg",
+        "first_air_date": "2018-06-18",
+        "name": "Big City Greens",
+        "vote_average": 7.3,
+        "vote_count": 56,
+        "character": "Gabriella Espinosa (voice)",
+        "credit_id": "63b600fda9117f0571a57397",
+        "episode_count": 6
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/7AsO1EES3cxHSiAHK8rNxbKYBYt.jpg",
+        "genre_ids": [
+          10751,
+          35
+        ],
+        "id": 66456,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Bizaardvark",
+        "overview": "The live-action comedy follows comedy duo Paige and Frankie, two quirky teens who write funny songs and create music comedy videos for their online channel. With the help of friend and aspiring agent Bernie plus Vuuugle stars Dirk and Amelia, the best friends embark on comedic adventures in their quest to take the video blogging world by storm.",
+        "popularity": 176.451,
+        "poster_path": "/r3zf9m6nvK55KhMukTqAg5rVEW7.jpg",
+        "first_air_date": "2016-06-24",
+        "name": "Bizaardvark",
+        "vote_average": 7.2,
+        "vote_count": 74,
+        "character": "Izzy",
+        "credit_id": "63b600321d1bf400828a74b0",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/2ZNFu0hkSVtAI6LRWGIlCPNd1Tj.jpg",
+        "genre_ids": [
+          18
+        ],
+        "id": 78191,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "You",
+        "overview": "A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.",
+        "popularity": 289.776,
+        "poster_path": "/7bEYwjUvlJW7GerM8GYmqwl4oS3.jpg",
+        "first_air_date": "2018-09-09",
+        "name": "You",
+        "vote_average": 8.047,
+        "vote_count": 3223,
+        "character": "Ellie Alves",
+        "credit_id": "5e049b7c0284200019b70619",
+        "episode_count": 10
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/iNt4CmfX70UlqFG6Ixxnhto3IOA.jpg",
+        "genre_ids": [
+          10767,
+          35
+        ],
+        "id": 72649,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Hot Ones",
+        "overview": "The show with hot questions and even hotter wings invites a famous guest over to eat and then interviews them while they're struggling through the heat.",
+        "popularity": 227.13,
+        "poster_path": "/4uudasFgKCVQFNGqfanD6wEGVS1.jpg",
+        "first_air_date": "2015-03-12",
+        "name": "Hot Ones",
+        "vote_average": 7.4,
+        "vote_count": 53,
+        "character": "Self",
+        "credit_id": "6400d08b9653f600853db635",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/4WIglfr4lDFVjCEcXzCeu6cJsOh.jpg",
+        "genre_ids": [
+          16,
+          10762,
+          10759,
+          10751
+        ],
+        "id": 93741,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Jurassic World Camp Cretaceous",
+        "overview": "Six teens attending an adventure camp on the opposite side of Isla Nublar must band together to survive when dinosaurs wreak havoc on the island.",
+        "popularity": 75.811,
+        "poster_path": "/nkCbCmlwjwT6QL44DqG7qE9ch8H.jpg",
+        "first_air_date": "2020-09-18",
+        "name": "Jurassic World Camp Cretaceous",
+        "vote_average": 8.015,
+        "vote_count": 1839,
+        "character": "Brooklynn (voice)",
+        "credit_id": "5f4f7beb87a27a0037a086a7",
+        "episode_count": 41
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/nQ0EZKbC2YtczfVLwyU5Hm9ESGe.jpg",
+        "genre_ids": [
+          9648,
+          10765,
+          16,
+          10751,
+          35
+        ],
+        "id": 61617,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Over the Garden Wall",
+        "overview": "Two brothers, Wirt and Greg, find themselves lost in the Unknown; a strange forest adrift in time. With the help of a wise old Woodsman and a foul-tempered bluebird named Beatrice, Wirt and Greg must travel across this strange land, in hope of finding their way home. Join them as they encounter surprises and obstacles on their journey through the wood.",
+        "popularity": 67.047,
+        "poster_path": "/m3lU8n7WxzMecxKZcqhq5y5ESy.jpg",
+        "first_air_date": "2014-11-03",
+        "name": "Over the Garden Wall",
+        "vote_average": 8.6,
+        "vote_count": 1483,
+        "character": "Additional Voices (voice)",
+        "credit_id": "5f85caccf3b49a0034b2ef4d",
+        "episode_count": 1
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/rLbXHqHqnme6FIE0UtkV4LUI7pz.jpg",
+        "genre_ids": [
+          35,
+          10767
+        ],
+        "id": 59941,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Tonight Show Starring Jimmy Fallon",
+        "overview": "After Jay Leno's second retirement from the program, Jimmy Fallon stepped in as his permanent replacement. After 42 years in Los Angeles the program was brought back to New York.",
+        "popularity": 636.453,
+        "poster_path": "/g4amxJvtpnY79J77xeamnAEUO8r.jpg",
+        "first_air_date": "2014-02-17",
+        "name": "The Tonight Show Starring Jimmy Fallon",
+        "vote_average": 5.8,
+        "vote_count": 317,
+        "character": "Self",
+        "credit_id": "66e0b88dc360d27b275ede3c",
+        "episode_count": 3
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/h8DfQ6HdlzsPq5BnUqYcXOfRFk7.jpg",
+        "genre_ids": [
+          80,
+          9648
+        ],
+        "id": 277030,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "SCREAM",
+        "overview": "",
+        "popularity": 18.85,
+        "poster_path": "/QgGJSbVLTdtna2xmICD8gY8wuU.jpg",
+        "first_air_date": "1997-01-31",
+        "name": "SCREAM",
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Tara Carpenter",
+        "credit_id": "673608bbff85881393a0a895",
+        "episode_count": 6
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          99
+        ],
+        "id": 278397,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "My Generation",
+        "overview": "High-profile narrators Forest Whitaker, Ethan Hawke, Kristen Bell, Jenna Ortega and Azul Estrada guide viewers through generational histories via original interviews with those who witnessed major events firsthand.",
+        "popularity": 11.364,
+        "poster_path": "/A9KAFlzol3KF5aNRzKZRiwt4Xep.jpg",
+        "first_air_date": "2024-10-05",
+        "name": "My Generation",
+        "vote_average": 0,
+        "vote_count": 0,
+        "character": "Narrator",
+        "credit_id": "67493a091650a5e35338ece8",
+        "episode_count": 1
+      }
+    ],
+    "crew": []
+  }
+}
