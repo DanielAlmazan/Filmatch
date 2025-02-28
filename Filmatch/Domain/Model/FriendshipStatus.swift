@@ -8,9 +8,9 @@
 import Foundation
 
 enum FriendshipStatus: Int, Sendable, Codable {
-  case notRelated
-  case sent
-  case received
-  case friend
-  case blocked
+  case notRelated = 0
+  case sent = 1
+  case received = 2
+  case friend = 3
+  case blocked = 4
 }

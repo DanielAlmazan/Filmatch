@@ -15,9 +15,11 @@ struct SearchUsersView: View {
   ]
   
   @State private var searchUserVm: SearchUserViewModel
+  @State private var friendsVm: FriendsViewModel
 
-  init(searchUserVm: SearchUserViewModel) {
+  init(searchUserVm: SearchUserViewModel, friendsVm: FriendsViewModel) {
     self.searchUserVm = searchUserVm
+    self.friendsVm = friendsVm
   }
 
   var body: some View {
@@ -26,7 +28,8 @@ struct SearchUsersView: View {
       if let users = self.searchUserVm.users, !users.isEmpty {
         UsersListView(
           users: users,
-          onAction: { user, action in Task { await searchUserVm.handleFriendshipAction(for: user, action: action) } },
+          onAction: handleFriendshipAction,
+          onDelete: onDelete,
           onLastAppeared: { self.searchUsers() }
         )
       }
@@ -38,6 +41,16 @@ struct SearchUsersView: View {
     .padding()
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("Add Friends")
+  }
+  
+  private func onDelete(user: OtterMatchUser) {
+    self.searchUserVm.onResultRemoval(user: user)
+  }
+  
+  private func handleFriendshipAction(user: Binding<OtterMatchUser>, action: FriendshipAction) {
+    Task {
+      await friendsVm.handleFriendshipAction(for: user, do: action)
+    }
   }
   
   private func searchUsers() {
@@ -65,9 +78,15 @@ struct SearchUsersView: View {
               client: OtterMatchHttpClient()
             )
           )
+        ),
+        friendsVm: FriendsViewModel(
+          otterMatchRepository: OtterMatchGoRepositoryImpl(
+            datasource: OtterMatchGoDatasourceImpl(
+              client: OtterMatchHttpClient()
+            )
+          )
         )
       )
     }
   }
-
 }

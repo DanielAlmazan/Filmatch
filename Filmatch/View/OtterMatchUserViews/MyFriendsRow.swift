@@ -11,6 +11,9 @@ struct MyFriendsRow: View {
   let friends: [OtterMatchUser]
   let height: CGFloat
 
+  @Environment(OtterMatchGoRepositoryImpl.self) var otterMatchRepository
+  @Environment(FriendsViewModel.self) var friendsVm
+
   @State private var isShowingSearchUsersView: Bool = false
   @State private var searchUsersVm: SearchUserViewModel
 
@@ -27,10 +30,10 @@ struct MyFriendsRow: View {
           isShowingSearchUsersView = true
         }.sheet(isPresented: $isShowingSearchUsersView) {
           NavigationStack {
-            SearchUsersView(searchUserVm: self.searchUsersVm)
+            SearchUsersView(searchUserVm: self.searchUsersVm, friendsVm: friendsVm)
           }
         }
-        
+
         if !friends.isEmpty {
           ForEach(friends) { friend in
             SimpleUserInfoView(user: friend, size: height)

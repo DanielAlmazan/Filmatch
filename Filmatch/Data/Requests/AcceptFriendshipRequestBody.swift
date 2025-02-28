@@ -15,7 +15,7 @@ final class AcceptFriendshipRequestBody: Sendable, Encodable {
   }
   
   private enum CodingKeys: String, CodingKey {
-    case friendUid = "friend_uid"
+    case friendUid = "sender_uid"
   }
   
   func encode(to encoder: any Encoder) throws {

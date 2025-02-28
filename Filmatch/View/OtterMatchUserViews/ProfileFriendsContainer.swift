@@ -15,6 +15,7 @@ struct ProfileFriendsContainer: View {
   @Binding var friends: [OtterMatchUser]?
   
   @Environment(OtterMatchGoRepositoryImpl.self) private var otterMatchGoRepository
+  @Environment(FriendsViewModel.self) private var friendsVm
 
   var body: some View {
     VStack(alignment: .leading) {
@@ -25,7 +26,7 @@ struct ProfileFriendsContainer: View {
         Spacer()
         
         NavigationLink {
-          MyFriendsView()
+          MyFriendsView(friendsVm: friendsVm)
         } label: {
           Text("See all")
         }

@@ -17,7 +17,8 @@ struct ProfileSummary: View {
   init(
     user: OtterMatchUser,
     otterMatchRepository: OtterMatchGoRepositoryImpl,
-    filtersRepository: FiltersRepository
+    filtersRepository: FiltersRepository,
+    friendsVm: FriendsViewModel
   ) {
     self.user = user
     self.profileVm = .init(
@@ -25,7 +26,7 @@ struct ProfileSummary: View {
       otterMatchRepository: otterMatchRepository,
       filtersRepository: filtersRepository
     )
-    self.friendsVm = .init(otterMatchRepository: otterMatchRepository)
+    self.friendsVm = friendsVm
   }
 
   var body: some View {
@@ -37,7 +38,7 @@ struct ProfileSummary: View {
       ProfileFriendsContainer(
         title: "My Friends",
         height: kRowsHeight,
-        isLoading: self.$friendsVm.areFriendsLoading,
+        isLoading: self.$friendsVm.isLoadingFriends,
         friends: self.$friendsVm.friends)
       
       // MARK: - Own lists
@@ -65,7 +66,7 @@ struct ProfileSummary: View {
     .padding()
     .navigationTitle(Text(user.username ?? "Profile"))
     .task {
-      await self.friendsVm.loadFriends(at: 1)
+      await self.friendsVm.loadFriends()
       await self.profileVm.loadProviders()
       // await self.profileVm.loadSuperLikedItems()
       await self.profileVm.loadLikedItems()
@@ -84,16 +85,26 @@ struct ProfileSummary: View {
   @Previewable let filtersRepository = FiltersRepositoryImpl(
     filtersDatasource: JsonFiltersDatasource()
   )
-
-  VStack {
-    ProfileSummary(
-      user: .default,
-      otterMatchRepository: otterMatchRepository,
-      filtersRepository: filtersRepository
+  @Previewable var friendsVm = FriendsViewModel(
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
+      )
     )
+  )
+
+  NavigationStack {
+    VStack {
+      ProfileSummary(
+        user: .default,
+        otterMatchRepository: otterMatchRepository,
+        filtersRepository: filtersRepository,
+        friendsVm: friendsVm
+      )
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.bgBase)
+    .environment(otterMatchRepository)
+    .environment(filtersRepository)
   }
-  .frame(maxWidth: .infinity, maxHeight: .infinity)
-  .background(.bgBase)
-  .environment(otterMatchRepository)
-  .environment(filtersRepository)
 }

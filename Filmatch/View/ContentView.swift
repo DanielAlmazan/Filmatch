@@ -17,6 +17,7 @@ struct ContentView: View {
   @State var filtersRepository: FiltersRepositoryImpl
   @State var personRepository: PersonRepositoryImpl
   @State var otterMatchGoRepository: OtterMatchGoRepositoryImpl
+  @State var friendsVm: FriendsViewModel
 
   init() {
     let client = TMDBHttpClient()
@@ -39,6 +40,14 @@ struct ContentView: View {
         client: OtterMatchHttpClient(urlBase: API.otterMatchBaseURL)
       )
     )
+    
+    self.friendsVm = .init(
+      otterMatchRepository: OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(
+          client: OtterMatchHttpClient()
+        )
+      )
+    )
   }
 
   var body: some View {
@@ -56,6 +65,14 @@ struct ContentView: View {
           .environment(filtersRepository)
           .environment(personRepository)
           .environment(otterMatchGoRepository)
+          .environment(friendsVm)
+          .onAppear {
+            Task {
+              if friendsVm.friendRequests == nil &&  !friendsVm.isLoadingRequests {
+                await friendsVm.loadFriendRequests()
+              }
+            }
+          }
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)

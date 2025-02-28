@@ -13,6 +13,7 @@
 		850494BA2CA33C4E00C44BC9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 850494B92CA33C4E00C44BC9 /* FirebaseAuth */; };
 		850494BC2CA33C4E00C44BC9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 850494BB2CA33C4E00C44BC9 /* FirebaseCrashlytics */; settings = {ATTRIBUTES = (Required, ); }; };
 		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
+		856BEC062D71F5810079328A /* FriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BEC052D71F5810079328A /* FriendRequestsView.swift */; };
 		857A27E82D05A68A0080993C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 857A27E72D05A68A0080993C /* README.md */; };
 		85C087BA2D6FB495000D4374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C087B62D6FB495000D4374 /* Config.swift */; };
 		85C087BB2D6FB495000D4374 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85C087B82D6FB495000D4374 /* Release.xcconfig */; };
@@ -240,6 +241,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		856BEC052D71F5810079328A /* FriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestsView.swift; sourceTree = "<group>"; };
 		857A27E72D05A68A0080993C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		85C087B62D6FB495000D4374 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		85C087B72D6FB495000D4374 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -843,6 +845,7 @@
 				85C088752D6FB4F9000D4374 /* AddFriendsButton.swift */,
 				85C088762D6FB4F9000D4374 /* MyFriendsRow.swift */,
 				85C088772D6FB4F9000D4374 /* MyFriendsView.swift */,
+				856BEC052D71F5810079328A /* FriendRequestsView.swift */,
 				85C088782D6FB4F9000D4374 /* ProfileFriendsContainer.swift */,
 				85C088792D6FB4F9000D4374 /* SearchUsersGridView.swift */,
 				85C0887A2D6FB4F9000D4374 /* SearchUsersView.swift */,
@@ -1283,6 +1286,7 @@
 				85C0895B2D6FB4F9000D4374 /* NetworkModel.swift in Sources */,
 				85C0895C2D6FB4F9000D4374 /* SignInGoogleHelper.swift in Sources */,
 				85C0895D2D6FB4F9000D4374 /* TvSeriesDetailView.swift in Sources */,
+				856BEC062D71F5810079328A /* FriendRequestsView.swift in Sources */,
 				85C0895E2D6FB4F9000D4374 /* AuthenticationResultModel.swift in Sources */,
 				85C0895F2D6FB4F9000D4374 /* ProfileFriendsContainer.swift in Sources */,
 				85C089602D6FB4F9000D4374 /* MovieFirstDetailsRow.swift in Sources */,
@@ -1471,11 +1475,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Filmatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Filmatch/Data/TestData Filmatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1511,11 +1516,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Filmatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Filmatch/Data/TestData Filmatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

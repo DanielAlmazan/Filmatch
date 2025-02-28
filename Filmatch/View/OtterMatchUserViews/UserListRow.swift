@@ -1,29 +1,36 @@
 import SwiftUI
 
 struct UserListRow: View {
-  let user: OtterMatchUser
-  let onAction: (OtterMatchUser, FriendshipAction) -> Void
+  @State var user: OtterMatchUser
+  let onAction: (Binding<OtterMatchUser>, FriendshipAction) -> Void
+  let onDelete: (OtterMatchUser) -> Void
+  let onLastAppeared: () -> Void
+  
+  let kSize: CGFloat = 60
   
   var body: some View {
     HStack {
-      UserAvatarView(user: user, size: 60)
-      Text(user.username ?? "No username")
-        .font(.headline)
-        .frame(maxWidth: .infinity, alignment: .leading)
-      
-      FriendshipActionProvider.getActionsView(for: user) { user, action in
-        onAction(user, action)
+      VStack(alignment: .center) {
+        UserAvatarView(user: user, size: kSize)
+        Text(user.username ?? "No username")
+          .font(.caption)
+          .lineLimit(1)
       }
+      .frame(maxWidth: kSize, alignment: .leading)
+      
+      Spacer()
+      
+      FriendshipActionProvider.getActionsView(for: $user, onAction: onAction, onDelete: onDelete)
       .lineLimit(1)
       
       Menu {
         if user.friendshipStatus == .blocked {
           Button("Unblock", role: .destructive) {
-            onAction(user, .unblock)
+            onAction($user, .unblock)
           }
         } else {
           Button("Block", role: .destructive) {
-            onAction(user, .block)
+            onAction($user, .block)
           }
         }
       } label: {
@@ -36,14 +43,23 @@ struct UserListRow: View {
     .background(.bgContainer)
     .clipShape(.rect(cornerRadius: 10))
     .shadow(radius: 5, y: 5)
+    .onAppear(perform: onLastAppeared)
   }
 }
 
 #Preview {
   VStack {
     UserListRow(
+      user: .default,
+      onAction: { user, action in print("Sent friend request") },
+      onDelete: { user in print("Deleted") },
+      onLastAppeared: { print("Last appeared") }
+    )
+    UserListRow(
       user: .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
-      onAction: { user, action in print("Sent friend request") }
+      onAction: { user, action in print("Sent friend request") },
+      onDelete: { user in print("Deleted") },
+      onLastAppeared: { print("Last appeared") }
     )
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)

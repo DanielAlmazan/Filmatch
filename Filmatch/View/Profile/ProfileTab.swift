@@ -12,6 +12,7 @@ struct ProfileTab: View {
   @Environment(AuthenticationViewModel.self) var authVm
   @Environment(OtterMatchGoRepositoryImpl.self) var otterMatchRepository
   @Environment(FiltersRepositoryImpl.self) var filtersRepository
+  @Environment(FriendsViewModel.self) var friendsVm
   
   @State private var showAlert = false
   @State private var alertMessage: LocalizedStringResource = ""
@@ -27,7 +28,8 @@ struct ProfileTab: View {
           ProfileSummary(
             user: user,
             otterMatchRepository: otterMatchRepository,
-            filtersRepository: filtersRepository
+            filtersRepository: filtersRepository,
+            friendsVm: friendsVm
           )
             .frame(maxWidth: .infinity)
           
