@@ -1471,11 +1471,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Filmatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Filmatch/Data/TestData Filmatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1511,11 +1512,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Filmatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Filmatch/Data/TestData Filmatch/Preview\\ Content";
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

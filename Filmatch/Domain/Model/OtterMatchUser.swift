@@ -43,3 +43,9 @@ extension OtterMatchUser: Equatable {
     && lhs.friendshipStatus == rhs.friendshipStatus
   }
 }
+
+extension [OtterMatchUser]? {
+  mutating func setUsers(_ users: [OtterMatchUser]) {
+    self == nil ? self = users : self!.append(contentsOf: users)
+  }
+}

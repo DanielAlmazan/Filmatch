@@ -239,6 +239,30 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     }
   }
   
+  func getUserFriendRequests(at page: Int) async -> Result<FriendshipsResponse, Error> {
+    let result = await client.request(
+      path: .friendship,
+      method: .GET,
+      queryParams: [
+        .init(name: "page", value: "\(page)")
+      ]
+    )
+    
+    switch result {
+    case .success(let data):
+      do {
+        let response = try JSONDecoder().decode(FriendshipsResponse.self, from: data)
+        return .success(response)
+      } catch {
+        print("Error getting friend requests: \(error)")
+        return .failure(error)
+      }
+    case .failure(let error):
+      print("Error getting friend requests: \(error)")
+      return .failure(error)
+    }
+  }
+
   func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error> {
     let result = await client.request(
       path: .search,

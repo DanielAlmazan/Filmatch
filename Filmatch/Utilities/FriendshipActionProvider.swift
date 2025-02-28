@@ -5,6 +5,8 @@
 //  Created by Daniel Enrique Almazán Sellés on 24/2/25.
 //
 
+import SwiftUI
+
 enum FriendshipAction {
   case sendRequest
   case cancelRequest
@@ -15,14 +17,12 @@ enum FriendshipAction {
   case unblock
 }
 
-import SwiftUI
-
 struct FriendshipActionProvider {
   static func getActionSheet(
     for user: OtterMatchUser,
     onAction: @escaping (OtterMatchUser, FriendshipAction) -> Void
   ) -> ActionSheet {
-    
+
     let actions: [ActionSheet.Button] = {
       switch user.friendshipStatus {
       case .notRelated:
@@ -33,7 +33,7 @@ struct FriendshipActionProvider {
           .destructive(Text("Block")) {
             onAction(user, .block)
           },
-          .cancel()
+          .cancel(),
         ]
       case .sent:
         return [
@@ -43,7 +43,7 @@ struct FriendshipActionProvider {
           .destructive(Text("Block")) {
             onAction(user, .block)
           },
-          .cancel()
+          .cancel(),
         ]
       case .received:
         return [
@@ -56,7 +56,7 @@ struct FriendshipActionProvider {
           .destructive(Text("Block")) {
             onAction(user, .block)
           },
-          .cancel()
+          .cancel(),
         ]
       case .friend:
         return [
@@ -66,54 +66,64 @@ struct FriendshipActionProvider {
           .destructive(Text("Block")) {
             onAction(user, .block)
           },
-          .cancel()
+          .cancel(),
         ]
       case .blocked:
         return [
           .default(Text("Unblock")) {
             onAction(user, .unblock)
           },
-          .cancel()
+          .cancel(),
         ]
       case nil:
         return [.cancel()]
       }
     }()
-    
+
     return ActionSheet(title: Text(user.username ?? "User"), buttons: actions)
   }
-  
+
   @MainActor
   @ViewBuilder
-  static func getActionsView(for user: OtterMatchUser, onAction: @escaping (OtterMatchUser, FriendshipAction) -> Void) -> some View {
-    switch user.friendshipStatus {
+  static func getActionsView(
+    for user: Binding<OtterMatchUser>,
+    onAction: @escaping (Binding<OtterMatchUser>, FriendshipAction) -> Void,
+    onDelete: @escaping (OtterMatchUser) -> Void
+  ) -> some View {
+    switch user.wrappedValue.friendshipStatus {
     case .notRelated:
       Button("Add") { onAction(user, .sendRequest) }
         .buttonStyle(.borderedProminent)
-      
+
     case .sent:
       Button("Cancel Request") { onAction(user, .deleteFriend) }
         .buttonStyle(.bordered)
-      
+
     case .received:
       HStack {
-        Button("Accept") { onAction(user, .acceptRequest) }
-          .buttonStyle(.borderedProminent)
-        Button("Reject") { onAction(user, .deleteFriend) }
-          .buttonStyle(.bordered)
-      }
-      
-    case .friend:
-      Button("Remove Friend") { onAction(user, .deleteFriend) }
+        Button("Reject") {
+          onAction(user, .deleteFriend)
+          onDelete(user.wrappedValue)
+        }
         .buttonStyle(.bordered)
-      
+        Button("Accept") {
+          onAction(user, .acceptRequest)
+          onDelete(user.wrappedValue)
+        }
+        .buttonStyle(.borderedProminent)
+      }
+
+    case .friend, nil:
+      Button("Remove Friend") {
+        onAction(user, .deleteFriend)
+        onDelete(user.wrappedValue)
+      }
+      .buttonStyle(.bordered)
+
     case .blocked:
-      Button("Blocked") {} // Disabled, managed via the kebab menu
+      Button("Blocked") {}  // Disabled, managed via the kebab menu
         .disabled(true)
         .buttonStyle(.bordered)
-      
-    case nil:
-      EmptyView()
     }
   }
 }
