@@ -46,7 +46,7 @@ final class FriendsViewModel {
     
     switch friendsResult {
     case .success(let response):
-      self.friends.setUsers(response.results.toOtterMatchUsers())
+      self.friends.setUsers(response.results.toOtterMatchUsers(as: .friend))
       self.totalFriendsPages = response.totalPages
       self.currentFriendsPage += 1
     case .failure(let error):
@@ -64,7 +64,7 @@ final class FriendsViewModel {
     
     switch friendRequestsResult {
     case .success(let response):
-      self.friendRequests.setUsers(response.results.toOtterMatchUsers())
+      self.friendRequests.setUsers(response.results.toOtterMatchUsers(as: .received))
       self.totalFriendRequestsPages = response.totalPages
       self.currentFriendRequestsPage += 1
     case .failure(let error):
