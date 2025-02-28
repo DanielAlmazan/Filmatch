@@ -52,8 +52,8 @@ struct UserAvatarView: View {
           }
           .retry(maxCount: 3, interval: .seconds(5))
           .resizable()
-          .scaledToFit()
           .clipShape(.circle)
+          .aspectRatio(contentMode: .fill)
           .frame(width: size, height: size)
       }
     }

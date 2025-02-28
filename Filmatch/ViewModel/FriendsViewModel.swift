@@ -58,6 +58,8 @@ final class FriendsViewModel {
   
   @MainActor
   func loadFriendRequests() async {
+    isLoadingRequests = true
+    
     let friendRequestsResult = await otterMatchRepository.getUserFriendRequests(at: currentFriendRequestsPage)
     
     switch friendRequestsResult {
@@ -68,11 +70,19 @@ final class FriendsViewModel {
     case .failure(let error):
       print(error)
     }
+
+    isLoadingRequests = false
   }
   
   func onFriendRemoval(user: OtterMatchUser) {
     if self.friends != nil, let index = self.friends!.firstIndex(of: user) {
       self.friends!.remove(at: index)
+    }
+  }
+  
+  func onRequestRemoval(user: OtterMatchUser) {
+    if self.friendRequests != nil, let index = self.friendRequests!.firstIndex(of: user) {
+      self.friendRequests!.remove(at: index)
     }
   }
   

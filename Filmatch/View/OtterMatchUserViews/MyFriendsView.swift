@@ -16,14 +16,23 @@ struct MyFriendsView: View {
   
   var body: some View {
     VStack {
+      if let users = self.friendsVm.friendRequests, !users.isEmpty {
+        FriendRequestsView(
+          users: users,
+          onAction: handleFriendshipAction,
+          onDelete: onRequestProcessed,
+          onLastAppeared: onLastRequestAppeared
+        )
+      }
+
       if friendsVm.isLoadingFriends {
         ProgressView("Loading friends...")
       } else if !friendsVm.filteredFriends.isEmpty {
         UsersListView(
           users: friendsVm.filteredFriends,
           onAction: handleFriendshipAction,
-          onDelete: onDelete,
-          onLastAppeared: { Task { await friendsVm.loadFriends() } }
+          onDelete: onFriendRemoval,
+          onLastAppeared: onLastFriendAppeared
         )
       } else {
         Text("No friends found")
@@ -34,9 +43,26 @@ struct MyFriendsView: View {
     .navigationTitle("My Friends")
     .padding()
     .task { initLists() }
+    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
   }
   
-  private func onDelete(user: OtterMatchUser) {
+  private func onLastRequestAppeared() {
+    if self.friendsVm.isLoadingRequests {
+      Task { await friendsVm.loadFriendRequests() }
+    }
+  }
+  
+  private func onLastFriendAppeared() {
+    if self.friendsVm.isLoadingFriends {
+      Task { await friendsVm.loadFriends() }
+    }
+  }
+  
+  private func onRequestProcessed(user: OtterMatchUser) {
+    self.friendsVm.onRequestRemoval(user: user)
+  }
+  
+  private func onFriendRemoval(user: OtterMatchUser) {
     self.friendsVm.onFriendRemoval(user: user)
   }
   
