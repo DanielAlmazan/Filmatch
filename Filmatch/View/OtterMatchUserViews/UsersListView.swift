@@ -43,6 +43,7 @@ struct UsersListView: View {
       onAction: { user, action in print("Unblocked user") },
       onDelete: { user in print("Deleted user") }
     ) { print("Last item appeared") }
+      .border(.onBgBase)
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .padding()

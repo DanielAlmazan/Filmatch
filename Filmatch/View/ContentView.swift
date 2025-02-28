@@ -66,6 +66,13 @@ struct ContentView: View {
           .environment(personRepository)
           .environment(otterMatchGoRepository)
           .environment(friendsVm)
+          .onAppear {
+            Task {
+              if friendsVm.friendRequests == nil &&  !friendsVm.isLoadingRequests {
+                await friendsVm.loadFriendRequests()
+              }
+            }
+          }
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)

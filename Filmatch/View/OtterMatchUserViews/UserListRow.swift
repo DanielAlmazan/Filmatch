@@ -6,12 +6,19 @@ struct UserListRow: View {
   let onDelete: (OtterMatchUser) -> Void
   let onLastAppeared: () -> Void
   
+  let kSize: CGFloat = 60
+  
   var body: some View {
     HStack {
-      UserAvatarView(user: user, size: 60)
-      Text(user.username ?? "No username")
-        .font(.headline)
-        .frame(maxWidth: .infinity, alignment: .leading)
+      VStack(alignment: .center) {
+        UserAvatarView(user: user, size: kSize)
+        Text(user.username ?? "No username")
+          .font(.caption)
+          .lineLimit(1)
+      }
+      .frame(maxWidth: kSize, alignment: .leading)
+      
+      Spacer()
       
       FriendshipActionProvider.getActionsView(for: $user, onAction: onAction, onDelete: onDelete)
       .lineLimit(1)
@@ -42,6 +49,12 @@ struct UserListRow: View {
 
 #Preview {
   VStack {
+    UserListRow(
+      user: .default,
+      onAction: { user, action in print("Sent friend request") },
+      onDelete: { user in print("Deleted") },
+      onLastAppeared: { print("Last appeared") }
+    )
     UserListRow(
       user: .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
       onAction: { user, action in print("Sent friend request") },
