@@ -15,6 +15,14 @@ enum FriendshipAction {
   case deleteFriend
   case block
   case unblock
+  
+  var isDestructive: Bool {
+    self == .cancelRequest ||
+    self == .acceptRequest ||
+    self == .rejectRequest ||
+    self == .deleteFriend ||
+    self == .block
+  }
 }
 
 struct FriendshipActionProvider {
@@ -87,8 +95,7 @@ struct FriendshipActionProvider {
   @ViewBuilder
   static func getActionsView(
     for user: Binding<OtterMatchUser>,
-    onAction: @escaping (Binding<OtterMatchUser>, FriendshipAction) -> Void,
-    onDelete: @escaping (OtterMatchUser) -> Void
+    onAction: @escaping (Binding<OtterMatchUser>, FriendshipAction) -> Void
   ) -> some View {
     switch user.wrappedValue.friendshipStatus {
     case .notRelated:
@@ -103,20 +110,17 @@ struct FriendshipActionProvider {
       HStack {
         Button("Reject") {
           onAction(user, .deleteFriend)
-          onDelete(user.wrappedValue)
         }
         .buttonStyle(.bordered)
         Button("Accept") {
           onAction(user, .acceptRequest)
-          onDelete(user.wrappedValue)
         }
         .buttonStyle(.borderedProminent)
       }
 
     case .friend, nil:
-      Button("Remove Friend") {
+      Button("Remove") {
         onAction(user, .deleteFriend)
-        onDelete(user.wrappedValue)
       }
       .buttonStyle(.bordered)
 

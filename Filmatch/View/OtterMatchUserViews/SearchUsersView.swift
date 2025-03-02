@@ -25,12 +25,11 @@ struct SearchUsersView: View {
   var body: some View {
     VStack {
       SearchField(query: self.$searchUserVm.query, onSubmit: searchUsers)
-      if let users = self.searchUserVm.users, !users.isEmpty {
+      if let users = self.searchUserVm.users {
         UsersListView(
           users: users,
           onAction: handleFriendshipAction,
-          onDelete: onDelete,
-          onLastAppeared: { self.searchUsers() }
+          onLastAppeared: loadMoreUsers
         )
       }
       
@@ -42,21 +41,17 @@ struct SearchUsersView: View {
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("Add Friends")
   }
-  
-  private func onDelete(user: OtterMatchUser) {
-    self.searchUserVm.onResultRemoval(user: user)
-  }
-  
+
   private func handleFriendshipAction(user: Binding<OtterMatchUser>, action: FriendshipAction) {
-    Task {
-      await friendsVm.handleFriendshipAction(for: user, do: action)
-    }
+    friendsVm.handleFriendshipAction(for: user, do: action)
   }
   
   private func searchUsers() {
-    Task {
-      await self.searchUserVm.searchUsers()
-    }
+    Task { await searchUserVm.searchUsers() }
+  }
+
+  private func loadMoreUsers() {
+    Task { await searchUserVm.loadMoreResults() }
   }
 }
 

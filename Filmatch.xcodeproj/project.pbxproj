@@ -14,6 +14,7 @@
 		850494BC2CA33C4E00C44BC9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 850494BB2CA33C4E00C44BC9 /* FirebaseCrashlytics */; settings = {ATTRIBUTES = (Required, ); }; };
 		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
 		856BEC062D71F5810079328A /* FriendRequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BEC052D71F5810079328A /* FriendRequestsView.swift */; };
+		856BEC082D7370FF0079328A /* FilmatchGoQueryParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BEC072D7370FF0079328A /* FilmatchGoQueryParam.swift */; };
 		857A27E82D05A68A0080993C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 857A27E72D05A68A0080993C /* README.md */; };
 		85C087BA2D6FB495000D4374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C087B62D6FB495000D4374 /* Config.swift */; };
 		85C087BB2D6FB495000D4374 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85C087B82D6FB495000D4374 /* Release.xcconfig */; };
@@ -242,6 +243,7 @@
 
 /* Begin PBXFileReference section */
 		856BEC052D71F5810079328A /* FriendRequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestsView.swift; sourceTree = "<group>"; };
+		856BEC072D7370FF0079328A /* FilmatchGoQueryParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmatchGoQueryParam.swift; sourceTree = "<group>"; };
 		857A27E72D05A68A0080993C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		85C087B62D6FB495000D4374 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		85C087B72D6FB495000D4374 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 				85C0881F2D6FB4F9000D4374 /* OtterMatchGoPaths.swift */,
 				85C088202D6FB4F9000D4374 /* OtterMatchHttpClient.swift */,
 				85C088212D6FB4F9000D4374 /* TMDBError.swift */,
+				856BEC072D7370FF0079328A /* FilmatchGoQueryParam.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1238,6 +1241,7 @@
 				85C0892B2D6FB4F9000D4374 /* DismissButton.swift in Sources */,
 				85C0892C2D6FB4F9000D4374 /* OtterMatchGoUserResponse.swift in Sources */,
 				85C0892D2D6FB4F9000D4374 /* OtterMatchUserResponse.swift in Sources */,
+				856BEC082D7370FF0079328A /* FilmatchGoQueryParam.swift in Sources */,
 				85C0892E2D6FB4F9000D4374 /* DetailItem.swift in Sources */,
 				85C0892F2D6FB4F9000D4374 /* SearchField.swift in Sources */,
 				85C089302D6FB4F9000D4374 /* SecureFieldWithRevealButton.swift in Sources */,

@@ -89,7 +89,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     let result = await client.request(
       path: .userVisitedTv,
       method: .GET,
-      queryParams: [URLQueryItem(name: "ids", value: ids)]
+      queryParams: [.ids(ids)]
     )
     
     switch result {
@@ -109,7 +109,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     let result = await client.request(
       path: .userVisitedMovies,
       method: .GET,
-      queryParams: [URLQueryItem(name: "ids", value: ids)]
+      queryParams: [.ids(ids)]
     )
     
     switch result {
@@ -150,7 +150,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     let result = await client.request(
       path: .userVisitedFilter,
       method: .GET,
-      queryParams: [.init(name: "filters_hash", value: hash)]
+      queryParams: [.filtersHash(hash)]
     )
     
     switch result {
@@ -171,8 +171,8 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       path: .userVisitedMoviesList(uid),
       method: .GET,
       queryParams: [
-        .init(name: "status", value: "\(status.rawValue)"),
-        .init(name: "page", value: "\(page)")
+        .interestStatus(status),
+        .page(page)
       ]
     )
     
@@ -198,8 +198,8 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       path: .userVisitedTvList(uid),
       method: .GET,
       queryParams: [
-        .init(name: "status", value: "\(status.rawValue)"),
-        .init(name: "page", value: "\(page)")
+        .interestStatus(status),
+        .page(page)
       ]
     )
     
@@ -221,7 +221,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       path: .friends,
       method: .GET,
       queryParams: [
-        .init(name: "page", value: "\(page)")
+        .page(page)
       ]
     )
     
@@ -244,7 +244,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       path: .friendship,
       method: .GET,
       queryParams: [
-        .init(name: "page", value: "\(page)")
+        .page(page)
       ]
     )
     
@@ -263,13 +263,24 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     }
   }
 
-  func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error> {
+  func searchUsers(containing query: String, at page: Int, with statuses: [FriendshipStatus]?, sortedBy status: FriendshipStatus?) async -> Result<SearchUsersResponse, Error> {
+    var queryParams = [FilmatchGoQueryParam]()
+
+    queryParams.append(.query(query))
+    queryParams.append(.page(page))
+
+    if let statuses = statuses {
+      queryParams.append(.friendshipStatuses(statuses))
+    }
+
+    if let status = status {
+      queryParams.append(.sortByStatusFirst(status))
+    }
+    
     let result = await client.request(
       path: .search,
       method: .GET,
-      queryParams: [
-        .init(name: "query", value: query)
-      ]
+      queryParams: queryParams
     )
     
     switch result {

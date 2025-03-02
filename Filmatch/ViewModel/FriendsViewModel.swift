@@ -12,111 +12,141 @@ import SwiftUI
 final class FriendsViewModel {
   let otterMatchRepository: OtterMatchGoRepository
   
+  // MARK: - Search Items
   var searchText: String = ""
-  var filteredFriends: [OtterMatchUser] {
-    guard self.friends != nil, !searchText.isEmpty else { return friends ?? [] }
-    
-    return friends!.filter { friend in
-      guard let username = friend.username else { return false }
-      return username.lowercased().contains(searchText.lowercased())
-    }
-  }
-  
-  var isLoadingFriends: Bool = false
+  private var currentSearchText: String?
+
+  // MARK: - Friends Pagination
   var totalFriendsPages: Int = 1
   var currentFriendsPage: Int = 1
   var friends: [OtterMatchUser]?
-  
-  var isLoadingRequests: Bool = false
+
+  // MARK: - Friendship Requests Pagination
   var totalFriendRequestsPages: Int = 1
   var currentFriendRequestsPage: Int = 1
   var friendRequests: [OtterMatchUser]?
+
+  // MARK: - Loading Flags
+  var isLoadingFriends: Bool = false
+  var isLoadingRequests: Bool = false
   
   init(otterMatchRepository: OtterMatchGoRepository) {
     self.otterMatchRepository = otterMatchRepository
   }
-  
+
+  // MARK: - Public functions
+
+  @MainActor
+  func searchUsers() async {
+    guard currentSearchText != searchText || currentSearchText == nil else { return }
+
+    currentSearchText = searchText
+    resetFriends()
+    resetFriendRequests()
+
+    await loadFriends()
+    await loadFriendRequests()
+  }
+
   @MainActor
   func loadFriends() async {
-    guard self.totalFriendsPages >= currentFriendsPage else { return }
+    guard totalFriendsPages >= currentFriendsPage else { return }
     
     isLoadingFriends = true
     
-    let friendsResult = await otterMatchRepository.getUserFriends(at: currentFriendsPage)
+    let friendsResult = await otterMatchRepository.searchUsers(
+      containing: currentSearchText ?? "",
+      at: currentFriendsPage,
+      with: [.friend]
+    )
     
     switch friendsResult {
     case .success(let response):
-      self.friends.setUsers(response.results.toOtterMatchUsers(as: .friend))
-      self.totalFriendsPages = response.totalPages
-      self.currentFriendsPage += 1
+      friends.setUsers(response.results.toOtterMatchUsers(as: .friend))
+      totalFriendsPages = response.totalPages
     case .failure(let error):
       print(error)
     }
     
     isLoadingFriends = false
   }
+
+  @MainActor
+  func loadMoreFriends() async {
+    currentFriendsPage += 1
+    await loadFriends()
+  }
   
   @MainActor
   func loadFriendRequests() async {
+    guard totalFriendRequestsPages >= currentFriendRequestsPage else { return }
+    
     isLoadingRequests = true
     
-    let friendRequestsResult = await otterMatchRepository.getUserFriendRequests(at: currentFriendRequestsPage)
+    let friendRequestsResult = await otterMatchRepository.searchUsers(
+      containing: currentSearchText ?? "",
+      at: currentFriendRequestsPage,
+      with: [.received]
+    )
     
     switch friendRequestsResult {
     case .success(let response):
-      self.friendRequests.setUsers(response.results.toOtterMatchUsers(as: .received))
-      self.totalFriendRequestsPages = response.totalPages
-      self.currentFriendRequestsPage += 1
+      friendRequests.setUsers(response.results.toOtterMatchUsers(as: .received))
+      totalFriendRequestsPages = response.totalPages
     case .failure(let error):
       print(error)
     }
-
+    
     isLoadingRequests = false
   }
-  
-  func onFriendRemoval(user: OtterMatchUser) {
-    if self.friends != nil, let index = self.friends!.firstIndex(of: user) {
-      self.friends!.remove(at: index)
-    }
-  }
-  
-  func onRequestRemoval(user: OtterMatchUser) {
-    if self.friendRequests != nil, let index = self.friendRequests!.firstIndex(of: user) {
-      self.friendRequests!.remove(at: index)
-    }
+
+  @MainActor
+  func loadMoreFriendRequests() async {
+    currentFriendRequestsPage += 1
+    await loadFriendRequests()
   }
   
   @MainActor
-  func handleFriendshipAction(for user: Binding<OtterMatchUser>, do action: FriendshipAction) async {
-    let result: Result<Void, Error>
+  func handleFriendshipAction(
+    for user: Binding<OtterMatchUser>,
+    do action: FriendshipAction
+  ) {
+    var result: Result<Void, Error>?
     let uid = user.wrappedValue.uid
+    let oldStatus = user.wrappedValue.friendshipStatus
     
-    switch action {
-    case .sendRequest:
-      result = await otterMatchRepository.sendFriendshipRequest(to: uid)
-    case .cancelRequest:
-      result = await otterMatchRepository.removeFriendship(with: uid)
-    case .acceptRequest:
-      result = await otterMatchRepository.acceptFriendshipRequest(from: uid)
-    case .rejectRequest:
-      result = await otterMatchRepository.removeFriendship(with: uid)
-    case .deleteFriend:
-      result = await otterMatchRepository.removeFriendship(with: uid)
-    case .block:
-      result = await otterMatchRepository.blockUser(with: uid)
-    case .unblock:
-      result = await otterMatchRepository.unblockUser(with: uid)
-    }
+    updateUserFriendshipState(for: user, when: action)
     
-    switch result {
-    case .success:
-      updateUserFriendshipState(for: user, when: action)
-    case .failure(let error):
-      print("Error: \(error.localizedDescription)")
+    Task {
+      result =
+      switch action {
+      case .sendRequest:
+        await otterMatchRepository.sendFriendshipRequest(to: uid)
+      case .cancelRequest:
+        await otterMatchRepository.removeFriendship(with: uid)
+      case .acceptRequest:
+        await otterMatchRepository.acceptFriendshipRequest(from: uid)
+      case .rejectRequest:
+        await otterMatchRepository.removeFriendship(with: uid)
+      case .deleteFriend:
+        await otterMatchRepository.removeFriendship(with: uid)
+      case .block:
+        await otterMatchRepository.blockUser(with: uid)
+      case .unblock:
+        await otterMatchRepository.unblockUser(with: uid)
+      }
+      
+      if case .failure = result {
+        user.wrappedValue.friendshipStatus = oldStatus
+      }
     }
   }
 
-  private func updateUserFriendshipState(for user: Binding<OtterMatchUser>, when action: FriendshipAction) {
+  // MARK: Private functions
+
+  private func updateUserFriendshipState(
+    for user: Binding<OtterMatchUser>, when action: FriendshipAction
+  ) {
     switch action {
     case .sendRequest:
       user.wrappedValue.friendshipStatus = .sent
@@ -129,5 +159,17 @@ final class FriendsViewModel {
     case .unblock:
       user.wrappedValue.friendshipStatus = .notRelated
     }
+  }
+
+  private func resetFriends() {
+    friends = nil
+    totalFriendsPages = 1
+    currentFriendsPage = 1
+  }
+
+  private func resetFriendRequests() {
+    friendRequests = nil
+    totalFriendRequestsPages = 1
+    currentFriendRequestsPage = 1
   }
 }

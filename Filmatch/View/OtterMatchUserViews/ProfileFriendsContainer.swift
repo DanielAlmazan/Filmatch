@@ -27,6 +27,7 @@ struct ProfileFriendsContainer: View {
         
         NavigationLink {
           MyFriendsView(friendsVm: friendsVm)
+            .background(.bgBase)
         } label: {
           Text("See all")
         }
@@ -63,16 +64,26 @@ struct ProfileFriendsContainer: View {
     .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil, friendshipStatus: .friend),
     .init(email: nil, username: "miiraculous_one", uid: "FirebaseUID", photoUrl: nil, friendshipStatus: .received)
   ]
-  
+  @Previewable @State var friendsVm: FriendsViewModel = .init(
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
+      )
+    )
+  )
+
   VStack {
-    ProfileFriendsContainer(
-      title: "My Friends",
-      height: 90,
-      isLoading: .constant(false),
-      friends: $friends)
+    NavigationStack {
+      ProfileFriendsContainer(
+        title: "My Friends",
+        height: 90,
+        isLoading: .constant(false),
+        friends: $friends)
+    }
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(.bgBase)
+  .environment(friendsVm)
   .environment(
     OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(
@@ -86,6 +97,13 @@ struct ProfileFriendsContainer: View {
 #Preview("Simulating loading") {
   @Previewable @State var isLoading: Bool = true
   @Previewable @State var friends: [OtterMatchUser]?
+  @Previewable @State var friendsVm: FriendsViewModel = .init(
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
+      )
+    )
+  )
 
   VStack {
     ProfileFriendsContainer(
@@ -107,6 +125,7 @@ struct ProfileFriendsContainer: View {
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(.bgBase)
+  .environment(friendsVm)
   .environment(
     OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(

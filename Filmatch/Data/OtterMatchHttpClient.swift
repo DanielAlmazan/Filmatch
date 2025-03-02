@@ -19,7 +19,7 @@ final class OtterMatchHttpClient: OtterMatchClient {
   func request(
     path: OtterMatchGoPaths,
     method: HTTPMethods = .GET,
-    queryParams: [URLQueryItem]? = nil,
+    queryParams: [FilmatchGoQueryParam]? = nil,
     body: Data? = nil,
     acceptedStatusCodes: [Int] = Array(200...299)
   ) async -> Result<Data, Error> {
@@ -80,7 +80,7 @@ final class OtterMatchHttpClient: OtterMatchClient {
   }
 
   private func buildURL(
-    for path: OtterMatchGoPaths, with queryParams: [URLQueryItem]?
+    for path: OtterMatchGoPaths, with queryParams: [FilmatchGoQueryParam]?
   ) -> Result<URL, Error> {
     guard let urlBase,
       var components = URLComponents(
@@ -90,7 +90,7 @@ final class OtterMatchHttpClient: OtterMatchClient {
     }
     
     if let queryParams = queryParams, !queryParams.isEmpty {
-      components.queryItems = (components.queryItems ?? []) + queryParams
+      components.queryItems = (components.queryItems ?? []) + queryParams.urlQueryItems
     }
 
     guard let finalURL = components.url else {

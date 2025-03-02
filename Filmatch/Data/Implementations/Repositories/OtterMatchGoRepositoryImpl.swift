@@ -63,8 +63,8 @@ final class OtterMatchGoRepositoryImpl: OtterMatchGoRepository {
     await self.datasource.getUserFriendRequests(at: page)
   }
 
-  func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error> {
-    await self.datasource.searchUsers(containing: query, at: page)
+  func searchUsers(containing query: String = "", at page: Int = 1, with statuses: [FriendshipStatus]? = nil, sortedBy status: FriendshipStatus? = nil) async -> Result<SearchUsersResponse, Error> {
+    await self.datasource.searchUsers(containing: query, at: page, with: statuses, sortedBy: status)
   }
   
   func sendFriendshipRequest(to uid: String) async -> Result<Void, Error> {

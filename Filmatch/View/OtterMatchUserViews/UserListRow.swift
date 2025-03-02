@@ -3,8 +3,6 @@ import SwiftUI
 struct UserListRow: View {
   @State var user: OtterMatchUser
   let onAction: (Binding<OtterMatchUser>, FriendshipAction) -> Void
-  let onDelete: (OtterMatchUser) -> Void
-  let onLastAppeared: () -> Void
   
   let kSize: CGFloat = 60
   
@@ -20,7 +18,7 @@ struct UserListRow: View {
       
       Spacer()
       
-      FriendshipActionProvider.getActionsView(for: $user, onAction: onAction, onDelete: onDelete)
+      FriendshipActionProvider.getActionsView(for: $user, onAction: onAction)
       .lineLimit(1)
       
       Menu {
@@ -43,7 +41,6 @@ struct UserListRow: View {
     .background(.bgContainer)
     .clipShape(.rect(cornerRadius: 10))
     .shadow(radius: 5, y: 5)
-    .onAppear(perform: onLastAppeared)
   }
 }
 
@@ -51,15 +48,11 @@ struct UserListRow: View {
   VStack {
     UserListRow(
       user: .default,
-      onAction: { user, action in print("Sent friend request") },
-      onDelete: { user in print("Deleted") },
-      onLastAppeared: { print("Last appeared") }
+      onAction: { user, action in print("Sent friend request") }
     )
     UserListRow(
       user: .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
-      onAction: { user, action in print("Sent friend request") },
-      onDelete: { user in print("Deleted") },
-      onLastAppeared: { print("Last appeared") }
+      onAction: { user, action in print("Sent friend request") }
     )
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)

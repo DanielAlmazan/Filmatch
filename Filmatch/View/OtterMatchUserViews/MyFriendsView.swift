@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyFriendsView: View {
   @State private var friendsVm: FriendsViewModel
+  @State private var isFriendshipRequestsExpanded: Bool = true
   
   init(friendsVm: FriendsViewModel) {
     self.friendsVm = friendsVm
@@ -16,59 +17,87 @@ struct MyFriendsView: View {
   
   var body: some View {
     VStack {
-      if let users = self.friendsVm.friendRequests, !users.isEmpty {
-        FriendRequestsView(
-          users: users,
-          onAction: handleFriendshipAction,
-          onDelete: onRequestProcessed,
-          onLastAppeared: onLastRequestAppeared
-        )
+      SearchField(query: self.$friendsVm.searchText) {
+        searchUsers()
       }
+      .padding()
+      
+      List {
+        if let requests = self.friendsVm.friendRequests {
+          Section(isExpanded: $isFriendshipRequestsExpanded, content: {
+            ForEach(requests) { user in
+              UserListRow(
+                user: user,
+                onAction: onRequestTapped
+              )
+              .onAppear {
+                if requests.last == user {
+                  onLastRequestAppeared()
+                }
+              }
+              .listRowSeparator(.hidden)
+            }
+            .listRowBackground(Color.clear)
+          }, header: {
+            Text("Friendship Requests")
+              .font(.title2)
+              .fontWeight(.semibold)
+          })
+        }
 
-      if friendsVm.isLoadingFriends {
-        ProgressView("Loading friends...")
-      } else if !friendsVm.filteredFriends.isEmpty {
-        UsersListView(
-          users: friendsVm.filteredFriends,
-          onAction: handleFriendshipAction,
-          onDelete: onFriendRemoval,
-          onLastAppeared: onLastFriendAppeared
-        )
-      } else {
-        Text("No friends found")
-          .foregroundColor(.gray)
+        if let friends = self.friendsVm.friends {
+          Section(content: {
+            ForEach(friends) { friend in
+              UserListRow(
+                user: friend,
+                onAction: onFriendTapped
+              )
+              .onAppear {
+                if friends.last == friend {
+                  onLastFriendAppeared()
+                }
+              }
+              .listRowSeparator(.hidden)
+            }
+            .listRowBackground(Color.clear)
+          }, header: {
+            Text("Friends")
+              .font(.title2)
+              .fontWeight(.semibold)
+          })
+        }
       }
+      .listStyle(.sidebar)
+      .scrollContentBackground(.hidden)
     }
-    .searchable(text: self.$friendsVm.searchText)
     .navigationTitle("My Friends")
-    .padding()
     .task { initLists() }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
   }
   
+  private func searchUsers() {
+    Task {
+      await friendsVm.searchUsers()
+    }
+  }
+  
+  private func onFriendTapped(for user: Binding<OtterMatchUser>, do action: FriendshipAction) {
+    self.friendsVm.handleFriendshipAction(for: user, do: action)
+  }
+
+  private func onRequestTapped(for user: Binding<OtterMatchUser>, do action: FriendshipAction) {
+    self.friendsVm.handleFriendshipAction(for: user, do: action)
+  }
+  
   private func onLastRequestAppeared() {
     if self.friendsVm.isLoadingRequests {
-      Task { await friendsVm.loadFriendRequests() }
+      Task { await friendsVm.loadMoreFriendRequests() }
     }
   }
   
   private func onLastFriendAppeared() {
     if self.friendsVm.isLoadingFriends {
-      Task { await friendsVm.loadFriends() }
-    }
-  }
-  
-  private func onRequestProcessed(user: OtterMatchUser) {
-    self.friendsVm.onRequestRemoval(user: user)
-  }
-  
-  private func onFriendRemoval(user: OtterMatchUser) {
-    self.friendsVm.onFriendRemoval(user: user)
-  }
-  
-  private func handleFriendshipAction(user: Binding<OtterMatchUser>, do action: FriendshipAction) {
-    Task {
-      await friendsVm.handleFriendshipAction(for: user, do: action)
+      Task { await friendsVm.loadMoreFriends() }
     }
   }
   

@@ -143,8 +143,8 @@ extension [FriendshipSingleResponse] {
 }
 
 extension [OtterMatchUserResponse] {
-  func toOtterMatchUsers() -> [OtterMatchUser] {
-    self.map { $0.toOtterMatchUser(as: nil) }
+  func toOtterMatchUsers(as status: FriendshipStatus = .notRelated) -> [OtterMatchUser] {
+    self.map { $0.toOtterMatchUser(as: status) }
   }
 }
 

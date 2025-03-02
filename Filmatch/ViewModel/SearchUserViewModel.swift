@@ -26,6 +26,7 @@ final class SearchUserViewModel {
   
   @MainActor
   func searchUsers() async {
+    print("Searching users for \(self.query) at page \(currentPage)...")
     if self.query != currentQuery {
       resetSearch()
       currentQuery = self.query
@@ -33,7 +34,7 @@ final class SearchUserViewModel {
       return
     }
     
-    guard !isLoading, totalPages >= currentPage, !self.query.isEmpty else { return }
+    guard !isLoading, !self.query.isEmpty else { return }
     
     errorMessage = nil
     isLoading = true
@@ -42,23 +43,23 @@ final class SearchUserViewModel {
 
     switch result {
     case .success(let usersResult):
-      setUsers(usersResult.results.toOtterMatchUsers())
+      self.users.setUsers(usersResult.results.toOtterMatchUsers())
       self.totalPages = usersResult.totalPages
-      self.currentPage += 1
+      print("Total results: \(usersResult.totalResults)")
     case .failure(let error):
       self.errorMessage = error.localizedDescription
       print("Error searching users containing \(self.query) at page \(currentPage): \(error)")
     }
+    print("Total: \(String(describing: self.users?.count))")
     
     isLoading = false
   }
-  
-  private func setUsers(_ users: [OtterMatchUser]) {
-    if self.users == nil {
-      self.users = users
-    } else {
-      self.users!.append(contentsOf: users)
-    }
+
+  @MainActor
+  func loadMoreResults() async {
+    guard !isLoading, totalPages > currentPage else { return }
+    currentPage += 1
+    await searchUsers()
   }
   
   @MainActor
@@ -67,11 +68,5 @@ final class SearchUserViewModel {
     self.currentPage = 1
     self.totalPages = 1
     self.errorMessage = nil
-  }
-  
-  func onResultRemoval(user: OtterMatchUser) {
-    if users != nil, let index = users!.firstIndex(of: user) {
-      users!.remove(at: index)
-    }
   }
 }

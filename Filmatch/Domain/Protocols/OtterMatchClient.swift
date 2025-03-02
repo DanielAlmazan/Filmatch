@@ -11,7 +11,7 @@ protocol OtterMatchClient: Sendable {
   func request(
     path: OtterMatchGoPaths,
     method: HTTPMethods,
-    queryParams: [URLQueryItem]?,
+    queryParams: [FilmatchGoQueryParam]?,
     body: Data?,
     acceptedStatusCodes: [Int]
   ) async -> Result<Data, Error>
@@ -21,7 +21,7 @@ extension OtterMatchClient {
   func request(
     path: OtterMatchGoPaths,
     method: HTTPMethods,
-    queryParams: [URLQueryItem]? = nil,
+    queryParams: [FilmatchGoQueryParam]? = nil,
     body: Data? = nil,
     acceptedStatusCodes: [Int] = Array(200...299)
   ) async -> Result<Data, Error> {

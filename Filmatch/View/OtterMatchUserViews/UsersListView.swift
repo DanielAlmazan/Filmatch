@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct UsersListView: View {
-  @State var users: [OtterMatchUser]
+  var users: [OtterMatchUser]
   let onAction: (Binding<OtterMatchUser>, FriendshipAction) -> Void
-  let onDelete: (OtterMatchUser) -> Void
   let onLastAppeared: () -> Void
   
   var body: some View {
     VStack {
       List {
         ForEach(users) { user in
-          UserListRow(user: user, onAction: onAction, onDelete: onDelete, onLastAppeared: onLastAppeared)
-            .listRowSeparator(.hidden)
-            .listRowInsets(EdgeInsets(top: 11, leading: 0, bottom: 11, trailing: 0))
+          UserListRow(
+            user: user,
+            onAction: onAction)
+          .onAppear {
+            if users.last == user {
+              onLastAppeared()
+            }
+          }
+          .listRowSeparator(.hidden)
+          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 11, trailing: 0))
         }
         .listRowBackground(Color.clear)
       }
@@ -40,8 +46,7 @@ struct UsersListView: View {
   VStack {
     UsersListView(
       users: users,
-      onAction: { user, action in print("Unblocked user") },
-      onDelete: { user in print("Deleted user") }
+      onAction: { user, action in print("Unblocked user") }
     ) { print("Last item appeared") }
       .border(.onBgBase)
   }
