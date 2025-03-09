@@ -17,8 +17,6 @@
 		856BEC082D7370FF0079328A /* FilmatchGoQueryParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BEC072D7370FF0079328A /* FilmatchGoQueryParam.swift */; };
 		857A27E82D05A68A0080993C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 857A27E72D05A68A0080993C /* README.md */; };
 		85C087BA2D6FB495000D4374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C087B62D6FB495000D4374 /* Config.swift */; };
-		85C087BB2D6FB495000D4374 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85C087B82D6FB495000D4374 /* Release.xcconfig */; };
-		85C087BC2D6FB495000D4374 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 85C087B72D6FB495000D4374 /* Debug.xcconfig */; };
 		85C088B52D6FB4F9000D4374 /* discover_movies-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 85C088062D6FB4F9000D4374 /* discover_movies-page1.json */; };
 		85C088B62D6FB4F9000D4374 /* watch-providers-tv.json in Resources */ = {isa = PBXBuildFile; fileRef = 85C088192D6FB4F9000D4374 /* watch-providers-tv.json */; };
 		85C088B82D6FB4F9000D4374 /* discover_movies-page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 85C088082D6FB4F9000D4374 /* discover_movies-page3.json */; };
@@ -1042,7 +1040,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					85F308492C4F127700DF37C2 = {
 						CreatedOnToolsVersion = 15.4;
@@ -1079,7 +1077,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85C087BB2D6FB495000D4374 /* Release.xcconfig in Resources */,
 				85C088B52D6FB4F9000D4374 /* discover_movies-page1.json in Resources */,
 				85C088B62D6FB4F9000D4374 /* watch-providers-tv.json in Resources */,
 				85C088B82D6FB4F9000D4374 /* discover_movies-page3.json in Resources */,
@@ -1101,7 +1098,6 @@
 				85C088C82D6FB4F9000D4374 /* discover-tv-page3.json in Resources */,
 				85C088C92D6FB4F9000D4374 /* discover-tv-page1.json in Resources */,
 				85C088CA2D6FB4F9000D4374 /* person-26723-append_to_response-movie_credits-tv_credits.json in Resources */,
-				85C087BC2D6FB495000D4374 /* Debug.xcconfig in Resources */,
 				857A27E82D05A68A0080993C /* README.md in Resources */,
 				85C089912D6FB57C000D4374 /* Assets.xcassets in Resources */,
 			);
@@ -1525,7 +1521,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmatch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
+				INFOPLIST_KEY_CFBundleDisplayName = Filmatch;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
