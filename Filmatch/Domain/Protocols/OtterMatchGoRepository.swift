@@ -20,10 +20,17 @@ protocol OtterMatchGoRepository {
   func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverMovieItem], Error>
   func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverTvSeriesItem], Error>
   func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error>
-  func searchUsers(containing query: String, at page: Int) async -> Result<SearchUsersResponse, Error>
+  func getUserFriendRequests(at page: Int) async -> Result<FriendshipsResponse, Error>
+  func searchUsers(containing query: String, at page: Int, with statuses: [FriendshipStatus]?, sortedBy status: FriendshipStatus?) async -> Result<SearchUsersResponse, Error>
   func sendFriendshipRequest(to uid: String) async -> Result<Void, Error>
   func acceptFriendshipRequest(from uid: String) async -> Result<Void, Error>
   func removeFriendship(with uid: String) async -> Result<Void, Error>
   func blockUser(with uid: String) async -> Result<Void, Error>
   func unblockUser(with uid: String) async -> Result<Void, Error>
+}
+
+extension OtterMatchGoRepository {
+  func searchUsers(containing query: String = "", at page: Int = 1, with statuses: [FriendshipStatus]? = nil, sortedBy status: FriendshipStatus? = nil) async -> Result<SearchUsersResponse, Error> {
+    await self.searchUsers(containing: query, at: page, with: statuses, sortedBy: status)
+  }
 }

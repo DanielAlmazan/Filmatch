@@ -11,8 +11,15 @@ import SwiftUI
 /// It includes tabs for discovering movies, managing rooms, and viewing the user's profile.
 /// This view manages the selection state of the tabs and passes necessary dependencies to child views.
 struct HomeView: View {
+  enum TabIndex: Int {
+    case discover
+    case search
+    case matches
+    case rooms
+    case profile
+  }
   /// The index of the currently selected tab.
-  @State var selectedTab = 4
+  @State var selectedTab: TabIndex = .profile
 
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm
@@ -30,7 +37,7 @@ struct HomeView: View {
     TabView(selection: $selectedTab) {
       // MARK: - Discover Tab
       /// Tab for discovering movies.
-      Tab(value: 0) {
+      Tab(value: .discover) {
         NavigationStack {
           DiscoverView(
             moviesRepository: moviesRepository,
@@ -51,7 +58,7 @@ struct HomeView: View {
       }
 
       // MARK: - Search Tab
-      Tab("Search", systemImage: "magnifyingglass", value: 1) {
+      Tab("Search", systemImage: "magnifyingglass", value: .search) {
         NavigationStack {
           SearchMediaView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
             .background(.bgBase)
@@ -59,7 +66,7 @@ struct HomeView: View {
       }
 
       // MARK: - Matches Tab
-      Tab(value: 2) {
+      Tab(value: .matches) {
         VStack {
           Text("Matches view")
         }
@@ -73,7 +80,7 @@ struct HomeView: View {
 
       // MARK: - Rooms Tab
       /// Tab for managing and joining rooms.
-      Tab(value: 3) {
+      Tab(value: .rooms) {
         RoomsMainView()
       } label: {
         // Custom label with an image and text for the Rooms tab.
@@ -83,7 +90,7 @@ struct HomeView: View {
 
       // MARK: - Profile Tab
       /// Tab for viewing and editing the user's profile.
-      Tab("Profile", systemImage: "person.crop.circle", value: 4) {
+      Tab("Profile", systemImage: "person.crop.circle", value: .profile) {
         NavigationStack {
           ProfileTab()
             .background(.bgBase)
@@ -115,6 +122,14 @@ struct HomeView: View {
       )
     )
   )
+  
+  @Previewable @State var friendsVm = FriendsViewModel(
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
+      )
+    )
+  )
 
   HomeView()
     .environment(authVm)
@@ -122,4 +137,5 @@ struct HomeView: View {
     .environment(filtersRepository)
     .environment(tvSeriesRepository)
     .environment(otterMatchGoRepository)
+    .environment(friendsVm)
 }

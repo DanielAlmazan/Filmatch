@@ -131,37 +131,31 @@ extension PersonMovieCreditsResponse {
 }
 
 extension FriendshipSingleResponse {
-  func toOtterMatchUser() -> OtterMatchUser {
-    .init(
-      email: nil,
-      username: self.user.username,
-      uid: self.user.uid,
-      photoUrl: self.user.photoUrl,
-      friendshipStatus: self.user.friendshipStatus
-    )
+  func toOtterMatchUser(as status: FriendshipStatus? = nil) -> OtterMatchUser {
+    self.user.toOtterMatchUser(as: status)
   }
 }
 
 extension [FriendshipSingleResponse] {
-  func toOtterMatchUsers() -> [OtterMatchUser] {
-    self.map { $0.toOtterMatchUser() }
+  func toOtterMatchUsers(as status: FriendshipStatus? = .notRelated) -> [OtterMatchUser] {
+    self.map { $0.toOtterMatchUser(as: status) }
   }
 }
 
 extension [OtterMatchUserResponse] {
-  func toOtterMatchUsers() -> [OtterMatchUser] {
-    self.map { $0.toOtterMatchUser() }
+  func toOtterMatchUsers(as status: FriendshipStatus = .notRelated) -> [OtterMatchUser] {
+    self.map { $0.toOtterMatchUser(as: status) }
   }
 }
 
 extension OtterMatchUserResponse {
-  func toOtterMatchUser() -> OtterMatchUser {
+  func toOtterMatchUser(as status: FriendshipStatus? = nil) -> OtterMatchUser {
     .init(
       email: self.email ?? "",
       username: self.username,
       uid: self.uid,
       photoUrl: self.photoUrl ?? "",
-      friendshipStatus: self.friendshipStatus
+      friendshipStatus: self.friendshipStatus ?? status
     )
   }
 }
