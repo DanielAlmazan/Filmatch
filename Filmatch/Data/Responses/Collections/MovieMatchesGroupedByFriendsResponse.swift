@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MovieMatchesGroupedByFriendsResponse {
-  let page: Int
-  let results: [FriendMovieMatchesSingleResponse]
-}
+//final class MovieMatchesGroupedByFriendsResponse {
+//  let page: Int
+//  let results: [FriendMovieMatchesSingleResponse]
+//}

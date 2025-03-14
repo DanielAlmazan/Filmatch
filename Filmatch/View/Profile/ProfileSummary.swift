@@ -67,19 +67,33 @@ struct ProfileSummary: View {
     .scrollClipDisabled()
     .padding()
     .navigationTitle(Text(user.username ?? "Profile"))
-    .task {
-//      await self.profileVm.loadProviders()
-      await self.friendsVm.loadFriends()
-      // await self.profileVm.loadSuperLikedItems()
-      await self.profileVm.loadItems(for: .interested)
-      // await self.profileVm.loadWatchedItems()
-      await self.profileVm.loadItems(for: .notInterested)
-    }
+    .task { await initLists() }
   }
   
   private func onLastAppeared(for status: InterestStatus) {
     Task {
       await self.profileVm.loadMoreItems(for: status)
+    }
+  }
+  
+  private func initLists() async {
+//    if self.profileVm.providers == nil || self.profileVm.providers!.isEmpty {
+//      await self.profileVm.loadProviders()
+//    }
+    if self.friendsVm.friends == nil || self.friendsVm.friends!.isEmpty {
+      await self.friendsVm.loadFriends()
+    }
+//    if self.profileVm.superLikedItems == nil || self.profileVm.superLikedItems!.isEmpty {
+//      await self.profileVm.loadItems(for: .superInterested)
+//    }
+    if self.profileVm.likedItems == nil || self.profileVm.likedItems!.isEmpty {
+      await self.profileVm.loadItems(for: .interested)
+    }
+//    if self.profileVm.watchedItems == nil || self.profileVm.watchedItems!.isEmpty {
+//      await self.profileVm.loadItems(for: .watched)
+//    }
+    if self.profileVm.dislikedItems == nil || self.profileVm.dislikedItems!.isEmpty {
+      await self.profileVm.loadItems(for: .notInterested)
     }
   }
 }
