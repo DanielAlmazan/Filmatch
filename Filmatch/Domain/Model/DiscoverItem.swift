@@ -22,3 +22,9 @@ protocol DiscoverItem: Identifiable, Sendable {
   var getTitle: String { get }
   var getReleaseDate: String { get }
 }
+
+extension [DiscoverItem]? {
+  mutating func appendItems(_ items: [any DiscoverItem]) {
+    self == nil ? self = items : self!.append(contentsOf: items)
+  }
+}

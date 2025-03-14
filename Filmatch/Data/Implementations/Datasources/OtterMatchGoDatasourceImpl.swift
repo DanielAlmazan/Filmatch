@@ -166,7 +166,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     }
   }
   
-  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<[DiscoverMovieItem], Error> {
+  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<DiscoverMoviesResponse, Error> {
     let result = await client.request(
       path: .userVisitedMoviesList(uid),
       method: .GET,
@@ -180,7 +180,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     case .success(let data):
       do {
         let response = try JSONDecoder().decode(DiscoverMoviesResponse.self, from: data)
-        return .success(response.results.map { $0.toDiscoverMovieItem() })
+        return .success(response)
       } catch {
         return .failure(error)
       }
@@ -193,7 +193,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     for uid: String,
     as status: InterestStatus,
     at page: Int
-  ) async -> Result<[DiscoverTvSeriesItem], Error> {
+  ) async -> Result<DiscoverTvSeriesResponse, Error> {
     let result = await client.request(
       path: .userVisitedTvList(uid),
       method: .GET,
@@ -207,7 +207,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     case .success(let data):
       do {
         let response = try JSONDecoder().decode(DiscoverTvSeriesResponse.self, from: data)
-        return .success(response.results.map { $0.toDiscoverTvSeriesItem() })
+        return .success(response)
       } catch {
         return .failure(error)
       }
