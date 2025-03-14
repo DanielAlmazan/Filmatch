@@ -47,14 +47,16 @@ struct ProfileSummary: View {
           title: "Liked",
           height: kRowsHeight,
           isLoading: self.$profileVm.areLikedLoading,
-          items: self.$profileVm.likedItems
+          items: self.profileVm.likedItems,
+          onLastAppeared: { onLastAppeared(for: .interested) }
         )
         
         ProfileMediaCardRowContainer(
           title: "Disliked",
           height: kRowsHeight,
           isLoading: self.$profileVm.areDislikedLoading,
-          items: self.$profileVm.dislikedItems
+          items: self.profileVm.dislikedItems,
+          onLastAppeared: { onLastAppeared(for: .notInterested) }
         )
       }
       .foregroundStyle(.onBgBase)
@@ -66,17 +68,27 @@ struct ProfileSummary: View {
     .padding()
     .navigationTitle(Text(user.username ?? "Profile"))
     .task {
+//      await self.profileVm.loadProviders()
       await self.friendsVm.loadFriends()
-      await self.profileVm.loadProviders()
       // await self.profileVm.loadSuperLikedItems()
-      await self.profileVm.loadLikedItems()
+      await self.profileVm.loadItems(for: .interested)
       // await self.profileVm.loadWatchedItems()
-      await self.profileVm.loadDislikedItems()
+      await self.profileVm.loadItems(for: .notInterested)
+    }
+  }
+  
+  private func onLastAppeared(for status: InterestStatus) {
+    Task {
+      await self.profileVm.loadMoreItems(for: status)
     }
   }
 }
 
 #Preview {
+  @Previewable let moviesRepository = MoviesRepositoryImpl(
+    datasource: JsonMoviesRemoteDatasource()
+  )
+
   @Previewable let otterMatchRepository = OtterMatchGoRepositoryImpl(
     datasource: OtterMatchGoDatasourceImpl(
       client: OtterMatchHttpClient()
@@ -104,7 +116,9 @@ struct ProfileSummary: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(.bgBase)
+    .environment(moviesRepository)
     .environment(otterMatchRepository)
     .environment(filtersRepository)
+    .environment(friendsVm)
   }
 }

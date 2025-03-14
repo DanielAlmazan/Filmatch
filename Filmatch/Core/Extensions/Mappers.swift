@@ -159,3 +159,15 @@ extension OtterMatchUserResponse {
     )
   }
 }
+
+extension [DiscoverMoviesItemSingleResponse] {
+  func toDiscoverMovieItems() -> [DiscoverMovieItem] {
+    self.map { $0.toDiscoverMovieItem() }
+  }
+}
+
+extension [DiscoverTvSeriesItemSingleResponse] {
+  func toDiscoverTvSeriesItems() -> [DiscoverTvSeriesItem] {
+    self.map { $0.toDiscoverTvSeriesItem() }
+  }
+}

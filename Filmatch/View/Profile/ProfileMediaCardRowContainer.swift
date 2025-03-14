@@ -12,12 +12,28 @@ struct ProfileMediaCardRowContainer: View {
   let height: CGFloat
   
   @Binding var isLoading: Bool
-  @Binding var items: [any DiscoverItem]?
+  var items: [any DiscoverItem]?
+  
+  let onLastAppeared: () -> Void
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text(title)
-        .font(.headline)
+      HStack {
+        Text(title)
+          .font(.headline)
+        
+        Spacer()
+        
+        if let items {
+          NavigationLink {
+            UserMediaView(title: title, items: items, onLastAppeared: onLastAppeared)
+              .background(.bgBase)
+          } label: {
+            Text("See all")
+              .foregroundStyle(.accent)
+          }
+        }
+      }
       Group {
         if self.isLoading {
           ProgressView("Loading...")
@@ -34,7 +50,15 @@ struct ProfileMediaCardRowContainer: View {
 }
 
 #Preview {
-  ProfileMediaCardRowContainer(title: "Liked", height: 100, isLoading: .constant(false), items: .constant([DiscoverMovieItem.default]))
+  NavigationStack {
+    ProfileMediaCardRowContainer(
+      title: "Liked",
+      height: 100,
+      isLoading: .constant(false),
+      items: [DiscoverMovieItem.default],
+      onLastAppeared: { print("Last appeared") }
+    )
+  }
     .environment(
       OtterMatchGoRepositoryImpl(
         datasource: OtterMatchGoDatasourceImpl(

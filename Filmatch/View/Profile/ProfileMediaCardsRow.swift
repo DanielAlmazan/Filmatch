@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ProfileMediaCardsRow: View {
-  let items: [any DiscoverItem]
+  var items: [any DiscoverItem]
   let cornerRadius: CGFloat
 
   var body: some View {
     ScrollView(.horizontal) {
       HStack {
-        ForEach(items, id: \.id) { item in
+        ForEach(items.prefix(20), id: \.id) { item in
           VStack(alignment: .leading) {
             PosterView(
               imageUrl: item.posterPath, size: "w500", posterType: .movie

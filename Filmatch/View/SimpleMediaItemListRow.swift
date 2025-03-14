@@ -10,6 +10,7 @@ import Kingfisher
 
 struct SimpleMediaItemListRow: View {
   let item: any DiscoverItem
+  let maxHeight: CGFloat
   let action: () -> Void
   
   private var url: URL? {
@@ -23,25 +24,30 @@ struct SimpleMediaItemListRow: View {
     HStack {
       KFImage.url(url)
       .resizable()
+      .clipShape(.rect(cornerRadius: maxHeight/10))
       .scaledToFit()
-      .frame(height: 80)
+      .frame(height: maxHeight)
       .aspectRatio(3/2, contentMode: .fit)
-      .clipShape(.rect(cornerRadius: 4))
       
-      Text(item.getTitle)
-      
-      Text("(\(item.getReleaseDate))")
-        .font(.caption)
+      VStack {
+        Text(item.getTitle)
+          .multilineTextAlignment(.leading)
+
+        Text("(\(item.getReleaseDate))")
+          .font(.caption)
+      }
+      .frame(maxHeight: maxHeight)
     }
     .onAppear {
       action()
     }
-
   }
 }
 
 #Preview {
-  SimpleMediaItemListRow(item: DiscoverMovieItem.default) {
-    print("Pressed")
+  VStack {
+    SimpleMediaItemListRow(item: DiscoverMovieItem.default, maxHeight: 80) {
+      print("Pressed")
+    }
   }
 }
