@@ -64,8 +64,7 @@ struct ProfileSummary: View {
       .background(.bgContainer)
       .clipShape(.rect(cornerRadius: 10))
     }
-    .scrollClipDisabled()
-    .padding()
+//    .scrollClipDisabled()
     .navigationTitle(Text(user.username ?? "Profile"))
     .task { await initLists() }
   }
@@ -129,6 +128,7 @@ struct ProfileSummary: View {
       )
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .padding()
     .background(.bgBase)
     .environment(moviesRepository)
     .environment(otterMatchRepository)

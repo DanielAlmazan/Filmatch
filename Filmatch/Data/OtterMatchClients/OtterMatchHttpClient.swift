@@ -52,9 +52,9 @@ final class OtterMatchHttpClient: OtterMatchClient {
     var request = URLRequest(url: finalURL)
     request.httpMethod = method.rawValue
     request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-//    #if DEBUG
-//      print("Request URL: \(request)")
-//    #endif
+    #if DEBUG
+      print("Request URL: \(request)")
+    #endif
 
     if let body = body {
       request.httpBody = body
@@ -65,7 +65,7 @@ final class OtterMatchHttpClient: OtterMatchClient {
     do {
       let (data, response) = try await session.data(for: request)
 
-      // print("Response: \(String(decoding: data, as: UTF8.self))")
+      print("Response:\n\(String(decoding: data, as: UTF8.self))")
 
       // 5) Verify status code
       if let httpResponse = response as? HTTPURLResponse {

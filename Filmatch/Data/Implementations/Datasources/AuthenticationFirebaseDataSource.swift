@@ -44,10 +44,7 @@ final class AuthenticationFirebaseDataSource: Sendable {
 
 // MARK: - SIGN IN EMAIL
 extension AuthenticationFirebaseDataSource {
-  func createNewUser(
-    email: String,
-    password: String
-  ) async -> Result<User, Error> {
+  func createNewUser(email: String, password: String) async -> Result<User, Error> {
     do {
       let registerResult = try await Auth.auth().createUser(withEmail: email, password: password)
       return .success(registerResult.user)

@@ -41,23 +41,10 @@ struct SearchMediaView: View {
 
   var body: some View {
     VStack {
-      // MARK: - Movies / TV Selector and View Mode toggle
-      HStack(spacing: 20) {
-        FilterToggleView(
-          text: "Movie", isActive: searchVm.selectedMedia == .movie
-        ) {
-          searchVm.selectedMedia = .movie
-        }
-
-        FilterToggleView(
-          text: "TV Series", isActive: searchVm.selectedMedia == .tvSeries
-        ) {
-          searchVm.selectedMedia = .tvSeries
-        }
-      }
-      .buttonStyle(.borderless)
-      .containerRelativeFrame(.horizontal)  // Movies / TV Selector
-
+      // MARK: - Movies / TV Selector
+      MediaSelector(selectedMedia: $searchVm.selectedMedia)
+      
+      // MARK: - Search Field and View Mode toggle
       HStack {
         SearchField(query: $searchVm.query, onSubmit: { searchVm.search() })
         GridSelectorButton(isGridSelected: $isGridSelected)
@@ -73,24 +60,26 @@ struct SearchMediaView: View {
       // MARK: - Results
       let results = self.searchVm.currentResults
       if !results.isEmpty {
-        Group {
-          if isGridSelected {
-            SimpleMediaItemsGridView(results: results) {
-              searchVm.search()
-            }
-          } else {
-            SimpleMediaItemListView(results: results) {
-              searchVm.search()
+        ScrollView {
+          Group {
+            if isGridSelected {
+              SimpleMediaItemsGridView(results: results) {
+                searchVm.search()
+              }
+            } else {
+              SimpleMediaItemListView(results: results) {
+                searchVm.search()
+              }
             }
           }
+          .lineLimit(1)
+          .padding(.horizontal)
         }
-        .lineLimit(1)
-        .padding()
       }
     }  // VStack
+    .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("Search")
     .navigationBarTitleDisplayMode(.inline)
-    .frame(maxHeight: .infinity, alignment: .top)
 
     if searchVm.isLoading {
       ProgressView("Searching results for: \"\(searchVm.query)\"...")

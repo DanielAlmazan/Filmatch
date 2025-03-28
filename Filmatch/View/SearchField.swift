@@ -45,10 +45,10 @@ struct SearchField: View {
       }
     }
     .frame(height: 25)
-    .padding(5)
+    .padding(.horizontal, 10)
+    .padding(.vertical, 8)
     .background(.bgContainer)
-    .clipShape(.rect(cornerRadius: 8))
-//    .padding()
+    .clipShape(.rect(cornerRadius: 10))
   }
 }
 

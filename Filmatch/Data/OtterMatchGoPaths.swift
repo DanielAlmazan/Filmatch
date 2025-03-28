@@ -17,6 +17,10 @@ enum OtterMatchGoPaths {
   case userVisitedTv
   case userVisitedMoviesList(String)
   case userVisitedTvList(String)
+  case userMatchesMovies
+  case userMatchesMoviesByUid(String)
+  case userMatchesTvSeries
+  case userMatchesTvSeriesByUid(String)
   case friends
   case friendship
   case block(String)
@@ -34,6 +38,10 @@ enum OtterMatchGoPaths {
     case .userVisitedTv: "/user/visited/tv"
     case .userVisitedMoviesList(let id): "/user/\(id)/visited/movies/list"
     case .userVisitedTvList(let id): "/user/\(id)/visited/tv/list"
+    case .userMatchesMovies: "/user/matches/movies"
+    case .userMatchesMoviesByUid(let uid): "/user/matches/movies/\(uid)"
+    case .userMatchesTvSeries: "/user/matches/tv"
+    case .userMatchesTvSeriesByUid(let uid): "/user/matches/tv/\(uid)"
     case .friends: "/user/friends"
     case .friendship: "/user/friendship"
     case .block(let uid): "/user/block/\(uid)"

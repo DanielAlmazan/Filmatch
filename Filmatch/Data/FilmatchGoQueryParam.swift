@@ -15,6 +15,7 @@ enum FilmatchGoQueryParam {
   case query(String)
   case friendshipStatuses([FriendshipStatus])
   case sortByStatusFirst(FriendshipStatus)
+  case resultsPerPage(Int)
 
   var value: URLQueryItem {
     switch self {
@@ -33,12 +34,8 @@ enum FilmatchGoQueryParam {
       return .init(name: "friendship_statuses", value: strStatuses)
     case .sortByStatusFirst(let status):
       return .init(name: "sort_by_status_first", value: "\(status.rawValue)")
+    case .resultsPerPage(let count):
+      return .init(name: "results_per_page", value: "\(count)")
     }
-  }
-}
-
-extension Array where Element == FilmatchGoQueryParam {
-  var urlQueryItems: [URLQueryItem] {
-    map(\.value)
   }
 }

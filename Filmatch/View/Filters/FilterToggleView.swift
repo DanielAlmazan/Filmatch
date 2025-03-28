@@ -13,10 +13,10 @@ struct FilterToggleView: View {
 
   let text: String?
   let image: String?
+  let cornerRadius: CGFloat
   let action: () -> Void
   let defaultSize: CGFloat? = 80
   let size: CGFloat?
-  let cornerRadius: CGFloat = 20
   let isActive: Bool
 
   var blendMode: BlendMode {
@@ -30,17 +30,19 @@ struct FilterToggleView: View {
   }
 
   var tint: Color {
-    if colorScheme == .dark && isActive {
-      .white
-    } else if colorScheme == .light && isActive {
-      .black
+    if isActive {
+      .onBgBase
     } else {
       .accent
     }
   }
 
   var strokeColor: Color {
-    isActive ? image != nil ? .white : .onBgBase : .accent
+    if isActive {
+      image != nil ? .white : .onBgBase
+    } else {
+      .accent
+    }
   }
   
   var shadowColor: Color {
@@ -67,6 +69,7 @@ struct FilterToggleView: View {
     self.size = isSquared ? defaultSize : nil
     self.isActive = isActive
     self.action = action
+    self.cornerRadius = isSquared ? 20 : 15
   }
   
   /// This initializer is used for filters with images such as providers
@@ -85,6 +88,7 @@ struct FilterToggleView: View {
     self.size = defaultSize
     self.isActive = isActive
     self.action = action
+    self.cornerRadius = 20
   }
 
   var body: some View {
@@ -136,7 +140,7 @@ struct FilterToggleView: View {
   @Previewable @State var isNetflixProviderActive: Bool = false
   @Previewable @State var isAmazonProviderActive: Bool = false
 
-  Group {
+  VStack {
     FilterToggleView(
       text: "Filter",
       isActive: isFilterActive
@@ -167,4 +171,6 @@ struct FilterToggleView: View {
       print("Button pressed")
     }
   }
+  .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+  .background(.bgBase)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FriendMovieMatchesSingleResponse {
+final class FriendMovieMatchesSingleResponse: Sendable {
   let user: OtterMatchUserResponse
   let matches: [MovieMatchSingleResponse]
   
