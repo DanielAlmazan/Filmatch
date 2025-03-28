@@ -47,7 +47,7 @@ struct ProfileTab: View {
           .frame(maxWidth: .infinity, alignment: .center)
         }
       }
-      .padding()
+      .padding(.horizontal)
       .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
         Button("Cancel", role: .cancel) { }
         Button("Ok") {
@@ -98,26 +98,33 @@ struct ProfileTab: View {
 
 #Preview {
   @Previewable @State var otterMatchRepository = OtterMatchGoRepositoryImpl(
-    datasource: OtterMatchGoDatasourceImpl(
-      client: OtterMatchHttpClient(
-        urlBase: API.otterMatchBaseURL)
+    datasource: JsonOtterMatchDatasource(client: TMDBJsonClient())
+  )
+  @Previewable @State var friendsViewModel = FriendsViewModel(
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: JsonOtterMatchDatasource(
+        client: TMDBJsonClient()
+      )
     )
   )
-  @Previewable let filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
-  @Previewable @State var vm = AuthenticationViewModel(
+  @Previewable @State var filtersRepository = FiltersRepositoryImpl(filtersDatasource: JsonFiltersDatasource())
+  @Previewable @State var authenticationViewModel = AuthenticationViewModel(
     authenticationRepository: AuthenticationFirebaseRepository(
       dataSource: AuthenticationFirebaseDataSource()
     ),
     otterMatchRepository: OtterMatchGoRepositoryImpl(
-      datasource: OtterMatchGoDatasourceImpl(
-        client: OtterMatchHttpClient(
-          urlBase: API.otterMatchBaseURL)
+      datasource: JsonOtterMatchDatasource(
+        client: TMDBJsonClient()
       )
     )
   )
   
   ProfileTab()
-    .environment(vm)
+    .environment(authenticationViewModel)
     .environment(otterMatchRepository)
     .environment(filtersRepository)
+    .environment(friendsViewModel)
+    .task {
+      authenticationViewModel.currentUser = .default
+    }
 }

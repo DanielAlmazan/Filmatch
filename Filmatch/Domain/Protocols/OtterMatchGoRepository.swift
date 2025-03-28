@@ -27,10 +27,27 @@ protocol OtterMatchGoRepository {
   func removeFriendship(with uid: String) async -> Result<Void, Error>
   func blockUser(with uid: String) async -> Result<Void, Error>
   func unblockUser(with uid: String) async -> Result<Void, Error>
+  func getUserTvSeriesMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<TvSeriesMatchesGroupedByFriendsResponse, Error>
+  func getUserMovieMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<MovieMatchesGroupedByFriendsResponse, Error>
+  func getMovieMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailMovieMatchesResponse, Error>
+  func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error>
 }
 
 extension OtterMatchGoRepository {
   func searchUsers(containing query: String = "", at page: Int = 1, with statuses: [FriendshipStatus]? = nil, sortedBy status: FriendshipStatus? = nil) async -> Result<SearchUsersResponse, Error> {
     await self.searchUsers(containing: query, at: page, with: statuses, sortedBy: status)
+  }
+  
+  func getUserTvSeriesMatchesGroupedByFriends(containing query: String? = nil, at page: Int = 1) async -> Result<TvSeriesMatchesGroupedByFriendsResponse, Error> {
+    await self.getUserTvSeriesMatchesGroupedByFriends(containing: query, at: page)
+  }
+  func getUserMovieMatchesGroupedByFriends(containing query: String? = nil, at page: Int = 1) async -> Result<MovieMatchesGroupedByFriendsResponse, Error> {
+    await self.getUserMovieMatchesGroupedByFriends(containing: query, at: page)
+  }
+  func getMovieMatchesByFriendUid(by uid: String, containing query: String? = nil, at page: Int = 1) async -> Result<DetailMovieMatchesResponse, Error> {
+    await self.getMovieMatchesByFriendUid(by: uid, containing: query, at: page)
+  }
+  func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String? = nil, at page: Int = 1) async -> Result<DetailTvSeriesMatchesResponse, Error> {
+    await self.getTvSeriesMatchesByFriendUid(by: uid, containing: query, at: page)
   }
 }

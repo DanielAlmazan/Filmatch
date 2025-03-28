@@ -1,0 +1,9 @@
+{
+  "message": "User logged in successfully",
+  "success": true,
+  "user": {
+    "email": "almazansellesdaniel@gmail.com",
+    "username": "danieh",
+    "uid": "WAy0Ia6xOwVzs6cD0XS434hUFZ02"
+  }
+}

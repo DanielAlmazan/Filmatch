@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 final class OtterMatchGoRepositoryImpl: OtterMatchGoRepository {
-  let datasource: OtterMatchGoDatasource
+  private let datasource: OtterMatchGoDatasource
   
   init(datasource: OtterMatchGoDatasource) {
     self.datasource = datasource
@@ -85,5 +85,21 @@ final class OtterMatchGoRepositoryImpl: OtterMatchGoRepository {
   
   func unblockUser(with uid: String) async -> Result<Void, Error> {
     await self.datasource.unblockUser(with: uid)
+  }
+  
+  func getUserMovieMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<MovieMatchesGroupedByFriendsResponse, Error> {
+    await self.datasource.getUserMovieMatchesGroupedByFriends(containing: query, at: page)
+  }
+  
+  func getUserTvSeriesMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<TvSeriesMatchesGroupedByFriendsResponse, Error> {
+    await self.datasource.getUserTvSeriesMatchesGroupedByFriends(containing: query, at: page)
+  }
+  
+  func getMovieMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailMovieMatchesResponse, Error> {
+    await self.datasource.getMovieMatchesByFriendUid(by: uid, containing: query, at: page)
+  }
+  
+  func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error> {
+    await self.datasource.getTvSeriesMatchesByFriendUid(by: uid, containing: query, at: page)
   }
 }

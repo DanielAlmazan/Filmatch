@@ -11,7 +11,7 @@ import Kingfisher
 struct SimpleMediaItemListRow: View {
   let item: any DiscoverItem
   let maxHeight: CGFloat
-  let action: () -> Void
+  let onLastAppeared: () -> Void
   
   private var url: URL? {
     guard let base = API.tmdbMediaBaseURL, let path = item.posterPath, !path.isEmpty else {
@@ -29,7 +29,7 @@ struct SimpleMediaItemListRow: View {
       .frame(height: maxHeight)
       .aspectRatio(3/2, contentMode: .fit)
       
-      VStack {
+      VStack(alignment: .leading) {
         Text(item.getTitle)
           .multilineTextAlignment(.leading)
 
@@ -39,7 +39,7 @@ struct SimpleMediaItemListRow: View {
       .frame(maxHeight: maxHeight)
     }
     .onAppear {
-      action()
+      onLastAppeared()
     }
   }
 }

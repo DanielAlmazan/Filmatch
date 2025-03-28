@@ -1,0 +1,98 @@
+//
+//  MatchesTabView.swift
+//  Filmatch
+//
+//  Created by Daniel Enrique Almazán Sellés on 15/3/25.
+//
+
+import SwiftUI
+
+struct MatchesTabView: View {
+  @State var matchesVm: MatchesViewModel
+  @State private var isPresentingLists: Bool = false
+
+  init(repository: OtterMatchGoRepository) {
+    self.matchesVm = .init(repository: repository)
+  }
+
+  var body: some View {
+    VStack(spacing: 10) {
+      MediaSelector(selectedMedia: $matchesVm.selectedMedia)
+      
+      SearchField(query: self.$matchesVm.query) {
+        self.matchesVm.onSubmitQuery()
+      }
+      .padding(.horizontal)
+
+      if let results = matchesVm.results {
+        ScrollView {
+          LazyVStack(spacing: 10) {
+            ForEach(results) { result in
+              MatchesWithFriendContainerView(
+                friendMatch: result,
+                mediaType: self.matchesVm.selectedMedia
+              ) {
+                if results.last == result {
+                  loadMoreSimpleFriendMatches()
+                }
+              } onLastItemAppeared: {
+                loadMoreDetailMatchItems()
+              }
+              .padding()
+              .background(.bgContainer)
+              .clipShape(.rect(cornerRadius: 10))
+              .frame(height: 200)
+            }
+          }
+        }
+        .padding(.horizontal)
+      }
+      
+      if matchesVm.isLoadingSimpleFriendsMatches {
+        ProgressView()
+      }
+    }
+    .frame(maxHeight: .infinity, alignment: .top)
+    .navigationTitle("Matches")
+    .task { await initializeList() }
+    .onChange(of: matchesVm.selectedMedia) {
+      Task { await initializeList() }
+    }
+  }
+  
+  private func loadMoreSimpleFriendMatches() {
+    Task {
+      await self.matchesVm.fetchMoreSimpleFriendMatches()
+    }
+  }
+  
+  private func loadMoreDetailMatchItems() {
+    Task {
+      if !self.matchesVm.isLoadingSimpleFriendsMatches {
+        await self.matchesVm.fetchMoreSimpleFriendMatches()
+      }
+    }
+  }
+
+  private func initializeList() async {
+    if self.matchesVm.results != nil { return }
+    await self.matchesVm.fetchSimpleFriendsMatches()
+  }
+}
+
+#Preview {
+  @Previewable @State var repository = OtterMatchGoRepositoryImpl(
+    datasource: JsonOtterMatchDatasource(
+      client: TMDBJsonClient()
+    )
+  )
+
+  let movieRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  let tvRepository = TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource())
+  
+  NavigationStack {
+    MatchesTabView(repository: repository)
+  }
+  .environment(movieRepository)
+  .environment(tvRepository)
+}

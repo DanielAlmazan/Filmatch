@@ -16,16 +16,13 @@ protocol MoviesRepository {
   func getMovieCredits(id: Int) async -> Result<PersonMovieCreditsResponse, Error>
   
   /// Returns a [MovieDetailResponse] based on the providers passed.
-  func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async
-  -> Result<DiscoverMoviesResponse, Error>
+  func discoverMovies(withQueryParams queryParams: [URLQueryItem]) async -> Result<DiscoverMoviesResponse, Error>
   
   /// Returns a `Result<[WatchProvidersResponse], Error>` with the providers of a specific movie
   func getProviders(forMovieId id: Int) async -> Result<WatchProvidersResponse, Error>
   
   /// Returns a [MovieDetailResponse] based on the providers passed.
-  func searchMovies(
-    _ query: String, page: Int?
-  ) async -> Result<MoviesSearchResponse, Error>
+  func searchMovies(_ query: String, page: Int?) async -> Result<MoviesSearchResponse, Error>
   
   /// Gets the videos of an specific movie
   func getVideos(byMovieId id: Int) async -> Result<MovieVideosResponse, Error>

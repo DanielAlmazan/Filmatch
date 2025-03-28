@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class FriendTvSeriesMatchesSingleResponse {
+final class FriendTvSeriesMatchesSingleResponse: Sendable {
   let user: OtterMatchUserResponse
-  let matches: [TvSeriesMatchesByFriendUidResponse]
+  let matches: [TvSeriesMatchSingleResponse]
   
-  init(user: OtterMatchUserResponse, matches: [TvSeriesMatchesByFriendUidResponse]) {
+  init(user: OtterMatchUserResponse, matches: [TvSeriesMatchSingleResponse]) {
     self.user = user
     self.matches = matches
   }
@@ -26,7 +26,7 @@ extension FriendTvSeriesMatchesSingleResponse: Codable {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     
     let user = try container.decode(OtterMatchUserResponse.self, forKey: .user)
-    let matches = try container.decode([TvSeriesMatchesByFriendUidResponse].self, forKey: .matches)
+    let matches = try container.decode([TvSeriesMatchSingleResponse].self, forKey: .matches)
     
     self.init(user: user, matches: matches)
   }

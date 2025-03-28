@@ -262,17 +262,17 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       return .failure(error)
     }
   }
-
+  
   func searchUsers(containing query: String, at page: Int, with statuses: [FriendshipStatus]?, sortedBy status: FriendshipStatus?) async -> Result<SearchUsersResponse, Error> {
     var queryParams = [FilmatchGoQueryParam]()
-
+    
     queryParams.append(.query(query))
     queryParams.append(.page(page))
-
+    
     if let statuses = statuses {
       queryParams.append(.friendshipStatuses(statuses))
     }
-
+    
     if let status = status {
       queryParams.append(.sortByStatusFirst(status))
     }
@@ -299,7 +299,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
   func sendFriendshipRequest(to uid: String) async -> Result<Void, Error> {
     let sendFriendshipBody = SendFriendshipBody(userUid: uid)
     let data: Data
-
+    
     do {
       data = try JSONEncoder().encode(sendFriendshipBody)
     } catch {
@@ -315,23 +315,23 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     
     return switch result {
     case .success(_):
-      .success(())
+        .success(())
     case .failure(let error):
-      .failure(error)
+        .failure(error)
     }
   }
   
   func acceptFriendshipRequest(from uid: String) async -> Result<Void, Error> {
     let acceptFriendshipRequestBody = AcceptFriendshipRequestBody(friendUid: uid)
     let data: Data
-
+    
     do {
       data = try JSONEncoder().encode(acceptFriendshipRequestBody)
     } catch {
       print("Error decoding AcceptFriendshipRequestBody: \(error)")
       return .failure(error)
     }
-
+    
     let result = await client.request(
       path: .friendship,
       method: .PUT,
@@ -345,24 +345,24 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       return .failure(error)
     }
   }
-
+  
   func removeFriendship(with uid: String) async -> Result<Void, Error> {
     let deleteFriendshipBody = DeleteFriendshipBody(friendUid: uid)
     let data: Data
-
+    
     do {
       data = try JSONEncoder().encode(deleteFriendshipBody)
     } catch {
       print("Error decoding AcceptFriendshipRequestBody: \(error)")
       return .failure(error)
     }
-
+    
     let result = await client.request(
       path: .friendship,
       method: .DELETE,
       body: data
     )
-
+    
     switch result {
     case .success(_):
       return .success(())
@@ -388,6 +388,119 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     switch result {
     case .success(_):
       return .success(())
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
+  
+  func getUserMovieMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<MovieMatchesGroupedByFriendsResponse, Error> {
+    // Build the query params
+    var queryParams: [FilmatchGoQueryParam] = [
+      .page(page),
+      .resultsPerPage(10)
+    ]
+    if let query {
+      queryParams.append(.query(query))
+    }
+
+    let result = await client.request(
+      path: .userMatchesMovies,
+      method: .GET,
+      queryParams: queryParams
+    )
+
+    switch result {
+    case .success(let response):
+      do {
+        let matchesResponse = try JSONDecoder().decode(MovieMatchesGroupedByFriendsResponse.self, from: response)
+        return .success(matchesResponse)
+      } catch {
+        print("Error decoding MovieMatchesGroupedByFriendsResponse: \(error)")
+        return .failure(error)
+      }
+    case .failure(let error):
+      print("Error decoding MovieMatchesGroupedByFriendsResponse: \(error)")
+      return .failure(error)
+    }
+  }
+
+  func getUserTvSeriesMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<TvSeriesMatchesGroupedByFriendsResponse, Error> {
+    var queryParams: [FilmatchGoQueryParam] = [
+      .page(page),
+      .resultsPerPage(10)
+    ]
+    if let query {
+      queryParams.append(.query(query))
+    }
+    
+    let result = await client.request(
+      path: .userMatchesTvSeries,
+      method: .GET,
+      queryParams: queryParams
+    )
+    
+    switch result {
+    case .success(let response):
+      do {
+        let matchesResponse = try JSONDecoder().decode(TvSeriesMatchesGroupedByFriendsResponse.self, from: response)
+        return .success(matchesResponse)
+      } catch {
+        print("Error decoding TvSeriesMatchesGroupedByFriendsResponse: \(error)")
+        return .failure(error)
+      }
+    case .failure(let error):
+      print("Error decoding TvSeriesMatchesGroupedByFriendsResponse: \(error)")
+      return .failure(error)
+    }
+  }
+  
+  func getMovieMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailMovieMatchesResponse, Error> {
+    var queryParams: [FilmatchGoQueryParam] = [
+      .page(page)
+    ]
+    if let query {
+      queryParams.append(.query(query))
+    }
+    let result = await client.request(
+      path: .userMatchesMoviesByUid(uid),
+      method: .GET,
+      queryParams: queryParams
+    )
+
+    switch result {
+    case .success(let response):
+      do {
+        let matchesResponse = try JSONDecoder().decode(DetailMovieMatchesResponse.self, from: response)
+        return .success(matchesResponse)
+      } catch {
+        return .failure(error)
+      }
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
+
+  func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error> {
+    var queryParams: [FilmatchGoQueryParam] = [
+      .page(page)
+    ]
+    if let query {
+      queryParams.append(.query(query))
+    }
+    let result = await client.request(
+      path: .userMatchesTvSeriesByUid(uid),
+      method: .GET,
+      queryParams: queryParams
+    )
+
+    switch result {
+    case .success(let response):
+      do {
+        let matchesResponse = try JSONDecoder().decode(DetailTvSeriesMatchesResponse.self, from: response)
+        return .success(matchesResponse)
+      } catch {
+        return .failure(error)
+      }
     case .failure(let error):
       return .failure(error)
     }

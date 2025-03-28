@@ -58,27 +58,3 @@ extension FiltersStreamingProviderSingleResponse: Equatable {
     lhs.providerId == rhs.providerId
   }
 }
-
-extension [FiltersStreamingProviderSingleResponse] {
-  func toUrlQueryItem(separator: QueryParamSeparator) -> URLQueryItem {
-    let providers = self.map { "\($0.providerId)" }.joined(
-      separator: separator.rawValue)
-
-    return .init(
-      name: QueryParam.withWatchProviders.rawValue, value: "\(providers)")
-  }
-
-  func sortByDisplayPriority() -> [FiltersStreamingProviderSingleResponse] {
-    self.sorted { lhs, rhs in
-      let region = "\(Locale.current.region ?? "US")"
-
-      guard let lhsRegion = lhs.displayPriorities[region],
-            let rhsRegion = rhs.displayPriorities[region]
-      else {
-        return false
-      }
-
-      return lhsRegion < rhsRegion
-    }
-  }
-}

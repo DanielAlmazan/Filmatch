@@ -195,7 +195,7 @@ final class FiltersViewModel {
   }
 
   func toggleMySet() {
-    // TODO: Implement user persistance and get its providers.
+    // TODO: Implement user persistence and get its providers.
   }
 
   func rearrangeFilters() {

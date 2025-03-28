@@ -10,31 +10,31 @@ import Foundation
 final class DiscoverTvSeriesItemSingleResponse: Identifiable, Sendable {
   let backdropPath: String?
   let firstAirDate: Date?
-  let genreIds: [Int]
+  let genreIds: [Int]?
   let id: Int
   let name: String
-  let originCountry: [String]
+  let originCountry: [String]?
   let originalLanguage: String?
   let originalName: String?
   let overview: String?
   let popularity: Double
   let posterPath: String?
-  let voteAverage: Double
-  let voteCount: Int
+  let voteAverage: Double?
+  let voteCount: Int?
   
   init(backdropPath: String?,
        firstAirDate: Date?,
-       genreIds: [Int],
+       genreIds: [Int]?,
        id: Int,
        name: String,
-       originCountry: [String],
+       originCountry: [String]?,
        originalLanguage: String?,
        originalName: String?,
        overview: String?,
        popularity: Double,
        posterPath: String?,
-       voteAverage: Double,
-       voteCount: Int
+       voteAverage: Double?,
+       voteCount: Int?
   ) {
     self.backdropPath = backdropPath
     self.firstAirDate = firstAirDate
@@ -78,17 +78,17 @@ extension DiscoverTvSeriesItemSingleResponse: Codable {
       return Utilities.dateFormatter.date(from: dateStr)
     }()
 
-    let genreIds = try container.decode([Int].self, forKey: .genreIds)
+    let genreIds = try container.decode([Int]?.self, forKey: .genreIds)
     let id = try container.decode(Int.self, forKey: .id)
     let name = try container.decode(String.self, forKey: .name)
-    let originCountry = try container.decode([String].self, forKey: .originCountry)
-    let originalLanguage = try container.decode(String?.self, forKey: .originalLanguage)
-    let originalName = try container.decode(String?.self, forKey: .originalName)
-    let overview = try container.decode(String?.self, forKey: .overview)
+    let originCountry = try container.decodeIfPresent([String].self, forKey: .originCountry)
+    let originalLanguage = try container.decodeIfPresent(String.self, forKey: .originalLanguage)
+    let originalName = try container.decodeIfPresent(String.self, forKey: .originalName)
+    let overview = try container.decodeIfPresent(String.self, forKey: .overview)
     let popularity = try container.decode(Double.self, forKey: .popularity)
-    let posterPath = try container.decode(String?.self, forKey: .posterPath)
-    let voteAverage = try container.decode(Double.self, forKey: .voteAverage)
-    let voteCount = try container.decode(Int.self, forKey: .voteCount)
+    let posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
+    let voteAverage = try container.decodeIfPresent(Double.self, forKey: .voteAverage)
+    let voteCount = try container.decodeIfPresent(Int.self, forKey: .voteCount)
     
     self.init(backdropPath: backdropPath,
               firstAirDate: firstAirDate,

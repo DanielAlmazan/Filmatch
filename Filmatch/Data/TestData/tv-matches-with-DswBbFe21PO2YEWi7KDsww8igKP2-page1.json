@@ -1,0 +1,45 @@
+{
+  "friend_uid": "DswBbFe21PO2YEWi7KDsww8igKP2",
+  "page": 1,
+  "results": [
+    {
+      "super_match": true,
+      "tv_show": {
+        "id": 1622,
+        "adult": false,
+        "backdrop_path": "/lirPqYLTtd6XZqGn4cS1wiesTq0.jpg",
+        "genre_ids": null,
+        "original_language": "en",
+        "overview": "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+        "popularity": 693.708,
+        "poster_path": "/KoYWXbnYuS3b0GyQPkbuexlVK9.jpg",
+        "vote_average": 8.3,
+        "vote_count": 7694,
+        "original_name": "Supernatural",
+        "first_air_date": "2005-09-13",
+        "name": "Supernatural"
+      }
+    },
+    {
+      "super_match": true,
+      "tv_show": {
+        "id": 195670,
+        "adult": false,
+        "backdrop_path": "/oSfzTNyCzpErgEVKQbAsa5QLznD.jpg",
+        "genre_ids": null,
+        "original_language": "en",
+        "overview": "Teen matchmaker Kitty Song Covey thinks she knows everything there is to know about love. But when she moves halfway across the world to reunite with her long-distance boyfriend, she'll soon realize that relationships are a lot more complicated when it's your own heart on the line.",
+        "popularity": 699.591,
+        "poster_path": "/hxvTdKAwv27PUfpXOQp6AwWr6V.jpg",
+        "vote_average": 8.143,
+        "vote_count": 447,
+        "original_name": "XO, Kitty",
+        "first_air_date": "2023-05-18",
+        "name": "XO, Kitty"
+      }
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 1,
+  "total_results": 2
+}

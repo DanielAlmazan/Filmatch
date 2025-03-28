@@ -27,5 +27,8 @@ protocol OtterMatchGoDatasource {
   func removeFriendship(with uid: String) async -> Result<Void, Error>
   func blockUser(with uid: String) async -> Result<Void, Error>
   func unblockUser(with uid: String) async -> Result<Void, Error>
-//  func getUserMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result
+  func getUserMovieMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<MovieMatchesGroupedByFriendsResponse, Error>
+  func getUserTvSeriesMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<TvSeriesMatchesGroupedByFriendsResponse, Error>
+  func getMovieMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailMovieMatchesResponse, Error>
+  func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error>
 }

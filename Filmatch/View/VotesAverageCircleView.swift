@@ -36,7 +36,7 @@ struct VotesAverageCircleView: View {
   ) {
     self.averageVotes = averageVotes / 10
     self.lowAverageRange = 0..<lowAverageBound
-    self.highAverageRange = highAverageBound..<1
+    self.highAverageRange = highAverageBound..<1.1
     self.mediumAverageRange = lowAverageBound..<highAverageBound
   }
 
@@ -59,5 +59,5 @@ struct VotesAverageCircleView: View {
 }
 
 #Preview{
-  VotesAverageCircleView(averageVotes: 0.7)
+  VotesAverageCircleView(averageVotes: 6.9)
 }

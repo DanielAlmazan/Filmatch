@@ -15,7 +15,7 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Sendable {
   /// The path to the backdrop image of the movie.
   let backdropPath: String?
   /// An array of genre IDs associated with the movie.
-  let genreIds: [Int]
+  let genreIds: [Int]?
   /// The unique identifier of the movie.
   let id: Int
   /// The original language of the movie.
@@ -58,7 +58,7 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Sendable {
   init(
     adult: Bool,
     backdropPath: String?,
-    genreIds: [Genre.ID],
+    genreIds: [Genre.ID]?,
     id: Int,
     originalLanguage: String,
     originalTitle: String,
@@ -111,7 +111,7 @@ extension DiscoverMoviesItemSingleResponse: Codable {
     let overview = try container.decode(String.self, forKey: .overview)
     let popularity = try container.decode(Double.self, forKey: .popularity)
     let backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
-    let genreIds = try container.decode([Int].self, forKey: .genreIds)
+    let genreIds = try container.decode([Int]?.self, forKey: .genreIds)
     let originalLanguage = try container.decode(String.self, forKey: .originalLanguage)
     let originalTitle = try container.decode(String.self, forKey: .originalTitle)
     let posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)

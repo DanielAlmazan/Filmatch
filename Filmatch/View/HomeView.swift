@@ -19,7 +19,7 @@ struct HomeView: View {
     case profile
   }
   /// The index of the currently selected tab.
-  @State var selectedTab: TabIndex = .profile
+  @State var selectedTab: TabIndex = .matches
 
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm
@@ -67,11 +67,12 @@ struct HomeView: View {
 
       // MARK: - Matches Tab
       Tab(value: .matches) {
-        VStack {
-          Text("Matches view")
+        NavigationStack {
+          MatchesTabView(repository: otterMatchGoRepository)
+            .background(.bgBase)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.bgBase)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background(.bgBase)
       } label: {
         Image(.matchesTabIcon)
           .resizable(resizingMode: .stretch)
@@ -80,13 +81,13 @@ struct HomeView: View {
 
       // MARK: - Rooms Tab
       /// Tab for managing and joining rooms.
-      Tab(value: .rooms) {
-        RoomsMainView()
-      } label: {
-        // Custom label with an image and text for the Rooms tab.
-        Image(.filmatchLogoTabItem)
-        Text("Rooms")
-      }
+//      Tab(value: .rooms) {
+//        RoomsMainView()
+//      } label: {
+//        // Custom label with an image and text for the Rooms tab.
+//        Image(.filmatchLogoTabItem)
+//        Text("Rooms")
+//      }
 
       // MARK: - Profile Tab
       /// Tab for viewing and editing the user's profile.
@@ -116,10 +117,8 @@ struct HomeView: View {
   @Previewable @State var authVm = AuthenticationViewModel(authenticationRepository: AuthenticationFirebaseRepository(dataSource: AuthenticationFirebaseDataSource()), otterMatchRepository: OtterMatchGoRepositoryImpl(datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient(urlBase: API.otterMatchBaseURL))))
 
   @Previewable @State var otterMatchGoRepository = OtterMatchGoRepositoryImpl(
-    datasource: OtterMatchGoDatasourceImpl(
-      client: OtterMatchHttpClient(
-        urlBase: API.otterMatchBaseURL
-      )
+    datasource: JsonOtterMatchDatasource(
+      client: TMDBJsonClient()
     )
   )
   
