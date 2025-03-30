@@ -26,8 +26,10 @@ struct ProfileMediaCardRowContainer: View {
         
         if let items {
           NavigationLink {
-            UserMediaView(title: title, items: items, onLastAppeared: onLastAppeared)
-              .background(.bgBase)
+            ScrollView {
+              UserMediaView(title: title, items: items, onLastAppeared: onLastAppeared)
+            }
+            .background(.bgBase)
           } label: {
             Text("See all")
               .foregroundStyle(.accent)
