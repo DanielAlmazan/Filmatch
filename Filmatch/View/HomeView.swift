@@ -137,4 +137,5 @@ struct HomeView: View {
     .environment(tvSeriesRepository)
     .environment(otterMatchGoRepository)
     .environment(friendsVm)
+    .task { authVm.currentUser = .default }
 }
