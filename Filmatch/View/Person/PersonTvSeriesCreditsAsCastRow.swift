@@ -31,7 +31,7 @@ struct PersonTvSeriesCreditsAsCastRow: View {
               ) {
                 VStack(alignment: .leading) {
                   PosterView(
-                    imageUrl: show.posterPath, size: "w500", posterType: .movie
+                    imageUrl: show.posterPath, size: .w500, posterType: .movie
                   )
                   .clipShape(.rect(cornerRadius: 10))
                   if let title = show.name {

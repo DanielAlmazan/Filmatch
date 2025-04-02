@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUICore
 
 enum InterestStatus: Int, Codable {
   case interested = 0
@@ -13,8 +14,8 @@ enum InterestStatus: Int, Codable {
   case notInterested = 2
   case watched = 3
   case pending = -1
-  
-  var listName: LocalizedStringResource {
+
+  var listName: LocalizedStringKey {
     switch self {
     case .interested:
       "Watchlist"
@@ -26,6 +27,21 @@ enum InterestStatus: Int, Codable {
       "Watched"
     case .pending:
       "None"
+    }
+  }
+
+  var icon: Image? {
+    switch self {
+    case .interested:
+      Image(.watchlistIconFill)
+    case .superInterested:
+      Image(.superHypedIconFill)
+    case .notInterested:
+      Image(.blacklistIconFill)
+    case .watched:
+      Image(.watchedIconFill)
+    default:
+      nil
     }
   }
 }

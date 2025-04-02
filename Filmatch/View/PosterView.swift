@@ -20,7 +20,7 @@ struct PosterView: View {
   let imageUrl: String?
 
   /// The desired size of the image. This corresponds to the size parameter in the URL.
-  let size: String
+  let size: PosterSize
 
   let posterType: PosterType
   
@@ -31,7 +31,7 @@ struct PosterView: View {
     guard let base = API.tmdbMediaBaseURL, let imageUrl, !imageUrl.isEmpty else {
       return nil
     }
-    return URL(string: "\(base)/\(size)/\(imageUrl)")
+    return URL(string: "\(base)/\(size.rawValue)/\(imageUrl)")
   }
 
   var body: some View {
@@ -62,7 +62,7 @@ struct PosterView: View {
 #Preview{
   PosterView(
     imageUrl: "1m3W6cpgwuIyjtg5nSnPx7yFkXW.jpg",
-    size: "original",
+    size: .w342,
     posterType: .movie
   )
 }

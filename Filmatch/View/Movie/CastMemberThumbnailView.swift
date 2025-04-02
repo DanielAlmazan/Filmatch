@@ -25,7 +25,7 @@ struct CastMemberThumbnailView: View {
     NavigationLink(destination: PersonDetailView(repository: personRepository, personId: castMember.id)) {
       VStack(alignment: .leading) {
         if let profilePath = castMember.profilePath {
-          PosterView(imageUrl: profilePath, size: "w200", posterType: .person)
+          PosterView(imageUrl: profilePath, size: .w342, posterType: .person)
             .clipShape(.rect(cornerRadius: 10))
             .shadow(radius: 5)
         } else {

@@ -23,7 +23,7 @@ struct TvSeriesDetailView: View {
         if vm.isTvSeriesLoading {
           ProgressView("Loading...")
         } else if let tvSeries = vm.tvSeries {
-          PosterView(imageUrl: tvSeries.posterPath, size: "w500", posterType: .movie)
+          PosterView(imageUrl: tvSeries.posterPath, size: .w500, posterType: .movie)
           
           VStack(alignment: .leading, spacing: 16) {
             TvSeriesFirstDetailsRow(

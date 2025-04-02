@@ -32,7 +32,9 @@ struct DiscoverMovieItem: DiscoverItem {
     guard let date = self.releaseDate else { return "unknown" }
     return "\(Calendar.current.component(.year, from: date))"
   }
-  
+
+  var status: InterestStatus?
+
   /// A default instance of `DiscoverMoviesItem` for testing purposes.
   static let `default` = DiscoverMovieItem(
     adult: false,
@@ -49,7 +51,8 @@ struct DiscoverMovieItem: DiscoverItem {
     title: "Alien: Romulus",
     video: false,
     voteAverage: 7.106,
-    voteCount: 95
+    voteCount: 95,
+    status: .interested
   )
 }
 

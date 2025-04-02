@@ -31,6 +31,8 @@ struct DiscoverTvSeriesItem: DiscoverItem {
     guard let date = self.firstAirDate else { return "unknown" }
     return "\(Calendar.current.component(.year, from: date))"
   }
+
+  var status: InterestStatus?
 }
 
 extension DiscoverTvSeriesItem: Encodable {

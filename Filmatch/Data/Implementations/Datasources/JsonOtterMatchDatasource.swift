@@ -50,12 +50,12 @@ final class JsonOtterMatchDatasource: OtterMatchGoDatasource {
     return .failure(RuntimeErrors.notImplemented)
   }
   
-  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<DiscoverMoviesResponse, any Error> {
+  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverMoviesResponse, any Error> {
     
     return .failure(RuntimeErrors.notImplemented)
   }
   
-  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<DiscoverTvSeriesResponse, any Error> {
+  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverTvSeriesResponse, any Error> {
     
     return .failure(RuntimeErrors.notImplemented)
   }
@@ -71,8 +71,8 @@ final class JsonOtterMatchDatasource: OtterMatchGoDatasource {
   }
   
   func searchUsers(containing query: String, at page: Int, with statuses: [FriendshipStatus]?, sortedBy status: FriendshipStatus?) async -> Result<SearchUsersResponse, any Error> {
-    
-    return .failure(RuntimeErrors.notImplemented)
+    guard let statuses = statuses else { return .failure(RuntimeErrors.notImplemented) }
+    return await client.get("search-users-\(statuses.joined())", responseType: SearchUsersResponse.self)
   }
   
   func sendFriendshipRequest(to uid: String) async -> Result<Void, any Error> {

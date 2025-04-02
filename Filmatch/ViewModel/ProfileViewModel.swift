@@ -14,6 +14,8 @@ final class ProfileViewModel {
   let filtersRepository: FiltersRepository
 
   var selectedMedia: MediaType = .movie
+  var query: String?
+  private var currentQuery: String?
 
   var areProvidersLoading: Bool = false
   private var movieProviders: [ProviderModel]?
@@ -33,107 +35,110 @@ final class ProfileViewModel {
     }
   }
 
-  private var superLikedMovies: [DiscoverMovieItem]?
-  private var superLikedTVSeries: [DiscoverTvSeriesItem]?
-  private var superLikedMoviesCurrentPage: Int = 1
-  private var superLikedMoviesMaxPages: Int = 1
-  private var superLikedTVSeriesCurrentPage: Int = 1
-  private var superLikedTVSeriesMaxPages: Int = 1
-  private var superLikedCurrentPage: Int {
+  // MARK: - Super Hyped attributes
+  private var superHypedMovies: [DiscoverMovieItem]?
+  private var superHypedTVSeries: [DiscoverTvSeriesItem]?
+  private var superHypedMoviesCurrentPage: Int = 1
+  private var superHypedMoviesMaxPages: Int = 1
+  private var superHypedTVSeriesCurrentPage: Int = 1
+  private var superHypedTVSeriesMaxPages: Int = 1
+  private var superHypedCurrentPage: Int {
     get {
       switch selectedMedia {
-      case .movie: superLikedMoviesCurrentPage
-      case .tvSeries: superLikedTVSeriesCurrentPage
+      case .movie: superHypedMoviesCurrentPage
+      case .tvSeries: superHypedTVSeriesCurrentPage
       }
     }
     set {
       switch selectedMedia {
-      case .movie: superLikedMoviesCurrentPage = newValue
-      case .tvSeries: superLikedTVSeriesCurrentPage = newValue
+      case .movie: superHypedMoviesCurrentPage = newValue
+      case .tvSeries: superHypedTVSeriesCurrentPage = newValue
       }
     }
   }
-  private var superLikedMaxPages: Int {
+  private var superHypedMaxPages: Int {
     get {
       switch selectedMedia {
-      case .movie: superLikedMoviesMaxPages
-      case .tvSeries: superLikedTVSeriesMaxPages
+      case .movie: superHypedMoviesMaxPages
+      case .tvSeries: superHypedTVSeriesMaxPages
       }
     }
     set {
       switch selectedMedia {
-      case .movie: superLikedMoviesMaxPages = newValue
-      case .tvSeries: superLikedTVSeriesMaxPages = newValue
+      case .movie: superHypedMoviesMaxPages = newValue
+      case .tvSeries: superHypedTVSeriesMaxPages = newValue
       }
     }
   }
-  var areSuperLikedLoading: Bool = false
-  var superLikedItems: [any DiscoverItem]? {
+  var isSuperHypedLoading: Bool = false
+  var superHypedItems: [any DiscoverItem]? {
     get {
       switch selectedMedia {
-      case .movie: superLikedMovies
-      case .tvSeries: superLikedTVSeries
+      case .movie: superHypedMovies
+      case .tvSeries: superHypedTVSeries
       }
     }
     set {
       switch selectedMedia {
-      case .movie: superLikedMovies = newValue as? [DiscoverMovieItem]
-      case .tvSeries: superLikedTVSeries = newValue as? [DiscoverTvSeriesItem]
-      }
-    }
-  }
-
-  var areLikedLoading: Bool = false
-  private var likedMovies: [DiscoverMovieItem]?
-  private var likedTVSeries: [DiscoverTvSeriesItem]?
-  private var likedMoviesCurrentPage: Int = 1
-  private var likedMoviesMaxPages: Int = 1
-  private var likedTVSeriesCurrentPage: Int = 1
-  private var likedTVSeriesMaxPages: Int = 1
-  private var likedCurrentPage: Int {
-    get {
-      switch selectedMedia {
-      case .movie: likedMoviesCurrentPage
-      case .tvSeries: likedTVSeriesCurrentPage
-      }
-    }
-    set {
-      switch selectedMedia {
-      case .movie: likedMoviesCurrentPage = newValue
-      case .tvSeries: likedTVSeriesCurrentPage = newValue
-      }
-    }
-  }
-  private var likedMaxPages: Int {
-    get {
-      switch selectedMedia {
-      case .movie: likedMoviesMaxPages
-      case .tvSeries: likedTVSeriesMaxPages
-      }
-    }
-    set {
-      switch selectedMedia {
-      case .movie: likedMoviesMaxPages = newValue
-      case .tvSeries: likedTVSeriesMaxPages = newValue
-      }
-    }
-  }
-  var likedItems: [any DiscoverItem]? {
-    get {
-      switch selectedMedia {
-      case .movie: likedMovies
-      case .tvSeries: likedTVSeries
-      }
-    }
-    set {
-      switch selectedMedia {
-      case .movie: likedMovies = newValue as? [DiscoverMovieItem]
-      case .tvSeries: likedTVSeries = newValue as? [DiscoverTvSeriesItem]
+      case .movie: superHypedMovies = newValue as? [DiscoverMovieItem]
+      case .tvSeries: superHypedTVSeries = newValue as? [DiscoverTvSeriesItem]
       }
     }
   }
 
-  var areWatchedLoading: Bool = false
+  // MARK: - Watchlist attributes
+  var isWatchlistLoading: Bool = false
+  private var watchlistMovies: [DiscoverMovieItem]?
+  private var watchlistTVSeries: [DiscoverTvSeriesItem]?
+  private var watchlistMoviesCurrentPage: Int = 1
+  private var watchlistMoviesMaxPages: Int = 1
+  private var watchlistTVSeriesCurrentPage: Int = 1
+  private var watchlistTVSeriesMaxPages: Int = 1
+  private var watchlistCurrentPage: Int {
+    get {
+      switch selectedMedia {
+      case .movie: watchlistMoviesCurrentPage
+      case .tvSeries: watchlistTVSeriesCurrentPage
+      }
+    }
+    set {
+      switch selectedMedia {
+      case .movie: watchlistMoviesCurrentPage = newValue
+      case .tvSeries: watchlistTVSeriesCurrentPage = newValue
+      }
+    }
+  }
+  private var watchlistMaxPages: Int {
+    get {
+      switch selectedMedia {
+      case .movie: watchlistMoviesMaxPages
+      case .tvSeries: watchlistTVSeriesMaxPages
+      }
+    }
+    set {
+      switch selectedMedia {
+      case .movie: watchlistMoviesMaxPages = newValue
+      case .tvSeries: watchlistTVSeriesMaxPages = newValue
+      }
+    }
+  }
+  var watchlistItems: [any DiscoverItem]? {
+    get {
+      switch selectedMedia {
+      case .movie: watchlistMovies
+      case .tvSeries: watchlistTVSeries
+      }
+    }
+    set {
+      switch selectedMedia {
+      case .movie: watchlistMovies = newValue as? [DiscoverMovieItem]
+      case .tvSeries: watchlistTVSeries = newValue as? [DiscoverTvSeriesItem]
+      }
+    }
+  }
+
+  // MARK: - Watched attributes
+  var isWatchedLoading: Bool = false
   private var watchedMovies: [DiscoverMovieItem]?
   private var watchedTVSeries: [DiscoverTvSeriesItem]?
   private var watchedMoviesCurrentPage: Int = 1
@@ -183,56 +188,58 @@ final class ProfileViewModel {
     }
   }
 
-  var areDislikedLoading: Bool = false
-  private var dislikedMovies: [DiscoverMovieItem]?
-  private var dislikedTVSeries: [DiscoverTvSeriesItem]?
-  private var dislikedMoviesCurrentPage: Int = 1
-  private var dislikedMoviesMaxPages: Int = 1
-  private var dislikedTVSeriesCurrentPage: Int = 1
-  private var dislikedTVSeriesMaxPages: Int = 1
-  private var dislikedCurrentPage: Int {
+  // MARK: - Blacklist attributes
+  var isBlacklistLoading: Bool = false
+  private var blacklistMovies: [DiscoverMovieItem]?
+  private var blacklistTVSeries: [DiscoverTvSeriesItem]?
+  private var blacklistMoviesCurrentPage: Int = 1
+  private var blacklistMoviesMaxPages: Int = 1
+  private var blacklistTVSeriesCurrentPage: Int = 1
+  private var blacklistTVSeriesMaxPages: Int = 1
+  private var blacklistCurrentPage: Int {
     get {
       switch selectedMedia {
-      case .movie: dislikedMoviesCurrentPage
-      case .tvSeries: dislikedTVSeriesCurrentPage
+      case .movie: blacklistMoviesCurrentPage
+      case .tvSeries: blacklistTVSeriesCurrentPage
       }
     }
     set {
       switch selectedMedia {
-      case .movie: dislikedMoviesCurrentPage = newValue
-      case .tvSeries: dislikedTVSeriesCurrentPage = newValue
+      case .movie: blacklistMoviesCurrentPage = newValue
+      case .tvSeries: blacklistTVSeriesCurrentPage = newValue
       }
     }
   }
-  private var dislikedMaxPages: Int {
+  private var blacklistMaxPages: Int {
     get {
       switch selectedMedia {
-      case .movie: dislikedMoviesMaxPages
-      case .tvSeries: dislikedTVSeriesMaxPages
+      case .movie: blacklistMoviesMaxPages
+      case .tvSeries: blacklistTVSeriesMaxPages
       }
     }
     set {
       switch selectedMedia {
-      case .movie: dislikedMoviesMaxPages = newValue
-      case .tvSeries: dislikedTVSeriesMaxPages = newValue
+      case .movie: blacklistMoviesMaxPages = newValue
+      case .tvSeries: blacklistTVSeriesMaxPages = newValue
       }
     }
   }
-  var dislikedItems: [any DiscoverItem]? {
+  var blacklistItems: [any DiscoverItem]? {
     get {
       switch selectedMedia {
-      case .movie: dislikedMovies
-      case .tvSeries: dislikedTVSeries
+      case .movie: blacklistMovies
+      case .tvSeries: blacklistTVSeries
       }
     }
     set {
       switch selectedMedia {
-      case .movie: dislikedMovies = newValue as? [DiscoverMovieItem]
-      case .tvSeries: dislikedTVSeries = newValue as? [DiscoverTvSeriesItem]
+      case .movie: blacklistMovies = newValue as? [DiscoverMovieItem]
+      case .tvSeries: blacklistTVSeries = newValue as? [DiscoverTvSeriesItem]
       }
     }
   }
-  
+
+  // MARK: - Init
   init(
     user: OtterMatchUser,
     otterMatchRepository: OtterMatchGoRepositoryImpl,
@@ -242,13 +249,15 @@ final class ProfileViewModel {
     self.otterMatchRepository = otterMatchRepository
     self.filtersRepository = filtersRepository
   }
-  
+
+  // MARK: - Functions
+
   @MainActor
   func loadProviders() async {
     areProvidersLoading = true
 
     let movieProvidersResult = await filtersRepository.getProviders(for: selectedMedia)
-    
+
     switch movieProvidersResult {
     case .success(let response):
       self.providers = response.sortByDisplayPriority().map {
@@ -261,7 +270,7 @@ final class ProfileViewModel {
 
     areProvidersLoading = false
   }
-  
+
   @MainActor
   func loadItems(for status: InterestStatus) async {
     switch status {
@@ -277,35 +286,33 @@ final class ProfileViewModel {
       break
     }
   }
-  
+
   @MainActor
   func loadMoreItems(for status: InterestStatus) async {
     var proceed = true
 
     switch status {
     case .interested:
-      if !areLikedLoading && likedCurrentPage < likedMoviesMaxPages {
-        self.likedCurrentPage += 1
+      if !isWatchlistLoading && watchlistCurrentPage < watchlistMoviesMaxPages {
+        self.watchlistCurrentPage += 1
       } else {
         proceed = false
       }
     case .notInterested:
-      print("areDislikedLoading: \(areDislikedLoading) - currentPage: \(dislikedCurrentPage) - maxPages: \(dislikedMaxPages)")
-      print("the condition: \(!areDislikedLoading && dislikedCurrentPage <= dislikedMaxPages)")
-      if !areDislikedLoading && dislikedCurrentPage <= dislikedMaxPages {
-        self.dislikedCurrentPage += 1
+      if !isBlacklistLoading && blacklistCurrentPage <= blacklistMaxPages {
+        self.blacklistCurrentPage += 1
       } else {
         proceed = false
       }
     case .watched:
-      if !areWatchedLoading && watchedCurrentPage <= watchedMoviesMaxPages {
+      if !isWatchedLoading && watchedCurrentPage <= watchedMoviesMaxPages {
         self.watchedCurrentPage += 1
       } else {
         proceed = false
       }
     case .superInterested:
-      if !areSuperLikedLoading && superLikedCurrentPage <= superLikedMaxPages {
-        self.dislikedCurrentPage += 1
+      if !isSuperHypedLoading && superHypedCurrentPage <= superHypedMaxPages {
+        self.blacklistCurrentPage += 1
       } else {
         proceed = false
       }
@@ -316,107 +323,122 @@ final class ProfileViewModel {
     }
     if proceed { await loadItems(for: status) }
   }
-  
+
+  func onNavigateToDetail(for status: InterestStatus) {
+    query = ""
+    currentQuery = ""
+  }
+
   @MainActor
   private func loadSuperLikedItems() async {
-    areSuperLikedLoading = true
-    
-    self.superLikedItems = switch selectedMedia {
-    case .movie:
-      await loadMoviesByStatus(as: .superInterested, at: superLikedCurrentPage)
-    case .tvSeries:
-      await loadTvSeriesByStatus(as: .superInterested, at: superLikedCurrentPage)
-    }
-    
-    areSuperLikedLoading = false
+    isSuperHypedLoading = true
+
+    let result =
+      switch selectedMedia {
+      case .movie:
+        await loadMoviesByStatus(as: .superInterested, containing: currentQuery, at: superHypedCurrentPage)
+      case .tvSeries:
+        await loadTvSeriesByStatus(as: .superInterested, containing: currentQuery, at: superHypedCurrentPage)
+      }
+
+    superHypedItems.appendItems(result)
+
+    isSuperHypedLoading = false
   }
-  
+
   @MainActor
   private func loadLikedItems() async {
-    areLikedLoading = true
-    
-    self.likedItems = switch selectedMedia {
-    case .movie:
-      await loadMoviesByStatus(as: .interested, at: likedCurrentPage)
-    case .tvSeries:
-      await loadTvSeriesByStatus(as: .interested, at: likedCurrentPage)
-    }
-    
-    areLikedLoading = false
+    isWatchlistLoading = true
+
+    let result =
+      switch selectedMedia {
+      case .movie:
+        await loadMoviesByStatus(as: .interested, containing: currentQuery, at: watchlistCurrentPage)
+      case .tvSeries:
+        await loadTvSeriesByStatus(as: .interested, containing: currentQuery, at: watchlistCurrentPage)
+      }
+
+    watchlistItems.appendItems(result)
+
+    isWatchlistLoading = false
   }
-  
+
   @MainActor
   private func loadWatchedItems() async {
-    areWatchedLoading = true
-    
-    self.watchedItems = switch selectedMedia {
-    case .movie:
-      await loadMoviesByStatus(as: .interested, at: watchedCurrentPage)
-    case .tvSeries:
-      await loadTvSeriesByStatus(as: .interested, at: watchedCurrentPage)
-    }
-    
-    areWatchedLoading = false
+    isWatchedLoading = true
+
+    let result =
+      switch selectedMedia {
+      case .movie:
+        await loadMoviesByStatus(as: .watched, containing: currentQuery, at: watchedCurrentPage)
+      case .tvSeries:
+        await loadTvSeriesByStatus(as: .watched, containing: currentQuery, at: watchedCurrentPage)
+      }
+
+    watchedItems.appendItems(result)
+
+    isWatchedLoading = false
   }
-  
+
   @MainActor
   private func loadDislikedItems() async {
-    areDislikedLoading = true
-    
-    let result = switch selectedMedia {
-    case .movie:
-      await loadMoviesByStatus(as: .notInterested, at: dislikedCurrentPage)
-    case .tvSeries:
-      await loadTvSeriesByStatus(as: .notInterested, at: dislikedCurrentPage)
-    }
-    
-    dislikedItems.appendItems(result)
-    
-    areDislikedLoading = false
+    isBlacklistLoading = true
+
+    let result =
+      switch selectedMedia {
+      case .movie:
+        await loadMoviesByStatus(as: .notInterested, containing: currentQuery, at: blacklistCurrentPage)
+      case .tvSeries:
+        await loadTvSeriesByStatus(as: .notInterested, containing: currentQuery, at: blacklistCurrentPage)
+      }
+
+    blacklistItems.appendItems(result)
+
+    isBlacklistLoading = false
   }
-  
+
   @MainActor
-  private func loadMoviesByStatus(as status: InterestStatus, at page: Int) async -> [any DiscoverItem] {
-    let superLikedMovies = await otterMatchRepository.getUserVisitedMoviesByStatus(
+  private func loadMoviesByStatus(as status: InterestStatus, containing query: String?, at page: Int) async -> [any DiscoverItem] {
+    let result = await otterMatchRepository.getUserVisitedMoviesByStatus(
       for: user.uid,
       as: status,
       at: page)
-    switch superLikedMovies {
+    switch result {
     case .success(let response):
       setMaxPages(for: status, at: response.totalPages)
-      return response.results.toDiscoverMovieItems()
+      return response.results.toDiscoverMovieItems(as: status)
     case .failure(let error):
-      print("Error fetching \(status) Movies: \(error)")
+      print("Error fetching \(status) Movies: \(error.localizedDescription)")
       return []
     }
   }
-  
+
   @MainActor
-  private func loadTvSeriesByStatus(as status: InterestStatus, at page: Int) async -> [any DiscoverItem] {
-    let superLikedMovies = await otterMatchRepository.getUserVisitedTvSeriesByStatus(
+  private func loadTvSeriesByStatus(as status: InterestStatus, containing query: String?, at page: Int) async -> [any DiscoverItem] {
+    let result = await otterMatchRepository.getUserVisitedTvSeriesByStatus(
       for: user.uid,
       as: status,
       at: page)
-    switch superLikedMovies {
+    switch result {
     case .success(let response):
       setMaxPages(for: status, at: page)
-      return response.results.toDiscoverTvSeriesItems()
+      return response.results.toDiscoverTvSeriesItems(as: status)
     case .failure(let error):
       print("Error fetching \(status) TVSeries: \(error)")
       return []
     }
   }
-  
+
   private func setMaxPages(for status: InterestStatus, at maxPages: Int) {
     switch status {
     case .interested:
-      self.likedMaxPages = maxPages
+      self.watchlistMaxPages = maxPages
 
     case .superInterested:
-      self.superLikedMaxPages = maxPages
+      self.superHypedMaxPages = maxPages
 
     case .notInterested:
-      self.dislikedMaxPages = maxPages
+      self.blacklistMaxPages = maxPages
 
     case .watched:
       self.watchedMaxPages = maxPages
@@ -424,5 +446,22 @@ final class ProfileViewModel {
     case .pending:
       break
     }
+  }
+
+  func onSelectedMediaChanged() {
+    self.query = ""
+    self.currentQuery = ""
+
+    self.watchlistMaxPages = 1
+    self.watchlistCurrentPage = 1
+
+    self.superHypedMaxPages = 1
+    self.superHypedCurrentPage = 1
+
+    self.blacklistMaxPages = 1
+    self.blacklistCurrentPage = 1
+
+    self.watchedMaxPages = 1
+    self.watchedCurrentPage = 1
   }
 }

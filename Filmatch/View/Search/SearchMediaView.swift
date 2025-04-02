@@ -9,11 +9,6 @@ import Kingfisher
 import SwiftUI
 
 struct SearchMediaView: View {
-  private enum ListType {
-    case grid
-    case list
-  }
-
   @State private var searchVm: SearchViewModel
 
   @State private var isGridSelected: Bool = true
@@ -79,7 +74,6 @@ struct SearchMediaView: View {
     }  // VStack
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("Search")
-    .navigationBarTitleDisplayMode(.inline)
 
     if searchVm.isLoading {
       ProgressView("Searching results for: \"\(searchVm.query)\"...")

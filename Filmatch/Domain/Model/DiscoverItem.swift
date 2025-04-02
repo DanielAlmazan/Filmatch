@@ -21,6 +21,8 @@ protocol DiscoverItem: Identifiable, Sendable {
   
   var getTitle: String { get }
   var getReleaseDate: String { get }
+
+  var status: InterestStatus? { get set }
 }
 
 extension [DiscoverItem]? {

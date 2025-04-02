@@ -47,12 +47,12 @@ final class OtterMatchGoRepositoryImpl: OtterMatchGoRepository {
     await self.datasource.getLatestVisitedPageByFiltersHash(for: hash)
   }
   
-  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<DiscoverMoviesResponse, Error> {
-    await self.datasource.getUserVisitedMoviesByStatus(for: uid, as: status, at: page)
+  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverMoviesResponse, Error> {
+    await self.datasource.getUserVisitedMoviesByStatus(for: uid, as: status, containing: query, at: page)
   }
   
-  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<DiscoverTvSeriesResponse, Error> {
-    await self.datasource.getUserVisitedTvSeriesByStatus(for: uid, as: status, at: page)
+  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverTvSeriesResponse, Error> {
+    await self.datasource.getUserVisitedTvSeriesByStatus(for: uid, as: status, containing: query, at: page)
   }
   
   func getUserFriends(at page: Int) async -> Result<FriendshipsResponse, Error> {

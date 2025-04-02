@@ -8,7 +8,7 @@
 import Foundation
 
 extension DiscoverMoviesItemSingleResponse {
-  func toDiscoverMovieItem() -> DiscoverMovieItem {
+  func toDiscoverMovieItem(as status: InterestStatus? = nil) -> DiscoverMovieItem {
     .init(adult: self.adult,
           backdropPath: self.backdropPath,
           genreIds: self.genreIds ?? [],
@@ -22,12 +22,13 @@ extension DiscoverMoviesItemSingleResponse {
           title: self.title,
           video: self.video,
           voteAverage: self.voteAverage,
-          voteCount: self.voteCount)
+          voteCount: self.voteCount,
+          status: status)
   }
 }
 
 extension DiscoverTvSeriesItemSingleResponse {
-  func toDiscoverTvSeriesItem() -> DiscoverTvSeriesItem {
+  func toDiscoverTvSeriesItem(as status: InterestStatus? = nil) -> DiscoverTvSeriesItem {
     .init(backdropPath: self.backdropPath,
           firstAirDate: self.firstAirDate,
           genreIds: self.genreIds ?? [],
@@ -40,7 +41,8 @@ extension DiscoverTvSeriesItemSingleResponse {
           popularity: self.popularity,
           posterPath: self.posterPath,
           voteAverage: self.voteAverage ?? 0,
-          voteCount: self.voteCount ?? 0)
+          voteCount: self.voteCount ?? 0,
+          status: status)
   }
 }
 
@@ -223,14 +225,14 @@ extension Array where Element == OtterMatchUserResponse {
 }
 
 extension Array where Element == DiscoverMoviesItemSingleResponse {
-  func toDiscoverMovieItems() -> [DiscoverMovieItem] {
-    self.map { $0.toDiscoverMovieItem() }
+  func toDiscoverMovieItems(as status: InterestStatus? = nil) -> [DiscoverMovieItem] {
+    self.map { $0.toDiscoverMovieItem(as: status) }
   }
 }
 
 extension Array where Element == DiscoverTvSeriesItemSingleResponse {
-  func toDiscoverTvSeriesItems() -> [DiscoverTvSeriesItem] {
-    self.map { $0.toDiscoverTvSeriesItem() }
+  func toDiscoverTvSeriesItems(as status: InterestStatus? = nil) -> [DiscoverTvSeriesItem] {
+    self.map { $0.toDiscoverTvSeriesItem(as: status) }
   }
 }
 

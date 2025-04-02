@@ -28,7 +28,7 @@ struct PersonMovieCreditsAsCastRow: View {
               if let movieId = movie.id {
                 NavigationLink(destination: MovieDetailView(repository: moviesRepository, movieId: movieId)) {
                   VStack(alignment: .leading) {
-                    PosterView(imageUrl: movie.posterPath, size: "w500", posterType: .movie)
+                    PosterView(imageUrl: movie.posterPath, size: .w500, posterType: .movie)
                       .clipShape(.rect(cornerRadius: 10))
                     if let title = movie.title {
                       Text("In \"\(title)\"")

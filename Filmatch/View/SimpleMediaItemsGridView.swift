@@ -18,7 +18,7 @@ struct SimpleMediaItemsGridView: View {
 
   let results: [any DiscoverItem]
 
-  let action: () -> Void
+  let onLastAppeared: () -> Void
 
   var body: some View {
     LazyVGrid(columns: columns, spacing: 16) {
@@ -40,13 +40,14 @@ struct SimpleMediaItemsGridView: View {
         } label: {
           SearchItemThumbnail(
             imageUrl: results[index].posterPath,
-            size: "w200",
+            size: .w342,
             title: results[index].getTitle,
-            releaseDate: results[index].getReleaseDate
+            releaseDate: results[index].getReleaseDate,
+            status: results[index].status
           )
           .onAppear {
             if index == results.count - 1 {
-              action()
+              onLastAppeared()
             }
           }
         }
@@ -56,9 +57,12 @@ struct SimpleMediaItemsGridView: View {
 }
 
 #Preview {
-  SimpleMediaItemsGridView(results: [DiscoverMovieItem.default]) {
+  @Previewable @State var movie = DiscoverMovieItem.default
+
+  SimpleMediaItemsGridView(results: [movie]) {
     print("Last appeared")
   }
+  .task { movie.status = .interested }
   .environment(
     MoviesRepositoryImpl(
       datasource: JsonMoviesRemoteDatasource()

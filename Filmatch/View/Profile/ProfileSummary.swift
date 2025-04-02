@@ -33,40 +33,45 @@ struct ProfileSummary: View {
     VStack(spacing: 10) {
       UserAvatarView(user: user, size: 100)
         .shadow(radius: 5, y: 5)
-      
+
       // MARK: - Friends
       ProfileFriendsContainer(
         title: "My Friends",
         height: kRowsHeight,
         isLoading: self.$friendsVm.isLoadingFriends,
         friends: self.$friendsVm.friends)
-      
+
       // MARK: - Own lists
-      Group {
-        ProfileMediaCardRowContainer(
-          title: "Liked",
-          height: kRowsHeight,
-          isLoading: self.$profileVm.areLikedLoading,
-          items: self.profileVm.likedItems,
-          onLastAppeared: { onLastAppeared(for: .interested) }
+      NavigationLink {
+        MyListsView(
+          user: self.user,
+          media: self.profileVm.selectedMedia,
+          height: kRowsHeight * 1.6,
+          profileVm: self.profileVm
         )
-        
-        ProfileMediaCardRowContainer(
-          title: "Disliked",
-          height: kRowsHeight,
-          isLoading: self.$profileVm.areDislikedLoading,
-          items: self.profileVm.dislikedItems,
-          onLastAppeared: { onLastAppeared(for: .notInterested) }
-        )
+        .background(.bgBase)
+      } label: {
+        HStack {
+          Text("My lists")
+            .foregroundColor(.primary)
+          Spacer()
+          Image(systemName: "chevron.right")
+            .foregroundColor(.secondary)
+        }
+        .padding()
+        .background(.bgContainer)
+        .clipShape(.rect(cornerRadius: 10))
       }
-      .foregroundStyle(.onBgBase)
-      .padding()
-      .background(.bgContainer)
-      .clipShape(.rect(cornerRadius: 10))
     }
-//    .scrollClipDisabled()
     .navigationTitle(Text(user.username ?? "Profile"))
-    .task { await initLists() }
+    .task {
+      await initFriends()
+      await initMyLists()
+    }
+    .onChange(of: self.profileVm.selectedMedia) {
+      self.profileVm.onSelectedMediaChanged()
+      Task { await initMyLists() }
+    }
   }
   
   private func onLastAppeared(for status: InterestStatus) {
@@ -75,23 +80,26 @@ struct ProfileSummary: View {
     }
   }
   
-  private func initLists() async {
-//    if self.profileVm.providers == nil || self.profileVm.providers!.isEmpty {
-//      await self.profileVm.loadProviders()
-//    }
-    if self.friendsVm.friends == nil || self.friendsVm.friends!.isEmpty {
+  private func initFriends() async {
+    if self.friendsVm.friends?.isEmpty ?? true {
       await self.friendsVm.loadFriends()
     }
-//    if self.profileVm.superLikedItems == nil || self.profileVm.superLikedItems!.isEmpty {
-//      await self.profileVm.loadItems(for: .superInterested)
+  }
+
+  private func initMyLists() async {
+//    if self.profileVm.providers?.isEmpty ?? true {
+//      await self.profileVm.loadProviders()
 //    }
-    if self.profileVm.likedItems == nil || self.profileVm.likedItems!.isEmpty {
+    if self.profileVm.superHypedItems?.isEmpty ?? true {
+      await self.profileVm.loadItems(for: .superInterested)
+    }
+    if self.profileVm.watchlistItems?.isEmpty ?? true {
       await self.profileVm.loadItems(for: .interested)
     }
-//    if self.profileVm.watchedItems == nil || self.profileVm.watchedItems!.isEmpty {
-//      await self.profileVm.loadItems(for: .watched)
-//    }
-    if self.profileVm.dislikedItems == nil || self.profileVm.dislikedItems!.isEmpty {
+    if self.profileVm.watchedItems?.isEmpty ?? true {
+      await self.profileVm.loadItems(for: .watched)
+    }
+    if self.profileVm.blacklistItems?.isEmpty ?? true {
       await self.profileVm.loadItems(for: .notInterested)
     }
   }
@@ -127,7 +135,7 @@ struct ProfileSummary: View {
         friendsVm: friendsVm
       )
     }
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     .padding()
     .background(.bgBase)
     .environment(moviesRepository)

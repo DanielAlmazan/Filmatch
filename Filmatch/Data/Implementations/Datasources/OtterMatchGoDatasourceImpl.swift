@@ -166,14 +166,20 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     }
   }
   
-  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, at page: Int) async -> Result<DiscoverMoviesResponse, Error> {
+  func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverMoviesResponse, Error> {
+    var queryParams: [FilmatchGoQueryParam] = [
+      .interestStatus(status),
+      .page(page)
+    ]
+
+    if let query, !query.isEmpty {
+      queryParams.append(.query(query))
+    }
+
     let result = await client.request(
       path: .userVisitedMoviesList(uid),
       method: .GET,
-      queryParams: [
-        .interestStatus(status),
-        .page(page)
-      ]
+      queryParams: queryParams
     )
     
     switch result {
@@ -189,18 +195,20 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     }
   }
   
-  func getUserVisitedTvSeriesByStatus(
-    for uid: String,
-    as status: InterestStatus,
-    at page: Int
-  ) async -> Result<DiscoverTvSeriesResponse, Error> {
+  func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverTvSeriesResponse, Error> {
+    var queryParams: [FilmatchGoQueryParam] = [
+      .interestStatus(status),
+      .page(page)
+    ]
+
+    if let query, !query.isEmpty {
+      queryParams.append(.query(query))
+    }
+
     let result = await client.request(
       path: .userVisitedTvList(uid),
       method: .GET,
-      queryParams: [
-        .interestStatus(status),
-        .page(page)
-      ]
+      queryParams: queryParams
     )
     
     switch result {
@@ -399,7 +407,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       .page(page),
       .resultsPerPage(10)
     ]
-    if let query {
+    if let query, !query.isEmpty {
       queryParams.append(.query(query))
     }
 
@@ -429,7 +437,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       .page(page),
       .resultsPerPage(10)
     ]
-    if let query {
+    if let query, !query.isEmpty {
       queryParams.append(.query(query))
     }
     
@@ -458,7 +466,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     var queryParams: [FilmatchGoQueryParam] = [
       .page(page)
     ]
-    if let query {
+    if let query, !query.isEmpty {
       queryParams.append(.query(query))
     }
     let result = await client.request(
@@ -484,7 +492,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
     var queryParams: [FilmatchGoQueryParam] = [
       .page(page)
     ]
-    if let query {
+    if let query, !query.isEmpty {
       queryParams.append(.query(query))
     }
     let result = await client.request(

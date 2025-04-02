@@ -14,3 +14,9 @@ enum FriendshipStatus: Int, Sendable, Codable {
   case friend = 3
   case blocked = 4
 }
+
+extension [FriendshipStatus] {
+  func joined(separator: String = ",") -> String {
+    self.map(\.rawValue.description).joined(separator: separator)
+  }
+}

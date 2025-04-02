@@ -1,0 +1,456 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    " %lld more characters" : {
+      "comment" : "Full sentence could be \"Password must contain at least 8 characters.\"",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld caracters més"
+          }
+        }
+      }
+    },
+    " one lowercase letter" : {
+      "comment" : "Full sentence could be \"Password must contain at least one lowercase letter.\"",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "una lletra minúscula"
+          }
+        }
+      }
+    },
+    " one non-alphanumeric character" : {
+      "comment" : "Full sentence could be \"Password must contain at least one non-alphanumeric character.",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "un caràcter no alfanumèric"
+          }
+        }
+      }
+    },
+    " one number" : {
+      "comment" : "Full sentence could be \"Password must contain at least one number.",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "un número"
+          }
+        }
+      }
+    },
+    " one uppercase letter" : {
+      "comment" : "Full sentence could be \"Password must contain at least one uppercase letter.\"",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "una lletra majúscula"
+          }
+        }
+      }
+    },
+    "(%@)" : {
+
+    },
+    "(Full app!)" : {
+
+    },
+    "(Without login!)" : {
+
+    },
+    "%" : {
+      "comment" : "Percentage for the Average Votes gauge"
+    },
+    "%@" : {
+
+    },
+    "%@ and %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ and %2$@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "%lld seasons" : {
+
+    },
+    "%lldh %lldm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lldh %2$lldm"
+          }
+        }
+      }
+    },
+    "Accept" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add friends" : {
+
+    },
+    "Add Friends" : {
+
+    },
+    "Already have an account?" : {
+
+    },
+    "also_known_as_female: %@" : {
+
+    },
+    "also_known_as_male: %@" : {
+
+    },
+    "also_known_as_non_binary: %@" : {
+
+    },
+    "and more..." : {
+
+    },
+    "As %@" : {
+
+    },
+    "As cast member..." : {
+
+    },
+    "As crew member..." : {
+
+    },
+    "Authenticate again" : {
+
+    },
+    "Biography" : {
+
+    },
+    "Blacklist" : {
+
+    },
+    "Block" : {
+
+    },
+    "Blocked" : {
+
+    },
+    "born_female: %@" : {
+
+    },
+    "born_male: %@" : {
+
+    },
+    "born_non_binary: %@" : {
+
+    },
+    "Buy" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Cancel friend request" : {
+
+    },
+    "Cancel Request" : {
+
+    },
+    "Cast" : {
+
+    },
+    "Checking user..." : {
+
+    },
+    "Choose films with your friends without logging in!" : {
+
+    },
+    "Create Room" : {
+
+    },
+    "Delete Account" : {
+
+    },
+    "Delete friend" : {
+
+    },
+    "Directed by %@" : {
+
+    },
+    "Discover" : {
+
+    },
+    "Discover %@" : {
+
+    },
+    "Dismiss" : {
+
+    },
+    "Don't have an account?" : {
+
+    },
+    "Done" : {
+
+    },
+    "Email" : {
+
+    },
+    "Email is required" : {
+
+    },
+    "Error" : {
+
+    },
+    "Error deleting account: %@" : {
+
+    },
+    "Error: Film not loaded: %@" : {
+
+    },
+    "Error: Person not loaded: %@" : {
+
+    },
+    "Filters" : {
+
+    },
+    "Flatrate" : {
+
+    },
+    "Friends" : {
+
+    },
+    "Friendship Requests" : {
+
+    },
+    "From" : {
+
+    },
+    "Genres" : {
+
+    },
+    "Get started" : {
+
+    },
+    "Go to Rooms" : {
+
+    },
+    "Hello, World!" : {
+
+    },
+    "Hide" : {
+
+    },
+    "How do you want to start your adventure?" : {
+
+    },
+    "In \"%@\"" : {
+
+    },
+    "It might be related to the app's language, try selecting another one." : {
+
+    },
+    "Join room" : {
+
+    },
+    "known_for_department_female: %@" : {
+
+    },
+    "known_for_department_male: %@" : {
+
+    },
+    "known_for_department_non_binary: %@" : {
+
+    },
+    "Loading..." : {
+
+    },
+    "Log in" : {
+
+    },
+    "Log in to access to all the app’s functionalities!" : {
+
+    },
+    "Log out" : {
+
+    },
+    "Login" : {
+
+    },
+    "Matches" : {
+
+    },
+    "Movies" : {
+
+    },
+    "My Friends" : {
+
+    },
+    "My lists" : {
+
+    },
+    "My Lists" : {
+
+    },
+    "No cast members found for this movie." : {
+
+    },
+    "No movies found" : {
+
+    },
+    "No results" : {
+
+    },
+    "No tv series found" : {
+
+    },
+    "No user logged in." : {
+
+    },
+    "No videos available." : {
+
+    },
+    "None" : {
+
+    },
+    "Ok" : {
+
+    },
+    "Onboarding page %lld" : {
+
+    },
+    "Or sign in with" : {
+
+    },
+    "Password" : {
+
+    },
+    "Password is required" : {
+
+    },
+    "Password must contain at least:" : {
+
+    },
+    "Place of Birth: %@" : {
+
+    },
+    "Platforms" : {
+
+    },
+    "Please, enter a valid email" : {
+
+    },
+    "Powered by JustWatch" : {
+
+    },
+    "Profile" : {
+
+    },
+    "Register" : {
+
+    },
+    "Reject" : {
+
+    },
+    "Remove" : {
+
+    },
+    "Rent" : {
+
+    },
+    "Rooms" : {
+
+    },
+    "Search" : {
+
+    },
+    "Searching results for: \"%@\"..." : {
+
+    },
+    "See all" : {
+
+    },
+    "Select Filters" : {
+
+    },
+    "Select room" : {
+
+    },
+    "Send friend request" : {
+
+    },
+    "Start" : {
+
+    },
+    "Success" : {
+
+    },
+    "SuperHype" : {
+
+    },
+    "There are no items to show..." : {
+
+    },
+    "This operation is sensitive and requires recent authentication. Log in again before retrying this request." : {
+
+    },
+    "To" : {
+
+    },
+    "Try refreshing or changing your filters." : {
+
+    },
+    "Tv Series" : {
+
+    },
+    "Unblock" : {
+
+    },
+    "Unknown" : {
+
+    },
+    "Unsupported item" : {
+
+    },
+    "Videos" : {
+
+    },
+    "Watch on..." : {
+
+    },
+    "Watched" : {
+
+    },
+    "Watchlist" : {
+
+    },
+    "Welcome Back" : {
+
+    },
+    "Welcome to OtterMatch!" : {
+
+    },
+    "What do you want to watch?" : {
+
+    },
+    "Year" : {
+
+    }
+  },
+  "version" : "1.0"
+}
