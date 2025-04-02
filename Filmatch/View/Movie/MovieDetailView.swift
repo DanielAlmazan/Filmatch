@@ -40,7 +40,7 @@ struct MovieDetailView: View {
           // Display the movie details when data is available.
           ScrollView {
             // MARK: - Poster Image
-            PosterView(imageUrl: movie.posterPath, size: "w500", posterType: .movie)
+            PosterView(imageUrl: movie.posterPath, size: .w500, posterType: .movie)
             
             VStack(alignment: .leading, spacing: 16) {
               MovieFirstDetailsRow(voteAverage: movie.voteAverage, genres: movie.genres, runtime: movie.runtime, providers: vm.providers)

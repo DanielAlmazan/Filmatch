@@ -19,7 +19,7 @@ struct HomeView: View {
     case profile
   }
   /// The index of the currently selected tab.
-  @State var selectedTab: TabIndex = .matches
+  @State var selectedTab: TabIndex = .profile
 
   /// The authentication view model used for user authentication and profile management.
   @Environment(AuthenticationViewModel.self) var authVm

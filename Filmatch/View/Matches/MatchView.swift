@@ -18,7 +18,7 @@ struct MatchView: View {
       let computedOffset = computedMaxIconHeight * 0.2
       
       ZStack(alignment: .bottomTrailing) {
-        PosterView(imageUrl: match.item.posterPath, size: "w500", posterType: .movie)
+        PosterView(imageUrl: match.item.posterPath, size: .w500, posterType: .movie)
           .cornerRadius(computedCornerRadius)
         if match.isSuperMatch {
           Image(.superMatchIcon)

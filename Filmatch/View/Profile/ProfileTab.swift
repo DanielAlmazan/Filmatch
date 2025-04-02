@@ -13,12 +13,12 @@ struct ProfileTab: View {
   @Environment(OtterMatchGoRepositoryImpl.self) var otterMatchRepository
   @Environment(FiltersRepositoryImpl.self) var filtersRepository
   @Environment(FriendsViewModel.self) var friendsVm
-  
+
   @State private var showAlert = false
   @State private var alertMessage: LocalizedStringResource = ""
   @State private var isError = false
   @State private var operationError: NSError?
-  
+
   @State private var isReAuthenticating = false
 
   var body: some View {
@@ -31,13 +31,13 @@ struct ProfileTab: View {
             filtersRepository: filtersRepository,
             friendsVm: friendsVm
           )
-            .frame(maxWidth: .infinity)
-          
+          .frame(maxWidth: .infinity)
+
           Group {
             Button("Log out") {
               authVm.logOut()
             }
-            
+
             Button("Delete Account") {
               deleteAccount()
             }
@@ -49,7 +49,7 @@ struct ProfileTab: View {
       }
       .padding(.horizontal)
       .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
-        Button("Cancel", role: .cancel) { }
+        Button("Cancel", role: .cancel) {}
         Button("Ok") {
           if operationError.code == 17014 {
             isReAuthenticating = true
@@ -59,7 +59,8 @@ struct ProfileTab: View {
         Text(alertMessage)
       }
       .sheet(isPresented: $isReAuthenticating) {
-        LoginView(title: "Authenticate again", isReAuthentication: true, authVm: authVm, authSheetView: .constant(.LOGIN))
+        LoginView(
+          title: "Authenticate again", isReAuthentication: true, authVm: authVm, authSheetView: .constant(.LOGIN))
       }
     } else {
       VStack {
@@ -67,12 +68,12 @@ struct ProfileTab: View {
       }
     }
   }
-  
+
   private func deleteAccount() {
-//    authVm.deleteAccount { result in
-//      
-//      showAlert = true
-//    }
+    //    authVm.deleteAccount { result in
+    //
+    //      showAlert = true
+    //    }
     Task {
       let result = await authVm.deleteAccount()
       switch result {
@@ -87,11 +88,12 @@ struct ProfileTab: View {
       }
     }
   }
-  
+
   private func processError(for error: NSError) -> LocalizedStringResource {
     switch error.code {
-      case 17014: "This operation is sensitive and requires recent authentication. Log in again before retrying this request."
-      default: "\(error.localizedDescription)"
+    case 17014:
+      "This operation is sensitive and requires recent authentication. Log in again before retrying this request."
+    default: "\(error.localizedDescription)"
     }
   }
 }
@@ -118,13 +120,15 @@ struct ProfileTab: View {
       )
     )
   )
-  
-  ProfileTab()
-    .environment(authenticationViewModel)
-    .environment(otterMatchRepository)
-    .environment(filtersRepository)
-    .environment(friendsViewModel)
-    .task {
-      authenticationViewModel.currentUser = .default
-    }
+
+  NavigationStack {
+    ProfileTab()
+      .environment(authenticationViewModel)
+      .environment(otterMatchRepository)
+      .environment(filtersRepository)
+      .environment(friendsViewModel)
+      .task {
+        authenticationViewModel.currentUser = .default
+      }
+  }
 }

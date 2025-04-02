@@ -12,52 +12,43 @@ struct SearchItemThumbnail: View {
   /// The relative path to the image file.
   let imageUrl: String?
   /// The desired size of the image. This corresponds to the size parameter in the URL.
-  let size: String
+  let size: PosterSize
   let title: String
   let releaseDate: String?
+  let status: InterestStatus?
 
   @State private var didFail: Bool = false
 
-  init(imageUrl: String?, size: String, title: String, releaseDate: String?) {
+  init(imageUrl: String?, size: PosterSize, title: String, releaseDate: String?, status: InterestStatus?) {
     self.imageUrl = imageUrl
     self.size = size
     self.title = title
     self.releaseDate = releaseDate
+    self.status = status
   }
 
   var url: URL? {
     guard let base = API.tmdbMediaBaseURL, let imageUrl, !imageUrl.isEmpty else {
       return nil
     }
-    return URL(string: "\(base)/\(size)/\(imageUrl)")
+    return URL(string: "\(base)/\(size.rawValue)/\(imageUrl)")
   }
 
   var body: some View {
     VStack {
-      Group {
-        if didFail || imageUrl == nil {
-          Image(systemName: "film")
+      ZStack(alignment: .bottomTrailing) {
+        PosterView(imageUrl: imageUrl, size: .w500, posterType: .movie)
+          .cornerRadius(10)
+
+        if let icon = status?.icon {
+          icon
             .resizable()
-            .aspectRatio(1, contentMode: .fit)
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .aspectRatio(2 / 3, contentMode: .fit)
-          
-        } else {
-          KFImage.url(url)
-            .placeholder {
-              ProgressView("Loading...")
-            }
-            .onFailure { error in
-              print(error)
-              didFail = true
-            }
-            .retry(maxCount: 3, interval: .seconds(5))
-            .resizable()
-            .aspectRatio(2 / 3, contentMode: .fit)
+            .scaledToFit()
+            .frame(maxHeight: 36)
+            .offset(x: 10, y: 10)
         }
       }
-      .clipShape(.rect(cornerRadius: 8))
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
 
       VStack(spacing: 5) {
         Text(title)
@@ -69,16 +60,54 @@ struct SearchItemThumbnail: View {
       .lineLimit(1)
       .padding(8)
     }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
     .font(.caption)
     .foregroundColor(.secondary)
   }
 }
 
 #Preview {
-  SearchItemThumbnail(
-    imageUrl: DiscoverMovieItem.default.posterPath, size: "w500",
-    title: DiscoverMovieItem.default.title,
-    releaseDate: "2024"
-  )
-  .frame(width: 200)
+  HStack {
+    VStack {
+      SearchItemThumbnail(
+        imageUrl: DiscoverMovieItem.default.posterPath,
+        size: .w500,
+        title: DiscoverMovieItem.default.title,
+        releaseDate: "2024",
+        status: .interested
+      )
+      .frame(maxWidth: 200, maxHeight: 300)
+
+      SearchItemThumbnail(
+        imageUrl: DiscoverMovieItem.default.posterPath,
+        size: .w500,
+        title: DiscoverMovieItem.default.title,
+        releaseDate: "2024",
+        status: .notInterested
+      )
+      .frame(maxWidth: 200, maxHeight: 300)
+
+    }
+
+    VStack {
+      SearchItemThumbnail(
+        imageUrl: DiscoverMovieItem.default.posterPath,
+        size: .w500,
+        title: DiscoverMovieItem.default.title,
+        releaseDate: "2024",
+        status: .superInterested
+      )
+      .frame(maxWidth: 200, maxHeight: 300)
+
+      SearchItemThumbnail(
+        imageUrl: DiscoverMovieItem.default.posterPath,
+        size: .w500,
+        title: DiscoverMovieItem.default.title,
+        releaseDate: "2024",
+        status: .watched
+      )
+      .frame(maxWidth: 200, maxHeight: 300)
+
+    }
+  }
 }

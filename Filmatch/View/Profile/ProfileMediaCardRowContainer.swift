@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct ProfileMediaCardRowContainer: View {
-  let title: String
+  let user: OtterMatchUser
+  let status: InterestStatus
+  let media: MediaType
   let height: CGFloat
   
   @Binding var isLoading: Bool
   var items: [any DiscoverItem]?
   
-  let onLastAppeared: () -> Void
-  
+  @Environment(OtterMatchGoRepositoryImpl.self) var repository
+
   var body: some View {
     VStack(alignment: .leading) {
       HStack {
-        Text(title)
+        Text(status.listName)
           .font(.headline)
         
         Spacer()
@@ -27,7 +29,12 @@ struct ProfileMediaCardRowContainer: View {
         if let items {
           NavigationLink {
             ScrollView {
-              UserMediaView(title: title, items: items, onLastAppeared: onLastAppeared)
+              UserMediaView(
+                repository: repository,
+                user: user,
+                status: status,
+                media: media,
+                items: items)
             }
             .background(.bgBase)
           } label: {
@@ -54,18 +61,19 @@ struct ProfileMediaCardRowContainer: View {
 #Preview {
   NavigationStack {
     ProfileMediaCardRowContainer(
-      title: "Liked",
+      user: .default,
+      status: .interested,
+      media: .movie,
       height: 100,
       isLoading: .constant(false),
-      items: [DiscoverMovieItem.default],
-      onLastAppeared: { print("Last appeared") }
+      items: [DiscoverMovieItem.default]
     )
   }
-    .environment(
-      OtterMatchGoRepositoryImpl(
-        datasource: OtterMatchGoDatasourceImpl(
-          client: OtterMatchHttpClient()
-        )
+  .environment(
+    OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient()
       )
     )
+  )
 }

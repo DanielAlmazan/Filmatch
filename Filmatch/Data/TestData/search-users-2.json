@@ -1,0 +1,23 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "email": "random1@example.com",
+      "username": "random1",
+      "uid": "random1",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Robin_Wright_Cannes_2017_%28cropped%29.jpg",
+      "friendship_status": 2
+    },
+    {
+      "email": "random2@example.com",
+      "username": "random2",
+      "uid": "random2",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Tom_Hanks_at_the_Elvis_Premiere_2022.jpg",
+      "friendship_status": 2
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 1,
+  "total_results": 2
+}
+

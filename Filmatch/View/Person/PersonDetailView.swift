@@ -93,7 +93,7 @@ struct PersonDetailView: View {
           VStack(alignment: .center, spacing: 16) {
             // MARK: - Profile Image
             PosterView(
-              imageUrl: person.profilePath, size: "w500", posterType: .person)
+              imageUrl: person.profilePath, size: .w500, posterType: .person)
 
             // MARK: - Name
             Text(person.name)
