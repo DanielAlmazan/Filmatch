@@ -1,0 +1,400 @@
+{
+  "page": 3,
+  "results": [
+    {
+      "id": 839033,
+      "adult": false,
+      "backdrop_path": "/ie8OSgIHEl6yQiGJ90dsyBWOpQA.jpg",
+      "genre_ids": [
+        16,
+        14,
+        28,
+        12
+      ],
+      "original_language": "en",
+      "overview": "A sudden attack by Wulf, a clever and traitorous lord of Rohan seeking vengeance for the death of his father, forces Helm Hammerhand, the King of Rohan, and his people to make a daring last stand in the ancient stronghold of the Hornburg.",
+      "popularity": 841.588,
+      "poster_path": "/cXzCOx1hUuU9CfmiEv6rXjb6EqU.jpg",
+      "vote_average": 6.6,
+      "vote_count": 355,
+      "original_title": "The Lord of the Rings: The War of the Rohirrim",
+      "release_date": "2024-12-05",
+      "title": "The Lord of the Rings: The War of the Rohirrim",
+      "video": false
+    },
+    {
+      "id": 939243,
+      "adult": false,
+      "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+      "genre_ids": [
+        28,
+        878,
+        35,
+        10751
+      ],
+      "original_language": "en",
+      "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+      "popularity": 4090.605,
+      "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+      "vote_average": 7.62,
+      "vote_count": 494,
+      "original_title": "Sonic the Hedgehog 3",
+      "release_date": "2024-12-19",
+      "title": "Sonic the Hedgehog 3",
+      "video": false
+    },
+    {
+      "id": 1156593,
+      "adult": false,
+      "backdrop_path": "/k24eZq5I3jyz4htPkZCRpnUmBzE.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "original_language": "es",
+      "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+      "popularity": 920.395,
+      "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+      "vote_average": 7.175,
+      "vote_count": 921,
+      "original_title": "Culpa tuya",
+      "release_date": "2024-12-26",
+      "title": "Your Fault",
+      "video": false
+    },
+    {
+      "id": 845781,
+      "adult": false,
+      "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+      "genre_ids": [
+        28,
+        14,
+        35
+      ],
+      "original_language": "en",
+      "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+      "popularity": 896.528,
+      "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+      "vote_average": 7.112,
+      "vote_count": 2129,
+      "original_title": "Red One",
+      "release_date": "2024-10-31",
+      "title": "Red One",
+      "video": false
+    },
+    {
+      "id": 811941,
+      "adult": false,
+      "backdrop_path": "/hAQnXxOwCjgYcKRgTdYPRC8neqL.jpg",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "original_language": "te",
+      "overview": "Devara, a fearless man from a coastal region, embarks on a perilous journey into the treacherous world of the sea to safeguard the lives of his people. Unbeknownst to him, his brother Bhaira is plotting a conspiracy against him. As events unfold, Devara passes on his legacy to his mild-mannered and timid son, Varada.",
+      "popularity": 1469.737,
+      "poster_path": "/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg",
+      "vote_average": 7.1,
+      "vote_count": 40,
+      "original_title": "దేవర: Part 1",
+      "release_date": "2024-09-26",
+      "title": "Devara: Part 1",
+      "video": false
+    },
+    {
+      "id": 993710,
+      "adult": false,
+      "backdrop_path": "/xZm5YUNY3PlYD1Q4k7X8zd2V4AK.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "original_language": "en",
+      "overview": "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.",
+      "popularity": 2277.176,
+      "poster_path": "/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg",
+      "vote_average": 6.71,
+      "vote_count": 429,
+      "original_title": "Back in Action",
+      "release_date": "2025-01-15",
+      "title": "Back in Action",
+      "video": false
+    },
+    {
+      "id": 838681,
+      "adult": false,
+      "backdrop_path": "/OfwDwEVQhPlQp1YQhroRrPbmQJ.jpg",
+      "genre_ids": [],
+      "original_language": "en",
+      "overview": "After covering up a hit and run on the way to their valedictory desert getaway, three high school graduates face the true test of their friendship when they become entangled in a deadly crime ring imbroglio.",
+      "popularity": 22.679,
+      "poster_path": "/iUacEaZF2EjVZ9SFgmeTiXimYcy.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Going Places",
+      "release_date": "2025-03-11",
+      "title": "Going Places",
+      "video": false
+    },
+    {
+      "id": 1309027,
+      "adult": false,
+      "backdrop_path": "/bgnwFfesHO6iXhcIgUoilNwLqP3.jpg",
+      "genre_ids": [
+        99
+      ],
+      "original_language": "en",
+      "overview": "A personal look at the life, work and untimely death of celebrated indie cinematographer Halyna Hutchins, who was shot and killed in a tragic accident on the set of the film Rust in 2021.",
+      "popularity": 22.791,
+      "poster_path": "/77YIxbYk11PzXazjEw8VylLDDad.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Last Take: Rust and the Story of Halyna",
+      "release_date": "2025-03-11",
+      "title": "Last Take: Rust and the Story of Halyna",
+      "video": false
+    },
+    {
+      "id": 402431,
+      "adult": false,
+      "backdrop_path": "/uKb22E0nlzr914bA9KyA5CVCOlV.jpg",
+      "genre_ids": [
+        18,
+        10749,
+        14
+      ],
+      "original_language": "en",
+      "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+      "popularity": 962.586,
+      "poster_path": "/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg",
+      "vote_average": 6.988,
+      "vote_count": 1424,
+      "original_title": "Wicked",
+      "release_date": "2024-11-20",
+      "title": "Wicked",
+      "video": false
+    },
+    {
+      "id": 974576,
+      "adult": false,
+      "backdrop_path": "/66nlC5LDZmDUWONGkUZT2BrOszG.jpg",
+      "genre_ids": [
+        18
+      ],
+      "original_language": "en",
+      "overview": "After the unexpected death of the Pope, Cardinal Lawrence is tasked with managing the covert and ancient ritual of electing a new one. Sequestered in the Vatican with the Catholic Church’s most powerful leaders until the process is complete, Lawrence finds himself at the center of a conspiracy that could lead to its downfall.",
+      "popularity": 269.122,
+      "poster_path": "/m5x8D0bZ3eKqIVWZ5y7TnZ2oTVg.jpg",
+      "vote_average": 7.1,
+      "vote_count": 922,
+      "original_title": "Conclave",
+      "release_date": "2024-10-25",
+      "title": "Conclave",
+      "video": false
+    },
+    {
+      "id": 549509,
+      "adult": false,
+      "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+      "genre_ids": [
+        18
+      ],
+      "original_language": "en",
+      "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+      "popularity": 239.341,
+      "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+      "vote_average": 5.3,
+      "vote_count": 56,
+      "original_title": "The Brutalist",
+      "release_date": "2024-12-20",
+      "title": "The Brutalist",
+      "video": false
+    },
+    {
+      "id": 1357633,
+      "adult": false,
+      "backdrop_path": "/kylozAI9Rf1pp7pZ8nFPK4s1s5n.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14,
+        16
+      ],
+      "original_language": "ja",
+      "overview": "Over a decade after 'gates' connecting worlds appeared, awakening 'hunters' with superpowers, weakest hunter Sung Jinwoo encounters a double dungeon and accepts a mysterious quest, becoming the only one able to level up, changing his fate. A catch-up recap of the first season coupled with an exclusive sneak peek of the first two episodes of the highly anticipated second season in one momentous theatrical fan experience.",
+      "popularity": 596.897,
+      "poster_path": "/uzHMp5heVLR68kbbUEXFPsmxYsM.jpg",
+      "vote_average": 6.9,
+      "vote_count": 81,
+      "original_title": "俺だけレベルアップな件 -ReAwakening-",
+      "release_date": "2024-11-26",
+      "title": "Solo Leveling -ReAwakening-",
+      "video": false
+    },
+    {
+      "id": 1233575,
+      "adult": false,
+      "backdrop_path": "/9ctmJLf3uUngYkwHbRttukm2n5l.jpg",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "original_language": "en",
+      "overview": "When his beloved wife is suspected of betraying the nation, an intelligence agent faces the ultimate test – loyalty to his marriage or his country.",
+      "popularity": 30.143,
+      "poster_path": "/9z32e4ziLQs10NYewgO2CqUWjM7.jpg",
+      "vote_average": 7.2,
+      "vote_count": 4,
+      "original_title": "Black Bag",
+      "release_date": "2025-03-12",
+      "title": "Black Bag",
+      "video": false
+    },
+    {
+      "id": 1064486,
+      "adult": false,
+      "backdrop_path": "/i3CAo9UMGsvlU9k3Svd63rRDeZx.jpg",
+      "genre_ids": [
+        16,
+        18,
+        35
+      ],
+      "original_language": "en",
+      "overview": "Forcibly separated from her twin brother when they are orphaned, a melancholic misfit learns how to find confidence within herself amid the clutter of misfortunes and everyday life.",
+      "popularity": 704.564,
+      "poster_path": "/lWh5OlerPR1c1cfn1ZLq0lpqFds.jpg",
+      "vote_average": 7.8,
+      "vote_count": 95,
+      "original_title": "Memoir of a Snail",
+      "release_date": "2024-10-17",
+      "title": "Memoir of a Snail",
+      "video": false
+    },
+    {
+      "id": 933260,
+      "adult": false,
+      "backdrop_path": "/bFPqSvR2EmWQ9AlzWkC801XpoAZ.jpg",
+      "genre_ids": [
+        27,
+        878
+      ],
+      "original_language": "en",
+      "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+      "popularity": 850.494,
+      "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+      "vote_average": 7.1,
+      "vote_count": 3378,
+      "original_title": "The Substance",
+      "release_date": "2024-09-07",
+      "title": "The Substance",
+      "video": false
+    },
+    {
+      "id": 539972,
+      "adult": false,
+      "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+      "genre_ids": [
+        28,
+        878,
+        12,
+        14,
+        53
+      ],
+      "original_language": "en",
+      "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+      "popularity": 3611.48,
+      "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+      "vote_average": 6.594,
+      "vote_count": 763,
+      "original_title": "Kraven the Hunter",
+      "release_date": "2024-12-11",
+      "title": "Kraven the Hunter",
+      "video": false
+    },
+    {
+      "id": 912649,
+      "adult": false,
+      "backdrop_path": "/vZG7PrX9HmdgL5qfZRjhJsFYEIA.jpg",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "original_language": "en",
+      "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+      "popularity": 1275.023,
+      "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+      "vote_average": 6.8,
+      "vote_count": 2518,
+      "original_title": "Venom: The Last Dance",
+      "release_date": "2024-10-22",
+      "title": "Venom: The Last Dance",
+      "video": false
+    },
+    {
+      "id": 823219,
+      "adult": false,
+      "backdrop_path": "/b3mdmjYTEL70j7nuXATUAD9qgu4.jpg",
+      "genre_ids": [
+        16,
+        14,
+        12
+      ],
+      "original_language": "lv",
+      "overview": "A solitary cat, displaced by a great flood, finds refuge on a boat with various species and must navigate the challenges of adapting to a transformed world together.",
+      "popularity": 555.437,
+      "poster_path": "/imKSymKBK7o73sajciEmndJoVkR.jpg",
+      "vote_average": 8.4,
+      "vote_count": 861,
+      "original_title": "Straume",
+      "release_date": "2024-08-29",
+      "title": "Flow",
+      "video": false
+    },
+    {
+      "id": 1241982,
+      "adult": false,
+      "backdrop_path": "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
+      "genre_ids": [
+        16,
+        12,
+        10751,
+        35,
+        9648
+      ],
+      "original_language": "en",
+      "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+      "popularity": 1330.002,
+      "poster_path": "/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg",
+      "vote_average": 7,
+      "vote_count": 889,
+      "original_title": "Moana 2",
+      "release_date": "2024-11-21",
+      "title": "Moana 2",
+      "video": false
+    },
+    {
+      "id": 762509,
+      "adult": false,
+      "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+      "genre_ids": [
+        12,
+        10751,
+        16
+      ],
+      "original_language": "en",
+      "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+      "popularity": 1971.014,
+      "poster_path": "/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg",
+      "vote_average": 7.44,
+      "vote_count": 839,
+      "original_title": "Mufasa: The Lion King",
+      "release_date": "2024-12-18",
+      "title": "Mufasa: The Lion King",
+      "video": false
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 3,
+  "total_results": 60
+}

@@ -1,0 +1,46 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 1165067,
+      "adult": false,
+      "backdrop_path": "/m2mzlsJjE3UAqeUB5fLUkpWg4Iq.jpg",
+      "genre_ids": [
+        53,
+        878
+      ],
+      "original_language": "en",
+      "overview": "Battles in virtual reality, survival in a post-apocalyptic wasteland, a Soviet spaceship giving a distress signal - Fantastic stories created with advanced special effects and passion.",
+      "popularity": 508.2923,
+      "poster_path": "/mClzWv7gBqgXfjZXp49Enyoex1v.jpg",
+      "vote_average": 5.8,
+      "vote_count": 16,
+      "original_title": "Cosmic Chaos",
+      "release_date": "2023-08-03",
+      "title": "Cosmic Chaos",
+      "video": false
+    },
+    {
+      "id": 1081012,
+      "adult": false,
+      "backdrop_path": "/i3e7uwZOXks3PMvTOf4yQXbNxkI.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "original_language": "en",
+      "overview": "A returning war veteran, stricken with PTSD, gets trapped with his teenage sister on Boston's Tobin Memorial Bridge when a heavily armed group of ex-military revolutionaries take everyone hostage.",
+      "popularity": 830.238,
+      "poster_path": "/gEHIVyJB9VWLF3cuJOpYjJjegd1.jpg",
+      "vote_average": 6.3,
+      "vote_count": 58,
+      "original_title": "Aftermath",
+      "release_date": "2024-09-27",
+      "title": "Aftermath",
+      "video": false
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 1,
+  "total_results": 2
+}

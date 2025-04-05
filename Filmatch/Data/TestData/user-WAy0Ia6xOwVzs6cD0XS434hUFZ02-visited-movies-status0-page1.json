@@ -1,0 +1,406 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 1373723,
+      "adult": false,
+      "backdrop_path": "/ibF5XVxTzf1ayzZrmiJqgeQ39Qk.jpg",
+      "genre_ids": [
+        28,
+        10752
+      ],
+      "original_language": "en",
+      "overview":
+          "Las historias de guerra sobre la familia, la ética y el honor incluyen la historia real de dos marines estadounidenses que, en un lapso de seis segundos, deben mantenerse firmes para detener un camión bomba suicida, un soldado de la Marina que intenta aferrarse a su humanidad y un soldado de la Segunda Guerra Mundial que se separa de su escuadrón y se ve obligado a reevaluar su código.",
+      "popularity": 416.471,
+      "poster_path": "/oXeiQAfRK90pxxhP5iKPXQqAIN1.jpg",
+      "vote_average": 7,
+      "vote_count": 11,
+      "original_title": "The Codes of War",
+      "release_date": "2025-03-20",
+      "title": "Códigos de Guerra",
+      "video": false
+    },
+    {
+      "id": 950387,
+      "adult": false,
+      "backdrop_path": "/2Nti3gYAX513wvhp8IiLL6ZDyOm.jpg",
+      "genre_ids": [
+        12,
+        14,
+        10751,
+        35
+      ],
+      "original_language": "en",
+      "overview": "Largometraje basado en el popular videojuego \"Minecraft\".",
+      "popularity": 185.057,
+      "poster_path": "/n4TRqbz5gWKEXWARpEXoujGL6Q2.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "A Minecraft Movie",
+      "release_date": "2025-04-02",
+      "title": "Una película de Minecraft",
+      "video": false
+    },
+    {
+      "id": 1197306,
+      "adult": false,
+      "backdrop_path": "/fTrQsdMS2MUw00RnzH0r3JWHhts.jpg",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "original_language": "en",
+      "overview":
+          "Levon Cade dejó atrás una condecorada carrera militar en las operaciones encubiertas para vivir una vida sencilla trabajando en la construcción. Pero cuando la hija de su jefe, que para él es como de la familia, es secuestrada por traficantes de personas, su búsqueda para traerla a casa descubre un mundo de corrupción mucho mayor de lo que jamás podría haber imaginado.",
+      "popularity": 266.2088,
+      "poster_path": "/aG50Ad3UV8cCQWpNWSHHUqgKGNB.jpg",
+      "vote_average": 6.8,
+      "vote_count": 58,
+      "original_title": "A Working Man",
+      "release_date": "2025-03-26",
+      "title": "A Working Man",
+      "video": false
+    },
+    {
+      "id": 1261050,
+      "adult": false,
+      "backdrop_path": "/9OO6I25MHhCDd0XwNk4oZl0fpwB.jpg",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "original_language": "da",
+      "overview":
+          "En 2008, un grupo de hombres de Dinamarca y Europa lleva a cabo el mayor atraco de todos los tiempos en suelo danés. Kasper, un boxeador con pocas oportunidades en la vida, recibe la oferta de sus iniciadores extranjeros para planear el robo.",
+      "popularity": 342.887,
+      "poster_path": "/3qHoQfLwK3ZDB9gqse87HBZ5aUD.jpg",
+      "vote_average": 4.8,
+      "vote_count": 9,
+      "original_title": "De lydløse",
+      "release_date": "2024-10-31",
+      "title": "Los silenciosos",
+      "video": false
+    },
+    {
+      "id": 1210938,
+      "adult": false,
+      "backdrop_path": "/ujtLvjVCBpgouQTyEG4qNVTxlXi.jpg",
+      "genre_ids": [
+        53,
+        80,
+        9648
+      ],
+      "original_language": "ko",
+      "overview":
+          "A pastor who believes in divine revelation and a detective haunted by visions pursue a missing person case — exposing their own demons in the process.",
+      "popularity": 94.9107,
+      "poster_path": "/ak0HlRVsVzh8mvwIUZpZr0z6uqW.jpg",
+      "vote_average": 6.346,
+      "vote_count": 52,
+      "original_title": "계시록",
+      "release_date": "2025-03-20",
+      "title": "Revelations",
+      "video": false
+    },
+    {
+      "id": 1255788,
+      "adult": false,
+      "backdrop_path": "/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "original_language": "fr",
+      "overview":
+          "Every year the Prime Minister has a list of all kinds of troublemakers eliminated in the name of the famous Reason of State. Serge Shuster, Special Adviser to the President of the Republic, finds himself on this list, better known as the Matignon List.  Condemned to certain death and at the heart of an implacable plot and a state secret that also put his family in danger, Serge, his wife and children have only one hope left - their gardener, Léo, who hates it when « slugs » invade his garden... Especially those that want to kill innocent families.",
+      "popularity": 1119.139,
+      "poster_path": "/5T9WR7vIOnHm6xhVt5zBuPbBgt1.jpg",
+      "vote_average": 4.913,
+      "vote_count": 92,
+      "original_title": "Le Jardinier",
+      "release_date": "2025-01-10",
+      "title": "The Gardener",
+      "video": false
+    },
+    {
+      "id": 1104845,
+      "adult": false,
+      "backdrop_path": "/lsgT602GYV8ts97sKH1gWFtQs1k.jpg",
+      "genre_ids": [
+        16,
+        12,
+        35,
+        10751,
+        14
+      ],
+      "original_language": "en",
+      "overview":
+          "Plankton's tangled love story with his sentient computer wife goes sideways when she takes a stand — and decides to destroy the world without him.",
+      "popularity": 58.44940357142857,
+      "poster_path": "/hGaUNLF5VZbg9ovPTyjm9Rv5xWz.jpg",
+      "vote_average": 7,
+      "vote_count": 54,
+      "original_title": "Plankton: The Movie",
+      "release_date": "2025-03-08",
+      "title": "Plankton: The Movie",
+      "video": false
+    },
+    {
+      "id": 1393191,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        99
+      ],
+      "original_language": "en",
+      "overview":
+          "The Gardener, the Buddhist \u0026 the Spy is a gripping story about power struggle, failure, and the delicate balance between good and bad.",
+      "popularity": 0,
+      "poster_path": "/nPGbKjARq6g1ely913ZugBfzxhC.jpg",
+      "vote_average": 7,
+      "vote_count": 3,
+      "original_title": "Gartneren, buddhisten og spionen",
+      "release_date": "2025-03-19",
+      "title": "The Gardener, the Buddhist \u0026 the Spy",
+      "video": false
+    },
+    {
+      "id": 1018964,
+      "adult": false,
+      "backdrop_path": "/rlxeBlrH4vackqQGST9GX5npnTX.jpg",
+      "genre_ids": [
+        18
+      ],
+      "original_language": "es",
+      "overview": "",
+      "popularity": 22.628,
+      "poster_path": "/5lRMnenRExLT1HmINgAsdDJgQXy.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Yo vi tres luces negras",
+      "release_date": "2025-03-19",
+      "title": "Yo vi tres luces negras",
+      "video": false
+    },
+    {
+      "id": 1439004,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        18
+      ],
+      "original_language": "fr",
+      "overview": "",
+      "popularity": 0,
+      "poster_path": "/3DWbq68yv17gqQsTHEm8YMJRfOj.jpg",
+      "vote_average": 5.5,
+      "vote_count": 4,
+      "original_title": "L'échappée belle",
+      "release_date": "2025-03-19",
+      "title": "L'échappée belle",
+      "video": false
+    },
+    {
+      "id": 1000881,
+      "adult": false,
+      "backdrop_path": "/29maJOVSQsM1kB2CyR5xpiCJuWS.jpg",
+      "genre_ids": [
+        35,
+        14
+      ],
+      "original_language": "fr",
+      "overview": "",
+      "popularity": 22.703,
+      "poster_path": "/7siQLbBArdLKZ8Zz6Uz8C1hb7sI.jpg",
+      "vote_average": 6,
+      "vote_count": 1,
+      "original_title": "Prosper",
+      "release_date": "2025-03-19",
+      "title": "Prosper",
+      "video": false
+    },
+    {
+      "id": 1425366,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        99
+      ],
+      "original_language": "da",
+      "overview":
+          "Danish author and self-proclaimed witch Andrea Hejlskov invites us into her personal universe of divination, spirituality and nature motifs from Nordic mythology. After 10 years in the wilderness, she finds herself in the middle of the crisis of her life.",
+      "popularity": 0,
+      "poster_path": "/2yJbK0JqsNLXVHkW6qKUrDr0I9j.jpg",
+      "vote_average": 6.5,
+      "vote_count": 2,
+      "original_title": "Heks",
+      "release_date": "2025-03-19",
+      "title": "Witch",
+      "video": false
+    },
+    {
+      "id": 1107215,
+      "adult": false,
+      "backdrop_path": "/qMYb0pTEnsYsYPVD1uJIpOMumYB.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "original_language": "fr",
+      "overview": "",
+      "popularity": 22.939,
+      "poster_path": "/sIYUhbkjgedkYuiQ9MW3fzyc7Gf.jpg",
+      "vote_average": 5.8,
+      "vote_count": 2,
+      "original_title": "Ma mère, Dieu et Sylvie Vartan",
+      "release_date": "2025-03-19",
+      "title": "Érase una vez mi madre",
+      "video": false
+    },
+    {
+      "id": 1328767,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        99
+      ],
+      "original_language": "fr",
+      "overview": "",
+      "popularity": 22.977,
+      "poster_path": "/A5Ct2Ndped8jMpltMtPUxnBARvH.jpg",
+      "vote_average": 8,
+      "vote_count": 1,
+      "original_title": "Argoat",
+      "release_date": "2025-03-19",
+      "title": "Argoat",
+      "video": false
+    },
+    {
+      "id": 1149463,
+      "adult": false,
+      "backdrop_path": "/qZRuKglsKV3EeiZurVY7wpumNHW.jpg",
+      "genre_ids": [
+        18
+      ],
+      "original_language": "fr",
+      "overview": "",
+      "popularity": 23.175,
+      "poster_path": "/gblm8Nip5NSDL8BK6mjuQB6xY8e.jpg",
+      "vote_average": 5.5,
+      "vote_count": 3,
+      "original_title": "Magma",
+      "release_date": "2025-03-19",
+      "title": "Magma",
+      "video": false
+    },
+    {
+      "id": 271110,
+      "adult": false,
+      "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+      "genre_ids": [
+        12,
+        28,
+        878
+      ],
+      "original_language": "en",
+      "overview":
+          "Continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano.",
+      "popularity": 64.563,
+      "poster_path": "/g6UTwUVFYWI8VPWo5GylnbZVhin.jpg",
+      "vote_average": 7.444,
+      "vote_count": 22915,
+      "original_title": "Captain America: Civil War",
+      "release_date": "2016-04-27",
+      "title": "Capitán América: Civil War",
+      "video": false
+    },
+    {
+      "id": 840326,
+      "adult": false,
+      "backdrop_path": "/oGZhlVTBMZrHPuvGy8o6N4K8xGI.jpg",
+      "genre_ids": [
+        28,
+        10752,
+        12
+      ],
+      "original_language": "fi",
+      "overview":
+          "En lo profundo de la naturaleza salvaje de Laponia, Aatami Korpi está buscando oro, pero después de tropezar con una patrulla nazi, comienza una persecución impresionante y hambrienta de oro a través de la naturaleza salvaje de Laponia destruida y minada.",
+      "popularity": 43.51,
+      "poster_path": "/koDawJRyKs5EPcL7v74Ywu3DNUU.jpg",
+      "vote_average": 7.424,
+      "vote_count": 2246,
+      "original_title": "Sisu",
+      "release_date": "2022-09-09",
+      "title": "Sisu",
+      "video": false
+    },
+    {
+      "id": 419430,
+      "adult": false,
+      "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+      "genre_ids": [
+        9648,
+        53,
+        27
+      ],
+      "original_language": "en",
+      "overview":
+          "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris y su novia Rose ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy y Dean. Al principio, Chris piensa que el comportamiento 'demasiado' complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
+      "popularity": 45.843,
+      "poster_path": "/xiMoqa0bmjuyuXYqKGwrTSJL8nI.jpg",
+      "vote_average": 7.615,
+      "vote_count": 17656,
+      "original_title": "Get Out",
+      "release_date": "2017-02-24",
+      "title": "Déjame salir",
+      "video": false
+    },
+    {
+      "id": 787699,
+      "adult": false,
+      "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+      "genre_ids": [
+        35,
+        10751,
+        14
+      ],
+      "original_language": "en",
+      "overview":
+          "Basada en el personaje que protagoniza \"Charlie y la fábrica de chocolate\", el libro infantil más emblemático de Roald Dahl y uno de los más vendidos de todos los tiempos, \"Wonka\" cuenta la historia de cómo el mayor inventor, mago y chocolatero del mundo se convirtió en el querido Willy Wonka que conocemos hoy en día.",
+      "popularity": 59.39,
+      "poster_path": "/6eHcR7zwvNSvkOl9jbctU0lvZQ1.jpg",
+      "vote_average": 7.098,
+      "vote_count": 3753,
+      "original_title": "Wonka",
+      "release_date": "2023-12-06",
+      "title": "Wonka",
+      "video": false
+    },
+    {
+      "id": 1010600,
+      "adult": false,
+      "backdrop_path": "/lNyl7Ceyx3mMy4V1ZJJQRj3sPF6.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "original_language": "en",
+      "overview":
+          "Tras sufrir una avería en su coche en un pequeño e inquietante pueblecito de Oregón, una joven pareja (Madelaine Petsch y Froy Gutiérrez) se ve obligada a pasar la noche en una aislada cabaña en medio del bosque. El pánico se apodera de ellos cuando son aterrorizados por tres extraños enmascarados que les atacan sin piedad ni motivo alguno.",
+      "popularity": 38.605,
+      "poster_path": "/1rTRllZNEAX30dTxYL1hONR6gPj.jpg",
+      "vote_average": 5.8,
+      "vote_count": 465,
+      "original_title": "The Strangers: Chapter 1",
+      "release_date": "2024-05-15",
+      "title": "Strangers: Capítulo 1",
+      "video": false
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 3,
+  "total_results": 60
+}

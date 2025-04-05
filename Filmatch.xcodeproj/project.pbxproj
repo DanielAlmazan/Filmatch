@@ -14,6 +14,14 @@
 		850494BC2CA33C4E00C44BC9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 850494BB2CA33C4E00C44BC9 /* FirebaseCrashlytics */; settings = {ATTRIBUTES = (Required, ); }; };
 		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
 		8515AB4E2D8210D200760AA9 /* UserMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515AB4D2D8210D200760AA9 /* UserMediaView.swift */; };
+		8524E43D2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E43C2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json */; };
+		8524E43F2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E43E2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json */; };
+		8524E4412DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E4402DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json */; };
+		8524E4432DA13EE40090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E4422DA13EE40090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page3.json */; };
+		8524E4452DA13EF90090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E4442DA13EF90090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page1.json */; };
+		8524E4472DA13F230090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E4462DA13F230090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page2.json */; };
+		8524E4492DA13F3C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E4482DA13F3C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page3.json */; };
+		8524E44B2DA13F620090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status3-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E44A2DA13F620090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status3-page1.json */; };
 		8532A0542D84CDD400E84308 /* MovieMatchesByFriendUidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A0532D84CDD400E84308 /* MovieMatchesByFriendUidResponse.swift */; };
 		8532A0562D84CE3100E84308 /* MovieMatchSingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A0552D84CE3100E84308 /* MovieMatchSingleResponse.swift */; };
 		8532A0582D84CF1E00E84308 /* TvSeriesMatchSingleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8532A0572D84CF1E00E84308 /* TvSeriesMatchSingleResponse.swift */; };
@@ -277,6 +285,14 @@
 
 /* Begin PBXFileReference section */
 		8515AB4D2D8210D200760AA9 /* UserMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMediaView.swift; sourceTree = "<group>"; };
+		8524E43C2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json"; sourceTree = "<group>"; };
+		8524E43E2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json"; sourceTree = "<group>"; };
+		8524E4402DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json"; sourceTree = "<group>"; };
+		8524E4422DA13EE40090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page3.json"; sourceTree = "<group>"; };
+		8524E4442DA13EF90090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page1.json"; sourceTree = "<group>"; };
+		8524E4462DA13F230090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page2.json"; sourceTree = "<group>"; };
+		8524E4482DA13F3C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page3.json"; sourceTree = "<group>"; };
+		8524E44A2DA13F620090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status3-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status3-page1.json"; sourceTree = "<group>"; };
 		8532A0532D84CDD400E84308 /* MovieMatchesByFriendUidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMatchesByFriendUidResponse.swift; sourceTree = "<group>"; };
 		8532A0552D84CE3100E84308 /* MovieMatchSingleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMatchSingleResponse.swift; sourceTree = "<group>"; };
 		8532A0572D84CF1E00E84308 /* TvSeriesMatchSingleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesMatchSingleResponse.swift; sourceTree = "<group>"; };
@@ -773,6 +789,14 @@
 				8532A07E2D85DD9600E84308 /* tv-matches-with-DswBbFe21PO2YEWi7KDsww8igKP2-page1.json */,
 				85467ADC2D9DB03800684B05 /* search-users-3.json */,
 				85467ADE2D9DB5B300684B05 /* search-users-2.json */,
+				8524E43C2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json */,
+				8524E43E2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json */,
+				8524E4402DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json */,
+				8524E4422DA13EE40090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page3.json */,
+				8524E4442DA13EF90090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page1.json */,
+				8524E4462DA13F230090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page2.json */,
+				8524E4482DA13F3C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page3.json */,
+				8524E44A2DA13F620090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status3-page1.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -1205,18 +1229,24 @@
 				85C088B62D6FB4F9000D4374 /* watch-providers-tv.json in Resources */,
 				8532A0792D85DC3B00E84308 /* user-tv-matches-grouped-page1.json in Resources */,
 				85C088B82D6FB4F9000D4374 /* discover_movies-page3.json in Resources */,
+				8524E4432DA13EE40090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page3.json in Resources */,
 				85C088B92D6FB4F9000D4374 /* tv-93405-append_to_response-aggregate-credits.json in Resources */,
 				85C088BA2D6FB4F9000D4374 /* watch-providers-movie.json in Resources */,
 				85E472532D9D897500125DE1 /* Localizable.xcstrings in Resources */,
 				85C088BB2D6FB4F9000D4374 /* person-26723-tv-credits.json in Resources */,
 				8532A07B2D85DD1400E84308 /* movie-matches-with-DswBbFe21PO2YEWi7KDsww8igKP2-page1.json in Resources */,
+				8524E4452DA13EF90090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page1.json in Resources */,
+				8524E43F2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json in Resources */,
 				85C088BC2D6FB4F9000D4374 /* genres-tv-list.json in Resources */,
 				85C088BD2D6FB4F9000D4374 /* discover_movies-page2.json in Resources */,
 				85C088BE2D6FB4F9000D4374 /* movie-365177-append_to_response-videos_credits.json in Resources */,
+				8524E4472DA13F230090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page2.json in Resources */,
 				85C088BF2D6FB4F9000D4374 /* movie-646385-append_to_response-videos_credits.json in Resources */,
 				85C088C02D6FB4F9000D4374 /* discover-tv-page2.json in Resources */,
 				85C088C12D6FB4F9000D4374 /* person-26723-append_to_response-movie_credits.json in Resources */,
+				8524E4492DA13F3C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status2-page3.json in Resources */,
 				85C088C22D6FB4F9000D4374 /* person-26723-movie_credits.json in Resources */,
+				8524E44B2DA13F620090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status3-page1.json in Resources */,
 				85C088C32D6FB4F9000D4374 /* movie-945961-append_to_response-videos_credits.json in Resources */,
 				8532A0772D85DA7200E84308 /* user-auth.json in Resources */,
 				8532A06F2D85D3D600E84308 /* user-movie-matches-grouped-page1.json in Resources */,
@@ -1224,8 +1254,10 @@
 				85C088C52D6FB4F9000D4374 /* person-974169-append_to_response-movie_credits-tv_credits.json in Resources */,
 				85C088C62D6FB4F9000D4374 /* person-974169.json in Resources */,
 				85C088C72D6FB4F9000D4374 /* GoogleService-Info.plist in Resources */,
+				8524E4412DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json in Resources */,
 				85C088C82D6FB4F9000D4374 /* discover-tv-page3.json in Resources */,
 				85467ADD2D9DB03800684B05 /* search-users-3.json in Resources */,
+				8524E43D2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json in Resources */,
 				8532A07F2D85DDA100E84308 /* tv-matches-with-DswBbFe21PO2YEWi7KDsww8igKP2-page1.json in Resources */,
 				85C088C92D6FB4F9000D4374 /* discover-tv-page1.json in Resources */,
 				85C088CA2D6FB4F9000D4374 /* person-26723-append_to_response-movie_credits-tv_credits.json in Resources */,

@@ -1,0 +1,384 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 1020414,
+      "adult": false,
+      "backdrop_path": "/nhx0ttmAS2w8e6hyIcKoNvgHoix.jpg",
+      "genre_ids": [
+        27,
+        53,
+        14
+      ],
+      "original_language": "en",
+      "overview": "Sigue a Wendy Darling en su intento de rescatar a su hermano Michael de \"las garras del malvado Peter Pan\". Por el camino conoce a Campanilla, que en esta retorcida versión del cuento se verá tomando heroína, convencida de que es polvo de hadas. La famosa historia de Peter Pan reinventada como un film de terror por Jagged Edge Productions, productora de \"Winnie the Pooh: Blood and Honey\".",
+      "popularity": 181.6043,
+      "poster_path": "/m5jtX2J0VswgslOyx04l4edo3nJ.jpg",
+      "vote_average": 5.8,
+      "vote_count": 24,
+      "original_title": "Peter Pan's Neverland Nightmare",
+      "release_date": "2025-01-13",
+      "title": "Peter Pan: Pesadilla en Nunca Jamás",
+      "video": false
+    },
+    {
+      "id": 1252309,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "original_language": "es",
+      "overview": "After his father's death, Eric Zimmerman travels to Spain to oversee his company's branches. In Madrid, he falls for Judith and engage in an intense, erotic relationship full of exploration. However, Eric fears his secret may end their affair.",
+      "popularity": 420.543,
+      "poster_path": "/76qnVxU2rPdVvipBN3DPQH6fVYB.jpg",
+      "vote_average": 6.385,
+      "vote_count": 52,
+      "original_title": "Pídeme lo que quieras",
+      "release_date": "2024-11-29",
+      "title": "Ask Me What You Want",
+      "video": false
+    },
+    {
+      "id": 1229730,
+      "adult": false,
+      "backdrop_path": "/is9bmV6uYXu7LjZGJczxrjJDlv8.jpg",
+      "genre_ids": [
+        28,
+        12
+      ],
+      "original_language": "fr",
+      "overview": "Por el día, son invisibles: aparcacoches, recepcionistas y camareros de un hotel de lujo. Por la noche, son criminales, una banda de conductores expertos que asalta a clientes ricos en sus coches. Justo cuando planean su último golpe, la directora del hotel contrata a un sicario despiadado para detenerlos. El peligro les acecha, ¿conseguirán Nora, Zoé, Steve y Prestance dar su mayor golpe?",
+      "popularity": 398.4515,
+      "poster_path": "/rpAbueORafYSgTk2oSc2t6ayktb.jpg",
+      "vote_average": 6.8,
+      "vote_count": 20,
+      "original_title": "Carjackers",
+      "release_date": "2025-03-27",
+      "title": "Criminales de lujo",
+      "video": false
+    },
+    {
+      "id": 1362608,
+      "adult": false,
+      "backdrop_path": "/2jllAxMf7dTMt1fw9A1slsaj6Fv.jpg",
+      "genre_ids": [
+        35,
+        53
+      ],
+      "original_language": "fi",
+      "overview": "A pastor's faith turns upside down when a meteorite lands in his small Finnish town, its impact stirring up chaos and criminal intentions.",
+      "popularity": 75.2638,
+      "poster_path": "/lhg3YuybroN2gszAEanXLMtj473.jpg",
+      "vote_average": 7,
+      "vote_count": 28,
+      "original_title": "Pikku Siperia",
+      "release_date": "2025-03-20",
+      "title": "Little Siberia",
+      "video": false
+    },
+    {
+      "id": 1125899,
+      "adult": false,
+      "backdrop_path": "/gsQJOfeW45KLiQeEIsom94QPQwb.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "original_language": "en",
+      "overview": "When a group of radical activists take over an energy company's annual gala, seizing 300 hostages, an ex-soldier turned window cleaner suspended 50 storeys up on the outside of the building must save those trapped inside, including her younger brother.",
+      "popularity": 400.92131517857143,
+      "poster_path": "/mwzDApMZAGeYCEVjhegKvCzDX0W.jpg",
+      "vote_average": 6.2,
+      "vote_count": 57,
+      "original_title": "Cleaner",
+      "release_date": "2025-02-19",
+      "title": "Cleaner",
+      "video": false
+    },
+    {
+      "id": 777443,
+      "adult": false,
+      "backdrop_path": "/2n7lYEeIbucsEQCswRcVB6ZYmMP.jpg",
+      "genre_ids": [
+        878,
+        12,
+        18
+      ],
+      "original_language": "en",
+      "overview": "Una adolescente huérfana emprende un viaje para encontrar a su hermano desaparecido junto con un misterioso robot, un cínico contrabandista y su ocurrente compañero.",
+      "popularity": 27.757,
+      "poster_path": "/nCuSMDWhWGJAPdp9rSDIogG5X82.jpg",
+      "vote_average": 6.8,
+      "vote_count": 455,
+      "original_title": "The Electric State",
+      "release_date": "2025-03-07",
+      "title": "Estado eléctrico",
+      "video": false
+    },
+    {
+      "id": 935766,
+      "adult": false,
+      "backdrop_path": "/wHVkV7XML3IEFT355QlZ9uUc03V.jpg",
+      "genre_ids": [
+        10751,
+        12,
+        35
+      ],
+      "original_language": "pt",
+      "overview": "Chuck Billy has spent his life picking guavas from Jed’s guava tree. But now that Dr. Agripino is going to build a road that will take down the tree, Chuck and his friends are going to do everything they can to stop it.",
+      "popularity": 51.00922946428572,
+      "poster_path": "/d2K7Zhw9yRjzoa4HBbrjt7aqlgT.jpg",
+      "vote_average": 8.4,
+      "vote_count": 22,
+      "original_title": "Chico Bento e a Goiabeira Maraviosa",
+      "release_date": "2025-01-09",
+      "title": "Chuck Billy and The Marvelous Guava Tree",
+      "video": false
+    },
+    {
+      "id": 1441967,
+      "adult": false,
+      "backdrop_path": "/umzXFtZ8HaWMH1rMV7KYarAqMHj.jpg",
+      "genre_ids": [
+        99
+      ],
+      "original_language": "da",
+      "overview": "Prince Joachim and author Steffen Jacobsen are on a hike through Jutland, bringing with them their own life stories. A beautiful nature film with a words of wisdom along the way.",
+      "popularity": 0,
+      "poster_path": "",
+      "vote_average": 7.7,
+      "vote_count": 5,
+      "original_title": "Hærvejen",
+      "release_date": "2025-03-19",
+      "title": "The Ox Road",
+      "video": false
+    },
+    {
+      "id": 1432534,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        35,
+        10749,
+        18
+      ],
+      "original_language": "en",
+      "overview": "Best friends Carmen and Bolude must travel from NYC to Sydney, Australia, where they have ten days to collect 100 'welcomes' so that Bolude's traditional Nigerian father will agree to let her marry an Australian.",
+      "popularity": 22.729,
+      "poster_path": "/tsWstW00hFHNaRxqROaJd7VDiXp.jpg",
+      "vote_average": 6,
+      "vote_count": 1,
+      "original_title": "Carmen & Bolude",
+      "release_date": "2025-03-19",
+      "title": "Carmen & Bolude",
+      "video": false
+    },
+    {
+      "id": 1235619,
+      "adult": false,
+      "backdrop_path": "/uQEalVM5yB3Q0Mdg8a0kxG7DNl7.jpg",
+      "genre_ids": [
+        35
+      ],
+      "original_language": "fr",
+      "overview": "",
+      "popularity": 22.766,
+      "poster_path": "/tRuZUbucePOXsBgkGB5oSTzTYzi.jpg",
+      "vote_average": 8,
+      "vote_count": 2,
+      "original_title": "Les Bodin’s partent en vrille",
+      "release_date": "2025-03-19",
+      "title": "Les Bodin’s partent en vrille",
+      "video": false
+    },
+    {
+      "id": 1266809,
+      "adult": false,
+      "backdrop_path": "/sJY1nxg2sa6Gfjh0ROwt68yeq65.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "original_language": "fr",
+      "overview": "An eccentric family portrait set during the May 1968 protests in Paris. A nine-year-old boy stays with his grandparents and uncles while his parents protest. When an illustrious guest seeks refuge in the apartment, the family’s dynamics change.",
+      "popularity": 22.987,
+      "poster_path": "/r9xf19feljoQSQrTFmcrikID4Kq.jpg",
+      "vote_average": 6.3,
+      "vote_count": 5,
+      "original_title": "La Cache",
+      "release_date": "2025-03-19",
+      "title": "The Safe House",
+      "video": false
+    },
+    {
+      "id": 970947,
+      "adult": false,
+      "backdrop_path": "/kznpWswHtIQ3fXrRy8BVXede1KH.jpg",
+      "genre_ids": [
+        18,
+        878
+      ],
+      "original_language": "en",
+      "overview": "",
+      "popularity": 23.303,
+      "poster_path": "/2drOuzftQlkhsuHRPUaARmzCGQP.jpg",
+      "vote_average": 7.7,
+      "vote_count": 3,
+      "original_title": "The Shrouds",
+      "release_date": "2025-03-20",
+      "title": "The Shrouds",
+      "video": false
+    },
+    {
+      "id": 447273,
+      "adult": false,
+      "backdrop_path": "/2siOHQYDG7gCQB6g69g2pTZiSia.jpg",
+      "genre_ids": [
+        10751,
+        14
+      ],
+      "original_language": "en",
+      "overview": "Remake a live action del clásico animado de Disney de 1937.",
+      "popularity": 24.058,
+      "poster_path": "/uxy6FIFl3hccD2eqGe75WkPLv5M.jpg",
+      "vote_average": 2.5,
+      "vote_count": 22,
+      "original_title": "Snow White",
+      "release_date": "2025-03-19",
+      "title": "Blancanieves",
+      "video": false
+    },
+    {
+      "id": 1149913,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "original_language": "id",
+      "overview": "",
+      "popularity": 24.942,
+      "poster_path": "/mCJ6shuScPnCh2CS68sPMxGH4UP.jpg",
+      "vote_average": 10,
+      "vote_count": 2,
+      "original_title": "TOGEFILM - Mei Mei",
+      "release_date": "2023-04-06",
+      "title": "TOGEFILM - Mei Mei",
+      "video": false
+    },
+    {
+      "id": 1144417,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [],
+      "original_language": "bn",
+      "overview": "The biopic will see Silajit portraying Ritwik Ghatak from 35 to 50.",
+      "popularity": 13.631,
+      "poster_path": "/n1C9Gb7Pva1Au07C19xRxfKnJI6.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "অলক্ষ্যে ঋত্বিক",
+      "release_date": "2025-03-14",
+      "title": "Alakshye Ritwik",
+      "video": false
+    },
+    {
+      "id": 1294376,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [
+        99
+      ],
+      "original_language": "en",
+      "overview": "A groundbreaking, immersive, nonlinear cinematic journey where artists' expressions blend with historical and real-life footage, unveils the profound impact of white supremacy on our human connections. Led by a dynamic team including Jacqueline Woodson, Catherine Gund, Erika Dilday, Meshell Ndegeocello, and M. Trevino, this collaborative masterpiece weaves together diverse visions, poignantly revealing how race, racism, and resistance shape our shared breath, not just in moments of crisis, but in the enduring, pervasive legacy of that risk.",
+      "popularity": 13.655,
+      "poster_path": "/6WTtDN2llm2laub4CSXuvAcr3zi.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Meanwhile",
+      "release_date": "2025-03-14",
+      "title": "Meanwhile",
+      "video": false
+    },
+    {
+      "id": 1431544,
+      "adult": false,
+      "backdrop_path": "/nqeyKIDRv7SHLojfCdypFR9LxQ6.jpg",
+      "genre_ids": [
+        18
+      ],
+      "original_language": "en",
+      "overview": "Discontent with herself after a show, a restless Stella Rose finds connection in an unexpected way.",
+      "popularity": 13.447,
+      "poster_path": "/i1R2hOKhaTNIWlCCjIgohijOiOu.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Stella Rose",
+      "release_date": "2025-03-11",
+      "title": "Stella Rose",
+      "video": false
+    },
+    {
+      "id": 1434539,
+      "adult": false,
+      "backdrop_path": "/vFVuPEVnyNfENwViVzDpLKToIuq.jpg",
+      "genre_ids": [
+        18,
+        53,
+        9648
+      ],
+      "original_language": "pt",
+      "overview": "Thomas, a young and disturbed man, has been unable to sleep for 4 nights in a row. That's when he decided to go to his mother's house, also his childhood home, in the hope of getting a good night's sleep. However, the path there is not necessarily easy, as he is constantly haunted by his mistakes and insecurities.",
+      "popularity": 13.449,
+      "poster_path": "/xjQ2UuhBlmqc43QHfpKMV3EPpbS.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Distrito da Insônia",
+      "release_date": "2025-03-11",
+      "title": "Insomnia District",
+      "video": false
+    },
+    {
+      "id": 1252014,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [],
+      "original_language": "bn",
+      "overview": "Film data is unknown at this point",
+      "popularity": 13.705,
+      "poster_path": "/cu7mQTBmMh05FsezjEljW7bD4fy.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Half Moon",
+      "release_date": "2025-03-11",
+      "title": "Half Moon",
+      "video": false
+    },
+    {
+      "id": 1118031,
+      "adult": false,
+      "backdrop_path": "/lTYGtgDRygku7iiFLWyiEc4wLzz.jpg",
+      "genre_ids": [
+        18,
+        28,
+        27
+      ],
+      "original_language": "es",
+      "overview": "When a kind of rabies that transforms people into aggressive creatures spreads across the planet, Manel isolates himself at home with his cat, relying on his wits to survive; but soon they must go out in search of food, by land and by sea, dodging many dangers.",
+      "popularity": 385.03,
+      "poster_path": "/wIGJnIFQlESkC2rLpfA8EDHqk4g.jpg",
+      "vote_average": 6.827,
+      "vote_count": 866,
+      "original_title": "Apocalipsis Z: el principio del fin",
+      "release_date": "2024-10-04",
+      "title": "Apocalypse Z: The Beginning of the End",
+      "video": false
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 3,
+  "total_results": 51
+}

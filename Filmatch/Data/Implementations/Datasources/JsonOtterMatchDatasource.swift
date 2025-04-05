@@ -36,7 +36,7 @@ final class JsonOtterMatchDatasource: OtterMatchGoDatasource {
   }
   
   func getMovieVisitsByIds(for ids: String) async -> Result<[Int], any Error> {
-    
+
     return .failure(RuntimeErrors.notImplemented)
   }
   
@@ -51,8 +51,7 @@ final class JsonOtterMatchDatasource: OtterMatchGoDatasource {
   }
   
   func getUserVisitedMoviesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverMoviesResponse, any Error> {
-    
-    return .failure(RuntimeErrors.notImplemented)
+    await client.get("user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status\(status.rawValue)-page\(page)", responseType: DiscoverMoviesResponse.self)
   }
   
   func getUserVisitedTvSeriesByStatus(for uid: String, as status: InterestStatus, containing query: String?, at page: Int) async -> Result<DiscoverTvSeriesResponse, any Error> {
