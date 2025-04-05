@@ -1,0 +1,400 @@
+{
+  "page": 2,
+  "results": [
+    {
+      "id": 1147416,
+      "adult": false,
+      "backdrop_path": "/rZmijM6poWf1nNItkZZ8H3gMkX7.jpg",
+      "genre_ids": [
+        16,
+        12,
+        28,
+        14
+      ],
+      "original_language": "fr",
+      "overview": "To save the future from a terrible fate, Marinette becomes Chronobug and teams up with Bunnyx to defeat a mysterious opponent who travels through time. Who is this new supervillain, and why are they obsessed with exposing Marinette's secret superhero identity? Marinette's only hope is to defeat her new opponent to prevent the end of Ladybug and time itself!",
+      "popularity": 355.635,
+      "poster_path": "/6AtoMpHvs9pxd30KsyK8QmJ9W9M.jpg",
+      "vote_average": 7.767,
+      "vote_count": 129,
+      "original_title": "Miraculous World : Londres, la course contre le temps",
+      "release_date": "2024-11-14",
+      "title": "Miraculous World, London: At the Edge of Time",
+      "video": false
+    },
+    {
+      "id": 1422179,
+      "adult": false,
+      "backdrop_path": "/fNtmDJGvQWetrqzwnoh2PcI1C0x.jpg",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "original_language": "no",
+      "overview": "When chaotic single mother Emilie hits a new low, she looks to her brother for help. He has a brilliant plan: to enter a cross-country ski marathon.",
+      "popularity": 193.941,
+      "poster_path": "/7uVdqyf7xiHeGjxhnRTKjGnO0Gm.jpg",
+      "vote_average": 6.5,
+      "vote_count": 13,
+      "original_title": "På villspor",
+      "release_date": "2025-02-27",
+      "title": "The Wrong Track",
+      "video": false
+    },
+    {
+      "id": 1438696,
+      "adult": false,
+      "backdrop_path": "/m7hhlBa2UBiXkQeOUxyBMl1jjeY.jpg",
+      "genre_ids": [
+        35
+      ],
+      "original_language": "es",
+      "overview": "Laia needs help, so she decides to gather four mysterious characters for a meeting that quickly spirals out of control.",
+      "popularity": 15.102,
+      "poster_path": "/tVLDSmIbXzqhUJfHFdzPOgINFF0.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Laia",
+      "release_date": "2025-03-13",
+      "title": "Laia",
+      "video": false
+    },
+    {
+      "id": 411,
+      "adult": false,
+      "backdrop_path": "/AuV99eQivVWuk2AOSM6hYh9QRPQ.jpg",
+      "genre_ids": [
+        12,
+        10751,
+        14
+      ],
+      "original_language": "en",
+      "overview": "Siblings Lucy, Edmund, Susan and Peter step through a magical wardrobe and find the land of Narnia. There, they discover a charming, once peaceful kingdom that has been plunged into eternal winter by the evil White Witch, Jadis. Aided by the wise and magnificent lion, Aslan, the children lead Narnia into a spectacular, climactic battle to be free of the Witch's glacial powers forever.",
+      "popularity": 256.74,
+      "poster_path": "/iREd0rNCjYdf5Ar0vfaW32yrkm.jpg",
+      "vote_average": 7.134,
+      "vote_count": 10722,
+      "original_title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+      "release_date": "2005-12-07",
+      "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+      "video": false
+    },
+    {
+      "id": 1247019,
+      "adult": false,
+      "backdrop_path": "/vfkzNcVzTRCq3C2jYIZtIjSdwf7.jpg",
+      "genre_ids": [
+        27,
+        53,
+        28
+      ],
+      "original_language": "th",
+      "overview": "",
+      "popularity": 235.886,
+      "poster_path": "/qhf5wLyWLRtDV2P9MKgzYrO6xYb.jpg",
+      "vote_average": 8.1,
+      "vote_count": 20,
+      "original_title": "ธี่หยด 2",
+      "release_date": "2024-10-10",
+      "title": "ธี่หยด 2",
+      "video": false
+    },
+    {
+      "id": 1010581,
+      "adult": false,
+      "backdrop_path": "/lntyt4OVDbcxA1l7LtwITbrD3FI.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "original_language": "es",
+      "overview": "Noah must leave her city, boyfriend, and friends to move into William Leister's mansion, the flashy and wealthy husband of her mother Rafaela. As a proud and independent 17 year old, Noah resists living in a mansion surrounded by luxury. However, it is there where she meets Nick, her new stepbrother, and the clash of their strong personalities becomes evident from the very beginning.",
+      "popularity": 506.39,
+      "poster_path": "/w46Vw536HwNnEzOa7J24YH9DPRS.jpg",
+      "vote_average": 7.877,
+      "vote_count": 3424,
+      "original_title": "Culpa mía",
+      "release_date": "2023-06-08",
+      "title": "My Fault",
+      "video": false
+    },
+    {
+      "id": 1138749,
+      "adult": false,
+      "backdrop_path": "/rp49ILheIhBwHWiQUvDfVH1fPfI.jpg",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "original_language": "en",
+      "overview": "When his brother is killed, LAPD officer Mark leaves the city to return to the island he grew up on. Seeking answers and ultimately vengeance, he soon finds himself in a bloody battle with the corrupt tycoon who's taken over the island paradise.",
+      "popularity": 236.093,
+      "poster_path": "/75O9xgGobL0FIIgayMxwuL8PeLJ.jpg",
+      "vote_average": 5.9,
+      "vote_count": 34,
+      "original_title": "The Island",
+      "release_date": "2023-07-21",
+      "title": "The Island",
+      "video": false
+    },
+    {
+      "id": 1440170,
+      "adult": false,
+      "backdrop_path": "",
+      "genre_ids": [],
+      "original_language": "en",
+      "overview": "The 2025 Roadblock is an upcoming professional wrestling television special produced by WWE for the promotion's NXT brand division.",
+      "popularity": 22.468,
+      "poster_path": "/20EOQRZ3BLsggagjZGJlSWjwAip.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "NXT Roadblock 2025",
+      "release_date": "2025-03-11",
+      "title": "NXT Roadblock 2025",
+      "video": false
+    },
+    {
+      "id": 1389406,
+      "adult": false,
+      "backdrop_path": "/s43GC9ldW1RPm3GJE4pJF4WAcVk.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "original_language": "zh",
+      "overview": "One river, three generations, countless failures. In the late 1950s, a group of people living along the Qiantang River fought against fearsome tides for their respective beliefs.",
+      "popularity": 22.543,
+      "poster_path": "/5BbQWghyxr5J6jWtWYgeuRqXOcj.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "潮",
+      "release_date": "2025-03-11",
+      "title": "Qian Tang River",
+      "video": false
+    },
+    {
+      "id": 519182,
+      "adult": false,
+      "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35,
+        878
+      ],
+      "original_language": "en",
+      "overview": "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.",
+      "popularity": 464.163,
+      "poster_path": "/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+      "vote_average": 7.071,
+      "vote_count": 2453,
+      "original_title": "Despicable Me 4",
+      "release_date": "2024-06-20",
+      "title": "Despicable Me 4",
+      "video": false
+    },
+    {
+      "id": 1201012,
+      "adult": false,
+      "backdrop_path": "/l2QSVFR5aLcW1Vl4cGKrQkEp6fY.jpg",
+      "genre_ids": [
+        35,
+        10749,
+        28
+      ],
+      "original_language": "hi",
+      "overview": "Durante su noche de bodas, una pareja muy peculiar trata de esquivar a matones y policías tras verse envuelta en la frenética búsqueda del misterioso «Charlie».",
+      "popularity": 257.454,
+      "poster_path": "/2E7me3rPi8HqaeheuD86YlpNX6k.jpg",
+      "vote_average": 6.3,
+      "vote_count": 8,
+      "original_title": "धूम धाम",
+      "release_date": "2025-02-13",
+      "title": "Dhoom Dhaam",
+      "video": false
+    },
+    {
+      "id": 1356039,
+      "adult": false,
+      "backdrop_path": "/ixKQ55OL3S4Lm0wuKU0s09cVGpX.jpg",
+      "genre_ids": [
+        28,
+        12,
+        53
+      ],
+      "original_language": "es",
+      "overview": "When a hostage rescue mission creates a new enemy, Capt. Guerrero and his elite soldiers must face an ambush by a criminal group.",
+      "popularity": 157.142,
+      "poster_path": "/lI2uFlSEkwXKljqiry7coaJ6wIS.jpg",
+      "vote_average": 8.615,
+      "vote_count": 226,
+      "original_title": "Contraataque",
+      "release_date": "2025-02-27",
+      "title": "Counterattack",
+      "video": false
+    },
+    {
+      "id": 1230208,
+      "adult": false,
+      "backdrop_path": "/8qXc6OLHoLHBxOFIjsfbZwWDFYH.jpg",
+      "genre_ids": [
+        28,
+        80,
+        18,
+        53
+      ],
+      "original_language": "fr",
+      "overview": "Forced out of his elite unit, a troubled cop launches his own rogue investigation when mysterious killings claim the lives of his former colleagues.",
+      "popularity": 315.143,
+      "poster_path": "/AnDwpI8dY8iqJVUwVS5UotYAbB1.jpg",
+      "vote_average": 6.7,
+      "vote_count": 54,
+      "original_title": "Bastion 36",
+      "release_date": "2025-02-27",
+      "title": "Squad 36",
+      "video": false
+    },
+    {
+      "id": 1294203,
+      "adult": false,
+      "backdrop_path": "/uJK0jjJ8QDOQw5lcNBwu059ht4D.jpg",
+      "genre_ids": [
+        10749,
+        18
+      ],
+      "original_language": "en",
+      "overview": "Noah, de 18 años, se traslada de Estados Unidos a Londres con su madre, que se ha enamorado recientemente de William, un adinerado hombre de negocios británico. Noah conoce al hijo de William, el malote Nick. Pese a los esfuerzos de ambos por evitarlo, se sienten atraídos. Mientras Noah pasa el verano adaptándose a su nueva vida, su doloroso pasado la irá atrapando a la vez que se va enamorando.",
+      "popularity": 181.953,
+      "poster_path": "/q0HxfkF9eoa6wSVnzwMhuDSK7ba.jpg",
+      "vote_average": 7.3,
+      "vote_count": 5,
+      "original_title": "My Fault: London",
+      "release_date": "2025-02-12",
+      "title": "Culpa mía: Londres",
+      "video": false
+    },
+    {
+      "id": 1249289,
+      "adult": false,
+      "backdrop_path": "/dhz2z8KpD5qd787CkEwPLo6rWpf.jpg",
+      "genre_ids": [
+        28,
+        80,
+        53
+      ],
+      "original_language": "en",
+      "overview": "Two married spies caught in the crosshairs of an international intelligence network will stop at nothing to obtain a critical asset. Joe and Lara are agents living off the grid whose quiet retreat at a winter resort is blown to shreds when members of the old guard suspect the two may have joined an elite team of rogue spies, known as Alarum.",
+      "popularity": 632.197,
+      "poster_path": "/v313aUGmMNj6yNveaiQXysBmjVS.jpg",
+      "vote_average": 6.175,
+      "vote_count": 41,
+      "original_title": "Alarum",
+      "release_date": "2025-01-16",
+      "title": "Alarum",
+      "video": false
+    },
+    {
+      "id": 1140535,
+      "adult": false,
+      "backdrop_path": "/kpWusrV8GePdx42GLJjZ7RJhkfz.jpg",
+      "genre_ids": [
+        27,
+        18
+      ],
+      "original_language": "en",
+      "overview": "A couple, Rebekah and Chris, and their children, Tyler and Chloe, move into a seemingly normal suburban home. When strange occurrences occur, they begin to believe that there is something else in the house with them. The presence is about to disrupt their lives in unimaginable ways.",
+      "popularity": 190.967,
+      "poster_path": "/xZIGHoHj0DF0zdibwa66cRWHdHO.jpg",
+      "vote_average": 6,
+      "vote_count": 153,
+      "original_title": "Presence",
+      "release_date": "2025-01-16",
+      "title": "Presence",
+      "video": false
+    },
+    {
+      "id": 1226406,
+      "adult": false,
+      "backdrop_path": "/aGgr2Q07AcyiWPGODoofgZDUEHp.jpg",
+      "genre_ids": [
+        28,
+        35,
+        10749
+      ],
+      "original_language": "en",
+      "overview": "A realtor is pulled back into the life he left behind after his former partner-in-crime resurfaces with an ominous message. With his crime-lord brother also on his trail, he must confront his past and the history he never fully buried.",
+      "popularity": 191.737,
+      "poster_path": "/skPPVeHoTTVVSJlb0Ib5vrqiuA4.jpg",
+      "vote_average": 5.982,
+      "vote_count": 85,
+      "original_title": "Love Hurts",
+      "release_date": "2025-02-06",
+      "title": "Love Hurts",
+      "video": false
+    },
+    {
+      "id": 774370,
+      "adult": false,
+      "backdrop_path": "/iXU87IdtNsYt7n6OigPJBDdbFf1.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        35,
+        28
+      ],
+      "original_language": "en",
+      "overview": "When a faithful police dog and his human police officer owner are injured together on the job, a harebrained but life-saving surgery fuses the two of them together and Dog Man is born. Dog Man is sworn to protect and serve—and fetch, sit and roll over. As Dog Man embraces his new identity and strives to impress his Chief, he must stop the pretty evil plots of feline supervillain Petey the Cat.",
+      "popularity": 308.17,
+      "poster_path": "/89wNiexZdvLQ41OQWIsQy4O6jAQ.jpg",
+      "vote_average": 7.2,
+      "vote_count": 14,
+      "original_title": "Dog Man",
+      "release_date": "2025-01-24",
+      "title": "Dog Man",
+      "video": false
+    },
+    {
+      "id": 1195506,
+      "adult": false,
+      "backdrop_path": "/8eBj4WgFTsQOb8Moicf0I9sBgDE.jpg",
+      "genre_ids": [
+        28,
+        53,
+        35
+      ],
+      "original_language": "en",
+      "overview": "When the girl of his dreams is kidnapped, everyman Nate turns his inability to feel pain into an unexpected strength in his fight to get her back.",
+      "popularity": 32.859,
+      "poster_path": "/xEXDIJFenYgRwpsJs1mx6hr1DKy.jpg",
+      "vote_average": 8.1,
+      "vote_count": 7,
+      "original_title": "Novocaine",
+      "release_date": "2025-03-12",
+      "title": "Novocaine",
+      "video": false
+    },
+    {
+      "id": 1188104,
+      "adult": false,
+      "backdrop_path": "/aqMBEpd4kC8GpUg6761qFPkvQuS.jpg",
+      "genre_ids": [
+        28,
+        80
+      ],
+      "original_language": "th",
+      "overview": "",
+      "popularity": 397.032,
+      "poster_path": "/eLRYPOABM6Iy8w1bEyCxD38dvpU.jpg",
+      "vote_average": 8.4,
+      "vote_count": 13,
+      "original_title": "ปล้นทะลุไมล์",
+      "release_date": "2023-11-09",
+      "title": "ปล้นทะลุไมล์",
+      "video": false
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 3,
+  "total_results": 51
+}

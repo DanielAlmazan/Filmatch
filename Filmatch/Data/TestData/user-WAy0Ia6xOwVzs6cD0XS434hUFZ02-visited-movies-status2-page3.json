@@ -1,0 +1,233 @@
+{
+  "page": 3,
+  "results": [
+    {
+      "id": 1405338,
+      "adult": false,
+      "backdrop_path": "/hD2SN5bbqxk0kcRmsATJkXObgnZ.jpg",
+      "genre_ids": [
+        28,
+        80,
+        14,
+        53
+      ],
+      "original_language": "ja",
+      "overview": "Framed for his family's murder and left for dead, an ex-hitman will stop at nothing to exact revenge on the masked \"demons\" who have taken over his city.",
+      "popularity": 231.196,
+      "poster_path": "/fQ9hzto0cUuxjfzqNAiAnNJo8O7.jpg",
+      "vote_average": 6.7,
+      "vote_count": 85,
+      "original_title": "Demon City 鬼ゴロシ",
+      "release_date": "2025-02-26",
+      "title": "Demon City",
+      "video": false
+    },
+    {
+      "id": 558449,
+      "adult": false,
+      "backdrop_path": "/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+      "genre_ids": [
+        28,
+        12,
+        18
+      ],
+      "original_language": "en",
+      "overview": "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people.",
+      "popularity": 1224.01,
+      "poster_path": "/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+      "vote_average": 6.8,
+      "vote_count": 2473,
+      "original_title": "Gladiator II",
+      "release_date": "2024-11-05",
+      "title": "Gladiator II",
+      "video": false
+    },
+    {
+      "id": 1160956,
+      "adult": false,
+      "backdrop_path": "/u7AZ5CdT2af8buRjmYCPXNyJssd.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "original_language": "zh",
+      "overview": "International action star Jackie Chan is invited to the adoption ceremony of a rare baby panda, but after an international crime syndicate attempts to kidnap the bear, Jackie has to save the bear using his stunt work skills.",
+      "popularity": 438.143,
+      "poster_path": "/xVS9XiO9upp2SnWx6KpBYb79hLR.jpg",
+      "vote_average": 5.5,
+      "vote_count": 24,
+      "original_title": "熊猫计划",
+      "release_date": "2024-10-01",
+      "title": "Panda Plan",
+      "video": false
+    },
+    {
+      "id": 1084199,
+      "adult": false,
+      "backdrop_path": "/sc1abgWNXc29wSBaerrjGBih06l.jpg",
+      "genre_ids": [
+        27,
+        878,
+        53
+      ],
+      "original_language": "en",
+      "overview": "A billionaire's death sets off a chain of events for Iris and her friends during a weekend trip to his lakeside estate.",
+      "popularity": 306.16,
+      "poster_path": "/oCoTgC3UyWGfyQ9thE10ulWR7bn.jpg",
+      "vote_average": 7.9,
+      "vote_count": 19,
+      "original_title": "Companion",
+      "release_date": "2025-01-22",
+      "title": "Companion",
+      "video": false
+    },
+    {
+      "id": 926670,
+      "adult": false,
+      "backdrop_path": "/x8Kdi1OJbewkeGuijcSmUWrYyk2.jpg",
+      "genre_ids": [
+        28,
+        35,
+        10751,
+        878
+      ],
+      "original_language": "en",
+      "overview": "Henry Hart meets a superfan—eager to fight crime with Kid Danger—who comes into possession of a device that can open up alternate realities. Facing a wild ride, Henry will need his best friend Jasper and his new superfan sidekick to find his way out or be stuck in another dimension forever.",
+      "popularity": 451.621,
+      "poster_path": "/dFWj2rOGsqSIX1PHFghbCBgpMnk.jpg",
+      "vote_average": 8.7,
+      "vote_count": 63,
+      "original_title": "Henry Danger: The Movie",
+      "release_date": "2025-01-17",
+      "title": "Henry Danger: The Movie",
+      "video": false
+    },
+    {
+      "id": 696506,
+      "adult": false,
+      "backdrop_path": "/2P0PUkQ1tNHNYTEmtbBmM8MfXBG.jpg",
+      "genre_ids": [
+        878,
+        35,
+        18
+      ],
+      "original_language": "en",
+      "overview": "Mickey Barnes, an “expendable” employee, is sent on a human expedition to colonize the ice world Niflheim. After one iteration dies, a new body is regenerated with most of his memories intact. With one regeneration, though, things go very wrong.",
+      "popularity": 423.368,
+      "poster_path": "/lrCcovGRcuv8Z1v3ae1ZH5Ird05.jpg",
+      "vote_average": 7.6,
+      "vote_count": 21,
+      "original_title": "Mickey 17",
+      "release_date": "2025-02-28",
+      "title": "Mickey 17",
+      "video": false
+    },
+    {
+      "id": 927342,
+      "adult": false,
+      "backdrop_path": "/xljLe4TiQL1b4sT7956IGgj2vrf.jpg",
+      "genre_ids": [
+        28,
+        18,
+        12,
+        10752
+      ],
+      "original_language": "ta",
+      "overview": "A heroic true story of Major Mukund Varadarajan, an Indian Army officer who displayed extraordinary bravery during a counterterrorism mission in Kashmir’s Shopian district. The film captures his courage in protecting his nation and the devotion of his wife Indhu Rebecaa Varghese.",
+      "popularity": 385.589,
+      "poster_path": "/6m435uh40N7Gzfbd69ttp6W0sdR.jpg",
+      "vote_average": 7.1,
+      "vote_count": 39,
+      "original_title": "அமரன்",
+      "release_date": "2024-10-31",
+      "title": "Amaran",
+      "video": false
+    },
+    {
+      "id": 822119,
+      "adult": false,
+      "backdrop_path": "/rw9fSaQ4jkm4tDwn5qIXWBRmNEs.jpg",
+      "genre_ids": [
+        878,
+        28,
+        53,
+        12
+      ],
+      "original_language": "en",
+      "overview": "After meeting with newly elected U.S. President Thaddeus Ross, Sam finds himself in the middle of an international incident. He must discover the reason behind a nefarious global plot before the true mastermind has the entire world seeing red.",
+      "popularity": 274.837,
+      "poster_path": "/z0ujnXounP4yq637zyLBiZThF7Y.jpg",
+      "vote_average": 0,
+      "vote_count": 0,
+      "original_title": "Captain America: Brave New World",
+      "release_date": "2025-02-12",
+      "title": "Captain America: Brave New World",
+      "video": false
+    },
+    {
+      "id": 1064213,
+      "adult": false,
+      "backdrop_path": "/4cp40IyTpFfsT2IKpl0YlUkMBIR.jpg",
+      "genre_ids": [
+        10749,
+        35,
+        18
+      ],
+      "original_language": "en",
+      "overview": "A young sex worker from Brooklyn gets her chance at a Cinderella story when she meets and impulsively marries the son of an oligarch. Once the news reaches Russia, her fairytale is threatened as his parents set out to get the marriage annulled.",
+      "popularity": 495.268,
+      "poster_path": "/7MrgIUeq0DD2iF7GR6wqJfYZNeC.jpg",
+      "vote_average": 7,
+      "vote_count": 789,
+      "original_title": "Anora",
+      "release_date": "2024-10-14",
+      "title": "Anora",
+      "video": false
+    },
+    {
+      "id": 1126166,
+      "adult": false,
+      "backdrop_path": "/rOMLLMGgDgGG6XeT3P8sUdUb8nl.jpg",
+      "genre_ids": [
+        53,
+        28,
+        80,
+        18
+      ],
+      "original_language": "en",
+      "overview": "A U.S. Marshal escorts a government witness to trial after he is accused of getting involved with a mob boss, only to discover that the pilot who is transporting them is also a hitman that had been sent to assassinate the informant. After they subdue him, they’re forced to fly together after discovering that there are others attempting to eliminate them.",
+      "popularity": 198.425,
+      "poster_path": "/4cR3hImKd78dSs652PAkSAyJ5Cx.jpg",
+      "vote_average": 5.964,
+      "vote_count": 14,
+      "original_title": "Flight Risk",
+      "release_date": "2025-01-22",
+      "title": "Flight Risk",
+      "video": false
+    },
+    {
+      "id": 950396,
+      "adult": false,
+      "backdrop_path": "/9nhjGaFLKtddDPtPaX5EmKqsWdH.jpg",
+      "genre_ids": [
+        53,
+        28,
+        10749,
+        27
+      ],
+      "original_language": "en",
+      "overview": "Mandan a dos operativos de élite a vigilar lados opuestos de un misterioso abismo y allí intiman desde la distancia, pero deberán aunar fuerzas para sobrevivir al mal que esconde el abismo.",
+      "popularity": 168.935,
+      "poster_path": "/bJToUFSmdyDR1qx2hmjXFJld5vK.jpg",
+      "vote_average": 6.7,
+      "vote_count": 7,
+      "original_title": "The Gorge",
+      "release_date": "2025-02-13",
+      "title": "El abismo secreto",
+      "video": false
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 3,
+  "total_results": 51
+}

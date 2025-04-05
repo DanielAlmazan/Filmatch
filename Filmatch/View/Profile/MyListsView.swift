@@ -66,6 +66,22 @@ struct MyListsView: View {
     }
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("My Lists")
+    .task { await initLists() }
+  }
+
+  private func initLists() async {
+    if profileVm.watchedItems?.isEmpty ?? true {
+      await profileVm.loadItems(for: .watched)
+    }
+    if profileVm.blacklistItems?.isEmpty ?? true {
+      await profileVm.loadItems(for: .notInterested)
+    }
+    if profileVm.watchlistItems?.isEmpty ?? true {
+      await profileVm.loadItems(for: .interested)
+    }
+    if profileVm.superHypedItems?.isEmpty ?? true {
+      await profileVm.loadItems(for: .superInterested)
+    }
   }
 }
 

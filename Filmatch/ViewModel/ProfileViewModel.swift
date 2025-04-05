@@ -408,7 +408,7 @@ final class ProfileViewModel {
       setMaxPages(for: status, at: response.totalPages)
       return response.results.toDiscoverMovieItems(as: status)
     case .failure(let error):
-      print("Error fetching \(status) Movies: \(error.localizedDescription)")
+      print("Error fetching \(status) Movies: \(error) | \(error.localizedDescription)")
       return []
     }
   }
