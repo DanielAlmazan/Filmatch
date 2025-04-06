@@ -14,7 +14,7 @@ struct UserMediaView: View {
 
   init(
     repository: OtterMatchGoRepository,
-    user: OtterMatchUser,
+    user: OtterMatchUser?,
     status: InterestStatus,
     media: MediaType,
     items: [any DiscoverItem]

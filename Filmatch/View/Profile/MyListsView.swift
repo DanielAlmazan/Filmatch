@@ -21,39 +21,39 @@ struct MyListsView: View {
         VStack {
           Group {
             ProfileMediaCardRowContainer(
-              user: user,
               status: .superInterested,
               media: media,
               height: height,
               isLoading: self.$profileVm.isSuperHypedLoading,
-              items: self.profileVm.superHypedItems
+              items: self.$profileVm.superHypedItems,
+              updateItem: updateItem
             )
 
             ProfileMediaCardRowContainer(
-              user: user,
               status: .interested,
               media: media,
               height: height,
               isLoading: self.$profileVm.isWatchlistLoading,
-              items: self.profileVm.watchlistItems
+              items: self.$profileVm.watchlistItems,
+              updateItem: updateItem
             )
 
             ProfileMediaCardRowContainer(
-              user: user,
               status: .watched,
               media: media,
               height: height,
               isLoading: self.$profileVm.isWatchedLoading,
-              items: self.profileVm.watchedItems
+              items: self.$profileVm.watchedItems,
+              updateItem: updateItem
             )
 
             ProfileMediaCardRowContainer(
-              user: user,
               status: .notInterested,
               media: media,
               height: height,
               isLoading: self.$profileVm.isBlacklistLoading,
-              items: self.profileVm.blacklistItems
+              items: self.$profileVm.blacklistItems,
+              updateItem: updateItem
             )
           }
           .foregroundStyle(.onBgBase)
@@ -67,6 +67,14 @@ struct MyListsView: View {
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("My Lists")
     .task { await initLists() }
+  }
+
+  private func updateItem(_ item: any DiscoverItem, as status: InterestStatus?) {
+    guard let status = status else { return }
+
+    Task {
+      await self.profileVm.updateItem(item, for: status)
+    }
   }
 
   private func initLists() async {
@@ -110,4 +118,17 @@ struct MyListsView: View {
       profileVm: profileVm)
   }
   .environment(otterMatchRepository)
+  .environment(
+    AuthenticationViewModel(
+      authenticationRepository: AuthenticationFirebaseRepository(
+        dataSource: AuthenticationFirebaseDataSource()
+      ),
+      otterMatchRepository: OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(
+          client: OtterMatchHttpClient(
+            urlBase: API.otterMatchBaseURL)
+        )
+      )
+    )
+  )
 }

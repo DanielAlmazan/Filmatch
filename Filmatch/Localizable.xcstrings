@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     " %lld more characters" : {
       "comment" : "Full sentence could be \"Password must contain at least 8 characters.\"",
@@ -11,6 +11,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld caracters més"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld caracteres más"
           }
         }
       }
@@ -22,6 +28,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "una lletra minúscula"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " una letra minúscula más"
           }
         }
       }

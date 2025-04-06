@@ -324,6 +324,40 @@ final class ProfileViewModel {
     if proceed { await loadItems(for: status) }
   }
 
+  @MainActor
+  func updateItem(_ item: any DiscoverItem, for status: InterestStatus) async {
+    let result = await self.otterMatchRepository.markMediaAsVisited(for: item, as: status)
+    let previousStatus = item.status
+    updateItemInList(item, for: status)
+
+    switch result {
+    case .success:
+      print("Updated successfully")
+    case .failure(let failure):
+      updateItemInList(item, for: previousStatus)
+      print("Error updating: \(failure)")
+    }
+  }
+
+  private func updateItemInList(_ item: any DiscoverItem, for status: InterestStatus?) {
+    switch status {
+    case .interested:
+      guard let index = watchlistItems?.firstIndex(where: { $0.id == item.id }) else { return }
+      watchlistItems![index].status = status
+    case .superInterested:
+      guard let index = superHypedItems?.firstIndex(where: { $0.id == item.id }) else { return }
+      superHypedItems![index].status = status
+    case .notInterested:
+      guard let index = blacklistItems?.firstIndex(where: { $0.id == item.id }) else { return }
+      blacklistItems![index].status = status
+    case .watched:
+      guard let index = watchedItems?.firstIndex(where: { $0.id == item.id }) else { return }
+      watchedItems![index].status = status
+    case .pending, nil:
+      break
+    }
+  }
+
   func onNavigateToDetail(for status: InterestStatus) {
     query = ""
     currentQuery = ""
