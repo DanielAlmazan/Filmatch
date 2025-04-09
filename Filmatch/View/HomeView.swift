@@ -60,7 +60,7 @@ struct HomeView: View {
       // MARK: - Search Tab
       Tab("Search", systemImage: "magnifyingglass", value: .search) {
         NavigationStack {
-          SearchMediaView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository)
+          SearchMediaView(moviesRepository: moviesRepository, tvSeriesRepository: tvSeriesRepository, otterMatchRepository: otterMatchGoRepository)
             .background(.bgBase)
         }
       }

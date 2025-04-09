@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct ProfileMediaCardRowContainer: View {
-  let user: OtterMatchUser
   let status: InterestStatus
   let media: MediaType
   let height: CGFloat
-  
+
   @Binding var isLoading: Bool
-  var items: [any DiscoverItem]?
-  
+  @Binding var items: [any DiscoverItem]?
+
+  let updateItem: (any DiscoverItem, InterestStatus?) -> Void
+
   @Environment(OtterMatchGoRepositoryImpl.self) var repository
+  @Environment(AuthenticationViewModel.self) var authVm
 
   var body: some View {
     VStack(alignment: .leading) {
       HStack {
         Text(status.listName)
           .font(.headline)
-        
+
         Spacer()
-        
+
         if let items {
           NavigationLink {
             ScrollView {
               UserMediaView(
                 repository: repository,
-                user: user,
+                user: authVm.currentUser,
                 status: status,
                 media: media,
-                items: items)
+                items: items,
+                updateItem: updateItem)
             }
             .background(.bgBase)
           } label: {
@@ -46,8 +49,8 @@ struct ProfileMediaCardRowContainer: View {
       Group {
         if self.isLoading {
           ProgressView("Loading...")
-        } else if let items, !items.isEmpty {
-          ProfileMediaCardsRow(items: items, cornerRadius: 5)
+        } else if !(items?.isEmpty ?? true) {
+          ProfileMediaCardsRow(items: self.$items, cornerRadius: 5, updateItem: updateItem)
         } else {
           Text("No results")
         }
@@ -59,20 +62,36 @@ struct ProfileMediaCardRowContainer: View {
 }
 
 #Preview {
+  @Previewable @State var movies: [any DiscoverItem]? = [DiscoverMovieItem.default]
+
   NavigationStack {
     ProfileMediaCardRowContainer(
-      user: .default,
       status: .interested,
       media: .movie,
       height: 100,
       isLoading: .constant(false),
-      items: [DiscoverMovieItem.default]
-    )
+      items: $movies
+    ) { item, newStatus in
+      print("Update item \(item) from status \(item.status ?? .pending) to status \(newStatus ?? .pending)")
+    }
   }
   .environment(
     OtterMatchGoRepositoryImpl(
       datasource: OtterMatchGoDatasourceImpl(
         client: OtterMatchHttpClient()
+      )
+    )
+  )
+  .environment(
+    AuthenticationViewModel(
+      authenticationRepository: AuthenticationFirebaseRepository(
+        dataSource: AuthenticationFirebaseDataSource()
+      ),
+      otterMatchRepository: OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(
+          client: OtterMatchHttpClient(
+            urlBase: API.otterMatchBaseURL)
+        )
       )
     )
   )

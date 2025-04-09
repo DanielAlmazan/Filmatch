@@ -8,12 +8,14 @@
 import Foundation
 import SwiftUICore
 
-enum InterestStatus: Int, Codable {
+enum InterestStatus: Int, Codable, Identifiable, CaseIterable {
   case interested = 0
   case superInterested = 1
   case notInterested = 2
   case watched = 3
   case pending = -1
+
+  var id: Int { self.rawValue }
 
   var listName: LocalizedStringKey {
     switch self {

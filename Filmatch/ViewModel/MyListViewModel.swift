@@ -9,7 +9,7 @@ import Foundation
 
 @Observable
 final class MyListViewModel {
-  let user: OtterMatchUser
+  let user: OtterMatchUser?
   let repository: OtterMatchGoRepository
 
   let status: InterestStatus
@@ -25,7 +25,7 @@ final class MyListViewModel {
   private var isLoading: Bool = false
 
   init(
-    user: OtterMatchUser,
+    user: OtterMatchUser?,
     repository: OtterMatchGoRepository,
     status: InterestStatus,
     media: MediaType,
@@ -40,20 +40,20 @@ final class MyListViewModel {
 
   @MainActor
   func getItems() async {
-    guard !isLoading else { return }
+    guard let user, !isLoading else { return }
 
     isLoading = true
 
     switch media {
-    case .movie: await getMovies()
-    case .tvSeries: await getTvSeries()
+    case .movie: await getMovies(for: user)
+    case .tvSeries: await getTvSeries(for: user)
     }
 
     isLoading = false
   }
 
   @MainActor
-  private func getMovies() async {
+  private func getMovies(for user: OtterMatchUser) async {
     let result = await repository.getUserVisitedMoviesByStatus(
       for: user.uid,
       as: status,
@@ -70,7 +70,7 @@ final class MyListViewModel {
   }
 
   @MainActor
-  private func getTvSeries() async {
+  private func getTvSeries(for user: OtterMatchUser) async {
     let result = await repository.getUserVisitedTvSeriesByStatus(
       for: user.uid,
       as: status,

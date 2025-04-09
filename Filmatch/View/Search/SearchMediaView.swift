@@ -17,19 +17,23 @@ struct SearchMediaView: View {
 
   private var moviesRepository: MoviesRepository
   private var tvSeriesRepository: TvSeriesRepository
+  private var otterMatchRepository: OtterMatchGoRepository
 
   let formatter = DateFormatter()
 
   init(
     moviesRepository: MoviesRepository,
-    tvSeriesRepository: TvSeriesRepository
+    tvSeriesRepository: TvSeriesRepository,
+    otterMatchRepository: OtterMatchGoRepository
   ) {
     self.moviesRepository = moviesRepository
     self.tvSeriesRepository = tvSeriesRepository
+    self.otterMatchRepository = otterMatchRepository
 
     self.searchVm = .init(
       moviesRepository: moviesRepository,
-      tvSeriesRepository: tvSeriesRepository)
+      tvSeriesRepository: tvSeriesRepository,
+      otterMatchRepository: otterMatchRepository)
 
     formatter.dateFormat = "yyyy"
   }
@@ -54,17 +58,21 @@ struct SearchMediaView: View {
 
       // MARK: - Results
       let results = self.searchVm.currentResults
-      if !results.isEmpty {
+      if !(results?.isEmpty ?? true) {
         ScrollView {
           Group {
             if isGridSelected {
-              SimpleMediaItemsGridView(results: results) {
-                searchVm.search()
-              }
+              SimpleMediaItemsGridView(
+                results: self.$searchVm.currentResults,
+                updateItem: updateItem,
+                onLastAppeared: search
+              )
             } else {
-              SimpleMediaItemListView(results: results) {
-                searchVm.search()
-              }
+              SimpleMediaItemListView(
+                results: self.$searchVm.currentResults,
+                updateItem: updateItem,
+                onLastAppeared: search
+              )
             }
           }
           .lineLimit(1)
@@ -78,6 +86,17 @@ struct SearchMediaView: View {
     if searchVm.isLoading {
       ProgressView("Searching results for: \"\(searchVm.query)\"...")
     }
+  }
+
+  private func updateItem(_ item: any DiscoverItem, _ interestStatus: InterestStatus?) {
+    guard let interestStatus else { return }
+    Task {
+      await searchVm.updateItem(item, for: interestStatus)
+    }
+  }
+
+  private func search() {
+    searchVm.search()
   }
 }
 
@@ -93,11 +112,13 @@ struct SearchMediaView: View {
   @Previewable @State var personRepository = PersonRepositoryImpl(
     datasource: PersonDatasourceImpl(client: TMDBHttpClient())
   )
-  
+  @Previewable @State var otterMatchRepository = OtterMatchGoRepositoryImpl(datasource: JsonOtterMatchDatasource(client: TMDBJsonClient()))
+
   NavigationStack {
     SearchMediaView(
       moviesRepository: moviesRepository,
-      tvSeriesRepository: tvSeriesRepository
+      tvSeriesRepository: tvSeriesRepository,
+      otterMatchRepository: otterMatchRepository
     )
   }
   .environment(moviesRepository)
