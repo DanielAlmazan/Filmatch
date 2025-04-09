@@ -326,36 +326,35 @@ final class ProfileViewModel {
 
   @MainActor
   func updateItem(_ item: any DiscoverItem, for status: InterestStatus) async {
-    let result = await self.otterMatchRepository.markMediaAsVisited(for: item, as: status)
-    let previousStatus = item.status
+    print("Updating item status")
+
     updateItemInList(item, for: status)
+
+    let result = await self.otterMatchRepository.markMediaAsVisited(for: item, as: status)
 
     switch result {
     case .success:
       print("Updated successfully")
     case .failure(let failure):
-      updateItemInList(item, for: previousStatus)
+      updateItemInList(item, for: item.status)
       print("Error updating: \(failure)")
     }
   }
 
   private func updateItemInList(_ item: any DiscoverItem, for status: InterestStatus?) {
-    switch status {
-    case .interested:
-      guard let index = watchlistItems?.firstIndex(where: { $0.id == item.id }) else { return }
+    print("Updating item in list")
+
+    if let index = watchlistItems?.firstIndex(where: { $0.id == item.id }) {
       watchlistItems![index].status = status
-    case .superInterested:
-      guard let index = superHypedItems?.firstIndex(where: { $0.id == item.id }) else { return }
+    } else if let index = superHypedItems?.firstIndex(where: { $0.id == item.id }) {
       superHypedItems![index].status = status
-    case .notInterested:
-      guard let index = blacklistItems?.firstIndex(where: { $0.id == item.id }) else { return }
+    } else if let index = blacklistItems?.firstIndex(where: { $0.id == item.id }) {
       blacklistItems![index].status = status
-    case .watched:
-      guard let index = watchedItems?.firstIndex(where: { $0.id == item.id }) else { return }
+    } else if let index = watchedItems?.firstIndex(where: { $0.id == item.id }) {
       watchedItems![index].status = status
-    case .pending, nil:
-      break
     }
+
+    print("Updated item in list")
   }
 
   func onNavigateToDetail(for status: InterestStatus) {

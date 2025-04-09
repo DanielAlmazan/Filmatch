@@ -36,7 +36,8 @@ struct ProfileMediaCardRowContainer: View {
                 user: authVm.currentUser,
                 status: status,
                 media: media,
-                items: items)
+                items: items,
+                updateItem: updateItem)
             }
             .background(.bgBase)
           } label: {

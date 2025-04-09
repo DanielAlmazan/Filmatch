@@ -11,13 +11,15 @@ struct UserMediaView: View {
   @State private var myListVm: MyListViewModel
 
   let status: InterestStatus
+  let updateItem: (any DiscoverItem, InterestStatus?) -> Void
 
   init(
     repository: OtterMatchGoRepository,
     user: OtterMatchUser?,
     status: InterestStatus,
     media: MediaType,
-    items: [any DiscoverItem]
+    items: [any DiscoverItem],
+    updateItem: @escaping (any DiscoverItem, InterestStatus?) -> Void,
   ) {
     self.myListVm = MyListViewModel(
       user: user,
@@ -26,6 +28,7 @@ struct UserMediaView: View {
       media: media,
       items: items)
     self.status = status
+    self.updateItem = updateItem
   }
 
   @State private var isGridSelected: Bool = true
@@ -42,13 +45,9 @@ struct UserMediaView: View {
       }
       if let items = myListVm.items {
         if isGridSelected {
-          SimpleMediaItemsGridView(results: items) {
-            onLastAppeared()
-          }
+          SimpleMediaItemsGridView(results: $myListVm.items, updateItem: updateItem, onLastAppeared: onLastAppeared)
         } else {
-          SimpleMediaItemListView(results: items) {
-            onLastAppeared()
-          }
+          SimpleMediaItemListView(results: $myListVm.items, updateItem: updateItem, onLastAppeared: onLastAppeared)
         }
       }
     }
@@ -89,10 +88,14 @@ struct UserMediaView: View {
   let otterMatchRepository = OtterMatchGoRepositoryImpl(datasource: JsonOtterMatchDatasource(client: TMDBJsonClient()))
 
   NavigationStack {
-    UserMediaView(
-      repository: otterMatchRepository, user: .default, status: .interested, media: .movie,
-      items: [movie])
-    .onAppear { movie.status = .superInterested }
+    ScrollView {
+      UserMediaView(
+        repository: otterMatchRepository, user: .default, status: .interested, media: .movie,
+        items: [movie]) { _, _ in
+          print("Updating item...")
+        }
+      .onAppear { movie.status = .superInterested }
+    }
   }
   .environment(moviesRepository)
   .environment(tvRepository)

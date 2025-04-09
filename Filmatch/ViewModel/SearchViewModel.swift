@@ -11,6 +11,7 @@ import Foundation
 final class SearchViewModel {
   private let moviesRepository: MoviesRepository
   private let tvSeriesRepository: TvSeriesRepository
+  private let otterMatchRepository: OtterMatchGoRepository
 
   var selectedMedia: MediaType = .movie
 
@@ -56,11 +57,24 @@ final class SearchViewModel {
     }
   }
 
-  private var moviesResults: [any DiscoverItem] = []
-  private var tvSeriesResults: [any DiscoverItem] = []
+  private var moviesResults: [any DiscoverItem]? = []
+  private var tvSeriesResults: [any DiscoverItem]? = []
 
-  var currentResults: [any DiscoverItem] {
-    selectedMedia == .movie ? moviesResults : tvSeriesResults
+  var currentResults: [any DiscoverItem]? {
+    get {
+      switch selectedMedia {
+      case .movie: moviesResults
+      case .tvSeries: tvSeriesResults
+      }
+    }
+    set {
+      switch selectedMedia {
+      case .movie:
+        moviesResults = newValue
+      case .tvSeries:
+        tvSeriesResults = newValue
+      }
+    }
   }
 
   private var currentMoviesPage: Int = 1
@@ -100,7 +114,7 @@ final class SearchViewModel {
   var shouldPerformSearch: Bool {
     !isLoading
       && !query.isEmpty
-      && currentResults.isEmpty
+      && currentResults?.isEmpty ?? true
       || lastSearchQuery != query
       || currentMaxPages != nil
         && currentMaxPages! >= currentPage
@@ -111,10 +125,12 @@ final class SearchViewModel {
 
   init(
     moviesRepository: MoviesRepository,
-    tvSeriesRepository: TvSeriesRepository
+    tvSeriesRepository: TvSeriesRepository,
+    otterMatchRepository: OtterMatchGoRepository
   ) {
     self.moviesRepository = moviesRepository
     self.tvSeriesRepository = tvSeriesRepository
+    self.otterMatchRepository = otterMatchRepository
   }
 
   @MainActor
@@ -145,8 +161,7 @@ final class SearchViewModel {
 
       switch result {
       case .success(let movies):
-        moviesResults.append(
-          contentsOf: movies.results.map { $0.toDiscoverMovieItem() })
+        moviesResults.appendItems(movies.results.map { $0.toDiscoverMovieItem() })
         currentMaxPages = movies.totalPages
         currentPage += 1
         lastSearchMovieQuery = query
@@ -165,8 +180,7 @@ final class SearchViewModel {
 
       switch result {
       case .success(let tvSeries):
-        tvSeriesResults.append(
-          contentsOf: tvSeries.results.map { $0.toDiscoverTvSeriesItem() })
+        tvSeriesResults.appendItems(tvSeries.results.map { $0.toDiscoverTvSeriesItem() })
         currentMaxPages = tvSeries.totalPages
         currentPage += 1
         lastSearchTvQuery = query
@@ -177,14 +191,29 @@ final class SearchViewModel {
     }
   }
 
-  private func resetSearchResults() {
-    switch selectedMedia {
-    case .movie:
-      moviesResults.removeAll()
-      currentMoviesPage = 1
-    case .tvSeries:
-      tvSeriesResults.removeAll()
-      currentTvPage = 1
+  @MainActor
+  func updateItem(_ item: any DiscoverItem, for status: InterestStatus) async {
+    let result = await self.otterMatchRepository.markMediaAsVisited(for: item, as: status)
+    let previousStatus = item.status
+    updateItemInList(item, for: status)
+
+    switch result {
+    case .success:
+      print("Updated successfully")
+    case .failure(let failure):
+      updateItemInList(item, for: previousStatus)
+      print("Error updating: \(failure)")
     }
+  }
+
+  private func updateItemInList(_ item: any DiscoverItem, for status: InterestStatus?) {
+    guard let safeCurrentResults = currentResults, let index = safeCurrentResults.firstIndex(where: { $0.status == item.status }) else { return }
+
+    currentResults![index].status = status ?? item.status
+  }
+
+  private func resetSearchResults() {
+    currentPage = 1
+    currentResults = []
   }
 }

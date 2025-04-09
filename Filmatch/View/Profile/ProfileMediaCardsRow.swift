@@ -12,8 +12,6 @@ struct ProfileMediaCardsRow: View {
   let cornerRadius: CGFloat
   let updateItem: (any DiscoverItem, InterestStatus?) -> Void
 
-  @Environment(\.dismiss) private var dismiss
-
   var body: some View {
     if !(items?.isEmpty ?? true) {
       ScrollView(.horizontal) {
@@ -32,20 +30,22 @@ struct ProfileMediaCardsRow: View {
                 imageUrl: item.posterPath, size: .w342, posterType: .movie
               )
               .clipShape(.rect(cornerRadius: cornerRadius))
-              .contextMenu {
-                Picker("", selection: statusBinding) {
-                  ForEach(InterestStatus.allCases.filter { $0 != .pending }) { status in
-                    if let icon = status.icon {
-                      icon
-                        .background(status == item.status ? Color.gray.opacity(0.3) : Color.clear)
-                        .clipShape(Circle())
-                        .tag(status)
-                    }
-                  }
-                }
-                .pickerStyle(.palette)
-              }
               .background(.ultraThinMaterial)
+              .overlay(alignment: .topTrailing) {
+                Menu {
+                  InterestStatusPicker(selection: statusBinding)
+
+                } label: {
+                  Image(systemName: "ellipsis")
+                    .rotationEffect(.init(degrees: 90))
+                    .padding(.vertical, 10)
+                    .shadow(radius: 5)
+                }
+              }
+              .contextMenu {
+                InterestStatusPicker(selection: statusBinding)
+                  .onAppear {  }
+              }
 
               if let status = item.status, let icon = status.icon {
                 icon

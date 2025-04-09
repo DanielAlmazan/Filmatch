@@ -22,13 +22,23 @@ struct SimpleMediaItemListRow: View {
   
   var body: some View {
     HStack {
-      KFImage.url(url)
-      .resizable()
-      .clipShape(.rect(cornerRadius: maxHeight/10))
-      .scaledToFit()
-      .frame(height: maxHeight)
-      .aspectRatio(3/2, contentMode: .fit)
-      
+      ZStack(alignment: .bottomTrailing) {
+        KFImage.url(url)
+          .resizable()
+          .clipShape(.rect(cornerRadius: maxHeight/10))
+          .scaledToFit()
+          .frame(height: maxHeight)
+          .aspectRatio(3/2, contentMode: .fit)
+
+        if let status = item.status, let icon = status.icon {
+          icon
+            .resizable()
+            .scaledToFit()
+            .frame(width: 20)
+            .offset(x: 5, y: 5)
+        }
+      }
+
       VStack(alignment: .leading) {
         Text(item.getTitle)
           .multilineTextAlignment(.leading)
@@ -38,6 +48,7 @@ struct SimpleMediaItemListRow: View {
       }
       .frame(maxHeight: maxHeight)
     }
+//    .containerRelativeFrame(.horizontal, alignment: .leading)
     .onAppear {
       onLastAppeared()
     }
@@ -47,7 +58,10 @@ struct SimpleMediaItemListRow: View {
 #Preview {
   VStack {
     SimpleMediaItemListRow(item: DiscoverMovieItem.default, maxHeight: 80) {
-      print("Pressed")
+      print("Last appeared")
+    }
+    SimpleMediaItemListRow(item: DiscoverMovieItem.default, maxHeight: 80) {
+      print("Last appeared")
     }
   }
 }
