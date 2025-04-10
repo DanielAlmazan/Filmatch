@@ -16,6 +16,7 @@ struct ProfileMediaCardRowContainer: View {
   @Binding var items: [any DiscoverItem]?
 
   let updateItem: (any DiscoverItem, InterestStatus?) -> Void
+  let onRefresh: () -> Void
 
   @Environment(OtterMatchGoRepositoryImpl.self) var repository
   @Environment(AuthenticationViewModel.self) var authVm
@@ -30,15 +31,14 @@ struct ProfileMediaCardRowContainer: View {
 
         if let items {
           NavigationLink {
-            ScrollView {
-              UserMediaView(
-                repository: repository,
-                user: authVm.currentUser,
-                status: status,
-                media: media,
-                items: items,
-                updateItem: updateItem)
-            }
+            UserMediaView(
+              repository: repository,
+              user: authVm.currentUser,
+              status: status,
+              media: media,
+              items: items,
+              updateItem: updateItem,
+              onRefresh: onRefresh)
             .background(.bgBase)
           } label: {
             Text("See all")
@@ -64,6 +64,9 @@ struct ProfileMediaCardRowContainer: View {
 #Preview {
   @Previewable @State var movies: [any DiscoverItem]? = [DiscoverMovieItem.default]
 
+  let moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  let tvRepository = TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource())
+
   NavigationStack {
     ProfileMediaCardRowContainer(
       status: .interested,
@@ -73,6 +76,8 @@ struct ProfileMediaCardRowContainer: View {
       items: $movies
     ) { item, newStatus in
       print("Update item \(item) from status \(item.status ?? .pending) to status \(newStatus ?? .pending)")
+    } onRefresh: {
+      print("Refreshing...")
     }
   }
   .environment(
@@ -95,4 +100,6 @@ struct ProfileMediaCardRowContainer: View {
       )
     )
   )
+  .environment(moviesRepository)
+  .environment(tvRepository)
 }

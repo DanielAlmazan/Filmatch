@@ -26,7 +26,8 @@ struct MyListsView: View {
               height: height,
               isLoading: self.$profileVm.isSuperHypedLoading,
               items: self.$profileVm.superHypedItems,
-              updateItem: updateItem
+              updateItem: updateItem,
+              onRefresh: onRefresh,
             )
 
             ProfileMediaCardRowContainer(
@@ -35,7 +36,8 @@ struct MyListsView: View {
               height: height,
               isLoading: self.$profileVm.isWatchlistLoading,
               items: self.$profileVm.watchlistItems,
-              updateItem: updateItem
+              updateItem: updateItem,
+              onRefresh: onRefresh,
             )
 
             ProfileMediaCardRowContainer(
@@ -44,7 +46,8 @@ struct MyListsView: View {
               height: height,
               isLoading: self.$profileVm.isWatchedLoading,
               items: self.$profileVm.watchedItems,
-              updateItem: updateItem
+              updateItem: updateItem,
+              onRefresh: onRefresh,
             )
 
             ProfileMediaCardRowContainer(
@@ -53,7 +56,8 @@ struct MyListsView: View {
               height: height,
               isLoading: self.$profileVm.isBlacklistLoading,
               items: self.$profileVm.blacklistItems,
-              updateItem: updateItem
+              updateItem: updateItem,
+              onRefresh: onRefresh,
             )
           }
           .foregroundStyle(.onBgBase)
@@ -63,10 +67,20 @@ struct MyListsView: View {
           .padding(.horizontal)
         }
       }
+      .refreshable { onRefresh() }
     }
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("My Lists")
     .task { await initLists() }
+  }
+
+  private func onRefresh() {
+    Task {
+      await self.profileVm.onRefresh(of: .interested)
+      await self.profileVm.onRefresh(of: .superInterested)
+      await self.profileVm.onRefresh(of: .watched)
+      await self.profileVm.onRefresh(of: .notInterested)
+    }
   }
 
   private func updateItem(_ item: any DiscoverItem, as status: InterestStatus?) {
