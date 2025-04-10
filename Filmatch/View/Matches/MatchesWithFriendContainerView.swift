@@ -12,6 +12,7 @@ struct MatchesWithFriendContainerView: View {
 
   let friendMatch: SimpleFriendMatch
   let mediaType: MediaType
+  let rootRefresh: () -> Void
   let onLastFriendAppeared: () -> Void
   let onLastItemAppeared: () -> Void
 
@@ -28,6 +29,7 @@ struct MatchesWithFriendContainerView: View {
             matches: friendMatch.matches,
             mediaType: mediaType,
             simpleFriendMatch: friendMatch,
+            rootRefresh: rootRefresh,
             onLastAppeared: onLastItemAppeared
           )
           .navigationTitle(friendMatch.user.username ?? "Unknown")
@@ -60,6 +62,8 @@ struct MatchesWithFriendContainerView: View {
         friendMatch: .`default`,
         mediaType: .movie
       ) {
+        print("Refreshing root")
+      } onLastFriendAppeared: {
         print("Last friend appeared")
       } onLastItemAppeared: {
         print("Last appeared")

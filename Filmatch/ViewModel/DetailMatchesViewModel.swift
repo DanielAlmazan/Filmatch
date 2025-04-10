@@ -124,4 +124,12 @@ final class DetailMatchesViewModel {
       }
     }
   }
+
+  @MainActor
+  func onRefresh() async {
+    currentPage = 1
+    matches = nil
+    
+    await fetchMatches()
+  }
 }
