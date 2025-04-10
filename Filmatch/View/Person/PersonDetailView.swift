@@ -82,6 +82,8 @@ struct PersonDetailView: View {
     GridItem()
   ]
 
+  let kThumbnailsWidth: CGFloat = 130
+
   var body: some View {
     VStack {
       if personVm.isLoading {
@@ -118,25 +120,49 @@ struct PersonDetailView: View {
             }  // Biography
 
             // MARK: - Credits
-            VStack {
-              Text("Movies")
-                .font(.title2)
-              if let movies = person.movieCredits.cast {
-                PersonMovieCreditsAsCastRow(movies: movies.sortedByOrderOrReleaseDate())
+            VStack(spacing: 10) {
+              VStack(alignment: .leading, spacing: 8) {
+                Text("Movies")
+                  .font(.title2)
+                if let movies = person.movieCredits.cast {
+                  PersonMovieCreditsAsCastRow(movies: movies.sortedByOrderOrReleaseDate(), width: kThumbnailsWidth)
+                    .scrollClipDisabled()
+                    .padding()
+                    .background(.bgContainer)
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding()
+                }
+
+                if let movies = person.movieCredits.crew {
+                  PersonMovieCreditsAsCrewRow(movies: movies.sortedByPopularityAndJob(), width: kThumbnailsWidth)
+                    .scrollClipDisabled()
+                    .padding()
+                    .background(.bgContainer)
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding()
+                }
               }
-              
-              if let movies = person.movieCredits.crew {
-                PersonMovieCreditsAsCrewRow(movies: movies.sortedByPopularityAndJob())
-              }
-              
-              Text("Tv Series")
-                .font(.title2)
-              if let tvSeries = person.tvCredits.cast {
-                PersonTvSeriesCreditsAsCastRow(tvSeries: tvSeries.sortedByPopularity())
-              }
-              
-              if let tvSeries = person.tvCredits.crew {
-                PersonTvSeriesCreditsAsCrewRow(tvSeries: tvSeries)
+
+              VStack(alignment: .leading, spacing: 8) {
+                Text("Tv Series")
+                  .font(.title2)
+                if let tvSeries = person.tvCredits.cast {
+                  PersonTvSeriesCreditsAsCastRow(tvSeries: tvSeries.sortedByPopularity(), width: kThumbnailsWidth)
+                    .scrollClipDisabled()
+                    .padding()
+                    .background(.bgContainer)
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding()
+                }
+
+                if let tvSeries = person.tvCredits.crew {
+                  PersonTvSeriesCreditsAsCrewRow(tvSeries: tvSeries, width: kThumbnailsWidth)
+                    .scrollClipDisabled()
+                    .padding()
+                    .background(.bgContainer)
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding()
+                }
               }
             }
 

@@ -319,13 +319,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "també coneguda com: %@"
+            "value" : "També coneguda com: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also known as: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "también conocida como: %@"
+            "value" : "También conocida como: %@"
           }
         }
       }
@@ -335,13 +341,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "també conegut com: %@"
+            "value" : "També conegut com: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also known as: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "también conocido como: %@"
+            "value" : "También conocido como: %@"
           }
         }
       }
@@ -351,13 +363,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "també conegut com a no binari: %@"
+            "value" : "També conegude com: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Also known as: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "también conocido como no binario: %@"
+            "value" : "También conocide: %@"
           }
         }
       }
@@ -1066,22 +1084,6 @@
         }
       }
     },
-    "How do you want to start your adventure?" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Com vols començar la teva aventura?"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Cómo quieres empezar tu aventura?"
-          }
-        }
-      }
-    },
     "In \"%@\"" : {
       "localizations" : {
         "ca" : {
@@ -1354,6 +1356,22 @@
         }
       }
     },
+    "No matches found… maybe you haven’t dared to add any friends yet?" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No s’han trobat matches… potser encara no t’has animat a afegir amics."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han encontrado matches… ¿quizás aún no te has animado a agregar amigos?"
+          }
+        }
+      }
+    },
     "No movies found" : {
       "localizations" : {
         "ca" : {
@@ -1590,6 +1608,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Por favor, ingresa un correo electrónico válido"
+          }
+        }
+      }
+    },
+    "Powered by" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impulsat per"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impulsado por"
           }
         }
       }
@@ -1883,17 +1917,18 @@
       }
     },
     "To" : {
+      "comment" : "For year (from-to)",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A"
+            "value" : "Fins a"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A"
+            "value" : "Hasta"
           }
         }
       }

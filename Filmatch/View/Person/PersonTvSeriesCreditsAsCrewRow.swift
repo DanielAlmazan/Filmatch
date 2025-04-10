@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonTvSeriesCreditsAsCrewRow: View {
   let tvSeries: [PersonTvSeriesCreditsAsCrewMember]
+  let width: CGFloat
 
   @Environment(TvSeriesRepositoryImpl.self) var tvSeriesRepository
 
@@ -20,7 +21,6 @@ struct PersonTvSeriesCreditsAsCrewRow: View {
       VStack(alignment: .leading, spacing: 8) {
         Text("As crew member...")
           .font(.headline)
-          .padding(.horizontal)
 
         ScrollView(.horizontal) {
           LazyHGrid(rows: [GridItem()]) {
@@ -44,18 +44,18 @@ struct PersonTvSeriesCreditsAsCrewRow: View {
                   }
                 }
                 .lineLimit(1)
-                .frame(width: 200)
+                .frame(width: width)
               }
             }
           }
         }
-        .scrollClipDisabled()
+//        .scrollClipDisabled()
       }
     }
   }
 }
 
 #Preview {
-  PersonTvSeriesCreditsAsCrewRow(tvSeries: [])
+  PersonTvSeriesCreditsAsCrewRow(tvSeries: [], width: 100)
     .environment(TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource()))
 }

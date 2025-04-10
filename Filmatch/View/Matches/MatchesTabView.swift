@@ -24,7 +24,7 @@ struct MatchesTabView: View {
       }
       .padding(.horizontal)
 
-      if let results = matchesVm.results {
+      if let results = matchesVm.results, !results.isEmpty {
         ScrollView {
           LazyVStack(spacing: 10) {
             ForEach(results) { result in
@@ -52,6 +52,8 @@ struct MatchesTabView: View {
       
       if matchesVm.isLoadingSimpleFriendsMatches {
         ProgressView()
+      } else if matchesVm.results?.isEmpty ?? true {
+        Text("No matches found… maybe you haven’t dared to add any friends yet?")
       }
     }
     .frame(maxHeight: .infinity, alignment: .top)

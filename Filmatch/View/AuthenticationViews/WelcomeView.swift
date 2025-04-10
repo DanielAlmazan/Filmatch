@@ -29,6 +29,8 @@ struct WelcomeView: View {
   var body: some View {
     NavigationStack {
       VStack(spacing: 25) {
+        Spacer()
+
         // MARK: Logo, Title & Subtitle
         VStack {
           Image(.filmatchLogo)
@@ -40,22 +42,20 @@ struct WelcomeView: View {
           Text("Welcome to OtterMatch!")
             .font(.title)
             .bold()
+            .foregroundStyle(.white)
 
-          Text("How do you want to start your adventure?")
-            .font(.subheadline)
-        }
-        .foregroundStyle(.white)
-
-        VStack {
-          // MARK: Go to Rooms Button
-          NavigationLink(destination: RoomsMainView()) {
-            GoToRoomsButton(iconMaxWidth: 65)
-          }
-
-          // MARK: Log in
           GoToLoginButton(maxHeight: 100) {
             authenticationSheetView = .LOGIN
           }
+        }
+
+        Spacer()
+
+        VStack {
+          Text("Powered by")
+            .font(.caption)
+            .foregroundStyle(.white)
+          Image(.tmdbAttributionLogo)
         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -79,5 +79,18 @@ struct WelcomeView: View {
 }
 
 #Preview {
+  @Previewable @State var authenticationViewModel = AuthenticationViewModel(
+    authenticationRepository: AuthenticationFirebaseRepository(
+      dataSource: AuthenticationFirebaseDataSource()
+    ),
+    otterMatchRepository: OtterMatchGoRepositoryImpl(
+      datasource: OtterMatchGoDatasourceImpl(
+        client: OtterMatchHttpClient(
+          urlBase: API.otterMatchBaseURL)
+      )
+    )
+  )
+
   WelcomeView()
+    .environment(authenticationViewModel)
 }

@@ -42,7 +42,8 @@ struct PosterView: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .aspectRatio(2 / 3, contentMode: .fit)
-      
+        .background(.onBgBase)
+
     } else {
       KFImage.url(url)
         .placeholder {

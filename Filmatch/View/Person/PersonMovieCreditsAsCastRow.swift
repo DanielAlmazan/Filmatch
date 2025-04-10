@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PersonMovieCreditsAsCastRow: View {
   let movies: [PersonMovieCreditsAsCastMember]
-  
+  let width: CGFloat
+
   @Environment(MoviesRepositoryImpl.self) var moviesRepository
 
   var body: some View {
@@ -20,8 +21,7 @@ struct PersonMovieCreditsAsCastRow: View {
       VStack(alignment: .leading, spacing: 8) {
         Text("As cast member...")
           .font(.headline)
-          .padding(.horizontal)
-        
+
         ScrollView(.horizontal) {
           LazyHGrid(rows: [GridItem()]) {
             ForEach(movies) { movie in
@@ -41,19 +41,18 @@ struct PersonMovieCreditsAsCastRow: View {
                   }
                   .lineLimit(1)
                 }
-                .frame(width: 200)
+                .frame(width: width)
               }
             }
           }
         }
-        .scrollClipDisabled()
       }
     }
   }
 }
 
 #Preview {
-  PersonMovieCreditsAsCastRow(movies: [])
+  PersonMovieCreditsAsCastRow(movies: [], width: 100)
     .environment(MoviesRepositoryImpl(
       datasource: JsonMoviesRemoteDatasource()
     ))

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonTvSeriesCreditsAsCastRow: View {
   let tvSeries: [PersonTvSeriesCreditsAsCastMember]
+  let width: CGFloat
 
   @Environment(TvSeriesRepositoryImpl.self) var tvSeriesRepository
 
@@ -20,9 +21,8 @@ struct PersonTvSeriesCreditsAsCastRow: View {
       VStack(alignment: .leading, spacing: 8) {
         Text("As cast member...")
           .font(.headline)
-          .padding(.horizontal)
 
-        ScrollView(.horizontal, showsIndicators: true) {
+        ScrollView(.horizontal) {
           LazyHGrid(rows: [GridItem()]) {
             ForEach(tvSeries) { show in
               NavigationLink(
@@ -34,28 +34,29 @@ struct PersonTvSeriesCreditsAsCastRow: View {
                     imageUrl: show.posterPath, size: .w500, posterType: .movie
                   )
                   .clipShape(.rect(cornerRadius: 10))
+
                   if let title = show.name {
                     Text("In \"\(title)\"")
                       .font(.headline)
                   }
+
                   if let character = show.character {
                     Text("As \(character)")
                       .font(.caption)
                   }
                 }
                 .lineLimit(1)
-                .frame(width: 200)
+                .frame(width: width)
               }
             }
           }
         }
-        .scrollClipDisabled()
       }
     }
   }
 }
 
 #Preview {
-  PersonTvSeriesCreditsAsCastRow(tvSeries: [.default])
+  PersonTvSeriesCreditsAsCastRow(tvSeries: [.default], width: 100)
     .environment(TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource()))
 }
