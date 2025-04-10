@@ -12,6 +12,7 @@ struct UserMediaView: View {
 
   let status: InterestStatus
   let updateItem: (any DiscoverItem, InterestStatus?) -> Void
+  let onRefresh: () -> Void
 
   init(
     repository: OtterMatchGoRepository,
@@ -20,6 +21,7 @@ struct UserMediaView: View {
     media: MediaType,
     items: [any DiscoverItem],
     updateItem: @escaping (any DiscoverItem, InterestStatus?) -> Void,
+    onRefresh: @escaping () -> Void,
   ) {
     self.myListVm = MyListViewModel(
       user: user,
@@ -29,32 +31,41 @@ struct UserMediaView: View {
       items: items)
     self.status = status
     self.updateItem = updateItem
+    self.onRefresh = onRefresh
   }
 
   @State private var isGridSelected: Bool = true
 
   var body: some View {
-    VStack {
-      HStack {
-        SearchField(query: self.$myListVm.query) {
-          Task {
-            await self.myListVm.onSubmitQuery()
+    ScrollView {
+      VStack {
+        HStack {
+          SearchField(query: self.$myListVm.query) {
+            Task {
+              await self.myListVm.onSubmitQuery()
+            }
+          }
+          GridSelectorButton(isGridSelected: $isGridSelected)
+        }
+        if let _ = myListVm.items {
+          if isGridSelected {
+            SimpleMediaItemsGridView(results: $myListVm.items, updateItem: updateItem, onLastAppeared: onLastAppeared)
+          } else {
+            SimpleMediaItemListView(results: $myListVm.items, updateItem: updateItem, onLastAppeared: onLastAppeared)
           }
         }
-        GridSelectorButton(isGridSelected: $isGridSelected)
       }
-      if let items = myListVm.items {
-        if isGridSelected {
-          SimpleMediaItemsGridView(results: $myListVm.items, updateItem: updateItem, onLastAppeared: onLastAppeared)
-        } else {
-          SimpleMediaItemListView(results: $myListVm.items, updateItem: updateItem, onLastAppeared: onLastAppeared)
-        }
+      .animation(.bouncy, value: isGridSelected)
+      .padding(.horizontal)
+      .frame(maxHeight: .infinity, alignment: .top)
+      .navigationTitle(status.listName)
+    }
+    .refreshable {
+      onRefresh()
+      Task {
+        await myListVm.onRefresh()
       }
     }
-    .animation(.bouncy, value: isGridSelected)
-    .padding(.horizontal)
-    .frame(maxHeight: .infinity, alignment: .top)
-    .navigationTitle(status.listName)
   }
 
   private func onLastAppeared() {
@@ -93,6 +104,8 @@ struct UserMediaView: View {
         repository: otterMatchRepository, user: .default, status: .interested, media: .movie,
         items: [movie]) { _, _ in
           print("Updating item...")
+        } onRefresh: {
+          print("Refreshing...")
         }
       .onAppear { movie.status = .superInterested }
     }

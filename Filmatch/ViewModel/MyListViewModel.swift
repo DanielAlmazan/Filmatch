@@ -104,4 +104,13 @@ final class MyListViewModel {
       await getItems()
     }
   }
+
+  @MainActor
+  func onRefresh() async {
+    currentQuery = ""
+    currentPage = 1
+    maxPages = 1
+    items = []
+    await getItems()
+  }
 }

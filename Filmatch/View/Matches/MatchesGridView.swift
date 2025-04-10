@@ -59,8 +59,10 @@ struct MatchesGridView: View {
         title: "Mock",
         video: false,
         voteAverage: 10,
-        voteCount: 1),
-      status: .superInterested),
+        voteCount: 1
+      ),
+      status: .superInterested
+    ),
     Match(
       isSuperMatch: false,
       item: DiscoverMovieItem(
@@ -77,8 +79,10 @@ struct MatchesGridView: View {
         title: "Mock",
         video: false,
         voteAverage: 10,
-        voteCount: 1),
-      status: .superInterested),
+        voteCount: 1
+      ),
+      status: .superInterested
+    ),
   ]
 
   let movieRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())

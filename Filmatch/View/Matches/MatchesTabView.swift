@@ -30,7 +30,8 @@ struct MatchesTabView: View {
             ForEach(results) { result in
               MatchesWithFriendContainerView(
                 friendMatch: result,
-                mediaType: self.matchesVm.selectedMedia
+                mediaType: self.matchesVm.selectedMedia,
+                rootRefresh: onRefresh,
               ) {
                 if results.last == result {
                   loadMoreSimpleFriendMatches()
@@ -46,6 +47,7 @@ struct MatchesTabView: View {
           }
         }
         .padding(.horizontal)
+        .refreshable { onRefresh() }
       }
       
       if matchesVm.isLoadingSimpleFriendsMatches {
@@ -59,7 +61,11 @@ struct MatchesTabView: View {
       Task { await initializeList() }
     }
   }
-  
+
+  private func onRefresh() {
+    Task { await self.matchesVm.onRefresh() }
+  }
+
   private func loadMoreSimpleFriendMatches() {
     Task {
       await self.matchesVm.fetchMoreSimpleFriendMatches()
@@ -81,7 +87,7 @@ struct MatchesTabView: View {
 }
 
 #Preview {
-  @Previewable @State var repository = OtterMatchGoRepositoryImpl(
+  let repository = OtterMatchGoRepositoryImpl(
     datasource: JsonOtterMatchDatasource(
       client: TMDBJsonClient()
     )
@@ -95,4 +101,5 @@ struct MatchesTabView: View {
   }
   .environment(movieRepository)
   .environment(tvRepository)
+  .environment(repository)
 }

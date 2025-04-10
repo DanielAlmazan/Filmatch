@@ -13,6 +13,7 @@ struct AllMatchesWithFriendView: View {
   private var matches: [Match]? {
     self.detailMatchesVm.matches
   }
+  let rootRefresh: () -> Void
   let onLastAppeared: () -> Void
 
   init(
@@ -20,13 +21,15 @@ struct AllMatchesWithFriendView: View {
     matches: [Match]?,
     mediaType: MediaType,
     simpleFriendMatch: SimpleFriendMatch,
-    onLastAppeared: @escaping () -> Void
+    rootRefresh: @escaping () -> Void,
+    onLastAppeared: @escaping () -> Void,
   ) {
     self.detailMatchesVm = DetailMatchesViewModel(
       repository: repository,
       mediaType: mediaType,
       simpleFriendMatch: simpleFriendMatch
     )
+    self.rootRefresh = rootRefresh
     self.onLastAppeared = onLastAppeared
   }
 
@@ -58,8 +61,18 @@ struct AllMatchesWithFriendView: View {
           }
         }
       }
+      .refreshable {
+        rootRefresh()
+        onRefresh()
+      }
     }
     .task { await firstCallToApi() }
+  }
+
+  private func onRefresh() {
+    Task {
+      await self.detailMatchesVm.onRefresh()
+    }
   }
 
   private func firstCallToApi() async {
@@ -86,6 +99,8 @@ struct AllMatchesWithFriendView: View {
       mediaType: .movie,
       simpleFriendMatch: .default
     ) {
+      print("Refresh root")
+    } onLastAppeared: {
       print("Last appeared")
     }
     .navigationTitle("gas_esnake")

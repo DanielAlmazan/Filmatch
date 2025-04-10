@@ -497,4 +497,29 @@ final class ProfileViewModel {
     self.watchedMaxPages = 1
     self.watchedCurrentPage = 1
   }
+
+  @MainActor
+  func onRefresh(of status: InterestStatus) async {
+    switch status {
+    case .interested:
+      self.watchlistMaxPages = 1
+      self.watchlistCurrentPage = 1
+      self.watchlistItems = []
+    case .superInterested:
+      self.superHypedMaxPages = 1
+      self.superHypedCurrentPage = 1
+      self.superHypedItems = []
+    case .notInterested:
+      self.blacklistMaxPages = 1
+      self.blacklistCurrentPage = 1
+      self.blacklistItems = []
+    case .watched:
+      self.watchedMaxPages = 1
+      self.watchedCurrentPage = 1
+      self.watchedItems = []
+    case .pending:
+      break
+    }
+    await loadItems(for: status)
+  }
 }

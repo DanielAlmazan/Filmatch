@@ -70,7 +70,7 @@ struct SimpleMediaItemsGridView: View {
                 InterestStatusPicker(selection: statusBinding)
               } label: {
                 Image(systemName: "ellipsis")
-                  .shadow(radius: 5)
+                  .shadow(color: .black, radius: 5)
                   .padding(.horizontal, 5)
                   .padding(.vertical, 15)
                   .foregroundStyle(.white)

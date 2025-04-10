@@ -47,6 +47,7 @@ struct ProfileTab: View {
           .frame(maxWidth: .infinity, alignment: .center)
         }
       }
+      .refreshable { Task { await self.friendsVm.onRefresh() } }
       .padding(.horizontal)
       .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
         Button("Cancel", role: .cancel) {}

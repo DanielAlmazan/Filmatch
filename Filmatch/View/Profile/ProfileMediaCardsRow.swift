@@ -39,7 +39,8 @@ struct ProfileMediaCardsRow: View {
                   Image(systemName: "ellipsis")
                     .rotationEffect(.init(degrees: 90))
                     .padding(.vertical, 10)
-                    .shadow(radius: 5)
+                    .shadow(color: .black, radius: 5)
+                    .foregroundStyle(.white)
                 }
               }
               .contextMenu {

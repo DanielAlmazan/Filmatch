@@ -145,4 +145,15 @@ final class MatchesViewModel {
       await repository.markMediaAsVisited(for: item, as: newStatus)
     }
   }
+
+  @MainActor
+  func onRefresh() async {
+    results = nil
+    currentFriendsPage = 1
+    maxFriendsPages = 1
+    currentQuery = ""
+    query = ""
+
+    await fetchSimpleFriendsMatches()
+  }
 }
