@@ -142,6 +142,14 @@ final class FriendsViewModel {
     }
   }
 
+  @MainActor
+  func onRefresh() async {
+    resetFriends()
+    await loadFriends()
+    resetFriendRequests()
+    await loadFriendRequests()
+  }
+
   // MARK: Private functions
 
   private func updateUserFriendshipState(

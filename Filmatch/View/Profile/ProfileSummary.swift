@@ -120,8 +120,8 @@ struct ProfileSummary: View {
   )
   @Previewable var friendsVm = FriendsViewModel(
     otterMatchRepository: OtterMatchGoRepositoryImpl(
-      datasource: OtterMatchGoDatasourceImpl(
-        client: OtterMatchHttpClient()
+      datasource: JsonOtterMatchDatasource(
+        client: TMDBJsonClient()
       )
     )
   )
