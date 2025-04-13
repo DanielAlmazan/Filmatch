@@ -97,6 +97,8 @@ final class FiltersViewModel {
 
   @MainActor
   func fetchMovieGenres() {
+    if areMovieGenresLoading, !movieGenres.isEmpty { return }
+
     areMovieGenresLoading = true
     Task {
       let movieGenresResult = await filtersRepository.getGenres(for: .movie)
@@ -110,6 +112,8 @@ final class FiltersViewModel {
 
   @MainActor
   func fetchTvGenres() {
+    if areTvGenresLoading, !tvGenres.isEmpty { return }
+
     areTvGenresLoading = true
     Task {
       let tvGenresResult = await filtersRepository.getGenres(for: .tvSeries)
@@ -123,6 +127,7 @@ final class FiltersViewModel {
 
   @MainActor
   func fetchMovieProviders() {
+    if areMovieProvidersLoading, !movieProviders.isEmpty { return }
     areMovieProvidersLoading = true
     Task {
       let providersResult = await filtersRepository.getProviders(for: .movie)
@@ -139,6 +144,7 @@ final class FiltersViewModel {
 
   @MainActor
   func fetchTvProviders() {
+    if areTvProvidersLoading, !tvProviders.isEmpty { return }
     areTvProvidersLoading = true
     Task {
       let providersResult = await filtersRepository.getProviders(for: .tvSeries)
@@ -152,10 +158,6 @@ final class FiltersViewModel {
     }
     areTvProvidersLoading = false
   }
-
-//  func buildQueryParams(page: Int?) -> [URLQueryItem] {
-//    currentFilters.getQueryParams(page: page)
-//  }
 
   func isGenreSelected(_ genre: Genre) -> Bool {
     self.selectedFilters.genres.contains(genre)

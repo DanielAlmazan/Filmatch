@@ -765,6 +765,7 @@
       }
     },
     "Discover %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ca" : {
           "stringUnit" : {
@@ -1276,6 +1277,22 @@
         }
       }
     },
+    "movie" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "peli"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "peli"
+          }
+        }
+      }
+    },
     "Movies" : {
       "localizations" : {
         "ca" : {
@@ -1740,9 +1757,6 @@
         }
       }
     },
-    "Sample error" : {
-      "shouldTranslate" : false
-    },
     "Search" : {
       "localizations" : {
         "ca" : {
@@ -1964,6 +1978,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Series de televisión"
+          }
+        }
+      }
+    },
+    "tv show" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "serie"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sèrie"
           }
         }
       }
