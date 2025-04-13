@@ -167,8 +167,10 @@ struct DiscoverView: View {
               Text("Try refreshing or changing your filters.")
                 .font(.caption)
               Button {
-                self.isLoading = true
-                self.discoverItems()
+                Task {
+                  self.isLoading = true
+                  await self.discoverItems()
+                }
               } label: {
                 Image(systemName: "arrow.clockwise.circle.fill")
                   .font(.title)
@@ -177,9 +179,7 @@ struct DiscoverView: View {
           }
         }
         .padding()
-        .navigationTitle(
-          "Discover \(self.filtersVm.selectedMedia == .movie ? "Movies" : "TV Series")"
-        )
+        .navigationTitle("Discover")
         .toolbar {
           ToolbarItem(placement: .topBarTrailing) {
             Button {
@@ -208,9 +208,9 @@ struct DiscoverView: View {
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .onAppear {
-      self.isLoading = true
-      self.discoverItems()
+    .task {
+      await initLists()
+
       self.filtersVm.fetchFilters()
     }
     .sheet(item: $activeSheet) { sheet in
@@ -248,7 +248,9 @@ struct DiscoverView: View {
                 Button {
                   if self.filtersVm.filtersDidChange {
                     self.filtersVm.rearrangeFilters()
-                    self.onFiltersChanged()
+                    Task {
+                      await self.onFiltersChanged()
+                    }
                   }
 
                   activeSheet = nil
@@ -265,20 +267,24 @@ struct DiscoverView: View {
 
   // MARK: - Aux Functions
 
-  private func discoverItems() {
-    Task {
-      await self.discoverVm.discoverItems(
-        for: self.filtersVm.selectedMedia,
-        with: self.filtersVm.currentFilters
-      )
-      self.isLoading = false
+  private func initLists() async {
+    if self.discoverVm.items?.isEmpty ?? true {
+      await discoverItems()
     }
   }
 
-  private func onFiltersChanged() {
+  private func discoverItems() async {
+    await self.discoverVm.discoverItems(
+      for: self.filtersVm.selectedMedia,
+      with: self.filtersVm.currentFilters
+    )
+    self.isLoading = false
+  }
+
+  private func onFiltersChanged() async {
     self.discoverVm.resetItems()
     self.isLoading = true
-    self.discoverItems()
+    await self.discoverItems()
   }
 
   private func onGestureChanged(gesture: DragGesture.Value) {
@@ -422,7 +428,6 @@ struct DiscoverView: View {
 
       // Remove the first movie and card from the lists
       self.discoverVm.items?.removeFirst()
-      print("Items left: \(String(describing: self.discoverVm.items?.count))")
       onItemListChange()
     }
   }
@@ -440,26 +445,30 @@ struct DiscoverView: View {
 
     // Fetch more items if necessary
     if items.count <= self.discoverVm.kLoadingThreshold && !isLoading {
-      discoverItems()
+      Task {
+        await discoverItems()
+      }
     }
   }
 }
 
 #Preview {
-  DiscoverView(
-    moviesRepository: MoviesRepositoryImpl(
-      datasource: JsonMoviesRemoteDatasource()
-    ),
-    tvSeriesRepository: TvSeriesRepositoryImpl(
-      datasource: JsonTvSeriesDatasource()
-    ),
-    otterMatchRepository: OtterMatchGoRepositoryImpl(
-      datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient())),
-    filtersRepository: FiltersRepositoryImpl(
-      filtersDatasource: JsonFiltersDatasource()
-    ),
-    onItemRemoved: { item, status in print("\(item.getTitle) \(status.rawValue)") }
-  )
+  NavigationStack {
+    DiscoverView(
+      moviesRepository: MoviesRepositoryImpl(
+        datasource: JsonMoviesRemoteDatasource()
+      ),
+      tvSeriesRepository: TvSeriesRepositoryImpl(
+        datasource: JsonTvSeriesDatasource()
+      ),
+      otterMatchRepository: OtterMatchGoRepositoryImpl(
+        datasource: OtterMatchGoDatasourceImpl(client: OtterMatchHttpClient())),
+      filtersRepository: FiltersRepositoryImpl(
+        filtersDatasource: JsonFiltersDatasource()
+      ),
+      onItemRemoved: { item, status in print("\(item.getTitle) \(status.rawValue)") }
+    )
+  }
   .environment(
     PersonRepositoryImpl(
       datasource: JsonPersonRemoteDatasource()
