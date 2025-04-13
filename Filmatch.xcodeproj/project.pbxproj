@@ -14,6 +14,7 @@
 		850494BC2CA33C4E00C44BC9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 850494BB2CA33C4E00C44BC9 /* FirebaseCrashlytics */; settings = {ATTRIBUTES = (Required, ); }; };
 		850E515F2CA1BE0500905534 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 850E515E2CA1BE0500905534 /* Kingfisher */; };
 		8515AB4E2D8210D200760AA9 /* UserMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515AB4D2D8210D200760AA9 /* UserMediaView.swift */; };
+		851B96DC2DAC1EEA00DD580B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 851B96DB2DAC1EEA00DD580B /* .gitignore */; };
 		8524E43D2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E43C2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json */; };
 		8524E43F2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E43E2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json */; };
 		8524E4412DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8524E4402DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json */; };
@@ -286,6 +287,8 @@
 
 /* Begin PBXFileReference section */
 		8515AB4D2D8210D200760AA9 /* UserMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMediaView.swift; sourceTree = "<group>"; };
+		851B96D82DAAEA6000DD580B /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
+		851B96DB2DAC1EEA00DD580B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8524E43C2DA13C2B0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status1-page1.json"; sourceTree = "<group>"; };
 		8524E43E2DA13E9C0090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page1.json"; sourceTree = "<group>"; };
 		8524E4402DA13EC60090C32A /* user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "user-WAy0Ia6xOwVzs6cD0XS434hUFZ02-visited-movies-status0-page2.json"; sourceTree = "<group>"; };
@@ -614,6 +617,7 @@
 				85C087B62D6FB495000D4374 /* Config.swift */,
 				85C087B72D6FB495000D4374 /* Debug.xcconfig */,
 				85C087B82D6FB495000D4374 /* Release.xcconfig */,
+				851B96D82DAAEA6000DD580B /* Local.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1116,6 +1120,7 @@
 		85F308412C4F127700DF37C2 = {
 			isa = PBXGroup;
 			children = (
+				851B96DB2DAC1EEA00DD580B /* .gitignore */,
 				85C087B92D6FB495000D4374 /* Config */,
 				85F3084C2C4F127700DF37C2 /* Filmatch */,
 				850494A12CA30A2400C44BC9 /* Frameworks */,
@@ -1228,6 +1233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				851B96DC2DAC1EEA00DD580B /* .gitignore in Resources */,
 				85C088B52D6FB4F9000D4374 /* discover_movies-page1.json in Resources */,
 				85C088B62D6FB4F9000D4374 /* watch-providers-tv.json in Resources */,
 				8532A0792D85DC3B00E84308 /* user-tv-matches-grouped-page1.json in Resources */,
@@ -1538,6 +1544,115 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		851B96D92DAAECB000DD580B /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 33XXL59AXF;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Local;
+		};
+		851B96DA2DAAECB000DD580B /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 851B96D82DAAEA6000DD580B /* Local.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Filmatch/Filmatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "Filmatch/Data/TestData Filmatch/Preview\\ Content";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Filmatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.catdevs.filmatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Local;
+		};
 		85F308582C4F127800DF37C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1684,6 +1799,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -1699,6 +1815,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1719,11 +1836,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmatch/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Filmatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Filmatch Debug";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
@@ -1739,6 +1857,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1752,6 +1871,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85F308582C4F127800DF37C2 /* Debug */,
+				851B96D92DAAECB000DD580B /* Local */,
 				85F308592C4F127800DF37C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1761,6 +1881,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				85F3085B2C4F127800DF37C2 /* Debug */,
+				851B96DA2DAAECB000DD580B /* Local */,
 				85F3085C2C4F127800DF37C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

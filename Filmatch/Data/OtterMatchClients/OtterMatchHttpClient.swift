@@ -65,7 +65,9 @@ final class OtterMatchHttpClient: OtterMatchClient {
     do {
       let (data, response) = try await session.data(for: request)
 
+//    #if DEBUG
 //      print("Response:\n\(String(decoding: data, as: UTF8.self))")
+//    #endif
 
       // 5) Verify status code
       if let httpResponse = response as? HTTPURLResponse {

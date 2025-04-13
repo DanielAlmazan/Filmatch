@@ -72,7 +72,7 @@ final class OtterMatchGoDatasourceImpl: OtterMatchGoDatasource {
       print(message)
       return .success(())
     case .failure(let error):
-      print(error)
+      print("Error marking media as visited: \(error)")
       return .failure(error)
     }
   }

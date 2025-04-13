@@ -63,6 +63,7 @@ fastlane/test_output
 
 Config/Release.xcconfig
 Config/Debug.xcconfig
+Config/Local.xcconfig
 .DS_Store
 GoogleService-Info.plist
 Info.plist
