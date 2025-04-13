@@ -105,14 +105,15 @@ struct FiltersView: View {
               Text(String(year))
             }
           }
+          .pickerStyle(.menu)
 
           Picker("To", selection: self.$vm.selectedFilters.to) {
             ForEach(self.vm.selectedFilters.toRange, id: \.self) { year in
               Text(String(year))
             }
           }
+          .pickerStyle(.menu)
         }  // From / To Selectors HStack
-//        .pickerStyle(.wheel)
       }  // Section Year
 
       Section("and more...") {

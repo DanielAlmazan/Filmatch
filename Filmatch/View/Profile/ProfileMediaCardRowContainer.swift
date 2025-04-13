@@ -42,8 +42,9 @@ struct ProfileMediaCardRowContainer: View {
             .background(.bgBase)
           } label: {
             Text("See all")
-              .foregroundStyle(.accent)
+              .foregroundStyle(items.isEmpty ? .secondary : Color.accent)
           }
+          .disabled(items.isEmpty)
         }
       }
       Group {

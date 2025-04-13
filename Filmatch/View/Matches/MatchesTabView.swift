@@ -54,6 +54,7 @@ struct MatchesTabView: View {
         ProgressView()
       } else if matchesVm.results?.isEmpty ?? true {
         Text("No matches found… maybe you haven’t dared to add any friends yet?")
+          .padding()
       }
     }
     .frame(maxHeight: .infinity, alignment: .top)

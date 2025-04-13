@@ -37,6 +37,7 @@ struct MatchesWithFriendContainerView: View {
         } label: {
           Text("See all")
         }
+        .disabled(friendMatch.matches.isEmpty)
       }
 
       MatchesRowView(matches: friendMatch.matches, cornerRadius: 4)

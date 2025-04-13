@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileFriendsContainer: View {
-  let title: String
+  let title: LocalizedStringKey
   let height: CGFloat
   
   @Binding var isLoading: Bool
@@ -31,19 +31,14 @@ struct ProfileFriendsContainer: View {
         } label: {
           Text("See all")
         }
+        .disabled(friends?.isEmpty ?? true)
       }
       Group {
-        if self.isLoading {
-          ProgressView("Loading...")
-        } else if let friends {
-          MyFriendsRow(
-            friends: friends,
-            height: height,
-            otterMatchRepository: otterMatchGoRepository
-          )
-        } else {
-          Text("No results")
-        }
+        MyFriendsRow(
+          friends: friends,
+          height: height,
+          otterMatchRepository: otterMatchGoRepository
+        )
       }
       .frame(height: height * 1.5)
       .frame(maxWidth: .infinity)
