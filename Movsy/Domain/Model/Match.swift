@@ -14,7 +14,7 @@ struct Match: Identifiable {
   
   var id: Int { item.id }
   
-  static let movieMock = Match(isSuperMatch: true, item: DiscoverMovieItem.default, status: .superInterested)
+  static let movieMock = Match(isSuperMatch: true, item: DiscoverMovieItem.default, status: .superHype)
 }
 
 extension Match: Equatable {

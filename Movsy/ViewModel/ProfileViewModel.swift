@@ -274,13 +274,13 @@ final class ProfileViewModel {
   @MainActor
   func loadItems(for status: InterestStatus) async {
     switch status {
-    case .interested:
+    case .watchlist:
       await self.loadLikedItems()
-    case .notInterested:
+    case .blacklist:
       await self.loadDislikedItems()
     case .watched:
       await loadWatchedItems()
-    case .superInterested:
+    case .superHype:
       await loadSuperLikedItems()
     case .pending:
       break
@@ -292,13 +292,13 @@ final class ProfileViewModel {
     var proceed = true
 
     switch status {
-    case .interested:
+    case .watchlist:
       if !isWatchlistLoading && watchlistCurrentPage < watchlistMoviesMaxPages {
         self.watchlistCurrentPage += 1
       } else {
         proceed = false
       }
-    case .notInterested:
+    case .blacklist:
       if !isBlacklistLoading && blacklistCurrentPage <= blacklistMaxPages {
         self.blacklistCurrentPage += 1
       } else {
@@ -310,7 +310,7 @@ final class ProfileViewModel {
       } else {
         proceed = false
       }
-    case .superInterested:
+    case .superHype:
       if !isSuperHypedLoading && superHypedCurrentPage <= superHypedMaxPages {
         self.blacklistCurrentPage += 1
       } else {
@@ -369,9 +369,9 @@ final class ProfileViewModel {
     let result =
       switch selectedMedia {
       case .movie:
-        await loadMoviesByStatus(as: .superInterested, containing: currentQuery, at: superHypedCurrentPage)
+        await loadMoviesByStatus(as: .superHype, containing: currentQuery, at: superHypedCurrentPage)
       case .tvSeries:
-        await loadTvSeriesByStatus(as: .superInterested, containing: currentQuery, at: superHypedCurrentPage)
+        await loadTvSeriesByStatus(as: .superHype, containing: currentQuery, at: superHypedCurrentPage)
       }
 
     superHypedItems.appendItems(result)
@@ -386,9 +386,9 @@ final class ProfileViewModel {
     let result =
       switch selectedMedia {
       case .movie:
-        await loadMoviesByStatus(as: .interested, containing: currentQuery, at: watchlistCurrentPage)
+        await loadMoviesByStatus(as: .watchlist, containing: currentQuery, at: watchlistCurrentPage)
       case .tvSeries:
-        await loadTvSeriesByStatus(as: .interested, containing: currentQuery, at: watchlistCurrentPage)
+        await loadTvSeriesByStatus(as: .watchlist, containing: currentQuery, at: watchlistCurrentPage)
       }
 
     watchlistItems.appendItems(result)
@@ -420,9 +420,9 @@ final class ProfileViewModel {
     let result =
       switch selectedMedia {
       case .movie:
-        await loadMoviesByStatus(as: .notInterested, containing: currentQuery, at: blacklistCurrentPage)
+        await loadMoviesByStatus(as: .blacklist, containing: currentQuery, at: blacklistCurrentPage)
       case .tvSeries:
-        await loadTvSeriesByStatus(as: .notInterested, containing: currentQuery, at: blacklistCurrentPage)
+        await loadTvSeriesByStatus(as: .blacklist, containing: currentQuery, at: blacklistCurrentPage)
       }
 
     blacklistItems.appendItems(result)
@@ -464,13 +464,13 @@ final class ProfileViewModel {
 
   private func setMaxPages(for status: InterestStatus, at maxPages: Int) {
     switch status {
-    case .interested:
+    case .watchlist:
       self.watchlistMaxPages = maxPages
 
-    case .superInterested:
+    case .superHype:
       self.superHypedMaxPages = maxPages
 
-    case .notInterested:
+    case .blacklist:
       self.blacklistMaxPages = maxPages
 
     case .watched:
@@ -501,15 +501,15 @@ final class ProfileViewModel {
   @MainActor
   func onRefresh(of status: InterestStatus) async {
     switch status {
-    case .interested:
+    case .watchlist:
       self.watchlistMaxPages = 1
       self.watchlistCurrentPage = 1
       self.watchlistItems = []
-    case .superInterested:
+    case .superHype:
       self.superHypedMaxPages = 1
       self.superHypedCurrentPage = 1
       self.superHypedItems = []
-    case .notInterested:
+    case .blacklist:
       self.blacklistMaxPages = 1
       self.blacklistCurrentPage = 1
       self.blacklistItems = []

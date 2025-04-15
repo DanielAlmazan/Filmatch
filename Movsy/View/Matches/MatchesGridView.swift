@@ -61,7 +61,7 @@ struct MatchesGridView: View {
         voteAverage: 10,
         voteCount: 1
       ),
-      status: .superInterested
+      status: .superHype
     ),
     Match(
       isSuperMatch: false,
@@ -81,7 +81,7 @@ struct MatchesGridView: View {
         voteAverage: 10,
         voteCount: 1
       ),
-      status: .superInterested
+      status: .superHype
     ),
   ]
 

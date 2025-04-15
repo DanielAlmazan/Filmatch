@@ -52,7 +52,7 @@ struct DiscoverMovieItem: DiscoverItem {
     video: false,
     voteAverage: 7.106,
     voteCount: 95,
-    status: .interested
+    status: .watchlist
   )
 }
 

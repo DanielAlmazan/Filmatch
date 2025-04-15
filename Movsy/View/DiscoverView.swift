@@ -23,7 +23,7 @@ struct DiscoverView: View {
 
   let onItemRemoved: ((any DiscoverItem, InterestStatus) -> Void)?
 
-  private let screenWidth: CGFloat = UIScreen.main.bounds.size.width
+  private let screenSize: CGSize = UIScreen.main.bounds.size
   private let initialSecondCardBlur: Double = 1.5
   private let initialThirdCardBlur: Double = 3
   private let acceptBound: Double = 150
@@ -32,25 +32,25 @@ struct DiscoverView: View {
   @State private var filtersVm: FiltersViewModel
 
   private var firstCardStatus: InterestStatus {
-    let interested = (acceptBound...).contains(firstCardOffset.width)
+    let watchlist = (acceptBound...).contains(firstCardOffset.width)
     let watched = (acceptBound...).contains(firstCardOffset.height)
-    let superInterested = (...(-acceptBound)).contains(firstCardOffset.height)
-    let declined = (...(-acceptBound)).contains(firstCardOffset.width)
+    let superHype = (...(-acceptBound)).contains(firstCardOffset.height)
+    let blacklist = (...(-acceptBound)).contains(firstCardOffset.width)
 
-    if interested && !watched && !superInterested { return .interested }
-    if declined && !watched && !superInterested { return .notInterested }
-    if watched && !interested && !declined { return .watched }
-    if superInterested && !interested && !declined { return .superInterested }
+    if watchlist && !watched && !superHype { return .watchlist }
+    if blacklist && !watched && !superHype { return .blacklist }
+    if watched && !watchlist && !blacklist { return .watched }
+    if superHype && !watchlist && !blacklist { return .superHype }
 
     return .pending
   }
 
   private var tint: Color {
     switch firstCardStatus {
-    case .interested: .green
-    case .notInterested: .red
+    case .watchlist: .green
+    case .blacklist: .red
     case .watched: .white.opacity(0.5)
-    case .superInterested: .purple
+    case .superHype: .superHypeYellow
     case .pending: .clear
     }
   }
@@ -197,8 +197,12 @@ struct DiscoverView: View {
         // MARK: - Buttons
         if !itemsList.isEmpty {
           AcceptDeclineRowButtons(
-            item: itemsList[0], screenWidth: screenWidth, onAccept: acceptItem,
-            onDecline: declineItem
+            item: itemsList[0],
+            screenWidth: screenSize.width,
+            onAccept: acceptItem,
+            onSuperHype: superHypeItem,
+            onWatched: watchItem,
+            onDecline: declineItem,
           )
           .animation(.bouncy, value: firstCardStatus)
           .disabled(firstCardStatus != .pending)
@@ -299,14 +303,16 @@ struct DiscoverView: View {
   }
 
   private func onGestureEnded(item: (any DiscoverItem)) {
-    let extraWidth: Double = 70
-
     switch firstCardStatus {
-    case .interested:
-      acceptItem(item: item, screenWidth: screenWidth + extraWidth)
-    case .notInterested:
-      declineItem(item: item, screenWidth: screenWidth + extraWidth)
-    case .watched, .superInterested, .pending:
+    case .watchlist:
+      acceptItem(item: item)
+    case .blacklist:
+      declineItem(item: item)
+    case .watched:
+      watchItem(item: item)
+    case .superHype:
+      superHypeItem(item: item)
+    case .pending:
       withAnimation(.bouncy) { firstCardOffset = .zero }
     }
   }
@@ -345,14 +351,14 @@ struct DiscoverView: View {
     var numberOfPulses: Int = 1
 
     switch newStatus {
-    case .interested:
+    case .watchlist:
       intensity = 0.6
       sharpness = 0.6
       numberOfPulses = 2
-    case .superInterested:
+    case .superHype:
       intensity = 0.5
       sharpness = 0.5
-    case .notInterested:
+    case .blacklist:
       intensity = 0.4
       sharpness = 0.4
     case .watched:
@@ -392,41 +398,54 @@ struct DiscoverView: View {
     return .degrees(isEven ? randomValue : randomValue * -1)
   }
 
-  private func acceptItem(item: (any DiscoverItem), screenWidth: CGFloat) {
+  private func acceptItem(item: (any DiscoverItem)) {
     guard let onItemRemoved else { return }
 
-    onItemRemoved(item, .interested)
-    print("Movie \(item.getTitle) accepted")
-    removeCard(moveTo: screenWidth)
+    onItemRemoved(item, .watchlist)
+    print("Movie \(item.getTitle) marked as watchlisted")
+    removeCard(moveTo: CGSize(width: screenSize.width + 70, height: 0))
   }
 
-  private func declineItem(item: (any DiscoverItem), screenWidth: CGFloat) {
+  private func declineItem(item: (any DiscoverItem)) {
     guard let onItemRemoved else { return }
 
-    onItemRemoved(item, .notInterested)
-    print("Movie \(item.getTitle) declined")
-    removeCard(moveTo: -screenWidth)
+    onItemRemoved(item, .blacklist)
+    print("Movie \(item.getTitle) marked as blacklisted")
+    removeCard(moveTo: CGSize(width: -screenSize.width - 70, height: 0))
+  }
+
+  private func watchItem(item: (any DiscoverItem)) {
+    guard let onItemRemoved else { return }
+
+    onItemRemoved(item, .watched)
+    print("Movie \(item.getTitle) marked as watched")
+    removeCard(moveTo: CGSize(width: 0, height: screenSize.height + 70))
+  }
+
+  private func superHypeItem(item: (any DiscoverItem)) {
+    guard let onItemRemoved else { return }
+
+    onItemRemoved(item, .superHype)
+    print("Movie \(item.getTitle) marked as super hyped")
+    removeCard(moveTo: CGSize(width: 0, height: -screenSize.height - 70))
   }
 
   /// Handles the process of the first card removal.
   ///
   /// - Parameters:
   ///  - offset: The offset to be moved. It is used for modifying the offset but also for rotating the card.
-  private func removeCard(moveTo offset: Double) {
+  private func removeCard(moveTo offset: CGSize) {
     let animationDuration = 0.3
 
     withAnimation(.easeInOut(duration: animationDuration)) {
-      // Move the first card away from the view
-      firstCardOffset.width = offset
+      firstCardOffset = offset
 
-      // Set the second card's rotation and blur to zero
       secondCardRotation = .zero
       secondCardBlurRadius = .zero
     } completion: {
       secondCardRotation = self.thirdCardRotation
       secondCardBlurRadius = self.initialSecondCardBlur
 
-      // Remove the first movie and card from the lists
       self.discoverVm.items?.removeFirst()
       onItemListChange()
     }

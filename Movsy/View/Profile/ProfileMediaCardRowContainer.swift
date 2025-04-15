@@ -70,7 +70,7 @@ struct ProfileMediaCardRowContainer: View {
 
   NavigationStack {
     ProfileMediaCardRowContainer(
-      status: .interested,
+      status: .watchlist,
       media: .movie,
       height: 100,
       isLoading: .constant(false),

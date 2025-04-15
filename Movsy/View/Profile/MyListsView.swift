@@ -21,7 +21,7 @@ struct MyListsView: View {
         VStack {
           Group {
             ProfileMediaCardRowContainer(
-              status: .superInterested,
+              status: .superHype,
               media: media,
               height: height,
               isLoading: self.$profileVm.isSuperHypedLoading,
@@ -31,7 +31,7 @@ struct MyListsView: View {
             )
 
             ProfileMediaCardRowContainer(
-              status: .interested,
+              status: .watchlist,
               media: media,
               height: height,
               isLoading: self.$profileVm.isWatchlistLoading,
@@ -51,7 +51,7 @@ struct MyListsView: View {
             )
 
             ProfileMediaCardRowContainer(
-              status: .notInterested,
+              status: .blacklist,
               media: media,
               height: height,
               isLoading: self.$profileVm.isBlacklistLoading,
@@ -76,10 +76,10 @@ struct MyListsView: View {
 
   private func onRefresh() {
     Task {
-      await self.profileVm.onRefresh(of: .interested)
-      await self.profileVm.onRefresh(of: .superInterested)
+      await self.profileVm.onRefresh(of: .watchlist)
+      await self.profileVm.onRefresh(of: .superHype)
       await self.profileVm.onRefresh(of: .watched)
-      await self.profileVm.onRefresh(of: .notInterested)
+      await self.profileVm.onRefresh(of: .blacklist)
     }
   }
 
@@ -96,13 +96,13 @@ struct MyListsView: View {
       await profileVm.loadItems(for: .watched)
     }
     if profileVm.blacklistItems?.isEmpty ?? true {
-      await profileVm.loadItems(for: .notInterested)
+      await profileVm.loadItems(for: .blacklist)
     }
     if profileVm.watchlistItems?.isEmpty ?? true {
-      await profileVm.loadItems(for: .interested)
+      await profileVm.loadItems(for: .watchlist)
     }
     if profileVm.superHypedItems?.isEmpty ?? true {
-      await profileVm.loadItems(for: .superInterested)
+      await profileVm.loadItems(for: .superHype)
     }
   }
 }

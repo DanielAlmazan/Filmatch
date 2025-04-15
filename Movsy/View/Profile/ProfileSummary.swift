@@ -91,16 +91,16 @@ struct ProfileSummary: View {
 //      await self.profileVm.loadProviders()
 //    }
     if self.profileVm.superHypedItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .superInterested)
+      await self.profileVm.loadItems(for: .superHype)
     }
     if self.profileVm.watchlistItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .interested)
+      await self.profileVm.loadItems(for: .watchlist)
     }
     if self.profileVm.watchedItems?.isEmpty ?? true {
       await self.profileVm.loadItems(for: .watched)
     }
     if self.profileVm.blacklistItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .notInterested)
+      await self.profileVm.loadItems(for: .blacklist)
     }
   }
 }

@@ -9,9 +9,9 @@ import Foundation
 import SwiftUICore
 
 enum InterestStatus: Int, Codable, Identifiable, CaseIterable {
-  case interested = 0
-  case superInterested = 1
-  case notInterested = 2
+  case watchlist = 0
+  case superHype = 1
+  case blacklist = 2
   case watched = 3
   case pending = -1
 
@@ -19,11 +19,11 @@ enum InterestStatus: Int, Codable, Identifiable, CaseIterable {
 
   var listName: LocalizedStringKey {
     switch self {
-    case .interested:
+    case .watchlist:
       "Watchlist"
-    case .superInterested:
+    case .superHype:
       "SuperHype"
-    case .notInterested:
+    case .blacklist:
       "Blacklist"
     case .watched:
       "Watched"
@@ -34,11 +34,11 @@ enum InterestStatus: Int, Codable, Identifiable, CaseIterable {
 
   var icon: Image? {
     switch self {
-    case .interested:
+    case .watchlist:
       Image(.watchlistIconFill)
-    case .superInterested:
+    case .superHype:
       Image(.superHypedIconFill)
-    case .notInterested:
+    case .blacklist:
       Image(.blacklistIconFill)
     case .watched:
       Image(.watchedIconFill)

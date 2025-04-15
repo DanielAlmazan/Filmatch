@@ -10,30 +10,47 @@ import SwiftUI
 struct AcceptDeclineRowButtons: View {
   let item: (any DiscoverItem)
   let screenWidth: CGFloat
-  let onAccept: ((any DiscoverItem), CGFloat) -> Void
-  let onDecline: ((any DiscoverItem), CGFloat) -> Void
+  let onAccept: ((any DiscoverItem)) -> Void
+  let onSuperHype: ((any DiscoverItem)) -> Void
+  let onWatched: ((any DiscoverItem)) -> Void
+  let onDecline: ((any DiscoverItem)) -> Void
   
   var body: some View {
     HStack {
-      Button {
-        onDecline(item, screenWidth)
-      } label: {
-        Image(.thumbDownButton)
-          .resizable()
-          .scaledToFit()
-          .frame(width: 100)
-      }
+      Group {
+        Button {
+          onDecline(item)
+        } label: {
+          Image(.thumbDownButton)
+            .resizable()
+            .scaledToFit()
+        }
 
-      Spacer()
+        Button {
+          onWatched(item)
+        } label: {
+          Image(.watchedIcon)
+            .resizable()
+            .scaledToFit()
+        }
 
-      Button {
-        onAccept(item, screenWidth)
-      } label: {
-        Image(.thumbUpButton)
-          .resizable()
-          .scaledToFit()
-          .frame(width: 100)
+        Button {
+          onSuperHype(item)
+        } label: {
+          Image(.superHypedIcon)
+            .resizable()
+            .scaledToFit()
+        }
+
+        Button {
+          onAccept(item)
+        } label: {
+          Image(.thumbUpButton)
+            .resizable()
+            .scaledToFit()
+        }
       }
+      .padding()
     }
     .padding()
   }
@@ -41,5 +58,12 @@ struct AcceptDeclineRowButtons: View {
 
 #Preview {
   let item: DiscoverMovieItem = .default
-  AcceptDeclineRowButtons(item: item, screenWidth: 480, onAccept: {item, width  in print ("Accepted \((item as! DiscoverMovieItem).title)") }, onDecline: { movie, width in print ("Declined \(item.title)")})
+  AcceptDeclineRowButtons(
+    item: item,
+    screenWidth: 480,
+    onAccept: {item  in print ("Accepted \((item as! DiscoverMovieItem).title)") },
+    onSuperHype: {item  in print ("SuperHyped \((item as! DiscoverMovieItem).title)") },
+    onWatched: {item  in print ("Watched \((item as! DiscoverMovieItem).title)") },
+    onDecline: { movie in print ("Declined \(item.title)")},
+  )
 }
