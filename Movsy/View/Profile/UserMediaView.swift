@@ -101,13 +101,13 @@ struct UserMediaView: View {
   NavigationStack {
     ScrollView {
       UserMediaView(
-        repository: movsyRepository, user: .default, status: .interested, media: .movie,
+        repository: movsyRepository, user: .default, status: .watchlist, media: .movie,
         items: [movie]) { _, _ in
           print("Updating item...")
         } onRefresh: {
           print("Refreshing...")
         }
-      .onAppear { movie.status = .superInterested }
+      .onAppear { movie.status = .superHype }
     }
   }
   .environment(moviesRepository)

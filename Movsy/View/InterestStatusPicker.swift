@@ -24,6 +24,6 @@ struct InterestStatusPicker: View {
 }
 
 #Preview {
-  @Previewable @State var selection: InterestStatus? = .interested
+  @Previewable @State var selection: InterestStatus? = .watchlist
   InterestStatusPicker(selection: $selection)
 }

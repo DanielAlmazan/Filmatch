@@ -92,7 +92,7 @@ struct SimpleMediaItemsGridView: View {
   } onLastAppeared: {
     print("Last appeared")
   }
-  .task { movies![0].status = .interested }
+  .task { movies![0].status = .watchlist }
   .environment(
     MoviesRepositoryImpl(
       datasource: JsonMoviesRemoteDatasource()

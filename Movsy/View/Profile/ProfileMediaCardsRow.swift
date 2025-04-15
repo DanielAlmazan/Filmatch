@@ -69,7 +69,7 @@ struct ProfileMediaCardsRow: View {
       print("Update item \(item) from status \(item.status ?? .pending) to status \(newStatus ?? .pending)")
     }
     .frame(height: 200)
-    .task { movies![0].status = .interested }
+    .task { movies![0].status = .watchlist }
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
 }

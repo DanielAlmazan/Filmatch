@@ -66,7 +66,7 @@ struct MatchesListView: View {
         video: false,
         voteAverage: 10,
         voteCount: 1),
-      status: .superInterested),
+      status: .superHype),
     Match(
       isSuperMatch: false,
       item: DiscoverMovieItem(
@@ -84,7 +84,7 @@ struct MatchesListView: View {
         video: false,
         voteAverage: 10,
         voteCount: 1),
-      status: .superInterested),
+      status: .superHype),
   ]
   
   let movieRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())

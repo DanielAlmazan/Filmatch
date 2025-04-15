@@ -74,7 +74,7 @@ struct SearchItemThumbnail: View {
         size: .w500,
         title: DiscoverMovieItem.default.title,
         releaseDate: "2024",
-        status: .interested
+        status: .watchlist
       )
       .frame(maxWidth: 200, maxHeight: 300)
 
@@ -83,7 +83,7 @@ struct SearchItemThumbnail: View {
         size: .w500,
         title: DiscoverMovieItem.default.title,
         releaseDate: "2024",
-        status: .notInterested
+        status: .blacklist
       )
       .frame(maxWidth: 200, maxHeight: 300)
 
@@ -95,7 +95,7 @@ struct SearchItemThumbnail: View {
         size: .w500,
         title: DiscoverMovieItem.default.title,
         releaseDate: "2024",
-        status: .superInterested
+        status: .superHype
       )
       .frame(maxWidth: 200, maxHeight: 300)
 
