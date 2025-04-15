@@ -1,6 +1,6 @@
 //
 //  Config.swift
-//  OtterMatch
+//  Movsy
 //
 //  Created by Daniel Enrique Almazán Sellés on 16/8/24.
 //
@@ -30,7 +30,7 @@ enum Config {
 }
 
 enum API {
-  static var otterMatchBaseURL: String? {
+  static var movsyBaseURL: String? {
     return try? "https://" + Config.value(for: "OTTERMATCH_BASE_URL")
   }
   
