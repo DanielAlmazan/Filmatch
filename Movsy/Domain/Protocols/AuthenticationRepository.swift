@@ -24,6 +24,8 @@ import FirebaseAuth
     password: String
   ) async -> Result<User, Error>
 
+  func sendEmailVerification() async -> Result<Void, Error>
+
   /// Logs in a user with the provided email and password.
   /// - Parameters:
   ///   - email: The email address of the user.

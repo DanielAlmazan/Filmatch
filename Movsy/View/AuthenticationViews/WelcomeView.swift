@@ -12,11 +12,8 @@ enum AuthenticationSheetView: String, Identifiable {
   case REGISTER
   case LOGIN
 
-  var id: String {
-    return rawValue
-  }
+  var id: String { rawValue }
 }
-
 
 /// `WelcomeView` is the initial screen shown to users, offering options to go to Rooms or log in.
 struct WelcomeView: View {
@@ -32,20 +29,43 @@ struct WelcomeView: View {
         Spacer()
 
         // MARK: Logo, Title & Subtitle
-        VStack {
-          Image(.movsyLogo)
-            .resizable()
-            .scaledToFit()
-            .frame(height: 150)
-            .shadow(radius: 5, y: 4)
+        VStack(spacing: 16) {
+          VStack {
+            Image(.movsyLogo)
+              .resizable()
+              .scaledToFit()
+              .frame(height: 150)
+              .shadow(radius: 5, y: 4)
 
-          Text("Welcome to Movsy!")
-            .font(.title)
-            .bold()
-            .foregroundStyle(.white)
+            Text("Welcome to Movsy!")
+              .font(.title)
+              .bold()
+              .foregroundStyle(.white)
 
-          GoToLoginButton(maxHeight: 100) {
-            authenticationSheetView = .LOGIN
+            GoToLoginButton(maxHeight: 100) {
+              authVm.errorMessage = nil
+              authenticationSheetView = .LOGIN
+            }
+          }
+
+          if let errorMessage = authVm.errorMessage, !errorMessage.isEmpty {
+            Text(errorMessage)
+              .foregroundColor(.red)
+          }
+
+          if let user = authVm.currentUser, user.isNotVerified, authVm.currentUser?.isEmailVerified == false {
+            VStack {
+              Text("We’ve sent a verification link to \(user.maskedEmail ?? "your email").")
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+                .fixedSize(horizontal: false, vertical: true)
+                .foregroundStyle(.white)
+
+              Button("Resend Verification Email") {
+                authVm.sendEmailVerification()
+              }
+              .buttonStyle(.borderedProminent)
+            }
           }
         }
 
@@ -56,6 +76,9 @@ struct WelcomeView: View {
             .font(.caption)
             .foregroundStyle(.white)
           Image(.tmdbAttributionLogo)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 100)
         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -75,6 +98,9 @@ struct WelcomeView: View {
         }
       }
     }
+    .task {
+      await authVm.refreshEmailVerificationStatus()
+    }
   }
 }
 
@@ -93,4 +119,5 @@ struct WelcomeView: View {
 
   WelcomeView()
     .environment(authenticationViewModel)
+    .task { authenticationViewModel.currentUser = .default }
 }

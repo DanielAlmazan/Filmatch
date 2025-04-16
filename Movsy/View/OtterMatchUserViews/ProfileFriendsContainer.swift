@@ -55,9 +55,30 @@ struct ProfileFriendsContainer: View {
   @Previewable @State var isLoading: Bool = true
   @Previewable @State var friends: [MovsyUser]? = [
     .default,
-    .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
-    .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil, friendshipStatus: .friend),
-    .init(email: nil, username: "miiraculous_one", uid: "FirebaseUID", photoUrl: nil, friendshipStatus: .received)
+    .init(
+      email: nil,
+      username: "miirii",
+      uid: "FirebaseUID1",
+      photoUrl: nil,
+      friendshipStatus: .notRelated,
+      isEmailVerified: nil
+    ),
+    .init(
+      email: nil,
+      username: "fake_miirii",
+      uid: "FirebaseUID2",
+      photoUrl: nil,
+      friendshipStatus: .friend,
+      isEmailVerified: nil
+    ),
+    .init(
+      email: nil,
+      username: "miiraculous_one",
+      uid: "FirebaseUID",
+      photoUrl: nil,
+      friendshipStatus: .received,
+      isEmailVerified: nil
+    )
   ]
   @Previewable @State var friendsVm: FriendsViewModel = .init(
     movsyRepository: MovsyGoRepositoryImpl(
@@ -111,9 +132,30 @@ struct ProfileFriendsContainer: View {
         isLoading = false
         friends = [
           .default,
-          .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
-          .init(email: nil, username: "fake_miirii", uid: "FirebaseUID2", photoUrl: nil, friendshipStatus: .friend),
-          .init(email: nil, username: "miiraculous_one", uid: "FirebaseUID", photoUrl: nil, friendshipStatus: .received)
+          .init(
+            email: nil,
+            username: "miirii",
+            uid: "FirebaseUID1",
+            photoUrl: nil,
+            friendshipStatus: .notRelated,
+            isEmailVerified: nil
+          ),
+          .init(
+            email: nil,
+            username: "fake_miirii",
+            uid: "FirebaseUID2",
+            photoUrl: nil,
+            friendshipStatus: .friend,
+            isEmailVerified: nil
+          ),
+          .init(
+            email: nil,
+            username: "miiraculous_one",
+            uid: "FirebaseUID",
+            photoUrl: nil,
+            friendshipStatus: .received,
+            isEmailVerified: nil
+          )
         ]
       }
     }

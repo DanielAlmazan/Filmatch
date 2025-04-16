@@ -80,11 +80,13 @@ struct ProfileTab: View {
       switch result {
       case .success(_):
         isError = false
+        authVm.currentUser = nil
       case .failure(let error):
+        isError = true
+        showAlert = true
         if let error = error as NSError? {
           operationError = error
           alertMessage = "Error deleting account: \(processError(for: error))"
-          isError = true
         }
       }
     }

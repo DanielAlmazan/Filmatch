@@ -43,7 +43,13 @@ struct FriendRequestsView: View {
   @Previewable @State var users: [MovsyUser] = [
     .default,
     .init(
-      email: "test2@test.com", username: "test2", uid: "2", photoUrl: nil, friendshipStatus: .sent),
+      email: "test2@test.com",
+      username: "test2",
+      uid: "2",
+      photoUrl: nil,
+      friendshipStatus: .sent,
+      isEmailVerified: nil,
+    ),
   ]
   @Previewable @State var isExpanded: Bool = false
 

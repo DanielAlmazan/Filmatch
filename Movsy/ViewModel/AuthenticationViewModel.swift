@@ -21,7 +21,22 @@ class AuthenticationViewModel {
   var errorMessage: String?
   
   var isLoading = true
-  
+
+  func checkEmailVerification() async -> Bool {
+    guard let user = Auth.auth().currentUser else { return false }
+    do {
+      try await user.reload()
+      return user.isEmailVerified
+    } catch {
+      return false
+    }
+  }
+
+  func refreshEmailVerificationStatus() async {
+    let isVerified = await checkEmailVerification()
+    self.currentUser?.isEmailVerified = isVerified
+  }
+
   /// The repository responsible for handling authentication operations.
   private let authenticationRepository: AuthenticationRepository
   private let movsyRepository: MovsyGoRepository
@@ -31,7 +46,7 @@ class AuthenticationViewModel {
   /// - Parameter movsyRepository: Te repository used to ensure the validation of the user.
   init(
     authenticationRepository: AuthenticationRepository,
-    movsyRepository: MovsyGoRepository
+    movsyRepository: MovsyGoRepository,
   ) {
     self.authenticationRepository = authenticationRepository
     self.movsyRepository = movsyRepository
@@ -40,18 +55,32 @@ class AuthenticationViewModel {
     let _ = Auth.auth().addStateDidChangeListener { auth, user in
       Task {
         self.isLoading = true
-        let userResult = await self.authenticationRepository.getCurrentUser()
-        if let _ = userResult {
+
+        if let firebaseUser = await self.authenticationRepository.getCurrentUser() {
           let movsyAuthResult = await self.movsyRepository.auth()
           switch movsyAuthResult {
           case .success(let movsyUser):
-            self.currentUser = movsyUser.toMovsyUser()
+            self.currentUser = movsyUser.toMovsyUser(isEmailVerified: firebaseUser.isEmailVerified)
           case .failure(let failure):
             self.errorMessage = failure.localizedDescription
           }
         }
         self.isLoading = false
       }
+    }
+  }
+
+  func sendEmailVerification() {
+    Task {
+      self.isLoading = true
+      let result = await authenticationRepository.sendEmailVerification()
+      switch result {
+      case .success():
+        print("Verification email sent")
+      case .failure(let error):
+        self.errorMessage = error.localizedDescription
+      }
+      self.isLoading = false
     }
   }
 
