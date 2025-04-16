@@ -163,13 +163,14 @@ extension FriendshipSingleResponse {
 }
 
 extension MovsyUserResponse {
-  func toMovsyUser(as status: FriendshipStatus? = nil) -> MovsyUser {
+  func toMovsyUser(as status: FriendshipStatus? = nil, isEmailVerified: Bool? = nil) -> MovsyUser {
     .init(
       email: self.email ?? "",
       username: self.username,
       uid: self.uid,
       photoUrl: self.photoUrl ?? "",
-      friendshipStatus: self.friendshipStatus ?? status
+      friendshipStatus: self.friendshipStatus ?? status,
+      isEmailVerified: isEmailVerified
     )
   }
 }

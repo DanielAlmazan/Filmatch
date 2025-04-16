@@ -51,7 +51,7 @@ struct UserListRow: View {
       onAction: { user, action in print("Sent friend request") }
     )
     UserListRow(
-      user: .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated),
+      user: .init(email: nil, username: "miirii", uid: "FirebaseUID1", photoUrl: nil, friendshipStatus: .notRelated, isEmailVerified: nil,),
       onAction: { user, action in print("Sent friend request") }
     )
   }

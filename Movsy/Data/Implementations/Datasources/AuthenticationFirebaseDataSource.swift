@@ -47,7 +47,21 @@ extension AuthenticationFirebaseDataSource {
   func createNewUser(email: String, password: String) async -> Result<User, Error> {
     do {
       let registerResult = try await Auth.auth().createUser(withEmail: email, password: password)
+      try await registerResult.user.sendEmailVerification()
       return .success(registerResult.user)
+    } catch {
+      return .failure(error)
+    }
+  }
+
+  func sendEmailVerification() async -> Result<Void, Error> {
+    guard let user = Auth.auth().currentUser else {
+      return .failure(URLError(.userAuthenticationRequired))
+    }
+
+    do {
+      try await user.sendEmailVerification()
+      return .success(())
     } catch {
       return .failure(error)
     }

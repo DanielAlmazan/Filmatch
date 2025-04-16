@@ -54,10 +54,7 @@ struct ContentView: View {
     VStack {
       if authVm.isLoading {
         ProgressView("Checking user...")
-      } else if authVm.currentUser == nil {
-        // Show the welcome view if the user is not authenticated.
-        WelcomeView()
-      } else {
+      } else if let user = authVm.currentUser, user.isVerified {
         // Show the home view if the user is authenticated.
         HomeView()
           .environment(moviesRepository)
@@ -71,6 +68,9 @@ struct ContentView: View {
               await friendsVm.loadFriendRequests()
             }
           }
+      } else {
+        // Show the welcome view if the user is not authenticated.
+        WelcomeView()
       }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)

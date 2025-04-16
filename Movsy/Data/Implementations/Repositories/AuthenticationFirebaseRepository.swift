@@ -32,7 +32,11 @@ final class AuthenticationFirebaseRepository: AuthenticationRepository {
   ) async -> Result<User, Error> {
     await self.dataSource.createNewUser(email: email, password: password)
   }
-  
+
+  func sendEmailVerification() async -> Result<Void, Error> {
+    await self.dataSource.sendEmailVerification()
+  }
+
   func logIn(
     email: String,
     password: String

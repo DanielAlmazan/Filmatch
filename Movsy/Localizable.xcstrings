@@ -1708,6 +1708,9 @@
         }
       }
     },
+    "Resend Verification Email" : {
+
+    },
     "Rooms" : {
       "localizations" : {
         "ca" : {
@@ -2060,6 +2063,9 @@
           }
         }
       }
+    },
+    "We’ve sent a verification link to %@." : {
+
     },
     "Welcome Back" : {
       "localizations" : {
