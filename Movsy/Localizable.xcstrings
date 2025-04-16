@@ -701,7 +701,20 @@
       }
     },
     "Created by %@" : {
-
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creada per %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creada por %@"
+          }
+        }
+      }
     },
     "Delete Account" : {
       "localizations" : {
@@ -1295,22 +1308,6 @@
         }
       }
     },
-    "My lists" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les meves llistes"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mis listas"
-          }
-        }
-      }
-    },
     "My Lists" : {
       "localizations" : {
         "ca" : {
@@ -1712,7 +1709,20 @@
       }
     },
     "Resend Verification Email" : {
-
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reenviar email de verificació"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reenviar email de verificación"
+          }
+        }
+      }
     },
     "Rooms" : {
       "localizations" : {
@@ -2068,7 +2078,20 @@
       }
     },
     "We’ve sent a verification link to %@." : {
-
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hem enviat un enllaç de verificació a %@."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hemos enviado un enlace de verificación a %@."
+          }
+        }
+      }
     },
     "Welcome Back" : {
       "localizations" : {

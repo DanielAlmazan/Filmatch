@@ -73,6 +73,7 @@ struct MyListsView: View {
     }
     .refreshable { onRefresh() }
     .frame(maxHeight: .infinity, alignment: .top)
+    .background(.bgBase)
     .navigationTitle("My Lists")
     .task { await initLists() }
     .onChange(of: self.profileVm.selectedMedia) {
