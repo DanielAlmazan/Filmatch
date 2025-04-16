@@ -700,6 +700,9 @@
         }
       }
     },
+    "Created by %@" : {
+
+    },
     "Delete Account" : {
       "localizations" : {
         "ca" : {

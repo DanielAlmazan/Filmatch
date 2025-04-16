@@ -41,7 +41,8 @@ final class TvSeriesDetailSingleResponse: Identifiable, Sendable {
   let voteAverage: Double
   let voteCount: Int
   let aggregateCredits: TvSeriesAggregateCreditsAppendResponse
-  
+  let videos: MovieVideosAppendResponse
+
   init(adult: Bool,
        backdropPath: String?,
        createdBy: [Creator],
@@ -74,7 +75,8 @@ final class TvSeriesDetailSingleResponse: Identifiable, Sendable {
        type: String?,
        voteAverage: Double,
        voteCount: Int,
-       aggregateCredits: TvSeriesAggregateCreditsAppendResponse
+       aggregateCredits: TvSeriesAggregateCreditsAppendResponse,
+       videos: MovieVideosAppendResponse
   ) {
     self.adult = adult
     self.backdropPath = backdropPath
@@ -109,6 +111,7 @@ final class TvSeriesDetailSingleResponse: Identifiable, Sendable {
     self.voteAverage = voteAverage
     self.voteCount = voteCount
     self.aggregateCredits = aggregateCredits
+    self.videos = videos
   }
 }
 
@@ -147,6 +150,7 @@ extension TvSeriesDetailSingleResponse: Codable {
     case voteAverage = "vote_average"
     case voteCount = "vote_count"
     case aggregateCredits = "aggregate_credits"
+    case videos = "videos"
   }
   
   convenience init(from decoder: Decoder) throws {
@@ -197,6 +201,7 @@ extension TvSeriesDetailSingleResponse: Codable {
     let voteAverage = try container.decode(Double.self, forKey: .voteAverage)
     let voteCount = try container.decode(Int.self, forKey: .voteCount)
     let aggregateCredits = try container.decode(TvSeriesAggregateCreditsAppendResponse.self, forKey: .aggregateCredits)
+    let videos = try container.decode(MovieVideosAppendResponse.self, forKey: .videos)
 
     self.init(adult: adult,
               backdropPath: backdropPath,
@@ -230,7 +235,9 @@ extension TvSeriesDetailSingleResponse: Codable {
               type: type,
               voteAverage: voteAverage,
               voteCount: voteCount,
-              aggregateCredits: aggregateCredits)
+              aggregateCredits: aggregateCredits,
+              videos: videos
+    )
   }
   
   func encode(to encoder: any Encoder) throws {
@@ -269,6 +276,7 @@ extension TvSeriesDetailSingleResponse: Codable {
     try container.encode(voteAverage, forKey: .voteAverage)
     try container.encode(voteCount, forKey: .voteCount)
     try container.encode(aggregateCredits, forKey: .aggregateCredits)
+    try container.encode(videos, forKey: .videos)
   }
 }
 

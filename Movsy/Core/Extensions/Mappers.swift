@@ -80,7 +80,9 @@ extension TvSeriesDetailSingleResponse {
           type: self.type,
           voteAverage: self.voteAverage,
           voteCount: self.voteCount,
-          aggregateCredits: self.aggregateCredits)
+          aggregateCredits: self.aggregateCredits,
+          videos: self.videos.results ?? []
+    )
   }
 }
 

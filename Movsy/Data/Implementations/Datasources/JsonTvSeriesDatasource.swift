@@ -14,7 +14,7 @@ final class JsonTvSeriesDatasource: TvSeriesDatasource {
     TvSeriesDetailSingleResponse, any Error
   > {
     await client.get(
-      "tv-\(id)-append_to_response-aggregate-credits",
+      "tv-\(id)-append_to_response-aggregate-credits-videos",
       extraQueryItems: [],
       responseType: TvSeriesDetailSingleResponse.self,
       acceptanceRange: nil

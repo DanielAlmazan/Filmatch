@@ -23,19 +23,60 @@ struct TvSeriesDetailView: View {
         if vm.isTvSeriesLoading {
           ProgressView("Loading...")
         } else if let tvSeries = vm.tvSeries {
-          PosterView(imageUrl: tvSeries.posterPath, size: .w500, posterType: .movie)
-          
-          VStack(alignment: .leading, spacing: 16) {
-            TvSeriesFirstDetailsRow(
-              voteAverage: tvSeries.voteAverage,
-              genres: tvSeries.genres,
-              numberOfSeasons: tvSeries.numberOfSeasons,
-              providers: vm.providers)
+          ScrollView {
+            // MARK: - Poster Image
+            PosterView(imageUrl: tvSeries.posterPath, size: .w500, posterType: .movie)
+
+            VStack(alignment: .leading, spacing: 16) {
+              TvSeriesFirstDetailsRow(
+                voteAverage: tvSeries.voteAverage,
+                genres: tvSeries.genres,
+                numberOfSeasons: tvSeries.numberOfSeasons,
+                providers: vm.providers)
+              .padding()
+              .lineLimit(1)
+
+              VStack(alignment: .leading) {
+              // MARK: - Movie title
+                Text(tvSeries.name ?? "Unknown")
+                  .font(.title)
+                  .textSelection(.enabled)
+
+                // MARK: - Tagline
+                if let tagline = tvSeries.tagline, !tagline.isEmpty {
+                  Text(tagline)
+                    .font(.subheadline)
+                    .italic()
+
+                  Spacer(minLength: 16)
+                }
+
+                // MARK: - Overview
+                Text(tvSeries.overview)
+
+                Spacer(minLength: 16)
+
+                // MARK: - Directed by
+                Text(
+                  "Created by \(Utilities.parseNamesList(tvSeries.createdBy.map { $0.name ?? "Unknown" }))"
+                )
+                .lineLimit(0)
+                .bold()
+              }
+              // MARK: - Videos
+              Text("Videos")
+                .font(.title2)
+              MovieVideosRowView(videos: tvSeries.videos)
+
+              // MARK: - Cast
+              Text("Cast")
+                .font(.title2)
+              TvSeriesCastRowView(cast: tvSeries.aggregateCredits.cast)
+            }
             .padding()
-            .lineLimit(1)
           }
         } else if let error = vm.errorMessage {
-          Text(error)
+          Text("Error: Film not loaded: \(error)")
         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -50,10 +91,12 @@ struct TvSeriesDetailView: View {
 }
 
 #Preview {
+  let personRepository = PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource())
   TvSeriesDetailView(
     repository: TvSeriesRepositoryImpl(
       datasource: JsonTvSeriesDatasource()
     ),
-    seriesId: 93405
+    seriesId: 44217
   )
+  .environment(personRepository)
 }
