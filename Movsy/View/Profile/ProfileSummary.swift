@@ -11,7 +11,6 @@ struct ProfileSummary: View {
   let kRowsHeight: CGFloat = 90
   private var user: MovsyUser
 
-  @State private var profileVm: ProfileViewModel
   @State private var friendsVm: FriendsViewModel
 
   init(
@@ -21,11 +20,6 @@ struct ProfileSummary: View {
     friendsVm: FriendsViewModel
   ) {
     self.user = user
-    self.profileVm = .init(
-      user: user,
-      movsyRepository: movsyRepository,
-      filtersRepository: filtersRepository
-    )
     self.friendsVm = friendsVm
   }
 
@@ -40,67 +34,16 @@ struct ProfileSummary: View {
         height: kRowsHeight,
         isLoading: self.$friendsVm.isLoadingFriends,
         friends: self.$friendsVm.friends)
-
-      // MARK: - Own lists
-      NavigationLink {
-        MyListsView(
-          user: self.user,
-          media: self.profileVm.selectedMedia,
-          height: kRowsHeight * 1.6,
-          profileVm: self.profileVm
-        )
-        .background(.bgBase)
-      } label: {
-        HStack {
-          Text("My lists")
-            .foregroundColor(.primary)
-          Spacer()
-          Image(systemName: "chevron.right")
-            .foregroundColor(.secondary)
-        }
-        .padding()
-        .background(.bgContainer)
-        .clipShape(.rect(cornerRadius: 10))
-      }
     }
     .navigationTitle(Text(user.username ?? "Profile"))
     .task {
       await initFriends()
-      await initMyLists()
-    }
-    .onChange(of: self.profileVm.selectedMedia) {
-      self.profileVm.onSelectedMediaChanged()
-      Task { await initMyLists() }
-    }
-  }
-  
-  private func onLastAppeared(for status: InterestStatus) {
-    Task {
-      await self.profileVm.loadMoreItems(for: status)
     }
   }
   
   private func initFriends() async {
     if self.friendsVm.friends?.isEmpty ?? true {
       await self.friendsVm.loadFriends()
-    }
-  }
-
-  private func initMyLists() async {
-//    if self.profileVm.providers?.isEmpty ?? true {
-//      await self.profileVm.loadProviders()
-//    }
-    if self.profileVm.superHypedItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .superHype)
-    }
-    if self.profileVm.watchlistItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .watchlist)
-    }
-    if self.profileVm.watchedItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .watched)
-    }
-    if self.profileVm.blacklistItems?.isEmpty ?? true {
-      await self.profileVm.loadItems(for: .blacklist)
     }
   }
 }
