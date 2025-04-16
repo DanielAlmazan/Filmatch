@@ -147,6 +147,14 @@ final class MatchesViewModel {
   }
 
   @MainActor
+  func onMediaSelectedChanged() async {
+    self.query = ""
+    self.currentQuery = ""
+
+    await fetchSimpleFriendsMatches()
+  }
+
+  @MainActor
   func onRefresh() async {
     results = nil
     currentFriendsPage = 1

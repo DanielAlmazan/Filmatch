@@ -1116,6 +1116,22 @@
         }
       }
     },
+    "It seems there you have no matches with any \"%@\"…" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembla que no hi ha matches amb cap \"%@\"..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parece que no tienes matches con ningún “%@”…"
+          }
+        }
+      }
+    },
     "Join room" : {
       "localizations" : {
         "ca" : {
