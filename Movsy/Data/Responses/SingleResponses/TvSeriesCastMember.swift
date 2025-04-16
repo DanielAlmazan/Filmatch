@@ -44,6 +44,23 @@ final class TvSeriesCastMember: Identifiable, Sendable {
     self.totalEpisodeCount = totalEpisodeCount
     self.order = order
   }
+
+  static let `default`: TvSeriesCastMember = .init(
+    adult: false,
+    gender: 1,
+    id: 723,
+    knownForDepartment: "Acting",
+    name: "Katheryn Winnick",
+    originalName: "Katheryn Winnick",
+    popularity: 6.3795,
+    profilePath: "/vQSqH3ybDWZHZIqX4NZKhOCXAhQ.jpg",
+    roles: [
+      .init(
+        creditId: "52596705760ee346619c3565", character: "Lagertha", episodeCount: 76
+      ),
+    ],
+    totalEpisodeCount: 76,
+    order: 6)
 }
 
 extension TvSeriesCastMember: Codable {

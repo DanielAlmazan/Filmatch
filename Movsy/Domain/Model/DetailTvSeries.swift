@@ -41,4 +41,5 @@ struct DetailTvSeries: DetailItem {
   let voteAverage: Double
   let voteCount: Int
   let aggregateCredits: TvSeriesAggregateCreditsAppendResponse
+  let videos: [Video]
 }

@@ -21,8 +21,8 @@ final class TvSeriesDatasourceImpl: TvSeriesDatasource {
       "tv/\(id)",
       extraQueryItems: [
         URLQueryItem(
-          name: QueryParam.appendToResponse.rawValue, value: "aggregate_credits"
-        )
+          name: QueryParam.appendToResponse.rawValue, value: "aggregate_credits,videos"
+        ),
       ],
       responseType: TvSeriesDetailSingleResponse.self)
   }

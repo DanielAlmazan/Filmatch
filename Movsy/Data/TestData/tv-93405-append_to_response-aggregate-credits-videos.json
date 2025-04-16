@@ -2904,5 +2904,33 @@
         "total_episode_count": 9
       }
     ]
+  },
+  "videos": {
+    "results": [
+      {
+        "iso_639_1": "en",
+        "iso_3166_1": "US",
+        "name": "Official Trailer [Subtitled]",
+        "key": "oqxAJKy0ii4",
+        "site": "YouTube",
+        "size": 1080,
+        "type": "Trailer",
+        "official": true,
+        "published_at": "2021-09-02T00:00:02.000Z",
+        "id": "61310236f0647c00426c1680"
+      },
+      {
+        "iso_639_1": "en",
+        "iso_3166_1": "US",
+        "name": "Official Teaser #1 [ENG SUB]",
+        "key": "5oFn2eodVD0",
+        "site": "YouTube",
+        "size": 1080,
+        "type": "Teaser",
+        "official": true,
+        "published_at": "2021-08-11T06:36:46.000Z",
+        "id": "6113e3355c5634007d4dbfec"
+      }
+    ]
   }
 }
