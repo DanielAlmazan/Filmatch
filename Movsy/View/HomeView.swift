@@ -15,7 +15,7 @@ struct HomeView: View {
     case discover
     case search
     case matches
-    case rooms
+    case myLists
     case profile
   }
   /// The index of the currently selected tab.
@@ -88,6 +88,24 @@ struct HomeView: View {
 //        Image(.movsyLogoTabItem)
 //        Text("Rooms")
 //      }
+
+      // MARK: - MyLists Tab
+      Tab(value: .myLists) {
+        NavigationStack {
+          if let user = authVm.currentUser {
+            MyListsView(
+              user: user,
+              height: 144,
+              movsyRepository: movsyGoRepository,
+              filtersRepository: filtersRepository)
+          }
+        }
+      } label: {
+        VStack {
+          Image(systemName: "list.bullet")
+          Text("My Lists")
+        }
+      }
 
       // MARK: - Profile Tab
       /// Tab for viewing and editing the user's profile.
