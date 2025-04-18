@@ -8,27 +8,32 @@
 import SwiftUI
 
 struct StartButtonView: View {
-  @AppStorage("isOnboarding") var isOnboarding: Bool?
+  let isLastPage: Bool
+  let action: () -> Void
 
   var body: some View {
-    Button(action: { isOnboarding = false }) {
+    Button(action: action) {
       HStack(spacing: 8) {
-        Text("Start")
+        Text(isLastPage ? "Start" : "Skip")
 
-        Image(systemName: "arrow.right.circle")
+        Image(systemName: isLastPage ? "arrow.right.circle" : "forward.fill")
           .imageScale(.large)
       }
       .padding(.horizontal, 16)
       .padding(.vertical, 10)
-      .background(Capsule().strokeBorder(.black, lineWidth: 1.25))
     }
-    .accentColor(.black)
+    .buttonStyle(.borderedProminent)
   }
 }
 
 #Preview {
-  VStack {
-    StartButtonView()
+  VStack(spacing: 20) {
+    StartButtonView(isLastPage: true) {
+      print("Button pressed")
+    }
+    StartButtonView(isLastPage: true) {
+      print("Button pressed")
+    }
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(Gradient(colors: [.accent, .accentDarker]))
