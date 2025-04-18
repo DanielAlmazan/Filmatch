@@ -82,7 +82,8 @@ final class MoviesRemoteDatasourceImpl: MoviesRemoteDatasource {
       endpoint,
       extraQueryItems: [
         URLQueryItem(name: QueryParam.page.rawValue, value: "\(page ?? 1)"),
-        URLQueryItem(name: QueryParam.query.rawValue, value: query)
+        URLQueryItem(name: QueryParam.query.rawValue, value: query),
+        URLQueryItem(name: QueryParam.appendToResponse.rawValue, value: "videos"),
       ],
       responseType: MoviesSearchResponse.self)
   }

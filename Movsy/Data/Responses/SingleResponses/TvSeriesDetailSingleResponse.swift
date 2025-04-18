@@ -116,7 +116,7 @@ final class TvSeriesDetailSingleResponse: Identifiable, Sendable {
 }
 
 extension TvSeriesDetailSingleResponse: Codable {
-  enum CodingKeys: String, CodingKey {
+  private enum CodingKeys: String, CodingKey {
     case adult = "adult"
     case backdropPath = "backdrop_path"
     case createdBy = "created_by"
@@ -156,50 +156,50 @@ extension TvSeriesDetailSingleResponse: Codable {
   convenience init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     
-    let adult = try container.decode(Bool.self, forKey: .adult)
-    let backdropPath = try container.decode(String?.self, forKey: .backdropPath)
-    let createdBy = try container.decode([Creator].self, forKey: .createdBy)
-    let episodeRunTime = try container.decode([Int].self, forKey: .episodeRunTime)
-    
-    let firstAirDateString = try container.decode(String?.self, forKey: .firstAirDate)
+    let adult = try container.decodeIfPresent(Bool.self, forKey: .adult) ?? true
+    let backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+    let createdBy = try container.decodeIfPresent([Creator].self, forKey: .createdBy) ?? []
+    let episodeRunTime = try container.decodeIfPresent([Int].self, forKey: .episodeRunTime) ?? []
+
+    let firstAirDateString = try container.decodeIfPresent(String.self, forKey: .firstAirDate)
     let firstAirDate: Date? = {
       guard let dateStr = firstAirDateString, !dateStr.isEmpty else { return nil }
       return Utilities.dateFormatter.date(from: dateStr)
     }()
 
-    let genres = try container.decode([Genre].self, forKey: .genres)
-    let homepage = try container.decode(String?.self, forKey: .homepage)
-    let id = try container.decode(Int.self, forKey: .id)
-    let inProduction = try container.decode(Bool.self, forKey: .inProduction)
-    let languages = try container.decode([String].self, forKey: .languages)
-    
-    let lastAirDateString = try container.decode(String?.self, forKey: .lastAirDate)
+    let genres = try container.decodeIfPresent([Genre].self, forKey: .genres) ?? []
+    let homepage = try container.decodeIfPresent(String.self, forKey: .homepage) ?? ""
+    let id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
+    let inProduction = try container.decodeIfPresent(Bool.self, forKey: .inProduction) ?? true
+    let languages = try container.decodeIfPresent([String].self, forKey: .languages) ?? []
+
+    let lastAirDateString = try container.decodeIfPresent(String.self, forKey: .lastAirDate)
     let lastAirDate: Date? = {
       guard let dateStr = lastAirDateString, !dateStr.isEmpty else { return nil }
       return Utilities.dateFormatter.date(from: dateStr)
     }()
     
-    let lastEpisodeToAir = try container.decode(TvSeriesEpisode?.self, forKey: .lastEpisodeToAir)
-    let name = try container.decode(String?.self, forKey: .name)
-    let nextEpisodeToAir = try container.decode(TvSeriesEpisode?.self, forKey: .nextEpisodeToAir)
-    let networks = try container.decode([NetworkModel].self, forKey: .networks)
-    let numberOfEpisodes = try container.decode(Int.self, forKey: .numberOfEpisodes)
-    let numberOfSeasons = try container.decode(Int.self, forKey: .numberOfSeasons)
-    let originCountry = try container.decode([String].self, forKey: .originCountry)
-    let originalLanguage = try container.decode(String?.self, forKey: .originalLanguage)
-    let originalName = try container.decode(String?.self, forKey: .originalName)
-    let overview = try container.decode(String.self, forKey: .overview)
-    let popularity = try container.decode(Double.self, forKey: .popularity)
-    let posterPath = try container.decode(String?.self, forKey: .posterPath)
-    let productionCompanies = try container.decode([ProductionCompany].self, forKey: .productionCompanies)
-    let productionCountries = try container.decode([Country].self, forKey: .productionCountries)
-    let seasons = try container.decode([TvDetailSeasonSingleResponse].self, forKey: .seasons)
-    let spokenLanguages = try container.decode([LanguageModel].self, forKey: .spokenLanguages)
-    let status = try container.decode(String?.self, forKey: .status)
-    let tagline = try container.decode(String?.self, forKey: .tagline)
-    let type = try container.decode(String?.self, forKey: .type)
-    let voteAverage = try container.decode(Double.self, forKey: .voteAverage)
-    let voteCount = try container.decode(Int.self, forKey: .voteCount)
+    let lastEpisodeToAir = try container.decodeIfPresent(TvSeriesEpisode.self, forKey: .lastEpisodeToAir)
+    let name = try container.decodeIfPresent(String.self, forKey: .name)
+    let nextEpisodeToAir = try container.decodeIfPresent(TvSeriesEpisode.self, forKey: .nextEpisodeToAir)
+    let networks = try container.decodeIfPresent([NetworkModel].self, forKey: .networks) ?? []
+    let numberOfEpisodes = try container.decodeIfPresent(Int.self, forKey: .numberOfEpisodes) ?? 0
+    let numberOfSeasons = try container.decodeIfPresent(Int.self, forKey: .numberOfSeasons) ?? 0
+    let originCountry = try container.decodeIfPresent([String].self, forKey: .originCountry) ?? []
+    let originalLanguage = try container.decodeIfPresent(String.self, forKey: .originalLanguage)
+    let originalName = try container.decodeIfPresent(String.self, forKey: .originalName)
+    let overview = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
+    let popularity = try container.decodeIfPresent(Double.self, forKey: .popularity) ?? 0
+    let posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
+    let productionCompanies = try container.decodeIfPresent([ProductionCompany].self, forKey: .productionCompanies) ?? []
+    let productionCountries = try container.decodeIfPresent([Country].self, forKey: .productionCountries) ?? []
+    let seasons = try container.decodeIfPresent([TvDetailSeasonSingleResponse].self, forKey: .seasons) ?? []
+    let spokenLanguages = try container.decodeIfPresent([LanguageModel].self, forKey: .spokenLanguages) ?? []
+    let status = try container.decodeIfPresent(String.self, forKey: .status)
+    let tagline = try container.decodeIfPresent(String.self, forKey: .tagline)
+    let type = try container.decodeIfPresent(String.self, forKey: .type)
+    let voteAverage = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0
+    let voteCount = try container.decodeIfPresent(Int.self, forKey: .voteCount) ?? 0
     let aggregateCredits = try container.decode(TvSeriesAggregateCreditsAppendResponse.self, forKey: .aggregateCredits)
     let videos = try container.decode(MovieVideosAppendResponse.self, forKey: .videos)
 

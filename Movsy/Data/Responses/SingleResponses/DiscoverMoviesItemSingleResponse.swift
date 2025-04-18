@@ -21,11 +21,11 @@ final class DiscoverMoviesItemSingleResponse: Identifiable, Sendable {
   /// The original language of the movie.
   let originalLanguage: String
   /// The original title of the movie.
-  let originalTitle: String
+  let originalTitle: String?
   /// A brief overview or synopsis of the movie.
-  let overview: String
+  let overview: String?
   /// The popularity score of the movie.
-  let popularity: Double
+  let popularity: Double?
   /// The path to the poster image of the movie.
   let posterPath: String?
   /// The release date of the movie.
@@ -104,15 +104,15 @@ extension DiscoverMoviesItemSingleResponse: Codable {
   convenience init(from decoder: any Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
 
-    let adult = try container.decode(Bool.self, forKey: .adult)
+    let adult = try container.decodeIfPresent(Bool.self, forKey: .adult) ?? true
     let id = try container.decode(Int.self, forKey: .id)
     let title = try container.decode(String.self, forKey: .title)
-    let video = try container.decode(Bool.self, forKey: .video)
-    let overview = try container.decode(String.self, forKey: .overview)
-    let popularity = try container.decode(Double.self, forKey: .popularity)
+    let video = try container.decodeIfPresent(Bool.self, forKey: .video) ?? false
+    let overview = try container.decodeIfPresent(String.self, forKey: .overview) ?? ""
+    let popularity = try container.decodeIfPresent(Double.self, forKey: .popularity) ?? 0
     let backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
-    let genreIds = try container.decode([Int]?.self, forKey: .genreIds)
-    let originalLanguage = try container.decode(String.self, forKey: .originalLanguage)
+    let genreIds = try container.decodeIfPresent([Int].self, forKey: .genreIds)
+    let originalLanguage = try container.decodeIfPresent(String.self, forKey: .originalLanguage) ?? ""
     let originalTitle = try container.decode(String.self, forKey: .originalTitle)
     let posterPath = try container.decodeIfPresent(String.self, forKey: .posterPath)
     
@@ -123,8 +123,8 @@ extension DiscoverMoviesItemSingleResponse: Codable {
       return Utilities.dateFormatter.date(from: dateStr)
     }()
     
-    let voteAverage = try container.decode(Double.self, forKey: .voteAverage)
-    let voteCount = try container.decode(Int.self, forKey: .voteCount)
+    let voteAverage = try container.decodeIfPresent(Double.self, forKey: .voteAverage) ?? 0
+    let voteCount = try container.decodeIfPresent(Int.self, forKey: .voteCount) ?? 0
     
     self.init(adult: adult,
               backdropPath: backdropPath,
