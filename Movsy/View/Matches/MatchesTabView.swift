@@ -24,8 +24,19 @@ struct MatchesTabView: View {
       }
       .padding(.horizontal)
 
-      if let results = matchesVm.results, !results.isEmpty {
-        ScrollView {
+      ScrollView {
+        if matchesVm.isLoadingSimpleFriendsMatches {
+          ProgressView()
+        } else if matchesVm.results?.isEmpty ?? true {
+          if self.matchesVm.query.isEmpty {
+            Text("No matches found… maybe you haven’t dared to add any friends yet?")
+              .padding()
+          } else {
+            Text("It seems there you have no matches with any \"\(self.matchesVm.query)\"…")
+          }
+        }
+        
+        if let results = matchesVm.results, !results.isEmpty {
           LazyVStack(spacing: 10) {
             ForEach(results) { result in
               MatchesWithFriendContainerView(
@@ -46,20 +57,9 @@ struct MatchesTabView: View {
             }
           }
         }
+      }
         .padding(.horizontal)
         .refreshable { onRefresh() }
-      }
-      
-      if matchesVm.isLoadingSimpleFriendsMatches {
-        ProgressView()
-      } else if matchesVm.results?.isEmpty ?? true {
-        if self.matchesVm.query.isEmpty {
-          Text("No matches found… maybe you haven’t dared to add any friends yet?")
-            .padding()
-        } else {
-          Text("It seems there you have no matches with any \"\(self.matchesVm.query)\"…")
-        }
-      }
     }
     .frame(maxHeight: .infinity, alignment: .top)
     .navigationTitle("Matches")
