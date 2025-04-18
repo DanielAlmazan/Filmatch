@@ -1484,22 +1484,6 @@
         }
       }
     },
-    "Onboarding page %lld" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pàgina d'introducció %lld"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Página de introducción %lld"
-          }
-        }
-      }
-    },
     "Or sign in with" : {
       "localizations" : {
         "ca" : {
@@ -1756,6 +1740,9 @@
         }
       }
     },
+    "Sample error" : {
+      "shouldTranslate" : false
+    },
     "Search" : {
       "localizations" : {
         "ca" : {
@@ -1848,6 +1835,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar solicitud de amistad"
+          }
+        }
+      }
+    },
+    "Skip" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saltar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saltar"
           }
         }
       }
