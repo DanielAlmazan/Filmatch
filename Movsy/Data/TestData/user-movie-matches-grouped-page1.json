@@ -1,0 +1,3593 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1184918,
+            "adult": false,
+            "backdrop_path": "/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+            "popularity": 616.393,
+            "poster_path": "/vcZfDONCxoOU7mosZEnkhYujBEG.jpg",
+            "vote_average": 8.4,
+            "vote_count": 4071,
+            "original_title": "The Wild Robot",
+            "release_date": "2024-09-12",
+            "title": "The Wild Robot",
+            "video": false
+          },
+          "status": 1,
+          "super_match": true
+        },
+        {
+          "movie": {
+            "id": 426889,
+            "adult": false,
+            "backdrop_path": "/xqkN8inbffEkyNQIhNghbtKgf9x.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Women are lucky, they get to have the only organ in the human body dedicated exclusively for pleasure: the clitoris! In this humorous and instructive animated documentary, find out its unrecognized anatomy and its unknown herstory.",
+            "popularity": 244.805,
+            "poster_path": "/p5i1yyQW6OpLfB59w7ZkX5lvBqD.jpg",
+            "vote_average": 6.1,
+            "vote_count": 11,
+            "original_title": "Le clitoris",
+            "release_date": "2016-06-18",
+            "title": "Le clitoris",
+            "video": false
+          },
+          "status": 1,
+          "super_match": true
+        },
+        {
+          "movie": {
+            "id": 1255788,
+            "adult": false,
+            "backdrop_path": "/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Every year the Prime Minister has a list of all kinds of troublemakers eliminated in the name of the famous Reason of State. Serge Shuster, Special Adviser to the President of the Republic, finds himself on this list, better known as the Matignon List.  Condemned to certain death and at the heart of an implacable plot and a state secret that also put his family in danger, Serge, his wife and children have only one hope left - their gardener, Léo, who hates it when « slugs » invade his garden... Especially those that want to kill innocent families.",
+            "popularity": 1119.139,
+            "poster_path": "/5T9WR7vIOnHm6xhVt5zBuPbBgt1.jpg",
+            "vote_average": 4.913,
+            "vote_count": 92,
+            "original_title": "Le Jardinier",
+            "release_date": "2025-01-10",
+            "title": "The Gardener",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1010600,
+            "adult": false,
+            "backdrop_path": "/lNyl7Ceyx3mMy4V1ZJJQRj3sPF6.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Tras sufrir una avería en su coche en un pequeño e inquietante pueblecito de Oregón, una joven pareja (Madelaine Petsch y Froy Gutiérrez) se ve obligada a pasar la noche en una aislada cabaña en medio del bosque. El pánico se apodera de ellos cuando son aterrorizados por tres extraños enmascarados que les atacan sin piedad ni motivo alguno.",
+            "popularity": 38.605,
+            "poster_path": "/1rTRllZNEAX30dTxYL1hONR6gPj.jpg",
+            "vote_average": 5.8,
+            "vote_count": 465,
+            "original_title": "The Strangers: Chapter 1",
+            "release_date": "2024-05-15",
+            "title": "Strangers: Capítulo 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1303236,
+            "adult": false,
+            "backdrop_path": "/cBBIk8jCSt6vIVJkaCwjjDLSMKH.jpg",
+            "genre_ids": null,
+            "original_language": "zh",
+            "overview": "",
+            "popularity": 141.283,
+            "poster_path": "/rJnpwN59avSW5vOu9BPiReHkQl4.jpg",
+            "vote_average": 9,
+            "vote_count": 2,
+            "original_title": "角頭－大橋頭",
+            "release_date": "2024-08-16",
+            "title": "角頭－大橋頭",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1134433,
+            "adult": false,
+            "backdrop_path": "/55hRgXkbvHoc9dL58S9HAGyxmZt.jpg",
+            "genre_ids": null,
+            "original_language": "th",
+            "overview": "When a remote village is plagued by a deadly curse, one brother must fight to save his family from a terrifying supernatural threat.",
+            "popularity": 168.578,
+            "poster_path": "/48TDjSJpCdJ4SBOHZX3G5IjaV02.jpg",
+            "vote_average": 7.6,
+            "vote_count": 172,
+            "original_title": "ธี่หยด",
+            "release_date": "2023-10-25",
+            "title": "Death Whisperer",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 419430,
+            "adult": false,
+            "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris y su novia Rose ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy y Dean. Al principio, Chris piensa que el comportamiento 'demasiado' complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
+            "popularity": 45.843,
+            "poster_path": "/xiMoqa0bmjuyuXYqKGwrTSJL8nI.jpg",
+            "vote_average": 7.615,
+            "vote_count": 17656,
+            "original_title": "Get Out",
+            "release_date": "2017-02-24",
+            "title": "Déjame salir",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1156593,
+            "adult": false,
+            "backdrop_path": "/k24eZq5I3jyz4htPkZCRpnUmBzE.jpg",
+            "genre_ids": null,
+            "original_language": "es",
+            "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+            "popularity": 920.395,
+            "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+            "vote_average": 7.175,
+            "vote_count": 921,
+            "original_title": "Culpa tuya",
+            "release_date": "2024-12-26",
+            "title": "Your Fault",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 811941,
+            "adult": false,
+            "backdrop_path": "/hAQnXxOwCjgYcKRgTdYPRC8neqL.jpg",
+            "genre_ids": null,
+            "original_language": "te",
+            "overview": "Devara, a fearless man from a coastal region, embarks on a perilous journey into the treacherous world of the sea to safeguard the lives of his people. Unbeknownst to him, his brother Bhaira is plotting a conspiracy against him. As events unfold, Devara passes on his legacy to his mild-mannered and timid son, Varada.",
+            "popularity": 1469.737,
+            "poster_path": "/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg",
+            "vote_average": 7.1,
+            "vote_count": 40,
+            "original_title": "దేవర: Part 1",
+            "release_date": "2024-09-26",
+            "title": "Devara: Part 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 402431,
+            "adult": false,
+            "backdrop_path": "/uKb22E0nlzr914bA9KyA5CVCOlV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+            "popularity": 962.586,
+            "poster_path": "/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg",
+            "vote_average": 6.988,
+            "vote_count": 1424,
+            "original_title": "Wicked",
+            "release_date": "2024-11-20",
+            "title": "Wicked",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 974576,
+            "adult": false,
+            "backdrop_path": "/66nlC5LDZmDUWONGkUZT2BrOszG.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After the unexpected death of the Pope, Cardinal Lawrence is tasked with managing the covert and ancient ritual of electing a new one. Sequestered in the Vatican with the Catholic Church’s most powerful leaders until the process is complete, Lawrence finds himself at the center of a conspiracy that could lead to its downfall.",
+            "popularity": 269.122,
+            "poster_path": "/m5x8D0bZ3eKqIVWZ5y7TnZ2oTVg.jpg",
+            "vote_average": 7.1,
+            "vote_count": 922,
+            "original_title": "Conclave",
+            "release_date": "2024-10-25",
+            "title": "Conclave",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 549509,
+            "adult": false,
+            "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+            "popularity": 239.341,
+            "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+            "vote_average": 5.3,
+            "vote_count": 56,
+            "original_title": "The Brutalist",
+            "release_date": "2024-12-20",
+            "title": "The Brutalist",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 539972,
+            "adult": false,
+            "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+            "popularity": 3611.48,
+            "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+            "vote_average": 6.594,
+            "vote_count": 763,
+            "original_title": "Kraven the Hunter",
+            "release_date": "2024-12-11",
+            "title": "Kraven the Hunter",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 912649,
+            "adult": false,
+            "backdrop_path": "/vZG7PrX9HmdgL5qfZRjhJsFYEIA.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+            "popularity": 1275.023,
+            "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+            "vote_average": 6.8,
+            "vote_count": 2518,
+            "original_title": "Venom: The Last Dance",
+            "release_date": "2024-10-22",
+            "title": "Venom: The Last Dance",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "fabiola.9229@gmail.com",
+        "username": "amigafab",
+        "uid": "DswBbFe21PO2YEWi7KDsww8igKP2"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 426889,
+            "adult": false,
+            "backdrop_path": "/xqkN8inbffEkyNQIhNghbtKgf9x.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Women are lucky, they get to have the only organ in the human body dedicated exclusively for pleasure: the clitoris! In this humorous and instructive animated documentary, find out its unrecognized anatomy and its unknown herstory.",
+            "popularity": 244.805,
+            "poster_path": "/p5i1yyQW6OpLfB59w7ZkX5lvBqD.jpg",
+            "vote_average": 6.1,
+            "vote_count": 11,
+            "original_title": "Le clitoris",
+            "release_date": "2016-06-18",
+            "title": "Le clitoris",
+            "video": false
+          },
+          "status": 1,
+          "super_match": true
+        },
+        {
+          "movie": {
+            "id": 1255788,
+            "adult": false,
+            "backdrop_path": "/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Every year the Prime Minister has a list of all kinds of troublemakers eliminated in the name of the famous Reason of State. Serge Shuster, Special Adviser to the President of the Republic, finds himself on this list, better known as the Matignon List.  Condemned to certain death and at the heart of an implacable plot and a state secret that also put his family in danger, Serge, his wife and children have only one hope left - their gardener, Léo, who hates it when « slugs » invade his garden... Especially those that want to kill innocent families.",
+            "popularity": 1119.139,
+            "poster_path": "/5T9WR7vIOnHm6xhVt5zBuPbBgt1.jpg",
+            "vote_average": 4.913,
+            "vote_count": 92,
+            "original_title": "Le Jardinier",
+            "release_date": "2025-01-10",
+            "title": "The Gardener",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1328767,
+            "adult": false,
+            "backdrop_path": "",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "",
+            "popularity": 22.977,
+            "poster_path": "/A5Ct2Ndped8jMpltMtPUxnBARvH.jpg",
+            "vote_average": 8,
+            "vote_count": 1,
+            "original_title": "Argoat",
+            "release_date": "2025-03-19",
+            "title": "Argoat",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1149463,
+            "adult": false,
+            "backdrop_path": "/qZRuKglsKV3EeiZurVY7wpumNHW.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "",
+            "popularity": 23.175,
+            "poster_path": "/gblm8Nip5NSDL8BK6mjuQB6xY8e.jpg",
+            "vote_average": 5.5,
+            "vote_count": 3,
+            "original_title": "Magma",
+            "release_date": "2025-03-19",
+            "title": "Magma",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1079091,
+            "adult": false,
+            "backdrop_path": "/8yPSYhooj8nyBbmV3GVdLDwuE7e.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.",
+            "popularity": 135.213,
+            "poster_path": "/cSMdFWmajaX4oUMLx7HEDI84GkP.jpg",
+            "vote_average": 7.1,
+            "vote_count": 1377,
+            "original_title": "It Ends with Us",
+            "release_date": "2024-08-07",
+            "title": "It Ends with Us",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 787699,
+            "adult": false,
+            "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Basada en el personaje que protagoniza \"Charlie y la fábrica de chocolate\", el libro infantil más emblemático de Roald Dahl y uno de los más vendidos de todos los tiempos, \"Wonka\" cuenta la historia de cómo el mayor inventor, mago y chocolatero del mundo se convirtió en el querido Willy Wonka que conocemos hoy en día.",
+            "popularity": 59.39,
+            "poster_path": "/6eHcR7zwvNSvkOl9jbctU0lvZQ1.jpg",
+            "vote_average": 7.098,
+            "vote_count": 3753,
+            "original_title": "Wonka",
+            "release_date": "2023-12-06",
+            "title": "Wonka",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 577922,
+            "adult": false,
+            "backdrop_path": "/yY76zq9XSuJ4nWyPDuwkdV7Wt0c.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Armado solamente con una palabra, Tenet, el protagonista deberá luchar por la supervivencia del mundo entero y evitar la Tercera Guerra Mundial, en una historia de espionaje internacional. La misión se desplegará más allá del tiempo real. No son viajes en el tiempo, es inversión.",
+            "popularity": 39.497,
+            "poster_path": "/8W7GrgHc9FdfFhExGLSD8woZaSd.jpg",
+            "vote_average": 7.2,
+            "vote_count": 10067,
+            "original_title": "Tenet",
+            "release_date": "2020-08-22",
+            "title": "Tenet",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 840326,
+            "adult": false,
+            "backdrop_path": "/oGZhlVTBMZrHPuvGy8o6N4K8xGI.jpg",
+            "genre_ids": null,
+            "original_language": "fi",
+            "overview": "En lo profundo de la naturaleza salvaje de Laponia, Aatami Korpi está buscando oro, pero después de tropezar con una patrulla nazi, comienza una persecución impresionante y hambrienta de oro a través de la naturaleza salvaje de Laponia destruida y minada.",
+            "popularity": 43.51,
+            "poster_path": "/koDawJRyKs5EPcL7v74Ywu3DNUU.jpg",
+            "vote_average": 7.424,
+            "vote_count": 2246,
+            "original_title": "Sisu",
+            "release_date": "2022-09-09",
+            "title": "Sisu",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 271110,
+            "adult": false,
+            "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano.",
+            "popularity": 64.563,
+            "poster_path": "/g6UTwUVFYWI8VPWo5GylnbZVhin.jpg",
+            "vote_average": 7.444,
+            "vote_count": 22915,
+            "original_title": "Captain America: Civil War",
+            "release_date": "2016-04-27",
+            "title": "Capitán América: Civil War",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 758009,
+            "adult": false,
+            "backdrop_path": "/zGoZB4CboMzY1z4G3nU6BWnMDB2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Darcy (Jennifer Lopez) y Tom (Josh Duhamel) viajan con sus familias para celebrar su boda, pero cuando todos los invitados son tomados como rehenes, la frase «hasta que la muerte nos separe» adquiere un nuevo significado en esta desternillante aventura cargada de adrenalina en la que Darcy y Tom tendrán que salvar a sus seres queridos, si no se matan entre ellos antes.",
+            "popularity": 41.473,
+            "poster_path": "/cIOlazNiPYhOODUiOep9OnIxETx.jpg",
+            "vote_average": 6.282,
+            "vote_count": 1197,
+            "original_title": "Shotgun Wedding",
+            "release_date": "2022-12-28",
+            "title": "Una boda explosiva",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1303236,
+            "adult": false,
+            "backdrop_path": "/cBBIk8jCSt6vIVJkaCwjjDLSMKH.jpg",
+            "genre_ids": null,
+            "original_language": "zh",
+            "overview": "",
+            "popularity": 141.283,
+            "poster_path": "/rJnpwN59avSW5vOu9BPiReHkQl4.jpg",
+            "vote_average": 9,
+            "vote_count": 2,
+            "original_title": "角頭－大橋頭",
+            "release_date": "2024-08-16",
+            "title": "角頭－大橋頭",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 419430,
+            "adult": false,
+            "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris y su novia Rose ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy y Dean. Al principio, Chris piensa que el comportamiento 'demasiado' complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
+            "popularity": 45.843,
+            "poster_path": "/xiMoqa0bmjuyuXYqKGwrTSJL8nI.jpg",
+            "vote_average": 7.615,
+            "vote_count": 17656,
+            "original_title": "Get Out",
+            "release_date": "2017-02-24",
+            "title": "Déjame salir",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1010600,
+            "adult": false,
+            "backdrop_path": "/lNyl7Ceyx3mMy4V1ZJJQRj3sPF6.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Tras sufrir una avería en su coche en un pequeño e inquietante pueblecito de Oregón, una joven pareja (Madelaine Petsch y Froy Gutiérrez) se ve obligada a pasar la noche en una aislada cabaña en medio del bosque. El pánico se apodera de ellos cuando son aterrorizados por tres extraños enmascarados que les atacan sin piedad ni motivo alguno.",
+            "popularity": 38.605,
+            "poster_path": "/1rTRllZNEAX30dTxYL1hONR6gPj.jpg",
+            "vote_average": 5.8,
+            "vote_count": 465,
+            "original_title": "The Strangers: Chapter 1",
+            "release_date": "2024-05-15",
+            "title": "Strangers: Capítulo 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 581528,
+            "adult": false,
+            "backdrop_path": "/tEBmjclGd6oVxin8axu4ELf10bl.jpg",
+            "genre_ids": null,
+            "original_language": "ko",
+            "overview": "Después de apenas sobrevivir a un ataque violento de un esquivo asesino en serie, el jefe del crimen Jang Dong-su se encuentra formando una asociación poco probable con el detective local Jung Tae-seok para atrapar al sádico asesino simplemente conocido como \"K\".",
+            "popularity": 85.3,
+            "poster_path": "/o9rByfNAkGJuXOSQLQ6UpUfGTOQ.jpg",
+            "vote_average": 7.815,
+            "vote_count": 1209,
+            "original_title": "악인전",
+            "release_date": "2019-05-15",
+            "title": "El Gángster, El Policía y El Diablo",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 820525,
+            "adult": false,
+            "backdrop_path": "/zzK0HDEswyhHFDFWlPz6HdgXKH5.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Hardin sigue luchando por seguir adelante. Agobiado por el bloqueo del escritor y la dolorosa ruptura con Tessa, Hardin viaja a Portugal en busca de una mujer a la que hizo daño en el pasado... y para encontrarse a sí mismo. Con la esperanza de recuperar a Tessa, se da cuenta de que necesita cambiar su forma de ser antes de poder comprometerse definitivamente.",
+            "popularity": 48.034,
+            "poster_path": "/jO3VGQi5sHIj2BGS963g1F74yCq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 893,
+            "original_title": "After Everything",
+            "release_date": "2023-09-13",
+            "title": "After: Aquí acaba todo",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 60898,
+            "adult": false,
+            "backdrop_path": "/bZsATFS6wg6L45ele7Ve4ogGkUT.jpg",
+            "genre_ids": null,
+            "original_language": "cn",
+            "overview": "Three vixens have meditated for 1,000 years to able to shed their animal natures and become human. For the final month of their rigors, they have moved near a village where women pray to a god of fertility. One sister visits the god's temple and thinks lustful thoughts. As she leaves, a priest confronts her, warning of dire consequences and of demons that will try to stop the vixens' transformation. Soon, the youngest sister saves a poor scholar from bandits and becomes enamored of him. Each sister visits him, and before long, the youth has made love to all three. After they invite him to stay with them, the playfulness takes a scary turn. Where can they turn for help?",
+            "popularity": 148.674,
+            "poster_path": "/fTUCwsxVoLFuodAtlL6aITP1B45.jpg",
+            "vote_average": 6.2,
+            "vote_count": 81,
+            "original_title": "聊齋艷譚",
+            "release_date": "1990-05-19",
+            "title": "Erotic Ghost Story",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 140300,
+            "adult": false,
+            "backdrop_path": "/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Cuando el durante mucho tiempo perdido padre de Po aparece de repente, el dúo ya reunido viaja a un paraíso secreto de pandas para conocer a montones de nuevos e hilarantes osos. Pero cuando el villano sobrenatural Kai comienza a recorrer toda China venciendo a todos los maestros de kung fu, Po deberá hacer lo imposible: aprender a entrenar a una comunidad repleta de divertidos y torpes hermanos para formar el equipo definitivo de Kung Fu Pandas.",
+            "popularity": 40.146,
+            "poster_path": "/t11f8palNbICK9Ip5QLrUfhLJYq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 6124,
+            "original_title": "Kung Fu Panda 3",
+            "release_date": "2016-01-23",
+            "title": "Kung Fu Panda 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "jose.v@square1.io",
+        "username": "amigoyojosesq",
+        "uid": "WQtV5eKREycTgvZ3qrbJiMkCHRD2",
+        "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Tom_Hanks_at_the_Elvis_Premiere_2022.jpg"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 426889,
+            "adult": false,
+            "backdrop_path": "/xqkN8inbffEkyNQIhNghbtKgf9x.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Women are lucky, they get to have the only organ in the human body dedicated exclusively for pleasure: the clitoris! In this humorous and instructive animated documentary, find out its unrecognized anatomy and its unknown herstory.",
+            "popularity": 244.805,
+            "poster_path": "/p5i1yyQW6OpLfB59w7ZkX5lvBqD.jpg",
+            "vote_average": 6.1,
+            "vote_count": 11,
+            "original_title": "Le clitoris",
+            "release_date": "2016-06-18",
+            "title": "Le clitoris",
+            "video": false
+          },
+          "status": 1,
+          "super_match": true
+        },
+        {
+          "movie": {
+            "id": 1269732,
+            "adult": false,
+            "backdrop_path": "/ka4zplxny8ethvrAxNFKFrzlRIj.jpg",
+            "genre_ids": null,
+            "original_language": "zh",
+            "overview": "Yang Guo ha estado vagando por el mundo desde que era un niño. Después de ser acogido por el héroe Guo Jing, se convirtió en discípulo de Quanzhen. Sin embargo, fue intimidado en la secta Quanzhen debido al misterio de su experiencia de vida. Para soportar la tortura, por casualidad cambió para adorar a Xiao Longnu como su maestro y estudió artes marciales. Sucedió que el rey Jinlun, el maestro extranjero, dirigió sus tropas hacia el sur y unió fuerzas con Li Mochou, un discípulo abandonado de la Secta de la Tumba Antigua, en un intento de apoderarse de los secretos de las artes marciales y los mapas de armas en la tumba antigua. Yang Guo y Xiao Longnu, quienes sin querer estuvieron involucrados en las disputas entre los ríos y lagos, vivieron y murieron juntos varias veces. La amistad entre los dos se convirtió gradualmente en un amor amargo. Durante este período, el brazo de Yang Guo fue cortado, él Se cayó por un acantilado y se encontró con el \"buen maestro y amigo\", el águila.",
+            "popularity": 148.255,
+            "poster_path": "/1eAbKRfH6RKTOxs9JAGGops7Q4j.jpg",
+            "vote_average": 4.2,
+            "vote_count": 4,
+            "original_title": "神雕侠侣: 问世间",
+            "release_date": "2025-01-22",
+            "title": "Los Héroes del Cóndor",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 993710,
+            "adult": false,
+            "backdrop_path": "/xZm5YUNY3PlYD1Q4k7X8zd2V4AK.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.",
+            "popularity": 2277.176,
+            "poster_path": "/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg",
+            "vote_average": 6.71,
+            "vote_count": 429,
+            "original_title": "Back in Action",
+            "release_date": "2025-01-15",
+            "title": "Back in Action",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 539972,
+            "adult": false,
+            "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+            "popularity": 3611.48,
+            "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+            "vote_average": 6.594,
+            "vote_count": 763,
+            "original_title": "Kraven the Hunter",
+            "release_date": "2024-12-11",
+            "title": "Kraven the Hunter",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 912649,
+            "adult": false,
+            "backdrop_path": "/vZG7PrX9HmdgL5qfZRjhJsFYEIA.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+            "popularity": 1275.023,
+            "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+            "vote_average": 6.8,
+            "vote_count": 2518,
+            "original_title": "Venom: The Last Dance",
+            "release_date": "2024-10-22",
+            "title": "Venom: The Last Dance",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 762509,
+            "adult": false,
+            "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+            "popularity": 1971.014,
+            "poster_path": "/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg",
+            "vote_average": 7.44,
+            "vote_count": 839,
+            "original_title": "Mufasa: The Lion King",
+            "release_date": "2024-12-18",
+            "title": "Mufasa: The Lion King",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "b5hnndsc4j@privaterelay.appleid.com",
+        "username": "amigoblock",
+        "uid": "GTpyfTlqF8Y30W8sgSsfNOkBqVr1"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 56292,
+            "adult": false,
+            "backdrop_path": "/ih4lZkUpmSE7AP3maymiO72xJ1z.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "El agente Ethan Hunt, acusado de un atentado terrorista con bombas contra el Kremlin, es desautorizado junto con toda la organización, al poner en marcha el presidente el llamado 'Protocolo fantasma'. Abandonado a su suerte y sin recursos, el objetivo de Ethan es rehabilitar el buen nombre de su agencia e impedir un nuevo ataque. Pero emprende esta misión con un equipo formado por fugitivos, cuyos motivos personales no conoce bien.",
+            "popularity": 38.817,
+            "poster_path": "/y0hjsPyieqxcunEcAxb9mrrE09c.jpg",
+            "vote_average": 7.094,
+            "vote_count": 9979,
+            "original_title": "Mission: Impossible - Ghost Protocol",
+            "release_date": "2011-12-07",
+            "title": "Misión imposible: Protocolo fantasma",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 335988,
+            "adult": false,
+            "backdrop_path": "/1n00NlOGRFZVs8coBxyZLm5l4EC.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Dos especies en guerra: una de carne y hueso, la otra de metal. El Último Caballero rompe con el mito original de la franquicia de Transformers y redefine lo que significa ser un héroe. Humanos y Transformers están en guerra y Optimus Prime se ha ido. La llave para salvar nuestro futuro está enterrada en los secretos del pasado, en la historia oculta de los Transformers en la Tierra. Salvar a nuestro mundo está en manos de una alianza única: Cade Yeager (Mark Wahlberg); Bumblebee; un Lord Inglés (Sir Anthony Hopkins); y una profesora de la Universidad de Oxford (Laura Haddock). Hay un momento en la vida de todo ser humano en la que recibimos el llamado para hacer la diferencia. En Transformers: El Último Caballero los perseguidos se convertirán en héroes; los héroes se convertirán en villanos y sólo un mundo sobrevivirá: el de ellos o el nuestro. Quinta película de Transformers dirigida por Michael Bay.",
+            "popularity": 38.759,
+            "poster_path": "/mXEBnMqFwTJCrddVhknCH9fq3fB.jpg",
+            "vote_average": 6.1,
+            "vote_count": 6291,
+            "original_title": "Transformers: The Last Knight",
+            "release_date": "2017-06-16",
+            "title": "Transformers: El último caballero",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1022789,
+            "adult": false,
+            "backdrop_path": "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
+            "popularity": 444.094,
+            "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+            "vote_average": 7.569,
+            "vote_count": 5400,
+            "original_title": "Inside Out 2",
+            "release_date": "2024-06-11",
+            "title": "Inside Out 2",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 993710,
+            "adult": false,
+            "backdrop_path": "/xZm5YUNY3PlYD1Q4k7X8zd2V4AK.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.",
+            "popularity": 2277.176,
+            "poster_path": "/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg",
+            "vote_average": 6.71,
+            "vote_count": 429,
+            "original_title": "Back in Action",
+            "release_date": "2025-01-15",
+            "title": "Back in Action",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1064486,
+            "adult": false,
+            "backdrop_path": "/i3CAo9UMGsvlU9k3Svd63rRDeZx.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Forcibly separated from her twin brother when they are orphaned, a melancholic misfit learns how to find confidence within herself amid the clutter of misfortunes and everyday life.",
+            "popularity": 704.564,
+            "poster_path": "/lWh5OlerPR1c1cfn1ZLq0lpqFds.jpg",
+            "vote_average": 7.8,
+            "vote_count": 95,
+            "original_title": "Memoir of a Snail",
+            "release_date": "2024-10-17",
+            "title": "Memoir of a Snail",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "jose.v+17@gmail.com",
+        "username": "amigonada",
+        "uid": "rgh6JwoHtJfthRED58mlRdkopYb2",
+        "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Robin_Wright_Cannes_2017_%28cropped%29.jpg"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 820525,
+            "adult": false,
+            "backdrop_path": "/zzK0HDEswyhHFDFWlPz6HdgXKH5.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Hardin sigue luchando por seguir adelante. Agobiado por el bloqueo del escritor y la dolorosa ruptura con Tessa, Hardin viaja a Portugal en busca de una mujer a la que hizo daño en el pasado... y para encontrarse a sí mismo. Con la esperanza de recuperar a Tessa, se da cuenta de que necesita cambiar su forma de ser antes de poder comprometerse definitivamente.",
+            "popularity": 48.034,
+            "poster_path": "/jO3VGQi5sHIj2BGS963g1F74yCq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 893,
+            "original_title": "After Everything",
+            "release_date": "2023-09-13",
+            "title": "After: Aquí acaba todo",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1010600,
+            "adult": false,
+            "backdrop_path": "/lNyl7Ceyx3mMy4V1ZJJQRj3sPF6.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Tras sufrir una avería en su coche en un pequeño e inquietante pueblecito de Oregón, una joven pareja (Madelaine Petsch y Froy Gutiérrez) se ve obligada a pasar la noche en una aislada cabaña en medio del bosque. El pánico se apodera de ellos cuando son aterrorizados por tres extraños enmascarados que les atacan sin piedad ni motivo alguno.",
+            "popularity": 38.605,
+            "poster_path": "/1rTRllZNEAX30dTxYL1hONR6gPj.jpg",
+            "vote_average": 5.8,
+            "vote_count": 465,
+            "original_title": "The Strangers: Chapter 1",
+            "release_date": "2024-05-15",
+            "title": "Strangers: Capítulo 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 60898,
+            "adult": false,
+            "backdrop_path": "/bZsATFS6wg6L45ele7Ve4ogGkUT.jpg",
+            "genre_ids": null,
+            "original_language": "cn",
+            "overview": "Three vixens have meditated for 1,000 years to able to shed their animal natures and become human. For the final month of their rigors, they have moved near a village where women pray to a god of fertility. One sister visits the god's temple and thinks lustful thoughts. As she leaves, a priest confronts her, warning of dire consequences and of demons that will try to stop the vixens' transformation. Soon, the youngest sister saves a poor scholar from bandits and becomes enamored of him. Each sister visits him, and before long, the youth has made love to all three. After they invite him to stay with them, the playfulness takes a scary turn. Where can they turn for help?",
+            "popularity": 148.674,
+            "poster_path": "/fTUCwsxVoLFuodAtlL6aITP1B45.jpg",
+            "vote_average": 6.2,
+            "vote_count": 81,
+            "original_title": "聊齋艷譚",
+            "release_date": "1990-05-19",
+            "title": "Erotic Ghost Story",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 581528,
+            "adult": false,
+            "backdrop_path": "/tEBmjclGd6oVxin8axu4ELf10bl.jpg",
+            "genre_ids": null,
+            "original_language": "ko",
+            "overview": "Después de apenas sobrevivir a un ataque violento de un esquivo asesino en serie, el jefe del crimen Jang Dong-su se encuentra formando una asociación poco probable con el detective local Jung Tae-seok para atrapar al sádico asesino simplemente conocido como \"K\".",
+            "popularity": 85.3,
+            "poster_path": "/o9rByfNAkGJuXOSQLQ6UpUfGTOQ.jpg",
+            "vote_average": 7.815,
+            "vote_count": 1209,
+            "original_title": "악인전",
+            "release_date": "2019-05-15",
+            "title": "El Gángster, El Policía y El Diablo",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 974576,
+            "adult": false,
+            "backdrop_path": "/66nlC5LDZmDUWONGkUZT2BrOszG.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After the unexpected death of the Pope, Cardinal Lawrence is tasked with managing the covert and ancient ritual of electing a new one. Sequestered in the Vatican with the Catholic Church’s most powerful leaders until the process is complete, Lawrence finds himself at the center of a conspiracy that could lead to its downfall.",
+            "popularity": 269.122,
+            "poster_path": "/m5x8D0bZ3eKqIVWZ5y7TnZ2oTVg.jpg",
+            "vote_average": 7.1,
+            "vote_count": 922,
+            "original_title": "Conclave",
+            "release_date": "2024-10-25",
+            "title": "Conclave",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 549509,
+            "adult": false,
+            "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+            "popularity": 239.341,
+            "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+            "vote_average": 5.3,
+            "vote_count": 56,
+            "original_title": "The Brutalist",
+            "release_date": "2024-12-20",
+            "title": "The Brutalist",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 912649,
+            "adult": false,
+            "backdrop_path": "/vZG7PrX9HmdgL5qfZRjhJsFYEIA.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+            "popularity": 1275.023,
+            "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+            "vote_average": 6.8,
+            "vote_count": 2518,
+            "original_title": "Venom: The Last Dance",
+            "release_date": "2024-10-22",
+            "title": "Venom: The Last Dance",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 426889,
+            "adult": false,
+            "backdrop_path": "/xqkN8inbffEkyNQIhNghbtKgf9x.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Women are lucky, they get to have the only organ in the human body dedicated exclusively for pleasure: the clitoris! In this humorous and instructive animated documentary, find out its unrecognized anatomy and its unknown herstory.",
+            "popularity": 244.805,
+            "poster_path": "/p5i1yyQW6OpLfB59w7ZkX5lvBqD.jpg",
+            "vote_average": 6.1,
+            "vote_count": 11,
+            "original_title": "Le clitoris",
+            "release_date": "2016-06-18",
+            "title": "Le clitoris",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "jose.v+20@square1.io",
+        "username": "amigonada2",
+        "uid": "Nwc6Ubt4ZSa0WiAAsG3gi3LcSbk2",
+        "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Mykelti_Williamson_2003_%28cropped%29.jpg"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1134433,
+            "adult": false,
+            "backdrop_path": "/55hRgXkbvHoc9dL58S9HAGyxmZt.jpg",
+            "genre_ids": null,
+            "original_language": "th",
+            "overview": "When a remote village is plagued by a deadly curse, one brother must fight to save his family from a terrifying supernatural threat.",
+            "popularity": 168.578,
+            "poster_path": "/48TDjSJpCdJ4SBOHZX3G5IjaV02.jpg",
+            "vote_average": 7.6,
+            "vote_count": 172,
+            "original_title": "ธี่หยด",
+            "release_date": "2023-10-25",
+            "title": "Death Whisperer",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 60898,
+            "adult": false,
+            "backdrop_path": "/bZsATFS6wg6L45ele7Ve4ogGkUT.jpg",
+            "genre_ids": null,
+            "original_language": "cn",
+            "overview": "Three vixens have meditated for 1,000 years to able to shed their animal natures and become human. For the final month of their rigors, they have moved near a village where women pray to a god of fertility. One sister visits the god's temple and thinks lustful thoughts. As she leaves, a priest confronts her, warning of dire consequences and of demons that will try to stop the vixens' transformation. Soon, the youngest sister saves a poor scholar from bandits and becomes enamored of him. Each sister visits him, and before long, the youth has made love to all three. After they invite him to stay with them, the playfulness takes a scary turn. Where can they turn for help?",
+            "popularity": 148.674,
+            "poster_path": "/fTUCwsxVoLFuodAtlL6aITP1B45.jpg",
+            "vote_average": 6.2,
+            "vote_count": 81,
+            "original_title": "聊齋艷譚",
+            "release_date": "1990-05-19",
+            "title": "Erotic Ghost Story",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 56292,
+            "adult": false,
+            "backdrop_path": "/ih4lZkUpmSE7AP3maymiO72xJ1z.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "El agente Ethan Hunt, acusado de un atentado terrorista con bombas contra el Kremlin, es desautorizado junto con toda la organización, al poner en marcha el presidente el llamado 'Protocolo fantasma'. Abandonado a su suerte y sin recursos, el objetivo de Ethan es rehabilitar el buen nombre de su agencia e impedir un nuevo ataque. Pero emprende esta misión con un equipo formado por fugitivos, cuyos motivos personales no conoce bien.",
+            "popularity": 38.817,
+            "poster_path": "/y0hjsPyieqxcunEcAxb9mrrE09c.jpg",
+            "vote_average": 7.094,
+            "vote_count": 9979,
+            "original_title": "Mission: Impossible - Ghost Protocol",
+            "release_date": "2011-12-07",
+            "title": "Misión imposible: Protocolo fantasma",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1269732,
+            "adult": false,
+            "backdrop_path": "/ka4zplxny8ethvrAxNFKFrzlRIj.jpg",
+            "genre_ids": null,
+            "original_language": "zh",
+            "overview": "Yang Guo ha estado vagando por el mundo desde que era un niño. Después de ser acogido por el héroe Guo Jing, se convirtió en discípulo de Quanzhen. Sin embargo, fue intimidado en la secta Quanzhen debido al misterio de su experiencia de vida. Para soportar la tortura, por casualidad cambió para adorar a Xiao Longnu como su maestro y estudió artes marciales. Sucedió que el rey Jinlun, el maestro extranjero, dirigió sus tropas hacia el sur y unió fuerzas con Li Mochou, un discípulo abandonado de la Secta de la Tumba Antigua, en un intento de apoderarse de los secretos de las artes marciales y los mapas de armas en la tumba antigua. Yang Guo y Xiao Longnu, quienes sin querer estuvieron involucrados en las disputas entre los ríos y lagos, vivieron y murieron juntos varias veces. La amistad entre los dos se convirtió gradualmente en un amor amargo. Durante este período, el brazo de Yang Guo fue cortado, él Se cayó por un acantilado y se encontró con el \"buen maestro y amigo\", el águila.",
+            "popularity": 148.255,
+            "poster_path": "/1eAbKRfH6RKTOxs9JAGGops7Q4j.jpg",
+            "vote_average": 4.2,
+            "vote_count": 4,
+            "original_title": "神雕侠侣: 问世间",
+            "release_date": "2025-01-22",
+            "title": "Los Héroes del Cóndor",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1079091,
+            "adult": false,
+            "backdrop_path": "/8yPSYhooj8nyBbmV3GVdLDwuE7e.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.",
+            "popularity": 135.213,
+            "poster_path": "/cSMdFWmajaX4oUMLx7HEDI84GkP.jpg",
+            "vote_average": 7.1,
+            "vote_count": 1377,
+            "original_title": "It Ends with Us",
+            "release_date": "2024-08-07",
+            "title": "It Ends with Us",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1156593,
+            "adult": false,
+            "backdrop_path": "/k24eZq5I3jyz4htPkZCRpnUmBzE.jpg",
+            "genre_ids": null,
+            "original_language": "es",
+            "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+            "popularity": 920.395,
+            "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+            "vote_average": 7.175,
+            "vote_count": 921,
+            "original_title": "Culpa tuya",
+            "release_date": "2024-12-26",
+            "title": "Your Fault",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 811941,
+            "adult": false,
+            "backdrop_path": "/hAQnXxOwCjgYcKRgTdYPRC8neqL.jpg",
+            "genre_ids": null,
+            "original_language": "te",
+            "overview": "Devara, a fearless man from a coastal region, embarks on a perilous journey into the treacherous world of the sea to safeguard the lives of his people. Unbeknownst to him, his brother Bhaira is plotting a conspiracy against him. As events unfold, Devara passes on his legacy to his mild-mannered and timid son, Varada.",
+            "popularity": 1469.737,
+            "poster_path": "/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg",
+            "vote_average": 7.1,
+            "vote_count": 40,
+            "original_title": "దేవర: Part 1",
+            "release_date": "2024-09-26",
+            "title": "Devara: Part 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 533535,
+            "adult": false,
+            "backdrop_path": "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+            "popularity": 495.75,
+            "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            "vote_average": 7.634,
+            "vote_count": 6483,
+            "original_title": "Deadpool & Wolverine",
+            "release_date": "2024-07-24",
+            "title": "Deadpool & Wolverine",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 912649,
+            "adult": false,
+            "backdrop_path": "/vZG7PrX9HmdgL5qfZRjhJsFYEIA.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+            "popularity": 1275.023,
+            "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+            "vote_average": 6.8,
+            "vote_count": 2518,
+            "original_title": "Venom: The Last Dance",
+            "release_date": "2024-10-22",
+            "title": "Venom: The Last Dance",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 762509,
+            "adult": false,
+            "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+            "popularity": 1971.014,
+            "poster_path": "/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg",
+            "vote_average": 7.44,
+            "vote_count": 839,
+            "original_title": "Mufasa: The Lion King",
+            "release_date": "2024-12-18",
+            "title": "Mufasa: The Lion King",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "josefrvaldes+2@gmail.com",
+        "username": "amigorequest",
+        "uid": "zHsBURo4Bid66zXZaWadH0dORLj1",
+        "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Gary_Sinise_2011_%28cropped%29.jpg"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 533535,
+            "adult": false,
+            "backdrop_path": "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+            "popularity": 495.75,
+            "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            "vote_average": 7.634,
+            "vote_count": 6483,
+            "original_title": "Deadpool & Wolverine",
+            "release_date": "2024-07-24",
+            "title": "Deadpool & Wolverine",
+            "video": false
+          },
+          "status": 1,
+          "super_match": true
+        },
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 140300,
+            "adult": false,
+            "backdrop_path": "/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Cuando el durante mucho tiempo perdido padre de Po aparece de repente, el dúo ya reunido viaja a un paraíso secreto de pandas para conocer a montones de nuevos e hilarantes osos. Pero cuando el villano sobrenatural Kai comienza a recorrer toda China venciendo a todos los maestros de kung fu, Po deberá hacer lo imposible: aprender a entrenar a una comunidad repleta de divertidos y torpes hermanos para formar el equipo definitivo de Kung Fu Pandas.",
+            "popularity": 40.146,
+            "poster_path": "/t11f8palNbICK9Ip5QLrUfhLJYq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 6124,
+            "original_title": "Kung Fu Panda 3",
+            "release_date": "2016-01-23",
+            "title": "Kung Fu Panda 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 845781,
+            "adult": false,
+            "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+            "popularity": 896.528,
+            "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+            "vote_average": 7.112,
+            "vote_count": 2129,
+            "original_title": "Red One",
+            "release_date": "2024-10-31",
+            "title": "Red One",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1184918,
+            "adult": false,
+            "backdrop_path": "/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+            "popularity": 616.393,
+            "poster_path": "/vcZfDONCxoOU7mosZEnkhYujBEG.jpg",
+            "vote_average": 8.4,
+            "vote_count": 4071,
+            "original_title": "The Wild Robot",
+            "release_date": "2024-09-12",
+            "title": "The Wild Robot",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 539972,
+            "adult": false,
+            "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+            "popularity": 3611.48,
+            "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+            "vote_average": 6.594,
+            "vote_count": 763,
+            "original_title": "Kraven the Hunter",
+            "release_date": "2024-12-11",
+            "title": "Kraven the Hunter",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "tommiepadberg@ledner.info",
+        "username": "Dibbert2663",
+        "uid": "8074ac8b-ec05-4bf0-a405-42b9fc4180fa"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1303236,
+            "adult": false,
+            "backdrop_path": "/cBBIk8jCSt6vIVJkaCwjjDLSMKH.jpg",
+            "genre_ids": null,
+            "original_language": "zh",
+            "overview": "",
+            "popularity": 141.283,
+            "poster_path": "/rJnpwN59avSW5vOu9BPiReHkQl4.jpg",
+            "vote_average": 9,
+            "vote_count": 2,
+            "original_title": "角頭－大橋頭",
+            "release_date": "2024-08-16",
+            "title": "角頭－大橋頭",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 787699,
+            "adult": false,
+            "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Basada en el personaje que protagoniza \"Charlie y la fábrica de chocolate\", el libro infantil más emblemático de Roald Dahl y uno de los más vendidos de todos los tiempos, \"Wonka\" cuenta la historia de cómo el mayor inventor, mago y chocolatero del mundo se convirtió en el querido Willy Wonka que conocemos hoy en día.",
+            "popularity": 59.39,
+            "poster_path": "/6eHcR7zwvNSvkOl9jbctU0lvZQ1.jpg",
+            "vote_average": 7.098,
+            "vote_count": 3753,
+            "original_title": "Wonka",
+            "release_date": "2023-12-06",
+            "title": "Wonka",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 271110,
+            "adult": false,
+            "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano.",
+            "popularity": 64.563,
+            "poster_path": "/g6UTwUVFYWI8VPWo5GylnbZVhin.jpg",
+            "vote_average": 7.444,
+            "vote_count": 22915,
+            "original_title": "Captain America: Civil War",
+            "release_date": "2016-04-27",
+            "title": "Capitán América: Civil War",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1010600,
+            "adult": false,
+            "backdrop_path": "/lNyl7Ceyx3mMy4V1ZJJQRj3sPF6.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Tras sufrir una avería en su coche en un pequeño e inquietante pueblecito de Oregón, una joven pareja (Madelaine Petsch y Froy Gutiérrez) se ve obligada a pasar la noche en una aislada cabaña en medio del bosque. El pánico se apodera de ellos cuando son aterrorizados por tres extraños enmascarados que les atacan sin piedad ni motivo alguno.",
+            "popularity": 38.605,
+            "poster_path": "/1rTRllZNEAX30dTxYL1hONR6gPj.jpg",
+            "vote_average": 5.8,
+            "vote_count": 465,
+            "original_title": "The Strangers: Chapter 1",
+            "release_date": "2024-05-15",
+            "title": "Strangers: Capítulo 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 993710,
+            "adult": false,
+            "backdrop_path": "/xZm5YUNY3PlYD1Q4k7X8zd2V4AK.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.",
+            "popularity": 2277.176,
+            "poster_path": "/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg",
+            "vote_average": 6.71,
+            "vote_count": 429,
+            "original_title": "Back in Action",
+            "release_date": "2025-01-15",
+            "title": "Back in Action",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 974576,
+            "adult": false,
+            "backdrop_path": "/66nlC5LDZmDUWONGkUZT2BrOszG.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After the unexpected death of the Pope, Cardinal Lawrence is tasked with managing the covert and ancient ritual of electing a new one. Sequestered in the Vatican with the Catholic Church’s most powerful leaders until the process is complete, Lawrence finds himself at the center of a conspiracy that could lead to its downfall.",
+            "popularity": 269.122,
+            "poster_path": "/m5x8D0bZ3eKqIVWZ5y7TnZ2oTVg.jpg",
+            "vote_average": 7.1,
+            "vote_count": 922,
+            "original_title": "Conclave",
+            "release_date": "2024-10-25",
+            "title": "Conclave",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 549509,
+            "adult": false,
+            "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+            "popularity": 239.341,
+            "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+            "vote_average": 5.3,
+            "vote_count": 56,
+            "original_title": "The Brutalist",
+            "release_date": "2024-12-20",
+            "title": "The Brutalist",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1241982,
+            "adult": false,
+            "backdrop_path": "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+            "popularity": 1330.002,
+            "poster_path": "/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg",
+            "vote_average": 7,
+            "vote_count": 889,
+            "original_title": "Moana 2",
+            "release_date": "2024-11-21",
+            "title": "Moana 2",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 762509,
+            "adult": false,
+            "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+            "popularity": 1971.014,
+            "poster_path": "/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg",
+            "vote_average": 7.44,
+            "vote_count": 839,
+            "original_title": "Mufasa: The Lion King",
+            "release_date": "2024-12-18",
+            "title": "Mufasa: The Lion King",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "wilmasawayn@harvey.biz",
+        "username": "Fadel3529",
+        "uid": "8e4ad268-dd68-405a-82ab-de77a6d736b5"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1022789,
+            "adult": false,
+            "backdrop_path": "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
+            "popularity": 444.094,
+            "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+            "vote_average": 7.569,
+            "vote_count": 5400,
+            "original_title": "Inside Out 2",
+            "release_date": "2024-06-11",
+            "title": "Inside Out 2",
+            "video": false
+          },
+          "status": 1,
+          "super_match": true
+        },
+        {
+          "movie": {
+            "id": 1255788,
+            "adult": false,
+            "backdrop_path": "/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Every year the Prime Minister has a list of all kinds of troublemakers eliminated in the name of the famous Reason of State. Serge Shuster, Special Adviser to the President of the Republic, finds himself on this list, better known as the Matignon List.  Condemned to certain death and at the heart of an implacable plot and a state secret that also put his family in danger, Serge, his wife and children have only one hope left - their gardener, Léo, who hates it when « slugs » invade his garden... Especially those that want to kill innocent families.",
+            "popularity": 1119.139,
+            "poster_path": "/5T9WR7vIOnHm6xhVt5zBuPbBgt1.jpg",
+            "vote_average": 4.913,
+            "vote_count": 92,
+            "original_title": "Le Jardinier",
+            "release_date": "2025-01-10",
+            "title": "The Gardener",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 140300,
+            "adult": false,
+            "backdrop_path": "/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Cuando el durante mucho tiempo perdido padre de Po aparece de repente, el dúo ya reunido viaja a un paraíso secreto de pandas para conocer a montones de nuevos e hilarantes osos. Pero cuando el villano sobrenatural Kai comienza a recorrer toda China venciendo a todos los maestros de kung fu, Po deberá hacer lo imposible: aprender a entrenar a una comunidad repleta de divertidos y torpes hermanos para formar el equipo definitivo de Kung Fu Pandas.",
+            "popularity": 40.146,
+            "poster_path": "/t11f8palNbICK9Ip5QLrUfhLJYq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 6124,
+            "original_title": "Kung Fu Panda 3",
+            "release_date": "2016-01-23",
+            "title": "Kung Fu Panda 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 845781,
+            "adult": false,
+            "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+            "popularity": 896.528,
+            "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+            "vote_average": 7.112,
+            "vote_count": 2129,
+            "original_title": "Red One",
+            "release_date": "2024-10-31",
+            "title": "Red One",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 533535,
+            "adult": false,
+            "backdrop_path": "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+            "popularity": 495.75,
+            "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            "vote_average": 7.634,
+            "vote_count": 6483,
+            "original_title": "Deadpool & Wolverine",
+            "release_date": "2024-07-24",
+            "title": "Deadpool & Wolverine",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1064486,
+            "adult": false,
+            "backdrop_path": "/i3CAo9UMGsvlU9k3Svd63rRDeZx.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Forcibly separated from her twin brother when they are orphaned, a melancholic misfit learns how to find confidence within herself amid the clutter of misfortunes and everyday life.",
+            "popularity": 704.564,
+            "poster_path": "/lWh5OlerPR1c1cfn1ZLq0lpqFds.jpg",
+            "vote_average": 7.8,
+            "vote_count": 95,
+            "original_title": "Memoir of a Snail",
+            "release_date": "2024-10-17",
+            "title": "Memoir of a Snail",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1241982,
+            "adult": false,
+            "backdrop_path": "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+            "popularity": 1330.002,
+            "poster_path": "/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg",
+            "vote_average": 7,
+            "vote_count": 889,
+            "original_title": "Moana 2",
+            "release_date": "2024-11-21",
+            "title": "Moana 2",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "trehowe@kuvalis.net",
+        "username": "Ferry7320",
+        "uid": "5f7eb161-6eae-44dd-9a1f-66385c80ea76"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1134433,
+            "adult": false,
+            "backdrop_path": "/55hRgXkbvHoc9dL58S9HAGyxmZt.jpg",
+            "genre_ids": null,
+            "original_language": "th",
+            "overview": "When a remote village is plagued by a deadly curse, one brother must fight to save his family from a terrifying supernatural threat.",
+            "popularity": 168.578,
+            "poster_path": "/48TDjSJpCdJ4SBOHZX3G5IjaV02.jpg",
+            "vote_average": 7.6,
+            "vote_count": 172,
+            "original_title": "ธี่หยด",
+            "release_date": "2023-10-25",
+            "title": "Death Whisperer",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 419430,
+            "adult": false,
+            "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris y su novia Rose ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy y Dean. Al principio, Chris piensa que el comportamiento 'demasiado' complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
+            "popularity": 45.843,
+            "poster_path": "/xiMoqa0bmjuyuXYqKGwrTSJL8nI.jpg",
+            "vote_average": 7.615,
+            "vote_count": 17656,
+            "original_title": "Get Out",
+            "release_date": "2017-02-24",
+            "title": "Déjame salir",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1010600,
+            "adult": false,
+            "backdrop_path": "/lNyl7Ceyx3mMy4V1ZJJQRj3sPF6.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Tras sufrir una avería en su coche en un pequeño e inquietante pueblecito de Oregón, una joven pareja (Madelaine Petsch y Froy Gutiérrez) se ve obligada a pasar la noche en una aislada cabaña en medio del bosque. El pánico se apodera de ellos cuando son aterrorizados por tres extraños enmascarados que les atacan sin piedad ni motivo alguno.",
+            "popularity": 38.605,
+            "poster_path": "/1rTRllZNEAX30dTxYL1hONR6gPj.jpg",
+            "vote_average": 5.8,
+            "vote_count": 465,
+            "original_title": "The Strangers: Chapter 1",
+            "release_date": "2024-05-15",
+            "title": "Strangers: Capítulo 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1184918,
+            "adult": false,
+            "backdrop_path": "/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+            "popularity": 616.393,
+            "poster_path": "/vcZfDONCxoOU7mosZEnkhYujBEG.jpg",
+            "vote_average": 8.4,
+            "vote_count": 4071,
+            "original_title": "The Wild Robot",
+            "release_date": "2024-09-12",
+            "title": "The Wild Robot",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 549509,
+            "adult": false,
+            "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+            "popularity": 239.341,
+            "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+            "vote_average": 5.3,
+            "vote_count": 56,
+            "original_title": "The Brutalist",
+            "release_date": "2024-12-20",
+            "title": "The Brutalist",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "santinahahn@carter.com",
+        "username": "Greenfelder3798",
+        "uid": "3f509926-3c0c-4db3-b2db-949bb051a1a2"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 758009,
+            "adult": false,
+            "backdrop_path": "/zGoZB4CboMzY1z4G3nU6BWnMDB2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Darcy (Jennifer Lopez) y Tom (Josh Duhamel) viajan con sus familias para celebrar su boda, pero cuando todos los invitados son tomados como rehenes, la frase «hasta que la muerte nos separe» adquiere un nuevo significado en esta desternillante aventura cargada de adrenalina en la que Darcy y Tom tendrán que salvar a sus seres queridos, si no se matan entre ellos antes.",
+            "popularity": 41.473,
+            "poster_path": "/cIOlazNiPYhOODUiOep9OnIxETx.jpg",
+            "vote_average": 6.282,
+            "vote_count": 1197,
+            "original_title": "Shotgun Wedding",
+            "release_date": "2022-12-28",
+            "title": "Una boda explosiva",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 787699,
+            "adult": false,
+            "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Basada en el personaje que protagoniza \"Charlie y la fábrica de chocolate\", el libro infantil más emblemático de Roald Dahl y uno de los más vendidos de todos los tiempos, \"Wonka\" cuenta la historia de cómo el mayor inventor, mago y chocolatero del mundo se convirtió en el querido Willy Wonka que conocemos hoy en día.",
+            "popularity": 59.39,
+            "poster_path": "/6eHcR7zwvNSvkOl9jbctU0lvZQ1.jpg",
+            "vote_average": 7.098,
+            "vote_count": 3753,
+            "original_title": "Wonka",
+            "release_date": "2023-12-06",
+            "title": "Wonka",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 140300,
+            "adult": false,
+            "backdrop_path": "/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Cuando el durante mucho tiempo perdido padre de Po aparece de repente, el dúo ya reunido viaja a un paraíso secreto de pandas para conocer a montones de nuevos e hilarantes osos. Pero cuando el villano sobrenatural Kai comienza a recorrer toda China venciendo a todos los maestros de kung fu, Po deberá hacer lo imposible: aprender a entrenar a una comunidad repleta de divertidos y torpes hermanos para formar el equipo definitivo de Kung Fu Pandas.",
+            "popularity": 40.146,
+            "poster_path": "/t11f8palNbICK9Ip5QLrUfhLJYq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 6124,
+            "original_title": "Kung Fu Panda 3",
+            "release_date": "2016-01-23",
+            "title": "Kung Fu Panda 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 811941,
+            "adult": false,
+            "backdrop_path": "/hAQnXxOwCjgYcKRgTdYPRC8neqL.jpg",
+            "genre_ids": null,
+            "original_language": "te",
+            "overview": "Devara, a fearless man from a coastal region, embarks on a perilous journey into the treacherous world of the sea to safeguard the lives of his people. Unbeknownst to him, his brother Bhaira is plotting a conspiracy against him. As events unfold, Devara passes on his legacy to his mild-mannered and timid son, Varada.",
+            "popularity": 1469.737,
+            "poster_path": "/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg",
+            "vote_average": 7.1,
+            "vote_count": 40,
+            "original_title": "దేవర: Part 1",
+            "release_date": "2024-09-26",
+            "title": "Devara: Part 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1022789,
+            "adult": false,
+            "backdrop_path": "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
+            "popularity": 444.094,
+            "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+            "vote_average": 7.569,
+            "vote_count": 5400,
+            "original_title": "Inside Out 2",
+            "release_date": "2024-06-11",
+            "title": "Inside Out 2",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "matildepouros@romaguera.info",
+        "username": "Halvorson7247",
+        "uid": "5a081b2f-12a3-41e8-81d2-19d48c9a5097"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 840326,
+            "adult": false,
+            "backdrop_path": "/oGZhlVTBMZrHPuvGy8o6N4K8xGI.jpg",
+            "genre_ids": null,
+            "original_language": "fi",
+            "overview": "En lo profundo de la naturaleza salvaje de Laponia, Aatami Korpi está buscando oro, pero después de tropezar con una patrulla nazi, comienza una persecución impresionante y hambrienta de oro a través de la naturaleza salvaje de Laponia destruida y minada.",
+            "popularity": 43.51,
+            "poster_path": "/koDawJRyKs5EPcL7v74Ywu3DNUU.jpg",
+            "vote_average": 7.424,
+            "vote_count": 2246,
+            "original_title": "Sisu",
+            "release_date": "2022-09-09",
+            "title": "Sisu",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 585083,
+            "adult": false,
+            "backdrop_path": "/7QabKu8tizoqy8qCZJXljdSpP4A.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Drac y la pandilla vuelven, como nunca los habías visto antes en Hotel Transilvania: Transformanía. Volveremos a encontrarnos con nuestros monstruos favoritos en una aventura completamente nueva en la que Drac se enfrentará a una de las situaciones más aterradoras vividas hasta el momento. Cuando el misterioso invento de Van Helsing, el \"Rayo Monstrificador\", se vuelve totalmente fuera de control, Drac y sus monstruosos amigos se transforman en humanos, ¡y Johnny se convierte en un monstruo!",
+            "popularity": 46.749,
+            "poster_path": "/xNF8AxJc966FWk4SYqXxGHaZLHZ.jpg",
+            "vote_average": 7.1,
+            "vote_count": 2815,
+            "original_title": "Hotel Transylvania: Transformania",
+            "release_date": "2022-01-31",
+            "title": "Hotel Transilvania: Transformanía",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 845781,
+            "adult": false,
+            "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+            "popularity": 896.528,
+            "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+            "vote_average": 7.112,
+            "vote_count": 2129,
+            "original_title": "Red One",
+            "release_date": "2024-10-31",
+            "title": "Red One",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 549509,
+            "adult": false,
+            "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+            "popularity": 239.341,
+            "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+            "vote_average": 5.3,
+            "vote_count": 56,
+            "original_title": "The Brutalist",
+            "release_date": "2024-12-20",
+            "title": "The Brutalist",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1064486,
+            "adult": false,
+            "backdrop_path": "/i3CAo9UMGsvlU9k3Svd63rRDeZx.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Forcibly separated from her twin brother when they are orphaned, a melancholic misfit learns how to find confidence within herself amid the clutter of misfortunes and everyday life.",
+            "popularity": 704.564,
+            "poster_path": "/lWh5OlerPR1c1cfn1ZLq0lpqFds.jpg",
+            "vote_average": 7.8,
+            "vote_count": 95,
+            "original_title": "Memoir of a Snail",
+            "release_date": "2024-10-17",
+            "title": "Memoir of a Snail",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "maximusschuster@jakubowski.io",
+        "username": "Heaney8336",
+        "uid": "95dc112e-9ca8-41fe-947b-f3a40bb4db94"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 787699,
+            "adult": false,
+            "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Basada en el personaje que protagoniza \"Charlie y la fábrica de chocolate\", el libro infantil más emblemático de Roald Dahl y uno de los más vendidos de todos los tiempos, \"Wonka\" cuenta la historia de cómo el mayor inventor, mago y chocolatero del mundo se convirtió en el querido Willy Wonka que conocemos hoy en día.",
+            "popularity": 59.39,
+            "poster_path": "/6eHcR7zwvNSvkOl9jbctU0lvZQ1.jpg",
+            "vote_average": 7.098,
+            "vote_count": 3753,
+            "original_title": "Wonka",
+            "release_date": "2023-12-06",
+            "title": "Wonka",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 419430,
+            "adult": false,
+            "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris y su novia Rose ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy y Dean. Al principio, Chris piensa que el comportamiento 'demasiado' complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
+            "popularity": 45.843,
+            "poster_path": "/xiMoqa0bmjuyuXYqKGwrTSJL8nI.jpg",
+            "vote_average": 7.615,
+            "vote_count": 17656,
+            "original_title": "Get Out",
+            "release_date": "2017-02-24",
+            "title": "Déjame salir",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 840326,
+            "adult": false,
+            "backdrop_path": "/oGZhlVTBMZrHPuvGy8o6N4K8xGI.jpg",
+            "genre_ids": null,
+            "original_language": "fi",
+            "overview": "En lo profundo de la naturaleza salvaje de Laponia, Aatami Korpi está buscando oro, pero después de tropezar con una patrulla nazi, comienza una persecución impresionante y hambrienta de oro a través de la naturaleza salvaje de Laponia destruida y minada.",
+            "popularity": 43.51,
+            "poster_path": "/koDawJRyKs5EPcL7v74Ywu3DNUU.jpg",
+            "vote_average": 7.424,
+            "vote_count": 2246,
+            "original_title": "Sisu",
+            "release_date": "2022-09-09",
+            "title": "Sisu",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1079091,
+            "adult": false,
+            "backdrop_path": "/8yPSYhooj8nyBbmV3GVdLDwuE7e.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.",
+            "popularity": 135.213,
+            "poster_path": "/cSMdFWmajaX4oUMLx7HEDI84GkP.jpg",
+            "vote_average": 7.1,
+            "vote_count": 1377,
+            "original_title": "It Ends with Us",
+            "release_date": "2024-08-07",
+            "title": "It Ends with Us",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 60898,
+            "adult": false,
+            "backdrop_path": "/bZsATFS6wg6L45ele7Ve4ogGkUT.jpg",
+            "genre_ids": null,
+            "original_language": "cn",
+            "overview": "Three vixens have meditated for 1,000 years to able to shed their animal natures and become human. For the final month of their rigors, they have moved near a village where women pray to a god of fertility. One sister visits the god's temple and thinks lustful thoughts. As she leaves, a priest confronts her, warning of dire consequences and of demons that will try to stop the vixens' transformation. Soon, the youngest sister saves a poor scholar from bandits and becomes enamored of him. Each sister visits him, and before long, the youth has made love to all three. After they invite him to stay with them, the playfulness takes a scary turn. Where can they turn for help?",
+            "popularity": 148.674,
+            "poster_path": "/fTUCwsxVoLFuodAtlL6aITP1B45.jpg",
+            "vote_average": 6.2,
+            "vote_count": 81,
+            "original_title": "聊齋艷譚",
+            "release_date": "1990-05-19",
+            "title": "Erotic Ghost Story",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1156593,
+            "adult": false,
+            "backdrop_path": "/k24eZq5I3jyz4htPkZCRpnUmBzE.jpg",
+            "genre_ids": null,
+            "original_language": "es",
+            "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+            "popularity": 920.395,
+            "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+            "vote_average": 7.175,
+            "vote_count": 921,
+            "original_title": "Culpa tuya",
+            "release_date": "2024-12-26",
+            "title": "Your Fault",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 845781,
+            "adult": false,
+            "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+            "popularity": 896.528,
+            "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+            "vote_average": 7.112,
+            "vote_count": 2129,
+            "original_title": "Red One",
+            "release_date": "2024-10-31",
+            "title": "Red One",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 533535,
+            "adult": false,
+            "backdrop_path": "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+            "popularity": 495.75,
+            "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            "vote_average": 7.634,
+            "vote_count": 6483,
+            "original_title": "Deadpool & Wolverine",
+            "release_date": "2024-07-24",
+            "title": "Deadpool & Wolverine",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1184918,
+            "adult": false,
+            "backdrop_path": "/1pmXyN3sKeYoUhu5VBZiDU4BX21.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+            "popularity": 616.393,
+            "poster_path": "/vcZfDONCxoOU7mosZEnkhYujBEG.jpg",
+            "vote_average": 8.4,
+            "vote_count": 4071,
+            "original_title": "The Wild Robot",
+            "release_date": "2024-09-12",
+            "title": "The Wild Robot",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 933260,
+            "adult": false,
+            "backdrop_path": "/bFPqSvR2EmWQ9AlzWkC801XpoAZ.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+            "popularity": 850.494,
+            "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+            "vote_average": 7.1,
+            "vote_count": 3378,
+            "original_title": "The Substance",
+            "release_date": "2024-09-07",
+            "title": "The Substance",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 426889,
+            "adult": false,
+            "backdrop_path": "/xqkN8inbffEkyNQIhNghbtKgf9x.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Women are lucky, they get to have the only organ in the human body dedicated exclusively for pleasure: the clitoris! In this humorous and instructive animated documentary, find out its unrecognized anatomy and its unknown herstory.",
+            "popularity": 244.805,
+            "poster_path": "/p5i1yyQW6OpLfB59w7ZkX5lvBqD.jpg",
+            "vote_average": 6.1,
+            "vote_count": 11,
+            "original_title": "Le clitoris",
+            "release_date": "2016-06-18",
+            "title": "Le clitoris",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 823219,
+            "adult": false,
+            "backdrop_path": "/b3mdmjYTEL70j7nuXATUAD9qgu4.jpg",
+            "genre_ids": null,
+            "original_language": "lv",
+            "overview": "A solitary cat, displaced by a great flood, finds refuge on a boat with various species and must navigate the challenges of adapting to a transformed world together.",
+            "popularity": 555.437,
+            "poster_path": "/imKSymKBK7o73sajciEmndJoVkR.jpg",
+            "vote_average": 8.4,
+            "vote_count": 861,
+            "original_title": "Straume",
+            "release_date": "2024-08-29",
+            "title": "Flow",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1241982,
+            "adult": false,
+            "backdrop_path": "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+            "popularity": 1330.002,
+            "poster_path": "/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg",
+            "vote_average": 7,
+            "vote_count": 889,
+            "original_title": "Moana 2",
+            "release_date": "2024-11-21",
+            "title": "Moana 2",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 762509,
+            "adult": false,
+            "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+            "popularity": 1971.014,
+            "poster_path": "/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg",
+            "vote_average": 7.44,
+            "vote_count": 839,
+            "original_title": "Mufasa: The Lion King",
+            "release_date": "2024-12-18",
+            "title": "Mufasa: The Lion King",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "josefrvaldes+1@gmail.com",
+        "username": "joselencio",
+        "uid": "2gCqfgvgT4VaxR5AxU2Obkcsy853",
+        "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Tom_Hanks_at_the_Elvis_Premiere_2022.jpg"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 758009,
+            "adult": false,
+            "backdrop_path": "/zGoZB4CboMzY1z4G3nU6BWnMDB2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Darcy (Jennifer Lopez) y Tom (Josh Duhamel) viajan con sus familias para celebrar su boda, pero cuando todos los invitados son tomados como rehenes, la frase «hasta que la muerte nos separe» adquiere un nuevo significado en esta desternillante aventura cargada de adrenalina en la que Darcy y Tom tendrán que salvar a sus seres queridos, si no se matan entre ellos antes.",
+            "popularity": 41.473,
+            "poster_path": "/cIOlazNiPYhOODUiOep9OnIxETx.jpg",
+            "vote_average": 6.282,
+            "vote_count": 1197,
+            "original_title": "Shotgun Wedding",
+            "release_date": "2022-12-28",
+            "title": "Una boda explosiva",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 585083,
+            "adult": false,
+            "backdrop_path": "/7QabKu8tizoqy8qCZJXljdSpP4A.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Drac y la pandilla vuelven, como nunca los habías visto antes en Hotel Transilvania: Transformanía. Volveremos a encontrarnos con nuestros monstruos favoritos en una aventura completamente nueva en la que Drac se enfrentará a una de las situaciones más aterradoras vividas hasta el momento. Cuando el misterioso invento de Van Helsing, el \"Rayo Monstrificador\", se vuelve totalmente fuera de control, Drac y sus monstruosos amigos se transforman en humanos, ¡y Johnny se convierte en un monstruo!",
+            "popularity": 46.749,
+            "poster_path": "/xNF8AxJc966FWk4SYqXxGHaZLHZ.jpg",
+            "vote_average": 7.1,
+            "vote_count": 2815,
+            "original_title": "Hotel Transylvania: Transformania",
+            "release_date": "2022-01-31",
+            "title": "Hotel Transilvania: Transformanía",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 271110,
+            "adult": false,
+            "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano.",
+            "popularity": 64.563,
+            "poster_path": "/g6UTwUVFYWI8VPWo5GylnbZVhin.jpg",
+            "vote_average": 7.444,
+            "vote_count": 22915,
+            "original_title": "Captain America: Civil War",
+            "release_date": "2016-04-27",
+            "title": "Capitán América: Civil War",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 993710,
+            "adult": false,
+            "backdrop_path": "/xZm5YUNY3PlYD1Q4k7X8zd2V4AK.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.",
+            "popularity": 2277.176,
+            "poster_path": "/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg",
+            "vote_average": 6.71,
+            "vote_count": 429,
+            "original_title": "Back in Action",
+            "release_date": "2025-01-15",
+            "title": "Back in Action",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 823219,
+            "adult": false,
+            "backdrop_path": "/b3mdmjYTEL70j7nuXATUAD9qgu4.jpg",
+            "genre_ids": null,
+            "original_language": "lv",
+            "overview": "A solitary cat, displaced by a great flood, finds refuge on a boat with various species and must navigate the challenges of adapting to a transformed world together.",
+            "popularity": 555.437,
+            "poster_path": "/imKSymKBK7o73sajciEmndJoVkR.jpg",
+            "vote_average": 8.4,
+            "vote_count": 861,
+            "original_title": "Straume",
+            "release_date": "2024-08-29",
+            "title": "Flow",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "frankiehudson@connelly.io",
+        "username": "Kirlin1951",
+        "uid": "fd26c497-d5be-45a4-82f2-56638429d30c"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 271110,
+            "adult": false,
+            "backdrop_path": "/wdwcOBMkt3zmPQuEMxB3FUtMio2.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Continúa la historia de “Avengers: Age of Ultron”, con Steve Rogers liderando un nuevo equipo de Vengadores en su esfuerzo por proteger a la humanidad. Tras otro incidente internacional relacionado con los Vengadores que ocasiona daños colaterales, la presión política fuerza a crear un sistema de registro y un cuerpo gubernamental para determinar cuándo se requiere los servicios del equipo. El nuevo status quo divide a los Vengadores mientras intentan salvar al mundo de un nuevo y perverso villano.",
+            "popularity": 64.563,
+            "poster_path": "/g6UTwUVFYWI8VPWo5GylnbZVhin.jpg",
+            "vote_average": 7.444,
+            "vote_count": 22915,
+            "original_title": "Captain America: Civil War",
+            "release_date": "2016-04-27",
+            "title": "Capitán América: Civil War",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 60898,
+            "adult": false,
+            "backdrop_path": "/bZsATFS6wg6L45ele7Ve4ogGkUT.jpg",
+            "genre_ids": null,
+            "original_language": "cn",
+            "overview": "Three vixens have meditated for 1,000 years to able to shed their animal natures and become human. For the final month of their rigors, they have moved near a village where women pray to a god of fertility. One sister visits the god's temple and thinks lustful thoughts. As she leaves, a priest confronts her, warning of dire consequences and of demons that will try to stop the vixens' transformation. Soon, the youngest sister saves a poor scholar from bandits and becomes enamored of him. Each sister visits him, and before long, the youth has made love to all three. After they invite him to stay with them, the playfulness takes a scary turn. Where can they turn for help?",
+            "popularity": 148.674,
+            "poster_path": "/fTUCwsxVoLFuodAtlL6aITP1B45.jpg",
+            "vote_average": 6.2,
+            "vote_count": 81,
+            "original_title": "聊齋艷譚",
+            "release_date": "1990-05-19",
+            "title": "Erotic Ghost Story",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1156593,
+            "adult": false,
+            "backdrop_path": "/k24eZq5I3jyz4htPkZCRpnUmBzE.jpg",
+            "genre_ids": null,
+            "original_language": "es",
+            "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+            "popularity": 920.395,
+            "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+            "vote_average": 7.175,
+            "vote_count": 921,
+            "original_title": "Culpa tuya",
+            "release_date": "2024-12-26",
+            "title": "Your Fault",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 402431,
+            "adult": false,
+            "backdrop_path": "/uKb22E0nlzr914bA9KyA5CVCOlV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+            "popularity": 962.586,
+            "poster_path": "/2E1x1qcHqGZcYuYi4PzVZjzg8IV.jpg",
+            "vote_average": 6.988,
+            "vote_count": 1424,
+            "original_title": "Wicked",
+            "release_date": "2024-11-20",
+            "title": "Wicked",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1357633,
+            "adult": false,
+            "backdrop_path": "/kylozAI9Rf1pp7pZ8nFPK4s1s5n.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Over a decade after 'gates' connecting worlds appeared, awakening 'hunters' with superpowers, weakest hunter Sung Jinwoo encounters a double dungeon and accepts a mysterious quest, becoming the only one able to level up, changing his fate. A catch-up recap of the first season coupled with an exclusive sneak peek of the first two episodes of the highly anticipated second season in one momentous theatrical fan experience.",
+            "popularity": 596.897,
+            "poster_path": "/uzHMp5heVLR68kbbUEXFPsmxYsM.jpg",
+            "vote_average": 6.9,
+            "vote_count": 81,
+            "original_title": "俺だけレベルアップな件 -ReAwakening-",
+            "release_date": "2024-11-26",
+            "title": "Solo Leveling -ReAwakening-",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "jessiearmstrong@kautzer.name",
+        "username": "Koelpin9205",
+        "uid": "b9c04086-4f7e-4a57-89fe-c1c0855e5009"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 585083,
+            "adult": false,
+            "backdrop_path": "/7QabKu8tizoqy8qCZJXljdSpP4A.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Drac y la pandilla vuelven, como nunca los habías visto antes en Hotel Transilvania: Transformanía. Volveremos a encontrarnos con nuestros monstruos favoritos en una aventura completamente nueva en la que Drac se enfrentará a una de las situaciones más aterradoras vividas hasta el momento. Cuando el misterioso invento de Van Helsing, el \"Rayo Monstrificador\", se vuelve totalmente fuera de control, Drac y sus monstruosos amigos se transforman en humanos, ¡y Johnny se convierte en un monstruo!",
+            "popularity": 46.749,
+            "poster_path": "/xNF8AxJc966FWk4SYqXxGHaZLHZ.jpg",
+            "vote_average": 7.1,
+            "vote_count": 2815,
+            "original_title": "Hotel Transylvania: Transformania",
+            "release_date": "2022-01-31",
+            "title": "Hotel Transilvania: Transformanía",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1241982,
+            "adult": false,
+            "backdrop_path": "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+            "popularity": 1330.002,
+            "poster_path": "/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg",
+            "vote_average": 7,
+            "vote_count": 889,
+            "original_title": "Moana 2",
+            "release_date": "2024-11-21",
+            "title": "Moana 2",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "fosterschowalter@wisozk.info",
+        "username": "Kuvalis6430",
+        "uid": "102ae63c-63d7-4668-935f-c1932b8fe204"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1255788,
+            "adult": false,
+            "backdrop_path": "/pqulyfkug9A7TmmRn5zrbRA8TAY.jpg",
+            "genre_ids": null,
+            "original_language": "fr",
+            "overview": "Every year the Prime Minister has a list of all kinds of troublemakers eliminated in the name of the famous Reason of State. Serge Shuster, Special Adviser to the President of the Republic, finds himself on this list, better known as the Matignon List.  Condemned to certain death and at the heart of an implacable plot and a state secret that also put his family in danger, Serge, his wife and children have only one hope left - their gardener, Léo, who hates it when « slugs » invade his garden... Especially those that want to kill innocent families.",
+            "popularity": 1119.139,
+            "poster_path": "/5T9WR7vIOnHm6xhVt5zBuPbBgt1.jpg",
+            "vote_average": 4.913,
+            "vote_count": 92,
+            "original_title": "Le Jardinier",
+            "release_date": "2025-01-10",
+            "title": "The Gardener",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 635302,
+            "adult": false,
+            "backdrop_path": "/3FVe3OAdgz060JaxIAaUl5lo6cx.jpg",
+            "genre_ids": null,
+            "original_language": "ja",
+            "overview": "Tanjiro y sus compañeros se unen al Pilar de las Llamas Kyojuro Rengoku para investigar una misteriosa serie de desapariciones que han ocurrido dentro del “Tren Infinito”. Poco saben que Enmu, uno de los miembros de las Doce Lunas Demoníacas, también está a bordo y les ha preparado una trampa.",
+            "popularity": 58.56,
+            "poster_path": "/8t29MfbEkEZixjVbjRkqI5NyFR4.jpg",
+            "vote_average": 8.211,
+            "vote_count": 4007,
+            "original_title": "劇場版「鬼滅の刃」無限列車編",
+            "release_date": "2020-10-16",
+            "title": "Guardianes de la Noche: Tren infinito",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 56292,
+            "adult": false,
+            "backdrop_path": "/ih4lZkUpmSE7AP3maymiO72xJ1z.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "El agente Ethan Hunt, acusado de un atentado terrorista con bombas contra el Kremlin, es desautorizado junto con toda la organización, al poner en marcha el presidente el llamado 'Protocolo fantasma'. Abandonado a su suerte y sin recursos, el objetivo de Ethan es rehabilitar el buen nombre de su agencia e impedir un nuevo ataque. Pero emprende esta misión con un equipo formado por fugitivos, cuyos motivos personales no conoce bien.",
+            "popularity": 38.817,
+            "poster_path": "/y0hjsPyieqxcunEcAxb9mrrE09c.jpg",
+            "vote_average": 7.094,
+            "vote_count": 9979,
+            "original_title": "Mission: Impossible - Ghost Protocol",
+            "release_date": "2011-12-07",
+            "title": "Misión imposible: Protocolo fantasma",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 811941,
+            "adult": false,
+            "backdrop_path": "/hAQnXxOwCjgYcKRgTdYPRC8neqL.jpg",
+            "genre_ids": null,
+            "original_language": "te",
+            "overview": "Devara, a fearless man from a coastal region, embarks on a perilous journey into the treacherous world of the sea to safeguard the lives of his people. Unbeknownst to him, his brother Bhaira is plotting a conspiracy against him. As events unfold, Devara passes on his legacy to his mild-mannered and timid son, Varada.",
+            "popularity": 1469.737,
+            "poster_path": "/A9ENz6d4lC3UYOX8Z1gJwDEo1sM.jpg",
+            "vote_average": 7.1,
+            "vote_count": 40,
+            "original_title": "దేవర: Part 1",
+            "release_date": "2024-09-26",
+            "title": "Devara: Part 1",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "jacksonmohr@greenholt.com",
+        "username": "Nicolas7679",
+        "uid": "0a0682cb-e67a-43ee-8115-0d8075b14f56"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1269732,
+            "adult": false,
+            "backdrop_path": "/ka4zplxny8ethvrAxNFKFrzlRIj.jpg",
+            "genre_ids": null,
+            "original_language": "zh",
+            "overview": "Yang Guo ha estado vagando por el mundo desde que era un niño. Después de ser acogido por el héroe Guo Jing, se convirtió en discípulo de Quanzhen. Sin embargo, fue intimidado en la secta Quanzhen debido al misterio de su experiencia de vida. Para soportar la tortura, por casualidad cambió para adorar a Xiao Longnu como su maestro y estudió artes marciales. Sucedió que el rey Jinlun, el maestro extranjero, dirigió sus tropas hacia el sur y unió fuerzas con Li Mochou, un discípulo abandonado de la Secta de la Tumba Antigua, en un intento de apoderarse de los secretos de las artes marciales y los mapas de armas en la tumba antigua. Yang Guo y Xiao Longnu, quienes sin querer estuvieron involucrados en las disputas entre los ríos y lagos, vivieron y murieron juntos varias veces. La amistad entre los dos se convirtió gradualmente en un amor amargo. Durante este período, el brazo de Yang Guo fue cortado, él Se cayó por un acantilado y se encontró con el \"buen maestro y amigo\", el águila.",
+            "popularity": 148.255,
+            "poster_path": "/1eAbKRfH6RKTOxs9JAGGops7Q4j.jpg",
+            "vote_average": 4.2,
+            "vote_count": 4,
+            "original_title": "神雕侠侣: 问世间",
+            "release_date": "2025-01-22",
+            "title": "Los Héroes del Cóndor",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 419430,
+            "adult": false,
+            "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris y su novia Rose ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy y Dean. Al principio, Chris piensa que el comportamiento 'demasiado' complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
+            "popularity": 45.843,
+            "poster_path": "/xiMoqa0bmjuyuXYqKGwrTSJL8nI.jpg",
+            "vote_average": 7.615,
+            "vote_count": 17656,
+            "original_title": "Get Out",
+            "release_date": "2017-02-24",
+            "title": "Déjame salir",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 60898,
+            "adult": false,
+            "backdrop_path": "/bZsATFS6wg6L45ele7Ve4ogGkUT.jpg",
+            "genre_ids": null,
+            "original_language": "cn",
+            "overview": "Three vixens have meditated for 1,000 years to able to shed their animal natures and become human. For the final month of their rigors, they have moved near a village where women pray to a god of fertility. One sister visits the god's temple and thinks lustful thoughts. As she leaves, a priest confronts her, warning of dire consequences and of demons that will try to stop the vixens' transformation. Soon, the youngest sister saves a poor scholar from bandits and becomes enamored of him. Each sister visits him, and before long, the youth has made love to all three. After they invite him to stay with them, the playfulness takes a scary turn. Where can they turn for help?",
+            "popularity": 148.674,
+            "poster_path": "/fTUCwsxVoLFuodAtlL6aITP1B45.jpg",
+            "vote_average": 6.2,
+            "vote_count": 81,
+            "original_title": "聊齋艷譚",
+            "release_date": "1990-05-19",
+            "title": "Erotic Ghost Story",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 56292,
+            "adult": false,
+            "backdrop_path": "/ih4lZkUpmSE7AP3maymiO72xJ1z.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "El agente Ethan Hunt, acusado de un atentado terrorista con bombas contra el Kremlin, es desautorizado junto con toda la organización, al poner en marcha el presidente el llamado 'Protocolo fantasma'. Abandonado a su suerte y sin recursos, el objetivo de Ethan es rehabilitar el buen nombre de su agencia e impedir un nuevo ataque. Pero emprende esta misión con un equipo formado por fugitivos, cuyos motivos personales no conoce bien.",
+            "popularity": 38.817,
+            "poster_path": "/y0hjsPyieqxcunEcAxb9mrrE09c.jpg",
+            "vote_average": 7.094,
+            "vote_count": 9979,
+            "original_title": "Mission: Impossible - Ghost Protocol",
+            "release_date": "2011-12-07",
+            "title": "Misión imposible: Protocolo fantasma",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 585083,
+            "adult": false,
+            "backdrop_path": "/7QabKu8tizoqy8qCZJXljdSpP4A.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Drac y la pandilla vuelven, como nunca los habías visto antes en Hotel Transilvania: Transformanía. Volveremos a encontrarnos con nuestros monstruos favoritos en una aventura completamente nueva en la que Drac se enfrentará a una de las situaciones más aterradoras vividas hasta el momento. Cuando el misterioso invento de Van Helsing, el \"Rayo Monstrificador\", se vuelve totalmente fuera de control, Drac y sus monstruosos amigos se transforman en humanos, ¡y Johnny se convierte en un monstruo!",
+            "popularity": 46.749,
+            "poster_path": "/xNF8AxJc966FWk4SYqXxGHaZLHZ.jpg",
+            "vote_average": 7.1,
+            "vote_count": 2815,
+            "original_title": "Hotel Transylvania: Transformania",
+            "release_date": "2022-01-31",
+            "title": "Hotel Transilvania: Transformanía",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 533535,
+            "adult": false,
+            "backdrop_path": "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+            "popularity": 495.75,
+            "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            "vote_average": 7.634,
+            "vote_count": 6483,
+            "original_title": "Deadpool & Wolverine",
+            "release_date": "2024-07-24",
+            "title": "Deadpool & Wolverine",
+            "video": false
+          },
+          "status": 1,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 993710,
+            "adult": false,
+            "backdrop_path": "/xZm5YUNY3PlYD1Q4k7X8zd2V4AK.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.",
+            "popularity": 2277.176,
+            "poster_path": "/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg",
+            "vote_average": 6.71,
+            "vote_count": 429,
+            "original_title": "Back in Action",
+            "release_date": "2025-01-15",
+            "title": "Back in Action",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 974576,
+            "adult": false,
+            "backdrop_path": "/66nlC5LDZmDUWONGkUZT2BrOszG.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After the unexpected death of the Pope, Cardinal Lawrence is tasked with managing the covert and ancient ritual of electing a new one. Sequestered in the Vatican with the Catholic Church’s most powerful leaders until the process is complete, Lawrence finds himself at the center of a conspiracy that could lead to its downfall.",
+            "popularity": 269.122,
+            "poster_path": "/m5x8D0bZ3eKqIVWZ5y7TnZ2oTVg.jpg",
+            "vote_average": 7.1,
+            "vote_count": 922,
+            "original_title": "Conclave",
+            "release_date": "2024-10-25",
+            "title": "Conclave",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "melyssadare@bruen.info",
+        "username": "Nitzsche7386",
+        "uid": "ee136f67-1ed9-489b-9e32-5389ceadab63"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 1371727,
+            "adult": false,
+            "backdrop_path": "/9Rhs8yzMTtAcOUvJXqUg7kzljb7.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Buster Moon sueña con un espectáculo de estrellas al ritmo de ‘Thriller’ de Michael Jackson en este corto de animación con personajes de las exitosas películas ‘¡Canta!’.",
+            "popularity": 154.236,
+            "poster_path": "/8PI10vlJ7cLIHwOJhf79mycv5du.jpg",
+            "vote_average": 7.23,
+            "vote_count": 152,
+            "original_title": "Sing: Thriller",
+            "release_date": "2024-10-15",
+            "title": "¡Canta!: Thriller",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 549509,
+            "adult": false,
+            "backdrop_path": "/sftjavfNJzYxkpkSAqHnvHwviCo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Escaping post-war Europe, visionary architect László Tóth arrives in America to rebuild his life, his work, and his marriage to his wife Erzsébet after being forced apart during wartime by shifting borders and regimes. On his own in a strange new country, László settles in Pennsylvania, where the wealthy and prominent industrialist Harrison Lee Van Buren recognizes his talent for building. But power and legacy come at a heavy cost.",
+            "popularity": 239.341,
+            "poster_path": "/vP7Yd6couiAaw9jgMd5cjMRj3hQ.jpg",
+            "vote_average": 5.3,
+            "vote_count": 56,
+            "original_title": "The Brutalist",
+            "release_date": "2024-12-20",
+            "title": "The Brutalist",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 762509,
+            "adult": false,
+            "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+            "popularity": 1971.014,
+            "poster_path": "/jbOSUAWMGzGL1L4EaUF8K6zYFo7.jpg",
+            "vote_average": 7.44,
+            "vote_count": 839,
+            "original_title": "Mufasa: The Lion King",
+            "release_date": "2024-12-18",
+            "title": "Mufasa: The Lion King",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "cydneykovacek@lynch.io",
+        "username": "Pfeffer6340",
+        "uid": "e89a0521-4340-4551-b37a-9eaa1d6e4ede"
+      }
+    },
+    {
+      "matches": [
+        {
+          "movie": {
+            "id": 56292,
+            "adult": false,
+            "backdrop_path": "/ih4lZkUpmSE7AP3maymiO72xJ1z.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "El agente Ethan Hunt, acusado de un atentado terrorista con bombas contra el Kremlin, es desautorizado junto con toda la organización, al poner en marcha el presidente el llamado 'Protocolo fantasma'. Abandonado a su suerte y sin recursos, el objetivo de Ethan es rehabilitar el buen nombre de su agencia e impedir un nuevo ataque. Pero emprende esta misión con un equipo formado por fugitivos, cuyos motivos personales no conoce bien.",
+            "popularity": 38.817,
+            "poster_path": "/y0hjsPyieqxcunEcAxb9mrrE09c.jpg",
+            "vote_average": 7.094,
+            "vote_count": 9979,
+            "original_title": "Mission: Impossible - Ghost Protocol",
+            "release_date": "2011-12-07",
+            "title": "Misión imposible: Protocolo fantasma",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 820525,
+            "adult": false,
+            "backdrop_path": "/zzK0HDEswyhHFDFWlPz6HdgXKH5.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Hardin sigue luchando por seguir adelante. Agobiado por el bloqueo del escritor y la dolorosa ruptura con Tessa, Hardin viaja a Portugal en busca de una mujer a la que hizo daño en el pasado... y para encontrarse a sí mismo. Con la esperanza de recuperar a Tessa, se da cuenta de que necesita cambiar su forma de ser antes de poder comprometerse definitivamente.",
+            "popularity": 48.034,
+            "poster_path": "/jO3VGQi5sHIj2BGS963g1F74yCq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 893,
+            "original_title": "After Everything",
+            "release_date": "2023-09-13",
+            "title": "After: Aquí acaba todo",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 140300,
+            "adult": false,
+            "backdrop_path": "/uT5G4fA7jKxlJNfwYPMm353f5AI.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Cuando el durante mucho tiempo perdido padre de Po aparece de repente, el dúo ya reunido viaja a un paraíso secreto de pandas para conocer a montones de nuevos e hilarantes osos. Pero cuando el villano sobrenatural Kai comienza a recorrer toda China venciendo a todos los maestros de kung fu, Po deberá hacer lo imposible: aprender a entrenar a una comunidad repleta de divertidos y torpes hermanos para formar el equipo definitivo de Kung Fu Pandas.",
+            "popularity": 40.146,
+            "poster_path": "/t11f8palNbICK9Ip5QLrUfhLJYq.jpg",
+            "vote_average": 6.9,
+            "vote_count": 6124,
+            "original_title": "Kung Fu Panda 3",
+            "release_date": "2016-01-23",
+            "title": "Kung Fu Panda 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 22,
+            "adult": false,
+            "backdrop_path": "/wW7Wt5bXzPy4VOEE4LTIUDyDgBo.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "After Port Royal is attacked and pillaged by a mysterious pirate crew, capturing the governor's daughter Elizabeth Swann in the process, William Turner asks free-willing pirate Jack Sparrow to help him locate the crew's ship—The Black Pearl—so that he can rescue the woman he loves.",
+            "popularity": 141.172,
+            "poster_path": "/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg",
+            "vote_average": 7.8,
+            "vote_count": 20809,
+            "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "release_date": "2003-07-09",
+            "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 335988,
+            "adult": false,
+            "backdrop_path": "/1n00NlOGRFZVs8coBxyZLm5l4EC.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Dos especies en guerra: una de carne y hueso, la otra de metal. El Último Caballero rompe con el mito original de la franquicia de Transformers y redefine lo que significa ser un héroe. Humanos y Transformers están en guerra y Optimus Prime se ha ido. La llave para salvar nuestro futuro está enterrada en los secretos del pasado, en la historia oculta de los Transformers en la Tierra. Salvar a nuestro mundo está en manos de una alianza única: Cade Yeager (Mark Wahlberg); Bumblebee; un Lord Inglés (Sir Anthony Hopkins); y una profesora de la Universidad de Oxford (Laura Haddock). Hay un momento en la vida de todo ser humano en la que recibimos el llamado para hacer la diferencia. En Transformers: El Último Caballero los perseguidos se convertirán en héroes; los héroes se convertirán en villanos y sólo un mundo sobrevivirá: el de ellos o el nuestro. Quinta película de Transformers dirigida por Michael Bay.",
+            "popularity": 38.759,
+            "poster_path": "/mXEBnMqFwTJCrddVhknCH9fq3fB.jpg",
+            "vote_average": 6.1,
+            "vote_count": 6291,
+            "original_title": "Transformers: The Last Knight",
+            "release_date": "2017-06-16",
+            "title": "Transformers: El último caballero",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 1134433,
+            "adult": false,
+            "backdrop_path": "/55hRgXkbvHoc9dL58S9HAGyxmZt.jpg",
+            "genre_ids": null,
+            "original_language": "th",
+            "overview": "When a remote village is plagued by a deadly curse, one brother must fight to save his family from a terrifying supernatural threat.",
+            "popularity": 168.578,
+            "poster_path": "/48TDjSJpCdJ4SBOHZX3G5IjaV02.jpg",
+            "vote_average": 7.6,
+            "vote_count": 172,
+            "original_title": "ธี่หยด",
+            "release_date": "2023-10-25",
+            "title": "Death Whisperer",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 939243,
+            "adult": false,
+            "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+            "popularity": 4090.605,
+            "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+            "vote_average": 7.62,
+            "vote_count": 494,
+            "original_title": "Sonic the Hedgehog 3",
+            "release_date": "2024-12-19",
+            "title": "Sonic the Hedgehog 3",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        },
+        {
+          "movie": {
+            "id": 539972,
+            "adult": false,
+            "backdrop_path": "/v9Du2HC3hlknAvGlWhquRbeifwW.jpg",
+            "genre_ids": null,
+            "original_language": "en",
+            "overview": "Kraven Kravinoff's complex relationship with his ruthless gangster father, Nikolai, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.",
+            "popularity": 3611.48,
+            "poster_path": "/i47IUSsN126K11JUzqQIOi1Mg1M.jpg",
+            "vote_average": 6.594,
+            "vote_count": 763,
+            "original_title": "Kraven the Hunter",
+            "release_date": "2024-12-11",
+            "title": "Kraven the Hunter",
+            "video": false
+          },
+          "status": 0,
+          "super_match": false
+        }
+      ],
+      "user": {
+        "email": "elnoradaniel@osinski.org",
+        "username": "Rogahn4101",
+        "uid": "bc6a2e99-36b0-4eba-b241-18198980e17b"
+      }
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 2,
+  "total_results": 24
+}

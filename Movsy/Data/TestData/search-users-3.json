@@ -1,0 +1,49 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "email": "amigonada@example.com",
+      "username": "amigonada",
+      "uid": "rgh6JwoHtJfthRED58mlRdkopYb2",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Robin_Wright_Cannes_2017_%28cropped%29.jpg",
+      "friendship_status": 3
+    },
+    {
+      "email": "amigafab@example.com",
+      "username": "amigafab",
+      "uid": "DswBbFe21PO2YEWi7KDsww8igKP2",
+      "friendship_status": 3
+    },
+    {
+      "email": "amigoblock@example.com",
+      "username": "amigoblock",
+      "uid": "GTpyfTlqF8Y30W8sgSsfNOkBqVr1",
+      "friendship_status": 3
+    },
+    {
+      "email": "amigonada2@example.com",
+      "username": "amigonada2",
+      "uid": "Nwc6Ubt4ZSa0WiAAsG3gi3LcSbk2",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Mykelti_Williamson_2003_%28cropped%29.jpg",
+      "friendship_status": 3
+    },
+    {
+      "email": "amigorequest@example.com",
+      "username": "amigorequest",
+      "uid": "zHsBURo4Bid66zXZaWadH0dORLj1",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Gary_Sinise_2011_%28cropped%29.jpg",
+      "friendship_status": 3
+    },
+    {
+      "email": "amigoyojosesq@example.com",
+      "username": "amigoyojosesq",
+      "uid": "WQtV5eKREycTgvZ3qrbJiMkCHRD2",
+      "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Tom_Hanks_at_the_Elvis_Premiere_2022.jpg",
+      "friendship_status": 3
+    }
+  ],
+  "results_per_page": 20,
+  "total_pages": 1,
+  "total_results": 6
+}
+
