@@ -1740,9 +1740,6 @@
         }
       }
     },
-    "Sample error" : {
-      "shouldTranslate" : false
-    },
     "Search" : {
       "localizations" : {
         "ca" : {
