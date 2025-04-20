@@ -31,6 +31,7 @@ protocol MovsyGoRepository {
   func getUserMovieMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<MovieMatchesGroupedByFriendsResponse, Error>
   func getMovieMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailMovieMatchesResponse, Error>
   func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error>
+  func updateUsername(to newUsername: String) async -> Result<MovsyUserResponse, Error>
 }
 
 extension MovsyGoRepository {

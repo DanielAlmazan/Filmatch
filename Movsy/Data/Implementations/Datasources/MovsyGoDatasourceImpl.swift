@@ -513,4 +513,32 @@ final class MovsyGoDatasourceImpl: MovsyGoDatasource {
       return .failure(error)
     }
   }
+
+  func updateUsername(to newUsername: String) async -> Result<MovsyUserResponse, Error> {
+    let data: Data
+
+    do {
+      data = try JSONEncoder().encode(UpdateUsernameBody(username: newUsername))
+    } catch {
+      return .failure(error)
+    }
+
+    let result = await client.request(
+      path: .updateUsername,
+      method: .PUT,
+      body: data
+    )
+
+    switch result {
+    case .success(let response):
+      do {
+        let newUser = try JSONDecoder().decode(MovsyGoUserResponse.self, from: response)
+        return .success(newUser.user)
+      } catch {
+        return .failure(error)
+      }
+    case .failure(let error):
+      return .failure(error)
+    }
+  }
 }

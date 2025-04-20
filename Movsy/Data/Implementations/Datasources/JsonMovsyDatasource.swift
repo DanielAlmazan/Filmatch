@@ -114,4 +114,7 @@ final class JsonMovsyDatasource: MovsyGoDatasource {
   func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, any Error> {
     await client.get("tv-matches-with-\(uid)-page\(page)", responseType: DetailTvSeriesMatchesResponse.self)
   }
+  func updateUsername(to newUsername: String) async -> Result<MovsyUserResponse, Error> {
+    .failure(RuntimeErrors.notImplemented)
+  }
 }
