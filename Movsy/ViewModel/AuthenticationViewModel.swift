@@ -16,10 +16,10 @@ import SwiftUI
 class AuthenticationViewModel {
   /// The currently authenticated user, if any.
   var currentUser: MovsyUser?
-  
+
   /// An optional error message if an authentication error occurs.
   var errorMessage: String?
-  
+
   var isLoading = true
 
   func checkEmailVerification() async -> Bool {
@@ -40,7 +40,7 @@ class AuthenticationViewModel {
   /// The repository responsible for handling authentication operations.
   private let authenticationRepository: AuthenticationRepository
   private let movsyRepository: MovsyGoRepository
-  
+
   /// Initializes a new `AuthenticationViewModel`.
   /// - Parameter authenticationRepository: The repository used for authentication operations. Defaults to `AuthenticationFirebaseRepository`.
   /// - Parameter movsyRepository: Te repository used to ensure the validation of the user.
@@ -92,7 +92,7 @@ class AuthenticationViewModel {
     Task {
       self.isLoading = true
       let result = await authenticationRepository.createNewUser(email: email, password: password)
-      
+
       switch result {
       case .success(_):
         let movsyResult = await self.movsyRepository.auth()
@@ -108,7 +108,7 @@ class AuthenticationViewModel {
       self.isLoading = false
     }
   }
-  
+
   func appleOAuth() throws {
     Task {
       self.isLoading = true
@@ -130,7 +130,7 @@ class AuthenticationViewModel {
       self.isLoading = false
     }
   }
-  
+
   /// Logs in a user with the provided email and password.
   /// - Parameters:
   ///   - email: The email address of the user.
@@ -177,7 +177,7 @@ class AuthenticationViewModel {
       self.isLoading = false
     }
   }
-  
+
   /// Logs out the currently authenticated user.
   func logOut() {
     Task {
@@ -197,5 +197,17 @@ class AuthenticationViewModel {
   /// Deletes the account of the currently authenticated user.
   func deleteAccount() async -> Result<Void, Error> {
     await authenticationRepository.deleteAccount()
+  }
+
+  func updateUsername(_ newUsername: String) async -> Result<Void, Error> {
+    let result = await movsyRepository.updateUsername(to: newUsername)
+
+    switch result {
+    case .success(let userResult):
+      self.currentUser?.username = userResult.username
+      return .success(())
+    case .failure(let error):
+      return .failure(error)
+    }
   }
 }

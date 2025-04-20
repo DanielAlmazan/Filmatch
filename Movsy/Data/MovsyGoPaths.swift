@@ -26,7 +26,8 @@ enum MovsyGoPaths {
   case block(String)
   case search
   case health
-  
+  case updateUsername
+
   var stringValue: String {
     switch self {
     case .userAuth: "/user/auth"
@@ -47,6 +48,7 @@ enum MovsyGoPaths {
     case .block(let uid): "/user/block/\(uid)"
     case .search: "/user/search"
     case .health: "/health"
+    case .updateUsername: "/user/username"
     }
   }
 }

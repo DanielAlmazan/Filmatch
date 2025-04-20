@@ -9,7 +9,7 @@ import Foundation
 
 struct MovsyUser: Identifiable {
   let email: String?
-  let username: String?
+  var username: String?
   let uid: String
   let photoUrl: String?
   var isEmailVerified: Bool?
