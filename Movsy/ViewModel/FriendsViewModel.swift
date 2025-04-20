@@ -30,7 +30,7 @@ final class FriendsViewModel {
   var isLoadingFriends: Bool = false
   var isLoadingRequests: Bool = false
 
-  var isEmpty: Bool {
+  var isNotNavigable: Bool {
     self.friends?.isEmpty ?? true && self.friendRequests?.isEmpty ?? true
   }
 

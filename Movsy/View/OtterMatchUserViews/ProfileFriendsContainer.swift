@@ -31,7 +31,7 @@ struct ProfileFriendsContainer: View {
         } label: {
           Text("See all")
         }
-        .disabled(!friendsVm.isEmpty)
+        .disabled(friendsVm.isNotNavigable)
       }
       Group {
         MyFriendsRow(
