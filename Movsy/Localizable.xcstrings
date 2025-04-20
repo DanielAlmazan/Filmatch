@@ -828,6 +828,38 @@
         }
       }
     },
+    "Edit" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
+        }
+      }
+    },
+    "Edit Profile" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar perfil"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar perfil"
+          }
+        }
+      }
+    },
     "Email" : {
       "localizations" : {
         "ca" : {
@@ -860,22 +892,6 @@
         }
       }
     },
-    "Error" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        }
-      }
-    },
     "Error deleting account: %@" : {
       "localizations" : {
         "ca" : {
@@ -888,6 +904,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error al eliminar la cuenta: %@"
+          }
+        }
+      }
+    },
+    "Error updating username: %@" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error en actualitzar el nom d'usuari: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error actualizando el nombre de usuario: %@"
           }
         }
       }
@@ -1340,6 +1372,22 @@
         }
       }
     },
+    "New username" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non nom d’usuari"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo nombre de usuario"
+          }
+        }
+      }
+    },
     "No cast members found for this movie." : {
       "localizations" : {
         "ca" : {
@@ -1740,8 +1788,21 @@
         }
       }
     },
-    "Sample error" : {
-      "shouldTranslate" : false
+    "Save" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        }
+      }
     },
     "Search" : {
       "localizations" : {
@@ -1867,22 +1928,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Empieza"
-          }
-        }
-      }
-    },
-    "Success" : {
-      "localizations" : {
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Èxit"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Éxito"
           }
         }
       }
@@ -2028,6 +2073,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elemento no soportado"
+          }
+        }
+      }
+    },
+    "Username" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom d'usuari"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de usuario"
           }
         }
       }

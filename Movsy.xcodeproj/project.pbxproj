@@ -285,6 +285,7 @@
 		853990A22DB023B200D46BFB /* TvSeriesCastRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853990A12DB023B200D46BFB /* TvSeriesCastRowView.swift */; };
 		853990A42DB027F000D46BFB /* TvSeriesCastMemberThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853990A32DB027F000D46BFB /* TvSeriesCastMemberThumbnail.swift */; };
 		853990A62DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json in Resources */ = {isa = PBXBuildFile; fileRef = 853990A52DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json */; };
+		8548E19C2DB3F51900152BEA /* UpdateUsernameBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8548E19B2DB3F51900152BEA /* UpdateUsernameBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -561,6 +562,7 @@
 		853990A12DB023B200D46BFB /* TvSeriesCastRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesCastRowView.swift; sourceTree = "<group>"; };
 		853990A32DB027F000D46BFB /* TvSeriesCastMemberThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvSeriesCastMemberThumbnail.swift; sourceTree = "<group>"; };
 		853990A52DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tv-44217-append_to_response-aggregate-credits-videos.json"; sourceTree = "<group>"; };
+		8548E19B2DB3F51900152BEA /* UpdateUsernameBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameBody.swift; sourceTree = "<group>"; };
 		8569CD772DADA56B00AA832B /* Movsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Movsy.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -682,6 +684,7 @@
 				851B995C2DAD8E8E00DD580B /* DeleteFriendshipBody.swift */,
 				851B995D2DAD8E8E00DD580B /* SendFriendshipBody.swift */,
 				851B995E2DAD8E8E00DD580B /* VisitedMediaRequestBody.swift */,
+				8548E19B2DB3F51900152BEA /* UpdateUsernameBody.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1196,6 +1199,8 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				ca,
 			);
 			mainGroup = 851B96DD2DAD88AE00DD580B;
 			packageReferences = (
@@ -1333,6 +1338,7 @@
 				851B9AA92DAD8E8E00DD580B /* PersonDetailSingleResponse.swift in Sources */,
 				851B9AAA2DAD8E8E00DD580B /* PersonMovieCreditsAsCastMember.swift in Sources */,
 				851B9AAB2DAD8E8E00DD580B /* PersonMovieCreditsAsCrewMember.swift in Sources */,
+				8548E19C2DB3F51900152BEA /* UpdateUsernameBody.swift in Sources */,
 				851B9AAC2DAD8E8E00DD580B /* PersonTvSeriesCreditsAsCastMember.swift in Sources */,
 				851B9AAD2DAD8E8E00DD580B /* PersonTvSeriesCreditsAsCrewMember.swift in Sources */,
 				851B9AAE2DAD8E8E00DD580B /* TvDetailSeasonSingleResponse.swift in Sources */,
@@ -1555,6 +1561,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1614,6 +1623,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1633,13 +1644,16 @@
 				CODE_SIGN_ENTITLEMENTS = Movsy/Movsy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = Movsy/Data/TestData;
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movsy/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1664,13 +1678,16 @@
 				CODE_SIGN_ENTITLEMENTS = Movsy/Movsy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = Movsy/Data/TestData;
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movsy/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

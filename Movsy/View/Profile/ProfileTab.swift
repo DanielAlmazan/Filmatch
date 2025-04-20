@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ProfileTab: View {
-  @Environment(\.editMode) var editMode
   @Environment(AuthenticationViewModel.self) var authVm
   @Environment(MovsyGoRepositoryImpl.self) var movsyRepository
   @Environment(FiltersRepositoryImpl.self) var filtersRepository
   @Environment(FriendsViewModel.self) var friendsVm
 
+  @State private var isEditing = false
+  @State private var newUsername: String = ""
   @State private var showAlert = false
-  @State private var alertMessage: LocalizedStringResource = ""
+  @State private var alertMessage: LocalizedStringKey = ""
   @State private var isError = false
   @State private var operationError: NSError?
 
@@ -49,7 +50,7 @@ struct ProfileTab: View {
       }
       .refreshable { Task { await self.friendsVm.onRefresh() } }
       .padding(.horizontal)
-      .alert(isError ? "Error" : "Success", isPresented: $showAlert, presenting: operationError) { operationError in
+      .alert(alertMessage, isPresented: $showAlert, presenting: operationError) { operationError in
         Button("Cancel", role: .cancel) {}
         Button("Ok") {
           if operationError.code == 17014 {
@@ -63,6 +64,43 @@ struct ProfileTab: View {
         LoginView(
           title: "Authenticate again", isReAuthentication: true, authVm: authVm, authSheetView: .constant(.LOGIN))
       }
+      .sheet(isPresented: $isEditing) {
+        NavigationStack {
+          Form {
+            Section("Username") {
+              TextField("New username", text: $newUsername)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+                .submitLabel(.return)
+                .onSubmit {
+                  onEditUsernameSubmitted()
+                }
+            }
+
+            Section {
+              Button("Save") {
+                onEditUsernameSubmitted()
+              }
+              .disabled(newUsername.trimmingCharacters(in: .whitespaces).isEmpty)
+
+              Button("Cancel", role: .cancel) {
+                isEditing = false
+              }
+            }
+          }
+          .navigationTitle("Edit Profile")
+        }
+      }
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button("Edit") {
+            if let currentUsername = authVm.currentUser?.username {
+              newUsername = currentUsername
+            }
+            isEditing = true
+          }
+        }
+      }
     } else {
       VStack {
         Text("No user logged in.")
@@ -70,11 +108,28 @@ struct ProfileTab: View {
     }
   }
 
+  private func onEditUsernameSubmitted() {
+    Task {
+      await updateUsername()
+    }
+    isEditing = false
+  }
+
+  private func updateUsername() async {
+    let trimmed = newUsername.trimmingCharacters(in: .whitespacesAndNewlines)
+    guard !trimmed.isEmpty else { return }
+
+    let result = await authVm.updateUsername(trimmed)
+
+    if case .failure(let error as NSError) = result {
+      isError = true
+      showAlert = true
+      operationError = error
+      alertMessage = "Error updating username: \(processError(for: error))"
+    }
+  }
+
   private func deleteAccount() {
-    //    authVm.deleteAccount { result in
-    //
-    //      showAlert = true
-    //    }
     Task {
       let result = await authVm.deleteAccount()
       switch result {

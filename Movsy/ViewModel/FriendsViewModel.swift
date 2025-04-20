@@ -29,7 +29,11 @@ final class FriendsViewModel {
   // MARK: - Loading Flags
   var isLoadingFriends: Bool = false
   var isLoadingRequests: Bool = false
-  
+
+  var isNotNavigable: Bool {
+    self.friends?.isEmpty ?? true && self.friendRequests?.isEmpty ?? true
+  }
+
   init(movsyRepository: MovsyGoRepository) {
     self.movsyRepository = movsyRepository
   }

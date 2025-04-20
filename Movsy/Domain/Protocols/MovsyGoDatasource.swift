@@ -31,4 +31,5 @@ protocol MovsyGoDatasource {
   func getUserTvSeriesMatchesGroupedByFriends(containing query: String?, at page: Int) async -> Result<TvSeriesMatchesGroupedByFriendsResponse, Error>
   func getMovieMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailMovieMatchesResponse, Error>
   func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error>
+  func updateUsername(to newUsername: String) async -> Result<MovsyUserResponse, Error>
 }

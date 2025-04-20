@@ -102,4 +102,8 @@ final class MovsyGoRepositoryImpl: MovsyGoRepository {
   func getTvSeriesMatchesByFriendUid(by uid: String, containing query: String?, at page: Int) async -> Result<DetailTvSeriesMatchesResponse, Error> {
     await self.datasource.getTvSeriesMatchesByFriendUid(by: uid, containing: query, at: page)
   }
+
+  func updateUsername(to newUsername: String) async -> Result<MovsyUserResponse, Error> {
+    await self.datasource.updateUsername(to: newUsername)
+  }
 }

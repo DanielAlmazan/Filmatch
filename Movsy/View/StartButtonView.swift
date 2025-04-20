@@ -31,7 +31,7 @@ struct StartButtonView: View {
     StartButtonView(isLastPage: true) {
       print("Button pressed")
     }
-    StartButtonView(isLastPage: true) {
+    StartButtonView(isLastPage: false) {
       print("Button pressed")
     }
   }
