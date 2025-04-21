@@ -193,21 +193,21 @@ final class SearchViewModel {
 
   @MainActor
   func updateItem(_ item: any DiscoverItem, for status: InterestStatus) async {
-    let result = await self.movsyRepository.markMediaAsVisited(for: item, as: status)
-    let previousStatus = item.status
     updateItemInList(item, for: status)
+
+    let result = await self.movsyRepository.markMediaAsVisited(for: item, as: status)
 
     switch result {
     case .success:
       print("Updated successfully")
     case .failure(let failure):
-      updateItemInList(item, for: previousStatus)
+      updateItemInList(item, for: item.status)
       print("Error updating: \(failure)")
     }
   }
 
   private func updateItemInList(_ item: any DiscoverItem, for status: InterestStatus?) {
-    guard let safeCurrentResults = currentResults, let index = safeCurrentResults.firstIndex(where: { $0.status == item.status }) else { return }
+    guard let safeCurrentResults = currentResults, let index = safeCurrentResults.firstIndex(where: { $0.id == item.id }) else { return }
 
     currentResults![index].status = status ?? item.status
   }
