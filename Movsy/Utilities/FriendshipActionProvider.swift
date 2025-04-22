@@ -94,10 +94,10 @@ struct FriendshipActionProvider {
   @MainActor
   @ViewBuilder
   static func getActionsView(
-    for user: Binding<MovsyUser>,
-    onAction: @escaping (Binding<MovsyUser>, FriendshipAction) -> Void
+    for user: MovsyUser,
+    onAction: @escaping (MovsyUser, FriendshipAction) -> Void
   ) -> some View {
-    switch user.wrappedValue.friendshipStatus {
+    switch user.friendshipStatus {
     case .notRelated:
       Button("Add") { onAction(user, .sendRequest) }
         .buttonStyle(.borderedProminent)

@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct UserListRow: View {
-  @State var user: MovsyUser
-  let onAction: (Binding<MovsyUser>, FriendshipAction) -> Void
+  var user: MovsyUser
+  let onAction: (MovsyUser, FriendshipAction) -> Void
   
   let kSize: CGFloat = 60
   
@@ -18,17 +18,17 @@ struct UserListRow: View {
       
       Spacer()
       
-      FriendshipActionProvider.getActionsView(for: $user, onAction: onAction)
+      FriendshipActionProvider.getActionsView(for: user, onAction: onAction)
       .lineLimit(1)
       
       Menu {
         if user.friendshipStatus == .blocked {
           Button("Unblock", role: .destructive) {
-            onAction($user, .unblock)
+            onAction(user, .unblock)
           }
         } else {
           Button("Block", role: .destructive) {
-            onAction($user, .block)
+            onAction(user, .block)
           }
         }
       } label: {
