@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FriendRequestsView: View {
-  @State var users: [MovsyUser]
-  let onAction: (Binding<MovsyUser>, FriendshipAction) -> Void
+  @Binding var users: [MovsyUser]
+  let onAction: (MovsyUser, FriendshipAction) -> Void
   let onLastAppeared: () -> Void
 
   @State private var isFolded: Bool = true
@@ -55,8 +55,8 @@ struct FriendRequestsView: View {
 
   List {
     FriendRequestsView(
-      users: users,
-      onAction: { user, action in print("User \(user.wrappedValue.username ?? "unknown") \(action)") },
+      users: $users,
+      onAction: { user, action in print("User \(user.username ?? "unknown") \(action)") },
       onLastAppeared: { print("Last appeared") }
     )
   }

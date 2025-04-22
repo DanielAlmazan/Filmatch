@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UsersListView: View {
   var users: [MovsyUser]
-  let onAction: (Binding<MovsyUser>, FriendshipAction) -> Void
+  let onAction: (MovsyUser, FriendshipAction) -> Void
   let onLastAppeared: () -> Void
   
   var body: some View {
