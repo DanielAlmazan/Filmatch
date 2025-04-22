@@ -999,7 +999,7 @@
 			path = Movie;
 			sourceTree = "<group>";
 		};
-		851B9A2A2DAD8E8E00DD580B /* OtterMatchUserViews */ = {
+		851B9A2A2DAD8E8E00DD580B /* MovsyUserViews */ = {
 			isa = PBXGroup;
 			children = (
 				851B9A1E2DAD8E8E00DD580B /* AddFriendsButton.swift */,
@@ -1015,7 +1015,7 @@
 				851B9A282DAD8E8E00DD580B /* UserListRow.swift */,
 				851B9A292DAD8E8E00DD580B /* UsersListView.swift */,
 			);
-			path = OtterMatchUserViews;
+			path = MovsyUserViews;
 			sourceTree = "<group>";
 		};
 		851B9A302DAD8E8E00DD580B /* Person */ = {
@@ -1080,7 +1080,7 @@
 				851B9A0E2DAD8E8E00DD580B /* Filters */,
 				851B9A172DAD8E8E00DD580B /* Matches */,
 				851B9A1D2DAD8E8E00DD580B /* Movie */,
-				851B9A2A2DAD8E8E00DD580B /* OtterMatchUserViews */,
+				851B9A2A2DAD8E8E00DD580B /* MovsyUserViews */,
 				851B9A302DAD8E8E00DD580B /* Person */,
 				851B9A372DAD8E8E00DD580B /* Profile */,
 				851B9A3A2DAD8E8E00DD580B /* Rooms */,
