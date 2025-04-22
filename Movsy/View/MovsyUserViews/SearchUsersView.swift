@@ -42,10 +42,10 @@ struct SearchUsersView: View {
     .navigationTitle("Add Friends")
   }
 
-  private func handleFriendshipAction(user: Binding<MovsyUser>, action: FriendshipAction) {
-    friendsVm.handleFriendshipAction(for: user, do: action)
+  private func handleFriendshipAction(user: MovsyUser, action: FriendshipAction) {
+    searchUserVm.handleFriendshipAction(for: user, do: action)
   }
-  
+
   private func searchUsers() {
     Task { await searchUserVm.searchUsers() }
   }

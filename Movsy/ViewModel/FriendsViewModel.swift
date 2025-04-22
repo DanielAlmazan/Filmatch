@@ -55,15 +55,15 @@ final class FriendsViewModel {
   @MainActor
   func loadFriends() async {
     guard totalFriendsPages >= currentFriendsPage else { return }
-    
+
     isLoadingFriends = true
-    
+
     let friendsResult = await movsyRepository.searchUsers(
       containing: currentSearchText ?? "",
       at: currentFriendsPage,
       with: [.friend]
     )
-    
+
     switch friendsResult {
     case .success(let response):
       friends.setUsers(response.results.toMovsyUsers(as: .friend))
@@ -71,7 +71,7 @@ final class FriendsViewModel {
     case .failure(let error):
       print(error)
     }
-    
+
     isLoadingFriends = false
   }
 
@@ -80,19 +80,19 @@ final class FriendsViewModel {
     currentFriendsPage += 1
     await loadFriends()
   }
-  
+
   @MainActor
   func loadFriendRequests() async {
     guard totalFriendRequestsPages >= currentFriendRequestsPage else { return }
-    
+
     isLoadingRequests = true
-    
+
     let friendRequestsResult = await movsyRepository.searchUsers(
       containing: currentSearchText ?? "",
       at: currentFriendRequestsPage,
       with: [.received]
     )
-    
+
     switch friendRequestsResult {
     case .success(let response):
       friendRequests.setUsers(response.results.toMovsyUsers(as: .received))
@@ -100,7 +100,7 @@ final class FriendsViewModel {
     case .failure(let error):
       print(error)
     }
-    
+
     isLoadingRequests = false
   }
 
@@ -109,18 +109,18 @@ final class FriendsViewModel {
     currentFriendRequestsPage += 1
     await loadFriendRequests()
   }
-  
+
   @MainActor
   func handleFriendshipAction(
-    for user: Binding<MovsyUser>,
+    for user: MovsyUser,
     do action: FriendshipAction
   ) {
     var result: Result<Void, Error>?
-    let uid = user.wrappedValue.uid
-    let oldStatus = user.wrappedValue.friendshipStatus
-    
+    let uid = user.uid
+//    let oldStatus = user.friendshipStatus
+
     updateUserFriendshipState(for: user, when: action)
-    
+
     Task {
       result =
       switch action {
@@ -139,9 +139,9 @@ final class FriendsViewModel {
       case .unblock:
         await movsyRepository.unblockUser(with: uid)
       }
-      
+
       if case .failure = result {
-        user.wrappedValue.friendshipStatus = oldStatus
+        updateUserFriendshipState(for: user, when: action)
       }
     }
   }
@@ -157,19 +157,23 @@ final class FriendsViewModel {
   // MARK: Private functions
 
   private func updateUserFriendshipState(
-    for user: Binding<MovsyUser>, when action: FriendshipAction
+    for user: MovsyUser, when action: FriendshipAction
   ) {
-    switch action {
-    case .sendRequest:
-      user.wrappedValue.friendshipStatus = .sent
-    case .rejectRequest, .cancelRequest, .deleteFriend:
-      user.wrappedValue.friendshipStatus = .notRelated
-    case .acceptRequest:
-      user.wrappedValue.friendshipStatus = .friend
-    case .block:
-      user.wrappedValue.friendshipStatus = .blocked
-    case .unblock:
-      user.wrappedValue.friendshipStatus = .notRelated
+    if let index = friends?.firstIndex(of: user) {
+      friends![index].friendshipStatus =
+
+      switch action {
+      case .sendRequest:
+        .sent
+      case .rejectRequest, .cancelRequest, .deleteFriend:
+        .notRelated
+      case .acceptRequest:
+        .friend
+      case .block:
+        .blocked
+      case .unblock:
+        .notRelated
+      }
     }
   }
 

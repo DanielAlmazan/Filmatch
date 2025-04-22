@@ -92,11 +92,11 @@ struct MyFriendsView: View {
     }
   }
 
-  private func onFriendTapped(for user: Binding<MovsyUser>, do action: FriendshipAction) {
+  private func onFriendTapped(for user: MovsyUser, do action: FriendshipAction) {
     self.friendsVm.handleFriendshipAction(for: user, do: action)
   }
 
-  private func onRequestTapped(for user: Binding<MovsyUser>, do action: FriendshipAction) {
+  private func onRequestTapped(for user: MovsyUser, do action: FriendshipAction) {
     self.friendsVm.handleFriendshipAction(for: user, do: action)
   }
 
