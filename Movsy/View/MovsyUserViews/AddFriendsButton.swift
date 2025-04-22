@@ -21,7 +21,8 @@ struct AddFriendsButton: View {
           .aspectRatio(contentMode: .fit)
           .frame(maxHeight: size * 0.8)
           .frame(height: size)
-        
+          .offset(x: size * 0.1)
+
         Text("Add friends")
       }
       .frame(width: size)
@@ -33,4 +34,5 @@ struct AddFriendsButton: View {
   AddFriendsButton(size: 80) {
     print("Button tapped")
   }
+  .environment(\.locale, .init(identifier: "es"))
 }
