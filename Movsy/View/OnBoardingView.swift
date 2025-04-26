@@ -34,8 +34,24 @@ struct OnBoardingView: View {
           .ignoresSafeArea()
         }
       }
+      .indexViewStyle(.page(backgroundDisplayMode: .always))
       .tabViewStyle(.page(indexDisplayMode: .always))
       .ignoresSafeArea(.all)
+
+      if selectedPage < totalPages - 1 {
+        Button {
+          selectedPage = totalPages - 1
+        } label: {
+          HStack {
+            Text("Skip")
+            Image(systemName: "forward.end.alt.fill")
+          }
+        }
+        .foregroundStyle(.white)
+        .padding(25)
+        .ignoresSafeArea(.all)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+      }
 
       StartButtonView(
         isLastPage: selectedPage == totalPages - 1,
@@ -44,12 +60,12 @@ struct OnBoardingView: View {
             isOnboarding = false
           } else {
             withAnimation {
-              selectedPage = totalPages - 1
+              selectedPage += 1
             }
           }
         }
       )
-      .padding(.top, 24)
+      .padding()
     }
     .animation(.easeInOut, value: selectedPage)
     .background(Gradient(colors: [.accent, .accentDarker]))
