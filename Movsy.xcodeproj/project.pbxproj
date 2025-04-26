@@ -287,6 +287,7 @@
 		853990A42DB027F000D46BFB /* TvSeriesCastMemberThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853990A32DB027F000D46BFB /* TvSeriesCastMemberThumbnail.swift */; };
 		853990A62DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json in Resources */ = {isa = PBXBuildFile; fileRef = 853990A52DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json */; };
 		8548E19C2DB3F51900152BEA /* UpdateUsernameBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8548E19B2DB3F51900152BEA /* UpdateUsernameBody.swift */; };
+		85F858282DBCFD4500B23705 /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F858272DBCFD4500B23705 /* CheckboxToggleStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -566,6 +567,7 @@
 		853990A52DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tv-44217-append_to_response-aggregate-credits-videos.json"; sourceTree = "<group>"; };
 		8548E19B2DB3F51900152BEA /* UpdateUsernameBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameBody.swift; sourceTree = "<group>"; };
 		8569CD772DADA56B00AA832B /* Movsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Movsy.entitlements; sourceTree = "<group>"; };
+		85F858272DBCFD4500B23705 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -961,6 +963,7 @@
 				851B9A082DAD8E8E00DD580B /* SecureFieldWithRevealButton.swift */,
 				851B9A092DAD8E8E00DD580B /* TextFieldWithClearButton.swift */,
 				851B9A0A2DAD8E8E00DD580B /* WideButtonStyle.swift */,
+				85F858272DBCFD4500B23705 /* CheckboxToggleStyle.swift */,
 			);
 			path = CustomFields;
 			sourceTree = "<group>";
@@ -1297,6 +1300,7 @@
 				851B9A7D2DAD8E8E00DD580B /* TvSeriesRepositoryImpl.swift in Sources */,
 				851B9A7E2DAD8E8E00DD580B /* MovsyHttpClient.swift in Sources */,
 				851B9A7F2DAD8E8E00DD580B /* AcceptFriendshipRequestBody.swift in Sources */,
+				85F858282DBCFD4500B23705 /* CheckboxToggleStyle.swift in Sources */,
 				851B9A802DAD8E8E00DD580B /* CreateVisitedFiltersHashBody.swift in Sources */,
 				851B9A812DAD8E8E00DD580B /* DeleteFriendshipBody.swift in Sources */,
 				851B9A822DAD8E8E00DD580B /* SendFriendshipBody.swift in Sources */,
@@ -1660,6 +1664,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1694,6 +1699,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
