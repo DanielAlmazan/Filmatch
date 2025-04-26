@@ -234,6 +234,38 @@
         }
       }
     },
+    "< 95 min" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "< 95 min"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "< 95 min"
+          }
+        }
+      }
+    },
+    "< 120 min" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "< 120 min"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "< 120 min"
+          }
+        }
+      }
+    },
     "Accept" : {
       "localizations" : {
         "ca" : {
@@ -294,6 +326,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añadir amigos"
+          }
+        }
+      }
+    },
+    "all_filters" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tots"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
           }
         }
       }
@@ -1329,13 +1383,13 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pel·lícules"
+            "value" : "Pel·lis"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Películas"
+            "value" : "Pelis"
           }
         }
       }
@@ -1425,13 +1479,13 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No s'han trobat pel·lícules"
+            "value" : "No s'han trobat pel·lis"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No se encontraron películas"
+            "value" : "No se encontraron pelis"
           }
         }
       }
@@ -1804,6 +1858,38 @@
         }
       }
     },
+    "Score > 50" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nota > 50"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nota > 50"
+          }
+        }
+      }
+    },
+    "Score > 75" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nota > 75"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nota > 75"
+          }
+        }
+      }
+    },
     "Search" : {
       "localizations" : {
         "ca" : {
@@ -2018,13 +2104,29 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sèries de televisió"
+            "value" : "Sèries"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Series de televisión"
+            "value" : "Series"
+          }
+        }
+      }
+    },
+    "TV Series" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sèries"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Series"
           }
         }
       }

@@ -34,11 +34,20 @@ struct ProfileSummary: View {
         height: kRowsHeight,
         isLoading: self.$friendsVm.isLoadingFriends,
         friends: self.$friendsVm.friends)
+      .overlay(alignment: .topTrailing) {
+        if let requests = friendsVm.friendRequests?.count, requests > 0 {
+          Text("\(requests)")
+            .font(.caption)
+            .foregroundColor(.white)
+            .padding(5)
+            .background(.red)
+            .clipShape(.circle)
+            .offset(x: 8, y: -8)
+        }
+      }
     }
     .navigationTitle(Text(user.username ?? "Profile"))
-    .task {
-      await initFriends()
-    }
+    .task { await initFriends() }
   }
   
   private func initFriends() async {

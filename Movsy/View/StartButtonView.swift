@@ -14,7 +14,7 @@ struct StartButtonView: View {
   var body: some View {
     Button(action: action) {
       HStack(spacing: 8) {
-        Text(isLastPage ? "Start" : "Skip")
+        Text(isLastPage ? "Start" : "Next")
 
         Image(systemName: isLastPage ? "arrow.right.circle" : "forward.fill")
           .imageScale(.large)

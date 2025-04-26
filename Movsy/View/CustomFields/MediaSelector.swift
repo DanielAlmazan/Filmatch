@@ -12,13 +12,13 @@ struct MediaSelector: View {
   var body: some View {
     HStack(spacing: 20) {
       FilterToggleView(
-        text: "Movie", isActive: selectedMedia == .movie
+        localizedText: "Movies", isActive: selectedMedia == .movie
       ) {
         selectedMedia = .movie
       }
       
       FilterToggleView(
-        text: "TV Series", isActive: selectedMedia == .tvSeries
+        localizedText: "TV Series", isActive: selectedMedia == .tvSeries
       ) {
         selectedMedia = .tvSeries
       }
