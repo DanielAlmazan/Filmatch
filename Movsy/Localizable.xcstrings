@@ -1863,13 +1863,13 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Punt. > 50"
+            "value" : "Nota > 50"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Punt. > 50"
+            "value" : "Nota > 50"
           }
         }
       }
@@ -1879,13 +1879,13 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Punt. > 75"
+            "value" : "Nota > 75"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Punt. > 75"
+            "value" : "Nota > 75"
           }
         }
       }
