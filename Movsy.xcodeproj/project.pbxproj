@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85069EB32DB81CF2004F6A12 /* FilterToggleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85069EB22DB81CF2004F6A12 /* FilterToggleText.swift */; };
 		851B99272DAD89CD00DD580B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 851B99262DAD89CD00DD580B /* GoogleSignIn */; };
 		851B99292DAD89CD00DD580B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 851B99282DAD89CD00DD580B /* GoogleSignInSwift */; };
 		851B992C2DAD8A3E00DD580B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 851B992B2DAD8A3E00DD580B /* FirebaseAnalytics */; };
@@ -289,6 +290,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85069EB22DB81CF2004F6A12 /* FilterToggleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToggleText.swift; sourceTree = "<group>"; };
 		851B96E62DAD88AE00DD580B /* Movsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		851B99362DAD8B4800DD580B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		851B99372DAD8B4800DD580B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -968,6 +970,7 @@
 			children = (
 				851B9A0C2DAD8E8E00DD580B /* FiltersView.swift */,
 				851B9A0D2DAD8E8E00DD580B /* FilterToggleView.swift */,
+				85069EB22DB81CF2004F6A12 /* FilterToggleText.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -1455,6 +1458,7 @@
 				851B9B1D2DAD8E8E00DD580B /* PersonTvSeriesCreditsAsCrewRow.swift in Sources */,
 				851B9B1E2DAD8E8E00DD580B /* MyListsView.swift in Sources */,
 				851B9B1F2DAD8E8E00DD580B /* ProfileMediaCardRowContainer.swift in Sources */,
+				85069EB32DB81CF2004F6A12 /* FilterToggleText.swift in Sources */,
 				851B9B202DAD8E8E00DD580B /* ProfileMediaCardsRow.swift in Sources */,
 				851B9B212DAD8E8E00DD580B /* ProfileSummary.swift in Sources */,
 				851B9B222DAD8E8E00DD580B /* ProfileTab.swift in Sources */,
