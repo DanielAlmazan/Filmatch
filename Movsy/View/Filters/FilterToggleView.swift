@@ -11,6 +11,7 @@ import SwiftUI
 struct FilterToggleView: View {
   @Environment(\.colorScheme) var colorScheme
 
+  let localizedText: LocalizedStringKey?
   let text: String?
   let image: String?
   let cornerRadius: CGFloat
@@ -65,6 +66,22 @@ struct FilterToggleView: View {
     action: @escaping () -> Void
   ) {
     self.text = text
+    self.localizedText = nil
+    self.image = nil
+    self.size = isSquared ? defaultSize : nil
+    self.isActive = isActive
+    self.action = action
+    self.cornerRadius = isSquared ? 20 : 15
+  }
+  
+  init(
+    localizedText: LocalizedStringKey?,
+    isSquared: Bool = false,
+    isActive: Bool = false,
+    action: @escaping () -> Void
+  ) {
+    self.localizedText = localizedText
+    self.text = nil
     self.image = nil
     self.size = isSquared ? defaultSize : nil
     self.isActive = isActive
@@ -84,6 +101,7 @@ struct FilterToggleView: View {
     action: @escaping () -> Void
   ) {
     self.image = image
+    self.localizedText = nil
     self.text = nil
     self.size = defaultSize
     self.isActive = isActive
@@ -97,18 +115,9 @@ struct FilterToggleView: View {
     } label: {
       ZStack {
         if let text {
-          if let size {
-            Text(text)
-              .padding(.horizontal, 16)
-              .padding(.vertical, 8)
-              .frame(width: size, height: size)
-              .fontWeight(.semibold)
-          } else {
-            Text(text)
-              .padding(.horizontal, 16)
-              .padding(.vertical, 8)
-              .fontWeight(.semibold)
-          }
+          FilterToggleText(text: text, size: size)
+        } else if let localizedText {
+          FilterToggleText(localizedText: localizedText, size: size)
         } else if let base = API.tmdbMediaBaseURL, let image {
           KFImage(
             URL(string: "\(base)/original/\(image)")
@@ -149,7 +158,7 @@ struct FilterToggleView: View {
       print("Button pressed")
     }
     FilterToggleView(
-      text: "All",
+      localizedText: "all_filters",
       isSquared: true,
       isActive: isAllActive
     ) {
@@ -173,4 +182,5 @@ struct FilterToggleView: View {
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
   .background(.bgBase)
+  .environment(\.locale, .init(identifier: "es"))
 }

@@ -29,13 +29,13 @@ struct FiltersView: View {
         HStack(spacing: 20) {
           Group {
             FilterToggleView(
-              text: "Movie", isActive: vm.selectedMedia == .movie
+              localizedText: "Movies", isActive: vm.selectedMedia == .movie
             ) {
               vm.selectedMedia = .movie
             }
 
             FilterToggleView(
-              text: "TV Series", isActive: vm.selectedMedia == .tvSeries
+              localizedText: "TV Series", isActive: vm.selectedMedia == .tvSeries
             ) {
               vm.selectedMedia = .tvSeries
             }
@@ -75,7 +75,7 @@ struct FiltersView: View {
           ScrollView(.horizontal) {
             LazyHGrid(rows: rows, spacing: 16) {
               FilterToggleView(
-                text: "All",
+                localizedText: "all_filters",
                 isSquared: true,
                 isActive: vm.areAllProvidersSelected()
               ) {
@@ -120,14 +120,14 @@ struct FiltersView: View {
         HStack {
           VStack {
             FilterToggleView(
-              text: "Score > 50",
+              localizedText: "Score > 50",
               isActive: self.vm.selectedFilters.minRating == .gte50
             ) {
               self.vm.selectedFilters.minRating =
                 self.vm.selectedFilters.minRating == .gte50 ? nil : .gte50
             }
             FilterToggleView(
-              text: "Score > 75",
+              localizedText: "Score > 75",
               isActive: self.vm.selectedFilters.minRating == .gte75
             ) {
               self.vm.selectedFilters.minRating =
@@ -137,14 +137,14 @@ struct FiltersView: View {
 
           VStack {
             FilterToggleView(
-              text: "< 95 min",
+              localizedText: "< 95 min",
               isActive: self.vm.selectedFilters.maxRuntime == .lte95
             ) {
               self.vm.selectedFilters.maxRuntime =
                 self.vm.selectedFilters.maxRuntime == .lte95 ? nil : .lte95
             }
             FilterToggleView(
-              text: "< 120 min",
+              localizedText: "< 120 min",
               isActive: self.vm.selectedFilters.maxRuntime == .lte120
             ) {
               self.vm.selectedFilters.maxRuntime =
@@ -172,4 +172,5 @@ struct FiltersView: View {
   .task {
     vm.fetchFilters()
   }
+  .environment(\.locale, .init(identifier: "es"))
 }
