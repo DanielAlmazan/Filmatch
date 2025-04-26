@@ -41,15 +41,18 @@ struct RegisterView: View {
   /// Validation errors for the password confirmation field.
   @State private var passwordConfirmationErrors: [LocalizedStringResource]?
 
+  @State private var isTermsAccepted = false
+
   /// The field currently focused in the form.
   @FocusState var focusedField: Field?
 
   /// A computed property to determine if the form is valid.
-  private var isFormValid: Bool {
+  private var isFormNotValid: Bool {
     email.isEmpty
       || emailErrors != nil
       || password.isEmpty
       || passwordErrors != nil
+      || !isTermsAccepted
   }
 
   var body: some View {
@@ -129,6 +132,18 @@ struct RegisterView: View {
             .foregroundColor(.red)
         }
 
+        // MARK: - Terms and conditions
+        Toggle(isOn: $isTermsAccepted) {
+          HStack(spacing: 4) {
+            Text("I accept the")
+            Link("Terms and Conditions", destination: URL(string: "https://catdevs.com/privacy-policy.html")!)
+              .underline()
+          }
+          .font(.footnote)
+        }
+        .toggleStyle(CheckboxToggleStyle())
+        .padding(.horizontal)
+
         // Register button to submit the form.
         Button("Register") {
           authVm.createNewUser(
@@ -139,7 +154,7 @@ struct RegisterView: View {
             password: password)
         }
         .buttonStyle(WideButtonStyle())
-        .disabled(isFormValid)
+        .disabled(isFormNotValid)
       }  // ScrollView
 
       // MARK: - Footer
@@ -163,6 +178,7 @@ struct RegisterView: View {
             authSheetView = .LOGIN
           } label: {
             Text("Login")
+              .bold()
           }
         }  // HStack Go to login
       }  // VStack Footer
