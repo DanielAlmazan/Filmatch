@@ -35,7 +35,7 @@ struct ProfileSummary: View {
         isLoading: self.$friendsVm.isLoadingFriends,
         friends: self.$friendsVm.friends)
       .overlay(alignment: .topTrailing) {
-        if let requests = friendsVm.friendRequests?.count {
+        if let requests = friendsVm.friendRequests?.count, requests > 0 {
           Text("\(requests)")
             .font(.caption)
             .foregroundColor(.white)
