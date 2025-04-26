@@ -33,6 +33,8 @@ struct HomeView: View {
   
   @Environment(MovsyGoRepositoryImpl.self) private var movsyGoRepository
   
+  @Environment(FriendsViewModel.self) var friendsVm
+
   var body: some View {
     TabView(selection: $selectedTab) {
       // MARK: - Discover Tab
@@ -117,6 +119,7 @@ struct HomeView: View {
             .environment(movsyGoRepository)
         }
       }
+      .badge(friendsVm.friendRequests?.count ?? 1)
     }
   }
 }
