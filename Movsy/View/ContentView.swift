@@ -67,8 +67,6 @@ struct ContentView: View {
             if friendsVm.friendRequests == nil && !friendsVm.isLoadingRequests {
               await friendsVm.loadFriendRequests()
             }
-
-            await friendsVm.loadFriendRequests()
           }
       } else {
         // Show the welcome view if the user is not authenticated.

@@ -8,33 +8,41 @@
 import SwiftUI
 
 struct FriendRequestsView: View {
-  @Binding var users: [MovsyUser]
+  var users: [MovsyUser]
   let onAction: (MovsyUser, FriendshipAction) -> Void
   let onLastAppeared: () -> Void
 
-  @State private var isFolded: Bool = true
+  @State private var isFriendshipRequestsExpanded: Bool = true
 
   var body: some View {
-    VStack {
-      Section(isExpanded: $isFolded, content: {
+    VStack(alignment: .leading) {
+      HStack {
+        Text("Friendship Requests")
+          .font(.title2)
+          .fontWeight(.semibold)
+        Spacer()
+        Button {
+          withAnimation(.bouncy(duration: 0.3)) {
+            isFriendshipRequestsExpanded.toggle()
+          }
+        } label: {
+          Image(systemName: isFriendshipRequestsExpanded ? "chevron.down" : "chevron.right")
+            .symbolEffect(.bounce, value: isFriendshipRequestsExpanded)
+        }
+      }
+      if isFriendshipRequestsExpanded {
         ForEach(users) { user in
           UserListRow(
             user: user,
             onAction: onAction
           )
-          .listRowSeparator(.hidden)
+          .onAppear {
+            if users.last == user {
+              onLastAppeared()
+            }
+          }
         }
-        .listRowBackground(Color.clear)
-      }, header: {
-        Text("Friendship Requests")
-          .font(.title2)
-          .fontWeight(.semibold)
-      })
-    }
-    .padding()
-    .overlay {
-      RoundedRectangle(cornerRadius: 10)
-        .stroke(.onBgBase.opacity(0.5), lineWidth: 2)
+      }
     }
   }
 }
@@ -55,7 +63,7 @@ struct FriendRequestsView: View {
 
   List {
     FriendRequestsView(
-      users: $users,
+      users: users,
       onAction: { user, action in print("User \(user.username ?? "unknown") \(action)") },
       onLastAppeared: { print("Last appeared") }
     )
