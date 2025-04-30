@@ -1874,6 +1874,9 @@
         }
       }
     },
+    "Sample error" : {
+      "shouldTranslate" : false
+    },
     "Save" : {
       "localizations" : {
         "ca" : {

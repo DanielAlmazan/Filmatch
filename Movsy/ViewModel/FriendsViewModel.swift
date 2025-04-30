@@ -124,21 +124,18 @@ final class FriendsViewModel {
       switch action {
       case .sendRequest:
         await movsyRepository.sendFriendshipRequest(to: uid)
-      case .cancelRequest:
+      case .deleteFriend, .cancelRequest, .rejectRequest:
         await movsyRepository.removeFriendship(with: uid)
       case .acceptRequest:
         await movsyRepository.acceptFriendshipRequest(from: uid)
-      case .rejectRequest:
-        await movsyRepository.removeFriendship(with: uid)
-      case .deleteFriend:
-        await movsyRepository.removeFriendship(with: uid)
       case .block:
         await movsyRepository.blockUser(with: uid)
       case .unblock:
         await movsyRepository.unblockUser(with: uid)
       }
 
-      if case .failure = result {
+      if case .failure(let error) = result {
+        print(error.localizedDescription)
         updateUserRequestState(for: user, when: action)
       }
     }
@@ -158,14 +155,10 @@ final class FriendsViewModel {
       switch action {
       case .sendRequest:
         await movsyRepository.sendFriendshipRequest(to: uid)
-      case .cancelRequest:
+      case .deleteFriend, .cancelRequest, .rejectRequest:
         await movsyRepository.removeFriendship(with: uid)
       case .acceptRequest:
         await movsyRepository.acceptFriendshipRequest(from: uid)
-      case .rejectRequest:
-        await movsyRepository.removeFriendship(with: uid)
-      case .deleteFriend:
-        await movsyRepository.removeFriendship(with: uid)
       case .block:
         await movsyRepository.blockUser(with: uid)
       case .unblock:

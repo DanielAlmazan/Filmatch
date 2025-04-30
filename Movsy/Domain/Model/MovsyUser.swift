@@ -58,6 +58,8 @@ extension MovsyUser: Equatable {
     && lhs.username == rhs.username
     && lhs.uid == rhs.uid
     && lhs.photoUrl == rhs.photoUrl
+    && lhs.friendshipStatus == rhs.friendshipStatus
+    && lhs.isEmailVerified == rhs.isEmailVerified
   }
 }
 
