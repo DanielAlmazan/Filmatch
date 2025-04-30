@@ -1170,12 +1170,28 @@
         }
       }
     },
+    "I accept the" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accepto els"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acepto los"
+          }
+        }
+      }
+    },
     "In \"%@\"" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A \"%@\""
+            "value" : "s"
           }
         },
         "es" : {
@@ -1438,6 +1454,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuevo nombre de usuario"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Següent"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente"
           }
         }
       }
@@ -2030,6 +2062,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SuperHype"
+          }
+        }
+      }
+    },
+    "Terms and Conditions" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termes i Condicions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Términos y Condiciones"
           }
         }
       }
