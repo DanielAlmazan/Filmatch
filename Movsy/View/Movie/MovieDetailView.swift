@@ -106,16 +106,43 @@ struct MovieDetailView: View {
 
 // Use the movie id's to preview these films. They can be loaded
 // either from the json presets or the TMDB repository
-#Preview {
-  @Previewable @State var alienFilmId = 945961
-  @Previewable @State var screamFilmId = 646385
-  @Previewable @State var jokerFilmId = 475557
+#Preview("Alien: Romulus") {
   @Previewable @State var personRepository = PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource())
   @Previewable @State var moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
   
+  @Previewable let alienFilmId = 945961
+
   MovieDetailView(
     repository: moviesRepository,
     movieId: alienFilmId
+  )
+  .environment(personRepository)
+  .environment(moviesRepository)
+}
+
+#Preview("Scream") {
+  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource())
+  @Previewable @State var moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  
+  @Previewable let screamFilmId = 646385
+
+  MovieDetailView(
+    repository: moviesRepository,
+    movieId: screamFilmId
+  )
+  .environment(personRepository)
+  .environment(moviesRepository)
+}
+
+#Preview("Joker") {
+  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource())
+  @Previewable @State var moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  
+  @Previewable let jokerFilmId = 475557
+
+  MovieDetailView(
+    repository: moviesRepository,
+    movieId: jokerFilmId
   )
   .environment(personRepository)
   .environment(moviesRepository)
