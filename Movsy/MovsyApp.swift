@@ -31,7 +31,7 @@ struct MovsyApp: App {
       authenticationRepository: AuthenticationFirebaseRepository(
         dataSource: AuthenticationFirebaseDataSource()
       ),
-          movsyRepository: movsyGoRepository
+      movsyRepository: movsyGoRepository
     )
   }
 
