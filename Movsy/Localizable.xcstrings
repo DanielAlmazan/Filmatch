@@ -583,13 +583,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nascuda: %@"
+            "value" : "Data de naixement: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nacida: %@"
+            "value" : "Fecha de nacimiento: %@"
           }
         }
       }
@@ -599,13 +605,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nascut: %@"
+            "value" : "Data de naixement: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nacido: %@"
+            "value" : "Fecha de nacimiento: %@"
           }
         }
       }
@@ -615,13 +627,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nascut no binari: %@"
+            "value" : "Data de naixement: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nacido no binario: %@"
+            "value" : "Fecha de nacimiento: %@"
           }
         }
       }
@@ -1255,13 +1273,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "coneixuda pel departament: %@"
+            "value" : "Coneguda pel departament: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "conocida por el departamento: %@"
+            "value" : "Conocida por el departamento: %@"
           }
         }
       }
@@ -1271,13 +1295,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "coneigut pel departament: %@"
+            "value" : "Coneigut pel departament: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "conocido por el departamento: %@"
+            "value" : "Conocido por el departamento: %@"
           }
         }
       }
@@ -1287,13 +1317,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "coneigut no binari pel departament: %@"
+            "value" : "Coneigut no binari pel departament: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "conocido no binario por el departamento: %@"
+            "value" : "Conocide por el departamento: %@"
           }
         }
       }
@@ -1873,9 +1909,6 @@
           }
         }
       }
-    },
-    "Sample error" : {
-      "shouldTranslate" : false
     },
     "Save" : {
       "localizations" : {
