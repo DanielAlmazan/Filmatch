@@ -38,9 +38,15 @@ struct TvSeriesDetailView: View {
 
               VStack(alignment: .leading) {
               // MARK: - Movie title
-                Text(tvSeries.name ?? "Unknown")
-                  .font(.title)
-                  .textSelection(.enabled)
+                HStack {
+                  Text(tvSeries.name ?? "Unknown")
+                    .font(.title)
+                    .textSelection(.enabled)
+
+                  if let date = tvSeries.firstAirDate {
+                    Text("(\(Calendar.current.component(.year, from: date).description))")
+                  }
+                }
 
                 // MARK: - Tagline
                 if let tagline = tvSeries.tagline, !tagline.isEmpty {

@@ -47,9 +47,15 @@ struct MovieDetailView: View {
               
               VStack(alignment: .leading) {
                 // MARK: - Movie title
-                Text(movie.title ?? "Unknown")
-                  .font(.title)
-                  .textSelection(.enabled)
+                HStack {
+                  Text(movie.title ?? "Unknown")
+                    .font(.title)
+                    .textSelection(.enabled)
+
+                  if let date = movie.releaseDate {
+                    Text("(\(Calendar.current.component(.year, from: date).description))")
+                  }
+                }
 
                 // MARK: - Tagline
                 if let tagline = movie.tagline, !tagline.isEmpty {
