@@ -12,6 +12,9 @@ struct ProfileMediaCardsRow: View {
   let cornerRadius: CGFloat
   let updateItem: (any DiscoverItem, InterestStatus?) -> Void
 
+  @Environment(MoviesRepositoryImpl.self) var moviesRepository
+  @Environment(TvSeriesRepositoryImpl.self) var tvRepository
+
   var body: some View {
     if !(items?.isEmpty ?? true) {
       ScrollView(.horizontal) {
@@ -25,32 +28,39 @@ struct ProfileMediaCardsRow: View {
                 updateItem(item, newStatus)
               }
             )
-            ZStack(alignment: .bottomTrailing) {
-              PosterView(
-                imageUrl: item.posterPath, size: .w342, posterType: .movie
-              )
-              .clipShape(.rect(cornerRadius: cornerRadius))
-              .background(.ultraThinMaterial)
-              .overlay(alignment: .topTrailing) {
-                Menu {
-                  InterestStatusPicker(selection: statusBinding)
+            NavigationLink {
+              if let movie = item as? DiscoverMovieItem {
+                MovieDetailView(repository: moviesRepository, movieId: movie.id)
+              } else if let tvSeries = item as? DiscoverTvSeriesItem {
+                TvSeriesDetailView(repository: tvRepository, seriesId: tvSeries.id)
+              }
+            } label: {
+              ZStack(alignment: .bottomTrailing) {
+                PosterView(
+                  imageUrl: item.posterPath, size: .w342, posterType: .movie
+                )
+                .clipShape(.rect(cornerRadius: cornerRadius))
+                .background(.ultraThinMaterial)
+                .overlay(alignment: .topTrailing) {
+                  Menu {
+                    InterestStatusPicker(selection: statusBinding)
 
-                } label: {
-                  Image(systemName: "ellipsis")
-                    .rotationEffect(.init(degrees: 90))
-                    .padding(.vertical, 10)
-                    .shadow(color: .black, radius: 5)
-                    .foregroundStyle(.white)
+                  } label: {
+                    Image(systemName: "ellipsis")
+                      .rotationEffect(.degrees(90))
+                      .frame(width: 25, height: 30)
+                      .shadow(color: .black, radius: 5)
+                      .foregroundStyle(.white)
+                  }
                 }
-              }
-              .contextMenu {
-                InterestStatusPicker(selection: statusBinding)
-                  .onAppear {  }
-              }
+                .contextMenu {
+                  InterestStatusPicker(selection: statusBinding)
+                }
 
-              if let status = item.status, let icon = status.icon {
-                icon
-                  .offset(x: 6, y: 6)
+                if let status = item.status, let icon = status.icon {
+                  icon
+                    .offset(x: 6, y: 6)
+                }
               }
             }
           }
@@ -63,6 +73,8 @@ struct ProfileMediaCardsRow: View {
 
 #Preview {
   @Previewable @State var movies: [any DiscoverItem]? = [DiscoverMovieItem.default]
+  let moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  let tvRepository = TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource())
 
   HStack {
     ProfileMediaCardsRow(items: $movies, cornerRadius: 10) { item, newStatus in
@@ -72,4 +84,6 @@ struct ProfileMediaCardsRow: View {
     .task { movies![0].status = .watchlist }
   }
   .frame(maxWidth: .infinity, maxHeight: .infinity)
+  .environment(moviesRepository)
+  .environment(tvRepository)
 }
