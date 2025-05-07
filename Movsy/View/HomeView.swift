@@ -119,7 +119,7 @@ struct HomeView: View {
             .environment(movsyGoRepository)
         }
       }
-      .badge(friendsVm.friendRequests?.count ?? 1)
+      .badge(friendsVm.friendRequests?.count ?? 0)
     }
   }
 }
