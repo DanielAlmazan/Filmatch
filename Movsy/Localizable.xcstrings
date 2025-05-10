@@ -1430,6 +1430,22 @@
         }
       }
     },
+    "Matches come after friends…" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primer les amistats, després els matches…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primero las amistades, luego los matches…"
+          }
+        }
+      }
+    },
     "Movies" : {
       "localizations" : {
         "ca" : {
@@ -1526,18 +1542,18 @@
         }
       }
     },
-    "No matches found… maybe you haven’t dared to add any friends yet?" : {
+    "No matches found… maybe you should add some movies to your watchlist or super hype?" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No s’han trobat matches… potser encara no t’has animat a afegir amics."
+            "value" : "No s'han trobat matches… potser hauries d’afegir pel·lis a la teva llista de pendents o super hype."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No se han encontrado matches… ¿quizás aún no te has animado a agregar amigos?"
+            "value" : "No hay matches… quizá deberías añadir pelis a tu lista de pendientes o super hype."
           }
         }
       }
@@ -2167,6 +2183,22 @@
         }
       }
     },
+    "Try adding some friends to see matches!" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Afegeix alguns amics per veure coincidències!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Añade algunos amigos para ver coincidencias!"
+          }
+        }
+      }
+    },
     "Try refreshing or changing your filters." : {
       "localizations" : {
         "ca" : {
@@ -2419,6 +2451,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Año"
+          }
+        }
+      }
+    },
+    "You can add friends from the profile tab." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pots afegir amics des de la pestanya de perfil."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes añadir amigos desde la pestaña de perfil."
           }
         }
       }
