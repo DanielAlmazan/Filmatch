@@ -11,61 +11,74 @@ struct MatchesTabView: View {
   @State var matchesVm: MatchesViewModel
   @State private var isPresentingLists: Bool = false
 
+  @Environment(FriendsViewModel.self) var friendsVm
+
   init(repository: MovsyGoRepository) {
     self.matchesVm = .init(repository: repository)
   }
 
   var body: some View {
-    VStack(spacing: 10) {
-      MediaSelector(selectedMedia: $matchesVm.selectedMedia)
-      
-      SearchField(query: self.$matchesVm.query) {
-        self.matchesVm.onSubmitQuery()
-      }
-      .padding(.horizontal)
+    if friendsVm.friends?.isEmpty ?? true {
+      Text("Matches come after friends…")
+        .font(.headline)
+      Text("Try adding some friends to see matches!")
+      Text("You can add friends from the profile tab.")
+    } else {
+      VStack(spacing: 10) {
+        MediaSelector(selectedMedia: $matchesVm.selectedMedia)
 
-      ScrollView {
-        if matchesVm.isLoadingSimpleFriendsMatches {
-          ProgressView()
-        } else if matchesVm.results?.isEmpty ?? true {
-          if self.matchesVm.query.isEmpty {
-            Text("No matches found… maybe you haven’t dared to add any friends yet?")
-              .padding()
-          } else {
-            Text("It seems there you have no matches with any \"\(self.matchesVm.query)\"…")
-          }
+        SearchField(query: self.$matchesVm.query) {
+          self.matchesVm.onSubmitQuery()
         }
-        
-        if let results = matchesVm.results, !results.isEmpty {
-          LazyVStack(spacing: 10) {
-            ForEach(results) { result in
-              MatchesWithFriendContainerView(
-                friendMatch: result,
-                mediaType: self.matchesVm.selectedMedia,
-                rootRefresh: onRefresh,
-              ) {
-                if results.last == result {
-                  loadMoreSimpleFriendMatches()
+        .padding(.horizontal)
+
+        ScrollView {
+          if matchesVm.isLoadingSimpleFriendsMatches {
+            ProgressView()
+          } else if matchesVm.results?.isEmpty ?? true {
+            if self.matchesVm.query.isEmpty {
+              Text("No matches found… maybe you should add some movies to your watchlist or super hype?")
+                .padding()
+            } else {
+              Text("It seems there you have no matches with any \"\(self.matchesVm.query)\"…")
+            }
+          }
+
+          if let results = matchesVm.results, !results.isEmpty {
+            LazyVStack(spacing: 10) {
+              ForEach(results) { result in
+                MatchesWithFriendContainerView(
+                  friendMatch: result,
+                  mediaType: self.matchesVm.selectedMedia,
+                  rootRefresh: onRefresh,
+                ) {
+                  if results.last == result {
+                    loadMoreSimpleFriendMatches()
+                  }
+                } onLastItemAppeared: {
+                  loadMoreDetailMatchItems()
                 }
-              } onLastItemAppeared: {
-                loadMoreDetailMatchItems()
+                .padding()
+                .background(.bgContainer)
+                .clipShape(.rect(cornerRadius: 10))
+                .frame(height: 200)
               }
-              .padding()
-              .background(.bgContainer)
-              .clipShape(.rect(cornerRadius: 10))
-              .frame(height: 200)
             }
           }
         }
-      }
         .padding(.horizontal)
         .refreshable { onRefresh() }
-    }
-    .frame(maxHeight: .infinity, alignment: .top)
-    .navigationTitle("Matches")
-    .task { await initializeList() }
-    .onChange(of: matchesVm.selectedMedia) {
-      onSelectedMediaChanged()
+      }
+      .frame(maxHeight: .infinity, alignment: .top)
+      .navigationTitle("Matches")
+      .task {
+        if !(friendsVm.friends?.isEmpty ?? true) {
+          await initializeList()
+        }
+      }
+      .onChange(of: matchesVm.selectedMedia) {
+        onSelectedMediaChanged()
+      }
     }
   }
 
@@ -97,7 +110,7 @@ struct MatchesTabView: View {
   }
 }
 
-#Preview {
+#Preview("Matches – No Friends") {
   let repository = MovsyGoRepositoryImpl(
     datasource: JsonMovsyDatasource(
       client: TMDBJsonClient()
@@ -106,11 +119,46 @@ struct MatchesTabView: View {
 
   let movieRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
   let tvRepository = TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource())
-  
+  let friendsVm = FriendsViewModel(
+    movsyRepository: MovsyGoRepositoryImpl(
+      datasource: JsonMovsyDatasource(
+        client: TMDBJsonClient()
+      )
+    )
+  )
+
   NavigationStack {
     MatchesTabView(repository: repository)
   }
   .environment(movieRepository)
   .environment(tvRepository)
   .environment(repository)
+  .environment(friendsVm)
+}
+
+#Preview("Matches – Friends") {
+  let repository = MovsyGoRepositoryImpl(
+    datasource: JsonMovsyDatasource(
+      client: TMDBJsonClient()
+    )
+  )
+
+  let movieRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  let tvRepository = TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource())
+  let friendsVm = FriendsViewModel(
+    movsyRepository: MovsyGoRepositoryImpl(
+      datasource: JsonMovsyDatasource(
+        client: TMDBJsonClient()
+      )
+    )
+  )
+
+  NavigationStack {
+    MatchesTabView(repository: repository)
+  }
+  .task { await friendsVm.loadFriends() }
+  .environment(movieRepository)
+  .environment(tvRepository)
+  .environment(repository)
+  .environment(friendsVm)
 }

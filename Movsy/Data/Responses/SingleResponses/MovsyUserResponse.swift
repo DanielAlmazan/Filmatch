@@ -5,7 +5,6 @@
 //  Created by Daniel Enrique Almazán Sellés on 27/1/25.
 //
 
-//import FirebaseAuth
 import Foundation
 
 final class MovsyUserResponse: Identifiable, Sendable {

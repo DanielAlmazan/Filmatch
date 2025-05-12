@@ -25,35 +25,7 @@ struct MyFriendsView: View {
       ScrollView {
         LazyVStack(alignment: .leading, spacing: 12) {
           if let requests = self.friendsVm.friendRequests {
-            VStack(alignment: .leading) {
-              HStack {
-                Text("Friendship Requests")
-                  .font(.title2)
-                  .fontWeight(.semibold)
-                Spacer()
-                Button {
-                  withAnimation(.bouncy(duration: 0.3)) {
-                    isFriendshipRequestsExpanded.toggle()
-                  }
-                } label: {
-                  Image(systemName: isFriendshipRequestsExpanded ? "chevron.down" : "chevron.right")
-                    .symbolEffect(.bounce, value: isFriendshipRequestsExpanded)
-                }
-              }
-              if isFriendshipRequestsExpanded {
-                ForEach(requests) { user in
-                  UserListRow(
-                    user: user,
-                    onAction: onRequestTapped
-                  )
-                  .onAppear {
-                    if requests.last == user {
-                      onLastRequestAppeared()
-                    }
-                  }
-                }
-              }
-            }
+            FriendRequestsView(users: requests, onAction: onRequestTapped, onLastAppeared: onLastRequestAppeared)
           }
 
           if let friends = self.friendsVm.friends {
@@ -97,7 +69,7 @@ struct MyFriendsView: View {
   }
 
   private func onRequestTapped(for user: MovsyUser, do action: FriendshipAction) {
-    self.friendsVm.handleFriendshipAction(for: user, do: action)
+    self.friendsVm.handleRequestAction(for: user, do: action)
   }
 
   private func onLastRequestAppeared() {

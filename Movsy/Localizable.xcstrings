@@ -583,13 +583,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nascuda: %@"
+            "value" : "Data de naixement: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nacida: %@"
+            "value" : "Fecha de nacimiento: %@"
           }
         }
       }
@@ -599,13 +605,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nascut: %@"
+            "value" : "Data de naixement: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nacido: %@"
+            "value" : "Fecha de nacimiento: %@"
           }
         }
       }
@@ -615,13 +627,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nascut no binari: %@"
+            "value" : "Data de naixement: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Born: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nacido no binario: %@"
+            "value" : "Fecha de nacimiento: %@"
           }
         }
       }
@@ -1170,12 +1188,28 @@
         }
       }
     },
+    "I accept the" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accepto els"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acepto los"
+          }
+        }
+      }
+    },
     "In \"%@\"" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A \"%@\""
+            "value" : "s"
           }
         },
         "es" : {
@@ -1239,13 +1273,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "coneixuda pel departament: %@"
+            "value" : "Coneguda pel departament: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "conocida por el departamento: %@"
+            "value" : "Conocida por el departamento: %@"
           }
         }
       }
@@ -1255,13 +1295,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "coneigut pel departament: %@"
+            "value" : "Coneigut pel departament: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "conocido por el departamento: %@"
+            "value" : "Conocido por el departamento: %@"
           }
         }
       }
@@ -1271,13 +1317,19 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "coneigut no binari pel departament: %@"
+            "value" : "Coneigut no binari pel departament: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Known for department: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "conocido no binario por el departamento: %@"
+            "value" : "Conocide por el departamento: %@"
           }
         }
       }
@@ -1378,6 +1430,22 @@
         }
       }
     },
+    "Matches come after friends…" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primer les amistats, després els matches…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primero las amistades, luego los matches…"
+          }
+        }
+      }
+    },
     "Movies" : {
       "localizations" : {
         "ca" : {
@@ -1442,6 +1510,22 @@
         }
       }
     },
+    "Next" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Següent"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente"
+          }
+        }
+      }
+    },
     "No cast members found for this movie." : {
       "localizations" : {
         "ca" : {
@@ -1458,18 +1542,18 @@
         }
       }
     },
-    "No matches found… maybe you haven’t dared to add any friends yet?" : {
+    "No matches found… maybe you should add some movies to your watchlist or super hype?" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No s’han trobat matches… potser encara no t’has animat a afegir amics."
+            "value" : "No s'han trobat matches… potser hauries d’afegir pel·lis a la teva llista de pendents o super hype."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No se han encontrado matches… ¿quizás aún no te has animado a agregar amigos?"
+            "value" : "No hay matches… quizá deberías añadir pelis a tu lista de pendientes o super hype."
           }
         }
       }
@@ -2034,6 +2118,22 @@
         }
       }
     },
+    "Terms and Conditions" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termes i Condicions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Términos y Condiciones"
+          }
+        }
+      }
+    },
     "There are no items to show..." : {
       "localizations" : {
         "ca" : {
@@ -2079,6 +2179,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hasta"
+          }
+        }
+      }
+    },
+    "Try adding some friends to see matches!" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Afegeix alguns amics per veure coincidències!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Añade algunos amigos para ver coincidencias!"
           }
         }
       }
@@ -2335,6 +2451,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Año"
+          }
+        }
+      }
+    },
+    "You can add friends from the profile tab." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pots afegir amics des de la pestanya de perfil."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes añadir amigos desde la pestaña de perfil."
           }
         }
       }

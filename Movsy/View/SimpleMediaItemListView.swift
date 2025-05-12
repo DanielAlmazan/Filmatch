@@ -57,7 +57,7 @@ struct SimpleMediaItemListView: View {
               } label: {
                 Image(systemName: "ellipsis")
                   .rotationEffect(.degrees(90))
-                  .padding(5)
+                  .frame(width: 30, height: 30)
                   .frame(alignment: .topTrailing)
               }
             }

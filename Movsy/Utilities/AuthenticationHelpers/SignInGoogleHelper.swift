@@ -7,7 +7,6 @@
 
 import Foundation
 @preconcurrency import GoogleSignIn
-import GoogleSignInSwift
 import Firebase
 
 final class SignInGoogleHelper {

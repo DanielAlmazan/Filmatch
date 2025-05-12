@@ -72,14 +72,29 @@ struct ProvidersView: View {
 #Preview("Example Sheet") {
   @Previewable @State var isPresented: Bool = true
   
-  Group {
-    VStack {
-      Button("Open Providers View") {
-        isPresented = true
-      }
+  VStack {
+    Button("Open Providers View") {
+      isPresented = true
     }
-    .sheet(isPresented: $isPresented) {
-      ProvidersView(providers: .default)
-    }
+  }
+  .sheet(isPresented: $isPresented) {
+    ProvidersView(providers: .default)
+  }
+}
+
+#Preview("On MovieDetails") {
+  @Previewable @State var isPresented: Bool = true
+  @Previewable @State var personRepository = PersonRepositoryImpl(datasource: JsonPersonRemoteDatasource())
+  @Previewable @State var moviesRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
+  @Previewable let alienFilmId = 945961
+
+  MovieDetailView(
+    repository: moviesRepository,
+    movieId: alienFilmId
+  )
+  .environment(personRepository)
+  .environment(moviesRepository)
+  .sheet(isPresented: $isPresented) {
+    ProvidersView(providers: .default)
   }
 }

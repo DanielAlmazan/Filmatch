@@ -111,14 +111,43 @@ final class FriendsViewModel {
   }
 
   @MainActor
+  func handleRequestAction(
+    for user: MovsyUser,
+    do action: FriendshipAction
+  ) {
+    var result: Result<Void, Error>?
+    let uid = user.uid
+    updateUserRequestState(for: user, when: action)
+
+    Task {
+      result =
+      switch action {
+      case .sendRequest:
+        await movsyRepository.sendFriendshipRequest(to: uid)
+      case .deleteFriend, .cancelRequest, .rejectRequest:
+        await movsyRepository.removeFriendship(with: uid)
+      case .acceptRequest:
+        await movsyRepository.acceptFriendshipRequest(from: uid)
+      case .block:
+        await movsyRepository.blockUser(with: uid)
+      case .unblock:
+        await movsyRepository.unblockUser(with: uid)
+      }
+
+      if case .failure(let error) = result {
+        print(error.localizedDescription)
+        updateUserRequestState(for: user, when: action)
+      }
+    }
+  }
+
+  @MainActor
   func handleFriendshipAction(
     for user: MovsyUser,
     do action: FriendshipAction
   ) {
     var result: Result<Void, Error>?
     let uid = user.uid
-//    let oldStatus = user.friendshipStatus
-
     updateUserFriendshipState(for: user, when: action)
 
     Task {
@@ -126,14 +155,10 @@ final class FriendsViewModel {
       switch action {
       case .sendRequest:
         await movsyRepository.sendFriendshipRequest(to: uid)
-      case .cancelRequest:
+      case .deleteFriend, .cancelRequest, .rejectRequest:
         await movsyRepository.removeFriendship(with: uid)
       case .acceptRequest:
         await movsyRepository.acceptFriendshipRequest(from: uid)
-      case .rejectRequest:
-        await movsyRepository.removeFriendship(with: uid)
-      case .deleteFriend:
-        await movsyRepository.removeFriendship(with: uid)
       case .block:
         await movsyRepository.blockUser(with: uid)
       case .unblock:
@@ -154,13 +179,34 @@ final class FriendsViewModel {
     await loadFriendRequests()
   }
 
-  // MARK: Private functions
+  // MARK: - Private functions
 
   private func updateUserFriendshipState(
     for user: MovsyUser, when action: FriendshipAction
   ) {
     if let index = friends?.firstIndex(of: user) {
       friends![index].friendshipStatus =
+
+      switch action {
+      case .sendRequest:
+        .sent
+      case .rejectRequest, .cancelRequest, .deleteFriend:
+        .notRelated
+      case .acceptRequest:
+        .friend
+      case .block:
+        .blocked
+      case .unblock:
+        .notRelated
+      }
+    }
+  }
+
+  private func updateUserRequestState(
+    for user: MovsyUser, when action: FriendshipAction
+  ) {
+    if let index = friendRequests?.firstIndex(of: user) {
+      friendRequests![index].friendshipStatus =
 
       switch action {
       case .sendRequest:

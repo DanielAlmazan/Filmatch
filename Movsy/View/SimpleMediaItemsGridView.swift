@@ -71,10 +71,9 @@ struct SimpleMediaItemsGridView: View {
               } label: {
                 Image(systemName: "ellipsis")
                   .shadow(color: .black, radius: 5)
-                  .padding(.horizontal, 5)
-                  .padding(.vertical, 15)
-                  .foregroundStyle(.white)
                   .rotationEffect(.degrees(90))
+                  .frame(width: 30, height: 30)
+                  .foregroundStyle(.white)
               }
             }
           }

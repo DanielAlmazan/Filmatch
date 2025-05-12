@@ -34,7 +34,7 @@ struct UserListRow: View {
       } label: {
         Image(systemName: "ellipsis")
           .rotationEffect(.degrees(90))
-          .padding(.horizontal, 8)
+          .frame(width: 30, height: 30)
       }
     }
     .padding()
