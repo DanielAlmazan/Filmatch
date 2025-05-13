@@ -14,30 +14,30 @@ import SwiftUI
 struct TextFieldWithClearButton: View {
   /// The placeholder text displayed in the text field.
   let hint: LocalizedStringResource
-  
+
   /// Binding to the text input of the field.
   @Binding var field: String
-  
+
   /// Validation errors associated with the field.
   @Binding var emailErrors: [LocalizedStringResource]?
-  
+
   /// The binding to manage focus state of the field.
   var focusedField: FocusState<Field?>.Binding
-  
+
   @State var isDirty: Bool = false
-  
+
   /// The specific field value used for focus management.
   let fieldValue: Field?
-  
+
   /// The maximum height of the text field.
   let maxHeight: CGFloat
-  
+
   /// Function to generate the text for error messages.
   let getPasswordErrors: ((LocalizedStringResource?, [LocalizedStringResource]) -> AnyView)?
-  
+
   /// Validation function executed when the field value changes or focus changes.
   let validate: () -> Void
-  
+
   var body: some View {
     VStack(alignment: .leading) {
       // MARK: - Field
@@ -58,29 +58,28 @@ struct TextFieldWithClearButton: View {
             if let oldValue, oldValue == .email {
               validate()
             }
-            
+
             if let newValue, newValue != .email {
               isDirty = true
             }
-          } // TextField
-        
+          }  // TextField
+
         // MARK: - Clear Button
         if !field.isEmpty {
           // Button to clear the text field.
           Button {
             field.removeAll()
-          }label: {
+          } label: {
             Image(systemName: "multiply.circle.fill")
               .resizable()
               .scaledToFit()
               .symbolEffect(.bounce, options: .nonRepeating)
           }
-        } // Clear Button
-      } // HStack Field
+        }  // Clear Button
+      }  // HStack Field
       .padding(5)
       .frame(maxHeight: maxHeight)
-      
-      
+
       // MARK: - Email Error
       if let emailErrors {
         // Display validation errors if they exist.
@@ -89,7 +88,7 @@ struct TextFieldWithClearButton: View {
           .foregroundStyle(.red)
           .padding(.horizontal, 5)
       }  // if let emailError
-    } // VStack Base
+    }  // VStack Base
   }
 }
 
@@ -97,7 +96,9 @@ struct TextFieldWithClearButton: View {
 // provide a more comfortable view while building it
 #Preview {
   @Previewable @State var email: String = "user@host.domain"
-  @Previewable @State var emailErrors: [LocalizedStringResource]? = ["Sample error"]
+  @Previewable @State var emailErrors: [LocalizedStringResource]? = [
+//    "Sample error"
+  ]
   @FocusState var focus: Field?
 
   VStack {
@@ -108,17 +109,18 @@ struct TextFieldWithClearButton: View {
       focusedField: $focus,
       fieldValue: .email,
       maxHeight: 30,
-      getPasswordErrors: {_,_ in
-        AnyView (
+      getPasswordErrors: { _, _ in
+        AnyView(
           Text("Sample error message")
         )
       },
       validate: {
-      
-    })
-      .padding()
-      .background(.bgBase)
-      .clipShape(.rect(cornerRadius: 10))
+
+      }
+    )
+    .padding()
+    .background(.bgBase)
+    .clipShape(.rect(cornerRadius: 10))
   }
   .padding()
   .frame(maxWidth: .infinity, maxHeight: .infinity)

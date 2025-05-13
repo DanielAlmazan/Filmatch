@@ -142,19 +142,7 @@ struct LoginView: View {
 
       VStack {
         // MARK: - External authentication providers.
-        ExternalAuthProvidersView {
-          do {
-            try authVm.googleOAuth()
-          } catch {
-            // TODO: Handle error
-          }
-        } onAppleSignIn: {
-          do {
-            try authVm.appleOAuth()
-          } catch {
-            // TODO: Handle error
-          }
-        }
+        ExternalAuthProvidersView(onGoogleSignIn: authVm.googleOAuth, onAppleSignIn: authVm.appleOAuth)
 
         if !isReAuthentication {
           // Navigation to the registration view.
