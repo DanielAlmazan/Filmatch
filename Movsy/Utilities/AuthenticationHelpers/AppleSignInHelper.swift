@@ -118,7 +118,7 @@ extension SignInAppleHelper: ASAuthorizationControllerDelegate {
   }
   
   func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    print("Sign in with Apple errored: \(error)")
+    print("Sign in with Apple errored: \(error.localizedDescription)")
     completionHandler?(.failure(URLError(.cannotFindHost)))
   }
 }
