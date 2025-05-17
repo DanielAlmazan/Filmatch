@@ -48,8 +48,7 @@ struct OnBoardingView: View {
           }
         }
         .foregroundStyle(.white)
-        .padding(25)
-        .ignoresSafeArea(.all)
+        .padding(.horizontal, 25)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
       }
 
