@@ -1140,6 +1140,22 @@
         }
       }
     },
+    "Go to Profile" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anar al perfil"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ir al perfil"
+          }
+        }
+      }
+    },
     "Go to Rooms" : {
       "localizations" : {
         "ca" : {
