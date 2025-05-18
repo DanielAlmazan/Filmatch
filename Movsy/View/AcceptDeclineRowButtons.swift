@@ -10,10 +10,10 @@ import SwiftUI
 struct AcceptDeclineRowButtons: View {
   let item: (any DiscoverItem)
   let screenWidth: CGFloat
-  let onAccept: ((any DiscoverItem)) -> Void
-  let onSuperHype: ((any DiscoverItem)) -> Void
-  let onWatched: ((any DiscoverItem)) -> Void
-  let onDecline: ((any DiscoverItem)) -> Void
+  let onAccept: (any DiscoverItem) -> Void
+  let onSuperHype: (any DiscoverItem) -> Void
+  let onWatched: (any DiscoverItem) -> Void
+  let onDecline: (any DiscoverItem) -> Void
   
   var body: some View {
     HStack {
