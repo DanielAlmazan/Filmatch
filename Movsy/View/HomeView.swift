@@ -103,10 +103,8 @@ struct HomeView: View {
           }
         }
       } label: {
-        VStack {
-          Image(systemName: "list.bullet")
-          Text("My Lists")
-        }
+        Image(systemName: "list.bullet")
+        Text("My Lists")
       }
 
       // MARK: - Profile Tab
