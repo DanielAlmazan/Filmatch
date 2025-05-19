@@ -745,13 +745,13 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tria pel·lícules amb els teus amics sense iniciar sessió!"
+            "value" : "Tria pel·lis amb els teus amics sense iniciar sessió!"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Elige películas con tus amigos sin iniciar sesión!"
+            "value" : "¡Elige pelis con tus amigos sin iniciar sesión!"
           }
         }
       }
@@ -996,18 +996,18 @@
         }
       }
     },
-    "Error: Film not loaded: %@" : {
+    "Error: Film not loaded" : {
       "localizations" : {
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error: Pel·lícula no carregada: %@"
+            "value" : "Error: Pel·li no carregada"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error: Película no cargada: %@"
+            "value" : "Error: Peli no encontrada"
           }
         }
       }
@@ -1024,6 +1024,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error: Persona no cargada: %@"
+          }
+        }
+      }
+    },
+    "Error: Tv Series not loaded" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Sèrie no carregada"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: Serie no encontrada"
           }
         }
       }
@@ -1547,13 +1563,13 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No s'han trobat membres del repartiment per aquesta pel·lícula."
+            "value" : "No s'han trobat membres del repartiment per aquesta pel·li."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No se encontraron miembros del reparto para esta película."
+            "value" : "No se encontraron miembros del reparto para esta peli."
           }
         }
       }
