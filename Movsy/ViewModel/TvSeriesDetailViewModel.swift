@@ -24,6 +24,8 @@ final class TvSeriesDetailViewModel {
   
   @MainActor
   func loadTvSeries(byId id: Int) {
+    guard self.isTvSeriesLoading == false else { return }
+
     self.errorMessage = nil
     self.isTvSeriesLoading = true
     
@@ -37,8 +39,9 @@ final class TvSeriesDetailViewModel {
         self.errorMessage = error.localizedDescription
         print(error)
       }
+
+      self.isTvSeriesLoading = false
     }
-    self.isTvSeriesLoading = false
   }
   
   @MainActor

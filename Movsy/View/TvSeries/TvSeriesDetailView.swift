@@ -22,6 +22,7 @@ struct TvSeriesDetailView: View {
       VStack {
         if vm.isTvSeriesLoading {
           ProgressView("Loading...")
+            .frame(maxHeight: .infinity, alignment: .center)
         } else if let tvSeries = vm.tvSeries {
           ScrollView {
             // MARK: - Poster Image
@@ -37,7 +38,7 @@ struct TvSeriesDetailView: View {
               .lineLimit(1)
 
               VStack(alignment: .leading) {
-              // MARK: - Movie title
+              // MARK: - Tv Series title
                 HStack {
                   Text(tvSeries.name ?? "Unknown")
                     .font(.title)
@@ -81,8 +82,8 @@ struct TvSeriesDetailView: View {
             }
             .padding()
           }
-        } else if let error = vm.errorMessage {
-          Text("Error: Film not loaded: \(error)")
+        } else if vm.errorMessage != nil {
+          Text("Error: Tv Series not loaded")
         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

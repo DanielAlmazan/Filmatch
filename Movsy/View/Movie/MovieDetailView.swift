@@ -43,8 +43,13 @@ struct MovieDetailView: View {
             PosterView(imageUrl: movie.posterPath, size: .w500, posterType: .movie)
             
             VStack(alignment: .leading, spacing: 16) {
-              MovieFirstDetailsRow(voteAverage: movie.voteAverage, genres: movie.genres, runtime: movie.runtime, providers: vm.providers)
-              
+              MovieFirstDetailsRow(
+                voteAverage: movie.voteAverage, 
+                genres: movie.genres, 
+                runtime: movie.runtime, 
+                providers: vm.providers)
+              .lineLimit(1)
+
               VStack(alignment: .leading) {
                 // MARK: - Movie title
                 HStack {
@@ -89,13 +94,10 @@ struct MovieDetailView: View {
               MovieCastRowView(cast: movie.credits.cast)
             }
             .padding()
-            
-            VStack(spacing: 16) {
-            }
           }
-        } else {
+        } else if vm.errorMessage != nil {
           // Display an error message if the movie failed to load.
-          Text("Error: Film not loaded: \(vm.errorMessage ?? "Unknown error")")
+          Text("Error: Film not loaded")
         }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)

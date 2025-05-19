@@ -13,7 +13,7 @@ struct TvSeriesCastRowView: View {
   var body: some View {
     if !cast.isEmpty {
       ScrollView(.horizontal, showsIndicators: false) {
-        HStack(spacing: 16) {
+        LazyHStack(spacing: 16) {
           ForEach(cast, id: \.id) { castMember in
             TvSeriesCastMemberThumbnail(castMember: castMember)
           }
