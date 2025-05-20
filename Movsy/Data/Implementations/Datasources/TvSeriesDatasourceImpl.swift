@@ -14,19 +14,19 @@ final class TvSeriesDatasourceImpl: TvSeriesDatasource {
     self.client = client
   }
 
-  func getTvSeries(byId id: Int) async -> Result<
-    TvSeriesDetailSingleResponse, any Error
-  > {
+  func getTvSeries(byId id: Int) async -> Result<TvSeriesDetailSingleResponse, any Error> {
     await client.get(
       "tv/\(id)",
       extraQueryItems: [
         URLQueryItem(
-          name: QueryParam.appendToResponse.rawValue, value: "aggregate_credits,videos"
-        ),
+          name: QueryParam.appendToResponse.rawValue,
+          value: "aggregate_credits,videos"
+        )
       ],
-      responseType: TvSeriesDetailSingleResponse.self)
+      responseType: TvSeriesDetailSingleResponse.self
+    )
   }
-  
+
   func getProviders(forTvSeriesId id: Int) async -> Result<WatchProvidersResponse, any Error> {
     await client.get(
       "tv/\(id)/watch/providers",
@@ -51,7 +51,7 @@ final class TvSeriesDatasourceImpl: TvSeriesDatasource {
       "search/tv",
       extraQueryItems: [
         URLQueryItem(name: QueryParam.query.rawValue, value: query),
-        URLQueryItem(name: QueryParam.page.rawValue, value: "\(page ?? 1)")
+        URLQueryItem(name: QueryParam.page.rawValue, value: "\(page ?? 1)"),
       ],
       responseType: DiscoverTvSeriesResponse.self
     )

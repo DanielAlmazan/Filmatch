@@ -109,23 +109,30 @@ class AuthenticationViewModel {
     }
   }
 
-  func appleOAuth() throws {
+  func appleOAuth() {
     Task {
       self.isLoading = true
       let helper = SignInAppleHelper()
-      let tokens = try await helper.startSignInWithAppleFlow()
-      let result = await authenticationRepository.appleOAuth(tokens: tokens)
-      switch result {
-      case .success(_):
-        let movsyResult = await self.movsyRepository.auth()
-        switch movsyResult {
-        case .success(let movsyUser):
-          self.currentUser = movsyUser.toMovsyUser()
+
+      do {
+        let tokens = try await helper.startSignInWithAppleFlow()
+        
+        let result = await authenticationRepository.appleOAuth(tokens: tokens)
+
+        switch result {
+        case .success(_):
+          let movsyResult = await self.movsyRepository.auth()
+          switch movsyResult {
+          case .success(let movsyUser):
+            self.currentUser = movsyUser.toMovsyUser()
+          case .failure(let error):
+            self.errorMessage = error.localizedDescription
+          }
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
-      case .failure(let error):
-        self.errorMessage = error.localizedDescription
+      } catch {
+        print(error.localizedDescription)
       }
       self.isLoading = false
     }
@@ -156,23 +163,28 @@ class AuthenticationViewModel {
   }
 
   /// Initiates Google OAuth authentication flow.
-  func googleOAuth() throws {
+  func googleOAuth() {
     Task {
       self.isLoading = true
       let helper = SignInGoogleHelper()
-      let tokens = try await helper.signIn()
-      let result = await authenticationRepository.googleOAuth(tokens: tokens)
-      switch result {
-      case .success(_):
-        let movsyResult = await self.movsyRepository.auth()
-        switch movsyResult {
-        case .success(let movsyUser):
-          self.currentUser = movsyUser.toMovsyUser()
+
+      do {
+        let tokens = try await helper.signIn()
+        let result = await authenticationRepository.googleOAuth(tokens: tokens)
+        switch result {
+        case .success(_):
+          let movsyResult = await self.movsyRepository.auth()
+          switch movsyResult {
+          case .success(let movsyUser):
+            self.currentUser = movsyUser.toMovsyUser()
+          case .failure(let error):
+            self.errorMessage = error.localizedDescription
+          }
         case .failure(let error):
           self.errorMessage = error.localizedDescription
         }
-      case .failure(let error):
-        self.errorMessage = error.localizedDescription
+      } catch {
+        print(error.localizedDescription)
       }
       self.isLoading = false
     }

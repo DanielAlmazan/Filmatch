@@ -10,10 +10,10 @@ import SwiftUI
 struct AcceptDeclineRowButtons: View {
   let item: (any DiscoverItem)
   let screenWidth: CGFloat
-  let onAccept: ((any DiscoverItem)) -> Void
-  let onSuperHype: ((any DiscoverItem)) -> Void
-  let onWatched: ((any DiscoverItem)) -> Void
-  let onDecline: ((any DiscoverItem)) -> Void
+  let onAccept: (any DiscoverItem) -> Void
+  let onSuperHype: (any DiscoverItem) -> Void
+  let onWatched: (any DiscoverItem) -> Void
+  let onDecline: (any DiscoverItem) -> Void
   
   var body: some View {
     HStack {
@@ -21,7 +21,7 @@ struct AcceptDeclineRowButtons: View {
         Button {
           onDecline(item)
         } label: {
-          Image(.thumbDownButton)
+          Image(.blacklistIconFill)
             .resizable()
             .scaledToFit()
         }
@@ -29,7 +29,7 @@ struct AcceptDeclineRowButtons: View {
         Button {
           onWatched(item)
         } label: {
-          Image(.watchedIcon)
+          Image(.watchedIconFill)
             .resizable()
             .scaledToFit()
         }
@@ -37,7 +37,7 @@ struct AcceptDeclineRowButtons: View {
         Button {
           onSuperHype(item)
         } label: {
-          Image(.superHypedIcon)
+          Image(.superHypedIconFill)
             .resizable()
             .scaledToFit()
         }
@@ -45,7 +45,7 @@ struct AcceptDeclineRowButtons: View {
         Button {
           onAccept(item)
         } label: {
-          Image(.thumbUpButton)
+          Image(.watchlistIconFill)
             .resizable()
             .scaledToFit()
         }

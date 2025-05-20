@@ -16,7 +16,7 @@ struct MovieCastRowView: View {
   var body: some View {
     if let cast = cast, !cast.isEmpty {
       ScrollView(.horizontal, showsIndicators: false) {
-        HStack(spacing: 16) {
+        LazyHStack(spacing: 16) {
           ForEach(cast.indices, id: \.self) { index in
             CastMemberThumbnailView(castMember: cast[index])
           }

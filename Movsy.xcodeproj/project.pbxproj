@@ -565,6 +565,7 @@
 		853990A52DB02AF900D46BFB /* tv-44217-append_to_response-aggregate-credits-videos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tv-44217-append_to_response-aggregate-credits-videos.json"; sourceTree = "<group>"; };
 		8548E19B2DB3F51900152BEA /* UpdateUsernameBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameBody.swift; sourceTree = "<group>"; };
 		8569CD772DADA56B00AA832B /* Movsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Movsy.entitlements; sourceTree = "<group>"; };
+		85A947292DD9F825001F3E17 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		85F858272DBCFD4500B23705 /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -585,6 +586,7 @@
 		851B96DD2DAD88AE00DD580B = {
 			isa = PBXGroup;
 			children = (
+				85A947292DD9F825001F3E17 /* .gitignore */,
 				851B9A692DAD8E8E00DD580B /* Movsy */,
 				851B96E72DAD88AE00DD580B /* Products */,
 				851B993A2DAD8B4800DD580B /* Config */,
@@ -1286,6 +1288,9 @@
 				"\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"",
 				"",
 				"",
+				"",
+				"",
+				"",
 			);
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1667,7 +1672,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Movsy/Movsy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = Movsy/Data/TestData;
 				DEVELOPMENT_TEAM = 33XXL59AXF;
@@ -1705,7 +1710,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Movsy/Movsy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = Movsy/Data/TestData;
 				DEVELOPMENT_TEAM = 33XXL59AXF;
 				ENABLE_PREVIEWS = YES;

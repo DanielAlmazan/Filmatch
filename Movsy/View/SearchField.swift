@@ -21,6 +21,7 @@ struct SearchField: View {
       TextField("Search", text: $query)
         .submitLabel(.search)
         .scrollDismissesKeyboard(.immediately)
+        .autocorrectionDisabled()
         .focused($isInputActive)
         .onSubmit {
           onSubmit()

@@ -70,14 +70,12 @@ struct HomeView: View {
       // MARK: - Matches Tab
       Tab(value: .matches) {
         NavigationStack {
-          MatchesTabView(repository: movsyGoRepository)
+          MatchesTabView(repository: movsyGoRepository) { selectedTab = .profile }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.bgBase)
         }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(.bgBase)
       } label: {
         Image(.matchesTabIcon)
-          .resizable(resizingMode: .stretch)
         Text("Matches")
       }
 
@@ -103,10 +101,8 @@ struct HomeView: View {
           }
         }
       } label: {
-        VStack {
-          Image(systemName: "list.bullet")
-          Text("My Lists")
-        }
+        Image(systemName: "list.bullet")
+        Text("My Lists")
       }
 
       // MARK: - Profile Tab

@@ -67,3 +67,7 @@ Config/Local.xcconfig
 .DS_Store
 GoogleService-Info.plist
 Info.plist
+
+Movsy build*
+Movsy 20*
+*.pdf

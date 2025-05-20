@@ -21,7 +21,7 @@ struct MatchView: View {
         PosterView(imageUrl: match.item.posterPath, size: .w500, posterType: .movie)
           .cornerRadius(computedCornerRadius)
         if match.isSuperMatch {
-          Image(.superMatchIcon)
+          Image(.superMatchIconFill)
             .resizable()
             .scaledToFit()
             .frame(maxHeight: computedMaxIconHeight)

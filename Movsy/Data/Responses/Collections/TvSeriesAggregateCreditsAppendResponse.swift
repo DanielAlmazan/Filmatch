@@ -10,43 +10,32 @@ import Foundation
 final class TvSeriesAggregateCreditsAppendResponse: Identifiable, Sendable {
   let cast: [TvSeriesCastMember]
   let crew: [TvSeriesCrewMember]
+
+  init(cast: [TvSeriesCastMember], crew: [TvSeriesCrewMember]) {
+    self.cast = cast
+    self.crew = crew
+  }
 }
 
 extension TvSeriesAggregateCreditsAppendResponse: Codable {
-}
+  private enum CodingKeys: String, CodingKey {
+    case cast = "cast"
+    case crew = "crew"
+  }
 
-/*
- adult
- backdrop_path
- created_by
- episode_run_time
- first_air_date
- genres
- homepage
- id
- in_production
- languages
- last_air_date
- last_episode_to_air
- name
- next_episode_to_air
- networks
- number_of_episodes
- number_of_seasons
- origin_country
- original_language
- original_name
- overview
- popularity
- poster_path
- production_companies
- production_countries
- seasons
- spoken_languages
- status
- tagline
- type
- vote_average
- vote_count
- aggregate_credits
- */
+  convenience init(from decoder: any Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+
+    let cast = try container.decode([TvSeriesCastMember].self, forKey: .cast)
+    let crew = try container.decode([TvSeriesCrewMember].self, forKey: .crew)
+
+    self.init(cast: cast, crew: crew)
+  }
+
+  func encode(to encoder: any Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+
+    try container.encode(cast, forKey: .cast)
+    try container.encode(crew, forKey: .crew)
+  }
+}

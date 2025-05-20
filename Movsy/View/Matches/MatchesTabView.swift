@@ -11,18 +11,25 @@ struct MatchesTabView: View {
   @State var matchesVm: MatchesViewModel
   @State private var isPresentingLists: Bool = false
 
+  let redirectToProfile: () -> Void
+
   @Environment(FriendsViewModel.self) var friendsVm
 
-  init(repository: MovsyGoRepository) {
+  init(repository: MovsyGoRepository, redirectToProfile: @escaping () -> Void) {
     self.matchesVm = .init(repository: repository)
+    self.redirectToProfile = redirectToProfile
   }
 
   var body: some View {
     if friendsVm.friends?.isEmpty ?? true {
-      Text("Matches come after friends…")
-        .font(.headline)
-      Text("Try adding some friends to see matches!")
-      Text("You can add friends from the profile tab.")
+      VStack {
+        Text("Matches come after friends…")
+          .font(.headline)
+        Text("Try adding some friends to see matches!")
+        Text("You can add friends from the profile tab.")
+
+        Button("Go to Profile", action: redirectToProfile)
+      }
     } else {
       VStack(spacing: 10) {
         MediaSelector(selectedMedia: $matchesVm.selectedMedia)
@@ -128,7 +135,7 @@ struct MatchesTabView: View {
   )
 
   NavigationStack {
-    MatchesTabView(repository: repository)
+    MatchesTabView(repository: repository) { print("Redirecting to profile") }
   }
   .environment(movieRepository)
   .environment(tvRepository)
@@ -154,7 +161,7 @@ struct MatchesTabView: View {
   )
 
   NavigationStack {
-    MatchesTabView(repository: repository)
+    MatchesTabView(repository: repository) { print("Redirecting to profile") }
   }
   .task { await friendsVm.loadFriends() }
   .environment(movieRepository)

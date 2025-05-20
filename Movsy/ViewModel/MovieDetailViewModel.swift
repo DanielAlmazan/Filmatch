@@ -16,7 +16,7 @@ final class MovieDetailViewModel {
   var providers: WatchProvidersResponse?
 
   /// Indicates whether the movie is currently being loaded.
-  var isMovieLoading: Bool
+  var isMovieLoading: Bool = false
 
   /// An optional error message if an error occurs during data fetching.
   var errorMessage: String?
@@ -28,14 +28,16 @@ final class MovieDetailViewModel {
   /// - Parameter repository: The `MoviesRepository` used to fetch movie data.
   init(repository: MoviesRepository) {
     self.repository = repository
-    self.isMovieLoading = true
   }
 
   /// Loads the movie details by ID.
   /// - Parameter id: The unique identifier of the movie to load.
   @MainActor
   func loadMovie(byId id: Int) {
+    guard !isMovieLoading else { return }
+
     self.errorMessage = nil
+    self.isMovieLoading = true
 
     Task {
       let result = await repository.getMovie(byId: id)
@@ -46,6 +48,7 @@ final class MovieDetailViewModel {
           self.errorMessage = error.localizedDescription
           print(error)
       }
+
       self.isMovieLoading = false
     }
   }
