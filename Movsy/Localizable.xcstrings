@@ -450,6 +450,38 @@
         }
       }
     },
+    "Are you sure you want to delete your account? This action is cannot be undone. All your data will be deleted permanently from our servers." : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estàs segur que vols eliminar el teu compte? Aquesta acció no es pot desfer. Totes les teves dades s’eliminaran permanentment dels nostres servidors."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer. Todos tus datos serán eliminados permanentemente de nuestros servidores."
+          }
+        }
+      }
+    },
+    "Are you sure you want to log out?" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estàs segur que vols tancar la sessió?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Estás seguro de que quieres cerrar sesión?"
+          }
+        }
+      }
+    },
     "As %@" : {
       "localizations" : {
         "ca" : {
@@ -784,6 +816,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Creada por %@"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
           }
         }
       }
@@ -1814,6 +1862,22 @@
         }
       }
     },
+    "Please, read and accept the Terms and Conditions to continue" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si us plau, llegiu i accepteu els Termes i condicions per continuar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por favor, lee y acepte los Términos y Condiciones para continuar"
+          }
+        }
+      }
+    },
     "Powered by" : {
       "localizations" : {
         "ca" : {
@@ -1858,6 +1922,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perfil"
+          }
+        }
+      }
+    },
+    "Refresh" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refrescar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refrescar"
           }
         }
       }
@@ -2098,6 +2178,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar solicitud de amistad"
+          }
+        }
+      }
+    },
+    "Sign in with Apple" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sesión con Apple"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sessió amb Apple"
+          }
+        }
+      }
+    },
+    "Sign in with Google" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sesión con Google"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sessió amb Google"
           }
         }
       }

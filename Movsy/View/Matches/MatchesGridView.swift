@@ -88,9 +88,11 @@ struct MatchesGridView: View {
   let movieRepository = MoviesRepositoryImpl(datasource: JsonMoviesRemoteDatasource())
   let tvRepository = TvSeriesRepositoryImpl(datasource: JsonTvSeriesDatasource())
 
-  ScrollView {
-    MatchesGridView(matches: matches) { print("Last appeared") }
-      .padding(.horizontal)
+  NavigationStack {
+    ScrollView {
+      MatchesGridView(matches: matches) { print("Last appeared") }
+        .padding(.horizontal)
+    }
   }
   .scrollClipDisabled()
   .environment(movieRepository)

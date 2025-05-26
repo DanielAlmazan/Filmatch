@@ -21,7 +21,7 @@ struct MatchesTabView: View {
   }
 
   var body: some View {
-    if friendsVm.friends?.isEmpty ?? true {
+    if !friendsVm.isLoadingFriends && (friendsVm.friends?.isEmpty ?? true) {
       VStack {
         Text("Matches come after friends…")
           .font(.headline)
@@ -30,6 +30,8 @@ struct MatchesTabView: View {
 
         Button("Go to Profile", action: redirectToProfile)
       }
+    } else if friendsVm.isLoadingFriends {
+      ProgressView()
     } else {
       VStack(spacing: 10) {
         MediaSelector(selectedMedia: $matchesVm.selectedMedia)
@@ -78,8 +80,20 @@ struct MatchesTabView: View {
       }
       .frame(maxHeight: .infinity, alignment: .top)
       .navigationTitle("Matches")
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button {
+            onRefresh()
+          } label: {
+            HStack {
+              Image(systemName: "arrow.clockwise.circle.fill")
+              Text("Refresh")
+            }
+          }
+        }
+      }
       .task {
-        if !(friendsVm.friends?.isEmpty ?? true) {
+        if let friends = self.friendsVm.friends, !friends.isEmpty {
           await initializeList()
         }
       }

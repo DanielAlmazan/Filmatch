@@ -76,6 +76,18 @@ struct MyListsView: View {
     .background(.bgBase)
     .navigationTitle("My Lists")
     .task { await initLists() }
+    .toolbar {
+      ToolbarItem(placement: .topBarTrailing) {
+        Button {
+          onRefresh()
+        } label: {
+          HStack {
+            Image(systemName: "arrow.clockwise.circle.fill")
+            Text("Refresh")
+          }
+        }
+      }
+    }
     .onChange(of: self.profileVm.selectedMedia) {
       self.profileVm.onSelectedMediaChanged()
       Task { await initMyLists() }

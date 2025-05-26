@@ -73,6 +73,11 @@ struct HomeView: View {
           MatchesTabView(repository: movsyGoRepository) { selectedTab = .profile }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.bgBase)
+            .task {
+              if friendsVm.friends == nil {
+                await friendsVm.loadFriends()
+              }
+            }
         }
       } label: {
         Image(.matchesTabIcon)
