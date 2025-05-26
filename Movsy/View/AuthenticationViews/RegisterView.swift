@@ -160,7 +160,11 @@ struct RegisterView: View {
       // MARK: - Footer
       VStack {
         // External authentication providers (e.g., Google, Apple).
-        ExternalAuthProvidersView(onGoogleSignIn: authVm.googleOAuth, onAppleSignIn: authVm.appleOAuth)
+        ExternalAuthProvidersView(
+          onGoogleSignIn: authVm.googleOAuth,
+          onAppleSignIn: authVm.appleOAuth,
+          buttonsEnabled: isTermsAccepted,
+        )
 
         // Navigation to the login view.
         HStack {

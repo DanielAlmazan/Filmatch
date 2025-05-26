@@ -1814,6 +1814,22 @@
         }
       }
     },
+    "Please, read and accept the Terms and Conditions to continue" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si us plau, llegiu i accepteu els Termes i condicions per continuar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por favor, lee y acepte los Términos y Condiciones para continuar"
+          }
+        }
+      }
+    },
     "Powered by" : {
       "localizations" : {
         "ca" : {
@@ -2098,6 +2114,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar solicitud de amistad"
+          }
+        }
+      }
+    },
+    "Sign in with Apple" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sesión con Apple"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sessió amb Apple"
+          }
+        }
+      }
+    },
+    "Sign in with Google" : {
+      "localizations" : {
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sesión con Google"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sessió amb Google"
           }
         }
       }

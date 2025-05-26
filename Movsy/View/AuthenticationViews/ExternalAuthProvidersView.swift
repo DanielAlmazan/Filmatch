@@ -17,6 +17,9 @@ struct ExternalAuthProvidersView: View {
   /// Closure called when the Apple Sign-In button is tapped.
   let onAppleSignIn: (() -> Void)?
 
+  let buttonsEnabled: Bool
+  @State private var showAlert: Bool = false
+
   var body: some View {
     VStack {
       // MARK: - Separator
@@ -37,7 +40,11 @@ struct ExternalAuthProvidersView: View {
         Group {
           // MARK: - Apple OAuth
           Button {
-            onAppleSignIn?()
+            if buttonsEnabled {
+              onAppleSignIn?()
+            } else {
+              showAlert = true
+            }
           } label: {
             Image(systemName: "apple.logo")
               .resizable()
@@ -45,27 +52,38 @@ struct ExternalAuthProvidersView: View {
               .frame(width: 48, height: 48)
               .tint(.bgBase)
           }
+          .accessibilityLabel("Sign in with Apple")
 
           // MARK: - Google OAuth
           Button {
-            onGoogleSignIn?()
+            if buttonsEnabled {
+              onGoogleSignIn?()
+            } else {
+              showAlert = true
+            }
           } label: {
             Image(.googleIcon)
               .resizable()
               .scaledToFit()
               .frame(width: 42, height: 42)
           }
+          .accessibilityLabel("Sign in with Google")
         }
         .aspectRatio(1, contentMode: .fit)
         .frame(width: 48, height: 48)
         .padding()
         .background(.onBgBase)
         .clipShape(.circle)
+        .alert("Please, read and accept the Terms and Conditions to continue", isPresented: $showAlert) {
+          // Leave default option
+        }
       }
     }
   }
 }
 
 #Preview {
-  ExternalAuthProvidersView(onGoogleSignIn: nil, onAppleSignIn: nil)
+  @Previewable @State var buttonsEnabled = true
+
+  ExternalAuthProvidersView(onGoogleSignIn: nil, onAppleSignIn: nil, buttonsEnabled: buttonsEnabled)
 }

@@ -142,7 +142,7 @@ struct LoginView: View {
 
       VStack {
         // MARK: - External authentication providers.
-        ExternalAuthProvidersView(onGoogleSignIn: authVm.googleOAuth, onAppleSignIn: authVm.appleOAuth)
+        ExternalAuthProvidersView(onGoogleSignIn: authVm.googleOAuth, onAppleSignIn: authVm.appleOAuth, buttonsEnabled: true)
 
         if !isReAuthentication {
           // Navigation to the registration view.
