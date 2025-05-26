@@ -80,6 +80,18 @@ struct MatchesTabView: View {
       }
       .frame(maxHeight: .infinity, alignment: .top)
       .navigationTitle("Matches")
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button {
+            onRefresh()
+          } label: {
+            HStack {
+              Image(systemName: "arrow.clockwise.circle.fill")
+              Text("Refresh")
+            }
+          }
+        }
+      }
       .task {
         if let friends = self.friendsVm.friends, !friends.isEmpty {
           await initializeList()

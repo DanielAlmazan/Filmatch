@@ -49,6 +49,18 @@ struct ProfileTab: View {
         }
         .padding(.horizontal)
       }
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button {
+            Task { await self.friendsVm.onRefresh() }
+          } label: {
+            HStack {
+              Image(systemName: "arrow.clockwise.circle.fill")
+              Text("Refresh")
+            }
+          }
+        }
+      }
       .refreshable { Task { await self.friendsVm.onRefresh() } }
       .alert(alertMessage, isPresented: $showAlert, presenting: operationError) { operationError in
         Button("Cancel", role: .cancel) {}

@@ -49,9 +49,19 @@ struct MyFriendsView: View {
         }
         .padding(.horizontal)
       }
-      .refreshable {
-        Task { await friendsVm.onRefresh() }
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          Button {
+            Task { await friendsVm.onRefresh() }
+          } label: {
+            HStack {
+              Image(systemName: "arrow.clockwise.circle.fill")
+              Text("Refresh")
+            }
+          }
+        }
       }
+      .refreshable { Task { await friendsVm.onRefresh() } }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     .navigationTitle("My Friends")
