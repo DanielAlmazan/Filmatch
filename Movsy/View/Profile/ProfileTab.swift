@@ -21,6 +21,8 @@ struct ProfileTab: View {
   @State private var operationError: NSError?
 
   @State private var isReAuthenticating = false
+  @State private var isLoggingOut = false
+  @State private var isDeletingAccount = false
 
   var body: some View {
     if let user = authVm.currentUser {
@@ -36,13 +38,21 @@ struct ProfileTab: View {
 
           Group {
             Button("Log out") {
-              authVm.logOut()
+              isLoggingOut = true
+            }
+            .alert("Are you sure you want to log out?", isPresented: $isLoggingOut) {
+              Button("Cancel", role: .cancel) {}
+              Button("Log out", role: .destructive) { logOut() }
             }
 
             Button("Delete Account") {
-              deleteAccount()
+              isDeletingAccount = true
             }
             .foregroundStyle(.red)
+            .alert("Are you sure you want to delete your account? This action is cannot be undone. All your data will be deleted permanently from our servers.", isPresented: $isDeletingAccount) {
+              Button("Cancel", role: .cancel) {}
+              Button("Delete", role: .destructive) { deleteAccount() }
+            }
           }
           .buttonStyle(.bordered)
           .frame(maxWidth: .infinity, alignment: .center)
@@ -139,6 +149,10 @@ struct ProfileTab: View {
       operationError = error
       alertMessage = "Error updating username: \(processError(for: error))"
     }
+  }
+
+  private func logOut() {
+    Task { await authVm.logOut() }
   }
 
   private func deleteAccount() {

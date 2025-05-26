@@ -191,19 +191,17 @@ class AuthenticationViewModel {
   }
 
   /// Logs out the currently authenticated user.
-  func logOut() {
-    Task {
-      self.isLoading = true
-      let result = await authenticationRepository.logOut()
-      switch result {
-      case .success():
-        self.currentUser = nil
-      case .failure(let error):
-        print("Error logging out: \(error.localizedDescription)")
-        self.errorMessage = error.localizedDescription
-      }
-      self.isLoading = false
+  func logOut() async {
+    self.isLoading = true
+    let result = await authenticationRepository.logOut()
+    switch result {
+    case .success():
+      self.currentUser = nil
+    case .failure(let error):
+      print("Error logging out: \(error.localizedDescription)")
+      self.errorMessage = error.localizedDescription
     }
+    self.isLoading = false
   }
 
   /// Deletes the account of the currently authenticated user.
